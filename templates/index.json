@@ -1,5 +1,56 @@
 {
   "sections": {
+    "vitacoral_mobile_editorial_hero": {
+      "type": "vitacoral-mobile-editorial-hero",
+      "blocks": {
+        "trust_chip_1": {
+          "type": "trust_chip",
+          "settings": {
+            "text": "5 yıllık marka",
+            "icon_text": "01"
+          }
+        },
+        "trust_chip_2": {
+          "type": "trust_chip",
+          "settings": {
+            "text": "10.000+ kullanıcı deneyimi",
+            "icon_text": "02"
+          }
+        },
+        "trust_chip_3": {
+          "type": "trust_chip",
+          "settings": {
+            "text": "Güvenli alışveriş",
+            "icon_text": "03"
+          }
+        },
+        "trust_chip_4": {
+          "type": "trust_chip",
+          "settings": {
+            "text": "Eczane & pazaryeri varlığı",
+            "icon_text": "04"
+          }
+        }
+      },
+      "block_order": [
+        "trust_chip_1",
+        "trust_chip_2",
+        "trust_chip_3",
+        "trust_chip_4"
+      ],
+      "settings": {
+        "eyebrow": "Vitacoral’i Keşfet",
+        "heading": "Bugün daha iyi başla",
+        "body": "<p>Günlük rutininize uygun Vitacoral ürünlerini keşfedin.</p>",
+        "primary_cta_label": "Ürünleri Keşfet",
+        "primary_cta_link": "/collections/all",
+        "secondary_cta_label": "Rutininizi Bulun",
+        "secondary_cta_link": "/pages/rutininizi-bulun",
+        "image": "",
+        "mobile_image": "",
+        "image_alt": ""
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -69,6 +120,7 @@
     }
   },
   "order": [
+    "vitacoral_mobile_editorial_hero",
     "image_banner",
     "featured_collection"
   ]
