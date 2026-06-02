@@ -7,6 +7,7 @@
   --vitacoral-color-border: rgba(34, 89, 82, 0.14);
   --vitacoral-color-text: #16312e;
   --vitacoral-color-text-muted: rgba(22, 49, 46, 0.72);
+  --vitacoral-color-chip: rgba(34, 89, 82, 0.08);
   --vitacoral-space-2xs: 0.4rem;
   --vitacoral-space-xs: 0.8rem;
   --vitacoral-space-sm: 1.2rem;
@@ -17,14 +18,24 @@
   --vitacoral-radius-sm: 0.8rem;
   --vitacoral-radius-md: 1.2rem;
   --vitacoral-radius-lg: 1.8rem;
+  --vitacoral-radius-pill: 999px;
   --vitacoral-shadow-soft: 0 1.2rem 3rem rgba(21, 44, 41, 0.08);
   --vitacoral-container-max: 128rem;
   --vitacoral-container-gutter: 1.6rem;
+  --vitacoral-section-space: 5.6rem;
+  --vitacoral-section-space-compact: 3.2rem;
+  --vitacoral-section-space-spacious: 7.2rem;
+  --vitacoral-duration-fast: 0.2s;
+  --vitacoral-duration-base: 0.45s;
+  --vitacoral-ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media screen and (min-width: 750px) {
   :root {
     --vitacoral-container-gutter: 2.4rem;
+    --vitacoral-section-space: 8rem;
+    --vitacoral-section-space-compact: 4.8rem;
+    --vitacoral-section-space-spacious: 11.2rem;
   }
 }
 
@@ -69,4 +80,157 @@
   border: 0.1rem solid var(--vitacoral-color-border);
   border-radius: var(--vitacoral-radius-lg);
   box-shadow: var(--vitacoral-shadow-soft);
+}
+
+.vitacoral-eyebrow {
+  margin: 0;
+  color: var(--vitacoral-color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.vitacoral-heading-xl {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.vitacoral-heading-lg {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.vitacoral-body {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-size: 1.6rem;
+  line-height: 1.65;
+}
+
+.vitacoral-body-muted {
+  margin: 0;
+  color: var(--vitacoral-color-text-muted);
+  font-size: 1.6rem;
+  line-height: 1.65;
+}
+
+.vitacoral-section {
+  padding-block: var(--vitacoral-section-space);
+}
+
+.vitacoral-section--compact {
+  padding-block: var(--vitacoral-section-space-compact);
+}
+
+.vitacoral-section--spacious {
+  padding-block: var(--vitacoral-section-space-spacious);
+}
+
+.vitacoral-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vitacoral-space-2xs);
+  min-height: 3.2rem;
+  padding: 0.7rem 1.2rem;
+  border: 0.1rem solid transparent;
+  border-radius: var(--vitacoral-radius-pill);
+  background: var(--vitacoral-color-primary);
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.vitacoral-chip--light {
+  background: var(--vitacoral-color-chip);
+  color: var(--vitacoral-color-primary);
+}
+
+.vitacoral-chip--outline {
+  background: transparent;
+  border-color: var(--vitacoral-color-border);
+  color: var(--vitacoral-color-primary);
+}
+
+.vitacoral-editorial-card {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  overflow: hidden;
+  padding: var(--vitacoral-space-md);
+  background: var(--vitacoral-color-surface);
+  border: 0.1rem solid var(--vitacoral-color-border);
+  border-radius: var(--vitacoral-radius-lg);
+  box-shadow: var(--vitacoral-shadow-soft);
+}
+
+.vitacoral-editorial-card__media {
+  overflow: hidden;
+  border-radius: calc(var(--vitacoral-radius-lg) - 0.4rem);
+  background: var(--vitacoral-color-surface-muted);
+}
+
+.vitacoral-editorial-card__content {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+}
+
+.vitacoral-reveal {
+  opacity: 0;
+  transform: translateY(1.6rem);
+  transition:
+    opacity var(--vitacoral-duration-base) var(--vitacoral-ease-soft),
+    transform var(--vitacoral-duration-base) var(--vitacoral-ease-soft);
+  will-change: opacity, transform;
+}
+
+.vitacoral-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vitacoral-lift {
+  transition:
+    transform var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .vitacoral-lift:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 1.8rem 3.6rem rgba(21, 44, 41, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vitacoral-reveal,
+  .vitacoral-lift {
+    transition: none;
+  }
+
+  .vitacoral-reveal {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  .vitacoral-lift:hover {
+    transform: none;
+    box-shadow: var(--vitacoral-shadow-soft);
+  }
 }
