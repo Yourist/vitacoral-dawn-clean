@@ -1,0 +1,247 @@
+{%- liquid
+  assign hero_image = section.settings.image
+  if section.settings.mobile_image != blank
+    assign hero_mobile_image = section.settings.mobile_image
+  else
+    assign hero_mobile_image = hero_image
+  endif
+
+  assign image_alt = section.settings.image_alt | strip
+  if image_alt == blank
+    if hero_mobile_image != blank and hero_mobile_image.alt != blank
+      assign image_alt = hero_mobile_image.alt
+    elsif hero_image != blank and hero_image.alt != blank
+      assign image_alt = hero_image.alt
+    else
+      assign image_alt = section.settings.heading | strip_html
+    endif
+  endif
+
+  assign desktop_sizes = '(min-width: 990px) 42vw, 100vw'
+  assign mobile_sizes = '100vw'
+-%}
+
+<section class="vitacoral-hero vitacoral-section" id="VitacoralHero-{{ section.id }}">
+  <div class="vitacoral-container">
+    <div class="vitacoral-hero__grid">
+      <div class="vitacoral-hero__content vitacoral-reveal is-visible">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vitacoral-heading-xl">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <div class="vitacoral-body vitacoral-hero__body rte">
+            {{ section.settings.body }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="vitacoral-hero__chips list-unstyled" aria-label="Trust highlights">
+            {%- for block in section.blocks -%}
+              <li class="vitacoral-chip vitacoral-chip--light vitacoral-hero__chip" {{ block.shopify_attributes }}>
+                {%- if block.settings.icon_text != blank -%}
+                  <span class="vitacoral-hero__chip-label">{{ block.settings.icon_text | escape }}</span>
+                {%- endif -%}
+                <span>{{ block.settings.text | escape }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank -%}
+          <div class="vitacoral-hero__actions vitacoral-reveal is-visible">
+            {%- if section.settings.primary_cta_label != blank -%}
+              <a
+                {% if section.settings.primary_cta_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.primary_cta_link }}"
+                {% endif %}
+                class="vitacoral-button"
+              >
+                {{ section.settings.primary_cta_label | escape }}
+              </a>
+            {%- endif -%}
+
+            {%- if section.settings.secondary_cta_label != blank -%}
+              <a
+                {% if section.settings.secondary_cta_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.secondary_cta_link }}"
+                {% endif %}
+                class="vitacoral-button vitacoral-button--secondary"
+              >
+                {{ section.settings.secondary_cta_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="vitacoral-hero__media-column vitacoral-reveal is-visible">
+        <div class="vitacoral-editorial-card vitacoral-hero__media-card vitacoral-lift">
+          <div class="vitacoral-editorial-card__media vitacoral-hero__media">
+            {%- if hero_image != blank or hero_mobile_image != blank -%}
+              <picture>
+                {%- if hero_mobile_image != blank -%}
+                  <source
+                    media="(max-width: 749px)"
+                    srcset="
+                      {{ hero_mobile_image | image_url: width: 550 }} 550w,
+                      {{ hero_mobile_image | image_url: width: 750 }} 750w,
+                      {{ hero_mobile_image | image_url: width: 1100 }} 1100w
+                    "
+                    sizes="{{ mobile_sizes }}"
+                  >
+                {%- endif -%}
+                {%- if hero_image != blank -%}
+                  {{
+                    hero_image
+                    | image_url: width: 1600
+                    | image_tag:
+                      widths: '550, 750, 1100, 1500, 1600',
+                      sizes: desktop_sizes,
+                      loading: 'lazy',
+                      alt: image_alt,
+                      class: 'vitacoral-hero__image'
+                  }}
+                {%- else -%}
+                  {{
+                    hero_mobile_image
+                    | image_url: width: 1100
+                    | image_tag:
+                      widths: '550, 750, 1100',
+                      sizes: mobile_sizes,
+                      loading: 'lazy',
+                      alt: image_alt,
+                      class: 'vitacoral-hero__image'
+                  }}
+                {%- endif -%}
+              </picture>
+            {%- else -%}
+              <div class="vitacoral-hero__placeholder">
+                <p class="vitacoral-eyebrow">Vitacoral</p>
+                <p class="vitacoral-body-muted">Add an editorial image to bring this story-led hero to life.</p>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="vitacoral-editorial-card__content vitacoral-hero__media-copy">
+            <span class="vitacoral-chip vitacoral-chip--outline">Mobile-first editorial</span>
+            <p class="vitacoral-body-muted">A calm, trustworthy hero layout designed for clear product discovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Mobile Editorial Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Vitacoral’i Keşfet"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Bugün daha iyi başla"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Günlük rutininize uygun Vitacoral ürünlerini keşfedin.</p>"
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_label",
+      "label": "Primary CTA label",
+      "default": "Ürünleri Keşfet"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_link",
+      "label": "Primary CTA link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_label",
+      "label": "Secondary CTA label",
+      "default": "Rutininizi Bulun"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Secondary CTA link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Optional mobile image override"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_chip",
+      "name": "Trust chip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Chip text",
+          "default": "Günlük kullanım"
+        },
+        {
+          "type": "text",
+          "id": "icon_text",
+          "label": "Optional small label or icon text",
+          "default": "01"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Vitacoral Mobile Editorial Hero",
+      "blocks": [
+        {
+          "type": "trust_chip"
+        },
+        {
+          "type": "trust_chip"
+        },
+        {
+          "type": "trust_chip"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

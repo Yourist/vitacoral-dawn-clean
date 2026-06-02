@@ -234,3 +234,122 @@
     box-shadow: var(--vitacoral-shadow-soft);
   }
 }
+
+.vitacoral-hero {
+  position: relative;
+}
+
+.vitacoral-hero__grid {
+  display: grid;
+  gap: var(--vitacoral-space-xl);
+  align-items: center;
+}
+
+.vitacoral-hero__content {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+}
+
+.vitacoral-hero__body {
+  max-width: 58rem;
+}
+
+.vitacoral-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vitacoral-space-xs);
+  margin-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-hero__chip {
+  justify-content: flex-start;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.vitacoral-hero__chip-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--vitacoral-radius-pill);
+  background: rgba(34, 89, 82, 0.12);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vitacoral-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vitacoral-space-sm);
+  margin-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-hero__media-column {
+  min-width: 0;
+}
+
+.vitacoral-hero__media-card {
+  gap: var(--vitacoral-space-lg);
+  padding: var(--vitacoral-space-sm);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 248, 247, 0.92));
+}
+
+.vitacoral-hero__media {
+  aspect-ratio: 4 / 5;
+}
+
+.vitacoral-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vitacoral-hero__media-copy {
+  gap: var(--vitacoral-space-xs);
+}
+
+.vitacoral-hero__placeholder {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  align-content: end;
+  min-height: 100%;
+  padding: var(--vitacoral-space-lg);
+  background:
+    linear-gradient(180deg, rgba(231, 241, 239, 0.88), rgba(255, 255, 255, 0.96));
+}
+
+.vitacoral-hero__placeholder .vitacoral-eyebrow,
+.vitacoral-hero__placeholder .vitacoral-body-muted {
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .vitacoral-hero__grid {
+    gap: 4rem;
+  }
+
+  .vitacoral-hero__media-card {
+    padding: var(--vitacoral-space-md);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-hero__grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .vitacoral-hero__content {
+    padding-right: var(--vitacoral-space-lg);
+  }
+
+  .vitacoral-hero__media-card {
+    padding: var(--vitacoral-space-lg);
+  }
+}
