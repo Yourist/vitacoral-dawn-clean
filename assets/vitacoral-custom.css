@@ -1,0 +1,72 @@
+:root {
+  --vitacoral-color-primary: #225952;
+  --vitacoral-color-primary-deep: #163d38;
+  --vitacoral-color-primary-soft: #e7f1ef;
+  --vitacoral-color-surface: #ffffff;
+  --vitacoral-color-surface-muted: #f5f8f7;
+  --vitacoral-color-border: rgba(34, 89, 82, 0.14);
+  --vitacoral-color-text: #16312e;
+  --vitacoral-color-text-muted: rgba(22, 49, 46, 0.72);
+  --vitacoral-space-2xs: 0.4rem;
+  --vitacoral-space-xs: 0.8rem;
+  --vitacoral-space-sm: 1.2rem;
+  --vitacoral-space-md: 1.6rem;
+  --vitacoral-space-lg: 2.4rem;
+  --vitacoral-space-xl: 3.2rem;
+  --vitacoral-space-2xl: 4.8rem;
+  --vitacoral-radius-sm: 0.8rem;
+  --vitacoral-radius-md: 1.2rem;
+  --vitacoral-radius-lg: 1.8rem;
+  --vitacoral-shadow-soft: 0 1.2rem 3rem rgba(21, 44, 41, 0.08);
+  --vitacoral-container-max: 128rem;
+  --vitacoral-container-gutter: 1.6rem;
+}
+
+@media screen and (min-width: 750px) {
+  :root {
+    --vitacoral-container-gutter: 2.4rem;
+  }
+}
+
+.vitacoral-container {
+  width: 100%;
+  max-width: var(--vitacoral-container-max);
+  margin-inline: auto;
+  padding-inline: var(--vitacoral-container-gutter);
+}
+
+.vitacoral-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vitacoral-space-xs);
+  min-height: 4.4rem;
+  padding: 1.2rem 2rem;
+  border: 0.1rem solid transparent;
+  border-radius: var(--vitacoral-radius-md);
+  background: var(--vitacoral-color-primary);
+  color: #ffffff;
+  font: inherit;
+  line-height: 1.1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.vitacoral-button--secondary {
+  background: transparent;
+  color: var(--vitacoral-color-primary);
+  border-color: var(--vitacoral-color-border);
+}
+
+.vitacoral-button--ghost {
+  background: var(--vitacoral-color-primary-soft);
+  color: var(--vitacoral-color-primary);
+}
+
+.vitacoral-card {
+  background: var(--vitacoral-color-surface);
+  border: 0.1rem solid var(--vitacoral-color-border);
+  border-radius: var(--vitacoral-radius-lg);
+  box-shadow: var(--vitacoral-shadow-soft);
+}
