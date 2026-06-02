@@ -1,0 +1,283 @@
+<section class="vitacoral-product-family vitacoral-section" id="VitacoralProductFamily-{{ section.id }}">
+  <div class="vitacoral-container">
+    <div class="vitacoral-product-family__header vitacoral-reveal is-visible">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="vitacoral-body vitacoral-product-family__body rte">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="vitacoral-product-family__carousel vitacoral-reveal is-visible">
+      <ul class="vitacoral-product-family__grid list-unstyled" role="list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign card_title = block.settings.title | strip
+            assign image_alt = card_title
+            if block.settings.product_image != blank and block.settings.product_image.alt != blank
+              assign image_alt = block.settings.product_image.alt
+            endif
+          -%}
+          <li
+            class="vitacoral-product-family__item vitacoral-product-family__item--{{ block.settings.accent_style }}"
+            {{ block.shopify_attributes }}
+          >
+            <article class="vitacoral-product-family__card vitacoral-card vitacoral-lift">
+              <div class="vitacoral-product-family__card-top">
+                {%- if block.settings.badge_text != blank -%}
+                  <span class="vitacoral-chip vitacoral-product-family__badge">
+                    {{ block.settings.badge_text | escape }}
+                  </span>
+                {%- endif -%}
+
+                <div class="vitacoral-product-family__media">
+                  {%- if block.settings.product_image != blank -%}
+                    {{
+                      block.settings.product_image
+                      | image_url: width: 900
+                      | image_tag:
+                        widths: '320, 450, 660, 900',
+                        sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 76vw',
+                        loading: 'lazy',
+                        alt: image_alt,
+                        class: 'vitacoral-product-family__image'
+                    }}
+                  {%- else -%}
+                    <div class="vitacoral-product-family__placeholder" aria-hidden="true">
+                      <span class="vitacoral-product-family__placeholder-mark"></span>
+                      <span class="vitacoral-body-muted">{{ block.settings.title | escape }}</span>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+
+              <div class="vitacoral-product-family__content">
+                {%- if block.settings.title != blank -%}
+                  <h3 class="vitacoral-product-family__title">{{ block.settings.title }}</h3>
+                {%- endif -%}
+
+                {%- if block.settings.short_description != blank -%}
+                  <p class="vitacoral-body vitacoral-product-family__description">
+                    {{ block.settings.short_description | escape }}
+                  </p>
+                {%- endif -%}
+
+                {%- if block.settings.optional_note != blank -%}
+                  <p class="vitacoral-body-muted vitacoral-product-family__note">
+                    {{ block.settings.optional_note | escape }}
+                  </p>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.cta_label != blank -%}
+                <div class="vitacoral-product-family__actions">
+                  <a
+                    {% if block.settings.cta_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.cta_link }}"
+                    {% endif %}
+                    class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}"
+                  >
+                    {{ block.settings.cta_label | escape }}
+                  </a>
+                </div>
+              {%- endif -%}
+            </article>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    {%- if section.settings.bottom_cta_label != blank -%}
+      <div class="vitacoral-product-family__footer vitacoral-reveal is-visible">
+        <a
+          {% if section.settings.bottom_cta_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.bottom_cta_link }}"
+          {% endif %}
+          class="vitacoral-button vitacoral-button--secondary"
+        >
+          {{ section.settings.bottom_cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Cards",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Ürün Aileleri"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rutininize uygun ürünü seçin"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Günlük ihtiyacınıza göre Vitacoral ürün ailelerini keşfedin.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bottom_cta_label",
+      "label": "Bottom CTA label",
+      "default": "Tüm ürünleri gör"
+    },
+    {
+      "type": "url",
+      "id": "bottom_cta_link",
+      "label": "Bottom CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_family",
+      "name": "Product family",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "short_description",
+          "label": "Short description"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA link"
+        },
+        {
+          "type": "select",
+          "id": "accent_style",
+          "label": "Accent style",
+          "default": "green",
+          "options": [
+            {
+              "value": "green",
+              "label": "green"
+            },
+            {
+              "value": "orange",
+              "label": "orange"
+            },
+            {
+              "value": "soft",
+              "label": "soft"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "optional_note",
+          "label": "Optional note text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vitacoral Cards",
+      "blocks": [
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Premium",
+            "title": "Collagen",
+            "short_description": "Günlük güzellik ve bakım rutininize eşlik eder.",
+            "cta_label": "Collagen’ı keşfet",
+            "cta_link": "/products/collagen",
+            "accent_style": "orange"
+          }
+        },
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "title": "Women Multivitamin",
+            "short_description": "Kadınların günlük rutinine uygun multivitamin desteği.",
+            "cta_label": "Women ürününü keşfet",
+            "cta_link": "/products/women-multivitamin",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "title": "Men Multivitamin",
+            "short_description": "Erkeklerin günlük rutinine uygun multivitamin desteği.",
+            "cta_label": "Men ürününü keşfet",
+            "cta_link": "/products/men-multivitamin",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Aile rutini",
+            "title": "Kids Multivitamin",
+            "short_description": "Çocukların günlük rutinine uygun destek.",
+            "cta_label": "Kids ürününü keşfet",
+            "cta_link": "/products/kids-multivitamin",
+            "accent_style": "soft"
+          }
+        },
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Kontrollü stok",
+            "title": "Glucomannan",
+            "short_description": "Dengeli beslenme rutininize eşlik eden destek.",
+            "cta_label": "Glucomannan’ı keşfet",
+            "cta_link": "/products/glucomannan",
+            "accent_style": "soft"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

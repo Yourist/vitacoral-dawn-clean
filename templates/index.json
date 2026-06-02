@@ -51,6 +51,90 @@
         "image_alt": ""
       }
     },
+    "vitacoral_product_family_cards": {
+      "type": "vitacoral-product-family-cards",
+      "blocks": {
+        "product_family_1": {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Premium",
+            "title": "Collagen",
+            "short_description": "Günlük güzellik ve bakım rutininize eşlik eder.",
+            "product_image": "",
+            "cta_label": "Collagen’ı keşfet",
+            "cta_link": "/products/collagen",
+            "accent_style": "orange",
+            "optional_note": ""
+          }
+        },
+        "product_family_2": {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "title": "Women Multivitamin",
+            "short_description": "Kadınların günlük rutinine uygun multivitamin desteği.",
+            "product_image": "",
+            "cta_label": "Women ürününü keşfet",
+            "cta_link": "/products/women-multivitamin",
+            "accent_style": "green",
+            "optional_note": ""
+          }
+        },
+        "product_family_3": {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "title": "Men Multivitamin",
+            "short_description": "Erkeklerin günlük rutinine uygun multivitamin desteği.",
+            "product_image": "",
+            "cta_label": "Men ürününü keşfet",
+            "cta_link": "/products/men-multivitamin",
+            "accent_style": "green",
+            "optional_note": ""
+          }
+        },
+        "product_family_4": {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Aile rutini",
+            "title": "Kids Multivitamin",
+            "short_description": "Çocukların günlük rutinine uygun destek.",
+            "product_image": "",
+            "cta_label": "Kids ürününü keşfet",
+            "cta_link": "/products/kids-multivitamin",
+            "accent_style": "soft",
+            "optional_note": ""
+          }
+        },
+        "product_family_5": {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Kontrollü stok",
+            "title": "Glucomannan",
+            "short_description": "Dengeli beslenme rutininize eşlik eden destek.",
+            "product_image": "",
+            "cta_label": "Glucomannan’ı keşfet",
+            "cta_link": "/products/glucomannan",
+            "accent_style": "soft",
+            "optional_note": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_family_1",
+        "product_family_2",
+        "product_family_3",
+        "product_family_4",
+        "product_family_5"
+      ],
+      "settings": {
+        "eyebrow": "Ürün Aileleri",
+        "heading": "Rutininize uygun ürünü seçin",
+        "body": "<p>Günlük ihtiyacınıza göre Vitacoral ürün ailelerini keşfedin.</p>",
+        "bottom_cta_label": "Tüm ürünleri gör",
+        "bottom_cta_link": "/collections/all"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -121,6 +205,7 @@
   },
   "order": [
     "vitacoral_mobile_editorial_hero",
+    "vitacoral_product_family_cards",
     "image_banner",
     "featured_collection"
   ]

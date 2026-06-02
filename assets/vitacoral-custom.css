@@ -372,3 +372,209 @@
     padding: var(--vitacoral-space-lg);
   }
 }
+
+.vitacoral-product-family {
+  position: relative;
+}
+
+.vitacoral-product-family__header {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  max-width: 64rem;
+  margin-bottom: var(--vitacoral-space-xl);
+}
+
+.vitacoral-product-family__body {
+  max-width: 56rem;
+}
+
+.vitacoral-product-family__carousel {
+  margin-inline: calc(var(--vitacoral-container-gutter) * -1);
+  padding-inline: var(--vitacoral-container-gutter);
+}
+
+.vitacoral-product-family__grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(26.4rem, 84%);
+  gap: var(--vitacoral-space-md);
+  overflow-x: auto;
+  padding-bottom: var(--vitacoral-space-xs);
+  scroll-padding-inline: var(--vitacoral-container-gutter);
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vitacoral-product-family__grid::-webkit-scrollbar {
+  height: 0.6rem;
+}
+
+.vitacoral-product-family__grid::-webkit-scrollbar-thumb {
+  background: rgba(34, 89, 82, 0.18);
+  border-radius: var(--vitacoral-radius-pill);
+}
+
+.vitacoral-product-family__item {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.vitacoral-product-family__card {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  height: 100%;
+  padding: var(--vitacoral-space-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(245, 248, 247, 0.94));
+}
+
+.vitacoral-product-family__item--orange .vitacoral-product-family__card {
+  border-color: rgba(236, 101, 66, 0.18);
+  box-shadow: 0 1.6rem 3.4rem rgba(236, 101, 66, 0.08);
+}
+
+.vitacoral-product-family__item--green .vitacoral-product-family__card {
+  border-color: rgba(34, 89, 82, 0.16);
+}
+
+.vitacoral-product-family__item--soft .vitacoral-product-family__card {
+  background:
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-product-family__card-top {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+}
+
+.vitacoral-product-family__badge {
+  justify-self: start;
+  min-height: 3rem;
+  padding-inline: 1rem;
+  font-size: 1.1rem;
+}
+
+.vitacoral-product-family__item--orange .vitacoral-product-family__badge {
+  background: var(--vitacoral-color-accent-orange);
+}
+
+.vitacoral-product-family__item--soft .vitacoral-product-family__badge {
+  background: var(--vitacoral-color-chip);
+  color: var(--vitacoral-color-primary);
+}
+
+.vitacoral-product-family__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: calc(var(--vitacoral-radius-lg) - 0.4rem);
+  background:
+    radial-gradient(circle at top left, rgba(236, 101, 66, 0.08), transparent 52%),
+    linear-gradient(180deg, rgba(231, 241, 239, 0.82), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-product-family__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vitacoral-product-family__placeholder {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  align-content: end;
+  min-height: 100%;
+  padding: var(--vitacoral-space-lg);
+}
+
+.vitacoral-product-family__placeholder-mark {
+  display: inline-block;
+  width: 4.8rem;
+  height: 0.6rem;
+  border-radius: var(--vitacoral-radius-pill);
+  background: var(--vitacoral-color-accent-orange);
+  opacity: 0.8;
+}
+
+.vitacoral-product-family__content {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+}
+
+.vitacoral-product-family__title {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.vitacoral-product-family__description,
+.vitacoral-product-family__note {
+  margin: 0;
+}
+
+.vitacoral-product-family__note {
+  color: var(--vitacoral-color-text-muted);
+}
+
+.vitacoral-product-family__actions {
+  margin-top: auto;
+  padding-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-product-family__actions .vitacoral-button {
+  width: 100%;
+}
+
+.vitacoral-product-family__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--vitacoral-space-xl);
+}
+
+@media screen and (min-width: 750px) {
+  .vitacoral-product-family__header {
+    margin-bottom: 4rem;
+  }
+
+  .vitacoral-product-family__grid {
+    grid-auto-columns: minmax(28rem, 42%);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-product-family__carousel {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .vitacoral-product-family__grid {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .vitacoral-product-family__item--orange {
+    grid-column: span 2;
+  }
+
+  .vitacoral-product-family__item--orange .vitacoral-product-family__card {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+  }
+
+  .vitacoral-product-family__item--orange .vitacoral-product-family__card-top {
+    gap: var(--vitacoral-space-lg);
+  }
+
+  .vitacoral-product-family__item--orange .vitacoral-product-family__content,
+  .vitacoral-product-family__item--orange .vitacoral-product-family__actions {
+    align-self: center;
+  }
+}
