@@ -20,10 +20,36 @@
       <ul class="vitacoral-product-family__grid list-unstyled" role="list">
         {%- for block in section.blocks -%}
           {%- liquid
+            assign selected_product = block.settings.product
             assign card_title = block.settings.title | strip
+            if card_title == blank and selected_product != blank
+              assign card_title = selected_product.title
+            endif
+            if card_title == blank
+              assign card_title = 'Vitacoral ürün ailesi'
+            endif
+
+            assign card_image = block.settings.product_image
+            if card_image == blank and selected_product != blank and selected_product.featured_image != blank
+              assign card_image = selected_product.featured_image
+            endif
+
             assign image_alt = card_title
-            if block.settings.product_image != blank and block.settings.product_image.alt != blank
-              assign image_alt = block.settings.product_image.alt
+            if card_image != blank and card_image.alt != blank
+              assign image_alt = card_image.alt
+            endif
+
+            assign card_cta_link = block.settings.cta_link
+            if card_cta_link == blank and selected_product != blank
+              assign card_cta_link = selected_product.url
+            endif
+            if card_cta_link == blank
+              assign card_cta_link = '#'
+            endif
+
+            assign card_cta_label = block.settings.cta_label | strip
+            if card_cta_label == blank
+              assign card_cta_label = 'Ürünü keşfet'
             endif
           -%}
           <li
@@ -39,9 +65,9 @@
                 {%- endif -%}
 
                 <div class="vitacoral-product-family__media">
-                  {%- if block.settings.product_image != blank -%}
+                  {%- if card_image != blank -%}
                     {{
-                      block.settings.product_image
+                      card_image
                       | image_url: width: 900
                       | image_tag:
                         widths: '320, 450, 660, 900',
@@ -53,16 +79,14 @@
                   {%- else -%}
                     <div class="vitacoral-product-family__placeholder" aria-hidden="true">
                       <span class="vitacoral-product-family__placeholder-mark"></span>
-                      <span class="vitacoral-body-muted">{{ block.settings.title | escape }}</span>
+                      <span class="vitacoral-body-muted">{{ card_title | escape }}</span>
                     </div>
                   {%- endif -%}
                 </div>
               </div>
 
               <div class="vitacoral-product-family__content">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="vitacoral-product-family__title">{{ block.settings.title }}</h3>
-                {%- endif -%}
+                <h3 class="vitacoral-product-family__title">{{ card_title }}</h3>
 
                 {%- if block.settings.short_description != blank -%}
                   <p class="vitacoral-body vitacoral-product-family__description">
@@ -77,20 +101,14 @@
                 {%- endif -%}
               </div>
 
-              {%- if block.settings.cta_label != blank -%}
-                <div class="vitacoral-product-family__actions">
-                  <a
-                    {% if block.settings.cta_link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.cta_link }}"
-                    {% endif %}
-                    class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}"
-                  >
-                    {{ block.settings.cta_label | escape }}
-                  </a>
-                </div>
-              {%- endif -%}
+              <div class="vitacoral-product-family__actions">
+                <a
+                  href="{{ card_cta_link }}"
+                  class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}"
+                >
+                  {{ card_cta_label | escape }}
+                </a>
+              </div>
             </article>
           </li>
         {%- endfor -%}
@@ -158,6 +176,11 @@
       "type": "product_family",
       "name": "Product family",
       "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
         {
           "type": "text",
           "id": "badge_text",
