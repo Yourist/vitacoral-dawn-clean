@@ -142,10 +142,65 @@
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
+    },
+    "vitacoral_trust_section": {
+      "type": "vitacoral-trust-section",
+      "blocks": {
+        "trust_item_1": {
+          "type": "trust_item",
+          "settings": {
+            "title": "5 yıllık marka deneyimi",
+            "text": "Vitacoral, yıllardır farklı ihtiyaçlara yönelik ürün aileleriyle kullanıcılarının günlük rutinlerine eşlik eder.",
+            "short_label": "01",
+            "accent_style": "green"
+          }
+        },
+        "trust_item_2": {
+          "type": "trust_item",
+          "settings": {
+            "title": "Açık ve anlaşılır içerik",
+            "text": "Ürün bilgilerini sade, okunabilir ve karşılaştırılabilir şekilde sunmaya önem veririz.",
+            "short_label": "02",
+            "accent_style": "orange"
+          }
+        },
+        "trust_item_3": {
+          "type": "trust_item",
+          "settings": {
+            "title": "Günlük rutin odaklı seçim",
+            "text": "Ürün aileleri; kadın, erkek, çocuk ve farklı rutin ihtiyaçlarına göre kolayca keşfedilebilir.",
+            "short_label": "03",
+            "accent_style": "soft"
+          }
+        },
+        "trust_item_4": {
+          "type": "trust_item",
+          "settings": {
+            "title": "Güvenli alışveriş deneyimi",
+            "text": "Kullanıcıların ürünü, içeriği ve alışveriş adımlarını rahatça anlayabildiği bir deneyim hedefleriz.",
+            "short_label": "04",
+            "accent_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "trust_item_1",
+        "trust_item_2",
+        "trust_item_3",
+        "trust_item_4"
+      ],
+      "settings": {
+        "eyebrow": "Neden Vitacoral?",
+        "heading": "Rutininize güvenle eşlik eden ürün aileleri",
+        "body": "<p>Vitacoral, günlük yaşam rutininize uygun ürünleri sade, anlaşılır ve güven veren bir deneyimle sunar.</p>",
+        "cta_label": "Bizi daha yakından tanıyın",
+        "cta_link": "/pages/biz-kimiz"
+      }
     }
   },
   "order": [
     "vitacoral_mobile_editorial_hero",
-    "vitacoral_product_family_cards"
+    "vitacoral_product_family_cards",
+    "vitacoral_trust_section"
   ]
 }

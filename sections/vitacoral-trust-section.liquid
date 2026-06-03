@@ -1,0 +1,196 @@
+<section class="vitacoral-trust vitacoral-section" id="VitacoralTrust-{{ section.id }}">
+  <div class="vitacoral-container">
+    <div class="vitacoral-trust__layout">
+      <div class="vitacoral-trust__intro vitacoral-reveal is-visible">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <div class="vitacoral-body vitacoral-trust__body rte">
+            {{ section.settings.body }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank -%}
+          <div class="vitacoral-trust__actions">
+            <a
+              {% if section.settings.cta_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.cta_link }}"
+              {% endif %}
+              class="vitacoral-button vitacoral-button--secondary"
+            >
+              {{ section.settings.cta_label | escape }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="vitacoral-trust__cards vitacoral-reveal is-visible">
+        {%- if section.blocks.size > 0 -%}
+          <ul class="vitacoral-trust__grid list-unstyled" role="list">
+            {%- for block in section.blocks -%}
+              <li
+                class="vitacoral-trust__item vitacoral-trust__item--{{ block.settings.accent_style }}"
+                {{ block.shopify_attributes }}
+              >
+                <article class="vitacoral-trust__card vitacoral-card">
+                  {%- if block.settings.short_label != blank -%}
+                    <span class="vitacoral-trust__label">{{ block.settings.short_label | escape }}</span>
+                  {%- endif -%}
+
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="vitacoral-trust__title">{{ block.settings.title }}</h3>
+                  {%- endif -%}
+
+                  {%- if block.settings.text != blank -%}
+                    <p class="vitacoral-body vitacoral-trust__text">{{ block.settings.text | escape }}</p>
+                  {%- endif -%}
+                </article>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- else -%}
+          <div class="vitacoral-trust__empty vitacoral-card">
+            <p class="vitacoral-body-muted">Trust items can be added from the Theme Editor.</p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Trust",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Neden Vitacoral?"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rutininize güvenle eşlik eden ürün aileleri"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Vitacoral, günlük yaşam rutininize uygun ürünleri sade, anlaşılır ve güven veren bir deneyimle sunar.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Optional CTA label",
+      "default": "Bizi daha yakından tanıyın"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Optional CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "short_label",
+          "label": "Optional number or short label"
+        },
+        {
+          "type": "select",
+          "id": "accent_style",
+          "label": "Accent style",
+          "default": "green",
+          "options": [
+            {
+              "value": "green",
+              "label": "green"
+            },
+            {
+              "value": "orange",
+              "label": "orange"
+            },
+            {
+              "value": "soft",
+              "label": "soft"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vitacoral Trust",
+      "blocks": [
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "5 yıllık marka deneyimi",
+            "text": "Vitacoral, yıllardır farklı ihtiyaçlara yönelik ürün aileleriyle kullanıcılarının günlük rutinlerine eşlik eder.",
+            "short_label": "01",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "Açık ve anlaşılır içerik",
+            "text": "Ürün bilgilerini sade, okunabilir ve karşılaştırılabilir şekilde sunmaya önem veririz.",
+            "short_label": "02",
+            "accent_style": "orange"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "Günlük rutin odaklı seçim",
+            "text": "Ürün aileleri; kadın, erkek, çocuk ve farklı rutin ihtiyaçlarına göre kolayca keşfedilebilir.",
+            "short_label": "03",
+            "accent_style": "soft"
+          }
+        },
+        {
+          "type": "trust_item",
+          "settings": {
+            "title": "Güvenli alışveriş deneyimi",
+            "text": "Kullanıcıların ürünü, içeriği ve alışveriş adımlarını rahatça anlayabildiği bir deneyim hedefleriz.",
+            "short_label": "04",
+            "accent_style": "green"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

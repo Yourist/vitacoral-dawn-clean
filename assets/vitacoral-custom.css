@@ -578,3 +578,117 @@
     align-self: center;
   }
 }
+
+.vitacoral-trust {
+  position: relative;
+}
+
+.vitacoral-trust__layout {
+  display: grid;
+  gap: var(--vitacoral-space-xl);
+}
+
+.vitacoral-trust__intro {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  max-width: 62rem;
+}
+
+.vitacoral-trust__body {
+  max-width: 58rem;
+}
+
+.vitacoral-trust__actions {
+  margin-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-trust__cards {
+  min-width: 0;
+}
+
+.vitacoral-trust__grid {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+}
+
+.vitacoral-trust__card {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  height: 100%;
+  padding: var(--vitacoral-space-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(245, 248, 247, 0.95));
+}
+
+.vitacoral-trust__item--orange .vitacoral-trust__card {
+  border-color: rgba(236, 101, 66, 0.16);
+}
+
+.vitacoral-trust__item--soft .vitacoral-trust__card {
+  background:
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-trust__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 3.4rem;
+  min-height: 3.4rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--vitacoral-radius-pill);
+  background: rgba(34, 89, 82, 0.08);
+  color: var(--vitacoral-color-primary);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vitacoral-trust__item--orange .vitacoral-trust__label {
+  background: rgba(236, 101, 66, 0.12);
+  color: var(--vitacoral-color-accent-orange);
+}
+
+.vitacoral-trust__item--soft .vitacoral-trust__label {
+  background: rgba(22, 49, 46, 0.08);
+}
+
+.vitacoral-trust__title {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.vitacoral-trust__text {
+  margin: 0;
+}
+
+.vitacoral-trust__empty {
+  padding: var(--vitacoral-space-lg);
+}
+
+@media screen and (min-width: 750px) {
+  .vitacoral-trust__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-trust__layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: 4rem;
+  }
+
+  .vitacoral-trust__intro {
+    position: sticky;
+    top: 2rem;
+  }
+}
