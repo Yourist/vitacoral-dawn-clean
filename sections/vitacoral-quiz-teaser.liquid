@@ -35,6 +35,7 @@
       </div>
 
       <div class="vitacoral-quiz__visual vitacoral-reveal is-visible">
+        {%- assign quiz_image_alt = section.settings.heading | default: section.settings.eyebrow | strip_html | escape -%}
         <div class="vitacoral-quiz__media">
           {%- if section.settings.image != blank -%}
             {{
@@ -44,7 +45,7 @@
                 widths: '375, 550, 750, 900, 1200',
                 sizes: '(min-width: 990px) 38vw, (min-width: 750px) 44vw, 100vw',
                 loading: 'lazy',
-                alt: section.settings.heading | default: section.settings.eyebrow | escape,
+                alt: quiz_image_alt,
                 class: 'vitacoral-quiz__image'
             }}
           {%- else -%}
