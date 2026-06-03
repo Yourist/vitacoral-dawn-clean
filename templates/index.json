@@ -65,12 +65,15 @@
         "product_family_1": {
           "type": "product_family",
           "settings": {
-            "product": "collagen-30-sase",
-            "badge_text": "Premium",
-            "title": "Collagen",
-            "short_description": "Günlük güzellik ve bakım rutininize eşlik eder.",
-            "cta_label": "Collagen’ı keşfet",
-            "cta_link": "/products/collagen",
+            "badge_text": "Kadın rutini",
+            "title": "Kadın Rutin Paketi",
+            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
+            "primary_product": "multivitamin-for-women",
+            "secondary_product": "collagen-30-sase",
+            "third_product": "",
+            "included_products_text": "Women Multivitamin + Collagen",
+            "cta_label": "Rutini keşfet",
+            "cta_link": "",
             "accent_style": "orange",
             "optional_note": ""
           }
@@ -78,12 +81,15 @@
         "product_family_2": {
           "type": "product_family",
           "settings": {
-            "product": "multivitamin-for-women",
-            "badge_text": "Günlük rutin",
-            "title": "Women Multivitamin",
-            "short_description": "Kadınların günlük rutinine uygun multivitamin desteği.",
-            "cta_label": "Women ürününü keşfet",
-            "cta_link": "/products/women-multivitamin",
+            "badge_text": "Erkek rutini",
+            "title": "Erkek Rutin Paketi",
+            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
+            "primary_product": "multivitamin-for-men",
+            "secondary_product": "collagen-30-sase",
+            "third_product": "",
+            "included_products_text": "Men Multivitamin + Collagen",
+            "cta_label": "Rutini keşfet",
+            "cta_link": "",
             "accent_style": "green",
             "optional_note": ""
           }
@@ -91,25 +97,31 @@
         "product_family_3": {
           "type": "product_family",
           "settings": {
-            "product": "multivitamin-for-men",
-            "badge_text": "Günlük rutin",
-            "title": "Men Multivitamin",
-            "short_description": "Erkeklerin günlük rutinine uygun multivitamin desteği.",
-            "cta_label": "Men ürününü keşfet",
-            "cta_link": "/products/men-multivitamin",
-            "accent_style": "green",
+            "badge_text": "Aile rutini",
+            "title": "Aile Günlük Rutini",
+            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
+            "primary_product": "multivitamin-for-women",
+            "secondary_product": "multivitamin-for-men",
+            "third_product": "multivitamin-for-kids",
+            "included_products_text": "Men + Women + Kids",
+            "cta_label": "Rutini keşfet",
+            "cta_link": "",
+            "accent_style": "soft",
             "optional_note": ""
           }
         },
         "product_family_4": {
           "type": "product_family",
           "settings": {
-            "product": "multivitamin-for-kids",
-            "badge_text": "Aile rutini",
-            "title": "Kids Multivitamin",
-            "short_description": "Çocukların günlük rutinine uygun destek.",
-            "cta_label": "Kids ürününü keşfet",
-            "cta_link": "/products/kids-multivitamin",
+            "badge_text": "Hafif rutin",
+            "title": "Hafif Rutin Paketi",
+            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
+            "primary_product": "vitacoral-glucomannan-60-sase",
+            "secondary_product": "multivitamin-for-women",
+            "third_product": "",
+            "included_products_text": "Glucomannan + Women/Men Multivitamin",
+            "cta_label": "Rutini keşfet",
+            "cta_link": "",
             "accent_style": "soft",
             "optional_note": ""
           }
@@ -117,13 +129,16 @@
         "product_family_5": {
           "type": "product_family",
           "settings": {
-            "product": "vitacoral-glucomannan-60-sase",
-            "badge_text": "Kontrollü stok",
-            "title": "Glucomannan",
-            "short_description": "Dengeli beslenme rutininize eşlik eden destek.",
-            "cta_label": "Glucomannan’ı keşfet",
-            "cta_link": "/products/glucomannan",
-            "accent_style": "soft",
+            "badge_text": "Çocuk rutini",
+            "title": "Çocuk & Aile Rutini",
+            "short_description": "Çocukların günlük rutinine odaklanan aile dostu ürün seçimi.",
+            "primary_product": "multivitamin-for-kids",
+            "secondary_product": "multivitamin-for-women",
+            "third_product": "multivitamin-for-men",
+            "included_products_text": "Kids Multivitamin + aile ürünleri",
+            "cta_label": "Rutini keşfet",
+            "cta_link": "",
+            "accent_style": "green",
             "optional_note": ""
           }
         }
@@ -136,9 +151,9 @@
         "product_family_5"
       ],
       "settings": {
-        "eyebrow": "Ürün Aileleri",
-        "heading": "Rutininize uygun ürünü seçin",
-        "body": "<p>Günlük ihtiyacınıza göre Vitacoral ürün ailelerini keşfedin.</p>",
+        "eyebrow": "Rutinini Seç",
+        "heading": "Size en yakın Vitacoral rutinini bulun",
+        "body": "<p>Günlük ihtiyacınıza göre oluşturulan ürün kombinasyonlarını keşfedin.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }

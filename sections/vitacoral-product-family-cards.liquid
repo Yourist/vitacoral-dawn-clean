@@ -20,18 +20,20 @@
       <ul class="vitacoral-product-family__grid list-unstyled" role="list">
         {%- for block in section.blocks -%}
           {%- liquid
-            assign selected_product = block.settings.product
+            assign primary_product = block.settings.primary_product
+            assign secondary_product = block.settings.secondary_product
+            assign third_product = block.settings.third_product
             assign card_title = block.settings.title | strip
-            if card_title == blank and selected_product != blank
-              assign card_title = selected_product.title
+            if card_title == blank and primary_product != blank
+              assign card_title = primary_product.title
             endif
             if card_title == blank
-              assign card_title = 'Vitacoral ürün ailesi'
+              assign card_title = 'Vitacoral rutin paketi'
             endif
 
             assign card_image = block.settings.product_image
-            if card_image == blank and selected_product != blank and selected_product.featured_image != blank
-              assign card_image = selected_product.featured_image
+            if card_image == blank and primary_product != blank and primary_product.featured_image != blank
+              assign card_image = primary_product.featured_image
             endif
 
             assign image_alt = card_title
@@ -40,8 +42,8 @@
             endif
 
             assign card_cta_link = block.settings.cta_link
-            if card_cta_link == blank and selected_product != blank
-              assign card_cta_link = selected_product.url
+            if card_cta_link == blank and primary_product != blank
+              assign card_cta_link = primary_product.url
             endif
             if card_cta_link == blank
               assign card_cta_link = '#'
@@ -49,7 +51,7 @@
 
             assign card_cta_label = block.settings.cta_label | strip
             if card_cta_label == blank
-              assign card_cta_label = 'Ürünü keşfet'
+              assign card_cta_label = 'Rutini keşfet'
             endif
           -%}
           <li
@@ -94,6 +96,35 @@
                   </p>
                 {%- endif -%}
 
+                {%- if block.settings.included_products_text != blank -%}
+                  <div class="vitacoral-product-family__includes">
+                    <span class="vitacoral-product-family__includes-label">İçerik</span>
+                    <p class="vitacoral-body-muted vitacoral-product-family__includes-text">
+                      {{ block.settings.included_products_text | escape }}
+                    </p>
+                  </div>
+                {%- endif -%}
+
+                {%- if primary_product != blank or secondary_product != blank or third_product != blank -%}
+                  <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="Routine products">
+                    {%- if primary_product != blank -%}
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
+                        {{ primary_product.title | escape }}
+                      </li>
+                    {%- endif -%}
+                    {%- if secondary_product != blank -%}
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
+                        {{ secondary_product.title | escape }}
+                      </li>
+                    {%- endif -%}
+                    {%- if third_product != blank -%}
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
+                        {{ third_product.title | escape }}
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                {%- endif -%}
+
                 {%- if block.settings.optional_note != blank -%}
                   <p class="vitacoral-body-muted vitacoral-product-family__note">
                     {{ block.settings.optional_note | escape }}
@@ -134,7 +165,7 @@
 
 {% schema %}
 {
-  "name": "Vitacoral Cards",
+  "name": "Routine Cards",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -178,8 +209,18 @@
       "settings": [
         {
           "type": "product",
-          "id": "product",
-          "label": "Product"
+          "id": "primary_product",
+          "label": "Primary product"
+        },
+        {
+          "type": "product",
+          "id": "secondary_product",
+          "label": "Secondary product"
+        },
+        {
+          "type": "product",
+          "id": "third_product",
+          "label": "Third product"
         },
         {
           "type": "text",
@@ -200,6 +241,11 @@
           "type": "image_picker",
           "id": "product_image",
           "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "included_products_text",
+          "label": "Included products text"
         },
         {
           "type": "text",
@@ -247,33 +293,22 @@
         {
           "type": "product_family",
           "settings": {
-            "badge_text": "Premium",
-            "title": "Collagen",
-            "short_description": "Günlük güzellik ve bakım rutininize eşlik eder.",
-            "cta_label": "Collagen’ı keşfet",
-            "cta_link": "/products/collagen",
+            "badge_text": "Kadın rutini",
+            "title": "Kadın Rutin Paketi",
+            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
+            "included_products_text": "Women Multivitamin + Collagen",
+            "cta_label": "Rutini keşfet",
             "accent_style": "orange"
           }
         },
         {
           "type": "product_family",
           "settings": {
-            "badge_text": "Günlük rutin",
-            "title": "Women Multivitamin",
-            "short_description": "Kadınların günlük rutinine uygun multivitamin desteği.",
-            "cta_label": "Women ürününü keşfet",
-            "cta_link": "/products/women-multivitamin",
-            "accent_style": "green"
-          }
-        },
-        {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Günlük rutin",
-            "title": "Men Multivitamin",
-            "short_description": "Erkeklerin günlük rutinine uygun multivitamin desteği.",
-            "cta_label": "Men ürününü keşfet",
-            "cta_link": "/products/men-multivitamin",
+            "badge_text": "Erkek rutini",
+            "title": "Erkek Rutin Paketi",
+            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
+            "included_products_text": "Men Multivitamin + Collagen",
+            "cta_label": "Rutini keşfet",
             "accent_style": "green"
           }
         },
@@ -281,22 +316,33 @@
           "type": "product_family",
           "settings": {
             "badge_text": "Aile rutini",
-            "title": "Kids Multivitamin",
-            "short_description": "Çocukların günlük rutinine uygun destek.",
-            "cta_label": "Kids ürününü keşfet",
-            "cta_link": "/products/kids-multivitamin",
+            "title": "Aile Günlük Rutini",
+            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
+            "included_products_text": "Men + Women + Kids",
+            "cta_label": "Rutini keşfet",
             "accent_style": "soft"
           }
         },
         {
           "type": "product_family",
           "settings": {
-            "badge_text": "Kontrollü stok",
-            "title": "Glucomannan",
-            "short_description": "Dengeli beslenme rutininize eşlik eden destek.",
-            "cta_label": "Glucomannan’ı keşfet",
-            "cta_link": "/products/glucomannan",
+            "badge_text": "Hafif rutin",
+            "title": "Hafif Rutin Paketi",
+            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
+            "included_products_text": "Glucomannan + Women/Men Multivitamin",
+            "cta_label": "Rutini keşfet",
             "accent_style": "soft"
+          }
+        },
+        {
+          "type": "product_family",
+          "settings": {
+            "badge_text": "Çocuk rutini",
+            "title": "Çocuk & Aile Rutini",
+            "short_description": "Çocukların günlük rutinine odaklanan aile dostu ürün seçimi.",
+            "included_products_text": "Kids Multivitamin + aile ürünleri",
+            "cta_label": "Rutini keşfet",
+            "accent_style": "green"
           }
         }
       ]
