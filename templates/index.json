@@ -125,30 +125,13 @@
             "accent_style": "soft",
             "optional_note": ""
           }
-        },
-        "product_family_5": {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Çocuk rutini",
-            "title": "Çocuk & Aile Rutini",
-            "short_description": "Çocukların günlük rutinine odaklanan aile dostu ürün seçimi.",
-            "primary_product": "multivitamin-for-kids",
-            "secondary_product": "multivitamin-for-women",
-            "third_product": "multivitamin-for-men",
-            "included_products_text": "Kids Multivitamin + aile ürünleri",
-            "cta_label": "Rutini keşfet",
-            "cta_link": "",
-            "accent_style": "green",
-            "optional_note": ""
-          }
         }
       },
       "block_order": [
         "product_family_1",
         "product_family_2",
         "product_family_3",
-        "product_family_4",
-        "product_family_5"
+        "product_family_4"
       ],
       "settings": {
         "eyebrow": "Rutinini Seç",
