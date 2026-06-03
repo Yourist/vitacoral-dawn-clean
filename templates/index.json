@@ -205,8 +205,6 @@
   },
   "order": [
     "vitacoral_mobile_editorial_hero",
-    "vitacoral_product_family_cards",
-    "image_banner",
-    "featured_collection"
+    "vitacoral_product_family_cards"
   ]
 }
