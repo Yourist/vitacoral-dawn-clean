@@ -1,0 +1,280 @@
+<section class="vitacoral-featured-products vitacoral-section" id="VitacoralFeaturedProducts-{{ section.id }}">
+  <div class="vitacoral-container">
+    <div class="vitacoral-featured-products__header vitacoral-reveal is-visible">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="vitacoral-body vitacoral-featured-products__body rte">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="vitacoral-featured-products__carousel vitacoral-reveal is-visible">
+      {%- if section.blocks.size > 0 -%}
+        <ul class="vitacoral-featured-products__grid list-unstyled" role="list">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign selected_product = block.settings.product
+              assign card_title = block.settings.custom_title_override | strip
+              if card_title == blank and selected_product != blank
+                assign card_title = selected_product.title
+              endif
+              if card_title == blank
+                assign card_title = 'Vitacoral ürünü'
+              endif
+
+              assign card_image = block.settings.custom_image_override
+              if card_image == blank and selected_product != blank and selected_product.featured_image != blank
+                assign card_image = selected_product.featured_image
+              endif
+
+              assign card_alt = card_title
+              if card_image != blank and card_image.alt != blank
+                assign card_alt = card_image.alt
+              endif
+
+              assign card_cta_label = block.settings.cta_label | strip
+              if card_cta_label == blank
+                assign card_cta_label = 'Ürünü keşfet'
+              endif
+            -%}
+            <li
+              class="vitacoral-featured-products__item vitacoral-featured-products__item--{{ block.settings.accent_style }}"
+              {{ block.shopify_attributes }}
+            >
+              <article class="vitacoral-featured-products__card vitacoral-card vitacoral-lift">
+                <div class="vitacoral-featured-products__media-wrap">
+                  {%- if block.settings.badge_text != blank -%}
+                    <span class="vitacoral-chip vitacoral-featured-products__badge">
+                      {{ block.settings.badge_text | escape }}
+                    </span>
+                  {%- endif -%}
+
+                  <div class="vitacoral-featured-products__media">
+                    {%- if card_image != blank -%}
+                      {{
+                        card_image
+                        | image_url: width: 900
+                        | image_tag:
+                          widths: '320, 450, 660, 900',
+                          sizes: '(min-width: 990px) 22vw, (min-width: 750px) 34vw, 78vw',
+                          loading: 'lazy',
+                          alt: card_alt,
+                          class: 'vitacoral-featured-products__image'
+                      }}
+                    {%- else -%}
+                      <div class="vitacoral-featured-products__placeholder" aria-hidden="true">
+                        <span class="vitacoral-featured-products__placeholder-mark"></span>
+                        <span class="vitacoral-body-muted">{{ card_title | escape }}</span>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+
+                <div class="vitacoral-featured-products__content">
+                  <h3 class="vitacoral-featured-products__title">{{ card_title }}</h3>
+
+                  {%- if selected_product != blank -%}
+                    <div class="vitacoral-featured-products__price">
+                      {% render 'price', product: selected_product, price_class: 'vitacoral-featured-products__price-block' %}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.custom_description != blank -%}
+                    <p class="vitacoral-body vitacoral-featured-products__description">
+                      {{ block.settings.custom_description | escape }}
+                    </p>
+                  {%- endif -%}
+                </div>
+
+                <div class="vitacoral-featured-products__actions">
+                  <a
+                    {% if selected_product != blank %}
+                      href="{{ selected_product.url }}"
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                    class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}"
+                  >
+                    {{ card_cta_label | escape }}
+                  </a>
+                </div>
+              </article>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <div class="vitacoral-featured-products__empty vitacoral-card">
+          <p class="vitacoral-body-muted">Featured products can be added from the Theme Editor.</p>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.bottom_cta_label != blank -%}
+      <div class="vitacoral-featured-products__footer vitacoral-reveal is-visible">
+        <a
+          {% if section.settings.bottom_cta_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.bottom_cta_link }}"
+          {% endif %}
+          class="vitacoral-button vitacoral-button--secondary"
+        >
+          {{ section.settings.bottom_cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Products",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Öne Çıkanlar"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "En çok ilgi gören Vitacoral ürünleri"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Günlük rutininize uygun ürünleri keşfedin.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bottom_cta_label",
+      "label": "Bottom CTA label",
+      "default": "Tüm ürünleri gör"
+    },
+    {
+      "type": "url",
+      "id": "bottom_cta_link",
+      "label": "Bottom CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_product",
+      "name": "Featured product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text"
+        },
+        {
+          "type": "text",
+          "id": "custom_title_override",
+          "label": "Custom title override"
+        },
+        {
+          "type": "text",
+          "id": "custom_description",
+          "label": "Custom description"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image_override",
+          "label": "Custom image override"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label",
+          "default": "Ürünü keşfet"
+        },
+        {
+          "type": "select",
+          "id": "accent_style",
+          "label": "Accent style",
+          "default": "green",
+          "options": [
+            {
+              "value": "green",
+              "label": "green"
+            },
+            {
+              "value": "orange",
+              "label": "orange"
+            },
+            {
+              "value": "soft",
+              "label": "soft"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vitacoral Products",
+      "blocks": [
+        {
+          "type": "featured_product",
+          "settings": {
+            "badge_text": "Premium",
+            "custom_title_override": "Collagen",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "orange"
+          }
+        },
+        {
+          "type": "featured_product",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "custom_title_override": "Women Multivitamin",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "featured_product",
+          "settings": {
+            "badge_text": "Günlük rutin",
+            "custom_title_override": "Men Multivitamin",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "featured_product",
+          "settings": {
+            "badge_text": "Aile rutini",
+            "custom_title_override": "Kids Multivitamin",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "soft"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

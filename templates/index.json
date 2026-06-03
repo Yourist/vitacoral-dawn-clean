@@ -143,6 +143,72 @@
         "bottom_cta_link": "/collections/all"
       }
     },
+    "vitacoral_featured_products": {
+      "type": "vitacoral-featured-products",
+      "blocks": {
+        "featured_product_1": {
+          "type": "featured_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Premium",
+            "custom_title_override": "Collagen",
+            "custom_description": "",
+            "custom_image_override": "",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "orange"
+          }
+        },
+        "featured_product_2": {
+          "type": "featured_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Günlük rutin",
+            "custom_title_override": "Women Multivitamin",
+            "custom_description": "",
+            "custom_image_override": "",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "green"
+          }
+        },
+        "featured_product_3": {
+          "type": "featured_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Günlük rutin",
+            "custom_title_override": "Men Multivitamin",
+            "custom_description": "",
+            "custom_image_override": "",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "green"
+          }
+        },
+        "featured_product_4": {
+          "type": "featured_product",
+          "settings": {
+            "product": "",
+            "badge_text": "Aile rutini",
+            "custom_title_override": "Kids Multivitamin",
+            "custom_description": "",
+            "custom_image_override": "",
+            "cta_label": "Ürünü keşfet",
+            "accent_style": "soft"
+          }
+        }
+      },
+      "block_order": [
+        "featured_product_1",
+        "featured_product_2",
+        "featured_product_3",
+        "featured_product_4"
+      ],
+      "settings": {
+        "eyebrow": "Öne Çıkanlar",
+        "heading": "En çok ilgi gören Vitacoral ürünleri",
+        "body": "<p>Günlük rutininize uygun ürünleri keşfedin.</p>",
+        "bottom_cta_label": "Tüm ürünleri gör",
+        "bottom_cta_link": "/collections/all"
+      }
+    },
     "vitacoral_trust_section": {
       "type": "vitacoral-trust-section",
       "blocks": {
@@ -201,6 +267,7 @@
   "order": [
     "vitacoral_mobile_editorial_hero",
     "vitacoral_product_family_cards",
+    "vitacoral_featured_products",
     "vitacoral_trust_section"
   ]
 }
