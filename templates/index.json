@@ -207,18 +207,6 @@
         "bottom_cta_link": "/collections/all"
       }
     },
-    "vitacoral_quiz_teaser": {
-      "type": "vitacoral-quiz-teaser",
-      "settings": {
-        "eyebrow": "Rutininizi Bulun",
-        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
-        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
-        "cta_label": "Ankete Katıl",
-        "cta_link": "/#quiz-0AH2J3O",
-        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır.",
-        "image": ""
-      }
-    },
     "vitacoral_trust_section": {
       "type": "vitacoral-trust-section",
       "blocks": {
@@ -278,7 +266,6 @@
     "vitacoral_mobile_editorial_hero",
     "vitacoral_product_family_cards",
     "vitacoral_featured_products",
-    "vitacoral_quiz_teaser",
     "vitacoral_trust_section"
   ]
 }
