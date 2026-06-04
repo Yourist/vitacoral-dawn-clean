@@ -325,9 +325,9 @@
         "education_item_1": {
           "type": "education_item",
           "settings": {
-            "article": "vitacoral-saglikli-yasam-rehberi/kolajen-nedir-ne-ise-yarar",
+            "article": "vitacoral-saglikli-yasam-rehberi/kolajen-takviyeleri-gunun-hangi-saatinde-kullanilmali",
             "badge_text": "Collagen",
-            "custom_title_override": "Kolajen rutini nasıl düşünülmeli?",
+            "custom_title_override": "Kolajen rutini için zamanlama nasıl düşünülmeli?",
             "custom_description": "Günlük bakım yaklaşımında kolajen ürünlerini nasıl konumlandırabileceğinizi keşfedin.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
@@ -337,10 +337,10 @@
         "education_item_2": {
           "type": "education_item",
           "settings": {
-            "article": "",
+            "article": "vitacoral-saglikli-yasam-rehberi/multivitaminlerin-etkileri-ne-zaman-fark-edilir",
             "badge_text": "Multivitamin",
-            "custom_title_override": "Multivitamin seçerken nelere bakılır?",
-            "custom_description": "Günlük kullanımda ürün bilgilerini daha anlaşılır şekilde karşılaştırmak için temel noktalar.",
+            "custom_title_override": "Multivitamin rutini ne zaman anlam kazanır?",
+            "custom_description": "Günlük kullanımda multivitaminleri daha düzenli ve bilinçli değerlendirmek için temel noktalar.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "green"
@@ -349,10 +349,10 @@
         "education_item_3": {
           "type": "education_item",
           "settings": {
-            "article": "",
-            "badge_text": "Rutin",
-            "custom_title_override": "Size uygun ürünü seçmenin kolay yolu",
-            "custom_description": "Ürün ailelerini ihtiyacınıza ve günlük alışkanlıklarınıza göre değerlendirin.",
+            "article": "vitacoral-saglikli-yasam-rehberi/glucomannan-nedir-glucomannan-ne-ise-yarar",
+            "badge_text": "Lif",
+            "custom_title_override": "Glucomannan Nedir? Glucomannan Ne İşe Yarar?",
+            "custom_description": "Günlük rutine lif desteği eklerken dikkat edilebilecek sade ve anlaşılır bilgiler.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "soft"
