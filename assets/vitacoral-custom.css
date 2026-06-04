@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Gibbs Book";
+  src: url("GibbsBook.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("Manrope-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("Manrope-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   --vitacoral-color-primary: #225952;
   --vitacoral-color-accent-orange: #EC6542;
