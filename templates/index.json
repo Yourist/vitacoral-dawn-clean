@@ -372,6 +372,65 @@
         "bottom_cta_link": "/blogs/news"
       }
     },
+    "vitacoral_faq": {
+      "type": "vitacoral-faq",
+      "blocks": {
+        "faq_item_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Hangi Vitacoral ürününü seçmeliyim?",
+            "answer": "Ürün seçimine günlük rutininizden ve ihtiyacınıza en yakın ürün ailesinden başlayabilirsiniz. Emin değilseniz kısa anketi tamamlayarak size uygun seçenekleri keşfedebilirsiniz.",
+            "accent_style": "green"
+          }
+        },
+        "faq_item_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Birden fazla ürünü birlikte değerlendirebilir miyim?",
+            "answer": "Bazı ürünler günlük rutin içinde birlikte düşünülebilir. Yine de ürün içeriklerini incelemenizi ve özel bir durumunuz varsa bir uzmana danışmanızı öneririz.",
+            "accent_style": "soft"
+          }
+        },
+        "faq_item_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ürün içeriklerini nereden görebilirim?",
+            "answer": "Her ürün sayfasında içerik, kullanım ve ürün bilgilerine ulaşabilirsiniz. İçerikleri karşılaştırarak rutininize en uygun seçimi yapabilirsiniz.",
+            "accent_style": "orange"
+          }
+        },
+        "faq_item_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quiz ne işe yarar?",
+            "answer": "Kısa quiz, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
+            "accent_style": "green"
+          }
+        },
+        "faq_item_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Kargo ve alışveriş süreci nasıl ilerler?",
+            "answer": "Siparişinizi güvenli ödeme adımlarıyla tamamlayabilir, kargo ve teslimat bilgilerini ödeme sürecinde görüntüleyebilirsiniz.",
+            "accent_style": "soft"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_1",
+        "faq_item_2",
+        "faq_item_3",
+        "faq_item_4",
+        "faq_item_5"
+      ],
+      "settings": {
+        "eyebrow": "Sık Sorulanlar",
+        "heading": "Ürün seçimini kolaylaştıran kısa cevaplar",
+        "body": "<p>Vitacoral ürünlerini keşfederken aklınıza takılabilecek temel soruları sade şekilde yanıtladık.</p>",
+        "cta_label": "Tüm ürünleri keşfet",
+        "cta_link": "/collections/all"
+      }
+    },
     "1780568114de2ce7f7": {
       "type": "apps",
       "settings": {
@@ -387,6 +446,7 @@
     "vitacoral_trust_section",
     "vitacoral_social_proof",
     "vitacoral_education_rail",
+    "vitacoral_faq",
     "1780568114de2ce7f7"
   ]
 }

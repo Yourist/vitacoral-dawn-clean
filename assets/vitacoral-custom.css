@@ -1416,3 +1416,117 @@
     scroll-snap-type: none;
   }
 }
+
+.vitacoral-faq {
+  position: relative;
+}
+
+.vitacoral-faq__layout {
+  display: grid;
+  gap: var(--vitacoral-space-xl);
+}
+
+.vitacoral-faq__intro {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  max-width: 60rem;
+}
+
+.vitacoral-faq__body {
+  max-width: 56rem;
+}
+
+.vitacoral-faq__actions {
+  margin-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-faq__items {
+  min-width: 0;
+}
+
+.vitacoral-faq__accordion {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+}
+
+.vitacoral-faq__item {
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(246, 249, 248, 0.96));
+  border: 0.1rem solid var(--vitacoral-color-border);
+  border-radius: var(--vitacoral-radius-lg);
+  box-shadow: var(--vitacoral-shadow-soft);
+}
+
+.vitacoral-faq__item--orange {
+  border-color: rgba(236, 101, 66, 0.18);
+}
+
+.vitacoral-faq__item--soft {
+  background:
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vitacoral-space-sm);
+  padding: 1.8rem 2rem;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  cursor: pointer;
+  list-style: none;
+}
+
+.vitacoral-faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.vitacoral-faq__question::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--vitacoral-color-primary);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.vitacoral-faq__item[open] .vitacoral-faq__question::after {
+  content: "−";
+}
+
+.vitacoral-faq__question:focus-visible {
+  outline: 0.2rem solid rgba(34, 89, 82, 0.28);
+  outline-offset: -0.2rem;
+}
+
+.vitacoral-faq__answer {
+  padding: 0 2rem 2rem;
+}
+
+.vitacoral-faq__answer .vitacoral-body {
+  margin: 0;
+}
+
+.vitacoral-faq__empty {
+  padding: var(--vitacoral-space-lg);
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-faq__layout {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: start;
+    gap: 4rem;
+  }
+
+  .vitacoral-faq__intro {
+    position: sticky;
+    top: 2rem;
+  }
+}
