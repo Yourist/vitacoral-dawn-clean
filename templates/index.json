@@ -203,6 +203,18 @@
         "bottom_cta_link": "/collections/all"
       }
     },
+    "vitacoral_quiz_teaser_Ggy8Pg": {
+      "type": "vitacoral-quiz-teaser",
+      "name": "Vitacoral Quiz",
+      "settings": {
+        "eyebrow": "Rutininizi Bulun",
+        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
+        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
+        "cta_label": "Ankete Katıl",
+        "cta_link": "/#quiz-0AH2J3O",
+        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır."
+      }
+    },
     "vitacoral_trust_section": {
       "type": "vitacoral-trust-section",
       "blocks": {
@@ -313,11 +325,10 @@
         "education_item_1": {
           "type": "education_item",
           "settings": {
-            "article": "",
+            "article": "vitacoral-saglikli-yasam-rehberi/kolajen-nedir-ne-ise-yarar",
             "badge_text": "Collagen",
             "custom_title_override": "Kolajen rutini nasıl düşünülmeli?",
             "custom_description": "Günlük bakım yaklaşımında kolajen ürünlerini nasıl konumlandırabileceğinizi keşfedin.",
-            "custom_image_override": "",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "orange"
@@ -330,7 +341,6 @@
             "badge_text": "Multivitamin",
             "custom_title_override": "Multivitamin seçerken nelere bakılır?",
             "custom_description": "Günlük kullanımda ürün bilgilerini daha anlaşılır şekilde karşılaştırmak için temel noktalar.",
-            "custom_image_override": "",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "green"
@@ -343,7 +353,6 @@
             "badge_text": "Rutin",
             "custom_title_override": "Size uygun ürünü seçmenin kolay yolu",
             "custom_description": "Ürün ailelerini ihtiyacınıza ve günlük alışkanlıklarınıza göre değerlendirin.",
-            "custom_image_override": "",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "soft"
@@ -367,18 +376,6 @@
       "type": "apps",
       "settings": {
         "include_margins": true
-      }
-    },
-    "vitacoral_quiz_teaser_Ggy8Pg": {
-      "type": "vitacoral-quiz-teaser",
-      "name": "Vitacoral Quiz",
-      "settings": {
-        "eyebrow": "Rutininizi Bulun",
-        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
-        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
-        "cta_label": "Ankete Katıl",
-        "cta_link": "/#quiz-0AH2J3O",
-        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır."
       }
     }
   },
