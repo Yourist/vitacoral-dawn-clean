@@ -1885,3 +1885,210 @@
     padding-bottom: var(--vitacoral-space-2xl);
   }
 }
+
+@media screen and (max-width: 749px) {
+  .vitacoral-section {
+    padding-block: 4.8rem;
+  }
+
+  .vitacoral-container {
+    padding-inline: 1.8rem;
+  }
+
+  .vitacoral-heading-lg {
+    font-size: clamp(2.2rem, 7.2vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .vitacoral-body,
+  .vitacoral-body-muted {
+    font-size: 1.5rem;
+    line-height: 1.58;
+  }
+
+  .vitacoral-hero__grid {
+    gap: var(--vitacoral-space-lg);
+  }
+
+  .vitacoral-hero__content {
+    gap: var(--vitacoral-space-sm);
+  }
+
+  .vitacoral-hero__actions {
+    gap: var(--vitacoral-space-xs);
+  }
+
+  .vitacoral-hero__actions .vitacoral-button {
+    width: 100%;
+  }
+
+  .vitacoral-hero__media-card {
+    gap: var(--vitacoral-space-md);
+  }
+
+  .vitacoral-hero__media,
+  .vitacoral-hero__placeholder {
+    min-height: 34rem;
+  }
+
+  .vitacoral-product-family__header,
+  .vitacoral-featured-products__header,
+  .vitacoral-social-proof__header,
+  .vitacoral-education__header {
+    gap: var(--vitacoral-space-sm);
+    margin-bottom: var(--vitacoral-space-lg);
+  }
+
+  .vitacoral-product-family__grid {
+    grid-auto-columns: minmax(27.6rem, 86%);
+    gap: 1.2rem;
+  }
+
+  .vitacoral-product-family__card {
+    gap: 1.2rem;
+  }
+
+  .vitacoral-product-family__media {
+    aspect-ratio: 1.04 / 1;
+  }
+
+  .vitacoral-product-family__product-chips {
+    gap: 0.5rem;
+  }
+
+  .vitacoral-product-family__product-chip {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .vitacoral-product-family__title,
+  .vitacoral-featured-products__title,
+  .vitacoral-education__title {
+    font-size: 2.1rem;
+    line-height: 1.12;
+  }
+
+  .vitacoral-featured-products__grid,
+  .vitacoral-social-proof__grid,
+  .vitacoral-education__grid {
+    grid-auto-columns: minmax(27.2rem, 84%);
+    gap: 1.2rem;
+  }
+
+  .vitacoral-featured-products__card,
+  .vitacoral-social-proof__card,
+  .vitacoral-education__card {
+    gap: 1.2rem;
+  }
+
+  .vitacoral-featured-products__media {
+    aspect-ratio: 1.06 / 1;
+  }
+
+  .vitacoral-featured-products__price .price-item--regular,
+  .vitacoral-featured-products__price .price-item--sale {
+    font-size: 1.7rem;
+  }
+
+  .vitacoral-featured-products__actions,
+  .vitacoral-education__actions {
+    padding-top: 0;
+  }
+
+  .vitacoral-quiz__layout {
+    gap: var(--vitacoral-space-md);
+    padding: var(--vitacoral-space-md);
+  }
+
+  .vitacoral-quiz__content {
+    gap: var(--vitacoral-space-xs);
+  }
+
+  .vitacoral-quiz__media {
+    min-height: 24rem;
+  }
+
+  .vitacoral-quiz__placeholder {
+    gap: var(--vitacoral-space-sm);
+    padding: var(--vitacoral-space-md);
+  }
+
+  .vitacoral-quiz__placeholder-card {
+    padding: var(--vitacoral-space-sm);
+  }
+
+  .vitacoral-trust__layout,
+  .vitacoral-faq__layout {
+    gap: var(--vitacoral-space-lg);
+  }
+
+  .vitacoral-trust__intro,
+  .vitacoral-faq__intro {
+    gap: var(--vitacoral-space-sm);
+  }
+
+  .vitacoral-trust__card {
+    gap: 1rem;
+    padding: var(--vitacoral-space-md);
+  }
+
+  .vitacoral-trust__title {
+    font-size: 2rem;
+  }
+
+  .vitacoral-social-proof__quote p {
+    font-size: 2rem;
+    line-height: 1.18;
+  }
+
+  .vitacoral-faq__accordion {
+    gap: 1rem;
+  }
+
+  .vitacoral-faq__question {
+    padding: 1.6rem 1.8rem;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .vitacoral-faq__answer {
+    padding: 0 1.8rem 1.8rem;
+  }
+
+  .footer {
+    margin-top: 4.8rem;
+  }
+
+  .footer__content-top {
+    padding-top: var(--vitacoral-space-md);
+    padding-bottom: var(--vitacoral-space-lg);
+  }
+
+  .footer-block.grid__item {
+    margin: 2.8rem 0;
+  }
+
+  .footer-block--newsletter {
+    gap: var(--vitacoral-space-sm);
+    margin-top: var(--vitacoral-space-lg);
+    padding: var(--vitacoral-space-md);
+  }
+
+  .footer-block__heading {
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  .footer__newsletter.newsletter-form {
+    margin-top: var(--vitacoral-space-xs);
+  }
+
+  .footer .field__input {
+    min-height: 4.8rem;
+  }
+
+  .footer__content-bottom {
+    padding-top: var(--vitacoral-space-md);
+  }
+}
