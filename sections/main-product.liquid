@@ -105,6 +105,54 @@
                     </h2>
                   </a>
                 </div>
+              {%- when 'vitacoral_highlights' -%}
+                {%- liquid
+                  assign highlight_eyebrow = block.settings.eyebrow | strip
+                  assign highlight_body = block.settings.body
+                  assign reassurance_text = block.settings.reassurance_text | strip
+                  assign has_chips = false
+                  if block.settings.chip_1 != blank or block.settings.chip_2 != blank or block.settings.chip_3 != blank or block.settings.chip_4 != blank
+                    assign has_chips = true
+                  endif
+                -%}
+                {%- if highlight_body != blank or has_chips or reassurance_text != blank -%}
+                  <div class="vitacoral-pdp-highlights" {{ block.shopify_attributes }}>
+                    {%- if highlight_eyebrow != blank -%}
+                      <p class="vitacoral-eyebrow vitacoral-pdp-highlights__eyebrow">
+                        {{ highlight_eyebrow | escape }}
+                      </p>
+                    {%- endif -%}
+
+                    {%- if highlight_body != blank -%}
+                      <div class="vitacoral-body vitacoral-pdp-highlights__body rte">
+                        {{ highlight_body }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if has_chips -%}
+                      <div class="vitacoral-pdp-highlights__chips" role="list">
+                        {%- if block.settings.chip_1 != blank -%}
+                          <span class="vitacoral-pdp-highlights__chip" role="listitem">{{ block.settings.chip_1 | escape }}</span>
+                        {%- endif -%}
+                        {%- if block.settings.chip_2 != blank -%}
+                          <span class="vitacoral-pdp-highlights__chip" role="listitem">{{ block.settings.chip_2 | escape }}</span>
+                        {%- endif -%}
+                        {%- if block.settings.chip_3 != blank -%}
+                          <span class="vitacoral-pdp-highlights__chip" role="listitem">{{ block.settings.chip_3 | escape }}</span>
+                        {%- endif -%}
+                        {%- if block.settings.chip_4 != blank -%}
+                          <span class="vitacoral-pdp-highlights__chip" role="listitem">{{ block.settings.chip_4 | escape }}</span>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if reassurance_text != blank -%}
+                      <p class="vitacoral-pdp-highlights__reassurance">
+                        {{ reassurance_text | escape }}
+                      </p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -788,6 +836,54 @@
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
+    },
+    {
+      "type": "vitacoral_highlights",
+      "name": "Vitacoral highlights",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow text",
+          "default": "Günlük rutin desteği"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Short body",
+          "default": "<p>Vitacoral ürünlerini günlük rutininize uygun şekilde keşfedin. Ürün içeriklerini inceleyerek size en yakın seçimi yapabilirsiniz.</p>"
+        },
+        {
+          "type": "text",
+          "id": "chip_1",
+          "label": "Chip 1 text",
+          "default": "Günlük kullanım"
+        },
+        {
+          "type": "text",
+          "id": "chip_2",
+          "label": "Chip 2 text",
+          "default": "Ürün ailesi"
+        },
+        {
+          "type": "text",
+          "id": "chip_3",
+          "label": "Chip 3 text",
+          "default": "Güvenli alışveriş"
+        },
+        {
+          "type": "text",
+          "id": "chip_4",
+          "label": "Chip 4 text",
+          "default": "Hızlı seçim"
+        },
+        {
+          "type": "text",
+          "id": "reassurance_text",
+          "label": "Reassurance text",
+          "default": "Güvenli ödeme · Kargo bilgileri ödeme adımında görüntülenir"
+        }
+      ]
     },
     {
       "type": "sku",
