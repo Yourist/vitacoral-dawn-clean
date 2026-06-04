@@ -1231,3 +1231,188 @@
     scroll-snap-type: none;
   }
 }
+
+.vitacoral-education {
+  position: relative;
+}
+
+.vitacoral-education__header {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  max-width: 62rem;
+  margin-bottom: var(--vitacoral-space-xl);
+}
+
+.vitacoral-education__body {
+  max-width: 56rem;
+}
+
+.vitacoral-education__carousel {
+  margin-inline: calc(var(--vitacoral-container-gutter) * -1);
+  padding-inline: var(--vitacoral-container-gutter);
+}
+
+.vitacoral-education__grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(27rem, 84%);
+  gap: var(--vitacoral-space-md);
+  overflow-x: auto;
+  padding-bottom: var(--vitacoral-space-xs);
+  scroll-padding-inline: var(--vitacoral-container-gutter);
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vitacoral-education__grid::-webkit-scrollbar {
+  height: 0.6rem;
+}
+
+.vitacoral-education__grid::-webkit-scrollbar-thumb {
+  background: rgba(34, 89, 82, 0.18);
+  border-radius: var(--vitacoral-radius-pill);
+}
+
+.vitacoral-education__item {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.vitacoral-education__card {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+  height: 100%;
+  padding: var(--vitacoral-space-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 249, 0.98));
+}
+
+.vitacoral-education__item--orange .vitacoral-education__card {
+  border-color: rgba(236, 101, 66, 0.18);
+}
+
+.vitacoral-education__item--soft .vitacoral-education__card {
+  background:
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-education__media-wrap {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+}
+
+.vitacoral-education__badge {
+  justify-self: start;
+  min-height: 3rem;
+  padding-inline: 1rem;
+  font-size: 1.1rem;
+}
+
+.vitacoral-education__item--orange .vitacoral-education__badge {
+  background: var(--vitacoral-color-accent-orange);
+}
+
+.vitacoral-education__item--soft .vitacoral-education__badge {
+  background: var(--vitacoral-color-chip);
+  color: var(--vitacoral-color-primary);
+}
+
+.vitacoral-education__media {
+  overflow: hidden;
+  aspect-ratio: 1.15 / 1;
+  border-radius: calc(var(--vitacoral-radius-lg) - 0.4rem);
+  background:
+    radial-gradient(circle at top left, rgba(34, 89, 82, 0.08), transparent 58%),
+    linear-gradient(180deg, rgba(239, 245, 244, 0.84), rgba(255, 255, 255, 0.98));
+}
+
+.vitacoral-education__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vitacoral-education__placeholder {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  align-content: end;
+  min-height: 100%;
+  padding: var(--vitacoral-space-lg);
+}
+
+.vitacoral-education__placeholder-mark {
+  display: inline-block;
+  width: 4.8rem;
+  height: 0.6rem;
+  border-radius: var(--vitacoral-radius-pill);
+  background: var(--vitacoral-color-primary);
+  opacity: 0.85;
+}
+
+.vitacoral-education__item--orange .vitacoral-education__placeholder-mark {
+  background: var(--vitacoral-color-accent-orange);
+}
+
+.vitacoral-education__content {
+  display: grid;
+  gap: var(--vitacoral-space-xs);
+}
+
+.vitacoral-education__title {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2.3rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+}
+
+.vitacoral-education__description {
+  margin: 0;
+}
+
+.vitacoral-education__actions {
+  margin-top: auto;
+  padding-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-education__actions .vitacoral-button {
+  width: 100%;
+}
+
+.vitacoral-education__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--vitacoral-space-xl);
+}
+
+.vitacoral-education__empty {
+  padding: var(--vitacoral-space-lg);
+}
+
+@media screen and (min-width: 750px) {
+  .vitacoral-education__header {
+    margin-bottom: 4rem;
+  }
+
+  .vitacoral-education__grid {
+    grid-auto-columns: minmax(28rem, 42%);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-education__carousel {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+
+  .vitacoral-education__grid {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}

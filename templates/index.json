@@ -307,6 +307,62 @@
         "bottom_cta_link": "/collections/all"
       }
     },
+    "vitacoral_education_rail": {
+      "type": "vitacoral-education-rail",
+      "blocks": {
+        "education_item_1": {
+          "type": "education_item",
+          "settings": {
+            "article": "",
+            "badge_text": "Collagen",
+            "custom_title_override": "Kolajen rutini nasıl düşünülmeli?",
+            "custom_description": "Günlük bakım yaklaşımında kolajen ürünlerini nasıl konumlandırabileceğinizi keşfedin.",
+            "custom_image_override": "",
+            "cta_label": "Yazıyı oku",
+            "cta_link": "",
+            "accent_style": "orange"
+          }
+        },
+        "education_item_2": {
+          "type": "education_item",
+          "settings": {
+            "article": "",
+            "badge_text": "Multivitamin",
+            "custom_title_override": "Multivitamin seçerken nelere bakılır?",
+            "custom_description": "Günlük kullanımda ürün bilgilerini daha anlaşılır şekilde karşılaştırmak için temel noktalar.",
+            "custom_image_override": "",
+            "cta_label": "Yazıyı oku",
+            "cta_link": "",
+            "accent_style": "green"
+          }
+        },
+        "education_item_3": {
+          "type": "education_item",
+          "settings": {
+            "article": "",
+            "badge_text": "Rutin",
+            "custom_title_override": "Size uygun ürünü seçmenin kolay yolu",
+            "custom_description": "Ürün ailelerini ihtiyacınıza ve günlük alışkanlıklarınıza göre değerlendirin.",
+            "custom_image_override": "",
+            "cta_label": "Yazıyı oku",
+            "cta_link": "",
+            "accent_style": "soft"
+          }
+        }
+      },
+      "block_order": [
+        "education_item_1",
+        "education_item_2",
+        "education_item_3"
+      ],
+      "settings": {
+        "eyebrow": "Öğren & Keşfet",
+        "heading": "Günlük rutininizi daha bilinçli oluşturun",
+        "body": "<p>Ürün aileleri, içerikler ve kullanım rutinleri hakkında sade bilgilerle seçim yapmayı kolaylaştırın.</p>",
+        "bottom_cta_label": "Tüm yazıları gör",
+        "bottom_cta_link": "/blogs/news"
+      }
+    },
     "1780568114de2ce7f7": {
       "type": "apps",
       "settings": {
@@ -333,6 +389,7 @@
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
     "vitacoral_social_proof",
+    "vitacoral_education_rail",
     "1780568114de2ce7f7"
   ]
 }
