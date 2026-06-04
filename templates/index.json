@@ -257,6 +257,56 @@
         "cta_link": "/pages/biz-kimiz"
       }
     },
+    "vitacoral_social_proof": {
+      "type": "vitacoral-social-proof",
+      "blocks": {
+        "review_item_1": {
+          "type": "review_item",
+          "settings": {
+            "quote": "Günlük rutinimde sade ve anlaşılır ürünler arıyordum. Vitacoral ürün aileleri karar vermemi kolaylaştırdı.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Günlük rutin",
+            "rating": "5",
+            "product_label": "Multivitamin",
+            "accent_style": "green"
+          }
+        },
+        "review_item_2": {
+          "type": "review_item",
+          "settings": {
+            "quote": "Collagen ve vitamin seçeneklerini birlikte görmek benim için daha anlaşılır bir alışveriş deneyimi sundu.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Güzellik rutini",
+            "rating": "5",
+            "product_label": "Collagen",
+            "accent_style": "orange"
+          }
+        },
+        "review_item_3": {
+          "type": "review_item",
+          "settings": {
+            "quote": "Ürün bilgilerine kolay ulaşmak ve rutinlere göre seçim yapmak alışverişi daha pratik hale getiriyor.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Ürün seçimi",
+            "rating": "5",
+            "product_label": "Rutin",
+            "accent_style": "soft"
+          }
+        }
+      },
+      "block_order": [
+        "review_item_1",
+        "review_item_2",
+        "review_item_3"
+      ],
+      "settings": {
+        "eyebrow": "Kullanıcı Deneyimleri",
+        "heading": "Vitacoral rutinlerine eşlik eden deneyimler",
+        "body": "<p>Ürün seçiminde gerçek kullanıcı deneyimleri ve sade bilgiler karar vermeyi kolaylaştırır.</p>",
+        "bottom_cta_label": "Tüm ürünleri keşfet",
+        "bottom_cta_link": "/collections/all"
+      }
+    },
     "1780568114de2ce7f7": {
       "type": "apps",
       "settings": {
@@ -282,6 +332,7 @@
     "vitacoral_featured_products",
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
+    "vitacoral_social_proof",
     "1780568114de2ce7f7"
   ]
 }

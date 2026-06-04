@@ -1,0 +1,240 @@
+<section class="vitacoral-social-proof vitacoral-section" id="VitacoralSocialProof-{{ section.id }}">
+  <div class="vitacoral-container">
+    <div class="vitacoral-social-proof__header vitacoral-reveal is-visible">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="vitacoral-body vitacoral-social-proof__body rte">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="vitacoral-social-proof__carousel vitacoral-reveal is-visible">
+      {%- if section.blocks.size > 0 -%}
+        <ul class="vitacoral-social-proof__grid list-unstyled" role="list">
+          {%- for block in section.blocks -%}
+            <li
+              class="vitacoral-social-proof__item vitacoral-social-proof__item--{{ block.settings.accent_style }}"
+              {{ block.shopify_attributes }}
+            >
+              <article class="vitacoral-social-proof__card vitacoral-card">
+                <div class="vitacoral-social-proof__meta">
+                  {%- if block.settings.product_label != blank -%}
+                    <span class="vitacoral-chip vitacoral-social-proof__label">
+                      {{ block.settings.product_label | escape }}
+                    </span>
+                  {%- endif -%}
+
+                  {%- if block.settings.rating != 'none' -%}
+                    <span class="vitacoral-social-proof__rating" aria-label="{{ block.settings.rating }} yıldız">
+                      {%- if block.settings.rating == '5' -%}
+                        &#9733;&#9733;&#9733;&#9733;&#9733;
+                      {%- elsif block.settings.rating == '4' -%}
+                        &#9733;&#9733;&#9733;&#9733;
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings.quote != blank -%}
+                  <blockquote class="vitacoral-social-proof__quote">
+                    <p>{{ block.settings.quote | escape }}</p>
+                  </blockquote>
+                {%- endif -%}
+
+                <div class="vitacoral-social-proof__author">
+                  {%- if block.settings.author_name != blank -%}
+                    <p class="vitacoral-social-proof__author-name">{{ block.settings.author_name | escape }}</p>
+                  {%- endif -%}
+
+                  {%- if block.settings.author_detail != blank -%}
+                    <p class="vitacoral-body-muted vitacoral-social-proof__author-detail">
+                      {{ block.settings.author_detail | escape }}
+                    </p>
+                  {%- endif -%}
+                </div>
+              </article>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- else -%}
+        <div class="vitacoral-social-proof__empty vitacoral-card">
+          <p class="vitacoral-body-muted">Review cards can be added from the Theme Editor.</p>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.bottom_cta_label != blank -%}
+      <div class="vitacoral-social-proof__footer vitacoral-reveal is-visible">
+        <a
+          {% if section.settings.bottom_cta_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.bottom_cta_link }}"
+          {% endif %}
+          class="vitacoral-button vitacoral-button--secondary"
+        >
+          {{ section.settings.bottom_cta_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Reviews",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Kullanıcı Deneyimleri"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Vitacoral rutinlerine eşlik eden deneyimler"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Ürün seçiminde gerçek kullanıcı deneyimleri ve sade bilgiler karar vermeyi kolaylaştırır.</p>"
+    },
+    {
+      "type": "text",
+      "id": "bottom_cta_label",
+      "label": "Bottom CTA label",
+      "default": "Tüm ürünleri keşfet"
+    },
+    {
+      "type": "url",
+      "id": "bottom_cta_link",
+      "label": "Bottom CTA link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review_item",
+      "name": "Review item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name"
+        },
+        {
+          "type": "text",
+          "id": "author_detail",
+          "label": "Author detail"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "label": "Rating",
+          "default": "5",
+          "options": [
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "none",
+              "label": "none"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "product_label",
+          "label": "Product/routine label"
+        },
+        {
+          "type": "select",
+          "id": "accent_style",
+          "label": "Accent style",
+          "default": "green",
+          "options": [
+            {
+              "value": "green",
+              "label": "green"
+            },
+            {
+              "value": "orange",
+              "label": "orange"
+            },
+            {
+              "value": "soft",
+              "label": "soft"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Vitacoral Reviews",
+      "blocks": [
+        {
+          "type": "review_item",
+          "settings": {
+            "quote": "Günlük rutinimde sade ve anlaşılır ürünler arıyordum. Vitacoral ürün aileleri karar vermemi kolaylaştırdı.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Günlük rutin",
+            "rating": "5",
+            "product_label": "Multivitamin",
+            "accent_style": "green"
+          }
+        },
+        {
+          "type": "review_item",
+          "settings": {
+            "quote": "Collagen ve vitamin seçeneklerini birlikte görmek benim için daha anlaşılır bir alışveriş deneyimi sundu.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Güzellik rutini",
+            "rating": "5",
+            "product_label": "Collagen",
+            "accent_style": "orange"
+          }
+        },
+        {
+          "type": "review_item",
+          "settings": {
+            "quote": "Ürün bilgilerine kolay ulaşmak ve rutinlere göre seçim yapmak alışverişi daha pratik hale getiriyor.",
+            "author_name": "Vitacoral kullanıcısı",
+            "author_detail": "Ürün seçimi",
+            "rating": "5",
+            "product_label": "Rutin",
+            "accent_style": "soft"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
