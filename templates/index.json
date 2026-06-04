@@ -65,12 +65,12 @@
         "product_family_1": {
           "type": "product_family",
           "settings": {
-            "badge_text": "Kadın rutini",
-            "title": "Kadın Rutin Paketi",
-            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
             "primary_product": "multivitamin-for-women",
             "secondary_product": "collagen-30-sase",
             "third_product": "",
+            "badge_text": "Kadın rutini",
+            "title": "Kadın Rutin Paketi",
+            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
             "included_products_text": "Women Multivitamin + Collagen",
             "cta_label": "Rutini keşfet",
             "cta_link": "",
@@ -81,12 +81,12 @@
         "product_family_2": {
           "type": "product_family",
           "settings": {
-            "badge_text": "Erkek rutini",
-            "title": "Erkek Rutin Paketi",
-            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
             "primary_product": "multivitamin-for-men",
             "secondary_product": "collagen-30-sase",
             "third_product": "",
+            "badge_text": "Erkek rutini",
+            "title": "Erkek Rutin Paketi",
+            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
             "included_products_text": "Men Multivitamin + Collagen",
             "cta_label": "Rutini keşfet",
             "cta_link": "",
@@ -97,12 +97,12 @@
         "product_family_3": {
           "type": "product_family",
           "settings": {
-            "badge_text": "Aile rutini",
-            "title": "Aile Günlük Rutini",
-            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
             "primary_product": "multivitamin-for-women",
             "secondary_product": "multivitamin-for-men",
             "third_product": "multivitamin-for-kids",
+            "badge_text": "Aile rutini",
+            "title": "Aile Günlük Rutini",
+            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
             "included_products_text": "Men + Women + Kids",
             "cta_label": "Rutini keşfet",
             "cta_link": "",
@@ -113,12 +113,12 @@
         "product_family_4": {
           "type": "product_family",
           "settings": {
-            "badge_text": "Hafif rutin",
-            "title": "Hafif Rutin Paketi",
-            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
             "primary_product": "vitacoral-glucomannan-60-sase",
             "secondary_product": "multivitamin-for-women",
             "third_product": "",
+            "badge_text": "Hafif rutin",
+            "title": "Hafif Rutin Paketi",
+            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
             "included_products_text": "Glucomannan + Women/Men Multivitamin",
             "cta_label": "Rutini keşfet",
             "cta_link": "",
@@ -151,7 +151,6 @@
             "badge_text": "Premium",
             "custom_title_override": "Collagen",
             "custom_description": "",
-            "custom_image_override": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "orange"
           }
@@ -163,7 +162,6 @@
             "badge_text": "Günlük rutin",
             "custom_title_override": "Women Multivitamin",
             "custom_description": "",
-            "custom_image_override": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "green"
           }
@@ -175,7 +173,6 @@
             "badge_text": "Günlük rutin",
             "custom_title_override": "Men Multivitamin",
             "custom_description": "",
-            "custom_image_override": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "green"
           }
@@ -187,7 +184,6 @@
             "badge_text": "Aile rutini",
             "custom_title_override": "Kids Multivitamin",
             "custom_description": "",
-            "custom_image_override": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "soft"
           }
@@ -205,18 +201,6 @@
         "body": "<p>Günlük rutininize uygun ürünleri keşfedin.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
-      }
-    },
-    "vitacoral_quiz_teaser": {
-      "type": "vitacoral-quiz-teaser",
-      "settings": {
-        "eyebrow": "Rutininizi Bulun",
-        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
-        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
-        "cta_label": "Ankete Katıl",
-        "cta_link": "/#quiz-0AH2J3O",
-        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır.",
-        "image": ""
       }
     },
     "vitacoral_trust_section": {
@@ -272,13 +256,32 @@
         "cta_label": "Bizi daha yakından tanıyın",
         "cta_link": "/pages/biz-kimiz"
       }
+    },
+    "1780568114de2ce7f7": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "vitacoral_quiz_teaser_Ggy8Pg": {
+      "type": "vitacoral-quiz-teaser",
+      "name": "Vitacoral Quiz",
+      "settings": {
+        "eyebrow": "Rutininizi Bulun",
+        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
+        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
+        "cta_label": "Ankete Katıl",
+        "cta_link": "/#quiz-0AH2J3O",
+        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır."
+      }
     }
   },
   "order": [
     "vitacoral_mobile_editorial_hero",
     "vitacoral_product_family_cards",
     "vitacoral_featured_products",
-    "vitacoral_quiz_teaser",
-    "vitacoral_trust_section"
+    "vitacoral_quiz_teaser_Ggy8Pg",
+    "vitacoral_trust_section",
+    "1780568114de2ce7f7"
   ]
 }
