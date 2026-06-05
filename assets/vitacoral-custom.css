@@ -2746,3 +2746,140 @@
     padding: var(--vitacoral-space-sm);
   }
 }
+
+.vc-desc {
+  display: grid;
+  gap: var(--vitacoral-space-lg);
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-body);
+}
+
+.vc-desc > * {
+  margin: 0;
+}
+
+.vc-desc h3 {
+  margin: 0 0 var(--vitacoral-space-sm);
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.vc-desc p {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-body);
+  font-size: 1.55rem;
+  line-height: 1.72;
+}
+
+.vc-desc ul.checks {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vc-desc ul.checks li {
+  position: relative;
+  padding-left: 2.8rem;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-body);
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+.vc-desc ul.checks li::before {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, var(--vitacoral-color-primary) 0 32%, transparent 36%),
+    rgba(34, 89, 82, 0.1);
+}
+
+.vc-desc .info-box {
+  display: grid;
+  gap: var(--vitacoral-space-xs);
+  padding: var(--vitacoral-space-md);
+  background:
+    radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  border-radius: var(--vitacoral-radius-lg);
+}
+
+.vc-desc .info-box > * {
+  margin: 0;
+}
+
+.vc-desc .cert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vitacoral-space-sm);
+  align-items: center;
+}
+
+.vc-desc .cert-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.2rem;
+  padding: 1rem 1.6rem;
+  color: var(--vitacoral-color-primary);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  background: rgba(34, 89, 82, 0.06);
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  border-radius: var(--vitacoral-radius-pill);
+  transition: background-color var(--vitacoral-duration-fast) ease, color var(--vitacoral-duration-fast) ease;
+}
+
+.vc-desc .cert-links a:hover {
+  color: var(--vitacoral-color-primary-deep);
+  background: rgba(34, 89, 82, 0.1);
+}
+
+.vc-desc .cert-links a:focus-visible {
+  outline: 0.2rem solid rgba(34, 89, 82, 0.28);
+  outline-offset: 0.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .vc-desc {
+    gap: var(--vitacoral-space-md);
+  }
+
+  .vc-desc h3 {
+    margin-bottom: var(--vitacoral-space-xs);
+    font-size: 2rem;
+  }
+
+  .vc-desc p,
+  .vc-desc ul.checks li {
+    font-size: 1.45rem;
+    line-height: 1.68;
+  }
+
+  .vc-desc .info-box {
+    padding: var(--vitacoral-space-sm);
+  }
+
+  .vc-desc .cert-links a {
+    width: 100%;
+    justify-content: center;
+  }
+}
