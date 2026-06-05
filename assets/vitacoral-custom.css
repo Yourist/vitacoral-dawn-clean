@@ -2863,3 +2863,133 @@
     justify-content: center;
   }
 }
+
+.vitacoral-product-story {
+  position: relative;
+}
+
+.vitacoral-product-story__shell {
+  display: grid;
+  gap: var(--vitacoral-space-xl);
+  padding: var(--vitacoral-space-lg);
+  background:
+    radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 1));
+  border: 0.1rem solid rgba(34, 89, 82, 0.08);
+  border-radius: calc(var(--vitacoral-radius-lg) + 0.4rem);
+}
+
+.vitacoral-product-story__intro {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  max-width: 72rem;
+}
+
+.vitacoral-product-story__body {
+  max-width: 64rem;
+}
+
+.vitacoral-product-story__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--vitacoral-space-sm);
+  padding-top: var(--vitacoral-space-xs);
+}
+
+.vitacoral-product-story__grid {
+  display: grid;
+  gap: var(--vitacoral-space-md);
+}
+
+.vitacoral-product-story__card {
+  display: grid;
+  gap: var(--vitacoral-space-sm);
+  height: 100%;
+  padding: var(--vitacoral-space-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 249, 248, 0.96));
+  border-color: rgba(34, 89, 82, 0.1);
+  box-shadow: 0 1rem 2.4rem rgba(21, 44, 41, 0.06);
+}
+
+.vitacoral-product-story__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  width: fit-content;
+  margin: 0;
+  padding: 0.7rem 1.2rem;
+  color: var(--vitacoral-color-accent-orange);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(236, 101, 66, 0.12);
+  border-radius: var(--vitacoral-radius-pill);
+}
+
+.vitacoral-product-story__title {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+}
+
+.vitacoral-product-story__card-body {
+  color: var(--vitacoral-color-text);
+}
+
+.vitacoral-product-story__card-body p {
+  margin: 0;
+}
+
+.vitacoral-product-story__link {
+  width: fit-content;
+  margin-top: auto;
+  color: var(--vitacoral-color-primary);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.vitacoral-product-story__link:hover {
+  color: var(--vitacoral-color-primary-deep);
+}
+
+@media screen and (max-width: 749px) {
+  .vitacoral-product-story__shell {
+    gap: var(--vitacoral-space-lg);
+    padding: var(--vitacoral-space-md);
+  }
+
+  .vitacoral-product-story__actions {
+    gap: var(--vitacoral-space-xs);
+  }
+
+  .vitacoral-product-story__actions .vitacoral-button {
+    width: 100%;
+  }
+
+  .vitacoral-product-story__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .vitacoral-product-story__shell {
+    padding: var(--vitacoral-space-xl);
+  }
+
+  .vitacoral-product-story__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
