@@ -241,7 +241,7 @@
                     <p class="vitacoral-pdp-essentials__empty-note">{{ empty_note | escape }}</p>
                   </div>
                 {%- endif -%}
-              {%- when 'vitacoral_detail_accordions' -%}
+              {%- when 'vitacoral_details' -%}
                 {%- liquid
                   assign details_heading = block.settings.heading | strip
                   assign usage_label = block.settings.usage_label | strip
@@ -1114,7 +1114,7 @@
       ]
     },
     {
-      "type": "vitacoral_detail_accordions",
+      "type": "vitacoral_details",
       "name": "Vitacoral details",
       "settings": [
         {
