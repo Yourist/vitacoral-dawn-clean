@@ -2993,3 +2993,138 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+@media screen and (max-width: 749px) {
+  .product__media-wrapper {
+    margin-bottom: var(--vitacoral-space-sm);
+  }
+
+  .product__media-list {
+    gap: 0.8rem;
+  }
+
+  .product-media-container {
+    box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.05);
+  }
+
+  .product__info-container {
+    gap: 0;
+    padding: 1.4rem;
+    box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.05);
+  }
+
+  .product__info-container > * + * {
+    margin: 1.2rem 0;
+  }
+
+  .product__info-container .product-form,
+  .product__info-container .product__description,
+  .product__info-container .icon-with-text {
+    margin: 1.6rem 0;
+  }
+
+  .product__title {
+    margin-bottom: 0.8rem;
+  }
+
+  .product .price__container {
+    margin-bottom: 0;
+  }
+
+  .product__description {
+    padding-top: 0.4rem;
+  }
+
+  .product__description .vc-desc {
+    gap: var(--vitacoral-space-sm);
+  }
+
+  .product__description .vc-desc > * + * {
+    margin-top: 0;
+  }
+
+  .product__description .vc-desc .info-box,
+  .product__description .vc-desc .cert-links {
+    margin-top: 0.2rem;
+  }
+
+  .vitacoral-pdp-highlights,
+  .vitacoral-pdp-essentials,
+  .vitacoral-pdp-details--placeholder {
+    padding: var(--vitacoral-space-sm);
+  }
+
+  .vitacoral-pdp-highlights {
+    gap: 0.7rem;
+  }
+
+  .vitacoral-pdp-highlights__chips {
+    gap: 0.6rem;
+  }
+
+  .vitacoral-pdp-essentials__list {
+    gap: 0.8rem;
+  }
+
+  .vitacoral-pdp-details {
+    gap: 0.7rem;
+    margin-top: 0.2rem;
+  }
+
+  .vitacoral-pdp-details__item {
+    border-radius: var(--vitacoral-radius-sm);
+  }
+
+  .vitacoral-pdp-details__summary {
+    padding: 1.25rem 1.4rem;
+  }
+
+  .vitacoral-pdp-details__content {
+    padding: 0 1.4rem 1.3rem;
+  }
+
+  .vitacoral-product-story {
+    padding-top: 0.4rem;
+  }
+
+  .vitacoral-product-story__shell {
+    gap: var(--vitacoral-space-md);
+    padding: 1.4rem;
+    border-radius: var(--vitacoral-radius-lg);
+  }
+
+  .vitacoral-product-story__intro {
+    gap: var(--vitacoral-space-xs);
+  }
+
+  .vitacoral-product-story__body {
+    max-width: none;
+  }
+
+  .vitacoral-product-story__grid {
+    gap: var(--vitacoral-space-sm);
+  }
+
+  .vitacoral-product-story__card {
+    gap: 0.8rem;
+    padding: var(--vitacoral-space-sm);
+    box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.05);
+  }
+
+  .vitacoral-product-story__badge {
+    min-height: 3rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .vitacoral-product-story__title {
+    line-height: 1.12;
+  }
+
+  .related-products {
+    padding-top: var(--vitacoral-space-lg);
+  }
+
+  .related-products__heading {
+    margin-bottom: var(--vitacoral-space-sm);
+  }
+}
