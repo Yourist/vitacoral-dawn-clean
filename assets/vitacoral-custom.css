@@ -2608,6 +2608,20 @@
   margin: 0;
 }
 
+.vitacoral-pdp-essentials--placeholder {
+  background:
+    linear-gradient(180deg, rgba(247, 249, 248, 0.98), rgba(255, 255, 255, 0.98));
+  border-style: dashed;
+}
+
+.vitacoral-pdp-essentials__empty-note {
+  margin: 0;
+  color: var(--vitacoral-color-text-muted);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
 @media screen and (max-width: 749px) {
   .vitacoral-pdp-essentials {
     gap: var(--vitacoral-space-xs);

@@ -156,28 +156,15 @@
               {%- when 'vitacoral_essentials' -%}
                 {%- liquid
                   assign essentials_heading = block.settings.heading | strip
-                  assign product_type_label = block.settings.product_type_label | strip
                   assign approval_no_label = block.settings.approval_no_label | strip
-                  assign approval_no_value = block.settings.approval_no_value | strip
                   assign expiry_label = block.settings.expiry_label | strip
-                  assign expiry_value = block.settings.expiry_value | strip
                   assign usage_label = block.settings.usage_label | strip
                   assign storage_label = block.settings.storage_label | strip
+                  assign empty_note = block.settings.design_mode_empty_note | strip
 
-                  assign product_type_metafield = product.metafields.custom.product_type_label.value | strip
-                  if product_type_metafield != blank
-                    assign product_type_label = product_type_metafield
-                  endif
-
-                  assign approval_no_metafield = product.metafields.custom.approval_no.value | strip
-                  if approval_no_metafield != blank
-                    assign approval_no_value = approval_no_metafield
-                  endif
-
-                  assign expiry_metafield = product.metafields.custom.expiry_date.value | strip
-                  if expiry_metafield != blank
-                    assign expiry_value = expiry_metafield
-                  endif
+                  assign product_type_value = product.metafields.custom.product_type_label.value | strip
+                  assign approval_no_value = product.metafields.custom.approval_no.value | strip
+                  assign expiry_value = product.metafields.custom.expiry_date.value | strip
 
                   assign usage_metafield = product.metafields.custom.usage_recommendation
                   assign storage_metafield = product.metafields.custom.storage_conditions
@@ -189,8 +176,6 @@
                     {%- else -%}
                       <p>{{ usage_metafield.value | escape }}</p>
                     {%- endif -%}
-                  {%- elsif block.settings.usage_text != blank -%}
-                    {{ block.settings.usage_text }}
                   {%- endif -%}
                 {%- endcapture -%}
                 {%- capture storage_content -%}
@@ -200,24 +185,22 @@
                     {%- else -%}
                       <p>{{ storage_metafield.value | escape }}</p>
                     {%- endif -%}
-                  {%- elsif block.settings.storage_text != blank -%}
-                    {{ block.settings.storage_text }}
                   {%- endif -%}
                 {%- endcapture -%}
                 {%- liquid
                   assign usage_content = usage_content | strip
                   assign storage_content = storage_content | strip
                 -%}
-                {%- if product_type_label != blank or approval_no_value != blank or expiry_value != blank or usage_content != blank or storage_content != blank -%}
+                {%- if product_type_value != blank or approval_no_value != blank or expiry_value != blank or usage_content != blank or storage_content != blank -%}
                   <div class="vitacoral-pdp-essentials" {{ block.shopify_attributes }}>
                     {%- if essentials_heading != blank -%}
                       <h3 class="vitacoral-pdp-essentials__heading">{{ essentials_heading | escape }}</h3>
                     {%- endif -%}
 
                     <div class="vitacoral-pdp-essentials__list">
-                      {%- if product_type_label != blank -%}
+                      {%- if product_type_value != blank -%}
                         <div class="vitacoral-pdp-essentials__item">
-                          <p class="vitacoral-pdp-essentials__value">{{ product_type_label | escape }}</p>
+                          <p class="vitacoral-pdp-essentials__value">{{ product_type_value | escape }}</p>
                         </div>
                       {%- endif -%}
 
@@ -249,6 +232,13 @@
                         </div>
                       {%- endif -%}
                     </div>
+                  </div>
+                {%- elsif request.design_mode and empty_note != blank -%}
+                  <div class="vitacoral-pdp-essentials vitacoral-pdp-essentials--placeholder" {{ block.shopify_attributes }}>
+                    {%- if essentials_heading != blank -%}
+                      <h3 class="vitacoral-pdp-essentials__heading">{{ essentials_heading | escape }}</h3>
+                    {%- endif -%}
+                    <p class="vitacoral-pdp-essentials__empty-note">{{ empty_note | escape }}</p>
                   </div>
                 {%- endif -%}
               {%- when 'price' -%}
@@ -995,20 +985,9 @@
         },
         {
           "type": "text",
-          "id": "product_type_label",
-          "label": "Product type / identity line",
-          "default": "Takviye Edici Gıda"
-        },
-        {
-          "type": "text",
           "id": "approval_no_label",
           "label": "Approval label",
           "default": "Onay No"
-        },
-        {
-          "type": "text",
-          "id": "approval_no_value",
-          "label": "Approval value"
         },
         {
           "type": "text",
@@ -1018,19 +997,9 @@
         },
         {
           "type": "text",
-          "id": "expiry_value",
-          "label": "Expiry value"
-        },
-        {
-          "type": "text",
           "id": "usage_label",
           "label": "Usage label",
           "default": "Kullanım Önerisi"
-        },
-        {
-          "type": "richtext",
-          "id": "usage_text",
-          "label": "Usage text"
         },
         {
           "type": "text",
@@ -1039,9 +1008,10 @@
           "default": "Saklama Koşulları"
         },
         {
-          "type": "richtext",
-          "id": "storage_text",
-          "label": "Storage text"
+          "type": "text",
+          "id": "design_mode_empty_note",
+          "label": "Design mode empty note",
+          "default": "Ürün bazlı bilgiler product metafield alanlarından gelir."
         }
       ]
     },
