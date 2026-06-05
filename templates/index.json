@@ -141,6 +141,26 @@
         "bottom_cta_link": "/collections/all"
       }
     },
+    "vitacoral_editorial_media": {
+      "type": "vitacoral-editorial-media",
+      "settings": {
+        "eyebrow": "VITACORAL’I KEŞFET",
+        "heading": "Rutinin daha iyi hissettiren tarafı",
+        "body": "<p>Günlük iyi yaşam rutinin için ürünleri, içerikleri ve kullanım hikayesini daha görsel, daha sade ve daha keyifli bir deneyimle keşfet.</p>",
+        "layout_style": "split",
+        "primary_cta_label": "Rutinini bul",
+        "primary_cta_link": "/pages/vitacorali-kesfet",
+        "secondary_cta_label": "Ürünleri keşfet",
+        "secondary_cta_link": "/collections/all",
+        "video_url": "",
+        "fallback_image": "",
+        "video_poster_image": "",
+        "media_caption": "İçerikleri, ürün ailelerini ve günlük rutin ilhamını tek bir görsel akışta keşfet.",
+        "autoplay": true,
+        "loop": true,
+        "muted": true
+      }
+    },
     "vitacoral_featured_products": {
       "type": "vitacoral-featured-products",
       "blocks": {
@@ -441,6 +461,7 @@
   "order": [
     "vitacoral_mobile_editorial_hero",
     "vitacoral_product_family_cards",
+    "vitacoral_editorial_media",
     "vitacoral_featured_products",
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
