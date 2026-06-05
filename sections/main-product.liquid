@@ -241,6 +241,104 @@
                     <p class="vitacoral-pdp-essentials__empty-note">{{ empty_note | escape }}</p>
                   </div>
                 {%- endif -%}
+              {%- when 'vitacoral_detail_accordions' -%}
+                {%- liquid
+                  assign details_heading = block.settings.heading | strip
+                  assign usage_label = block.settings.usage_label | strip
+                  assign storage_label = block.settings.storage_label | strip
+                  assign ingredients_label = block.settings.ingredients_label | strip
+                  assign faq_label = block.settings.faq_label | strip
+                  assign empty_note = block.settings.design_mode_empty_note | strip
+
+                  assign usage_metafield = product.metafields.custom.usage_recommendation
+                  assign storage_metafield = product.metafields.custom.storage_conditions
+                  assign ingredients_metafield = product.metafields.custom.ingredients_summary
+                  assign faq_metafield = product.metafields.custom.product_faq
+                -%}
+                {%- capture usage_content -%}
+                  {%- if usage_metafield != blank -%}
+                    {%- if usage_metafield.type == 'rich_text_field' -%}
+                      {{ usage_metafield | metafield_tag }}
+                    {%- else -%}
+                      <p>{{ usage_metafield.value | escape }}</p>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- capture storage_content -%}
+                  {%- if storage_metafield != blank -%}
+                    {%- if storage_metafield.type == 'rich_text_field' -%}
+                      {{ storage_metafield | metafield_tag }}
+                    {%- else -%}
+                      <p>{{ storage_metafield.value | escape }}</p>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- capture ingredients_content -%}
+                  {%- if ingredients_metafield != blank -%}
+                    {%- if ingredients_metafield.type == 'rich_text_field' -%}
+                      {{ ingredients_metafield | metafield_tag }}
+                    {%- else -%}
+                      <p>{{ ingredients_metafield.value | escape }}</p>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- capture faq_content -%}
+                  {%- if faq_metafield != blank -%}
+                    {%- if faq_metafield.type == 'rich_text_field' -%}
+                      {{ faq_metafield | metafield_tag }}
+                    {%- else -%}
+                      <p>{{ faq_metafield.value | escape }}</p>
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endcapture -%}
+                {%- liquid
+                  assign usage_content = usage_content | strip
+                  assign storage_content = storage_content | strip
+                  assign ingredients_content = ingredients_content | strip
+                  assign faq_content = faq_content | strip
+                -%}
+                {%- if usage_content != blank or storage_content != blank or ingredients_content != blank or faq_content != blank -%}
+                  <div class="vitacoral-pdp-details" {{ block.shopify_attributes }}>
+                    {%- if details_heading != blank -%}
+                      <h3 class="vitacoral-pdp-details__heading">{{ details_heading | escape }}</h3>
+                    {%- endif -%}
+
+                    {%- if usage_label != blank and usage_content != blank -%}
+                      <details class="vitacoral-pdp-details__item">
+                        <summary class="vitacoral-pdp-details__summary">{{ usage_label | escape }}</summary>
+                        <div class="vitacoral-pdp-details__content rte">{{ usage_content }}</div>
+                      </details>
+                    {%- endif -%}
+
+                    {%- if storage_label != blank and storage_content != blank -%}
+                      <details class="vitacoral-pdp-details__item">
+                        <summary class="vitacoral-pdp-details__summary">{{ storage_label | escape }}</summary>
+                        <div class="vitacoral-pdp-details__content rte">{{ storage_content }}</div>
+                      </details>
+                    {%- endif -%}
+
+                    {%- if ingredients_label != blank and ingredients_content != blank -%}
+                      <details class="vitacoral-pdp-details__item">
+                        <summary class="vitacoral-pdp-details__summary">{{ ingredients_label | escape }}</summary>
+                        <div class="vitacoral-pdp-details__content rte">{{ ingredients_content }}</div>
+                      </details>
+                    {%- endif -%}
+
+                    {%- if faq_label != blank and faq_content != blank -%}
+                      <details class="vitacoral-pdp-details__item">
+                        <summary class="vitacoral-pdp-details__summary">{{ faq_label | escape }}</summary>
+                        <div class="vitacoral-pdp-details__content rte">{{ faq_content }}</div>
+                      </details>
+                    {%- endif -%}
+                  </div>
+                {%- elsif request.design_mode and empty_note != blank -%}
+                  <div class="vitacoral-pdp-details vitacoral-pdp-details--placeholder" {{ block.shopify_attributes }}>
+                    {%- if details_heading != blank -%}
+                      <h3 class="vitacoral-pdp-details__heading">{{ details_heading | escape }}</h3>
+                    {%- endif -%}
+                    <p class="vitacoral-pdp-details__empty-note">{{ empty_note | escape }}</p>
+                  </div>
+                {%- endif -%}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
@@ -1012,6 +1110,48 @@
           "id": "design_mode_empty_note",
           "label": "Design mode empty note",
           "default": "Ürün bazlı bilgiler product metafield alanlarından gelir."
+        }
+      ]
+    },
+    {
+      "type": "vitacoral_detail_accordions",
+      "name": "Vitacoral details",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Ürün Detayları"
+        },
+        {
+          "type": "text",
+          "id": "usage_label",
+          "label": "Usage label",
+          "default": "Kullanım Önerisi"
+        },
+        {
+          "type": "text",
+          "id": "storage_label",
+          "label": "Storage label",
+          "default": "Saklama Koşulları"
+        },
+        {
+          "type": "text",
+          "id": "ingredients_label",
+          "label": "Ingredients label",
+          "default": "İçerik Bilgisi"
+        },
+        {
+          "type": "text",
+          "id": "faq_label",
+          "label": "FAQ label",
+          "default": "Sık Sorulanlar"
+        },
+        {
+          "type": "text",
+          "id": "design_mode_empty_note",
+          "label": "Design mode empty note",
+          "default": "Ürün detayları product metafield alanlarından gelir."
         }
       ]
     },
