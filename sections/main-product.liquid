@@ -3,6 +3,7 @@
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
+  data-vc-has-sticky-atc="true"
   data-update-url="true"
   data-url="{{ product.url }}"
   {% if section.settings.image_zoom == 'hover' %}
@@ -82,6 +83,7 @@
         <section
           id="ProductInfo-{{ section.id }}"
           class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+          data-vc-product-info-container
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -340,7 +342,7 @@
                   </div>
                 {%- endif -%}
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div id="price-{{ section.id }}" role="status" data-vc-price-source {{ block.shopify_attributes }}>
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -918,6 +920,29 @@
       </div>
     </div>
 
+    <div
+      class="vc-sticky-atc"
+      data-vc-sticky-atc
+      data-section-id="{{ section.id }}"
+      aria-hidden="true"
+    >
+      <div class="vc-sticky-atc__inner">
+        <div class="vc-sticky-atc__summary">
+          <p class="vc-sticky-atc__title">{{ product.title | escape }}</p>
+          <div class="vc-sticky-atc__price" data-vc-sticky-atc-price aria-live="polite"></div>
+        </div>
+        <button
+          type="button"
+          class="vc-sticky-atc__button button button--primary"
+          data-vc-sticky-atc-button
+          data-add-to-cart-label="{{ 'products.product.add_to_cart' | t | escape }}"
+          data-sold-out-label="{{ 'products.product.sold_out' | t | escape }}"
+        >
+          {{ 'products.product.add_to_cart' | t }}
+        </button>
+      </div>
+    </div>
+
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}
@@ -957,6 +982,134 @@
       </script>
       <script src="{{ 'product-model.js' | asset_url }}" defer></script>
     {%- endif -%}
+
+    <script>
+      (() => {
+        const stickyBar = document.querySelector('[data-vc-sticky-atc][data-section-id="{{ section.id }}"]');
+        const mobileQuery = window.matchMedia('(max-width: 749px)');
+
+        if (!stickyBar || stickyBar.dataset.vcStickyAtcReady === 'true') return;
+
+        const root = document.querySelector('product-info[data-section="{{ section.id }}"]');
+        const mainButton = root?.querySelector('#ProductSubmitButton-{{ section.id }}');
+        const priceSource = root?.querySelector('[data-vc-price-source]');
+        const infoContainer = root?.querySelector('[data-vc-product-info-container]');
+        const stickyButton = stickyBar.querySelector('[data-vc-sticky-atc-button]');
+        const stickyPrice = stickyBar.querySelector('[data-vc-sticky-atc-price]');
+
+        if (!root || !mainButton || !infoContainer || !stickyButton) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const syncPrice = () => {
+          if (!stickyPrice || !priceSource) return;
+          stickyPrice.innerHTML = priceSource.innerHTML;
+        };
+
+        const syncButton = () => {
+          const primaryTextNode = mainButton.querySelector('span:not(.sold-out-message)');
+          const buttonLabel = primaryTextNode
+            ? primaryTextNode.textContent.trim()
+            : stickyButton.dataset.addToCartLabel || stickyButton.textContent.trim();
+
+          stickyButton.textContent = buttonLabel;
+          stickyButton.disabled = mainButton.disabled;
+        };
+
+        const showBar = () => {
+          if (!mobileQuery.matches) {
+            stickyBar.classList.remove('is-visible');
+            stickyBar.setAttribute('aria-hidden', 'true');
+            return;
+          }
+
+          stickyBar.classList.add('is-visible');
+          stickyBar.setAttribute('aria-hidden', 'false');
+        };
+
+        const hideBar = () => {
+          stickyBar.classList.remove('is-visible');
+          stickyBar.setAttribute('aria-hidden', 'true');
+        };
+
+        const scrollToMainCta = () => {
+          infoContainer.scrollIntoView({
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            block: 'end',
+          });
+
+          window.setTimeout(() => {
+            if (typeof mainButton.focus === 'function') {
+              mainButton.focus({ preventScroll: true });
+            }
+          }, prefersReducedMotion ? 0 : 220);
+        };
+
+        stickyButton.addEventListener('click', () => {
+          syncButton();
+          if (mainButton.disabled) {
+            scrollToMainCta();
+            return;
+          }
+
+          mainButton.click();
+        });
+
+        const visibilityObserver = new IntersectionObserver(
+          (entries) => {
+            const entry = entries[0];
+            if (!entry) return;
+
+            if (entry.isIntersecting || !mobileQuery.matches) {
+              hideBar();
+            } else {
+              showBar();
+            }
+          },
+          { threshold: 0.15 }
+        );
+
+        visibilityObserver.observe(mainButton);
+
+        if (priceSource) {
+          const priceObserver = new MutationObserver(syncPrice);
+          priceObserver.observe(priceSource, {
+            childList: true,
+            subtree: true,
+            characterData: true,
+          });
+        }
+
+        const buttonObserver = new MutationObserver(syncButton);
+        buttonObserver.observe(mainButton, {
+          childList: true,
+          subtree: true,
+          characterData: true,
+          attributes: true,
+          attributeFilter: ['disabled', 'class', 'aria-disabled'],
+        });
+
+        const handleViewportChange = () => {
+          if (!mobileQuery.matches) {
+            hideBar();
+          } else {
+            syncPrice();
+            syncButton();
+          }
+        };
+
+        if (typeof mobileQuery.addEventListener === 'function') {
+          mobileQuery.addEventListener('change', handleViewportChange);
+        } else if (typeof mobileQuery.addListener === 'function') {
+          mobileQuery.addListener(handleViewportChange);
+        }
+
+        syncPrice();
+        syncButton();
+        hideBar();
+        stickyBar.dataset.vcStickyAtcReady = 'true';
+      })();
+    </script>
 
     {%- liquid
       if product.selected_or_first_available_variant.featured_media
