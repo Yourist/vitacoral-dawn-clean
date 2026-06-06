@@ -31,6 +31,9 @@
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
+    assign card_meta_label = blank
+    assign card_badge = blank
+    assign card_subtitle = blank
     if card_product.featured_media and media_aspect_ratio == 'portrait'
       assign ratio = 0.8
     elsif card_product.featured_media and media_aspect_ratio == 'adapt'
@@ -39,8 +42,19 @@
     if ratio == 0 or ratio == null
       assign ratio = 1
     endif
+    if card_product.type != blank
+      assign card_meta_label = card_product.type
+    elsif show_vendor != true and card_product.vendor != blank
+      assign card_meta_label = card_product.vendor
+    endif
+    if card_product.metafields.custom.card_badge != blank
+      assign card_badge = card_product.metafields.custom.card_badge.value
+    endif
+    if card_product.metafields.custom.card_subtitle != blank
+      assign card_subtitle = card_product.metafields.custom.card_subtitle.value
+    endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover">
+  <div class="card-wrapper product-card-wrapper vc-product-card underline-links-hover">
     <div
       class="
         card card--{{ settings.card_style }}
@@ -145,6 +159,16 @@
       </div>
       <div class="card__content">
         <div class="card__information">
+          {%- if card_meta_label != blank or card_badge != blank -%}
+            <div class="vc-card-meta">
+              {%- if card_meta_label != blank -%}
+                <p class="vc-card-type">{{ card_meta_label | escape }}</p>
+              {%- endif -%}
+              {%- if card_badge != blank -%}
+                <span class="vc-card-chip">{{ card_badge | escape }}</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -160,6 +184,9 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          {%- if card_subtitle != blank -%}
+            <p class="vc-card-subtitle">{{ card_subtitle | escape }}</p>
+          {%- endif -%}
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
