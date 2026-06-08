@@ -69,3 +69,86 @@
 .newsletter-form__button .icon {
   width: 1.5rem;
 }
+
+/* Vitacoral newsletter polish */
+.footer-block__newsletter {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: clamp(2rem, 4vw, 3rem);
+  background:
+    radial-gradient(circle at top left, rgba(34, 89, 82, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 249, 0.96));
+  border: 0.1rem solid rgba(34, 89, 82, 0.08);
+  border-radius: var(--vitacoral-radius-xl, 2.4rem);
+  box-shadow: 0 1.2rem 3.2rem rgba(21, 44, 41, 0.055);
+}
+
+.footer-block__newsletter .footer-block__heading {
+  margin-bottom: 1.2rem;
+  color: var(--vitacoral-color-text, rgb(var(--color-foreground)));
+  font-family: var(--vitacoral-font-brand, var(--font-heading-family));
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+}
+
+.footer-block__newsletter .newsletter-form {
+  max-width: 100%;
+}
+
+.footer-block__newsletter .newsletter-form__field-wrapper {
+  max-width: 100%;
+}
+
+.footer-block__newsletter .field {
+  min-height: 5.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 0.1rem solid rgba(34, 89, 82, 0.12);
+  border-radius: var(--vitacoral-radius-lg, 1.8rem);
+  box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.04);
+}
+
+.footer-block__newsletter .field:focus-within {
+  border-color: rgba(34, 89, 82, 0.22);
+  box-shadow: 0 0 0 0.2rem rgba(34, 89, 82, 0.08);
+}
+
+.footer-block__newsletter .field__input {
+  min-height: 5.2rem;
+  color: var(--vitacoral-color-text, rgb(var(--color-foreground)));
+  font-family: var(--vitacoral-font-body, var(--font-body-family));
+}
+
+.footer-block__newsletter .field__label {
+  color: var(--vitacoral-color-text-muted, rgba(var(--color-foreground), 0.6));
+}
+
+.footer-block__newsletter .newsletter-form__button {
+  width: 4.8rem;
+  height: 4.8rem;
+  margin: auto 0.3rem auto auto;
+  border-radius: var(--vitacoral-radius-md, 1.2rem);
+  color: var(--vitacoral-color-primary-deep, rgb(var(--color-foreground)));
+  background: rgba(34, 89, 82, 0.08);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-block__newsletter .newsletter-form__button:hover,
+.footer-block__newsletter .newsletter-form__button:focus-visible {
+  background: rgba(34, 89, 82, 0.14);
+}
+
+@media screen and (max-width: 749px) {
+  .footer-block__newsletter {
+    padding: 1.8rem 1.6rem;
+    border-radius: var(--vitacoral-radius-lg, 1.8rem);
+  }
+
+  .footer-block__newsletter .footer-block__heading {
+    text-align: center;
+  }
+}
