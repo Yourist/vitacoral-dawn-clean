@@ -274,6 +274,22 @@ cart-remove-button .icon-remove {
     align-items: flex-start;
     justify-content: flex-end;
   }
+
+  /* Vitacoral: keep mobile cart item totals on one line */
+  .cart-item__totals {
+    min-width: 8.2rem;
+  }
+
+  .cart-item__totals .cart-item__price-wrapper,
+  .cart-item__totals .cart-item__final-price,
+  .cart-item__totals .price,
+  .cart-item__totals .price-item,
+  .cart-item__price-wrapper > * {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    line-height: 1.15 !important;
+  }
 }
 
 @media screen and (min-width: 750px) {
