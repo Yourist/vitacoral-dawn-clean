@@ -21,6 +21,42 @@
   assign mobile_sizes = '100vw'
 -%}
 
+<style>
+  #VitacoralHero-{{ section.id }} .vitacoral-hero__chips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    align-items: stretch;
+  }
+
+  #VitacoralHero-{{ section.id }} .vitacoral-hero__chip {
+    width: 100%;
+    min-height: 4.1rem;
+    margin: 0;
+    justify-content: flex-start;
+    padding: 0.75rem 0.95rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  #VitacoralHero-{{ section.id }} .vitacoral-hero__chip-label {
+    flex: 0 0 auto;
+  }
+
+  #VitacoralHero-{{ section.id }} .vitacoral-button--secondary,
+  #VitacoralHero-{{ section.id }} .vitacoral-chip--outline {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(34, 89, 82, 0.2);
+    color: var(--vitacoral-color-primary-deep, #173f3a);
+  }
+
+  @media screen and (max-width: 389px) {
+    #VitacoralHero-{{ section.id }} .vitacoral-hero__chips {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 <section class="vitacoral-hero vitacoral-section" id="VitacoralHero-{{ section.id }}">
   <div class="vitacoral-container">
     <div class="vitacoral-hero__grid">
@@ -40,7 +76,7 @@
         {%- endif -%}
 
         {%- if section.blocks.size > 0 -%}
-          <ul class="vitacoral-hero__chips list-unstyled" aria-label="Trust highlights">
+          <ul class="vitacoral-hero__chips list-unstyled" aria-label="Vitacoral guven unsurlari">
             {%- for block in section.blocks -%}
               <li class="vitacoral-chip vitacoral-chip--light vitacoral-hero__chip" {{ block.shopify_attributes }}>
                 {%- if block.settings.icon_text != blank -%}
@@ -126,14 +162,14 @@
             {%- else -%}
               <div class="vitacoral-hero__placeholder">
                 <p class="vitacoral-eyebrow">Vitacoral</p>
-                <p class="vitacoral-body-muted">Add an editorial image to bring this story-led hero to life.</p>
+                <p class="vitacoral-body-muted">Gorsel ekleyerek bu alani daha guclu bir marka girisine donusturun.</p>
               </div>
             {%- endif -%}
           </div>
 
           <div class="vitacoral-editorial-card__content vitacoral-hero__media-copy">
-            <span class="vitacoral-chip vitacoral-chip--outline">Mobile-first editorial</span>
-            <p class="vitacoral-body-muted">A calm, trustworthy hero layout designed for clear product discovery.</p>
+            <span class="vitacoral-chip vitacoral-chip--outline">Rutin odakli kesif</span>
+            <p class="vitacoral-body-muted">Urun ailelerini, icerikleri ve gunluk rutinleri daha sade bir akista kesfedin.</p>
           </div>
         </div>
       </div>
