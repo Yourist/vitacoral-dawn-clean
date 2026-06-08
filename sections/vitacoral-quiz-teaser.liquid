@@ -32,6 +32,30 @@
         {%- if section.settings.secondary_note != blank -%}
           <p class="vitacoral-body-muted vitacoral-quiz__note">{{ section.settings.secondary_note | escape }}</p>
         {%- endif -%}
+
+        <div class="vitacoral-quiz__steps" aria-label="Discovery steps">
+          <article class="vitacoral-quiz__step vitacoral-card">
+            <span class="vitacoral-quiz__step-index">1</span>
+            <div class="vitacoral-quiz__step-copy">
+              <h3 class="vitacoral-quiz__step-title">Rutininizi seçin</h3>
+              <p class="vitacoral-body-muted">Günlük kullanım alışkanlığınıza göre keşfe başlayın.</p>
+            </div>
+          </article>
+          <article class="vitacoral-quiz__step vitacoral-card">
+            <span class="vitacoral-quiz__step-index">2</span>
+            <div class="vitacoral-quiz__step-copy">
+              <h3 class="vitacoral-quiz__step-title">Kısa soruları yanıtlayın</h3>
+              <p class="vitacoral-body-muted">Kısa quiz ile doğru başlangıç noktasını bulun.</p>
+            </div>
+          </article>
+          <article class="vitacoral-quiz__step vitacoral-card">
+            <span class="vitacoral-quiz__step-index">3</span>
+            <div class="vitacoral-quiz__step-copy">
+              <h3 class="vitacoral-quiz__step-title">Ürünleri keşfedin</h3>
+              <p class="vitacoral-body-muted">Rutininize uygun ürünleri keşfedin.</p>
+            </div>
+          </article>
+        </div>
       </div>
 
       <div class="vitacoral-quiz__visual vitacoral-reveal is-visible">
