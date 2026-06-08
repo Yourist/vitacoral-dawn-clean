@@ -46,6 +46,7 @@
   --vitacoral-radius-sm: 0.8rem;
   --vitacoral-radius-md: 1.2rem;
   --vitacoral-radius-lg: 1.8rem;
+  --vitacoral-radius-xl: 2.4rem;
   --vitacoral-radius-pill: 999px;
   --vitacoral-shadow-soft: 0 1.2rem 3rem rgba(21, 44, 41, 0.08);
   --vitacoral-container-max: 128rem;
@@ -3139,40 +3140,159 @@
 
 @media screen and (max-width: 749px) {
   .vc-collection-banner {
-    padding-top: 1.2rem;
+    padding: 0.8rem 0 0.6rem;
   }
 
   .vc-collection-banner .collection-hero__inner {
-    padding: 1.6rem;
+    gap: 1.2rem;
+    padding: 1.3rem 1.3rem 1.4rem;
     border-radius: var(--vitacoral-radius-lg);
   }
 
   .vc-collection-banner__title {
-    font-size: clamp(2.7rem, 10vw, 4rem);
+    font-size: clamp(2.4rem, 8.8vw, 3.4rem);
+    line-height: 0.98;
   }
 
   .vc-collection-banner__description {
-    font-size: 1.48rem;
-    line-height: 1.65;
+    font-size: 1.38rem;
+    line-height: 1.58;
   }
 
   .vc-collection-banner__meta {
-    min-height: 2.9rem;
-    padding-inline: 0.95rem;
-    font-size: 1.08rem;
+    min-height: 2.6rem;
+    padding: 0.45rem 0.85rem;
+    font-size: 1rem;
+  }
+
+  .vc-collection__layout {
+    gap: 0.9rem;
   }
 
   .vc-collection .facets-wrapper {
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
   }
 
-  .vc-collection .facets-container {
-    padding: 1rem 1.1rem;
+  .vc-collection .facets-container,
+  .vc-collection .facets-vertical-form {
+    gap: 0.9rem;
+    padding: 0.9rem 1rem;
     border-radius: var(--vitacoral-radius-md);
+    box-shadow: 0 0.6rem 1.6rem rgba(21, 44, 41, 0.035);
+  }
+
+  .vc-collection .facets-layout {
+    row-gap: 0.8rem;
+  }
+
+  .vc-collection .facet-filters {
+    padding: 0;
+  }
+
+  .vc-collection .facet-filters__field {
+    gap: 0.6rem;
+  }
+
+  .vc-collection .facet-filters__label {
+    font-size: 1.02rem;
+    letter-spacing: 0.1em;
+  }
+
+  .vc-collection .facet-filters__sort,
+  .vc-collection .select__select {
+    min-height: 4.2rem;
+    font-size: 1.35rem;
+  }
+
+  .vc-collection .product-count__text,
+  .vc-collection .product-count-vertical {
+    font-size: 1.2rem;
+  }
+
+  .vc-collection-grid__container {
+    gap: 1rem;
   }
 
   .vc-collection-grid__items {
-    gap: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1rem;
+  }
+
+  .vc-collection-grid__items .grid__item {
+    min-width: 0;
+  }
+
+  .vc-collection .vc-product-card {
+    min-width: 0;
+  }
+
+  .vc-collection .vc-product-card .card {
+    border-radius: calc(var(--vitacoral-radius-md) + 0.2rem);
+    box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.045);
+  }
+
+  .vc-collection .vc-product-card .card__media {
+    border-radius: var(--vitacoral-radius-md);
+  }
+
+  .vc-collection .vc-product-card .card__content {
+    padding: 1rem 0.95rem 1.05rem;
+  }
+
+  .vc-collection .vc-product-card .card__heading {
+    font-size: 1.74rem;
+    line-height: 1.08;
+  }
+
+  .vc-collection .vc-card-meta {
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .vc-collection .vc-card-type {
+    font-size: 0.98rem;
+    letter-spacing: 0.07em;
+  }
+
+  .vc-collection .vc-card-chip {
+    min-height: 2.2rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.92rem;
+  }
+
+  .vc-collection .vc-card-subtitle {
+    margin-top: 0.45rem;
+    font-size: 1.24rem;
+    line-height: 1.42;
+  }
+
+  .vc-collection .vc-product-card .card-information {
+    gap: 0.65rem;
+    padding-top: 0.75rem;
+  }
+
+  .vc-collection .vc-product-card .card-information > .caption-with-letter-spacing.light {
+    font-size: 0.98rem;
+    letter-spacing: 0.07em;
+  }
+
+  .vc-collection .vc-product-card .price__regular .price-item,
+  .vc-collection .vc-product-card .price__sale .price-item--sale,
+  .vc-collection .vc-product-card .price--large .price-item {
+    font-size: 1.55rem;
+  }
+
+  .vc-collection .vc-product-card .quick-add {
+    margin-top: 0.9rem;
+  }
+
+  .vc-collection .vc-product-card .quick-add__submit {
+    min-height: 4rem;
+    padding-inline: 1rem;
+  }
+
+  .vc-collection .pagination-wrapper {
+    margin-top: 2rem;
   }
 
   .vc-collection-empty {
