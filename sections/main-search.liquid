@@ -64,16 +64,19 @@
 {%- endstyle -%}
 
 {% paginate search.results by 24 %}
-  <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
-    <div class="template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      <h1 class="h2 center">
+  <div class="template-search vc-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
+    <div class="template-search__header vc-search__surface page-width vc-reveal{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      <div class="vc-search__hero">
+        <p class="vc-search__eyebrow">Vitacoral arama</p>
+        <h1 class="h2 center vc-search__title">
         {%- if search.performed -%}
           {{- 'templates.search.title' | t -}}
         {%- else -%}
           {{- 'general.search.search' | t -}}
         {%- endif -%}
-      </h1>
-      <div class="template-search__search">
+        </h1>
+      </div>
+      <div class="template-search__search vc-search__form">
         {%- if settings.predictive_search_enabled -%}
           <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- endif -%}
@@ -135,13 +138,13 @@
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
           {%- if search.results_count > 0 -%}
-            <p role="status">
+            <p class="vc-search__meta" role="status">
               {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
             </p>
           {%- endif -%}
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
-          <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <p class="vc-search__meta vc-search__empty-copy" role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
         {%- endif -%}
       {%- endif -%}
     </div>
@@ -150,8 +153,8 @@
         and section.settings.filter_type == 'vertical'
         and search.filters != empty
       -%}
-        <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
-          <form class="facets-vertical-form" id="FacetSortForm">
+        <facet-filters-form class="facets facets-vertical-sort vc-search__toolbar page-width small-hide vc-reveal">
+          <form class="facets-vertical-form vc-search__toolbar-form" id="FacetSortForm">
             <div class="facet-filters sorting caption">
               <div class="facet-filters__field">
                 <h2 class="facet-filters__label caption-large text-body">
@@ -183,7 +186,7 @@
               </div>
             </div>
 
-            <div class="product-count-vertical light" role="status">
+            <div class="product-count-vertical light vc-search__toolbar-count" role="status">
               <h2 class="product-count__text text-body">
                 <span id="ProductCountDesktop">
                   {%- if search.results_count -%}
@@ -205,14 +208,16 @@
       {%- endif -%}
       <div
         {% if section.settings.filter_type == 'vertical' %}
-          class="facets-vertical page-width"
+          class="vc-search__layout facets-vertical page-width"
+        {% else %}
+          class="vc-search__layout"
         {% endif %}
       >
         {%- if search.filters != empty -%}
           {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
             <aside
               aria-labelledby="verticalTitle"
-              class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+              class="facets-wrapper vc-search__toolbar{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
               id="main-search-filters"
               data-id="{{ section.id }}"
             >
@@ -226,10 +231,10 @@
             </aside>
           {%- endif -%}
         {%- endif -%}
-        <div class="product-grid-container" id="ProductGridContainer">
+        <div class="product-grid-container vc-search__results vc-reveal" id="ProductGridContainer">
           {%- if search.results.size == 0 and search.filters != empty -%}
             <div
-              class="template-search__results collection collection--empty{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+              class="template-search__results vc-search__empty collection collection--empty{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
               id="product-grid"
               data-id="{{ section.id }}"
             >
@@ -247,13 +252,13 @@
             </div>
           {%- else -%}
             <div
-              class="template-search__results collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+              class="template-search__results vc-search__results-surface collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
               id="product-grid"
               data-id="{{ section.id }}"
             >
               <div class="loading-overlay gradient"></div>
               <ul
-                class="grid product-grid  grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
+                class="grid product-grid vc-search__grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
                 role="list"
               >
                 {%- assign skip_card_product_styles = false -%}
@@ -294,14 +299,14 @@
                           lazy_load: lazy_load
                         %}
                       {%- when 'page' -%}
-                        <div class="article-card-wrapper card-wrapper underline-links-hover">
+                        <div class="article-card-wrapper vc-search-page-card card-wrapper underline-links-hover">
                           <div
-                            class="card card--card card--text ratio color-{{ settings.blog_card_color_scheme }}"
+                            class="card vc-search-page-card__surface card--card card--text ratio color-{{ settings.blog_card_color_scheme }}"
                             style="--ratio-percent: 100%;"
                           >
-                            <div class="card__content">
+                            <div class="card__content vc-search-page-card__content">
                               <div class="card__information">
-                                <h3 class="card__heading">
+                                <h3 class="card__heading vc-search-page-card__title">
                                   <a href="{{ item.url }}" class="full-unstyled-link">
                                     {{ item.title | truncate: 50 | escape }}
                                   </a>
