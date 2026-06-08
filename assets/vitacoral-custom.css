@@ -55,7 +55,11 @@
   --vitacoral-section-space-spacious: 7.2rem;
   --vitacoral-duration-fast: 0.2s;
   --vitacoral-duration-base: 0.45s;
+  --vitacoral-duration-slow: 0.6s;
   --vitacoral-ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --vitacoral-distance-reveal: 1.6rem;
+  --vitacoral-distance-lift: 0.3rem;
+  --vitacoral-scale-soft: 1.02;
 }
 
 @media screen and (min-width: 750px) {
@@ -91,7 +95,12 @@
   line-height: 1.1;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    border-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    transform var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
 }
 
 .vitacoral-button--secondary {
@@ -110,6 +119,10 @@
   border: 0.1rem solid var(--vitacoral-color-border);
   border-radius: var(--vitacoral-radius-lg);
   box-shadow: var(--vitacoral-shadow-soft);
+  transition:
+    transform var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    border-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
 }
 
 .vitacoral-eyebrow {
@@ -226,18 +239,25 @@
   gap: var(--vitacoral-space-sm);
 }
 
-.vitacoral-reveal {
+.vitacoral-reveal,
+.vc-reveal {
   opacity: 0;
-  transform: translateY(1.6rem);
+  transform: translateY(var(--vitacoral-distance-reveal));
   transition:
-    opacity var(--vitacoral-duration-base) var(--vitacoral-ease-soft),
-    transform var(--vitacoral-duration-base) var(--vitacoral-ease-soft);
+    opacity var(--vc-reveal-duration, var(--vitacoral-duration-base)) var(--vitacoral-ease-soft),
+    transform var(--vc-reveal-duration, var(--vitacoral-duration-base)) var(--vitacoral-ease-soft);
+  transition-delay: var(--vc-reveal-delay, 0ms);
   will-change: opacity, transform;
 }
 
-.vitacoral-reveal.is-visible {
+.vitacoral-reveal.is-visible,
+.vc-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.vc-reveal--slow {
+  --vc-reveal-duration: var(--vitacoral-duration-slow);
 }
 
 .vitacoral-lift {
@@ -246,20 +266,108 @@
     box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
 }
 
+.vitacoral-editorial-media__image,
+.vitacoral-quiz__image,
+.vitacoral-featured-products__image,
+.vitacoral-product-family__image,
+.vitacoral-education__image,
+.vitacoral-hero__image,
+.vc-product-card .media img {
+  transition:
+    transform var(--vitacoral-duration-base) var(--vitacoral-ease-soft),
+    opacity var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
+  transform-origin: center center;
+}
+
+.vitacoral-editorial-media__frame,
+.vitacoral-featured-products__card,
+.vitacoral-product-family__card,
+.vitacoral-trust__card,
+.vitacoral-social-proof__card,
+.vitacoral-education__card,
+.vitacoral-product-story__card,
+.vitacoral-faq__item {
+  transition:
+    transform var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    border-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    background-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
+}
+
+.vitacoral-faq__summary,
+.vitacoral-faq__question,
+.vitacoral-pdp-details__summary,
+.quick-add__submit,
+.product-form__submit.button,
+.shopify-payment-button__button,
+.shopify-payment-button__more-options {
+  transition:
+    transform var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    background-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    border-color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    color var(--vitacoral-duration-fast) var(--vitacoral-ease-soft),
+    box-shadow var(--vitacoral-duration-fast) var(--vitacoral-ease-soft);
+}
+
 @media (hover: hover) and (pointer: fine) {
+  .vitacoral-button:hover,
+  .quick-add__submit:hover,
+  .product-form__submit.button:hover:not([disabled]),
+  .shopify-payment-button__button:hover:not([disabled]) {
+    transform: translateY(calc(var(--vitacoral-distance-lift) * -1));
+  }
+
   .vitacoral-lift:hover {
     transform: translateY(-0.4rem);
     box-shadow: 0 1.8rem 3.6rem rgba(21, 44, 41, 0.12);
+  }
+
+  .vitacoral-featured-products__item:hover .vitacoral-featured-products__card,
+  .vitacoral-product-family__item:hover .vitacoral-product-family__card,
+  .vitacoral-trust__item:hover .vitacoral-trust__card,
+  .vitacoral-social-proof__item:hover .vitacoral-social-proof__card,
+  .vitacoral-education__item:hover .vitacoral-education__card,
+  .vitacoral-product-story__card:hover,
+  .vitacoral-editorial-media__frame:hover,
+  .vitacoral-faq__item:hover {
+    transform: translateY(calc(var(--vitacoral-distance-lift) * -1));
+  }
+
+  .vitacoral-featured-products__item:hover .vitacoral-featured-products__image,
+  .vitacoral-product-family__item:hover .vitacoral-product-family__image,
+  .vitacoral-education__item:hover .vitacoral-education__image,
+  .vitacoral-editorial-media__frame:hover .vitacoral-editorial-media__image,
+  .vitacoral-editorial-media__frame:hover .vitacoral-editorial-media__video,
+  .vitacoral-quiz__media:hover .vitacoral-quiz__image,
+  .vitacoral-hero__media-card:hover .vitacoral-hero__image,
+  .vc-product-card:hover .media img {
+    transform: scale(var(--vitacoral-scale-soft));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .vitacoral-reveal,
-  .vitacoral-lift {
+  .vc-reveal,
+  .vitacoral-lift,
+  .vitacoral-button,
+  .vitacoral-card,
+  .vitacoral-editorial-media__image,
+  .vitacoral-editorial-media__video,
+  .vitacoral-quiz__image,
+  .vitacoral-featured-products__image,
+  .vitacoral-product-family__image,
+  .vitacoral-education__image,
+  .vitacoral-hero__image,
+  .quick-add__submit,
+  .product-form__submit.button,
+  .shopify-payment-button__button,
+  .shopify-payment-button__more-options,
+  .vc-product-card .media img {
     transition: none;
   }
 
-  .vitacoral-reveal {
+  .vitacoral-reveal,
+  .vc-reveal {
     opacity: 1;
     transform: none;
     will-change: auto;
@@ -268,6 +376,23 @@
   .vitacoral-lift:hover {
     transform: none;
     box-shadow: var(--vitacoral-shadow-soft);
+  }
+}
+
+@media (hover: none) {
+  .vitacoral-button:active,
+  .quick-add__submit:active,
+  .product-form__submit.button:active:not([disabled]),
+  .shopify-payment-button__button:active:not([disabled]),
+  .vitacoral-featured-products__item:active .vitacoral-featured-products__card,
+  .vitacoral-product-family__item:active .vitacoral-product-family__card,
+  .vitacoral-trust__item:active .vitacoral-trust__card,
+  .vitacoral-social-proof__item:active .vitacoral-social-proof__card,
+  .vitacoral-education__item:active .vitacoral-education__card,
+  .vitacoral-product-story__card:active,
+  .vitacoral-editorial-media__frame:active,
+  .vitacoral-faq__item:active {
+    transform: translateY(-0.1rem);
   }
 }
 
