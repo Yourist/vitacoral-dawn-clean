@@ -152,3 +152,145 @@
     text-align: center;
   }
 }
+
+/* Vitacoral detail polish layer */
+.product__media-icon,
+.thumbnail__badge {
+  width: 2.4rem;
+  height: 2.4rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(34, 89, 82, 0.12);
+  color: var(--vitacoral-color-primary-deep, rgb(var(--color-foreground)));
+  box-shadow: 0 0.6rem 1.6rem rgba(21, 44, 41, 0.08);
+}
+
+.product__media-icon .icon,
+.thumbnail__badge .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.product-media-modal__content img,
+.product-media-modal__content .media {
+  max-height: 86vh;
+  object-fit: contain;
+}
+
+.product-form__buttons {
+  display: grid;
+  gap: 1rem;
+}
+
+.product-form__submit,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded {
+  min-height: 5rem;
+  border-radius: var(--vitacoral-radius-md, 1.2rem) !important;
+  font-family: var(--vitacoral-font-ui, var(--font-body-family));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.product-form__submit {
+  box-shadow: 0 1rem 2.4rem rgba(21, 44, 41, 0.12);
+}
+
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 0.1rem solid rgba(34, 89, 82, 0.18) !important;
+  color: var(--vitacoral-color-primary-deep, rgb(var(--color-foreground))) !important;
+}
+
+.shopify-payment-button__button:hover,
+.shopify-payment-button__button--unbranded:hover {
+  background: rgba(34, 89, 82, 0.06) !important;
+  border-color: rgba(34, 89, 82, 0.28) !important;
+}
+
+@media screen and (max-width: 749px) {
+  .related-products .grid,
+  .product-recommendations .grid,
+  .complementary-products .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .related-products .grid__item,
+  .product-recommendations .grid__item,
+  .complementary-products .grid__item {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .related-products .card__heading,
+  .product-recommendations .card__heading,
+  .complementary-products .card__heading {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .related-products .price,
+  .product-recommendations .price,
+  .complementary-products .price {
+    font-size: 1.3rem;
+  }
+}
+
+.vc-article-card__title,
+.vc-article-card .card__heading,
+.blog-articles .card__heading {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.vc-article-card__excerpt,
+.vc-article-card .article-card__excerpt,
+.blog-articles .article-card__excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+.pagination__item,
+.pagination__item .icon-caret {
+  color: var(--vitacoral-color-primary-deep, rgb(var(--color-foreground)));
+}
+
+.pagination__item {
+  font-family: var(--vitacoral-font-ui, var(--font-body-family));
+  font-weight: 700;
+  border-radius: var(--vitacoral-radius-pill, 999px);
+}
+
+.pagination__item--current,
+.pagination__item:hover {
+  background: rgba(34, 89, 82, 0.08);
+  color: var(--vitacoral-color-primary, rgb(var(--color-link)));
+}
+
+cart-drawer .price,
+cart-items .price,
+cart-drawer .totals__total-value,
+#main-cart-footer .totals__total-value,
+.cart-item__price-wrapper,
+.cart-item__totals .price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  line-height: 1.1;
+  vertical-align: baseline;
+}
+
+.cart-item__totals,
+cart-drawer .totals,
+#main-cart-footer .totals {
+  align-items: baseline;
+}
