@@ -294,3 +294,81 @@ cart-drawer .totals,
 #main-cart-footer .totals {
   align-items: baseline;
 }
+
+/* Stronger mobile correction pass */
+@media screen and (max-width: 749px) {
+  product-info .product__media-icon,
+  product-info .product__media-icon--hover,
+  product-info .product__media-icon--lightbox {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+    left: 0.8rem !important;
+    top: 0.8rem !important;
+  }
+
+  product-info .product__media-icon .svg-wrapper,
+  product-info .product__media-icon svg,
+  product-info .product__media-icon .icon {
+    width: 0.95rem !important;
+    height: 0.95rem !important;
+  }
+
+  product-info .product-form__buttons,
+  product-info .product-form__buttons > *,
+  product-info .product-form__submit,
+  product-info .shopify-payment-button,
+  product-info .shopify-payment-button__button,
+  product-info .shopify-payment-button__button--unbranded {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  product-info .product-form__submit,
+  product-info .shopify-payment-button__button,
+  product-info .shopify-payment-button__button--unbranded {
+    min-height: 4.8rem !important;
+    border-radius: 1.2rem !important;
+  }
+
+  product-info .shopify-payment-button__button,
+  product-info .shopify-payment-button__button--unbranded {
+    background: #ffffff !important;
+    border: 0.1rem solid rgba(34, 89, 82, 0.22) !important;
+    color: #163d38 !important;
+    box-shadow: none !important;
+  }
+
+  .related-products ul.product-grid.grid,
+  product-recommendations.related-products ul.product-grid.grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+
+  .related-products ul.product-grid.grid > .grid__item,
+  product-recommendations.related-products ul.product-grid.grid > .grid__item {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .related-products .card__content,
+  product-recommendations.related-products .card__content {
+    padding-top: 0.8rem !important;
+  }
+
+  .related-products .card__heading,
+  product-recommendations.related-products .card__heading {
+    font-size: 1.25rem !important;
+    line-height: 1.18 !important;
+  }
+
+  .cart-item__price-wrapper,
+  .cart-item__totals .price,
+  cart-drawer .price,
+  cart-items .price {
+    display: inline !important;
+    line-height: 1.2 !important;
+    vertical-align: baseline !important;
+  }
+}
