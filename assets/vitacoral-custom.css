@@ -3114,6 +3114,242 @@
   letter-spacing: -0.03em;
 }
 
+.vc-page,
+.vc-contact {
+  position: relative;
+}
+
+.vc-page__surface,
+.vc-contact__surface {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 3.4rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 250, 249, 0.95));
+  border: 0.1rem solid rgba(34, 89, 82, 0.08);
+  border-radius: var(--vitacoral-radius-xl);
+  box-shadow: 0 1.4rem 3.4rem rgba(21, 44, 41, 0.05);
+}
+
+.vc-page__surface::before,
+.vc-contact__surface::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(18rem, 46%);
+  background:
+    radial-gradient(circle at top left, rgba(34, 89, 82, 0.1), transparent 52%),
+    radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 34%);
+  pointer-events: none;
+}
+
+.vc-page__hero,
+.vc-contact__surface > .vc-contact__eyebrow,
+.vc-contact__surface > .vc-contact__title,
+.vc-page__content,
+.vc-contact form {
+  position: relative;
+  z-index: 1;
+}
+
+.vc-page__hero {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.vc-page__eyebrow,
+.vc-contact__eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--vitacoral-color-primary);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.vc-page__title,
+.vc-contact__title {
+  margin: 0;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.vc-page__content,
+.vc-page__content.rte {
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-body);
+}
+
+.vc-page__content > *:first-child,
+.vc-page__content.rte > *:first-child {
+  margin-top: 0;
+}
+
+.vc-page__content > *:last-child,
+.vc-page__content.rte > *:last-child {
+  margin-bottom: 0;
+}
+
+.vc-page__content p,
+.vc-page__content li,
+.vc-page__content td,
+.vc-page__content th {
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-body);
+  font-size: 1.65rem;
+  line-height: 1.72;
+}
+
+.vc-page__content p,
+.vc-page__content ul,
+.vc-page__content ol,
+.vc-page__content table,
+.vc-page__content blockquote,
+.vc-page__content img {
+  margin-block: 1.4rem;
+}
+
+.vc-page__content h2,
+.vc-page__content h3,
+.vc-page__content h4,
+.vc-page__content h5,
+.vc-page__content h6 {
+  margin: 2.4rem 0 1rem;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.vc-page__content h2 {
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+}
+
+.vc-page__content h3 {
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+}
+
+.vc-page__content h4,
+.vc-page__content h5,
+.vc-page__content h6 {
+  font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+}
+
+.vc-page__content a {
+  color: var(--vitacoral-color-primary);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+  word-break: break-word;
+}
+
+.vc-page__content ul,
+.vc-page__content ol {
+  padding-inline-start: 2rem;
+}
+
+.vc-page__content li + li {
+  margin-top: 0.6rem;
+}
+
+.vc-page__content blockquote {
+  margin-inline: 0;
+  padding: 1.6rem 1.8rem;
+  color: var(--vitacoral-color-text);
+  background: rgba(34, 89, 82, 0.05);
+  border-left: 0.3rem solid rgba(34, 89, 82, 0.2);
+  border-radius: var(--vitacoral-radius-md);
+}
+
+.vc-page__content img,
+.vc-page__content iframe,
+.vc-page__content video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--vitacoral-radius-lg);
+}
+
+.vc-page__content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vc-page__content table tbody,
+.vc-page__content table thead,
+.vc-page__content table tr {
+  width: 100%;
+}
+
+.vc-page__content th,
+.vc-page__content td {
+  min-width: 14rem;
+  padding: 1.1rem 1.2rem;
+  text-align: left;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.86);
+  border: 0.1rem solid rgba(34, 89, 82, 0.12);
+}
+
+.vc-page__content th {
+  color: var(--vitacoral-color-primary-deep);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vc-contact__title {
+  margin-bottom: 1.8rem;
+}
+
+.vc-contact form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.vc-contact .contact__fields {
+  gap: 1.4rem;
+}
+
+.vc-contact .field {
+  margin-bottom: 0;
+}
+
+.vc-contact .field__input {
+  border-radius: var(--vitacoral-radius-md);
+  border-color: rgba(34, 89, 82, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.vc-contact .field__label,
+.vc-contact .form-status,
+.vc-contact .form-status-list,
+.vc-contact .contact__field-error {
+  font-family: var(--vitacoral-font-body);
+}
+
+.vc-contact .contact__button {
+  margin-top: 0.4rem;
+}
+
+.vc-contact .contact__button .button {
+  min-height: 4.8rem;
+  padding-inline: 2rem;
+  background: var(--vitacoral-color-primary);
+  border-radius: var(--vitacoral-radius-md);
+}
+
 @media screen and (min-width: 990px) {
   .vc-collection-banner .collection-hero__inner {
     align-items: center;
@@ -3139,6 +3375,78 @@
 }
 
 @media screen and (max-width: 749px) {
+  .vc-page__surface,
+  .vc-contact__surface {
+    padding: 1.5rem 1.4rem 1.6rem;
+    border-radius: var(--vitacoral-radius-lg);
+  }
+
+  .vc-page__hero {
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .vc-page__eyebrow,
+  .vc-contact__eyebrow {
+    margin-bottom: 0.6rem;
+    font-size: 1.02rem;
+    letter-spacing: 0.14em;
+  }
+
+  .vc-page__title,
+  .vc-contact__title {
+    font-size: clamp(2.6rem, 9.5vw, 3.6rem);
+  }
+
+  .vc-page__content p,
+  .vc-page__content li,
+  .vc-page__content td,
+  .vc-page__content th {
+    font-size: 1.48rem;
+    line-height: 1.62;
+  }
+
+  .vc-page__content p,
+  .vc-page__content ul,
+  .vc-page__content ol,
+  .vc-page__content table,
+  .vc-page__content blockquote,
+  .vc-page__content img {
+    margin-block: 1.2rem;
+  }
+
+  .vc-page__content h2 {
+    font-size: 2.35rem;
+  }
+
+  .vc-page__content h3 {
+    font-size: 2rem;
+  }
+
+  .vc-page__content h4,
+  .vc-page__content h5,
+  .vc-page__content h6 {
+    font-size: 1.72rem;
+  }
+
+  .vc-page__content th,
+  .vc-page__content td {
+    min-width: 12rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .vc-contact form {
+    gap: 1.3rem;
+  }
+
+  .vc-contact .contact__fields {
+    gap: 1rem;
+  }
+
+  .vc-contact .contact__button .button {
+    width: 100%;
+  }
+
   .vc-collection-banner {
     padding: 0.8rem 0 0.6rem;
   }
