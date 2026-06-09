@@ -13,8 +13,8 @@
       "type": "vitacoral-page-hero",
       "settings": {
         "eyebrow": "Vitacoral belgeleri",
-        "title": "",
-        "body": ""
+        "title": "Ürün onayları",
+        "body": "<p>Ürünlere ait onay ve kaynak bilgilerini daha açık, düzenli ve erişilebilir bir yapıda sunmak için bu alan kullanılabilir.</p>"
       }
     },
     "documents": {
@@ -22,14 +22,51 @@
       "settings": {
         "eyebrow": "Vitacoral belgeleri",
         "heading": "Ürün onayları",
-        "body": ""
-      }
+        "body": "<p>Bu alanda ürün onayları ve ilgili resmi kaynaklar düzenli kartlar halinde listelenebilir.</p>"
+      },
+      "blocks": {
+        "product_approval": {
+          "type": "document_item",
+          "settings": {
+            "category": "Onay",
+            "title": "Ürün onayı",
+            "description": "İlgili ürün onayı burada açıklama ve bağlantı ile sunulabilir.",
+            "link_label": "Onayı görüntüle",
+            "link_url": ""
+          }
+        },
+        "product_source_document": {
+          "type": "document_item",
+          "settings": {
+            "category": "Ürün",
+            "title": "Ürün kaynak dokümanı",
+            "description": "Ürün bazlı ek dokümanlar bu alanda listelenebilir.",
+            "link_label": "Dokümanı incele",
+            "link_url": ""
+          }
+        },
+        "extra_information": {
+          "type": "document_item",
+          "settings": {
+            "category": "Bilgi",
+            "title": "Ek açıklama",
+            "description": "Kullanıcıların inceleyebileceği ek bilgi ve kaynaklar buraya eklenebilir.",
+            "link_label": "Detayları görüntüle",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_approval",
+        "product_source_document",
+        "extra_information"
+      ]
     },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
-        "heading": "",
-        "body": ""
+        "heading": "Ürün onayları hakkında",
+        "body": "<p>Bu sayfa, ürünlere ait onay ve kaynak bilgilerinin daha anlaşılır bir düzende sunulması için hazırlanmıştır. Belge içerikleri ve bağlantılar güncel bilgilere göre düzenlenebilir.</p>"
       }
     }
   },

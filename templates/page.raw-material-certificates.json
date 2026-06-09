@@ -13,8 +13,8 @@
       "type": "vitacoral-page-hero",
       "settings": {
         "eyebrow": "Vitacoral belgeleri",
-        "title": "",
-        "body": ""
+        "title": "Hammadde sertifikaları",
+        "body": "<p>Ürün aileleriyle ilgili hammadde ve kaynak bilgilerini daha düzenli bir belge yapısıyla sunmak için bu alan kullanılabilir.</p>"
       }
     },
     "documents": {
@@ -22,14 +22,51 @@
       "settings": {
         "eyebrow": "Vitacoral belgeleri",
         "heading": "Hammadde sertifikaları",
-        "body": ""
-      }
+        "body": "<p>Bu alanda hammadde sertifikaları ve ilgili kaynaklar kategori bazlı olarak listelenebilir.</p>"
+      },
+      "blocks": {
+        "raw_material_certificate": {
+          "type": "document_item",
+          "settings": {
+            "category": "Hammadde",
+            "title": "Hammadde sertifikası",
+            "description": "İlgili hammadde sertifikası burada açıklama ve bağlantı ile sunulabilir.",
+            "link_label": "Sertifikayı görüntüle",
+            "link_url": ""
+          }
+        },
+        "source_document": {
+          "type": "document_item",
+          "settings": {
+            "category": "Kaynak",
+            "title": "Kaynak dokümanı",
+            "description": "Hammadde bilgilerine ait ek kaynaklar bu alana eklenebilir.",
+            "link_label": "Kaynağı incele",
+            "link_url": ""
+          }
+        },
+        "archive_certificate": {
+          "type": "document_item",
+          "settings": {
+            "category": "Arşiv",
+            "title": "Ek sertifika",
+            "description": "Ek sertifika veya açıklamalar ihtiyaç halinde bu kart üzerinden yönetilebilir.",
+            "link_label": "Detayları görüntüle",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "raw_material_certificate",
+        "source_document",
+        "archive_certificate"
+      ]
     },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
-        "heading": "",
-        "body": ""
+        "heading": "Hammadde belgeleri",
+        "body": "<p>Bu sayfa, hammaddeyle ilgili belge ve kaynakların daha kolay incelenebilmesi için tasarlanmıştır. Gerçek belge bağlantıları ve açıklamalar Theme Editor üzerinden güncellenebilir.</p>"
       }
     }
   },

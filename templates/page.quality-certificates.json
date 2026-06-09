@@ -13,23 +13,60 @@
       "type": "vitacoral-page-hero",
       "settings": {
         "eyebrow": "Vitacoral belgeleri",
-        "title": "",
-        "body": ""
+        "title": "Kalite belgeleri",
+        "body": "<p>Vitacoral’da kalite ve güvene dair belgeleri daha anlaşılır ve erişilebilir bir yapıda sunmayı önemsiyoruz.</p>"
       }
     },
     "documents": {
       "type": "vitacoral-document-list",
       "settings": {
-        "eyebrow": "Vitacoral belgeleri",
+        "eyebrow": "Belge merkezi",
         "heading": "Kalite belgeleri",
-        "body": ""
-      }
+        "body": "<p>Bu alanda kalite süreçlerine ait belgeler ve kaynaklar düzenli bir şekilde listelenebilir.</p>"
+      },
+      "blocks": {
+        "quality_document": {
+          "type": "document_item",
+          "settings": {
+            "category": "Kalite",
+            "title": "Kalite belgesi",
+            "description": "İlgili kalite belgesi burada başlık, açıklama ve bağlantı ile sunulabilir.",
+            "link_label": "Belgeyi görüntüle",
+            "link_url": ""
+          }
+        },
+        "process_document": {
+          "type": "document_item",
+          "settings": {
+            "category": "Süreç",
+            "title": "Süreç dokümanı",
+            "description": "Kalite süreçlerine ait ek dokümanlar bu alanda listelenebilir.",
+            "link_label": "Detayları incele",
+            "link_url": ""
+          }
+        },
+        "extra_resource": {
+          "type": "document_item",
+          "settings": {
+            "category": "Kaynak",
+            "title": "Ek kaynak",
+            "description": "Kullanıcıların inceleyebileceği ek belge veya açıklamalar buraya eklenebilir.",
+            "link_label": "Kaynağı görüntüle",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "quality_document",
+        "process_document",
+        "extra_resource"
+      ]
     },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
-        "heading": "",
-        "body": ""
+        "heading": "Belgeleri nasıl okumalı?",
+        "body": "<p>Bu sayfa, Vitacoral’a ait kalite belgelerini ve ilgili kaynakları tek bir yerde daha düzenli şekilde sunmak için hazırlanmıştır. Belge başlıkları ve bağlantılar, güncel içerikler eklendikçe düzenlenebilir.</p>"
       }
     }
   },
