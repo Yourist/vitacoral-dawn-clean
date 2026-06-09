@@ -12,38 +12,68 @@
     "hero": {
       "type": "vitacoral-page-hero",
       "settings": {
-        "eyebrow": "Vitacoral",
-        "title": "",
-        "body": ""
+        "eyebrow": "Vitacoral hakkında",
+        "title": "Günlük rutinlere eşlik eden sade ve güvenilir bir marka",
+        "body": "<p>Vitacoral, gıda takviyesi kategorisinde ürünlerini daha anlaşılır, erişilebilir ve güven veren bir deneyimle sunmayı hedefleyen bir markadır. Web sitesi, pazaryerleri ve eczane kanalı üzerinden müşterileriyle buluşur.</p>"
       }
     },
     "trust_grid": {
       "type": "vitacoral-trust-grid",
+      "settings": {
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Güveni sade bir deneyimle kuruyoruz",
+        "body": "<p>Ürün keşfinden içerik anlatımına kadar amacımız; abartısız, anlaşılır ve kullanıcıyı yormayan bir marka deneyimi sunmak.</p>"
+      },
       "blocks": {
-        "trust_card_tmkKyT": {
+        "transparency": {
           "type": "trust_card",
           "settings": {
-            "label": "",
-            "title": "",
-            "text": "",
+            "label": "Şeffaflık",
+            "title": "Anlaşılır bilgi akışı",
+            "text": "Ürün aileleri, belge sayfaları ve marka içerikleri daha net bir yapıda sunularak kullanıcıların ihtiyaç duyduğu bilgilere kolayca ulaşması hedeflenir.",
+            "accent_style": "green"
+          }
+        },
+        "accessibility": {
+          "type": "trust_card",
+          "settings": {
+            "label": "Erişilebilirlik",
+            "title": "Farklı satış kanallarında bulunabilirlik",
+            "text": "Vitacoral ürünleri web sitesi, seçili pazaryerleri ve eczane kanalı gibi farklı temas noktaları üzerinden müşterilere ulaşır.",
+            "accent_style": "orange"
+          }
+        },
+        "simplicity": {
+          "type": "trust_card",
+          "settings": {
+            "label": "Sadelik",
+            "title": "Rutin odaklı keşif",
+            "text": "Site deneyimi, kullanıcıların ürün ailelerini ve içerikleri karmaşık olmayan bir akışla keşfetmesine yardımcı olacak şekilde tasarlanır.",
+            "accent_style": "soft"
+          }
+        },
+        "continuity": {
+          "type": "trust_card",
+          "settings": {
+            "label": "Süreklilik",
+            "title": "Marka hafızasını koruyan yenilenme",
+            "text": "Vitacoral, mevcut marka kimliğini korurken dijital deneyimini daha modern, okunabilir ve güven veren bir yapıya taşır.",
             "accent_style": "green"
           }
         }
       },
       "block_order": [
-        "trust_card_tmkKyT"
-      ],
-      "settings": {
-        "eyebrow": "Vitacoral yaklaşımı",
-        "heading": "Güven oluşturan temel başlıklar",
-        "body": ""
-      }
+        "transparency",
+        "accessibility",
+        "simplicity",
+        "continuity"
+      ]
     },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
-        "heading": "",
-        "body": ""
+        "heading": "Vitacoral’ın yaklaşımı",
+        "body": "<p>Vitacoral için iyi bir marka deneyimi yalnızca ürün listelemekten ibaret değildir. Kullanıcının aradığı bilgiye kolay ulaşması, ürün ailelerini rahatça ayırt edebilmesi ve satın alma sürecinde kendini güvende hissetmesi önemlidir.</p><p>Bu nedenle yeni native sayfa yapısı; marka hikayesini, belge ve kaynak sayfalarını, ürün ailelerini ve iletişim noktalarını daha düzenli bir sistem içinde sunmak üzere hazırlanmıştır.</p><p>LayoutHub’dan native Shopify sayfalarına geçişin amacı, Vitacoral’ın kurumsal ve güven odaklı içeriklerini daha sürdürülebilir, hızlı ve düzenlenebilir bir yapıya taşımaktır.</p>"
       }
     }
   },
