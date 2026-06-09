@@ -10,72 +10,111 @@
 <section class="vc-page-hero section" id="VcPageHero-{{ section.id }}">
   {%- style -%}
     #VcPageHero-{{ section.id }} {
-      padding: clamp(2.4rem, 5vw, 5.6rem) 0 clamp(1.6rem, 3vw, 2.8rem);
+      padding: clamp(2.4rem, 5vw, 5.8rem) 0 clamp(1.8rem, 3vw, 3rem);
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__shell {
       position: relative;
       overflow: hidden;
-      padding: clamp(2rem, 4vw, 3.6rem);
+      padding: clamp(2.2rem, 4.5vw, 4.2rem);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 250, 249, 0.95));
-      border: 0.1rem solid rgba(34, 89, 82, 0.08);
+        radial-gradient(circle at 8% 10%, rgba(236, 101, 66, 0.15), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(34, 89, 82, 0.13), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(246, 250, 248, 0.94));
+      border: 0.1rem solid rgba(34, 89, 82, 0.1);
       border-radius: var(--vitacoral-radius-xl, 2.4rem);
-      box-shadow: 0 1.4rem 3.4rem rgba(21, 44, 41, 0.05);
+      box-shadow: 0 1.8rem 4.2rem rgba(21, 44, 41, 0.065);
+      isolation: isolate;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__shell::before,
+    #VcPageHero-{{ section.id }} .vc-page-hero__shell::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      z-index: -1;
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__shell::before {
-      content: '';
-      position: absolute;
       inset: 0 0 auto;
-      height: min(18rem, 44%);
+      height: min(20rem, 46%);
       background:
-        radial-gradient(circle at top left, rgba(34, 89, 82, 0.1), transparent 52%),
-        radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 34%);
-      pointer-events: none;
+        linear-gradient(90deg, rgba(34, 89, 82, 0.12), rgba(236, 101, 66, 0.1), transparent 74%);
+      opacity: 0.72;
+      mask-image: linear-gradient(180deg, #000, transparent);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__shell::after {
+      right: clamp(1.2rem, 4vw, 4rem);
+      bottom: clamp(1rem, 3vw, 3.4rem);
+      width: clamp(8rem, 16vw, 16rem);
+      height: clamp(8rem, 16vw, 16rem);
+      border: 0.1rem solid rgba(236, 101, 66, 0.18);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(236, 101, 66, 0.08), transparent 66%);
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__layout {
       position: relative;
       z-index: 1;
       display: grid;
-      gap: clamp(1.6rem, 3vw, 2.8rem);
+      gap: clamp(1.8rem, 3vw, 3rem);
       align-items: center;
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__content {
       display: grid;
-      gap: 1rem;
+      gap: 1.1rem;
       align-content: start;
+      max-width: 72rem;
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: fit-content;
       margin: 0;
-      color: var(--vitacoral-color-primary);
+      padding: 0.58rem 1rem;
+      color: var(--vitacoral-color-primary-deep, #163d38);
       font-family: var(--vitacoral-font-ui);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      line-height: 1.2;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      line-height: 1;
       text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.76);
+      border: 0.1rem solid rgba(34, 89, 82, 0.12);
+      border-radius: var(--vitacoral-radius-pill, 999px);
+      box-shadow: 0 0.6rem 1.6rem rgba(21, 44, 41, 0.045);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__eyebrow::before {
+      content: '';
+      width: 0.62rem;
+      height: 0.62rem;
+      border-radius: 999px;
+      background: #ec6542;
+      box-shadow: 0 0 0 0.35rem rgba(236, 101, 66, 0.12);
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__title {
+      max-width: 13ch;
       margin: 0;
       color: var(--vitacoral-color-text);
       font-family: var(--vitacoral-font-brand);
-      font-size: clamp(3rem, 6vw, 5.4rem);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      line-height: 0.98;
+      font-size: clamp(3.2rem, 6vw, 5.8rem);
+      font-weight: 650;
+      letter-spacing: -0.055em;
+      line-height: 0.96;
       text-wrap: balance;
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__body {
-      max-width: 62rem;
+      max-width: 64rem;
       color: var(--vitacoral-color-text-muted);
       font-family: var(--vitacoral-font-body);
-      font-size: 1.6rem;
+      font-size: 1.68rem;
       line-height: 1.68;
     }
 
@@ -88,12 +127,26 @@
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__media {
+      position: relative;
       overflow: hidden;
       border-radius: calc(var(--vitacoral-radius-xl, 2.4rem) - 0.4rem);
       background:
-        radial-gradient(circle at top left, rgba(34, 89, 82, 0.06), transparent 54%),
-        linear-gradient(180deg, rgba(244, 248, 247, 0.92), rgba(255, 255, 255, 0.98));
-      border: 0.1rem solid rgba(34, 89, 82, 0.06);
+        radial-gradient(circle at top left, rgba(236, 101, 66, 0.09), transparent 42%),
+        radial-gradient(circle at bottom right, rgba(34, 89, 82, 0.09), transparent 48%),
+        linear-gradient(180deg, rgba(244, 248, 247, 0.94), rgba(255, 255, 255, 0.98));
+      border: 0.1rem solid rgba(34, 89, 82, 0.08);
+      box-shadow: 0 1rem 2.8rem rgba(21, 44, 41, 0.075);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__media::after {
+      content: '';
+      position: absolute;
+      inset: auto 1.2rem 1.2rem auto;
+      width: 4.4rem;
+      height: 0.4rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #225952, #ec6542);
+      opacity: 0.68;
     }
 
     #VcPageHero-{{ section.id }} .vc-page-hero__media img {
@@ -104,27 +157,29 @@
 
     @media screen and (min-width: 990px) {
       #VcPageHero-{{ section.id }} .vc-page-hero__layout--with-media {
-        grid-template-columns: minmax(0, 1.1fr) minmax(28rem, 0.9fr);
+        grid-template-columns: minmax(0, 1.05fr) minmax(28rem, 0.95fr);
       }
     }
 
     @media screen and (max-width: 749px) {
       #VcPageHero-{{ section.id }} {
-        padding: 1.8rem 0 1rem;
+        padding: 1.6rem 0 1rem;
       }
 
       #VcPageHero-{{ section.id }} .vc-page-hero__shell {
-        padding: 1.6rem 1.4rem;
+        padding: 1.7rem 1.4rem;
         border-radius: var(--vitacoral-radius-lg);
       }
 
       #VcPageHero-{{ section.id }} .vc-page-hero__title {
-        font-size: clamp(2.7rem, 9vw, 3.8rem);
+        max-width: 12ch;
+        font-size: clamp(2.8rem, 9.8vw, 4rem);
+        letter-spacing: -0.05em;
       }
 
       #VcPageHero-{{ section.id }} .vc-page-hero__body {
-        font-size: 1.48rem;
-        line-height: 1.6;
+        font-size: 1.5rem;
+        line-height: 1.62;
       }
     }
   {%- endstyle -%}
