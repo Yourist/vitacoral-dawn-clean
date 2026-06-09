@@ -1,0 +1,443 @@
+<section class="vc-pharmacy-finder section" id="VcPharmacyFinder-{{ section.id }}" data-vc-pharmacy-finder>
+  {%- style -%}
+    #VcPharmacyFinder-{{ section.id }} {
+      padding: clamp(1.4rem, 3vw, 2.6rem) 0 clamp(3rem, 4.5vw, 5.4rem);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__layout {
+      display: grid;
+      gap: clamp(1.8rem, 3vw, 2.8rem);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__intro {
+      position: relative;
+      max-width: 76rem;
+      display: grid;
+      gap: 1rem;
+      padding-left: 1.6rem;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__intro::before {
+      content: '';
+      position: absolute;
+      top: 0.25rem;
+      bottom: 0.25rem;
+      left: 0;
+      width: 0.35rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #225952, #ec6542);
+      opacity: 0.78;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__eyebrow {
+      margin: 0;
+      color: var(--vitacoral-color-primary);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.12rem;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__heading {
+      margin: 0;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-brand);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 650;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      text-wrap: balance;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__body {
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.62rem;
+      line-height: 1.68;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__body > *:first-child { margin-top: 0; }
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__body > *:last-child { margin-bottom: 0; }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__tools {
+      display: grid;
+      gap: 1rem;
+      padding: 1.2rem;
+      background:
+        radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 36%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 249, 0.95));
+      border: 0.1rem solid rgba(34, 89, 82, 0.1);
+      border-radius: var(--vitacoral-radius-lg, 1.8rem);
+      box-shadow: 0 1rem 2.4rem rgba(21, 44, 41, 0.045);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__field {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__label {
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__input,
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__select {
+      width: 100%;
+      min-height: 4.6rem;
+      padding: 0 1.3rem;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.5rem;
+      background: rgba(255, 255, 255, 0.82);
+      border: 0.1rem solid rgba(34, 89, 82, 0.14);
+      border-radius: var(--vitacoral-radius-md, 1.4rem);
+      outline: none;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__input:focus,
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__select:focus {
+      border-color: rgba(236, 101, 66, 0.42);
+      box-shadow: 0 0 0 0.35rem rgba(236, 101, 66, 0.09);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.9rem;
+      color: var(--vitacoral-color-primary-deep, #163d38);
+      background: rgba(255, 255, 255, 0.76);
+      border: 0.1rem solid rgba(34, 89, 82, 0.1);
+      border-radius: var(--vitacoral-radius-pill, 999px);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__items {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 1rem;
+      min-height: 100%;
+      padding: 1.8rem;
+      background:
+        radial-gradient(circle at top right, rgba(34, 89, 82, 0.08), transparent 38%),
+        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 249, 0.96));
+      border: 0.1rem solid rgba(34, 89, 82, 0.1);
+      border-radius: var(--vitacoral-radius-lg, 1.8rem);
+      box-shadow: 0 1.2rem 2.8rem rgba(21, 44, 41, 0.055);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 0.42rem;
+      background: linear-gradient(90deg, rgba(34, 89, 82, 0.88), rgba(236, 101, 66, 0.78));
+      opacity: 0.72;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__city {
+      width: fit-content;
+      padding: 0.48rem 0.9rem;
+      color: var(--vitacoral-color-primary-deep, #163d38);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.74);
+      border: 0.1rem solid rgba(34, 89, 82, 0.12);
+      border-radius: var(--vitacoral-radius-pill, 999px);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__name {
+      margin: 0;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-brand);
+      font-size: 2.05rem;
+      font-weight: 650;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__address {
+      margin: 0;
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.48rem;
+      line-height: 1.58;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__map {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: fit-content;
+      min-height: 3.7rem;
+      padding: 0.72rem 1rem;
+      color: var(--vitacoral-color-primary-deep, #163d38);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.32rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.76);
+      border: 0.1rem solid rgba(34, 89, 82, 0.12);
+      border-radius: var(--vitacoral-radius-pill, 999px);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__map::after {
+      content: '→';
+      color: #ec6542;
+      line-height: 1;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__map:hover {
+      transform: translateY(-0.1rem);
+      border-color: rgba(236, 101, 66, 0.26);
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__empty {
+      display: none;
+      padding: 2rem;
+      color: var(--vitacoral-color-text-muted);
+      background: rgba(255, 255, 255, 0.9);
+      border: 0.1rem dashed rgba(34, 89, 82, 0.14);
+      border-radius: var(--vitacoral-radius-lg, 1.8rem);
+      text-align: center;
+    }
+
+    #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__note {
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.28rem;
+      line-height: 1.55;
+      opacity: 0.82;
+    }
+
+    @media screen and (min-width: 750px) {
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__tools {
+        grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
+        align-items: end;
+      }
+
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__meta {
+        grid-column: 1 / -1;
+      }
+
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media screen and (min-width: 1100px) {
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__items {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__intro {
+        padding-left: 1.2rem;
+      }
+
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__heading {
+        font-size: 2.35rem;
+      }
+
+      #VcPharmacyFinder-{{ section.id }} .vc-pharmacy-finder__card {
+        padding: 1.55rem;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="page-width page-width--narrow">
+    <div class="vc-pharmacy-finder__layout">
+      <div class="vc-pharmacy-finder__intro">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vc-pharmacy-finder__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vc-pharmacy-finder__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <div class="vc-pharmacy-finder__body rte">{{ section.settings.body }}</div>
+        {%- endif -%}
+      </div>
+
+      <div class="vc-pharmacy-finder__tools">
+        <div class="vc-pharmacy-finder__field">
+          <label class="vc-pharmacy-finder__label" for="VcPharmacySearch-{{ section.id }}">Eczane veya adres ara</label>
+          <input id="VcPharmacySearch-{{ section.id }}" class="vc-pharmacy-finder__input" type="search" placeholder="Eczane adı, ilçe veya adres" data-vc-pharmacy-search>
+        </div>
+        <div class="vc-pharmacy-finder__field">
+          <label class="vc-pharmacy-finder__label" for="VcPharmacyCity-{{ section.id }}">Şehir</label>
+          <select id="VcPharmacyCity-{{ section.id }}" class="vc-pharmacy-finder__select" data-vc-pharmacy-city>
+            <option value="">Tüm şehirler</option>
+          </select>
+        </div>
+        <div class="vc-pharmacy-finder__meta">
+          <span class="vc-pharmacy-finder__count" data-vc-pharmacy-count>Liste hazırlanıyor</span>
+        </div>
+      </div>
+
+      <div class="vc-pharmacy-finder__items" data-vc-pharmacy-items></div>
+      <div class="vc-pharmacy-finder__empty" data-vc-pharmacy-empty>Aradığınız kritere uygun eczane bulunamadı.</div>
+
+      {%- if section.settings.note != blank -%}
+        <div class="vc-pharmacy-finder__note">{{ section.settings.note | escape }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <script type="application/json" data-vc-pharmacy-source>
+    [
+      "{{ 'vitacoral-pharmacies-1.json' | asset_url }}",
+      "{{ 'vitacoral-pharmacies-2.json' | asset_url }}",
+      "{{ 'vitacoral-pharmacies-3.json' | asset_url }}",
+      "{{ 'vitacoral-pharmacies-4a.json' | asset_url }}",
+      "{{ 'vitacoral-pharmacies-4b.json' | asset_url }}",
+      "{{ 'vitacoral-pharmacies-4c.json' | asset_url }}"
+    ]
+  </script>
+
+  <script>
+    (() => {
+      const root = document.getElementById('VcPharmacyFinder-{{ section.id }}');
+      if (!root || root.dataset.vcReady === 'true') return;
+      root.dataset.vcReady = 'true';
+
+      const searchInput = root.querySelector('[data-vc-pharmacy-search]');
+      const citySelect = root.querySelector('[data-vc-pharmacy-city]');
+      const itemsEl = root.querySelector('[data-vc-pharmacy-items]');
+      const emptyEl = root.querySelector('[data-vc-pharmacy-empty]');
+      const countEl = root.querySelector('[data-vc-pharmacy-count]');
+      const sourceEl = root.querySelector('[data-vc-pharmacy-source]');
+      let pharmacies = [];
+
+      const normalize = (value) => (value || '').toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      const escapeHTML = (value) => String(value || '').replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+      const mapsUrl = (item) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.n || ''} ${item.a || ''}`)}`;
+
+      const renderCities = () => {
+        const cities = [...new Set(pharmacies.map((item) => item.c).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
+        cities.forEach((city) => {
+          const option = document.createElement('option');
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+        });
+      };
+
+      const render = () => {
+        const term = normalize(searchInput.value);
+        const city = citySelect.value;
+        const filtered = pharmacies.filter((item) => {
+          const haystack = normalize(`${item.n || ''} ${item.a || ''} ${item.c || ''}`);
+          return (!city || item.c === city) && (!term || haystack.includes(term));
+        });
+
+        countEl.textContent = `${filtered.length} eczane noktası`;
+        emptyEl.style.display = filtered.length ? 'none' : 'block';
+        itemsEl.innerHTML = filtered.map((item) => `
+          <article class="vc-pharmacy-finder__card">
+            ${item.c ? `<span class="vc-pharmacy-finder__city">${escapeHTML(item.c)}</span>` : ''}
+            <h3 class="vc-pharmacy-finder__name">${escapeHTML(item.n)}</h3>
+            <p class="vc-pharmacy-finder__address">${escapeHTML(item.a)}</p>
+            <a class="vc-pharmacy-finder__map" href="${mapsUrl(item)}" target="_blank" rel="noopener noreferrer">Haritada görüntüle</a>
+          </article>
+        `).join('');
+      };
+
+      try {
+        const sources = JSON.parse(sourceEl.textContent || '[]');
+        Promise.all(sources.map((url) => fetch(url).then((response) => response.ok ? response.json() : [])))
+          .then((chunks) => {
+            pharmacies = chunks.flat().filter((item) => item && item.n && item.a);
+            renderCities();
+            render();
+          })
+          .catch(() => {
+            countEl.textContent = 'Eczane listesi yüklenemedi';
+            emptyEl.style.display = 'block';
+          });
+      } catch (error) {
+        countEl.textContent = 'Eczane listesi yüklenemedi';
+        emptyEl.style.display = 'block';
+      }
+
+      searchInput.addEventListener('input', render);
+      citySelect.addEventListener('change', render);
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Pharmacy Finder",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Eczane kanalı"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Eczane noktaları"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Size en yakın eczane noktasını listeden inceleyebilir, Vitacoral ürünleri için eczacınızla görüşebilirsiniz.</p>"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Small note",
+      "default": "Eczane bilgileri dönemsel olarak güncellenebilir."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vitacoral Pharmacy Finder"
+    }
+  ]
+}
+{% endschema %}
