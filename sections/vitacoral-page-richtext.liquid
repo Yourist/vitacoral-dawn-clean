@@ -1,0 +1,141 @@
+{%- liquid
+  assign richtext_heading = section.settings.heading | strip
+  assign has_page_content = false
+  if page and page.content != blank
+    assign has_page_content = true
+  endif
+-%}
+
+<section class="vc-page-richtext section" id="VcPageRichtext-{{ section.id }}">
+  {%- style -%}
+    #VcPageRichtext-{{ section.id }} {
+      padding: 0 0 clamp(2.4rem, 4vw, 4.8rem);
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__surface {
+      padding: clamp(1.8rem, 3vw, 3rem);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 250, 249, 0.95));
+      border: 0.1rem solid rgba(34, 89, 82, 0.08);
+      border-radius: var(--vitacoral-radius-xl, 2.4rem);
+      box-shadow: 0 1rem 2.4rem rgba(21, 44, 41, 0.05);
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__heading {
+      margin: 0 0 1.4rem;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-brand);
+      font-size: clamp(2.2rem, 3vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content {
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-body);
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content > *:first-child {
+      margin-top: 0;
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content > *:last-child {
+      margin-bottom: 0;
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content p,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content li,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content td,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content th {
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.62rem;
+      line-height: 1.7;
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content h2,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content h3,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content h4,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content h5,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content h6 {
+      margin: 2.4rem 0 1rem;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-brand);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content img,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content iframe,
+    #VcPageRichtext-{{ section.id }} .vc-page-richtext__content video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--vitacoral-radius-lg);
+    }
+
+    @media screen and (max-width: 749px) {
+      #VcPageRichtext-{{ section.id }} .vc-page-richtext__surface {
+        padding: 1.5rem 1.4rem;
+        border-radius: var(--vitacoral-radius-lg);
+      }
+
+      #VcPageRichtext-{{ section.id }} .vc-page-richtext__content p,
+      #VcPageRichtext-{{ section.id }} .vc-page-richtext__content li,
+      #VcPageRichtext-{{ section.id }} .vc-page-richtext__content td,
+      #VcPageRichtext-{{ section.id }} .vc-page-richtext__content th {
+        font-size: 1.48rem;
+        line-height: 1.6;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="page-width page-width--narrow">
+    <div class="vc-page-richtext__surface">
+      {%- if richtext_heading != blank -%}
+        <h2 class="vc-page-richtext__heading">{{ richtext_heading | escape }}</h2>
+      {%- endif -%}
+
+      <div class="vc-page-richtext__content rte">
+        {%- if section.settings.body != blank -%}
+          {{ section.settings.body }}
+        {%- elsif has_page_content -%}
+          {{ page.content }}
+        {%- elsif request.design_mode -%}
+          <p>Add rich text here or use the page body content.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Page Richtext",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Optional heading"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body override",
+      "info": "Leave blank to use the page body content."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vitacoral Page Richtext"
+    }
+  ]
+}
+{% endschema %}

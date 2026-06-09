@@ -1,0 +1,207 @@
+{%- liquid
+  assign hero_title = section.settings.title | strip
+  if hero_title == blank and page
+    assign hero_title = page.title
+  endif
+
+  assign hero_alt = hero_title | default: shop.name | strip_html | escape
+-%}
+
+<section class="vc-page-hero section" id="VcPageHero-{{ section.id }}">
+  {%- style -%}
+    #VcPageHero-{{ section.id }} {
+      padding: clamp(2.4rem, 5vw, 5.6rem) 0 clamp(1.6rem, 3vw, 2.8rem);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__shell {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 4vw, 3.6rem);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(247, 250, 249, 0.95));
+      border: 0.1rem solid rgba(34, 89, 82, 0.08);
+      border-radius: var(--vitacoral-radius-xl, 2.4rem);
+      box-shadow: 0 1.4rem 3.4rem rgba(21, 44, 41, 0.05);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__shell::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: min(18rem, 44%);
+      background:
+        radial-gradient(circle at top left, rgba(34, 89, 82, 0.1), transparent 52%),
+        radial-gradient(circle at top right, rgba(236, 101, 66, 0.08), transparent 34%);
+      pointer-events: none;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: clamp(1.6rem, 3vw, 2.8rem);
+      align-items: center;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__content {
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__eyebrow {
+      margin: 0;
+      color: var(--vitacoral-color-primary);
+      font-family: var(--vitacoral-font-ui);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__title {
+      margin: 0;
+      color: var(--vitacoral-color-text);
+      font-family: var(--vitacoral-font-brand);
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      text-wrap: balance;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__body {
+      max-width: 62rem;
+      color: var(--vitacoral-color-text-muted);
+      font-family: var(--vitacoral-font-body);
+      font-size: 1.6rem;
+      line-height: 1.68;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__body > *:first-child {
+      margin-top: 0;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__body > *:last-child {
+      margin-bottom: 0;
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__media {
+      overflow: hidden;
+      border-radius: calc(var(--vitacoral-radius-xl, 2.4rem) - 0.4rem);
+      background:
+        radial-gradient(circle at top left, rgba(34, 89, 82, 0.06), transparent 54%),
+        linear-gradient(180deg, rgba(244, 248, 247, 0.92), rgba(255, 255, 255, 0.98));
+      border: 0.1rem solid rgba(34, 89, 82, 0.06);
+    }
+
+    #VcPageHero-{{ section.id }} .vc-page-hero__media img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (min-width: 990px) {
+      #VcPageHero-{{ section.id }} .vc-page-hero__layout--with-media {
+        grid-template-columns: minmax(0, 1.1fr) minmax(28rem, 0.9fr);
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      #VcPageHero-{{ section.id }} {
+        padding: 1.8rem 0 1rem;
+      }
+
+      #VcPageHero-{{ section.id }} .vc-page-hero__shell {
+        padding: 1.6rem 1.4rem;
+        border-radius: var(--vitacoral-radius-lg);
+      }
+
+      #VcPageHero-{{ section.id }} .vc-page-hero__title {
+        font-size: clamp(2.7rem, 9vw, 3.8rem);
+      }
+
+      #VcPageHero-{{ section.id }} .vc-page-hero__body {
+        font-size: 1.48rem;
+        line-height: 1.6;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="page-width">
+    <div class="vc-page-hero__shell">
+      <div class="vc-page-hero__layout{% if section.settings.image != blank %} vc-page-hero__layout--with-media{% endif %}">
+        <div class="vc-page-hero__content">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="vc-page-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+          {%- endif -%}
+
+          {%- if hero_title != blank -%}
+            <h1 class="vc-page-hero__title">{{ hero_title | escape }}</h1>
+          {%- endif -%}
+
+          {%- if section.settings.body != blank -%}
+            <div class="vc-page-hero__body rte">
+              {{ section.settings.body }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.image != blank -%}
+          <div class="vc-page-hero__media">
+            {{
+              section.settings.image
+              | image_url: width: 1200
+              | image_tag:
+                widths: '360, 540, 720, 960, 1200',
+                sizes: '(min-width: 990px) 36vw, 100vw',
+                alt: hero_alt,
+                loading: 'lazy'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Page Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Vitacoral"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title override",
+      "info": "Leave blank to use the page title."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Optional image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vitacoral Page Hero"
+    }
+  ]
+}
+{% endschema %}

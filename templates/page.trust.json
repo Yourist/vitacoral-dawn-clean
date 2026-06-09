@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "hero": {
+      "type": "vitacoral-page-hero",
+      "settings": {
+        "eyebrow": "Vitacoral",
+        "title": "",
+        "body": ""
+      }
+    },
+    "trust_grid": {
+      "type": "vitacoral-trust-grid",
+      "settings": {
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Güven oluşturan temel başlıklar",
+        "body": ""
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "content": {
+      "type": "vitacoral-page-richtext",
+      "settings": {
+        "heading": "",
+        "body": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust_grid",
+    "content"
+  ]
+}
