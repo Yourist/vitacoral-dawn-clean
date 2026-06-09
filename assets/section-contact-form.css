@@ -37,3 +37,117 @@
     grid-column-gap: 2rem;
   }
 }
+
+.vc-contact {
+  font-family: var(--vitacoral-font-body);
+}
+
+.vc-contact__surface {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 3.4vw, 3.6rem);
+  background:
+    radial-gradient(circle at top left, rgba(236, 101, 66, 0.1), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(34, 89, 82, 0.1), transparent 42%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(247, 250, 249, 0.95));
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  border-radius: var(--vitacoral-radius-xl, 2.4rem);
+  box-shadow: 0 1.2rem 3rem rgba(21, 44, 41, 0.06);
+}
+
+.vc-contact__surface::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.5rem;
+  background: linear-gradient(180deg, #225952, #ec6542);
+  opacity: 0.75;
+}
+
+.vc-contact__surface::after {
+  content: '';
+  position: absolute;
+  right: -3.6rem;
+  top: -3.6rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 999px;
+  background: rgba(236, 101, 66, 0.06);
+  pointer-events: none;
+}
+
+.vc-contact__surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.vc-contact__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+  margin: 0 0 1rem;
+  padding: 0.52rem 0.95rem;
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-family: var(--vitacoral-font-ui);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.76);
+  border: 0.1rem solid rgba(34, 89, 82, 0.12);
+  border-radius: var(--vitacoral-radius-pill, 999px);
+}
+
+.vc-contact__eyebrow::before {
+  content: '';
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 999px;
+  background: #ec6542;
+  box-shadow: 0 0 0 0.34rem rgba(236, 101, 66, 0.12);
+}
+
+.vc-contact__title {
+  margin-bottom: 2rem;
+  color: var(--vitacoral-color-text);
+  font-family: var(--vitacoral-font-brand);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+
+.vc-contact .field__input,
+.vc-contact .text-area {
+  background-color: rgba(255, 255, 255, 0.78);
+  border-color: rgba(34, 89, 82, 0.14);
+  border-radius: var(--vitacoral-radius-md, 1.4rem);
+}
+
+.vc-contact .field::after,
+.vc-contact .field::before {
+  border-radius: var(--vitacoral-radius-md, 1.4rem);
+}
+
+.vc-contact .button {
+  min-height: 4.8rem;
+  padding-inline: 2.4rem;
+  background: var(--vitacoral-color-primary, #225952);
+  border-radius: var(--vitacoral-radius-pill, 999px);
+  box-shadow: 0 1rem 2.2rem rgba(21, 44, 41, 0.12);
+}
+
+.vc-contact .button:hover {
+  background: var(--vitacoral-color-primary-deep, #163d38);
+}
+
+@media screen and (max-width: 749px) {
+  .vc-contact__surface {
+    padding: 1.6rem 1.4rem 1.6rem 1.7rem;
+    border-radius: var(--vitacoral-radius-lg, 1.8rem);
+  }
+
+  .vc-contact__surface::before {
+    width: 0.38rem;
+  }
+}
