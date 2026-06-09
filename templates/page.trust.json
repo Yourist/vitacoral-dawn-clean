@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -10,13 +19,25 @@
     },
     "trust_grid": {
       "type": "vitacoral-trust-grid",
+      "blocks": {
+        "trust_card_tmkKyT": {
+          "type": "trust_card",
+          "settings": {
+            "label": "",
+            "title": "",
+            "text": "",
+            "accent_style": "green"
+          }
+        }
+      },
+      "block_order": [
+        "trust_card_tmkKyT"
+      ],
       "settings": {
         "eyebrow": "Vitacoral yaklaşımı",
         "heading": "Güven oluşturan temel başlıklar",
         "body": ""
-      },
-      "blocks": {},
-      "block_order": []
+      }
     },
     "content": {
       "type": "vitacoral-page-richtext",
