@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "hero": {
+      "type": "vitacoral-page-hero",
+      "settings": {
+        "eyebrow": "Vitacoral belgeleri",
+        "title": "",
+        "body": ""
+      }
+    },
+    "documents": {
+      "type": "vitacoral-document-list",
+      "settings": {
+        "eyebrow": "Vitacoral belgeleri",
+        "heading": "Ürün onayları",
+        "body": ""
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "content": {
+      "type": "vitacoral-page-richtext",
+      "settings": {
+        "heading": "",
+        "body": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "documents",
+    "content"
+  ]
+}

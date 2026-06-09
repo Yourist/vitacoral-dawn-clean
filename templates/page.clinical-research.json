@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "hero": {
+      "type": "vitacoral-page-hero",
+      "settings": {
+        "eyebrow": "Vitacoral kaynakları",
+        "title": "",
+        "body": ""
+      }
+    },
+    "documents": {
+      "type": "vitacoral-document-list",
+      "settings": {
+        "eyebrow": "Vitacoral kaynakları",
+        "heading": "Klinik araştırmalar",
+        "body": ""
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "content": {
+      "type": "vitacoral-page-richtext",
+      "settings": {
+        "heading": "",
+        "body": ""
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "documents",
+    "content"
+  ]
+}
