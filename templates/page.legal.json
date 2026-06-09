@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "vitacoral-page-hero",
+      "settings": {
+        "eyebrow": "Vitacoral",
+        "title": "Hükümler ve koşullar",
+        "body": "<p>Vitacoral web sitesi ve alışveriş deneyimine ilişkin genel kullanım koşulları bu sayfada yer alır.</p>"
+      }
+    },
+    "content": {
+      "type": "vitacoral-page-richtext",
+      "settings": {
+        "heading": "Genel bilgilendirme",
+        "body": "<p>Bu alan, hüküm ve koşullar metninin düzenli şekilde sunulması için hazırlanmıştır. Canlıya geçiş öncesinde güncel hukuki metinler bu bölümde kontrol edilmeli ve gerektiğinde uzman değerlendirmesiyle güncellenmelidir.</p><p>Satış, teslimat, iade, gizlilik ve kullanım koşullarına ilişkin detaylar marka tarafından onaylanan nihai metinlerle düzenlenmelidir.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "content"
+  ]
+}
