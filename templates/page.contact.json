@@ -17,19 +17,67 @@
         "body": "<p>Ürünler, sipariş süreci, belge sayfaları veya iş birliği başlıklarıyla ilgili sorularınız için bize ulaşabilirsiniz.</p>"
       }
     },
+    "info": {
+      "type": "vitacoral-contact-info",
+      "blocks": {
+        "phone": {
+          "type": "info_card",
+          "settings": {
+            "label": "Telefon",
+            "title": "Bizi arayın",
+            "text": "+90 216 325 55 96",
+            "link_url": "tel:+902163255596"
+          }
+        },
+        "address": {
+          "type": "info_card",
+          "settings": {
+            "label": "Adres",
+            "title": "Ofis adresimiz",
+            "text": "Hasanpaşa Mahallesi Lavanta Sokak Etap İş Merkezi C Blok Kat:3 Daire:10",
+            "link_url": "https://www.google.com/maps/search/?api=1&query=Hasanpa%C5%9Fa%20Mahallesi%20Lavanta%20Sokak%20Etap%20%C4%B0%C5%9F%20Merkezi%20C%20Blok%20Kat%3A3%20Daire%3A10%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul"
+          }
+        },
+        "email": {
+          "type": "info_card",
+          "settings": {
+            "label": "E-posta",
+            "title": "Bize yazın",
+            "text": "info@vitacoral.com",
+            "link_url": "mailto:info@vitacoral.com"
+          }
+        }
+      },
+      "block_order": [
+        "phone",
+        "address",
+        "email"
+      ],
+      "settings": {}
+    },
     "form": {
       "type": "contact-form",
       "settings": {
         "heading": "Bize ulaşın",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 20,
-        "padding_bottom": 52
+        "padding_top": 12,
+        "padding_bottom": 36
+      }
+    },
+    "map": {
+      "type": "vitacoral-contact-map",
+      "settings": {
+        "heading": "Adresimiz",
+        "map_link": "https://www.google.com/maps/search/?api=1&query=Hasanpa%C5%9Fa%20Mahallesi%20Lavanta%20Sokak%20Etap%20%C4%B0%C5%9F%20Merkezi%20C%20Blok%20Kat%3A3%20Daire%3A10%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul",
+        "embed_url": "https://www.google.com/maps?q=Hasanpa%C5%9Fa%20Mahallesi%20Lavanta%20Sokak%20Etap%20%C4%B0%C5%9F%20Merkezi%20C%20Blok%20Kat%3A3%20Daire%3A10%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul&output=embed"
       }
     }
   },
   "order": [
     "hero",
-    "form"
+    "info",
+    "form",
+    "map"
   ]
 }
