@@ -1,5 +1,6 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-footer-logo-fix.css' | asset_url | stylesheet_tag }}
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
@@ -466,6 +467,11 @@
       "info": "t:sections.footer.settings.show_social.info"
     },
     {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
       "type": "checkbox",
       "id": "enable_country_selector",
       "default": true,
@@ -480,17 +486,25 @@
       "info": "t:sections.footer.settings.enable_language_selector.info"
     },
     {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content"
+    },
+    {
       "type": "checkbox",
       "id": "payment_enable",
       "default": true,
       "label": "t:sections.footer.settings.payment_enable.label"
     },
     {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
+    },
+    {
       "type": "checkbox",
       "id": "show_policy",
       "default": true,
-      "label": "t:sections.footer.settings.show_policy.label",
-      "info": "t:sections.footer.settings.show_policy.info"
+      "label": "t:sections.footer.settings.show_policy.label"
     },
     {
       "type": "header",
