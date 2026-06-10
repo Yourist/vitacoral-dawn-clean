@@ -1,5 +1,20 @@
 .footer {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  position: relative;
+  overflow: hidden;
+  border-top: 0.1rem solid rgba(34, 89, 82, 0.12);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(236, 101, 66, 0.11), transparent 26%),
+    radial-gradient(circle at 86% 10%, rgba(34, 89, 82, 0.11), transparent 28%),
+    linear-gradient(180deg, rgba(247, 250, 249, 0.92), rgba(255, 255, 255, 0.98));
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.45rem;
+  background: linear-gradient(90deg, rgba(34, 89, 82, 0.9), rgba(236, 101, 66, 0.8), rgba(34, 89, 82, 0.36));
+  opacity: 0.85;
 }
 
 .footer:not(.color-scheme-1) {
@@ -7,8 +22,23 @@
 }
 
 .footer__content-top {
-  padding-bottom: 5rem;
-  display: block;
+  position: relative;
+  padding-bottom: 4.2rem;
+  display: grid;
+  gap: 2.8rem;
+}
+
+.footer__content-top::before {
+  content: 'Vitacoral';
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.8rem;
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-family: var(--vitacoral-font-brand);
+  font-size: clamp(2.4rem, 3vw, 3.4rem);
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  line-height: 1;
 }
 
 @media screen and (max-width: 749px) {
@@ -18,7 +48,7 @@
 
   .footer-block.grid__item {
     padding: 0;
-    margin: 4rem 0;
+    margin: 2.8rem 0;
     width: 100%;
   }
 
@@ -28,21 +58,23 @@
 
   .footer__content-top {
     padding-bottom: 3rem;
-    padding-left: calc(4rem / var(--font-body-scale));
-    padding-right: calc(4rem / var(--font-body-scale));
+    padding-left: calc(2.4rem / var(--font-body-scale));
+    padding-right: calc(2.4rem / var(--font-body-scale));
   }
 }
 
 @media screen and (min-width: 750px) {
   .footer__content-top .grid {
-    row-gap: 6rem;
+    row-gap: 3rem;
+    column-gap: 3rem;
     margin-bottom: 0;
   }
 }
 
 .footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
-  padding-top: 3rem;
+  position: relative;
+  border-top: solid 0.1rem rgba(34, 89, 82, 0.1);
+  padding-top: 2.4rem;
 }
 
 .footer__content-bottom:only-child {
@@ -57,7 +89,7 @@
 @media screen and (max-width: 749px) {
   .footer__content-bottom {
     flex-wrap: wrap;
-    padding-top: 0;
+    padding-top: 1.2rem;
     padding-left: 0;
     padding-right: 0;
     row-gap: 1.5rem;
@@ -127,9 +159,16 @@
 
 .footer-block--newsletter {
   display: flex;
-  align-items: flex-end;
-  margin-top: 3rem;
-  gap: 1rem;
+  align-items: stretch;
+  margin-top: 0;
+  gap: 1.2rem;
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+  background:
+    radial-gradient(circle at top left, rgba(236, 101, 66, 0.1), transparent 32%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 249, 0.82));
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  border-radius: var(--vitacoral-radius-xl, 2.4rem);
+  box-shadow: 0 1rem 2.8rem rgba(21, 44, 41, 0.055);
 }
 
 .footer-block--newsletter:only-child {
@@ -145,19 +184,23 @@
 @media screen and (min-width: 750px) {
   .footer-block--newsletter {
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
 .footer-block__heading {
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
   margin-top: 0;
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  color: var(--vitacoral-color-text, #173d38);
+  font-family: var(--vitacoral-font-brand);
+  font-size: calc(var(--font-heading-scale) * 1.65rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
 }
 
 @media screen and (min-width: 990px) {
   .footer-block__heading {
-    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-size: calc(var(--font-heading-scale) * 1.9rem);
   }
 }
 
@@ -181,11 +224,10 @@
 }
 
 .newsletter-form__field-wrapper {
-  max-width: 36rem;
+  max-width: 46rem;
 }
 
 @media screen and (min-width: 750px) {
-  /* Pushes other components to the right of the flexbox */
   .footer-block__newsletter:not(:only-child) {
     text-align: left;
     margin-right: auto;
@@ -203,17 +245,13 @@
   .footer__follow-on-shop {
     margin-bottom: 0.4rem;
   }
-  /* Follow on shop is the first button but it has siblings*/
+
   .footer__follow-on-shop:first-child:not(:last-child) {
     justify-content: flex-start;
     margin-right: auto;
     text-align: left;
   }
 
-  /*
-    All three components are present, email, Follow on Shop, and social icons.
-    Moves the FoS button next to the social icons so they appear grouped together
-  */
   .footer__follow-on-shop:not(:first-child):not(:last-child) {
     justify-content: flex-end;
     text-align: right;
@@ -221,16 +259,13 @@
 }
 
 @media screen and (max-width: 749px) {
-  /*
-    On a small screen we want all the items to be centered
-    because they will be stacked.
-   */
   .footer-block--newsletter {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
-    align-items: center;
-    gap: 3rem;
+    align-items: stretch;
+    gap: 2rem;
+    border-radius: var(--vitacoral-radius-lg, 1.8rem);
   }
 
   .footer__list-social.list-social,
@@ -313,7 +348,31 @@
 }
 
 .footer-block__details-content {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  color: var(--vitacoral-color-text-muted, rgba(var(--color-foreground), 0.72));
+  font-family: var(--vitacoral-font-body);
+  font-size: 1.45rem;
+  line-height: 1.62;
+}
+
+.footer-block__details-content p {
+  margin-top: 0;
+}
+
+.footer-block__details-content a {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-weight: 700;
+  text-decoration-color: rgba(236, 101, 66, 0.36);
+  text-underline-offset: 0.25rem;
+  transition: color 160ms ease, text-decoration-color 160ms ease, transform 160ms ease;
+}
+
+.footer-block__details-content a:hover {
+  color: #ec6542;
+  text-decoration-color: rgba(236, 101, 66, 0.8);
+  transform: translateX(0.15rem);
 }
 
 @media screen and (min-width: 750px) {
@@ -420,89 +479,31 @@
   text-align: center;
 }
 
-.footer-block:only-child > .footer-block__brand-info > .footer-block__image-wrapper {
-  margin-left: auto;
-  margin-right: auto;
+.footer .newsletter-form__field-wrapper .field {
+  border-radius: var(--vitacoral-radius-pill, 999px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 0.7rem 1.8rem rgba(21, 44, 41, 0.05);
 }
 
-.footer-block-image > img,
-.footer-block__brand-info > img {
-  height: auto;
+.footer .newsletter-form__field-wrapper .field::before,
+.footer .newsletter-form__field-wrapper .field::after {
+  border-radius: var(--vitacoral-radius-pill, 999px);
 }
 
-.footer-block:only-child .footer-block__brand-info .footer__list-social.list-social {
-  justify-content: center;
+.footer .newsletter-form__button {
+  color: var(--vitacoral-color-primary-deep, #163d38);
 }
 
-.footer-block__brand-info .footer__list-social.list-social {
-  justify-content: flex-start;
+.footer .list-social__link {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.footer-block__details-content .placeholder-svg {
-  max-width: 20rem;
-}
-
-.copyright__content {
-  font-size: 1.1rem;
-}
-
-.copyright__content a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-.policies {
-  display: inline;
-}
-
-.policies li {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.policies li::before {
-  content: '\00B7';
-  padding: 0 0.8rem;
-}
-
-.policies li a {
-  padding: 0.6rem 0;
-  display: block;
-}
-
-@media screen and (min-width: 750px) {
-  .policies li a {
-    padding: 0;
-  }
-}
-@keyframes animateLocalization {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(-1rem);
-  }
-}
-
-/* check for flexbox gap in older Safari versions */
-@supports not (inset: 10px) {
-  @media screen and (max-width: 749px) {
-    .footer .grid {
-      margin-left: 0;
-    }
-  }
-
-  @media screen and (min-width: 750px) {
-    .footer__content-top .grid {
-      margin-left: -3rem;
-    }
-
-    .footer__content-top .grid__item {
-      padding-left: 3rem;
-    }
-  }
+.footer .list-social__link:hover {
+  transform: translateY(-0.15rem);
+  border-color: rgba(236, 101, 66, 0.28);
+  color: #ec6542;
 }
