@@ -23,7 +23,7 @@
         "brand_note": {
           "type": "text",
           "settings": {
-            "heading": "Vitacoral",
+            "heading": "",
             "subtext": "<p>Günlük rutinlere eşlik eden gıda takviyesi deneyimini daha sade, anlaşılır ve erişilebilir hale getirmek için çalışıyoruz.</p>"
           }
         },
