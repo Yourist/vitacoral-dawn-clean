@@ -1,568 +1,87 @@
 <section class="vc-product-landing section" id="VcProductLanding-{{ section.id }}">
   {%- style -%}
-    #VcProductLanding-{{ section.id }} {
-      padding: clamp(1.6rem, 3vw, 3rem) 0 clamp(3rem, 5vw, 6rem);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__stack {
-      display: grid;
-      gap: clamp(1.4rem, 2.6vw, 2.6rem);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      gap: clamp(2rem, 3vw, 3rem);
-      align-items: center;
-      padding: clamp(2.2rem, 4.5vw, 4.4rem);
-      background:
-        radial-gradient(circle at 8% 8%, rgba(236, 101, 66, 0.17), transparent 30%),
-        radial-gradient(circle at 88% 16%, rgba(34, 89, 82, 0.18), transparent 34%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.99), rgba(246, 250, 248, 0.95));
-      border: 0.1rem solid rgba(34, 89, 82, 0.1);
-      border-radius: var(--vitacoral-radius-xl, 2.4rem);
-      box-shadow: 0 1.8rem 4.2rem rgba(21, 44, 41, 0.065);
-      isolation: isolate;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto;
-      height: min(24rem, 54%);
-      background: linear-gradient(90deg, rgba(34, 89, 82, 0.13), rgba(236, 101, 66, 0.11), transparent 74%);
-      opacity: 0.76;
-      mask-image: linear-gradient(180deg, #000, transparent);
-      z-index: -1;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero::after {
-      content: '';
-      position: absolute;
-      right: -7rem;
-      bottom: -9rem;
-      width: 28rem;
-      height: 28rem;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(236, 101, 66, 0.14), transparent 67%);
-      z-index: -1;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-content {
-      display: grid;
-      gap: 1.15rem;
-      max-width: 70rem;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__eyebrow,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.68rem;
-      width: fit-content;
-      margin: 0;
-      padding: 0.58rem 1rem;
-      color: var(--vitacoral-color-primary-deep, #163d38);
-      font-family: var(--vitacoral-font-ui);
-      font-size: 1.08rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      line-height: 1;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.76);
-      border: 0.1rem solid rgba(34, 89, 82, 0.12);
-      border-radius: var(--vitacoral-radius-pill, 999px);
-      box-shadow: 0 0.6rem 1.6rem rgba(21, 44, 41, 0.045);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__eyebrow::before,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__label::before {
-      content: '';
-      width: 0.6rem;
-      height: 0.6rem;
-      border-radius: 999px;
-      background: #ec6542;
-      box-shadow: 0 0 0 0.35rem rgba(236, 101, 66, 0.12);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__title {
-      max-width: 13ch;
-      margin: 0;
-      color: var(--vitacoral-color-text);
-      font-family: var(--vitacoral-font-brand);
-      font-size: clamp(3.2rem, 6vw, 6rem);
-      font-weight: 650;
-      letter-spacing: -0.055em;
-      line-height: 0.96;
-      text-wrap: balance;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__body {
-      max-width: 64rem;
-      color: var(--vitacoral-color-text-muted);
-      font-family: var(--vitacoral-font-body);
-      font-size: 1.68rem;
-      line-height: 1.68;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__body > *:first-child,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__section-body > *:first-child { margin-top: 0; }
-    #VcProductLanding-{{ section.id }} .vc-product-landing__body > *:last-child,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__section-body > *:last-child { margin-bottom: 0; }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      align-items: center;
-      margin-top: 0.4rem;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 4.8rem;
-      padding: 0.9rem 1.5rem;
-      font-family: var(--vitacoral-font-ui);
-      font-size: 1.4rem;
-      font-weight: 800;
-      line-height: 1.2;
-      text-decoration: none;
-      border-radius: var(--vitacoral-radius-pill, 999px);
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button {
-      color: #fff;
-      background: var(--vitacoral-color-primary, #225952);
-      box-shadow: 0 1rem 2.2rem rgba(21, 44, 41, 0.14);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button-secondary {
-      color: var(--vitacoral-color-primary-deep, #163d38);
-      background: rgba(255, 255, 255, 0.78);
-      border: 0.1rem solid rgba(34, 89, 82, 0.14);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button:hover,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__button-secondary:hover,
-    #VcProductLanding-{{ section.id }} .vc-product-landing__trust-link:hover {
-      transform: translateY(-0.12rem);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      gap: 1rem;
-      padding: clamp(1.3rem, 2.4vw, 2rem);
-      min-height: 43rem;
-      background:
-        radial-gradient(circle at 50% 12%, rgba(236, 101, 66, 0.16), transparent 34%),
-        radial-gradient(circle at 76% 74%, rgba(34, 89, 82, 0.16), transparent 34%),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(245, 250, 248, 0.78));
-      border: 0.1rem solid rgba(34, 89, 82, 0.1);
-      border-radius: var(--vitacoral-radius-xl, 2.4rem);
-      box-shadow: 0 1.1rem 3rem rgba(21, 44, 41, 0.08);
-      isolation: isolate;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__visual {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 32rem;
-      border-radius: var(--vitacoral-radius-lg, 1.8rem);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.32)),
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.96), rgba(240, 247, 245, 0.8));
-      border: 0.1rem solid rgba(34, 89, 82, 0.1);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__visual::before {
-      content: '';
-      position: absolute;
-      width: 24rem;
-      height: 24rem;
-      border: 0.1rem solid rgba(34, 89, 82, 0.12);
-      border-radius: 999px;
-      box-shadow: 0 0 0 3.8rem rgba(255, 255, 255, 0.38), 0 0 0 3.9rem rgba(236, 101, 66, 0.08);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__visual::after {
-      content: '';
-      position: absolute;
-      inset: auto 14% 10%;
-      height: 2.8rem;
-      border-radius: 999px;
-      background: radial-gradient(ellipse at center, rgba(21, 44, 41, 0.18), transparent 68%);
-      filter: blur(0.2rem);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__image {
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-      width: min(100%, 32rem);
-      border-radius: var(--vitacoral-radius-lg, 1.8rem);
-      background: transparent;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__image img {
-      display: block;
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 1.6rem 2.2rem rgba(21, 44, 41, 0.18));
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle {
-      position: relative;
-      z-index: 2;
-      width: 16rem;
-      height: 24rem;
-      border-radius: 2.4rem 2.4rem 3.8rem 3.8rem;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.34), transparent 18% 82%, rgba(21,44,41,0.08)),
-        linear-gradient(180deg, #ffffff 0%, #f5faf8 28%, #ffffff 100%);
-      border: 0.1rem solid rgba(34, 89, 82, 0.16);
-      box-shadow: 0 1.6rem 2.8rem rgba(21, 44, 41, 0.18);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle::before {
-      content: '';
-      position: absolute;
-      top: -3.4rem;
-      left: 50%;
-      width: 7.6rem;
-      height: 4.2rem;
-      transform: translateX(-50%);
-      border-radius: 1rem 1rem 0.7rem 0.7rem;
-      background: linear-gradient(180deg, #225952, #163d38);
-      box-shadow: inset 0 0.4rem 0 rgba(255,255,255,0.22);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle::after {
-      content: '';
-      position: absolute;
-      left: 1.8rem;
-      right: 1.8rem;
-      top: 7.4rem;
-      height: 8.8rem;
-      border-radius: 1.6rem;
-      background:
-        linear-gradient(135deg, rgba(236, 101, 66, 0.18), transparent 72%),
-        linear-gradient(180deg, rgba(34, 89, 82, 0.96), rgba(22, 61, 56, 0.94));
-      box-shadow: 0 0.6rem 1.2rem rgba(21,44,41,0.12);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle-label {
-      position: absolute;
-      z-index: 3;
-      left: 3rem;
-      right: 3rem;
-      top: 9.1rem;
-      color: #fff;
-      font-family: var(--vitacoral-font-ui);
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      line-height: 1.15;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__float {
-      position: absolute;
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      min-height: 3.5rem;
-      padding: 0.68rem 0.92rem;
-      color: var(--vitacoral-color-primary-deep, #163d38);
-      font-family: var(--vitacoral-font-ui);
-      font-size: 1.1rem;
-      font-weight: 850;
-      line-height: 1.1;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      background: rgba(255,255,255,0.84);
-      border: 0.1rem solid rgba(34, 89, 82, 0.12);
-      border-radius: var(--vitacoral-radius-pill, 999px);
-      box-shadow: 0 0.9rem 1.9rem rgba(21, 44, 41, 0.09);
-      backdrop-filter: blur(10px);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__float--one { top: 11%; left: 4%; }
-    #VcProductLanding-{{ section.id }} .vc-product-landing__float--two { top: 47%; right: 4%; }
-    #VcProductLanding-{{ section.id }} .vc-product-landing__float--three { left: 8%; bottom: 13%; }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-note {
-      margin: 0;
-      color: var(--vitacoral-color-text-muted);
-      font-family: var(--vitacoral-font-body);
-      font-size: 1.4rem;
-      line-height: 1.55;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__section {
-      position: relative;
-      display: grid;
-      gap: 1.4rem;
-      padding: clamp(1.8rem, 3vw, 3rem);
-      background:
-        radial-gradient(circle at top right, rgba(34, 89, 82, 0.07), transparent 36%),
-        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 249, 0.96));
-      border: 0.1rem solid rgba(34, 89, 82, 0.1);
-      border-radius: var(--vitacoral-radius-xl, 2.4rem);
-      box-shadow: 0 1.2rem 2.8rem rgba(21, 44, 41, 0.055);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__section-heading {
-      margin: 0;
-      color: var(--vitacoral-color-text);
-      font-family: var(--vitacoral-font-brand);
-      font-size: clamp(2.4rem, 3.5vw, 4rem);
-      font-weight: 650;
-      letter-spacing: -0.045em;
-      line-height: 1.04;
-      text-wrap: balance;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__section-body {
-      max-width: 72rem;
-      color: var(--vitacoral-color-text-muted);
-      font-family: var(--vitacoral-font-body);
-      font-size: 1.58rem;
-      line-height: 1.68;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__cards {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-card {
-      position: relative;
-      overflow: hidden;
-      padding: 1.8rem 1.6rem 1.6rem;
-      background: rgba(255, 255, 255, 0.78);
-      border: 0.1rem solid rgba(34, 89, 82, 0.1);
-      border-radius: var(--vitacoral-radius-lg, 1.8rem);
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-card::before {
-      content: '';
-      position: absolute;
-      inset: 0 0 auto;
-      height: 0.38rem;
-      background: linear-gradient(90deg, rgba(34, 89, 82, 0.86), rgba(236, 101, 66, 0.76));
-      opacity: 0.72;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-card::after {
-      content: '';
-      display: block;
-      width: 3rem;
-      height: 3rem;
-      margin-bottom: 1rem;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle at 35% 35%, #fff 0 18%, transparent 19%),
-        linear-gradient(135deg, rgba(236, 101, 66, 0.78), rgba(34, 89, 82, 0.86));
-      box-shadow: 0 0.7rem 1.4rem rgba(21, 44, 41, 0.11);
-      order: -1;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-title {
-      margin: 0 0 0.6rem;
-      color: var(--vitacoral-color-text);
-      font-family: var(--vitacoral-font-brand);
-      font-size: 2rem;
-      font-weight: 650;
-      letter-spacing: -0.035em;
-      line-height: 1.1;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-text {
-      margin: 0;
-      color: var(--vitacoral-color-text-muted);
-      font-family: var(--vitacoral-font-body);
-      font-size: 1.48rem;
-      line-height: 1.62;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__trust-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__trust-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      min-height: 3.8rem;
-      padding: 0.75rem 1rem;
-      color: var(--vitacoral-color-primary-deep, #163d38);
-      font-family: var(--vitacoral-font-ui);
-      font-size: 1.32rem;
-      font-weight: 800;
-      line-height: 1.2;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.78);
-      border: 0.1rem solid rgba(34, 89, 82, 0.12);
-      border-radius: var(--vitacoral-radius-pill, 999px);
-      transition: transform 160ms ease;
-    }
-
-    #VcProductLanding-{{ section.id }} .vc-product-landing__trust-link::after {
-      content: '→';
-      color: #ec6542;
-      line-height: 1;
-    }
-
-    @media screen and (min-width: 900px) {
-      #VcProductLanding-{{ section.id }} .vc-product-landing__hero {
-        grid-template-columns: minmax(0, 1.05fr) minmax(32rem, 0.75fr);
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media screen and (max-width: 749px) {
-      #VcProductLanding-{{ section.id }} {
-        padding-top: 1.4rem;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__hero,
-      #VcProductLanding-{{ section.id }} .vc-product-landing__section {
-        border-radius: var(--vitacoral-radius-lg, 1.8rem);
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__hero {
-        padding: 1.7rem 1.4rem;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__title {
-        max-width: 12ch;
-        font-size: clamp(2.8rem, 9.8vw, 4.1rem);
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__body,
-      #VcProductLanding-{{ section.id }} .vc-product-landing__section-body {
-        font-size: 1.5rem;
-        line-height: 1.62;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__hero-card {
-        min-height: 36rem;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__visual {
-        min-height: 26rem;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__bottle {
-        width: 12.6rem;
-        height: 19rem;
-      }
-
-      #VcProductLanding-{{ section.id }} .vc-product-landing__float {
-        font-size: 0.96rem;
-      }
-    }
+    #VcProductLanding-{{ section.id }}{padding:clamp(1.4rem,3vw,3rem) 0 clamp(3.2rem,5vw,6rem)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__stack{display:grid;gap:clamp(1.2rem,2.4vw,2.4rem)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__hero{position:relative;overflow:hidden;display:grid;gap:clamp(2rem,3vw,3rem);align-items:center;padding:clamp(2rem,4.6vw,4.6rem);background:radial-gradient(circle at 8% 8%,rgba(236,101,66,.19),transparent 30%),radial-gradient(circle at 88% 16%,rgba(34,89,82,.2),transparent 36%),linear-gradient(135deg,#fff,rgba(245,250,248,.96));border:.1rem solid rgba(34,89,82,.1);border-radius:var(--vitacoral-radius-xl,2.4rem);box-shadow:0 1.8rem 4.4rem rgba(21,44,41,.07);isolation:isolate}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__hero:before{content:'';position:absolute;inset:0 0 auto;height:min(26rem,56%);background:linear-gradient(90deg,rgba(34,89,82,.14),rgba(236,101,66,.12),transparent 74%);mask-image:linear-gradient(180deg,#000,transparent);z-index:-1}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-content{display:grid;gap:1.1rem;max-width:72rem}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__eyebrow,#VcProductLanding-{{ section.id }} .vc-product-landing__label{display:inline-flex;align-items:center;gap:.68rem;width:fit-content;margin:0;padding:.58rem 1rem;color:var(--vitacoral-color-primary-deep,#163d38);font-family:var(--vitacoral-font-ui);font-size:1.08rem;font-weight:850;letter-spacing:.14em;line-height:1;text-transform:uppercase;background:rgba(255,255,255,.78);border:.1rem solid rgba(34,89,82,.12);border-radius:var(--vitacoral-radius-pill,999px);box-shadow:0 .6rem 1.6rem rgba(21,44,41,.045)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__eyebrow:before,#VcProductLanding-{{ section.id }} .vc-product-landing__label:before{content:'';width:.6rem;height:.6rem;border-radius:999px;background:#ec6542;box-shadow:0 0 0 .35rem rgba(236,101,66,.12)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__title{max-width:13ch;margin:0;color:var(--vitacoral-color-text);font-family:var(--vitacoral-font-brand);font-size:clamp(3.1rem,6vw,6.2rem);font-weight:650;letter-spacing:-.055em;line-height:.96;text-wrap:balance}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__body,#VcProductLanding-{{ section.id }} .vc-product-landing__section-body{max-width:72rem;color:var(--vitacoral-color-text-muted);font-family:var(--vitacoral-font-body);font-size:1.62rem;line-height:1.66}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__body>*:first-child,#VcProductLanding-{{ section.id }} .vc-product-landing__section-body>*:first-child{margin-top:0}#VcProductLanding-{{ section.id }} .vc-product-landing__body>*:last-child,#VcProductLanding-{{ section.id }} .vc-product-landing__section-body>*:last-child{margin-bottom:0}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__actions,#VcProductLanding-{{ section.id }} .vc-product-landing__trust-links{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-top:.35rem}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__button,#VcProductLanding-{{ section.id }} .vc-product-landing__button-secondary,#VcProductLanding-{{ section.id }} .vc-product-landing__trust-link{display:inline-flex;align-items:center;justify-content:center;min-height:4.8rem;padding:.9rem 1.5rem;font-family:var(--vitacoral-font-ui);font-size:1.4rem;font-weight:850;line-height:1.2;text-decoration:none;border-radius:var(--vitacoral-radius-pill,999px);transition:transform 160ms ease,background 160ms ease}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__button{color:#fff;background:var(--vitacoral-color-primary,#225952);box-shadow:0 1rem 2.2rem rgba(21,44,41,.14)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__button-secondary,#VcProductLanding-{{ section.id }} .vc-product-landing__trust-link{color:var(--vitacoral-color-primary-deep,#163d38);background:rgba(255,255,255,.8);border:.1rem solid rgba(34,89,82,.14)}
+    #VcProductLanding-{{ section.id }} a:hover{transform:translateY(-.12rem)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-card{position:relative;overflow:hidden;display:grid;gap:1rem;padding:clamp(1.25rem,2.4vw,2rem);min-height:43rem;background:radial-gradient(circle at 50% 12%,rgba(236,101,66,.16),transparent 34%),radial-gradient(circle at 76% 74%,rgba(34,89,82,.16),transparent 34%),linear-gradient(145deg,rgba(255,255,255,.88),rgba(245,250,248,.78));border:.1rem solid rgba(34,89,82,.1);border-radius:var(--vitacoral-radius-xl,2.4rem);box-shadow:0 1.1rem 3rem rgba(21,44,41,.08);isolation:isolate}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__visual{position:relative;display:grid;place-items:center;min-height:31rem;border-radius:var(--vitacoral-radius-lg,1.8rem);background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(255,255,255,.34)),radial-gradient(circle at center,#fff,rgba(240,247,245,.8));border:.1rem solid rgba(34,89,82,.1)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__visual:before{content:'';position:absolute;width:24rem;height:24rem;border:.1rem solid rgba(34,89,82,.12);border-radius:999px;box-shadow:0 0 0 3.8rem rgba(255,255,255,.38),0 0 0 3.9rem rgba(236,101,66,.08)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__visual:after{content:'';position:absolute;inset:auto 14% 10%;height:2.8rem;border-radius:999px;background:radial-gradient(ellipse at center,rgba(21,44,41,.18),transparent 68%);filter:blur(.2rem)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__image{position:relative;z-index:2;overflow:hidden;width:min(100%,32rem);border-radius:var(--vitacoral-radius-lg,1.8rem);background:transparent}#VcProductLanding-{{ section.id }} .vc-product-landing__image img{display:block;width:100%;height:auto;filter:drop-shadow(0 1.6rem 2.2rem rgba(21,44,41,.18))}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle{position:relative;z-index:2;width:16rem;height:24rem;border-radius:2.4rem 2.4rem 3.8rem 3.8rem;background:linear-gradient(90deg,rgba(255,255,255,.34),transparent 18% 82%,rgba(21,44,41,.08)),linear-gradient(180deg,#fff 0%,#f5faf8 28%,#fff 100%);border:.1rem solid rgba(34,89,82,.16);box-shadow:0 1.6rem 2.8rem rgba(21,44,41,.18)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle:before{content:'';position:absolute;top:-3.4rem;left:50%;width:7.6rem;height:4.2rem;transform:translateX(-50%);border-radius:1rem 1rem .7rem .7rem;background:linear-gradient(180deg,#225952,#163d38);box-shadow:inset 0 .4rem 0 rgba(255,255,255,.22)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle:after{content:'';position:absolute;left:1.8rem;right:1.8rem;top:7.4rem;height:8.8rem;border-radius:1.6rem;background:linear-gradient(135deg,rgba(236,101,66,.18),transparent 72%),linear-gradient(180deg,rgba(34,89,82,.96),rgba(22,61,56,.94));box-shadow:0 .6rem 1.2rem rgba(21,44,41,.12)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__bottle-label{position:absolute;z-index:3;left:3rem;right:3rem;top:9.1rem;color:#fff;font-family:var(--vitacoral-font-ui);font-size:1.25rem;font-weight:900;letter-spacing:.12em;line-height:1.15;text-align:center;text-transform:uppercase}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__float{position:absolute;z-index:3;display:inline-flex;align-items:center;min-height:3.5rem;padding:.68rem .92rem;color:var(--vitacoral-color-primary-deep,#163d38);font-family:var(--vitacoral-font-ui);font-size:1.08rem;font-weight:850;line-height:1.1;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.86);border:.1rem solid rgba(34,89,82,.12);border-radius:var(--vitacoral-radius-pill,999px);box-shadow:0 .9rem 1.9rem rgba(21,44,41,.09);backdrop-filter:blur(10px)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__float--one{top:11%;left:4%}#VcProductLanding-{{ section.id }} .vc-product-landing__float--two{top:47%;right:4%}#VcProductLanding-{{ section.id }} .vc-product-landing__float--three{left:8%;bottom:13%}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__hero-note{margin:0;color:var(--vitacoral-color-text-muted);font-family:var(--vitacoral-font-body);font-size:1.36rem;line-height:1.55}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__section{position:relative;display:grid;gap:1.4rem;padding:clamp(1.8rem,3vw,3rem);background:radial-gradient(circle at top right,rgba(34,89,82,.07),transparent 36%),linear-gradient(180deg,#fff,rgba(248,250,249,.96));border:.1rem solid rgba(34,89,82,.1);border-radius:var(--vitacoral-radius-xl,2.4rem);box-shadow:0 1.2rem 2.8rem rgba(21,44,41,.055)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__section--offer{padding:1.2rem 1.4rem;background:linear-gradient(90deg,rgba(34,89,82,.96),rgba(22,61,56,.94));color:#fff;border:0;box-shadow:0 1.2rem 2.8rem rgba(21,44,41,.12)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__offer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;color:#fff}#VcProductLanding-{{ section.id }} .vc-product-landing__offer strong{font-family:var(--vitacoral-font-brand);font-size:clamp(1.9rem,2.6vw,2.8rem);letter-spacing:-.035em}#VcProductLanding-{{ section.id }} .vc-product-landing__offer span{font-family:var(--vitacoral-font-body);font-size:1.45rem;opacity:.88}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__section-heading{margin:0;color:var(--vitacoral-color-text);font-family:var(--vitacoral-font-brand);font-size:clamp(2.4rem,3.5vw,4rem);font-weight:650;letter-spacing:-.045em;line-height:1.04;text-wrap:balance}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__section--offer .vc-product-landing__button{background:#fff;color:#163d38;box-shadow:none}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__cards{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1.2rem}.vc-product-landing__mini-card{position:relative;overflow:hidden;padding:1.8rem 1.6rem 1.6rem;background:rgba(255,255,255,.78);border:.1rem solid rgba(34,89,82,.1);border-radius:var(--vitacoral-radius-lg,1.8rem)}#VcProductLanding-{{ section.id }} .vc-product-landing__mini-card:before{content:'';display:block;width:3rem;height:3rem;margin-bottom:1rem;border-radius:999px;background:radial-gradient(circle at 35% 35%,#fff 0 18%,transparent 19%),linear-gradient(135deg,rgba(236,101,66,.78),rgba(34,89,82,.86));box-shadow:0 .7rem 1.4rem rgba(21,44,41,.11)}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__mini-title{margin:0 0 .6rem;color:var(--vitacoral-color-text);font-family:var(--vitacoral-font-brand);font-size:2rem;font-weight:650;letter-spacing:-.035em;line-height:1.1}#VcProductLanding-{{ section.id }} .vc-product-landing__mini-text{margin:0;color:var(--vitacoral-color-text-muted);font-family:var(--vitacoral-font-body);font-size:1.48rem;line-height:1.62}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__product{display:grid;gap:1.4rem;align-items:center}#VcProductLanding-{{ section.id }} .vc-product-landing__price{display:flex;flex-wrap:wrap;gap:.75rem;align-items:baseline}.vc-product-landing__price-main{color:#ec6542;font-family:var(--vitacoral-font-brand);font-size:clamp(2.8rem,4vw,4.4rem);font-weight:750;letter-spacing:-.045em}.vc-product-landing__price-sub{color:var(--vitacoral-color-text-muted);font-family:var(--vitacoral-font-ui);font-size:1.35rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__bullets{display:grid;gap:.65rem;margin:0;padding:0;list-style:none}.vc-product-landing__bullets li{position:relative;padding-left:1.7rem;color:var(--vitacoral-color-text-muted);font-family:var(--vitacoral-font-body);font-size:1.48rem;line-height:1.5}.vc-product-landing__bullets li:before{content:'✓';position:absolute;left:0;top:0;color:#ec6542;font-weight:900}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__cta-note{margin:0;color:var(--vitacoral-color-text-muted);font-size:1.28rem;line-height:1.5}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__faq{display:grid;gap:.8rem}.vc-product-landing__faq details{padding:1rem 1.1rem;background:rgba(255,255,255,.72);border:.1rem solid rgba(34,89,82,.1);border-radius:1.4rem}.vc-product-landing__faq summary{cursor:pointer;font-family:var(--vitacoral-font-ui);font-weight:850;color:var(--vitacoral-color-primary-deep,#163d38)}.vc-product-landing__faq p{margin:.8rem 0 0;color:var(--vitacoral-color-text-muted);font-size:1.44rem;line-height:1.6}
+    #VcProductLanding-{{ section.id }} .vc-product-landing__section--final{text-align:center;justify-items:center;background:radial-gradient(circle at top,rgba(236,101,66,.13),transparent 36%),linear-gradient(135deg,#fff,rgba(246,250,248,.95))}
+    @media screen and (min-width:900px){#VcProductLanding-{{ section.id }} .vc-product-landing__hero{grid-template-columns:minmax(0,1.05fr) minmax(32rem,.75fr)}#VcProductLanding-{{ section.id }} .vc-product-landing__cards{grid-template-columns:repeat(3,minmax(0,1fr))}#VcProductLanding-{{ section.id }} .vc-product-landing__product{grid-template-columns:minmax(0,1fr) auto}}
+    @media screen and (max-width:749px){#VcProductLanding-{{ section.id }}{padding-top:1.2rem}#VcProductLanding-{{ section.id }} .vc-product-landing__hero,#VcProductLanding-{{ section.id }} .vc-product-landing__section{border-radius:var(--vitacoral-radius-lg,1.8rem)}#VcProductLanding-{{ section.id }} .vc-product-landing__hero{padding:1.7rem 1.4rem}#VcProductLanding-{{ section.id }} .vc-product-landing__title{max-width:12ch;font-size:clamp(2.8rem,9.8vw,4.1rem)}#VcProductLanding-{{ section.id }} .vc-product-landing__body,#VcProductLanding-{{ section.id }} .vc-product-landing__section-body{font-size:1.5rem;line-height:1.62}#VcProductLanding-{{ section.id }} .vc-product-landing__hero-card{min-height:36rem}#VcProductLanding-{{ section.id }} .vc-product-landing__visual{min-height:26rem}#VcProductLanding-{{ section.id }} .vc-product-landing__bottle{width:12.6rem;height:19rem}#VcProductLanding-{{ section.id }} .vc-product-landing__float{font-size:.96rem}.vc-product-landing__button,.vc-product-landing__button-secondary{width:100%}}
   {%- endstyle -%}
 
   <div class="page-width">
     <div class="vc-product-landing__stack">
       <div class="vc-product-landing__hero">
         <div class="vc-product-landing__hero-content">
-          {%- if section.settings.eyebrow != blank -%}
-            <p class="vc-product-landing__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-          {%- endif -%}
-          {%- if section.settings.title != blank -%}
-            <h1 class="vc-product-landing__title">{{ section.settings.title | escape }}</h1>
-          {%- endif -%}
-          {%- if section.settings.body != blank -%}
-            <div class="vc-product-landing__body rte">{{ section.settings.body }}</div>
-          {%- endif -%}
+          {%- if section.settings.eyebrow != blank -%}<p class="vc-product-landing__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+          {%- if section.settings.title != blank -%}<h1 class="vc-product-landing__title">{{ section.settings.title | escape }}</h1>{%- endif -%}
+          {%- if section.settings.body != blank -%}<div class="vc-product-landing__body rte">{{ section.settings.body }}</div>{%- endif -%}
           <div class="vc-product-landing__actions">
-            {%- if section.settings.primary_link != blank and section.settings.primary_label != blank -%}
-              <a class="vc-product-landing__button" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }}</a>
-            {%- endif -%}
-            {%- if section.settings.secondary_link != blank and section.settings.secondary_label != blank -%}
-              <a class="vc-product-landing__button-secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label | escape }}</a>
-            {%- endif -%}
+            {%- if section.settings.primary_link != blank and section.settings.primary_label != blank -%}<a class="vc-product-landing__button" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }}</a>{%- endif -%}
+            {%- if section.settings.secondary_link != blank and section.settings.secondary_label != blank -%}<a class="vc-product-landing__button-secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label | escape }}</a>{%- endif -%}
           </div>
         </div>
-
         <div class="vc-product-landing__hero-card">
           <div class="vc-product-landing__visual" aria-hidden="true">
-            {%- if section.settings.image != blank -%}
-              <div class="vc-product-landing__image">
-                {{ section.settings.image | image_url: width: 900 | image_tag: widths: '360, 540, 720, 900', sizes: '(min-width: 900px) 34vw, 100vw', loading: 'lazy' }}
-              </div>
-            {%- else -%}
-              <div class="vc-product-landing__bottle">
-                <span class="vc-product-landing__bottle-label">{{ section.settings.visual_label | escape }}</span>
-              </div>
-            {%- endif -%}
+            {%- if section.settings.image != blank -%}<div class="vc-product-landing__image">{{ section.settings.image | image_url: width: 900 | image_tag: widths: '360, 540, 720, 900', sizes: '(min-width: 900px) 34vw, 100vw', loading: 'lazy' }}</div>{%- else -%}<div class="vc-product-landing__bottle"><span class="vc-product-landing__bottle-label">{{ section.settings.visual_label | escape }}</span></div>{%- endif -%}
             {%- if section.settings.visual_chip_1 != blank -%}<span class="vc-product-landing__float vc-product-landing__float--one">{{ section.settings.visual_chip_1 | escape }}</span>{%- endif -%}
             {%- if section.settings.visual_chip_2 != blank -%}<span class="vc-product-landing__float vc-product-landing__float--two">{{ section.settings.visual_chip_2 | escape }}</span>{%- endif -%}
             {%- if section.settings.visual_chip_3 != blank -%}<span class="vc-product-landing__float vc-product-landing__float--three">{{ section.settings.visual_chip_3 | escape }}</span>{%- endif -%}
           </div>
-          {%- if section.settings.hero_note != blank -%}
-            <p class="vc-product-landing__hero-note">{{ section.settings.hero_note | escape }}</p>
-          {%- endif -%}
+          {%- if section.settings.hero_note != blank -%}<p class="vc-product-landing__hero-note">{{ section.settings.hero_note | escape }}</p>{%- endif -%}
         </div>
       </div>
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
+          {%- when 'offer_bar' -%}
+            <div class="vc-product-landing__section vc-product-landing__section--offer" {{ block.shopify_attributes }}><div class="vc-product-landing__offer"><div><strong>{{ block.settings.heading | escape }}</strong>{%- if block.settings.text != blank -%}<span> {{ block.settings.text | escape }}</span>{%- endif -%}</div>{%- if block.settings.link != blank and block.settings.button_label != blank -%}<a class="vc-product-landing__button" href="{{ block.settings.link }}">{{ block.settings.button_label | escape }}</a>{%- endif -%}</div></div>
+          {%- when 'product_cta' -%}
+            <div class="vc-product-landing__section" {{ block.shopify_attributes }}><div class="vc-product-landing__product"><div>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}<div class="vc-product-landing__price">{%- if block.settings.price != blank -%}<span class="vc-product-landing__price-main">{{ block.settings.price | escape }}</span>{%- endif -%}{%- if block.settings.price_note != blank -%}<span class="vc-product-landing__price-sub">{{ block.settings.price_note | escape }}</span>{%- endif -%}</div><ul class="vc-product-landing__bullets">{%- if block.settings.bullet_1 != blank -%}<li>{{ block.settings.bullet_1 | escape }}</li>{%- endif -%}{%- if block.settings.bullet_2 != blank -%}<li>{{ block.settings.bullet_2 | escape }}</li>{%- endif -%}{%- if block.settings.bullet_3 != blank -%}<li>{{ block.settings.bullet_3 | escape }}</li>{%- endif -%}</ul>{%- if block.settings.note != blank -%}<p class="vc-product-landing__cta-note">{{ block.settings.note | escape }}</p>{%- endif -%}</div>{%- if block.settings.link != blank and block.settings.button_label != blank -%}<a class="vc-product-landing__button" href="{{ block.settings.link }}">{{ block.settings.button_label | escape }}</a>{%- endif -%}</div></div>
           {%- when 'content_section' -%}
-            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>
-              {%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}
-              {%- if block.settings.heading != blank -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- endif -%}
-              {%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}
-            </div>
+            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}{%- if block.settings.heading != blank -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- endif -%}{%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}</div>
           {%- when 'card_grid' -%}
-            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>
-              {%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}
-              {%- if block.settings.heading != blank -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- endif -%}
-              <div class="vc-product-landing__cards">
-                {%- for i in (1..3) -%}
-                  {%- liquid
-                    assign title_key = 'card_' | append: i | append: '_title'
-                    assign text_key = 'card_' | append: i | append: '_text'
-                    assign card_title = block.settings[title_key]
-                    assign card_text = block.settings[text_key]
-                  -%}
-                  {%- if card_title != blank or card_text != blank -%}
-                    <article class="vc-product-landing__mini-card">
-                      {%- if card_title != blank -%}<h3 class="vc-product-landing__mini-title">{{ card_title | escape }}</h3>{%- endif -%}
-                      {%- if card_text != blank -%}<p class="vc-product-landing__mini-text">{{ card_text | escape }}</p>{%- endif -%}
-                    </article>
-                  {%- endif -%}
-                {%- endfor -%}
-              </div>
-            </div>
+            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}{%- if block.settings.heading != blank -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- endif -%}<div class="vc-product-landing__cards">{%- for i in (1..3) -%}{%- liquid assign title_key = 'card_' | append: i | append: '_title' assign text_key = 'card_' | append: i | append: '_text' assign card_title = block.settings[title_key] assign card_text = block.settings[text_key] -%}{%- if card_title != blank or card_text != blank -%}<article class="vc-product-landing__mini-card">{%- if card_title != blank -%}<h3 class="vc-product-landing__mini-title">{{ card_title | escape }}</h3>{%- endif -%}{%- if card_text != blank -%}<p class="vc-product-landing__mini-text">{{ card_text | escape }}</p>{%- endif -%}</article>{%- endif -%}{%- endfor -%}</div></div>
+          {%- when 'faq' -%}
+            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2><div class="vc-product-landing__faq">{%- for i in (1..3) -%}{%- liquid assign q_key = 'q_' | append: i assign a_key = 'a_' | append: i assign q = block.settings[q_key] assign a = block.settings[a_key] -%}{%- if q != blank and a != blank -%}<details><summary>{{ q | escape }}</summary><p>{{ a | escape }}</p></details>{%- endif -%}{%- endfor -%}</div></div>
           {%- when 'trust_links' -%}
-            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>
-              {%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}
-              {%- if block.settings.heading != blank -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- endif -%}
-              {%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}
-              <div class="vc-product-landing__trust-links">
-                {%- if block.settings.link_1_url != blank and block.settings.link_1_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_1_url }}">{{ block.settings.link_1_label | escape }}</a>{%- endif -%}
-                {%- if block.settings.link_2_url != blank and block.settings.link_2_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_2_url }}">{{ block.settings.link_2_label | escape }}</a>{%- endif -%}
-                {%- if block.settings.link_3_url != blank and block.settings.link_3_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_3_url }}">{{ block.settings.link_3_label | escape }}</a>{%- endif -%}
-              </div>
-            </div>
+            <div class="vc-product-landing__section" {{ block.shopify_attributes }}>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}<div class="vc-product-landing__trust-links">{%- if block.settings.link_1_url != blank and block.settings.link_1_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_1_url }}">{{ block.settings.link_1_label | escape }}</a>{%- endif -%}{%- if block.settings.link_2_url != blank and block.settings.link_2_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_2_url }}">{{ block.settings.link_2_label | escape }}</a>{%- endif -%}{%- if block.settings.link_3_url != blank and block.settings.link_3_label != blank -%}<a class="vc-product-landing__trust-link" href="{{ block.settings.link_3_url }}">{{ block.settings.link_3_label | escape }}</a>{%- endif -%}</div></div>
+          {%- when 'final_cta' -%}
+            <div class="vc-product-landing__section vc-product-landing__section--final" {{ block.shopify_attributes }}>{%- if block.settings.label != blank -%}<p class="vc-product-landing__label">{{ block.settings.label | escape }}</p>{%- endif -%}<h2 class="vc-product-landing__section-heading">{{ block.settings.heading | escape }}</h2>{%- if block.settings.body != blank -%}<div class="vc-product-landing__section-body rte">{{ block.settings.body }}</div>{%- endif -%}<div class="vc-product-landing__actions">{%- if block.settings.link != blank and block.settings.button_label != blank -%}<a class="vc-product-landing__button" href="{{ block.settings.link }}">{{ block.settings.button_label | escape }}</a>{%- endif -%}</div></div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -571,67 +90,22 @@
 
 {% schema %}
 {
-  "name": "Vitacoral Product Landing",
-  "tag": "section",
-  "class": "section",
-  "disabled_on": { "groups": ["header", "footer"] },
-  "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Vitacoral" },
-    { "type": "text", "id": "title", "label": "Title", "default": "Ürün ailesi landing" },
-    { "type": "richtext", "id": "body", "label": "Body" },
-    { "type": "image_picker", "id": "image", "label": "Hero product image" },
-    { "type": "text", "id": "visual_label", "label": "Fallback bottle label", "default": "VITACORAL" },
-    { "type": "text", "id": "visual_chip_1", "label": "Visual chip 1", "default": "Günlük rutin" },
-    { "type": "text", "id": "visual_chip_2", "label": "Visual chip 2", "default": "Ürün ailesi" },
-    { "type": "text", "id": "visual_chip_3", "label": "Visual chip 3", "default": "Sade seçim" },
-    { "type": "text", "id": "hero_note", "label": "Hero note" },
-    { "type": "text", "id": "primary_label", "label": "Primary CTA label", "default": "Ürünleri incele" },
-    { "type": "url", "id": "primary_link", "label": "Primary CTA link" },
-    { "type": "text", "id": "secondary_label", "label": "Secondary CTA label", "default": "Vitacoral yaklaşımı" },
-    { "type": "url", "id": "secondary_link", "label": "Secondary CTA link" }
+  "name":"Vitacoral Product Landing",
+  "tag":"section",
+  "class":"section",
+  "disabled_on":{"groups":["header","footer"]},
+  "settings":[
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Vitacoral"},{"type":"text","id":"title","label":"Title","default":"Ürün landing"},{"type":"richtext","id":"body","label":"Body"},{"type":"image_picker","id":"image","label":"Hero product image"},{"type":"text","id":"visual_label","label":"Fallback bottle label","default":"VITACORAL"},{"type":"text","id":"visual_chip_1","label":"Visual chip 1","default":"Özel sayfa"},{"type":"text","id":"visual_chip_2","label":"Visual chip 2","default":"Kolay seçim"},{"type":"text","id":"visual_chip_3","label":"Visual chip 3","default":"Hızlı CTA"},{"type":"text","id":"hero_note","label":"Hero note"},{"type":"text","id":"primary_label","label":"Primary CTA label","default":"Ürüne git"},{"type":"url","id":"primary_link","label":"Primary CTA link"},{"type":"text","id":"secondary_label","label":"Secondary CTA label","default":"Detayları gör"},{"type":"url","id":"secondary_link","label":"Secondary CTA link"}
   ],
-  "blocks": [
-    {
-      "type": "content_section",
-      "name": "Content section",
-      "settings": [
-        { "type": "text", "id": "label", "label": "Label" },
-        { "type": "text", "id": "heading", "label": "Heading" },
-        { "type": "richtext", "id": "body", "label": "Body" }
-      ]
-    },
-    {
-      "type": "card_grid",
-      "name": "Three card grid",
-      "settings": [
-        { "type": "text", "id": "label", "label": "Label" },
-        { "type": "text", "id": "heading", "label": "Heading" },
-        { "type": "text", "id": "card_1_title", "label": "Card 1 title" },
-        { "type": "textarea", "id": "card_1_text", "label": "Card 1 text" },
-        { "type": "text", "id": "card_2_title", "label": "Card 2 title" },
-        { "type": "textarea", "id": "card_2_text", "label": "Card 2 text" },
-        { "type": "text", "id": "card_3_title", "label": "Card 3 title" },
-        { "type": "textarea", "id": "card_3_text", "label": "Card 3 text" }
-      ]
-    },
-    {
-      "type": "trust_links",
-      "name": "Trust links",
-      "settings": [
-        { "type": "text", "id": "label", "label": "Label" },
-        { "type": "text", "id": "heading", "label": "Heading" },
-        { "type": "richtext", "id": "body", "label": "Body" },
-        { "type": "text", "id": "link_1_label", "label": "Link 1 label" },
-        { "type": "url", "id": "link_1_url", "label": "Link 1 URL" },
-        { "type": "text", "id": "link_2_label", "label": "Link 2 label" },
-        { "type": "url", "id": "link_2_url", "label": "Link 2 URL" },
-        { "type": "text", "id": "link_3_label", "label": "Link 3 label" },
-        { "type": "url", "id": "link_3_url", "label": "Link 3 URL" }
-      ]
-    }
+  "blocks":[
+    {"type":"offer_bar","name":"Offer bar","settings":[{"type":"text","id":"heading","label":"Heading"},{"type":"text","id":"text","label":"Text"},{"type":"text","id":"button_label","label":"Button label"},{"type":"url","id":"link","label":"Button link"}]},
+    {"type":"product_cta","name":"Product CTA","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"richtext","id":"body","label":"Body"},{"type":"text","id":"price","label":"Price / offer"},{"type":"text","id":"price_note","label":"Price note"},{"type":"text","id":"bullet_1","label":"Bullet 1"},{"type":"text","id":"bullet_2","label":"Bullet 2"},{"type":"text","id":"bullet_3","label":"Bullet 3"},{"type":"text","id":"note","label":"Small note"},{"type":"text","id":"button_label","label":"Button label"},{"type":"url","id":"link","label":"Button link"}]},
+    {"type":"content_section","name":"Content section","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"richtext","id":"body","label":"Body"}]},
+    {"type":"card_grid","name":"Three card grid","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"text","id":"card_1_title","label":"Card 1 title"},{"type":"textarea","id":"card_1_text","label":"Card 1 text"},{"type":"text","id":"card_2_title","label":"Card 2 title"},{"type":"textarea","id":"card_2_text","label":"Card 2 text"},{"type":"text","id":"card_3_title","label":"Card 3 title"},{"type":"textarea","id":"card_3_text","label":"Card 3 text"}]},
+    {"type":"faq","name":"FAQ","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"text","id":"q_1","label":"Question 1"},{"type":"textarea","id":"a_1","label":"Answer 1"},{"type":"text","id":"q_2","label":"Question 2"},{"type":"textarea","id":"a_2","label":"Answer 2"},{"type":"text","id":"q_3","label":"Question 3"},{"type":"textarea","id":"a_3","label":"Answer 3"}]},
+    {"type":"trust_links","name":"Trust links","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"richtext","id":"body","label":"Body"},{"type":"text","id":"link_1_label","label":"Link 1 label"},{"type":"url","id":"link_1_url","label":"Link 1 URL"},{"type":"text","id":"link_2_label","label":"Link 2 label"},{"type":"url","id":"link_2_url","label":"Link 2 URL"},{"type":"text","id":"link_3_label","label":"Link 3 label"},{"type":"url","id":"link_3_url","label":"Link 3 URL"}]},
+    {"type":"final_cta","name":"Final CTA","settings":[{"type":"text","id":"label","label":"Label"},{"type":"text","id":"heading","label":"Heading"},{"type":"richtext","id":"body","label":"Body"},{"type":"text","id":"button_label","label":"Button label"},{"type":"url","id":"link","label":"Button link"}]}
   ],
-  "presets": [
-    { "name": "Vitacoral Product Landing" }
-  ]
+  "presets":[{"name":"Vitacoral Product Landing"}]
 }
 {% endschema %}
