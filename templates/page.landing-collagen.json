@@ -1,0 +1,80 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing": {
+      "type": "vitacoral-product-landing",
+      "blocks": {
+        "routine": {
+          "type": "content_section",
+          "settings": {
+            "label": "Kolajen rutini",
+            "heading": "Günlük bakım rutinine sade bir eşlikçi",
+            "body": "<p>Vitacoral kolajen ürün ailesi, günlük rutin içinde kolay konumlandırılabilecek bir takviye deneyimi sunmak üzere tasarlanır. Ürün seçimi, kullanım alışkanlığı ve form tercihi kişisel rutine göre değerlendirilebilir.</p>"
+          }
+        },
+        "why_form": {
+          "type": "card_grid",
+          "settings": {
+            "label": "Neden bu ürün ailesi?",
+            "heading": "Kolajen deneyimini daha anlaşılır hale getiren başlıklar",
+            "card_1_title": "Rutin odaklı kullanım",
+            "card_1_text": "Günlük bakım ve takviye alışkanlıkları içinde kolay hatırlanabilecek bir kullanım deneyimi hedeflenir.",
+            "card_2_title": "Ürün ailesi seçimi",
+            "card_2_text": "Farklı ihtiyaç ve kullanım tercihlerine göre ürün aileleri daha net bir akışla keşfedilebilir.",
+            "card_3_title": "Sade anlatım",
+            "card_3_text": "İçerik, kullanım ve satın alma adımları kullanıcıyı yormayan bir düzen içinde sunulur."
+          }
+        },
+        "content": {
+          "type": "content_section",
+          "settings": {
+            "label": "İçerik yaklaşımı",
+            "heading": "Ürün bilgisini abartısız ve okunabilir sunuyoruz",
+            "body": "<p>Kolajen takviyesi seçerken ürün formu, içerik kompozisyonu, kullanım önerileri ve marka güveni birlikte değerlendirilir. Bu sayfa, Vitacoral kolajen ürün ailesini daha kolay inceleyebilmeniz için hazırlanmıştır.</p><p>Ürünlere ait detaylı içerik, kullanım ve uyarı bilgileri için ilgili ürün sayfasını inceleyebilirsiniz.</p>"
+          }
+        },
+        "trust": {
+          "type": "trust_links",
+          "settings": {
+            "label": "Güven ve erişim",
+            "heading": "Vitacoral’ı farklı temas noktalarında keşfedin",
+            "body": "<p>Vitacoral ürünleri web sitesi, seçili pazaryerleri ve eczane kanalı üzerinden kullanıcılarla buluşur. Marka, belge ve iletişim sayfaları üzerinden daha düzenli bir bilgi akışı sunmayı hedefler.</p>",
+            "link_1_label": "Kalite belgeleri",
+            "link_1_url": "/pages/kalite-sertifikalari",
+            "link_2_label": "Eczanelerde Vitacoral",
+            "link_2_url": "/pages/eczanelerde-vitacoral",
+            "link_3_label": "Biz Kimiz",
+            "link_3_url": "/pages/biz-kimiz"
+          }
+        }
+      },
+      "block_order": [
+        "routine",
+        "why_form",
+        "content",
+        "trust"
+      ],
+      "settings": {
+        "eyebrow": "Vitacoral Kolajen",
+        "title": "Kolajen rutinini sadeleştiren Vitacoral deneyimi",
+        "body": "<p>Vitacoral kolajen ürün ailesini, günlük rutin içinde daha kolay keşfedebileceğiniz modern ve anlaşılır bir akışla inceleyin.</p>",
+        "hero_note": "Ürün detayları, kullanım önerileri ve içerik bilgileri için ilgili ürün sayfasını inceleyebilirsiniz.",
+        "primary_label": "Kolajen ürünlerini incele",
+        "primary_link": "/search?q=kolajen",
+        "secondary_label": "Vitacoral yaklaşımı",
+        "secondary_link": "/pages/biz-kimiz"
+      }
+    }
+  },
+  "order": [
+    "landing"
+  ]
+}
