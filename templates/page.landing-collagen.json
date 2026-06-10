@@ -16,38 +16,38 @@
           "type": "offer_bar",
           "settings": {
             "heading": "Kolajen rutinine başlamak için özel sayfa",
-            "text": "Ürünleri incele, sana uygun seçeneği hızlıca bul.",
-            "button_label": "Kolajen ürünlerine git",
+            "text": "Ürünleri seç, satın alma adımına hızlıca ilerle.",
+            "button_label": "Satın al",
             "link": "/search?q=kolajen"
           }
         },
         "product": {
           "type": "product_cta",
           "settings": {
-            "label": "Hızlı seçim",
-            "heading": "Kolajen ürünlerini tek adımda incele",
-            "body": "<p>Reklamdan geldin, uzun uzun aramak zorunda değilsin. Vitacoral kolajen ürün ailesini inceleyip içerik, kullanım ve ürün detaylarını ürün sayfasında görebilirsin.</p>",
-            "price": "Kolajen seçimini yap",
+            "label": "Hızlı satın alma",
+            "heading": "Kolajen ürününü seç ve satın almaya geç",
+            "body": "<p>Reklamdan geldin, uzun uzun aramak zorunda değilsin. Vitacoral kolajen ürün ailesini hızlıca görüntüleyip sana uygun üründen satın alma adımına ilerleyebilirsin.</p>",
+            "price": "Satın almaya başla",
             "price_note": "Ürün sayfasına yönlenir",
-            "bullet_1": "Ürün detaylarını ve kullanım bilgisini gör",
-            "bullet_2": "Sana uygun formu ve seçeneği karşılaştır",
-            "bullet_3": "Güvenli ödeme adımıyla alışverişe devam et",
+            "bullet_1": "Ürünü seç ve detaylarını gör",
+            "bullet_2": "Güncel fiyat ve kampanyayı kontrol et",
+            "bullet_3": "Sepete ekleyip ödeme adımına devam et",
             "note": "Fiyat, kampanya ve stok bilgisi ürün sayfasında güncel olarak görüntülenir.",
-            "button_label": "Ürünleri incele",
+            "button_label": "Satın al",
             "link": "/search?q=kolajen"
           }
         },
         "why": {
           "type": "card_grid",
           "settings": {
-            "label": "Neden kolajen landing?",
-            "heading": "Kolajen seçimini daha hızlı ve net hale getiriyoruz",
+            "label": "Neden bu sayfa?",
+            "heading": "Kolajen alışverişini daha hızlı ve net hale getiriyoruz",
             "card_1_title": "Ürün ailesini hızlı gör",
             "card_1_text": "Tek tek menüde aramak yerine kolajen seçeneklerine doğrudan ulaş.",
-            "card_2_title": "Rutinine uygun düşün",
-            "card_2_text": "Günlük bakım ve takviye alışkanlıklarına uygun kullanım akışını değerlendir.",
-            "card_3_title": "Satın almaya yakın ilerle",
-            "card_3_text": "İçeriği gör, ürünü seç, detay sayfasından güvenli ödeme adımına devam et."
+            "card_2_title": "Satın almadan önce karar ver",
+            "card_2_text": "Ürün formunu, kullanım bilgisini ve içerik başlıklarını ürün sayfasında kontrol et.",
+            "card_3_title": "Sepete daha hızlı ilerle",
+            "card_3_text": "Ürünü seç, sepete ekle ve güvenli ödeme adımına devam et."
           }
         },
         "form": {
@@ -55,22 +55,22 @@
           "settings": {
             "label": "Form ve kullanım",
             "heading": "Kolajen takviyesinde önemli olan şey: sürdürülebilir rutin",
-            "body": "<p>Kolajen takviyesi seçerken ürün formu, kullanım kolaylığı ve günlük rutine uyumu birlikte düşünülür. Bu sayfa, Vitacoral kolajen ürünlerini hızlıca keşfetmen ve ürüne karar vermeden önce temel başlıkları görmen için hazırlandı.</p><p>Detaylı içerik, kullanım önerisi ve uyarı bilgileri için satın almadan önce ilgili ürün sayfasını incele.</p>"
+            "body": "<p>Kolajen takviyesi seçerken ürün formu, kullanım kolaylığı ve günlük rutine uyumu birlikte düşünülür. Bu sayfa, Vitacoral kolajen ürünlerini hızlıca keşfetmen ve satın almadan önce temel başlıkları görmen için hazırlandı.</p><p>Detaylı içerik, kullanım önerisi ve uyarı bilgileri için satın alma öncesinde ilgili ürün sayfasını incele.</p>"
           }
         },
         "mid_cta": {
           "type": "product_cta",
           "settings": {
-            "label": "Ara CTA",
-            "heading": "Kolajen ürününü şimdi seçmeye geç",
-            "body": "<p>Ürünleri karşılaştırmak ve güncel kampanya bilgisini görmek için kolajen ürünlerine geçebilirsin.</p>",
-            "price": "Hemen incele",
+            "label": "Satın alma adımı",
+            "heading": "Kolajen ürününü şimdi seç",
+            "body": "<p>Ürünleri karşılaştırmak, güncel kampanya bilgisini görmek ve satın alma adımına ilerlemek için kolajen ürünlerine geçebilirsin.</p>",
+            "price": "Satın al",
             "price_note": "Hızlı yönlendirme",
             "bullet_1": "Ürün sayfasında içerik bilgisi",
             "bullet_2": "Güncel fiyat ve kampanya",
             "bullet_3": "Sepete ekleme ve ödeme adımı",
-            "note": "Bu landing sayfası seçim sürecini hızlandırmak için hazırlanmıştır.",
-            "button_label": "Kolajen ürünlerine git",
+            "note": "Bu landing sayfası satın alma sürecini hızlandırmak için hazırlanmıştır.",
+            "button_label": "Satın al",
             "link": "/search?q=kolajen"
           }
         },
@@ -94,7 +94,7 @@
             "label": "Sık sorulanlar",
             "heading": "Kolajen alışverişinden önce kısa cevaplar",
             "q_1": "Bu sayfa ürün sayfasının yerine mi geçiyor?",
-            "a_1": "Hayır. Bu sayfa ürün seçimini hızlandırmak için hazırlanır. İçerik, kullanım, fiyat ve stok bilgisi için ilgili ürün sayfası esas alınmalıdır.",
+            "a_1": "Hayır. Bu sayfa satın alma yolunu hızlandırmak için hazırlanır. İçerik, kullanım, fiyat ve stok bilgisi için ilgili ürün sayfası esas alınmalıdır.",
             "q_2": "Hangi kolajen ürünü bana uygun?",
             "a_2": "Ürün formu, kullanım alışkanlığı ve içerik tercihi kişiden kişiye değişebilir. Karar vermeden önce ürün sayfasındaki bilgileri inceleyebilirsin.",
             "q_3": "Kampanya ve fiyat bilgisi nerede güncel?",
@@ -105,9 +105,9 @@
           "type": "final_cta",
           "settings": {
             "label": "Hazırsan",
-            "heading": "Kolajen ürünlerini incelemeye geç",
+            "heading": "Kolajen ürününü seç ve satın almaya geç",
             "body": "<p>Vitacoral kolajen ürün ailesini görüntüle, sana uygun seçeneği değerlendir ve ürün sayfasından alışverişe devam et.</p>",
-            "button_label": "Kolajen ürünlerini incele",
+            "button_label": "Satın al",
             "link": "/search?q=kolajen"
           }
         }
@@ -124,14 +124,14 @@
       ],
       "settings": {
         "eyebrow": "Kolajen özel sayfası",
-        "title": "Kolajen rutinine başlamak isteyenler için hızlı yol",
-        "body": "<p>Vitacoral kolajen ürünlerini tek akışta incele. Ürün ailesini gör, sana uygun seçeneği değerlendir ve güncel kampanya bilgisi için ürün sayfasına geç.</p>",
+        "title": "Kolajen rutinine başlamak isteyenler için hızlı satın alma yolu",
+        "body": "<p>Vitacoral kolajen ürünlerini tek akışta incele. Ürün ailesini gör, sana uygun seçeneği değerlendir ve satın alma adımına hızlıca ilerle.</p>",
         "visual_label": "KOLAJEN",
         "visual_chip_1": "Özel sayfa",
         "visual_chip_2": "Hızlı seçim",
-        "visual_chip_3": "Ürüne git",
+        "visual_chip_3": "Satın al",
         "hero_note": "Ürün içerikleri, kullanım önerileri, fiyat ve stok bilgileri ilgili ürün sayfasında güncel olarak yer alır.",
-        "primary_label": "Kolajen ürünlerine git",
+        "primary_label": "Satın al",
         "primary_link": "/search?q=kolajen",
         "secondary_label": "Güven başlıklarını gör",
         "secondary_link": "/pages/kalite-sertifikalari"
