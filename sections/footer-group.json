@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "brand_logo": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
         "brand_note": {
           "type": "text",
           "settings": {
@@ -37,6 +43,7 @@
         }
       },
       "block_order": [
+        "brand_logo",
         "brand_note",
         "trust_links",
         "support_links"
