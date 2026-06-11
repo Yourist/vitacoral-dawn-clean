@@ -13,28 +13,11 @@
       "type": "vitacoral-product-landing",
       "blocks": {
         "offer": {
-          "type": "offer_bar",
+          "type": "content_section",
           "settings": {
-            "heading": "Kolajen rutinine başlamak için özel sayfa",
-            "text": "Ürünleri seç, satın alma adımına hızlıca ilerle.",
-            "button_label": "Satın al",
-            "link": "/search?q=kolajen"
-          }
-        },
-        "product": {
-          "type": "product_cta",
-          "settings": {
-            "label": "Hızlı satın alma",
-            "heading": "Kolajen ürününü seç ve satın almaya geç",
-            "body": "<p>Reklamdan geldin, uzun uzun aramak zorunda değilsin. Vitacoral kolajen ürün ailesini hızlıca görüntüleyip sana uygun üründen satın alma adımına ilerleyebilirsin.</p>",
-            "price": "Satın almaya başla",
-            "price_note": "Ürün sayfasına yönlenir",
-            "bullet_1": "Ürünü seç ve detaylarını gör",
-            "bullet_2": "Güncel fiyat ve kampanyayı kontrol et",
-            "bullet_3": "Sepete ekleyip ödeme adımına devam et",
-            "note": "Fiyat, kampanya ve stok bilgisi ürün sayfasında güncel olarak görüntülenir.",
-            "button_label": "Satın al",
-            "link": "/search?q=kolajen"
+            "label": "Özel sayfa",
+            "heading": "Kolajen rutinine başlamak için özel satın alma akışı",
+            "body": "<p>Ürünleri seç, sana uygun seçeneği değerlendir ve satın alma adımına hızlıca ilerle.</p><p><a href=\"/search?q=kolajen\">Satın al</a></p>"
           }
         },
         "why": {
@@ -50,7 +33,15 @@
             "card_3_text": "Ürünü seç, sepete ekle ve güvenli ödeme adımına devam et."
           }
         },
-        "form": {
+        "buy": {
+          "type": "content_section",
+          "settings": {
+            "label": "Hızlı satın alma",
+            "heading": "Kolajen ürününü seç ve satın almaya geç",
+            "body": "<p>Reklamdan geldin, uzun uzun aramak zorunda değilsin. Vitacoral kolajen ürün ailesini hızlıca görüntüleyip sana uygun üründen satın alma adımına ilerleyebilirsin.</p><p>Ürünü seç, güncel fiyat ve kampanya bilgisini kontrol et, sepete ekleyip ödeme adımına devam et.</p><p><a href=\"/search?q=kolajen\">Satın al</a></p>"
+          }
+        },
+        "routine": {
           "type": "content_section",
           "settings": {
             "label": "Form ve kullanım",
@@ -59,19 +50,11 @@
           }
         },
         "mid_cta": {
-          "type": "product_cta",
+          "type": "content_section",
           "settings": {
             "label": "Satın alma adımı",
             "heading": "Kolajen ürününü şimdi seç",
-            "body": "<p>Ürünleri karşılaştırmak, güncel kampanya bilgisini görmek ve satın alma adımına ilerlemek için kolajen ürünlerine geçebilirsin.</p>",
-            "price": "Satın al",
-            "price_note": "Hızlı yönlendirme",
-            "bullet_1": "Ürün sayfasında içerik bilgisi",
-            "bullet_2": "Güncel fiyat ve kampanya",
-            "bullet_3": "Sepete ekleme ve ödeme adımı",
-            "note": "Bu landing sayfası satın alma sürecini hızlandırmak için hazırlanmıştır.",
-            "button_label": "Satın al",
-            "link": "/search?q=kolajen"
+            "body": "<p>Ürünleri karşılaştırmak, güncel kampanya bilgisini görmek ve satın alma adımına ilerlemek için kolajen ürünlerine geçebilirsin.</p><p><a href=\"/search?q=kolajen\">Satın al</a></p>"
           }
         },
         "trust": {
@@ -89,34 +72,27 @@
           }
         },
         "faq": {
-          "type": "faq",
+          "type": "content_section",
           "settings": {
             "label": "Sık sorulanlar",
             "heading": "Kolajen alışverişinden önce kısa cevaplar",
-            "q_1": "Bu sayfa ürün sayfasının yerine mi geçiyor?",
-            "a_1": "Hayır. Bu sayfa satın alma yolunu hızlandırmak için hazırlanır. İçerik, kullanım, fiyat ve stok bilgisi için ilgili ürün sayfası esas alınmalıdır.",
-            "q_2": "Hangi kolajen ürünü bana uygun?",
-            "a_2": "Ürün formu, kullanım alışkanlığı ve içerik tercihi kişiden kişiye değişebilir. Karar vermeden önce ürün sayfasındaki bilgileri inceleyebilirsin.",
-            "q_3": "Kampanya ve fiyat bilgisi nerede güncel?",
-            "a_3": "Güncel fiyat, kampanya ve stok bilgileri ürün sayfasında görüntülenir."
+            "body": "<p><strong>Bu sayfa ürün sayfasının yerine mi geçiyor?</strong><br>Hayır. Bu sayfa satın alma yolunu hızlandırmak için hazırlanır. İçerik, kullanım, fiyat ve stok bilgisi için ilgili ürün sayfası esas alınmalıdır.</p><p><strong>Hangi kolajen ürünü bana uygun?</strong><br>Ürün formu, kullanım alışkanlığı ve içerik tercihi kişiden kişiye değişebilir. Karar vermeden önce ürün sayfasındaki bilgileri inceleyebilirsin.</p><p><strong>Kampanya ve fiyat bilgisi nerede güncel?</strong><br>Güncel fiyat, kampanya ve stok bilgileri ürün sayfasında görüntülenir.</p>"
           }
         },
         "final": {
-          "type": "final_cta",
+          "type": "content_section",
           "settings": {
             "label": "Hazırsan",
             "heading": "Kolajen ürününü seç ve satın almaya geç",
-            "body": "<p>Vitacoral kolajen ürün ailesini görüntüle, sana uygun seçeneği değerlendir ve ürün sayfasından alışverişe devam et.</p>",
-            "button_label": "Satın al",
-            "link": "/search?q=kolajen"
+            "body": "<p>Vitacoral kolajen ürün ailesini görüntüle, sana uygun seçeneği değerlendir ve ürün sayfasından alışverişe devam et.</p><p><a href=\"/search?q=kolajen\">Satın al</a></p>"
           }
         }
       },
       "block_order": [
         "offer",
-        "product",
         "why",
-        "form",
+        "buy",
+        "routine",
         "mid_cta",
         "trust",
         "faq",
