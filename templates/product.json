@@ -15,7 +15,7 @@
         "pdp_style_loader": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}"
+            "custom_liquid": "{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}"
           }
         },
         "vendor": {
