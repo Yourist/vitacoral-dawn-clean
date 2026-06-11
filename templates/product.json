@@ -23,6 +23,28 @@
           "type": "title",
           "settings": {}
         },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
         "vitacoral_highlights": {
           "type": "vitacoral_highlights",
           "settings": {
@@ -57,28 +79,6 @@
             "design_mode_empty_note": "Ürün detayları product metafield alanlarından gelir."
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "circle"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -93,13 +93,13 @@
       "block_order": [
         "vendor",
         "title",
-        "vitacoral_highlights",
-        "vitacoral_essentials",
-        "vitacoral_details",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "vitacoral_highlights",
+        "vitacoral_essentials",
+        "vitacoral_details",
         "description",
         "share"
       ],
@@ -115,7 +115,7 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 24,
         "padding_bottom": 12
       }
     },
