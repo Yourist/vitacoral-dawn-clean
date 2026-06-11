@@ -20,8 +20,8 @@
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
-        "heading": "Genel bilgilendirme",
-        "body": "<p>Bu alan, hüküm ve koşullar metninin düzenli şekilde sunulması için hazırlanmıştır. Canlıya geçiş öncesinde güncel hukuki metinler bu bölümde kontrol edilmeli ve gerektiğinde uzman değerlendirmesiyle güncellenmelidir.</p><p>Satış, teslimat, iade, gizlilik ve kullanım koşullarına ilişkin detaylar marka tarafından onaylanan nihai metinlerle düzenlenmelidir.</p>"
+        "heading": "Genel kullanım ve alışveriş bilgilendirmesi",
+        "body": "<p>Vitacoral web sitesini ziyaret eden ve alışveriş yapan kullanıcılar, site kullanımı, sipariş süreci, ödeme, teslimat, iade ve destek kanallarına ilişkin bilgilere bu sayfa üzerinden ulaşabilir.</p><p>Ürün, sipariş veya destek başlıklarında ek bilgiye ihtiyaç duyarsanız iletişim sayfasındaki kanallar üzerinden Vitacoral ekibine ulaşabilirsiniz.</p><p>Bu sayfadaki bilgiler, web sitesi deneyimini daha anlaşılır hale getirmek amacıyla sunulur. Gerekli durumlarda güncel yasal metinler, mesafeli satış ve gizlilik politikası gibi ilgili ek sayfalar ayrıca düzenlenebilir.</p>"
       }
     }
   },
