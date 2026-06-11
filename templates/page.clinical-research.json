@@ -17,62 +17,16 @@
         "body": "<p>Bilimsel kaynak ve araştırma başlıklarını daha düzenli bir yapıda sunmak için bu sayfa kullanılabilir.</p>"
       }
     },
-    "documents": {
-      "type": "vitacoral-document-list",
-      "settings": {
-        "eyebrow": "Kaynak merkezi",
-        "heading": "Klinik araştırmalar",
-        "body": "<p>Bu alanda klinik araştırma, yayın ve kaynak bağlantıları kategori bazlı olarak listelenebilir.</p>"
-      },
-      "blocks": {
-        "research_topic": {
-          "type": "document_item",
-          "settings": {
-            "category": "Araştırma",
-            "title": "Araştırma başlığı",
-            "description": "İlgili araştırma veya kaynak başlığı burada açıklama ve bağlantı ile sunulabilir.",
-            "link_label": "Kaynağı incele",
-            "link_url": ""
-          }
-        },
-        "publication_link": {
-          "type": "document_item",
-          "settings": {
-            "category": "Yayın",
-            "title": "Yayın bağlantısı",
-            "description": "Yayın veya kaynak bağlantıları bu kart üzerinden yönetilebilir.",
-            "link_label": "Yayını görüntüle",
-            "link_url": ""
-          }
-        },
-        "additional_source": {
-          "type": "document_item",
-          "settings": {
-            "category": "Kaynak",
-            "title": "Ek kaynak",
-            "description": "Ek araştırma veya açıklamalar ihtiyaç halinde buraya eklenebilir.",
-            "link_label": "Detayları incele",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "research_topic",
-        "publication_link",
-        "additional_source"
-      ]
-    },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
         "heading": "Kaynakları nasıl değerlendirmeli?",
-        "body": "<p>Bu sayfa, araştırma ve kaynak başlıklarını daha düzenli bir yapıda sunmak için hazırlanmıştır. Buradaki içerikler bilgilendirme amaçlı düzenlenebilir; ürün veya sağlık beyanı oluşturacak şekilde yorumlanmamalıdır.</p>"
+        "body": "<p>Bu sayfa, araştırma ve kaynak başlıklarını daha düzenli bir yapıda sunmak için hazırlanmıştır.</p><p>Buradaki içerikler bilgilendirme amaçlı düzenlenebilir; ürün veya sağlık beyanı oluşturacak şekilde yorumlanmamalıdır.</p>"
       }
     }
   },
   "order": [
     "hero",
-    "documents",
     "content"
   ]
 }
