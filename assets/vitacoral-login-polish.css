@@ -191,14 +191,178 @@
   margin-top: 0.4rem;
 }
 
+.customer.account,
+.customer.addresses {
+  max-width: 112rem;
+  margin-inline: auto;
+  padding-inline: 1.6rem;
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
+}
+
+.customer.account .customer__title,
+.customer.addresses > h1 {
+  margin: 0;
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", Arial, sans-serif);
+  font-size: clamp(3rem, 7vw, 4.8rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.customer.account > div:first-child,
+.customer.addresses > h1 + a {
+  margin-bottom: 2rem;
+}
+
+.customer.account > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.customer.account > div:first-child a,
+.customer.addresses > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  padding: 0.9rem 1.4rem;
+  color: var(--vitacoral-color-primary, #225952);
+  background: rgba(34, 89, 82, 0.07);
+  border: 0.1rem solid rgba(34, 89, 82, 0.12);
+  border-radius: 999px;
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.customer.account > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(24rem, 0.9fr);
+  gap: 1.6rem;
+}
+
+.customer.account > div:nth-child(2) > div,
+.customer.addresses [data-address],
+.customer.addresses > ul > li {
+  padding: 1.8rem;
+  background: linear-gradient(180deg, #ffffff, rgba(247, 250, 249, 0.96));
+  border: 0.1rem solid rgba(34, 89, 82, 0.13);
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2.6rem rgba(21, 44, 41, 0.06);
+}
+
+.customer.account h2,
+.customer.addresses h2 {
+  margin: 0 0 1.2rem;
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.customer.account p,
+.customer.account address,
+.customer.addresses address,
+.customer.addresses p {
+  color: var(--vitacoral-color-text-muted, rgba(22, 49, 46, 0.72));
+  font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
+  font-size: 1.42rem;
+  font-style: normal;
+  line-height: 1.62;
+}
+
+.customer.account table {
+  overflow: hidden;
+  border: 0.1rem solid rgba(34, 89, 82, 0.1);
+  border-radius: 1.6rem;
+  box-shadow: none;
+}
+
+.customer.account th {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  background: rgba(34, 89, 82, 0.055);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.12rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.customer.account td,
+.customer.account td a {
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.32rem;
+  font-weight: 750;
+}
+
+.customer.account a,
+.customer.addresses a {
+  color: var(--vitacoral-color-primary, #225952);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.customer.account a:hover,
+.customer.addresses a:hover {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  text-decoration: underline;
+}
+
+.customer.addresses > ul {
+  display: grid;
+  gap: 1.4rem;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.customer.addresses button {
+  min-height: 4.4rem;
+  margin: 0.5rem 0.5rem 0 0;
+  padding-inline: 1.5rem;
+  color: #fff;
+  background: var(--vitacoral-color-primary, #225952);
+  border: 0.1rem solid var(--vitacoral-color-primary, #225952);
+  border-radius: 999px;
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.32rem;
+  font-weight: 900;
+}
+
+.customer.addresses button[type="reset"],
+.customer.addresses button[data-target] {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  background: rgba(34, 89, 82, 0.07);
+  border-color: rgba(34, 89, 82, 0.13);
+}
+
+.customer.addresses button::before,
+.customer.addresses button::after {
+  display: none;
+  content: none;
+}
+
 @media screen and (max-width: 749px) {
   .customer.login,
-  .customer.register {
+  .customer.register,
+  .customer.account,
+  .customer.addresses {
     padding-inline: 1.4rem;
   }
 
   .customer.login > div,
-  .customer.register form {
+  .customer.register form,
+  .customer.account > div:nth-child(2) > div,
+  .customer.addresses [data-address],
+  .customer.addresses > ul > li {
     padding: 1.4rem;
     border-radius: 1.8rem;
   }
@@ -219,5 +383,20 @@
   .customer.login .field input,
   .customer.register .field input {
     padding-top: 1.7rem;
+  }
+
+  .customer.account > div:first-child {
+    display: grid;
+    justify-items: start;
+  }
+
+  .customer.account > div:nth-child(2) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .customer.account table {
+    border: 0;
+    border-radius: 0;
   }
 }
