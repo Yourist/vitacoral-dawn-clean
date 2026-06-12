@@ -1,0 +1,146 @@
+.customer.login {
+  max-width: 54rem;
+  margin-inline: auto;
+  padding-inline: 1.6rem;
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
+}
+
+.customer.login > h1 {
+  margin: 0 0 1.2rem;
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", Arial, sans-serif);
+  font-size: clamp(3rem, 7vw, 4.4rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  text-align: center;
+}
+
+.customer.login > div {
+  margin-top: 0;
+  padding: 2.2rem;
+  background: linear-gradient(180deg, #ffffff, rgba(247, 250, 249, 0.96));
+  border: 0.1rem solid rgba(34, 89, 82, 0.11);
+  border-radius: 2.2rem;
+  box-shadow: 0 1.2rem 3rem rgba(21, 44, 41, 0.07);
+}
+
+.customer.login > div + h1 {
+  margin-top: 2.2rem;
+}
+
+.customer.login p,
+.customer.login a,
+.customer.login label,
+.customer.login .form__message,
+.customer.login .errors {
+  font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
+}
+
+.customer.login p {
+  color: var(--vitacoral-color-text-muted, rgba(22, 49, 46, 0.72));
+  font-size: 1.42rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.customer.login form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.customer.login .field {
+  margin: 0;
+}
+
+.customer.login .field::before,
+.customer.login .field::after {
+  border-radius: 1.4rem;
+  box-shadow: none;
+}
+
+.customer.login .field input {
+  min-height: 5.2rem;
+  color: var(--vitacoral-color-text, #16312e);
+  background: #fff;
+  border-radius: 1.4rem;
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.45rem;
+}
+
+.customer.login .field label {
+  color: var(--vitacoral-color-text-muted, rgba(22, 49, 46, 0.64));
+  font-size: 1.32rem;
+  font-weight: 700;
+}
+
+.customer.login button {
+  min-height: 5rem;
+  margin: 0.3rem 0 0;
+  padding-inline: 2rem;
+  color: #fff;
+  background: var(--vitacoral-color-primary, #225952);
+  border: 0.1rem solid var(--vitacoral-color-primary, #225952);
+  border-radius: 999px;
+  box-shadow: 0 1rem 2.2rem rgba(21, 44, 41, 0.14);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.customer.login button:hover {
+  background: var(--vitacoral-color-primary-deep, #163d38);
+  border-color: var(--vitacoral-color-primary-deep, #163d38);
+}
+
+.customer.login a {
+  color: var(--vitacoral-color-primary, #225952);
+  font-size: 1.35rem;
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+  text-underline-offset: 0.3rem;
+}
+
+.customer.login a:hover {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  text-decoration: underline;
+}
+
+.customer.login .form__message {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-size: 1.35rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.customer.login .errors {
+  padding: 1rem 1.2rem;
+  color: #8a2f1f;
+  background: rgba(236, 101, 66, 0.08);
+  border: 0.1rem solid rgba(236, 101, 66, 0.18);
+  border-radius: 1.4rem;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 749px) {
+  .customer.login {
+    padding-inline: 1.4rem;
+  }
+
+  .customer.login > div {
+    padding: 1.6rem;
+    border-radius: 1.8rem;
+  }
+
+  .customer.login > div + h1 {
+    margin-top: 1.6rem;
+  }
+
+  .customer.login button,
+  .customer.login .field input {
+    min-height: 4.9rem;
+  }
+}
