@@ -1,4 +1,5 @@
-.customer.login {
+.customer.login,
+.customer.register {
   max-width: 54rem;
   margin-inline: auto;
   padding-inline: 1.6rem;
@@ -6,7 +7,8 @@
   font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
 }
 
-.customer.login > h1 {
+.customer.login > h1,
+.customer.register > h1 {
   margin: 0 0 1.2rem;
   color: var(--vitacoral-color-text, #16312e);
   font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", Arial, sans-serif);
@@ -17,7 +19,8 @@
   text-align: center;
 }
 
-.customer.login > div {
+.customer.login > div,
+.customer.register form {
   margin-top: 0;
   padding: 2rem;
   background: linear-gradient(180deg, #ffffff, rgba(247, 250, 249, 0.96));
@@ -34,7 +37,12 @@
 .customer.login a,
 .customer.login label,
 .customer.login .form__message,
-.customer.login .errors {
+.customer.login .errors,
+.customer.register a,
+.customer.register label,
+.customer.register .form__message,
+.customer.register ul,
+.customer.register li {
   font-family: var(--vitacoral-font-body, "Manrope", Arial, sans-serif);
 }
 
@@ -45,12 +53,14 @@
   text-align: center;
 }
 
-.customer.login form {
+.customer.login form,
+.customer.register form {
   display: grid;
   gap: 1.15rem;
 }
 
-.customer.login .field {
+.customer.login .field,
+.customer.register .field {
   min-height: 5.4rem;
   margin: 0;
   background: #ffffff;
@@ -60,17 +70,21 @@
 }
 
 .customer.login .field::before,
-.customer.login .field::after {
+.customer.login .field::after,
+.customer.register .field::before,
+.customer.register .field::after {
   display: none;
   content: none;
 }
 
-.customer.login .field:focus-within {
+.customer.login .field:focus-within,
+.customer.register .field:focus-within {
   border-color: var(--vitacoral-color-primary, #225952);
   box-shadow: 0 0 0 0.3rem rgba(34, 89, 82, 0.12), 0 0.8rem 1.8rem rgba(21, 44, 41, 0.055);
 }
 
-.customer.login .field input {
+.customer.login .field input,
+.customer.register .field input {
   min-height: 5.2rem;
   padding: 1.8rem 1.5rem 0.7rem;
   color: var(--vitacoral-color-text, #16312e);
@@ -81,11 +95,13 @@
   font-weight: 750;
 }
 
-.customer.login .field input::placeholder {
+.customer.login .field input::placeholder,
+.customer.register .field input::placeholder {
   color: transparent;
 }
 
-.customer.login .field label {
+.customer.login .field label,
+.customer.register .field label {
   left: 1.5rem;
   color: rgba(22, 49, 46, 0.68);
   font-size: 1.18rem;
@@ -94,13 +110,16 @@
 }
 
 .customer.login .field input:focus ~ label,
-.customer.login .field input:not(:placeholder-shown) ~ label {
+.customer.login .field input:not(:placeholder-shown) ~ label,
+.customer.register .field input:focus ~ label,
+.customer.register .field input:not(:placeholder-shown) ~ label {
   top: 0.85rem;
   color: var(--vitacoral-color-primary, #225952);
   font-size: 1.05rem;
 }
 
-.customer.login button {
+.customer.login button,
+.customer.register button {
   min-height: 5rem;
   margin: 0.25rem 0 0;
   padding-inline: 2rem;
@@ -116,17 +135,21 @@
 }
 
 .customer.login button::before,
-.customer.login button::after {
+.customer.login button::after,
+.customer.register button::before,
+.customer.register button::after {
   display: none;
   content: none;
 }
 
-.customer.login button:hover {
+.customer.login button:hover,
+.customer.register button:hover {
   background: var(--vitacoral-color-primary-deep, #163d38);
   border-color: var(--vitacoral-color-primary-deep, #163d38);
 }
 
-.customer.login a {
+.customer.login a,
+.customer.register a {
   color: var(--vitacoral-color-primary, #225952);
   font-size: 1.35rem;
   font-weight: 850;
@@ -135,19 +158,22 @@
   text-underline-offset: 0.3rem;
 }
 
-.customer.login a:hover {
+.customer.login a:hover,
+.customer.register a:hover {
   color: var(--vitacoral-color-primary-deep, #163d38);
   text-decoration: underline;
 }
 
-.customer.login .form__message {
+.customer.login .form__message,
+.customer.register .form__message {
   color: var(--vitacoral-color-primary-deep, #163d38);
   font-size: 1.35rem;
   font-weight: 750;
   line-height: 1.4;
 }
 
-.customer.login .errors {
+.customer.login .errors,
+.customer.register ul {
   padding: 1rem 1.2rem;
   color: #8a2f1f;
   background: rgba(236, 101, 66, 0.08);
@@ -156,12 +182,23 @@
   font-size: 1.3rem;
 }
 
+.customer.register ul {
+  margin: 0;
+  list-style: none;
+}
+
+.customer.register li + li {
+  margin-top: 0.4rem;
+}
+
 @media screen and (max-width: 749px) {
-  .customer.login {
+  .customer.login,
+  .customer.register {
     padding-inline: 1.4rem;
   }
 
-  .customer.login > div {
+  .customer.login > div,
+  .customer.register form {
     padding: 1.4rem;
     border-radius: 1.8rem;
   }
@@ -172,11 +209,15 @@
 
   .customer.login button,
   .customer.login .field input,
-  .customer.login .field {
+  .customer.login .field,
+  .customer.register button,
+  .customer.register .field input,
+  .customer.register .field {
     min-height: 4.9rem;
   }
 
-  .customer.login .field input {
+  .customer.login .field input,
+  .customer.register .field input {
     padding-top: 1.7rem;
   }
 }
