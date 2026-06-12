@@ -19,9 +19,9 @@
 
 .customer.login > div {
   margin-top: 0;
-  padding: 2.2rem;
+  padding: 2rem;
   background: linear-gradient(180deg, #ffffff, rgba(247, 250, 249, 0.96));
-  border: 0.1rem solid rgba(34, 89, 82, 0.11);
+  border: 0.1rem solid rgba(34, 89, 82, 0.13);
   border-radius: 2.2rem;
   box-shadow: 0 1.2rem 3rem rgba(21, 44, 41, 0.07);
 }
@@ -47,37 +47,62 @@
 
 .customer.login form {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .customer.login .field {
+  min-height: 5.4rem;
   margin: 0;
+  background: #ffffff;
+  border: 0.1rem solid rgba(34, 89, 82, 0.22);
+  border-radius: 1.4rem;
+  box-shadow: inset 0 0 0 0.1rem rgba(255, 255, 255, 0.82), 0 0.5rem 1.4rem rgba(21, 44, 41, 0.035);
 }
 
 .customer.login .field::before,
 .customer.login .field::after {
-  border-radius: 1.4rem;
-  box-shadow: none;
+  display: none;
+  content: none;
+}
+
+.customer.login .field:focus-within {
+  border-color: var(--vitacoral-color-primary, #225952);
+  box-shadow: 0 0 0 0.3rem rgba(34, 89, 82, 0.12), 0 0.8rem 1.8rem rgba(21, 44, 41, 0.055);
 }
 
 .customer.login .field input {
   min-height: 5.2rem;
+  padding: 1.8rem 1.5rem 0.7rem;
   color: var(--vitacoral-color-text, #16312e);
-  background: #fff;
+  background: transparent;
   border-radius: 1.4rem;
   font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
-  font-size: 1.45rem;
+  font-size: 1.48rem;
+  font-weight: 750;
+}
+
+.customer.login .field input::placeholder {
+  color: transparent;
 }
 
 .customer.login .field label {
-  color: var(--vitacoral-color-text-muted, rgba(22, 49, 46, 0.64));
-  font-size: 1.32rem;
-  font-weight: 700;
+  left: 1.5rem;
+  color: rgba(22, 49, 46, 0.68);
+  font-size: 1.18rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.customer.login .field input:focus ~ label,
+.customer.login .field input:not(:placeholder-shown) ~ label {
+  top: 0.85rem;
+  color: var(--vitacoral-color-primary, #225952);
+  font-size: 1.05rem;
 }
 
 .customer.login button {
   min-height: 5rem;
-  margin: 0.3rem 0 0;
+  margin: 0.25rem 0 0;
   padding-inline: 2rem;
   color: #fff;
   background: var(--vitacoral-color-primary, #225952);
@@ -88,6 +113,12 @@
   font-size: 1.45rem;
   font-weight: 900;
   letter-spacing: 0.01em;
+}
+
+.customer.login button::before,
+.customer.login button::after {
+  display: none;
+  content: none;
 }
 
 .customer.login button:hover {
@@ -131,7 +162,7 @@
   }
 
   .customer.login > div {
-    padding: 1.6rem;
+    padding: 1.4rem;
     border-radius: 1.8rem;
   }
 
@@ -140,7 +171,12 @@
   }
 
   .customer.login button,
-  .customer.login .field input {
+  .customer.login .field input,
+  .customer.login .field {
     min-height: 4.9rem;
+  }
+
+  .customer.login .field input {
+    padding-top: 1.7rem;
   }
 }
