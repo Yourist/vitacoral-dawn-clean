@@ -63,8 +63,8 @@
 }
 
 .header__icon {
-  width: 4rem;
-  height: 4rem;
+  width: 4.2rem;
+  height: 4.2rem;
   color: var(--vitacoral-color-primary-deep, #163d38);
   border-radius: 999px;
   transition: background 160ms ease, color 160ms ease, transform 160ms ease;
@@ -78,18 +78,18 @@
 }
 
 .header__icon .svg-wrapper {
-  width: 2rem;
-  height: 2rem;
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
 .cart-count-bubble {
-  min-width: 1.8rem;
-  height: 1.8rem;
+  min-width: 1.9rem;
+  height: 1.9rem;
   color: #fff;
   background: var(--vitacoral-color-accent, #ec6542);
   border: 0.2rem solid #fff;
   font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 900;
 }
 
@@ -178,8 +178,8 @@
   }
 
   .header__icon {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 4.2rem;
+    height: 4.2rem;
   }
 }
 
