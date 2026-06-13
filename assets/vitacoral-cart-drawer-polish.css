@@ -1,5 +1,12 @@
+cart-drawer .drawer__inner,
+cart-drawer .cart-drawer,
+cart-drawer .cart-drawer__items,
+cart-drawer .cart-drawer__warnings,
+cart-drawer .cart-drawer__empty-content {
+  background: #ffffff;
+}
+
 cart-drawer .drawer__inner {
-  background: linear-gradient(180deg, #ffffff, rgba(247, 250, 249, 0.98));
   border-left: 0.1rem solid rgba(34, 89, 82, 0.12);
   box-shadow: -1.4rem 0 4rem rgba(15, 35, 32, 0.16);
 }
@@ -7,6 +14,7 @@ cart-drawer .drawer__inner {
 cart-drawer .drawer__header {
   align-items: center;
   padding: 1.8rem 2rem 1.2rem;
+  background: #ffffff;
   border-bottom: 0.1rem solid rgba(34, 89, 82, 0.1);
 }
 
@@ -35,10 +43,12 @@ cart-drawer .drawer__close:hover {
 
 cart-drawer .drawer__contents {
   padding: 0 1.6rem;
+  background: #ffffff;
 }
 
 cart-drawer .drawer__cart-items-wrapper {
   padding-top: 1.2rem;
+  background: #ffffff;
 }
 
 cart-drawer .cart-items thead {
@@ -139,13 +149,14 @@ cart-drawer .cart-remove-button {
 
 cart-drawer .drawer__footer {
   padding: 1.4rem 1.6rem 1.8rem;
-  background: rgba(255, 255, 255, 0.94);
+  background: #ffffff;
   border-top: 0.1rem solid rgba(34, 89, 82, 0.1);
   box-shadow: 0 -1rem 2.6rem rgba(21, 44, 41, 0.07);
 }
 
 cart-drawer .cart-drawer__footer {
   padding: 0;
+  background: #ffffff;
 }
 
 cart-drawer .totals {
