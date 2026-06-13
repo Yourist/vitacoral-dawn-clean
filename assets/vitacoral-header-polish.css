@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 989px) {
   .header {
-    min-height: 6.4rem;
+    min-height: 6.8rem;
     padding-inline: 1.4rem;
   }
 
@@ -169,7 +169,7 @@
   }
 
   .header__heading-logo-wrapper img {
-    max-height: 4.4rem;
+    max-height: 5rem;
     width: auto;
   }
 
@@ -185,11 +185,11 @@
 
 @media screen and (max-width: 749px) {
   .header {
-    min-height: 6rem;
+    min-height: 6.6rem;
   }
 
   .header__heading-logo-wrapper img {
-    max-height: 4rem;
+    max-height: 4.8rem;
   }
 
   .menu-drawer__menu-item {
