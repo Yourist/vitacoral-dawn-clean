@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "routine_family": {
+      "type": "vitacoral-routine-page",
+      "blocks": {
+        "family_women": {
+          "type": "routine_product",
+          "settings": {
+            "product": "multivitamin-for-women",
+            "kicker": "01 / kadın",
+            "title": "Multivitamin For Women",
+            "text": "Evdeki yetişkin kadın rutini için günlük destek ürünü olarak konumlanır.",
+            "cta_label": "İncele"
+          }
+        },
+        "family_men": {
+          "type": "routine_product",
+          "settings": {
+            "product": "multivitamin-for-men",
+            "kicker": "02 / erkek",
+            "title": "Multivitamin For Men",
+            "text": "Evdeki yetişkin erkek rutini için günlük destek ürünü olarak konumlanır.",
+            "cta_label": "İncele"
+          }
+        },
+        "family_kids": {
+          "type": "routine_product",
+          "settings": {
+            "product": "multivitamin-for-kids",
+            "kicker": "03 / çocuk",
+            "title": "Multivitamin For Kids",
+            "text": "Çocuk ürününü ebeveyn kontrolünde ve ürün etiketindeki bilgilere göre değerlendirin.",
+            "cta_label": "İncele"
+          }
+        }
+      },
+      "block_order": ["family_women", "family_men", "family_kids"],
+      "settings": {
+        "eyebrow": "Aile rutini",
+        "heading": "Evde herkes için sade rutin",
+        "body": "<p>Women, Men ve Kids ürünlerini aile içinde farklı ihtiyaçlara göre tek akışta keşfedin.</p>",
+        "orbit_1": "Women",
+        "orbit_2": "Men + Kids",
+        "orbit_3": "Aile rutini",
+        "hero_note": "Her ürünün detayını ayrı ayrı inceleyerek karar verin.",
+        "products_heading": "Aile rutinindeki ürünler",
+        "products_body": "<p>Farklı yaş ve kullanıcı grupları için konumlanan ürünleri tek sayfada karşılaştırın.</p>",
+        "benefits_eyebrow": "Fayda alanları",
+        "benefits_heading": "Bu rutin neyi kolaylaştırır?",
+        "benefits_body": "Aile rutini, evdeki farklı kullanıcılar için ürün seçimlerini daha düzenli ve anlaşılır hale getirir.",
+        "benefit_1_title": "Yetişkin günlük destek",
+        "benefit_1_text": "Women ve Men ürünleri, farklı yetişkin kullanıcılar için günlük multivitamin desteği odağında değerlendirilir. Detaylı içerik ve beyanları ürün sayfalarında inceleyin.",
+        "benefit_2_title": "Çocuk ürünü ayrı değerlendirme",
+        "benefit_2_text": "Kids ürünü, çocuk kullanımı için ebeveyn kontrolünde ve etiket bilgileri doğrultusunda değerlendirilmelidir.",
+        "benefit_3_title": "Tek sayfada karar",
+        "benefit_3_text": "Aile rutini, farklı ürünleri tek tek aramak yerine aynı karar akışında görmeyi kolaylaştırır.",
+        "insight_heading": "Bu rutin kime uygun?",
+        "insight_body": "<p>Aile içinde farklı kullanıcılar için ürünleri birlikte incelemek isteyenler için tasarlandı.</p>",
+        "insight_1_title": "Kimler için?",
+        "insight_1_text": "Evde birden fazla kişi için günlük destek ürünlerini birlikte değerlendirmek isteyen aileler için.",
+        "insight_2_title": "Birlikte nasıl düşünülür?",
+        "insight_2_text": "Her ürün farklı kullanıcı grubuna göre konumlanır; karar ürün detayları üzerinden ayrı ayrı verilmelidir.",
+        "insight_3_title": "Neyi kolaylaştırır?",
+        "insight_3_text": "Aile içinde kimin hangi ürüne bakacağını tek sayfada daha anlaşılır hale getirir.",
+        "usage_eyebrow": "Örnek kullanım akışı",
+        "usage_heading": "Nasıl kullanılır?",
+        "usage_body": "Bu akış kesin kullanım talimatı değil; her ürünün kendi etiket bilgilerine göre değerlendirilmesi gereken örnek bir aile düzenidir.",
+        "usage_1_time": "Sabah",
+        "usage_1_title": "Yetişkin ürünlerini ayırın",
+        "usage_1_text": "Women ve Men ürünlerini ilgili kullanıcıya göre, etiketindeki önerilen kullanım bilgisi doğrultusunda konumlandırın.",
+        "usage_2_time": "Ebeveyn kontrolü",
+        "usage_2_title": "Kids ürününü ayrıca değerlendirin",
+        "usage_2_text": "Çocuk ürünlerinde yaş, kullanım önerisi ve uyarı bilgilerini ürün sayfasında ve etikette kontrol edin.",
+        "usage_3_time": "Her zaman",
+        "usage_3_title": "Etiket bilgilerini kontrol edin",
+        "usage_3_text": "Her ürün için içerik, kullanım önerisi ve uyarı bilgilerini ayrı ayrı okuyarak karar verin.",
+        "usage_note": "Takviye edici gıdalar ilaç değildir. Çocuk ürünlerinde ebeveyn kontrolü ve ürün etiketi özellikle dikkate alınmalıdır.",
+        "steps_heading": "Rutin nasıl kazanılır?",
+        "step_1_title": "Kişiye göre ayır",
+        "step_1_text": "Her ürünü doğru kullanıcı grubu ile eşleştirin.",
+        "step_2_title": "Görünür tut",
+        "step_2_text": "Ürünleri günlük akışınızda hatırlayacağınız bir noktada konumlandırın.",
+        "step_3_title": "Detaydan emin ol",
+        "step_3_text": "İçerik, kullanım önerisi ve uyarıları ürün sayfalarından kontrol ederek ilerleyin.",
+        "final_heading": "Aile rutinini tamamla",
+        "final_body": "Tüm Vitacoral ürünlerini keşfederek evdeki farklı ihtiyaçlara göre daha net bir seçim yapabilirsiniz.",
+        "final_cta_label": "Tüm ürünleri keşfet",
+        "final_cta_link": "/collections/all"
+      }
+    }
+  },
+  "order": ["routine_family"]
+}
