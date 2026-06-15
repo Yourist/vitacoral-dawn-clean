@@ -1,0 +1,82 @@
+{{ 'vitacoral-routine-choice.css' | asset_url | stylesheet_tag }}
+
+<section class="vc-routine-choice" id="VitacoralRoutineChoice-{{ section.id }}">
+  <div class="page-width vc-routine-choice__inner">
+    <div class="vc-routine-choice__hero">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="vc-routine-choice__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="vc-routine-choice__title">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <div class="vc-routine-choice__body rte">{{ section.settings.body }}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="vc-routine-choice__grid">
+      <a class="vc-routine-choice-card vc-routine-choice-card--warm" href="{{ section.settings.women_link }}">
+        <div class="vc-routine-choice-card__top">
+          <span class="vc-routine-choice-card__label">{{ section.settings.women_label | escape }}</span>
+          <span class="vc-routine-choice-card__number">01</span>
+        </div>
+        <div class="vc-routine-choice-card__content">
+          <h2 class="vc-routine-choice-card__title">{{ section.settings.women_title | escape }}</h2>
+          <p class="vc-routine-choice-card__text">{{ section.settings.women_text | escape }}</p>
+        </div>
+        <div class="vc-routine-choice-card__chips">
+          <span class="vc-routine-choice-card__chip">Glucomannan</span>
+          <span class="vc-routine-choice-card__chip">Women Multivitamin</span>
+        </div>
+        <span class="vc-routine-choice-card__cta">{{ section.settings.women_cta | escape }}</span>
+      </a>
+
+      <a class="vc-routine-choice-card" href="{{ section.settings.men_link }}">
+        <div class="vc-routine-choice-card__top">
+          <span class="vc-routine-choice-card__label">{{ section.settings.men_label | escape }}</span>
+          <span class="vc-routine-choice-card__number">02</span>
+        </div>
+        <div class="vc-routine-choice-card__content">
+          <h2 class="vc-routine-choice-card__title">{{ section.settings.men_title | escape }}</h2>
+          <p class="vc-routine-choice-card__text">{{ section.settings.men_text | escape }}</p>
+        </div>
+        <div class="vc-routine-choice-card__chips">
+          <span class="vc-routine-choice-card__chip">Glucomannan</span>
+          <span class="vc-routine-choice-card__chip">Men Multivitamin</span>
+        </div>
+        <span class="vc-routine-choice-card__cta">{{ section.settings.men_cta | escape }}</span>
+      </a>
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <p class="vc-routine-choice__note">{{ section.settings.note | escape }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Routine Choice",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Hafif rutin" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Hafif rutini size göre seçin" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Glucomannan odağını kadın veya erkek multivitamin rutiniyle birlikte değerlendirin.</p>" },
+    { "type": "text", "id": "women_label", "label": "Women label", "default": "Kadın hafif rutini" },
+    { "type": "text", "id": "women_title", "label": "Women title", "default": "Kadın hafif rutini" },
+    { "type": "text", "id": "women_text", "label": "Women text", "default": "Glucomannan + Women Multivitamin ikilisini daha sade ve planlı bir günlük akışta inceleyin." },
+    { "type": "text", "id": "women_cta", "label": "Women CTA", "default": "Kadın rutinini keşfet" },
+    { "type": "url", "id": "women_link", "label": "Women link", "default": "/pages/kadin-hafif-rutini" },
+    { "type": "text", "id": "men_label", "label": "Men label", "default": "Erkek hafif rutini" },
+    { "type": "text", "id": "men_title", "label": "Men title", "default": "Erkek hafif rutini" },
+    { "type": "text", "id": "men_text", "label": "Men text", "default": "Glucomannan + Men Multivitamin ikilisini günlük tempo ve lif odağıyla birlikte değerlendirin." },
+    { "type": "text", "id": "men_cta", "label": "Men CTA", "default": "Erkek rutinini keşfet" },
+    { "type": "url", "id": "men_link", "label": "Men link", "default": "/pages/erkek-hafif-rutini" },
+    { "type": "text", "id": "note", "label": "Note", "default": "Ürünleri kullanmadan önce her ürünün içerik, kullanım önerisi ve uyarı bilgilerini ürün sayfasından kontrol edin." }
+  ],
+  "presets": [
+    { "name": "Vitacoral Routine Choice" }
+  ]
+}
+{% endschema %}
