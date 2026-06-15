@@ -165,9 +165,9 @@
         "featured_product_1": {
           "type": "featured_product",
           "settings": {
-            "product": "",
+            "product": "collagen-30-sase",
             "badge_text": "Premium",
-            "custom_title_override": "Collagen",
+            "custom_title_override": "Vitacoral Collagen®",
             "custom_description": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "orange"
@@ -176,9 +176,9 @@
         "featured_product_2": {
           "type": "featured_product",
           "settings": {
-            "product": "",
+            "product": "multivitamin-for-women",
             "badge_text": "Günlük rutin",
-            "custom_title_override": "Women Multivitamin",
+            "custom_title_override": "Vitacoral Multivitamin For Women®",
             "custom_description": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "green"
@@ -187,9 +187,9 @@
         "featured_product_3": {
           "type": "featured_product",
           "settings": {
-            "product": "",
+            "product": "multivitamin-for-men",
             "badge_text": "Günlük rutin",
-            "custom_title_override": "Men Multivitamin",
+            "custom_title_override": "Vitacoral Multivitamin For Men®",
             "custom_description": "",
             "cta_label": "Ürünü keşfet",
             "accent_style": "green"
@@ -198,12 +198,12 @@
         "featured_product_4": {
           "type": "featured_product",
           "settings": {
-            "product": "",
+            "product": "multivitamin-for-kids",
             "badge_text": "Aile rutini",
-            "custom_title_override": "Kids Multivitamin",
+            "custom_title_override": "Vitacoral Multivitamin & Fish Oil Complex For Kids®",
             "custom_description": "",
             "cta_label": "Ürünü keşfet",
-            "accent_style": "soft"
+            "accent_style": "green"
           }
         }
       },
@@ -420,8 +420,8 @@
         "faq_item_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Anket işe yarar?",
-            "answer": "Kısa anket, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
+            "question": "Quiz ne işe yarar?",
+            "answer": "Kısa quiz, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
             "accent_style": "green"
           }
         },
