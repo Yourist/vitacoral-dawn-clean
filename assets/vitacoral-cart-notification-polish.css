@@ -1,0 +1,71 @@
+cart-notification .cart-notification-wrapper {
+  background: transparent;
+}
+
+cart-notification #cart-notification {
+  background: #ffffff;
+  border: 0.1rem solid rgba(34, 89, 82, 0.12);
+  box-shadow: 0 1.4rem 3.6rem rgba(15, 35, 32, 0.14);
+}
+
+cart-notification .cart-notification__header {
+  background: #ffffff;
+  border-bottom: 0.1rem solid rgba(34, 89, 82, 0.08);
+}
+
+cart-notification .cart-notification__heading {
+  color: var(--vitacoral-color-text, #16312e);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-weight: 850;
+}
+
+cart-notification .cart-notification-product,
+cart-notification .cart-notification__links {
+  background: #ffffff;
+}
+
+cart-notification #cart-notification-button,
+cart-notification #cart-notification-form .button {
+  min-height: 4.8rem;
+  border-radius: 999px;
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-weight: 900;
+}
+
+cart-notification #cart-notification-button {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  background: #ffffff;
+  border: 0.1rem solid rgba(34, 89, 82, 0.2);
+}
+
+cart-notification #cart-notification-form .button {
+  color: #ffffff;
+  background: var(--vitacoral-color-primary, #225952);
+  border: 0.1rem solid var(--vitacoral-color-primary, #225952);
+}
+
+cart-notification #cart-notification-button::before,
+cart-notification #cart-notification-button::after,
+cart-notification #cart-notification-form .button::before,
+cart-notification #cart-notification-form .button::after {
+  display: none;
+  content: none;
+}
+
+cart-notification .button-label {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+  font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif);
+  font-weight: 850;
+  text-underline-offset: 0.25rem;
+}
+
+cart-notification .cart-notification__close {
+  color: var(--vitacoral-color-primary-deep, #163d38);
+}
+
+@media screen and (max-width: 749px) {
+  cart-notification #cart-notification {
+    border-inline: 0;
+    border-radius: 0 0 1.8rem 1.8rem;
+  }
+}
