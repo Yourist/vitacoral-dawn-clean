@@ -1,5 +1,29 @@
 {{ 'vitacoral-routine-pages.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign hero_product_one = blank
+  assign hero_product_two = blank
+  assign hero_image_one = blank
+  assign hero_image_two = blank
+  for block in section.blocks
+    if block.type == 'routine_product'
+      if hero_product_one == blank
+        assign hero_product_one = block.settings.product
+        assign hero_image_one = block.settings.image
+        if hero_image_one == blank and hero_product_one != blank
+          assign hero_image_one = hero_product_one.featured_image
+        endif
+      elsif hero_product_two == blank
+        assign hero_product_two = block.settings.product
+        assign hero_image_two = block.settings.image
+        if hero_image_two == blank and hero_product_two != blank
+          assign hero_image_two = hero_product_two.featured_image
+        endif
+      endif
+    endif
+  endfor
+-%}
+
 <section class="vc-routine-page" id="VitacoralRoutinePage-{{ section.id }}">
   <div class="page-width vc-routine-page__inner">
     <div class="vc-routine-hero">
@@ -13,28 +37,51 @@
         {%- if section.settings.body != blank -%}
           <div class="vc-routine-body rte">{{ section.settings.body }}</div>
         {%- endif -%}
-      </div>
-
-      <div class="vc-routine-hero__panel" aria-label="Rutin özeti">
-        <div class="vc-routine-orbit">
-          {%- if section.settings.orbit_1 != blank -%}
-            <span class="vc-routine-orbit__item">{{ section.settings.orbit_1 | escape }}</span>
-          {%- endif -%}
-          {%- if section.settings.orbit_2 != blank -%}
-            <span class="vc-routine-orbit__item">{{ section.settings.orbit_2 | escape }}</span>
-          {%- endif -%}
-          {%- if section.settings.orbit_3 != blank -%}
-            <span class="vc-routine-orbit__item">{{ section.settings.orbit_3 | escape }}</span>
+        <div class="vc-routine-hero__actions">
+          <a class="vc-routine-button vc-routine-button--hero" href="#routine-products">Rutini keşfet</a>
+          {%- if section.settings.hero_note != blank -%}
+            <span class="vc-routine-hero__microcopy">{{ section.settings.hero_note | escape }}</span>
           {%- endif -%}
         </div>
-        {%- if section.settings.hero_note != blank -%}
-          <p class="vc-routine-hero__note">{{ section.settings.hero_note | escape }}</p>
-        {%- endif -%}
+      </div>
+
+      <div class="vc-routine-hero__visual" aria-label="Rutin ürün görseli">
+        <div class="vc-routine-visual-card vc-routine-visual-card--primary">
+          {%- if hero_image_one != blank -%}
+            {{
+              hero_image_one
+              | image_url: width: 900
+              | image_tag:
+                widths: '360, 520, 720, 900',
+                sizes: '(min-width: 990px) 28vw, 62vw',
+                loading: 'eager',
+                alt: hero_product_one.title,
+                class: 'vc-routine-visual-card__image'
+            }}
+          {%- endif -%}
+        </div>
+        <div class="vc-routine-visual-card vc-routine-visual-card--secondary">
+          {%- if hero_image_two != blank -%}
+            {{
+              hero_image_two
+              | image_url: width: 700
+              | image_tag:
+                widths: '300, 480, 700',
+                sizes: '(min-width: 990px) 18vw, 42vw',
+                loading: 'eager',
+                alt: hero_product_two.title,
+                class: 'vc-routine-visual-card__image'
+            }}
+          {%- endif -%}
+        </div>
+        <div class="vc-routine-visual-badge vc-routine-visual-badge--top">{{ section.settings.orbit_1 | escape }}</div>
+        <div class="vc-routine-visual-badge vc-routine-visual-badge--bottom">{{ section.settings.orbit_2 | escape }}</div>
+        <div class="vc-routine-visual-glow" aria-hidden="true"></div>
       </div>
     </div>
 
-    <div class="vc-routine-section">
-      <div class="vc-routine-section__header">
+    <div class="vc-routine-section" id="routine-products">
+      <div class="vc-routine-section__header vc-routine-section__header--compact">
         {%- if section.settings.products_heading != blank -%}
           <h2 class="vc-routine-section__title">{{ section.settings.products_heading }}</h2>
         {%- endif -%}
@@ -108,13 +155,10 @@
       </div>
     </div>
 
-    <div class="vc-routine-section">
-      <div class="vc-routine-section__header">
+    <div class="vc-routine-section vc-routine-section--steps">
+      <div class="vc-routine-section__header vc-routine-section__header--compact">
         {%- if section.settings.steps_heading != blank -%}
           <h2 class="vc-routine-section__title">{{ section.settings.steps_heading }}</h2>
-        {%- endif -%}
-        {%- if section.settings.steps_body != blank -%}
-          <div class="vc-routine-section__body rte">{{ section.settings.steps_body }}</div>
         {%- endif -%}
       </div>
       <div class="vc-routine-steps">
@@ -161,22 +205,22 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Vitacoral rutini" },
     { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Günlük rutininizi sadeleştirin" },
     { "type": "richtext", "id": "body", "label": "Hero body", "default": "<p>Günlük destek ürünlerini daha anlaşılır bir rutin içinde keşfedin.</p>" },
-    { "type": "text", "id": "orbit_1", "label": "Hero card 1", "default": "Günlük destek" },
-    { "type": "text", "id": "orbit_2", "label": "Hero card 2", "default": "Sade seçim" },
-    { "type": "text", "id": "orbit_3", "label": "Hero card 3", "default": "Güvenli alışveriş" },
-    { "type": "text", "id": "hero_note", "label": "Hero note", "default": "Ürünleri kullanım talimatlarına ve etiket bilgilerine göre değerlendirin." },
+    { "type": "text", "id": "orbit_1", "label": "Visual badge 1", "default": "Günlük destek" },
+    { "type": "text", "id": "orbit_2", "label": "Visual badge 2", "default": "Sade seçim" },
+    { "type": "text", "id": "orbit_3", "label": "Reserved badge", "default": "Güvenli alışveriş" },
+    { "type": "text", "id": "hero_note", "label": "Hero microcopy", "default": "Ürün detaylarını inceleyerek karar verin." },
     { "type": "inline_richtext", "id": "products_heading", "label": "Products heading", "default": "Bu rutinde neler var?" },
-    { "type": "richtext", "id": "products_body", "label": "Products body", "default": "<p>Bu sayfada rutine uygun ürünleri birlikte inceleyebilirsiniz.</p>" },
-    { "type": "inline_richtext", "id": "steps_heading", "label": "Steps heading", "default": "Rutini nasıl düşünmeli?" },
-    { "type": "richtext", "id": "steps_body", "label": "Steps body", "default": "<p>Rutin sayfaları ürünleri tıbbi öneri yerine günlük seçim çerçevesinde anlatır.</p>" },
-    { "type": "text", "id": "step_1_title", "label": "Step 1 title", "default": "İhtiyacınızı seçin" },
-    { "type": "text", "id": "step_1_text", "label": "Step 1 text", "default": "Günlük rutininizde hangi ürün ailesinin size daha yakın olduğunu belirleyin." },
-    { "type": "text", "id": "step_2_title", "label": "Step 2 title", "default": "Ürünleri inceleyin" },
-    { "type": "text", "id": "step_2_text", "label": "Step 2 text", "default": "İçerik, kullanım önerisi ve ürün bilgilerini karşılaştırarak karar verin." },
-    { "type": "text", "id": "step_3_title", "label": "Step 3 title", "default": "Düzenli takip edin" },
-    { "type": "text", "id": "step_3_text", "label": "Step 3 text", "default": "Ürünleri etiket bilgileri ve önerilen kullanım çerçevesinde rutininize ekleyin." },
-    { "type": "inline_richtext", "id": "final_heading", "label": "Final heading", "default": "Rutininizi ürün sayfalarında netleştirin" },
-    { "type": "text", "id": "final_body", "label": "Final body", "default": "Her ürünün detay sayfasında içerik, kullanım önerisi ve ürün bilgilerini daha ayrıntılı inceleyebilirsiniz." },
+    { "type": "richtext", "id": "products_body", "label": "Products body", "default": "<p>Rutine uygun ürünleri tek bakışta inceleyin.</p>" },
+    { "type": "inline_richtext", "id": "steps_heading", "label": "Steps heading", "default": "3 adımda rutin" },
+    { "type": "richtext", "id": "steps_body", "label": "Steps body", "default": "<p></p>" },
+    { "type": "text", "id": "step_1_title", "label": "Step 1 title", "default": "Seç" },
+    { "type": "text", "id": "step_1_text", "label": "Step 1 text", "default": "Size yakın ürün ailesini seçin." },
+    { "type": "text", "id": "step_2_title", "label": "Step 2 title", "default": "İncele" },
+    { "type": "text", "id": "step_2_text", "label": "Step 2 text", "default": "İçerik ve kullanım bilgilerine bakın." },
+    { "type": "text", "id": "step_3_title", "label": "Step 3 title", "default": "Tamamla" },
+    { "type": "text", "id": "step_3_text", "label": "Step 3 text", "default": "Ürün detayından alışverişe devam edin." },
+    { "type": "inline_richtext", "id": "final_heading", "label": "Final heading", "default": "Rutinini tamamla" },
+    { "type": "text", "id": "final_body", "label": "Final body", "default": "Tüm Vitacoral ürünlerini keşfederek size en yakın rutini oluşturabilirsiniz." },
     { "type": "text", "id": "final_cta_label", "label": "Final CTA label", "default": "Tüm ürünleri keşfet" },
     { "type": "url", "id": "final_cta_link", "label": "Final CTA link", "default": "/collections/all" }
   ],
