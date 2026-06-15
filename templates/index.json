@@ -420,8 +420,8 @@
         "faq_item_4": {
           "type": "faq_item",
           "settings": {
-            "question": "Quiz ne işe yarar?",
-            "answer": "Kısa quiz, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
+            "question": "Anket işe yarar?",
+            "answer": "Kısa anket, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
             "accent_style": "green"
           }
         },
