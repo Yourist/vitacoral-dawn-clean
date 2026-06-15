@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "routine_light_men": {
+      "type": "vitacoral-routine-page",
+      "blocks": {
+        "light_men_glucomannan": {
+          "type": "routine_product",
+          "settings": {
+            "product": "vitacoral-glucomannan-60-sase",
+            "kicker": "01 / lif odağı",
+            "title": "Glucomannan",
+            "text": "Günlük rutine lif odağı eklemek isteyenler için konumlanan ürün.",
+            "cta_label": "İncele"
+          }
+        },
+        "light_men_multivitamin": {
+          "type": "routine_product",
+          "settings": {
+            "product": "multivitamin-for-men",
+            "kicker": "02 / günlük destek",
+            "title": "Multivitamin For Men",
+            "text": "Günlük tempo ve aktif yaşam rutininde temel destek ürünü olarak konumlanır.",
+            "cta_label": "İncele"
+          }
+        }
+      },
+      "block_order": ["light_men_glucomannan", "light_men_multivitamin"],
+      "settings": {
+        "eyebrow": "Erkek hafif rutini",
+        "heading": "Hafif akış, net tempo",
+        "body": "<p>Glucomannan + Multivitamin For Men ikilisini, daha planlı ve sade bir günlük destek akışında keşfedin.</p>",
+        "orbit_1": "Glucomannan",
+        "orbit_2": "Men Multivitamin",
+        "orbit_3": "Hafif rutin",
+        "hero_note": "Ürün detaylarını inceleyerek karar verin.",
+        "products_heading": "Rutindeki ikili",
+        "products_body": "<p>Bir ürün lif odağını merkeze alır; diğeri günlük tempo ve destek akışını tamamlar.</p>",
+        "benefits_eyebrow": "Fayda alanları",
+        "benefits_heading": "Bu rutin neyi destekler?",
+        "benefits_body": "Erkek hafif rutini; lif odağı, günlük tempo ve multivitamin desteğini aynı karar hikayesinde birleştirir.",
+        "benefit_1_title": "Lif odağı",
+        "benefit_1_text": "Glucomannan ürünü, lif odağını günlük rutine eklemek isteyen kullanıcılar için konumlanır. Detaylı içerik ve kullanım bilgilerini ürün sayfasında inceleyin.",
+        "benefit_2_title": "Günlük enerji ve tempo",
+        "benefit_2_text": "Multivitamin For Men, vitamin ve mineral içeriğiyle günlük destek rutininin temel parçası olarak değerlendirilir. Enerji metabolizması ve yorgunluk gibi onaylı beyanları ürün detayında inceleyebilirsiniz.",
+        "benefit_3_title": "Planlı seçim",
+        "benefit_3_text": "Bu sayfa, lif odağı ve günlük destek ürünlerini aynı rutin mantığında karşılaştırmayı kolaylaştırır.",
+        "insight_heading": "Bu rutin kime uygun?",
+        "insight_body": "<p>Günlük temposunda lif odağı ve multivitamin desteğini daha planlı değerlendirmek isteyen erkek kullanıcılar için tasarlandı.</p>",
+        "insight_1_title": "Kimler için?",
+        "insight_1_text": "Glucomannan ürününü merkeze alıp yanında erkek multivitamin ürününü de değerlendirmek isteyen kullanıcılar için.",
+        "insight_2_title": "Birlikte nasıl düşünülür?",
+        "insight_2_text": "Glucomannan lif odağını kurar; Multivitamin For Men ise günlük tempo ve destek akışında ayrı bir tamamlayıcı ürün olarak değerlendirilir.",
+        "insight_3_title": "Neyi kolaylaştırır?",
+        "insight_3_text": "Ürünleri tek tek aramak yerine aynı hafif rutin hikayesinde incelemeyi kolaylaştırır.",
+        "usage_eyebrow": "Örnek kullanım akışı",
+        "usage_heading": "Nasıl kullanılır?",
+        "usage_body": "Bu akış kesin kullanım talimatı değil; ürün etiketindeki önerilen kullanım bilgilerini daha anlaşılır bir rutine yerleştirmek için hazırlanmış örnek bir çerçevedir.",
+        "usage_1_time": "Planla",
+        "usage_1_title": "Glucomannan kullanımını kontrol edin",
+        "usage_1_text": "Glucomannan ürününün kullanım önerisi, su tüketimi ve uyarı bilgilerini ürün sayfası ve etiket üzerinden kontrol edin.",
+        "usage_2_time": "Günlük destek",
+        "usage_2_title": "Multivitamini ayrıca değerlendirin",
+        "usage_2_text": "Multivitamin For Men ürününü kendi günlük düzeninize ve ürün etiketindeki kullanım önerisine göre konumlandırın.",
+        "usage_3_time": "Her zaman",
+        "usage_3_title": "Etiket bilgilerini kontrol edin",
+        "usage_3_text": "İçerik, kullanım önerisi ve uyarı bilgilerini ürün sayfalarında okuyarak son kararı verin.",
+        "usage_note": "Takviye edici gıdalar ilaç değildir. Glucomannan gibi lif odaklı ürünlerde kullanım önerisi ve uyarılar özellikle dikkate alınmalıdır.",
+        "steps_heading": "Rutin nasıl kazanılır?",
+        "step_1_title": "Zamana bağla",
+        "step_1_text": "Rutininizi günlük planınızda unutmayacağınız bir ana bağlayın.",
+        "step_2_title": "Su ve etiket kontrolü",
+        "step_2_text": "Özellikle lif odaklı ürünlerde etiketteki kullanım önerilerini dikkatle takip edin.",
+        "step_3_title": "Detaydan emin ol",
+        "step_3_text": "İçerik, kullanım önerisi ve uyarıları ürün sayfalarından kontrol ederek ilerleyin.",
+        "final_heading": "Hafif rutinini tamamla",
+        "final_body": "Tüm Vitacoral ürünlerini keşfederek size en yakın günlük destek akışını oluşturabilirsiniz.",
+        "final_cta_label": "Tüm ürünleri keşfet",
+        "final_cta_link": "/collections/all"
+      }
+    }
+  },
+  "order": ["routine_light_men"]
+}
