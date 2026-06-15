@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "routine_women": {
+      "type": "vitacoral-routine-page",
+      "blocks": {
+        "women_multivitamin": {
+          "type": "routine_product",
+          "settings": {
+            "product": "multivitamin-for-women",
+            "kicker": "Günlük destek",
+            "title": "Multivitamin For Women",
+            "text": "Kadınların günlük rutininde değerlendirebileceği multivitamin desteği.",
+            "cta_label": "Multivitamin’i incele"
+          }
+        },
+        "women_collagen": {
+          "type": "routine_product",
+          "settings": {
+            "product": "collagen-30-sase",
+            "kicker": "Tamamlayıcı rutin",
+            "title": "Collagen",
+            "text": "Günlük rutine eklenebilecek pratik kolajen ürünü.",
+            "cta_label": "Collagen’i incele"
+          }
+        }
+      },
+      "block_order": [
+        "women_multivitamin",
+        "women_collagen"
+      ],
+      "settings": {
+        "eyebrow": "Kadın rutini",
+        "heading": "Günlük kadın rutininizi sadeleştirin",
+        "body": "<p>Multivitamin ve kolajen ürünlerini aynı sayfada, daha anlaşılır bir rutin çerçevesinde inceleyin.</p>",
+        "orbit_1": "Günlük multivitamin",
+        "orbit_2": "Kolajen rutini",
+        "orbit_3": "Sade seçim",
+        "hero_note": "Bu sayfa ürünleri tıbbi öneri yerine günlük rutin kurgusu içinde tanıtır. Ürün detaylarını ve kullanım önerilerini ürün sayfalarında inceleyin.",
+        "products_heading": "Kadın rutininde öne çıkan ürünler",
+        "products_body": "<p>Rutindeki ürünleri ayrı ayrı inceleyebilir, içerik ve kullanım bilgilerine ürün detay sayfalarından ulaşabilirsiniz.</p>",
+        "steps_heading": "Bu rutini nasıl düşünebilirsiniz?",
+        "steps_body": "<p>Günlük destek ürünlerini seçerken ihtiyaç, içerik ve kullanım önerilerini birlikte değerlendirmek daha anlaşılır bir karar süreci sağlar.</p>",
+        "step_1_title": "Günlük temeli kurun",
+        "step_1_text": "Multivitamin ürününü günlük destek ihtiyacınız açısından inceleyin.",
+        "step_2_title": "Tamamlayıcı ürünü değerlendirin",
+        "step_2_text": "Kolajen ürününü rutininize eklemek isteyip istemediğinizi ürün bilgileriyle karşılaştırın.",
+        "step_3_title": "Ürün detayını okuyun",
+        "step_3_text": "Her ürünün içerik, kullanım önerisi ve uyarı bilgilerini ürün sayfasında kontrol edin.",
+        "final_heading": "Kararı ürün detaylarında netleştirin",
+        "final_body": "Ürünleri rutininize eklemeden önce ürün sayfalarındaki içerik ve kullanım bilgilerini incelemenizi öneririz.",
+        "final_cta_label": "Tüm ürünleri keşfet",
+        "final_cta_link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "routine_women"
+  ]
+}
