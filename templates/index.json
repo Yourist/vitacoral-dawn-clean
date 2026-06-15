@@ -242,7 +242,7 @@
             "title": "5 yıllık marka deneyimi",
             "text": "Vitacoral, yıllardır farklı ihtiyaçlara yönelik ürün aileleriyle kullanıcılarının günlük rutinlerine eşlik eder.",
             "short_label": "01",
-            "accent_style": "green"
+            "accent_style": "orange"
           }
         },
         "trust_item_2": {
@@ -260,7 +260,7 @@
             "title": "Günlük rutin odaklı seçim",
             "text": "Ürün aileleri; kadın, erkek, çocuk ve farklı rutin ihtiyaçlarına göre kolayca keşfedilebilir.",
             "short_label": "03",
-            "accent_style": "soft"
+            "accent_style": "orange"
           }
         },
         "trust_item_4": {
@@ -269,7 +269,7 @@
             "title": "Güvenli alışveriş deneyimi",
             "text": "Kullanıcıların ürünü, içeriği ve alışveriş adımlarını rahatça anlayabildiği bir deneyim hedefleriz.",
             "short_label": "04",
-            "accent_style": "green"
+            "accent_style": "orange"
           }
         }
       },
