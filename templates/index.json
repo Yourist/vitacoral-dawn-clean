@@ -15,28 +15,28 @@
         "trust_chip_1": {
           "type": "trust_chip",
           "settings": {
-            "text": "5 yıllık marka",
+            "text": "Takviye seçimini sadeleştiren yaklaşım",
             "icon_text": "01"
           }
         },
         "trust_chip_2": {
           "type": "trust_chip",
           "settings": {
-            "text": "10.000+ kullanıcı deneyimi",
+            "text": "İçerik ve kullanım bilgisi odağı",
             "icon_text": "02"
           }
         },
         "trust_chip_3": {
           "type": "trust_chip",
           "settings": {
-            "text": "Güvenli alışveriş",
+            "text": "Anlaşılır alışveriş akışı",
             "icon_text": "03"
           }
         },
         "trust_chip_4": {
           "type": "trust_chip",
           "settings": {
-            "text": "Eczane & pazaryeri varlığı",
+            "text": "Doğru kanallardan erişim",
             "icon_text": "04"
           }
         }
@@ -48,12 +48,12 @@
         "trust_chip_4"
       ],
       "settings": {
-        "eyebrow": "Vitacoral’i Keşfet",
-        "heading": "Bugün daha iyi başla",
-        "body": "<p>Günlük rutininize uygun Vitacoral ürünlerini keşfedin.</p>",
-        "primary_cta_label": "Ürünleri Keşfet",
+        "eyebrow": "Günlük takviye rutininiz için",
+        "heading": "Takviye seçimini daha anlaşılır hale getirelim",
+        "body": "<p>Vitacoral, ürün içeriklerini, kullanım bilgilerini ve rutin seçeneklerini sade bir akışta sunarak kararınızı destekler.</p>",
+        "primary_cta_label": "Tüm ürünleri gör",
         "primary_cta_link": "/collections/all",
-        "secondary_cta_label": "",
+        "secondary_cta_label": "Rutinini bul",
         "secondary_cta_link": "/pages/rutininizi-bulun",
         "image": "shopify://shop_images/envato-labs-image-edit_6.png",
         "image_alt": ""
@@ -62,16 +62,16 @@
     "vitacoral_editorial_media": {
       "type": "vitacoral-editorial-media",
       "settings": {
-        "eyebrow": "VITACORAL’I KEŞFET",
-        "heading": "Rutinin daha iyi hissettiren tarafı",
-        "body": "<p>Günlük iyi yaşam rutinin için ürünleri, içerikleri ve kullanım hikayesini daha görsel, daha sade ve daha keyifli bir deneyimle keşfet.</p>",
+        "eyebrow": "Vitacoral rehberi",
+        "heading": "Rutininize uygun seçimi birlikte sadeleştirelim",
+        "body": "<p>Ürün ailelerini, içerik bilgilerini ve kullanım notlarını tek bir akışta inceleyin; kararınızı acele etmeden, daha bilinçli verin.</p>",
         "layout_style": "split",
         "primary_cta_label": "Rutinini bul",
         "primary_cta_link": "/pages/vitacorali-kesfet",
-        "secondary_cta_label": "Ürünleri keşfet",
+        "secondary_cta_label": "Tüm ürünleri gör",
         "secondary_cta_link": "/collections/all",
         "video_url": "https://cdn.shopify.com/videos/c/o/v/323cc249f4874d699eb7b4ce6b78d5e9.mp4",
-        "media_caption": "İçerikleri, ürün ailelerini ve günlük rutin ilhamını tek bir görsel akışta keşfet.",
+        "media_caption": "Ürün aileleri, içerik bilgileri ve rutin önerileri tek bir sakin akışta.",
         "autoplay": true,
         "loop": true,
         "muted": true
@@ -87,10 +87,10 @@
             "secondary_product": "collagen-30-sase",
             "third_product": "",
             "badge_text": "Kadın rutini",
-            "title": "Kadın Rutin Paketi",
-            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
+            "title": "Kadın Günlük Rutini",
+            "short_description": "Multivitamin ve kolajen seçeneklerini günlük bakım yaklaşımı içinde birlikte değerlendirmek isteyenler için.",
             "included_products_text": "Women Multivitamin + Collagen",
-            "cta_label": "Rutini keşfet",
+            "cta_label": "Rutini incele",
             "cta_link": "",
             "accent_style": "orange",
             "optional_note": ""
@@ -103,10 +103,10 @@
             "secondary_product": "collagen-30-sase",
             "third_product": "",
             "badge_text": "Erkek rutini",
-            "title": "Erkek Rutin Paketi",
-            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
+            "title": "Erkek Günlük Rutini",
+            "short_description": "Günlük kullanım alışkanlıklarınıza uygun multivitamin ve destek seçeneklerini sade bir akışta incelemek isteyenler için.",
             "included_products_text": "Men Multivitamin + Collagen",
-            "cta_label": "Rutini keşfet",
+            "cta_label": "Rutini incele",
             "cta_link": "",
             "accent_style": "green",
             "optional_note": ""
@@ -120,9 +120,9 @@
             "third_product": "multivitamin-for-kids",
             "badge_text": "Aile rutini",
             "title": "Aile Günlük Rutini",
-            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
+            "short_description": "Ailede farklı yaş ve kullanım ihtiyaçlarını ayrı ayrı değerlendirerek ürün seçimini kolaylaştırmak isteyenler için.",
             "included_products_text": "Men + Women + Kids",
-            "cta_label": "Rutini keşfet",
+            "cta_label": "Rutini incele",
             "cta_link": "",
             "accent_style": "soft",
             "optional_note": ""
@@ -135,10 +135,10 @@
             "secondary_product": "multivitamin-for-women",
             "third_product": "",
             "badge_text": "Hafif rutin",
-            "title": "Hafif Rutin Paketi",
-            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
+            "title": "Hafif Günlük Rutin",
+            "short_description": "Günlük rutine lif desteği eklemeyi düşünürken içerik, kullanım ve uyarı bilgilerini birlikte incelemek isteyenler için.",
             "included_products_text": "Glucomannan + Women/Men Multivitamin",
-            "cta_label": "Rutini keşfet",
+            "cta_label": "Rutini incele",
             "cta_link": "",
             "accent_style": "soft",
             "optional_note": ""
@@ -152,9 +152,9 @@
         "product_family_4"
       ],
       "settings": {
-        "eyebrow": "Rutinini Seç",
-        "heading": "Size en yakın Vitacoral rutinini bulun",
-        "body": "<p>Günlük ihtiyacınıza göre oluşturulan ürün kombinasyonlarını keşfedin.</p>",
+        "eyebrow": "Rutin rehberi",
+        "heading": "Size en yakın günlük rutini birlikte netleştirelim",
+        "body": "<p>Kadın, erkek, aile ve hafif rutin seçeneklerini içerik ve kullanım odağıyla inceleyin.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
@@ -166,10 +166,10 @@
           "type": "featured_product",
           "settings": {
             "product": "collagen-30-sase",
-            "badge_text": "Premium",
+            "badge_text": "Collagen rutini",
             "custom_title_override": "Vitacoral Collagen®",
-            "custom_description": "",
-            "cta_label": "Ürünü keşfet",
+            "custom_description": "Kolajen rutininizi oluştururken içerik ve kullanım bilgilerini birlikte değerlendirin.",
+            "cta_label": "Ürünü incele",
             "accent_style": "orange"
           }
         },
@@ -177,10 +177,10 @@
           "type": "featured_product",
           "settings": {
             "product": "multivitamin-for-women",
-            "badge_text": "Günlük rutin",
+            "badge_text": "Kadın rutini",
             "custom_title_override": "Vitacoral Multivitamin For Women®",
-            "custom_description": "",
-            "cta_label": "Ürünü keşfet",
+            "custom_description": "Kadın günlük rutini için geliştirilen multivitamin içeriğini ürün detayında inceleyin.",
+            "cta_label": "Ürünü incele",
             "accent_style": "green"
           }
         },
@@ -188,10 +188,10 @@
           "type": "featured_product",
           "settings": {
             "product": "multivitamin-for-men",
-            "badge_text": "Günlük rutin",
+            "badge_text": "Erkek rutini",
             "custom_title_override": "Vitacoral Multivitamin For Men®",
-            "custom_description": "",
-            "cta_label": "Ürünü keşfet",
+            "custom_description": "Erkek günlük rutini için hazırlanan multivitamin içeriğini ve kullanım önerisini kontrol edin.",
+            "cta_label": "Ürünü incele",
             "accent_style": "green"
           }
         },
@@ -199,10 +199,10 @@
           "type": "featured_product",
           "settings": {
             "product": "multivitamin-for-kids",
-            "badge_text": "Aile rutini",
+            "badge_text": "Kids rutini",
             "custom_title_override": "Vitacoral Multivitamin & Fish Oil Complex For Kids®",
-            "custom_description": "",
-            "cta_label": "Ürünü keşfet",
+            "custom_description": "Çocuklar için ürün seçerken etiket bilgilerini, kullanım önerisini ve ebeveyn kontrolü gerektiren uyarıları birlikte değerlendirin.",
+            "cta_label": "Ürünü incele",
             "accent_style": "green"
           }
         }
@@ -214,9 +214,9 @@
         "featured_product_4"
       ],
       "settings": {
-        "eyebrow": "Öne Çıkanlar",
-        "heading": "En çok ilgi gören Vitacoral ürünleri",
-        "body": "<p>Günlük rutininize uygun ürünleri keşfedin.</p>",
+        "eyebrow": "Ürün aileleri",
+        "heading": "Günlük rutininiz için ürünleri içerikleriyle birlikte inceleyin",
+        "body": "<p>Her ürün ailesinde içerik, kullanım önerisi ve uyarı bilgilerini kontrol ederek kararınızı daha bilinçli verebilirsiniz.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
@@ -225,12 +225,12 @@
       "type": "vitacoral-quiz-teaser",
       "name": "Vitacoral Quiz",
       "settings": {
-        "eyebrow": "Rutininizi Bulun",
-        "heading": "Size en uygun Vitacoral ürününü birlikte bulalım",
-        "body": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>",
-        "cta_label": "Ankete Katıl",
+        "eyebrow": "Rutinini bul",
+        "heading": "Nereden başlayacağınızı birlikte netleştirelim",
+        "body": "<p>Kısa sorularla günlük alışkanlıklarınıza ve ürün ailelerine daha yakından bakın; karar vermeden önce seçenekleri sadeleştirin.</p>",
+        "cta_label": "Rutinini bul",
         "cta_link": "/#quiz-0AH2J3O",
-        "secondary_note": "Kısa sürer, ürün seçiminizi kolaylaştırır."
+        "secondary_note": "Kısa sürer; ürün seçimini daha anlaşılır hale getirmek için hazırlanmıştır."
       }
     },
     "vitacoral_trust_section": {
@@ -239,8 +239,8 @@
         "trust_item_1": {
           "type": "trust_item",
           "settings": {
-            "title": "5 yıllık marka deneyimi",
-            "text": "Vitacoral, yıllardır farklı ihtiyaçlara yönelik ürün aileleriyle kullanıcılarının günlük rutinlerine eşlik eder.",
+            "title": "Kararı kolaylaştıran açıklık",
+            "text": "İçerik, kullanım önerisi ve uyarı bilgilerini sade bir akışta sunarak ürünleri daha rahat değerlendirmenize yardımcı oluruz.",
             "short_label": "01",
             "accent_style": "orange"
           }
@@ -248,8 +248,8 @@
         "trust_item_2": {
           "type": "trust_item",
           "settings": {
-            "title": "Açık ve anlaşılır içerik",
-            "text": "Ürün bilgilerini sade, okunabilir ve karşılaştırılabilir şekilde sunmaya önem veririz.",
+            "title": "Rutin odaklı seçim",
+            "text": "Ürün ailelerini yalnızca kategori olarak değil, günlük alışkanlıklarınızla birlikte düşünebileceğiniz bir rehber yapısıyla sunarız.",
             "short_label": "02",
             "accent_style": "orange"
           }
@@ -257,8 +257,8 @@
         "trust_item_3": {
           "type": "trust_item",
           "settings": {
-            "title": "Günlük rutin odaklı seçim",
-            "text": "Ürün aileleri; kadın, erkek, çocuk ve farklı rutin ihtiyaçlarına göre kolayca keşfedilebilir.",
+            "title": "Doğru bilgiye yakın duruş",
+            "text": "Ürün detaylarında etiket bilgilerini, kullanım notlarını ve dikkat edilmesi gereken noktaları görünür kılmaya önem veririz.",
             "short_label": "03",
             "accent_style": "orange"
           }
@@ -266,8 +266,8 @@
         "trust_item_4": {
           "type": "trust_item",
           "settings": {
-            "title": "Güvenli alışveriş deneyimi",
-            "text": "Kullanıcıların ürünü, içeriği ve alışveriş adımlarını rahatça anlayabildiği bir deneyim hedefleriz.",
+            "title": "Anlaşılır alışveriş deneyimi",
+            "text": "Ürüne doğru kanallardan, sade ve güven veren bir alışveriş akışıyla ulaşmanız bizim için önemlidir.",
             "short_label": "04",
             "accent_style": "orange"
           }
@@ -280,10 +280,10 @@
         "trust_item_4"
       ],
       "settings": {
-        "eyebrow": "Neden Vitacoral?",
-        "heading": "Rutininize güvenle eşlik eden ürün aileleri",
-        "body": "<p>Vitacoral, günlük yaşam rutininize uygun ürünleri sade, anlaşılır ve güven veren bir deneyimle sunar.</p>",
-        "cta_label": "Bizi daha yakından tanıyın",
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Takviye seçimini sadeleştiren, yanında duran bir marka",
+        "body": "<p>Takviye seçmek bazen karışık gelebilir. Vitacoral’de amacımız size daha çok ürün göstermek değil; içerikleri, kullanım bilgilerini ve ürün ailelerini daha anlaşılır hale getirerek kararınızı kolaylaştırmak.</p>",
+        "cta_label": "Vitacoral’i tanıyın",
         "cta_link": "/pages/biz-kimiz"
       }
     },
@@ -293,33 +293,33 @@
         "review_item_1": {
           "type": "review_item",
           "settings": {
-            "quote": "Günlük rutinimde sade ve anlaşılır ürünler arıyordum. Vitacoral ürün aileleri karar vermemi kolaylaştırdı.",
-            "author_name": "Vitacoral kullanıcısı",
-            "author_detail": "Günlük rutin",
-            "rating": "5",
-            "product_label": "Multivitamin",
+            "quote": "Ürün içeriğini, kullanım önerisini ve uyarı bilgilerini aynı yerde görebilmek karar sürecini kolaylaştırır.",
+            "author_name": "Seçim kriteri",
+            "author_detail": "Ürün seçimi",
+            "rating": "none",
+            "product_label": "İçerik açıklığı",
             "accent_style": "green"
           }
         },
         "review_item_2": {
           "type": "review_item",
           "settings": {
-            "quote": "Collagen ve vitamin seçeneklerini birlikte görmek benim için daha anlaşılır bir alışveriş deneyimi sundu.",
-            "author_name": "Vitacoral kullanıcısı",
-            "author_detail": "Güzellik rutini",
-            "rating": "5",
-            "product_label": "Collagen",
+            "quote": "Ürünü tek başına değil, günlük alışkanlıklarınız ve mevcut rutininizle birlikte değerlendirmek daha net bir başlangıç sağlar.",
+            "author_name": "Seçim kriteri",
+            "author_detail": "Günlük rutin",
+            "rating": "none",
+            "product_label": "Rutin uyumu",
             "accent_style": "orange"
           }
         },
         "review_item_3": {
           "type": "review_item",
           "settings": {
-            "quote": "Ürün bilgilerine kolay ulaşmak ve rutinlere göre seçim yapmak alışverişi daha pratik hale getiriyor.",
-            "author_name": "Vitacoral kullanıcısı",
-            "author_detail": "Ürün seçimi",
-            "rating": "5",
-            "product_label": "Rutin",
+            "quote": "Kadın, erkek, kids, kolajen ve lif desteklerini ayrı ürün aileleri halinde incelemek seçenekleri sadeleştirir.",
+            "author_name": "Seçim kriteri",
+            "author_detail": "Ürün aileleri",
+            "rating": "none",
+            "product_label": "Karşılaştırma kolaylığı",
             "accent_style": "soft"
           }
         }
@@ -330,10 +330,10 @@
         "review_item_3"
       ],
       "settings": {
-        "eyebrow": "Kullanıcı Deneyimleri",
-        "heading": "Vitacoral rutinlerine eşlik eden deneyimler",
-        "body": "<p>Ürün seçiminde gerçek kullanıcı deneyimleri ve sade bilgiler karar vermeyi kolaylaştırır.</p>",
-        "bottom_cta_label": "Tüm ürünleri keşfet",
+        "eyebrow": "Seçim yaparken",
+        "heading": "Kullanıcıların ürün seçerken önemsediği noktalar",
+        "body": "<p>Takviye seçiminde çoğu kişi içerik açıklığına, kullanım bilgisinin anlaşılır olmasına ve ürün ailesinin günlük rutine uyumuna bakar.</p>",
+        "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
     },
@@ -346,7 +346,7 @@
             "article": "vitacoral-saglikli-yasam-rehberi/kolajen-takviyeleri-gunun-hangi-saatinde-kullanilmali",
             "badge_text": "Collagen",
             "custom_title_override": "Kolajen rutini için zamanlama nasıl düşünülmeli?",
-            "custom_description": "Günlük bakım yaklaşımında kolajen ürünlerini nasıl konumlandırabileceğinizi keşfedin.",
+            "custom_description": "Kolajen ürünlerini günlük bakım yaklaşımı içinde konumlandırırken dikkat edilebilecek temel noktalar.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "orange"
@@ -357,8 +357,8 @@
           "settings": {
             "article": "vitacoral-saglikli-yasam-rehberi/multivitaminlerin-etkileri-ne-zaman-fark-edilir",
             "badge_text": "Multivitamin",
-            "custom_title_override": "Multivitamin rutini ne zaman anlam kazanır?",
-            "custom_description": "Günlük kullanımda multivitaminleri daha düzenli ve bilinçli değerlendirmek için temel noktalar.",
+            "custom_title_override": "Multivitamin rutini nasıl değerlendirilir?",
+            "custom_description": "Günlük kullanımda multivitaminleri etiket bilgisi, düzenli kullanım ve rutin uyumu üzerinden değerlendirmek için kısa bir rehber.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "green"
@@ -369,8 +369,8 @@
           "settings": {
             "article": "vitacoral-saglikli-yasam-rehberi/glucomannan-nedir-glucomannan-ne-ise-yarar",
             "badge_text": "Lif",
-            "custom_title_override": "Glucomannan Nedir? Glucomannan Ne İşe Yarar?",
-            "custom_description": "Günlük rutine lif desteği eklerken dikkat edilebilecek sade ve anlaşılır bilgiler.",
+            "custom_title_override": "Glucomannan hakkında bilmeniz gerekenler",
+            "custom_description": "Günlük rutine lif desteği eklemeyi düşünürken içerik, kullanım önerisi ve uyarı bilgilerini birlikte inceleyin.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
             "accent_style": "green"
@@ -383,9 +383,9 @@
         "education_item_3"
       ],
       "settings": {
-        "eyebrow": "Öğren & Keşfet",
-        "heading": "Günlük rutininizi daha bilinçli oluşturun",
-        "body": "<p>Ürün aileleri, içerikler ve kullanım rutinleri hakkında sade bilgilerle seçim yapmayı kolaylaştırın.</p>",
+        "eyebrow": "Rutin rehberi",
+        "heading": "Ürün seçmeden önce bilginizi sadeleştirin",
+        "body": "<p>İçerik, kullanım zamanı ve günlük rutin uyumu hakkında kısa rehberlerle karar sürecinizi destekleyin.</p>",
         "bottom_cta_label": "Tüm yazıları gör",
         "bottom_cta_link": "/blogs/news"
       }
@@ -397,7 +397,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Hangi Vitacoral ürününü seçmeliyim?",
-            "answer": "Ürün seçimine günlük rutininizden ve ihtiyacınıza en yakın ürün ailesinden başlayabilirsiniz. Emin değilseniz kısa anketi tamamlayarak size uygun seçenekleri keşfedebilirsiniz.",
+            "answer": "Ürün seçimine günlük rutininizden, yaş grubunuzdan ve incelemek istediğiniz ürün ailesinden başlayabilirsiniz. Emin değilseniz kısa quiz, seçenekleri daha anlaşılır hale getirmenize yardımcı olur.",
             "accent_style": "green"
           }
         },
@@ -405,7 +405,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Birden fazla ürünü birlikte değerlendirebilir miyim?",
-            "answer": "Bazı ürünler günlük rutin içinde birlikte düşünülebilir. Yine de ürün içeriklerini incelemenizi ve özel bir durumunuz varsa bir uzmana danışmanızı öneririz.",
+            "answer": "Bazı ürünler günlük rutin içinde birlikte değerlendirilebilir. Yine de her ürünün içerik, kullanım önerisi ve uyarı bilgilerini kontrol etmenizi; özel bir durumunuz, düzenli ilaç kullanımınız, hamilelik veya emzirme süreciniz varsa bir uzmana danışmanızı öneririz.",
             "accent_style": "soft"
           }
         },
@@ -413,7 +413,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Ürün içeriklerini nereden görebilirim?",
-            "answer": "Her ürün sayfasında içerik, kullanım ve ürün bilgilerine ulaşabilirsiniz. İçerikleri karşılaştırarak rutininize en uygun seçimi yapabilirsiniz.",
+            "answer": "Her ürün sayfasında içerik, kullanım önerisi ve ürün bilgilerine ulaşabilirsiniz. Karar vermeden önce etiket bilgilerini ve uyarıları dikkatle incelemenizi öneririz.",
             "accent_style": "orange"
           }
         },
@@ -421,7 +421,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Quiz ne işe yarar?",
-            "answer": "Kısa quiz, ihtiyacınıza en yakın ürün seçeneklerini daha kolay keşfetmenize yardımcı olmak için hazırlanmıştır.",
+            "answer": "Quiz, günlük alışkanlıklarınıza ve ürün ailelerine daha sade bir çerçeveden bakmanıza yardımcı olur. Bir teşhis veya tedavi önerisi sunmaz; ürün seçimini kolaylaştıran kısa bir rehber olarak tasarlanmıştır.",
             "accent_style": "green"
           }
         },
@@ -442,10 +442,10 @@
         "faq_item_5"
       ],
       "settings": {
-        "eyebrow": "Sık Sorulanlar",
+        "eyebrow": "Sık sorulanlar",
         "heading": "Ürün seçimini kolaylaştıran kısa cevaplar",
-        "body": "<p>Vitacoral ürünlerini keşfederken aklınıza takılabilecek temel soruları sade şekilde yanıtladık.</p>",
-        "cta_label": "Tüm ürünleri keşfet",
+        "body": "<p>Vitacoral ürünlerini incelerken aklınıza takılabilecek temel soruları sade ve anlaşılır şekilde yanıtladık.</p>",
+        "cta_label": "Tüm ürünleri gör",
         "cta_link": "/collections/all"
       }
     },
