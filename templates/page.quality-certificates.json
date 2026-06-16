@@ -7,26 +7,4 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
-  "sections": {
-    "hero": {
-      "type": "vitacoral-page-hero",
-      "settings": {
-        "eyebrow": "Vitacoral belgeleri",
-        "title": "Kalite belgeleri",
-        "body": "<p>Vitacoral’da kalite ve güvene dair belgeleri daha anlaşılır ve erişilebilir bir yapıda sunmayı önemsiyoruz.</p>"
-      }
-    },
-    "content": {
-      "type": "vitacoral-page-richtext",
-      "settings": {
-        "heading": "Kalite belgeleri hakkında",
-        "body": "<p>Bu sayfa, Vitacoral’a ait kalite belgeleri ve ilgili kaynakların düzenli şekilde sunulması için hazırlanmıştır.</p><p>Güncel belge bağlantıları ve açıklamalar eklendikçe bu alandan incelenebilir.</p>"
-      }
-    }
-  },
-  "order": [
-    "hero",
-    "content"
-  ]
-}
+{"sections":{"quality_documents":{"type":"vitacoral-document-hub","blocks":{"gmp":{"type":"document_card","settings":{"category":"Kalite","title":"GMP","body":"<p>İyi üretim uygulamaları belgesi için Shopify Files linki eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}},"haccp":{"type":"document_card","settings":{"category":"Kalite","title":"HACCP","body":"<p>Tehlike analizi ve kritik kontrol noktaları belgesi için link eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}},"iso9001":{"type":"document_card","settings":{"category":"Kalite","title":"ISO 9001","body":"<p>Kalite yönetim sistemi belgesi için dosya linki eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}},"iso22000":{"type":"document_card","settings":{"category":"Kalite","title":"ISO 22000","body":"<p>Gıda güvenliği yönetim sistemi belgesi için dosya linki eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}},"ifos":{"type":"document_card","settings":{"category":"Standart","title":"IFOS","body":"<p>Balık yağı standartlarıyla ilgili belge linki eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}},"quali_c":{"type":"document_card","settings":{"category":"Hammadde","title":"Quali-C","body":"<p>Patentli C vitamini hammadde belgesi için dosya linki eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}}},"block_order":["gmp","haccp","iso9001","iso22000","ifos","quali_c"],"settings":{"eyebrow":"Kalite belgeleri","heading":"Kaliteyi görünür kılın","body":"<p>Üretim, kalite ve hammadde standartlarına ait belgeleri bu sayfadan düzenli şekilde sunabilirsiniz. Dosya linkleri Shopify Files üzerinden eklenir.</p>"}}},"order":["quality_documents"]}
