@@ -8,7 +8,7 @@
         "padding_bottom": 24
       }
     },
-    "routine-assist": {
+    "routine_assist": {
       "type": "vitacoral-cart-routine-assist",
       "settings": {
         "eyebrow": "Rutin desteği",
@@ -47,7 +47,7 @@
   },
   "order": [
     "cart-items",
-    "routine-assist",
+    "routine_assist",
     "cart-footer"
   ]
 }
