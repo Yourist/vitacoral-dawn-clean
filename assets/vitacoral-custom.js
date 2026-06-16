@@ -110,10 +110,23 @@
     });
   };
 
+  const ensureFooterToolsLink = (scope = document) => {
+    const root = scope instanceof Element || scope instanceof Document ? scope : document;
+    const footer = root.querySelector('.footer') || document.querySelector('.footer');
+    if (!footer || footer.querySelector('.vc-footer-tools-link')) return;
+
+    const target = footer.querySelector('.footer__content-bottom-wrapper:last-of-type') || footer;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'vc-footer-tools-link';
+    wrapper.innerHTML = '<a class="vc-footer-tools-link__anchor" href="/pages/saglik-hesaplama-araclari"><span class="vc-footer-tools-link__dot" aria-hidden="true"></span><span>Sağlık araçları ve rutin rehberi</span></a>';
+    target.prepend(wrapper);
+  };
+
   const initReveal = (scope = document) => {
     const root = scope instanceof Element || scope instanceof Document ? scope : document;
     registerMotionTargets(root);
     routeRoutineCards(root);
+    ensureFooterToolsLink(root);
 
     const revealElements = Array.from(root.querySelectorAll(revealSelector)).filter(
       (element) => !element.closest('.shopify-section-header')
