@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "interactive_tools": {
+      "type": "vitacoral-interactive-tools",
+      "settings": {
+        "eyebrow": "Etkileşimli rehber",
+        "heading": "Rutininizi daha bilinçli oluşturun",
+        "body": "<p>Yaklaşık kalori ihtiyacınızı görün, ardından size en yakın Vitacoral rutinini kısa seçimlerle keşfedin.</p>",
+        "calorie_kicker": "Kalori hesaplayıcı",
+        "calorie_heading": "Günlük ihtiyacınızı yaklaşık görün",
+        "calorie_body": "Yaş, boy, kilo ve aktivite düzeyinize göre yaklaşık günlük enerji ihtiyacınızı hesaplayın.",
+        "calorie_note": "Bu araç tıbbi veya beslenme danışmanlığı yerine geçmez; sonuçlar yaklaşık bilgilendirme amaçlıdır.",
+        "routine_kicker": "Vitamin rutin rehberi",
+        "routine_heading": "Size yakın rutini bulun",
+        "routine_body": "Kısa seçimlerle kadın, erkek, aile veya hafif rutin seçeneklerinden size en yakın akışı görün.",
+        "routine_note": "Rutin önerileri genel yönlendirme amaçlıdır. Ürün içerik, kullanım ve uyarı bilgilerini ürün sayfalarında kontrol edin."
+      }
+    }
+  },
+  "order": ["interactive_tools"]
+}
