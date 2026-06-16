@@ -3,71 +3,89 @@
   assign title = 'Net seçim'
   assign intro = 'Ürünü formu, içeriği ve rutindeki yeriyle birlikte değerlendirin.'
   assign note_title = 'İçerik notu'
-  assign note_text = 'İçerik bilgisini ve kullanım önerisini ürün detayında kontrol edin.'
+  assign note_text = 'Etiket bilgisini, kullanım önerisini ve uyarıları birlikte okuyun.'
   assign routine_title = 'Rutin fikri'
   assign routine_text = 'Ürünü günlük alışkanlıklarınızla birlikte düşünün.'
   assign next_title = 'Sonraki adım'
-  assign next_text = 'Karar vermeden önce uyarı bilgilerini okuyun.'
+  assign next_text = 'Karar vermeden önce ürün detaylarını kontrol edin.'
   assign pill_1 = 'İçerik'
   assign pill_2 = 'Kullanım'
   assign pill_3 = 'Uyarılar'
+  assign micro_1 = 'Etiket bilgisi'
+  assign micro_2 = 'Günlük uyum'
+  assign micro_3 = 'Bilinçli seçim'
   assign cta_label = 'Ürünleri gör'
   assign cta_link = '/collections/all'
 
   case product.handle
     when 'collagen-30-sase'
       assign title = 'Collagen rutini'
-      assign intro = 'Saşe formu, limon aroması ve Tip 1-2-3 kolajen içeriğiyle günlük rutinde kolay takip edilir.'
-      assign note_text = 'Tip 1-2-3 kolajen, servis formu ve içerik bilgisini ürün detayında inceleyin.'
-      assign routine_text = '30 saşelik form, kullanım düzeninizi takip etmeyi kolaylaştırır.'
-      assign next_text = 'Collagen ürününü Women veya Men rutiniyle birlikte değerlendirebilirsiniz.'
+      assign intro = '30 saşelik form, limon aroması ve Tip 1-2-3 kolajen içeriğiyle kolajen rutininizi daha kolay planlayın.'
+      assign note_text = 'Tip 1-2-3 kolajen içeriğini, servis formunu, aroma bilgisini ve kullanım önerisini ürün detayında birlikte inceleyin.'
+      assign routine_text = 'Saşe form, her porsiyonu ayrı takip etmenizi kolaylaştırır. Böylece ürünün günlük akışınıza uyup uymadığını daha net görürsünüz.'
+      assign next_text = 'Kolajen seçeneğini tek başına ya da Women / Men günlük rutini içinde değerlendirebilirsiniz.'
       assign pill_1 = '30 saşe'
       assign pill_2 = 'Şekersiz'
       assign pill_3 = 'Tip 1-2-3'
+      assign micro_1 = 'Limon aroması'
+      assign micro_2 = 'Kolay takip'
+      assign micro_3 = 'Rutin uyumu'
       assign cta_label = 'Rutini incele'
       assign cta_link = '/pages/kadin-gunluk-rutini'
     when 'multivitamin-for-women'
       assign title = 'Kadın rutini'
-      assign intro = '11 vitamin, 8 mineral ve Women Blend içeriğiyle günlük destek seçiminizi netleştirin.'
-      assign note_text = 'Vitamin, mineral ve blend bilgisini kullanım önerisiyle birlikte inceleyin.'
-      assign routine_text = 'Günlük alışkanlıklarınıza uygun bir başlangıç noktası olarak değerlendirin.'
-      assign next_text = 'Kolajen seçeneğini aynı rutin içinde ayrıca inceleyebilirsiniz.'
+      assign intro = '11 vitamin, 8 mineral ve Women Blend içeriğiyle günlük destek seçiminizi daha net değerlendirin.'
+      assign note_text = 'Vitamin, mineral, Quali-C ve Women Blend bilgisini kullanım önerisiyle birlikte inceleyin.'
+      assign routine_text = 'Ürünü günlük alışkanlıklarınıza uygun bir başlangıç noktası olarak düşünebilirsiniz.'
+      assign next_text = 'Kolajen seçeneğini aynı rutin içinde ayrıca değerlendirebilirsiniz.'
       assign pill_1 = '11 vitamin'
       assign pill_2 = '8 mineral'
       assign pill_3 = 'Women Blend'
+      assign micro_1 = 'Quali-C'
+      assign micro_2 = 'Günlük destek'
+      assign micro_3 = 'Kadın odağı'
       assign cta_label = 'Rutini incele'
       assign cta_link = '/pages/kadin-gunluk-rutini'
     when 'multivitamin-for-men'
       assign title = 'Erkek rutini'
-      assign intro = '11 vitamin, 8 mineral ve Men Blend içeriğiyle günlük destek seçiminizi netleştirin.'
-      assign note_text = 'Vitamin, mineral ve blend bilgisini kullanım önerisiyle birlikte inceleyin.'
-      assign routine_text = 'Günlük alışkanlıklarınıza uygun bir başlangıç noktası olarak değerlendirin.'
-      assign next_text = 'Kolajen seçeneğini aynı rutin içinde ayrıca inceleyebilirsiniz.'
+      assign intro = '11 vitamin, 8 mineral ve Men Blend içeriğiyle günlük destek seçiminizi daha net değerlendirin.'
+      assign note_text = 'Vitamin, mineral, Quali-C ve Men Blend bilgisini kullanım önerisiyle birlikte inceleyin.'
+      assign routine_text = 'Ürünü günlük alışkanlıklarınıza uygun bir başlangıç noktası olarak düşünebilirsiniz.'
+      assign next_text = 'Kolajen seçeneğini aynı rutin içinde ayrıca değerlendirebilirsiniz.'
       assign pill_1 = '11 vitamin'
       assign pill_2 = '8 mineral'
       assign pill_3 = 'Men Blend'
+      assign micro_1 = 'Quali-C'
+      assign micro_2 = 'Günlük destek'
+      assign micro_3 = 'Erkek odağı'
       assign cta_label = 'Rutini incele'
       assign cta_link = '/pages/erkek-gunluk-rutini'
     when 'multivitamin-for-kids'
       assign title = 'Kids seçimi'
-      assign intro = 'Vitamin, mineral ve balık yağı bilgisini ebeveyn kontrolünde birlikte değerlendirin.'
-      assign note_text = 'Yaş, kullanım önerisi ve uyarı bilgilerini karar vermeden önce kontrol edin.'
-      assign routine_text = 'Çocuk ürününü aile rutini içinde, ayrı ihtiyaçlara göre değerlendirin.'
+      assign intro = 'Vitamin, mineral ve balık yağı bilgisini yaş ve kullanım uyarılarıyla birlikte değerlendirin.'
+      assign note_text = '13 vitamin, 10 mineral, EPA / DHA ve aroma bilgisini ebeveyn kontrolünde inceleyin.'
+      assign routine_text = 'Çocuk ürünlerinde yaş, kullanım önerisi ve uyarı bilgileri karardan önce ayrıca kontrol edilmelidir.'
       assign next_text = 'Aile rutini sayfasında diğer seçenekleri birlikte görebilirsiniz.'
       assign pill_1 = '13 vitamin'
       assign pill_2 = '10 mineral'
       assign pill_3 = 'EPA / DHA'
-      assign cta_label = 'Aile rutinini gör'
+      assign micro_1 = 'Balık yağı'
+      assign micro_2 = 'Ebeveyn kontrolü'
+      assign micro_3 = 'Yaş bilgisi'
+      assign cta_label = 'Aile rutini'
       assign cta_link = '/pages/aile-gunluk-rutini'
     when 'vitacoral-glucomannan-60-sase'
       assign title = 'Lif odağı'
-      assign intro = 'Konjac kaynaklı glucomannan içeriğini kullanım önerisi ve su uyarısıyla birlikte inceleyin.'
-      assign note_text = 'Lif odaklı ürünlerde kullanım önerisi ve uyarı bilgileri özellikle önemlidir.'
-      assign routine_text = 'Hafif rutin içinde, günlük düzeninize uygunluğunu değerlendirin.'
+      assign intro = 'Konjac kaynaklı glucomannan içeriğini kullanım önerisi, su tüketimi ve uyarılarla birlikte inceleyin.'
+      assign note_text = 'Lif odaklı ürünlerde kullanım önerisi, su tüketimi ve uyarı bilgileri özellikle önemlidir.'
+      assign routine_text = 'Ürünü hafif rutin içinde, günlük düzeninize uygunluğu açısından değerlendirebilirsiniz.'
       assign next_text = 'Hafif rutin seçenekleriyle ürünü farklı akışlarda düşünebilirsiniz.'
       assign pill_1 = 'Glucomannan'
       assign pill_2 = '60 saşe'
       assign pill_3 = 'Su uyarısı'
+      assign micro_1 = 'Konjac kaynağı'
+      assign micro_2 = 'Lif odağı'
+      assign micro_3 = 'Etiket önemli'
       assign cta_label = 'Rutini incele'
       assign cta_link = '/pages/hafif-rutin'
   endcase
@@ -87,10 +105,15 @@
         </div>
       </div>
       <div class="vc-pdp-world__cards">
-        <article>
+        <article class="vc-pdp-world__lead">
           <span>01</span>
           <h3>{{ note_title | escape }}</h3>
           <p>{{ note_text | escape }}</p>
+          <ul>
+            <li>{{ micro_1 | escape }}</li>
+            <li>{{ micro_2 | escape }}</li>
+            <li>{{ micro_3 | escape }}</li>
+          </ul>
         </article>
         <article>
           <span>02</span>
@@ -109,7 +132,7 @@
 </section>
 
 <style>
-  .vc-pdp-world{padding:clamp(2.4rem,5vw,5.6rem) 0;background:linear-gradient(180deg,#fff,rgba(247,250,249,.9))}.vc-pdp-world__shell{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:1.2rem;align-items:stretch}.vc-pdp-world__hero{position:relative;overflow:hidden;min-height:30rem;padding:2.2rem;border-radius:2.4rem;background:radial-gradient(circle at 88% 8%,rgba(217,182,111,.46),transparent 30%),linear-gradient(135deg,#143430,#225952 62%,#173c37);color:#fff;box-shadow:0 1.6rem 4rem rgba(21,44,41,.16)}.vc-pdp-world__hero:after{content:"";position:absolute;right:-5rem;bottom:-5rem;width:16rem;height:16rem;border:.1rem solid rgba(255,255,255,.18);border-radius:999px}.vc-pdp-world__eyebrow{margin:0 0 .8rem;color:rgba(255,255,255,.68);font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.vc-pdp-world h2{position:relative;max-width:11ch;margin:0;color:#fff;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(3rem,5vw,5.2rem);font-weight:650;letter-spacing:-.045em;line-height:.98}.vc-pdp-world__hero p:not(.vc-pdp-world__eyebrow){position:relative;max-width:42rem;margin:1.2rem 0 0;color:rgba(255,255,255,.86);font-size:1.46rem;line-height:1.55}.vc-pdp-world__pills{position:relative;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}.vc-pdp-world__pills span{display:inline-flex;align-items:center;min-height:2.8rem;padding:.5rem .9rem;border:.1rem solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.05rem;font-weight:850}.vc-pdp-world__cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.vc-pdp-world__cards article{display:grid;align-content:start;gap:.8rem;min-height:20rem;padding:1.55rem;border:.1rem solid rgba(34,89,82,.1);border-radius:2rem;background:linear-gradient(180deg,#fff,rgba(248,250,249,.96));box-shadow:0 1.1rem 2.6rem rgba(21,44,41,.055)}.vc-pdp-world__cards span{color:#d0a85e;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:950;letter-spacing:.12em}.vc-pdp-world__cards h3{margin:0;color:var(--vitacoral-color-text,#16312e);font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:2rem;font-weight:650;letter-spacing:-.03em;line-height:1.06}.vc-pdp-world__cards p{margin:0;color:var(--vitacoral-color-text-muted,rgba(22,49,46,.74));font-size:1.28rem;line-height:1.55}.vc-pdp-world__next{background:linear-gradient(180deg,rgba(34,89,82,.08),#fff)!important}.vc-pdp-world__next a{align-self:end;justify-self:start;margin-top:.4rem;padding:.78rem 1.15rem;border-radius:999px;background:#225952;color:#fff;text-decoration:none;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.1rem;font-weight:900}@media screen and (max-width:989px){.vc-pdp-world__shell{grid-template-columns:1fr}.vc-pdp-world__hero{min-height:0}.vc-pdp-world__cards{grid-template-columns:1fr 1fr}.vc-pdp-world__next{grid-column:1/-1}}@media screen and (max-width:749px){.vc-pdp-world{padding:1.6rem 0 2.2rem}.vc-pdp-world .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-pdp-world__shell{gap:.9rem}.vc-pdp-world__hero{padding:1.45rem;border-radius:1.8rem}.vc-pdp-world h2{font-size:3.2rem}.vc-pdp-world__hero p:not(.vc-pdp-world__eyebrow){font-size:1.22rem;line-height:1.45}.vc-pdp-world__pills{gap:.45rem;margin-top:1.1rem}.vc-pdp-world__pills span{min-height:2.35rem;padding:.36rem .68rem;font-size:.9rem}.vc-pdp-world__cards{grid-template-columns:1fr;gap:.75rem}.vc-pdp-world__cards article{min-height:0;padding:1.15rem;border-radius:1.55rem;box-shadow:none}.vc-pdp-world__cards h3{font-size:1.65rem}.vc-pdp-world__cards p{font-size:1.12rem;line-height:1.48}.vc-pdp-world__next a{padding:.72rem 1rem;font-size:1rem}}
+  .vc-pdp-world{padding:clamp(2rem,4vw,4.6rem) 0;background:linear-gradient(180deg,#fff,rgba(247,250,249,.82))}.vc-pdp-world__shell{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:1rem;align-items:stretch}.vc-pdp-world__hero{position:relative;overflow:hidden;min-height:28rem;padding:2rem;border-radius:2.2rem;background:radial-gradient(circle at 82% 14%,rgba(217,182,111,.38),transparent 28%),linear-gradient(135deg,#143430,#225952 62%,#173c37);color:#fff;box-shadow:0 1.4rem 3.4rem rgba(21,44,41,.14)}.vc-pdp-world__hero:after{content:"";position:absolute;right:-5rem;bottom:-5rem;width:15rem;height:15rem;border:.1rem solid rgba(255,255,255,.18);border-radius:999px}.vc-pdp-world__eyebrow{margin:0 0 .7rem;color:rgba(255,255,255,.7);font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.vc-pdp-world h2{position:relative;max-width:11ch;margin:0;color:#fff;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(3rem,5vw,5rem);font-weight:650;letter-spacing:-.045em;line-height:.98}.vc-pdp-world__hero p:not(.vc-pdp-world__eyebrow){position:relative;max-width:46rem;margin:1.15rem 0 0;color:rgba(255,255,255,.88);font-size:1.42rem;line-height:1.56}.vc-pdp-world__pills{position:relative;display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.35rem}.vc-pdp-world__pills span{display:inline-flex;align-items:center;min-height:2.7rem;padding:.48rem .85rem;border:.1rem solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:850}.vc-pdp-world__cards{display:grid;grid-template-columns:1.15fr .9fr;grid-template-rows:1fr 1fr;gap:.85rem}.vc-pdp-world__cards article{display:grid;align-content:start;gap:.68rem;padding:1.35rem;border:.1rem solid rgba(34,89,82,.1);border-radius:1.8rem;background:rgba(255,255,255,.86);box-shadow:0 .9rem 2.2rem rgba(21,44,41,.045);backdrop-filter:blur(.4rem)}.vc-pdp-world__lead{grid-row:span 2;background:linear-gradient(180deg,#fff,rgba(248,250,249,.92))!important}.vc-pdp-world__cards span{color:#d0a85e;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.96rem;font-weight:950;letter-spacing:.12em}.vc-pdp-world__cards h3{margin:0;color:var(--vitacoral-color-text,#16312e);font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:1.9rem;font-weight:650;letter-spacing:-.03em;line-height:1.06}.vc-pdp-world__cards p{margin:0;color:var(--vitacoral-color-text-muted,rgba(22,49,46,.76));font-size:1.22rem;line-height:1.52}.vc-pdp-world__cards ul{display:grid;gap:.48rem;margin:.25rem 0 0;padding:0;list-style:none}.vc-pdp-world__cards li{position:relative;padding-left:1.15rem;color:#225952;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.05rem;font-weight:850}.vc-pdp-world__cards li:before{content:"";position:absolute;left:0;top:.62em;width:.42rem;height:.42rem;border-radius:999px;background:#d0a85e}.vc-pdp-world__next{background:linear-gradient(180deg,rgba(34,89,82,.08),#fff)!important}.vc-pdp-world__next a{align-self:end;justify-self:start;margin-top:.2rem;padding:.72rem 1.05rem;border-radius:999px;background:#225952;color:#fff;text-decoration:none;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.04rem;font-weight:900}@media screen and (max-width:989px){.vc-pdp-world__shell{grid-template-columns:1fr}.vc-pdp-world__hero{min-height:0}.vc-pdp-world__cards{grid-template-columns:1fr 1fr;grid-template-rows:auto}.vc-pdp-world__lead{grid-column:1/-1;grid-row:auto}.vc-pdp-world__next{grid-column:auto}}@media screen and (max-width:749px){.vc-pdp-world{padding:1.2rem 0 1.8rem}.vc-pdp-world .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-pdp-world__shell{gap:.72rem}.vc-pdp-world__hero{padding:1.35rem;border-radius:1.65rem;box-shadow:0 .9rem 2.2rem rgba(21,44,41,.13)}.vc-pdp-world h2{font-size:3rem}.vc-pdp-world__hero p:not(.vc-pdp-world__eyebrow){font-size:1.16rem;line-height:1.46}.vc-pdp-world__pills{gap:.42rem;margin-top:.95rem}.vc-pdp-world__pills span{min-height:2.25rem;padding:.34rem .62rem;font-size:.88rem}.vc-pdp-world__cards{grid-template-columns:1fr;gap:.62rem}.vc-pdp-world__cards article{padding:1.05rem;border-radius:1.45rem;box-shadow:none}.vc-pdp-world__cards h3{font-size:1.58rem}.vc-pdp-world__cards p{font-size:1.06rem;line-height:1.46}.vc-pdp-world__cards ul{gap:.36rem}.vc-pdp-world__cards li{font-size:.98rem}.vc-pdp-world__next a{padding:.68rem .95rem;font-size:.96rem}}
 </style>
 
 {% schema %}
