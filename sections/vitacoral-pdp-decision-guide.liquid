@@ -1,21 +1,21 @@
 {%- liquid
   assign guide_eyebrow = section.settings.eyebrow | default: 'Ürün rehberi'
-  assign guide_heading = section.settings.heading | default: 'Bu ürünü seçmeden önce'
+  assign guide_heading = section.settings.heading | default: 'Seçmeden önce'
   assign guide_intro = section.settings.body | default: 'Ürünü, içerik bilgisi ve günlük rutininizle birlikte değerlendirin.'
 
   assign product_role = 'Günlük takviye seçiminizi daha bilinçli yapmanız için hazırlanmıştır.'
   assign feature_1 = 'İçerik bilgisini kontrol edin.'
   assign feature_2 = 'Kullanım önerisini okuyun.'
   assign feature_3 = 'Uyarı bilgilerini inceleyin.'
-  assign routine_title = 'Rutininizde nasıl yer alabilir?'
+  assign routine_title = 'Rutindeki yeri'
   assign routine_text = 'Ürünü kendi günlük düzeniniz, kullanım önerisi ve etiket bilgileriyle birlikte değerlendirin.'
-  assign before_title = 'Satın almadan önce'
+  assign before_title = 'Son kontrol'
   assign before_text = 'İçerik, kullanım önerisi, saklama koşulu ve uyarı bilgilerini kontrol edin.'
   assign accent_label = 'Karar rehberi'
 
   case product.handle
     when 'collagen-30-sase'
-      assign guide_heading = 'Kolajen rutininizi daha net planlayın'
+      assign guide_heading = 'Kolajen rutini'
       assign guide_intro = 'Saşe formu, limon aroması ve Tip 1-2-3 kolajen içeriğini birlikte değerlendirin.'
       assign product_role = 'Kolajen rutini oluşturmak isteyenler için pratik bir günlük kullanım seçeneği.'
       assign feature_1 = '30 saşelik formu rutini takip etmeyi kolaylaştırır.'
@@ -23,9 +23,9 @@
       assign feature_3 = 'Tip 1-2-3 kolajen içeriğini kontrol edin.'
       assign routine_text = 'Kullanım önerisini günlük düzeninize yerleştirin; servis, aroma ve uyarı bilgilerini ürün detayında okuyun.'
       assign before_text = 'Kolajen tipi, servis formu, içerik ve kullanım önerisini kontrol ederek karar verin.'
-      assign accent_label = 'Collagen rutini'
+      assign accent_label = 'Collagen'
     when 'multivitamin-for-women'
-      assign guide_heading = 'Kadın günlük rutininiz için değerlendirin'
+      assign guide_heading = 'Kadın rutini'
       assign guide_intro = '11 vitamin, 8 mineral, Quali-C ve Premium Women Blend içeriğini birlikte inceleyin.'
       assign product_role = 'Kadın günlük multivitamin rutini için konumlanan ürün.'
       assign feature_1 = 'Vitamin ve mineral içeriğini ürün detayında görün.'
@@ -33,9 +33,9 @@
       assign feature_3 = 'Kullanım önerisi ve uyarıları okuyun.'
       assign routine_text = 'Ürünü günlük alışkanlıklarınıza göre değerlendirin; etiket bilgisini temel alın.'
       assign before_text = 'İçerik, kullanım önerisi ve özel durum uyarılarını kontrol ederek karar verin.'
-      assign accent_label = 'Kadın rutini'
+      assign accent_label = 'Kadın'
     when 'multivitamin-for-men'
-      assign guide_heading = 'Erkek günlük rutininiz için değerlendirin'
+      assign guide_heading = 'Erkek rutini'
       assign guide_intro = '11 vitamin, 8 mineral, Quali-C ve Premium Men Blend içeriğini birlikte inceleyin.'
       assign product_role = 'Erkek günlük multivitamin rutini için konumlanan ürün.'
       assign feature_1 = 'Vitamin ve mineral içeriğini ürün detayında görün.'
@@ -43,9 +43,9 @@
       assign feature_3 = 'Kullanım önerisi ve uyarıları okuyun.'
       assign routine_text = 'Ürünü günlük alışkanlıklarınıza göre değerlendirin; etiket bilgisini temel alın.'
       assign before_text = 'İçerik, kullanım önerisi ve özel durum uyarılarını kontrol ederek karar verin.'
-      assign accent_label = 'Erkek rutini'
+      assign accent_label = 'Erkek'
     when 'multivitamin-for-kids'
-      assign guide_heading = 'Çocuk ürünü için kararınızı dikkatle verin'
+      assign guide_heading = 'Kids seçimi'
       assign guide_intro = 'Vitamin-mineral içeriği, balık yağı bilgisi ve kullanım uyarılarını ebeveyn kontrolünde inceleyin.'
       assign product_role = 'Çocuklar için ürün seçerken yaş, kullanım önerisi ve ebeveyn kontrolü önceliklidir.'
       assign feature_1 = '13 vitamin ve 10 mineral içeriğini kontrol edin.'
@@ -53,9 +53,9 @@
       assign feature_3 = 'Yaş, kullanım önerisi ve uyarıları dikkatle okuyun.'
       assign routine_text = 'Kids ürününü ebeveyn kontrolünde değerlendirin; etiketteki yaş ve kullanım bilgilerini temel alın.'
       assign before_text = 'Çocuk ürünlerinde etiket bilgisi, kullanım önerisi ve uyarılar özellikle önemlidir.'
-      assign accent_label = 'Kids rutini'
+      assign accent_label = 'Kids'
     when 'vitacoral-glucomannan-60-sase'
-      assign guide_heading = 'Lif odağını rutininize eklemeden önce'
+      assign guide_heading = 'Lif odağı'
       assign guide_intro = 'Konjac kaynaklı glucomannan içeriğini, kullanım önerisini ve uyarıları birlikte inceleyin.'
       assign product_role = 'Lif odağını günlük rutininizde değerlendirmek isteyenler için konumlanan ürün.'
       assign feature_1 = 'Glucomannan içeriğini ve saşe formunu kontrol edin.'
@@ -63,7 +63,7 @@
       assign feature_3 = 'Uyarı bilgilerini ürün detayında inceleyin.'
       assign routine_text = 'Lif odaklı ürünlerde kullanım önerisi, su tüketimi ve uyarıları özellikle dikkate alın.'
       assign before_text = 'Glucomannan ürününde etiket, kullanım önerisi ve uyarı bilgilerini okumadan karar vermeyin.'
-      assign accent_label = 'Lif odağı'
+      assign accent_label = 'Lif'
   endcase
 -%}
 
@@ -78,26 +78,26 @@
 
       <div class="vitacoral-pdp-decision__panel vitacoral-card">
         <div class="vitacoral-pdp-decision__badge">{{ accent_label | escape }}</div>
-        <h3>Bu ürün hangi karar için?</h3>
+        <h3>Karar noktası</h3>
         <p>{{ product_role | escape }}</p>
       </div>
 
       <div class="vitacoral-pdp-decision__grid" role="list">
         <article class="vitacoral-pdp-decision__card vitacoral-card" role="listitem">
           <span>01</span>
-          <h3>İçeriği görün</h3>
+          <h3>İçerik</h3>
           <p>{{ feature_1 | escape }}</p>
         </article>
 
         <article class="vitacoral-pdp-decision__card vitacoral-card" role="listitem">
           <span>02</span>
-          <h3>Kullanımı düşünün</h3>
+          <h3>Kullanım</h3>
           <p>{{ feature_2 | escape }}</p>
         </article>
 
         <article class="vitacoral-pdp-decision__card vitacoral-card" role="listitem">
           <span>03</span>
-          <h3>Uyarıları kontrol edin</h3>
+          <h3>Uyarılar</h3>
           <p>{{ feature_3 | escape }}</p>
         </article>
       </div>
@@ -118,7 +118,7 @@
 
 {% schema %}
 {
-  "name": "Vitacoral PDP decision guide",
+  "name": "PDP karar rehberi",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -135,7 +135,7 @@
       "type": "text",
       "id": "heading",
       "label": "Fallback heading",
-      "default": "Bu ürünü seçmeden önce"
+      "default": "Seçmeden önce"
     },
     {
       "type": "textarea",
@@ -146,7 +146,7 @@
   ],
   "presets": [
     {
-      "name": "Vitacoral PDP decision guide"
+      "name": "PDP karar rehberi"
     }
   ]
 }
