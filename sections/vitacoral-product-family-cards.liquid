@@ -1,3 +1,5 @@
+{{ 'vitacoral-home-routine-polish.css' | asset_url | stylesheet_tag }}
+
 <section class="vitacoral-product-family vitacoral-section" id="VitacoralProductFamily-{{ section.id }}">
   <div class="vitacoral-container">
     <div class="vitacoral-product-family__header vitacoral-reveal is-visible">
@@ -18,7 +20,7 @@
       <div class="vitacoral-product-family__discovery-rail" aria-label="Guided discovery">
         <span class="vitacoral-product-family__discovery-item">1. Rutin çerçevenizi seçin</span>
         <span class="vitacoral-product-family__discovery-item">2. Size yakın kombinasyonu inceleyin</span>
-        <span class="vitacoral-product-family__discovery-item">3. İsterseniz quiz ile devam edin</span>
+        <span class="vitacoral-product-family__discovery-item">3. Detay sayfasında karar verin</span>
       </div>
     </div>
 
@@ -48,6 +50,19 @@
             endif
 
             assign card_cta_link = block.settings.cta_link
+            assign card_title_handle = card_title | handleize
+            if card_cta_link == blank
+              case card_title_handle
+                when 'kadin-rutin-paketi'
+                  assign card_cta_link = '/pages/kadin-rutini'
+                when 'erkek-rutin-paketi'
+                  assign card_cta_link = '/pages/erkek-rutini'
+                when 'aile-gunluk-rutini'
+                  assign card_cta_link = '/pages/aile-rutini'
+                when 'hafif-rutin-paketi'
+                  assign card_cta_link = '/pages/hafif-rutin'
+              endcase
+            endif
             if card_cta_link == blank and primary_product != blank
               assign card_cta_link = primary_product.url
             endif
