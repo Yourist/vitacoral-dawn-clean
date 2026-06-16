@@ -1,0 +1,68 @@
+{{ 'vitacoral-tools-teaser.css' | asset_url | stylesheet_tag }}
+
+<section class="vc-tools-teaser" id="VitacoralToolsTeaser-{{ section.id }}">
+  <div class="page-width vc-tools-teaser__inner">
+    <div class="vc-tools-teaser__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="vc-tools-teaser__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vc-tools-teaser__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <div class="vc-tools-teaser__body rte">{{ section.settings.body }}</div>
+      {%- endif -%}
+      <div class="vc-tools-teaser__actions">
+        {%- if section.settings.primary_label != blank and section.settings.primary_link != blank -%}
+          <a class="vc-tools-teaser__button" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }}</a>
+        {%- endif -%}
+        {%- if section.settings.secondary_label != blank and section.settings.secondary_link != blank -%}
+          <a class="vc-tools-teaser__button vc-tools-teaser__button--secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="vc-tools-teaser__panel" aria-label="Etkileşimli araçlar">
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">01</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">{{ section.settings.tool_1_title | escape }}</h3>
+          <p class="vc-tools-teaser__mini-text">{{ section.settings.tool_1_text | escape }}</p>
+        </div>
+      </div>
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">02</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">{{ section.settings.tool_2_title | escape }}</h3>
+          <p class="vc-tools-teaser__mini-text">{{ section.settings.tool_2_text | escape }}</p>
+        </div>
+      </div>
+      {%- if section.settings.note != blank -%}
+        <p class="vc-tools-teaser__note">{{ section.settings.note | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Vitacoral Tools Teaser",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Etkileşimli rehber" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Rutininize başlamadan önce kendinizi daha iyi tanıyın" },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Yaklaşık kalori ihtiyacınızı görün, ardından size en yakın Vitacoral rutinini kısa seçimlerle keşfedin.</p>" },
+    { "type": "text", "id": "primary_label", "label": "Primary label", "default": "Araçları aç" },
+    { "type": "url", "id": "primary_link", "label": "Primary link", "default": "/pages/saglik-hesaplama-araclari" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary label", "default": "Rutinleri gör" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary link", "default": "/#VitacoralProductFamily" },
+    { "type": "text", "id": "tool_1_title", "label": "Tool 1 title", "default": "Kalori hesaplayıcı" },
+    { "type": "text", "id": "tool_1_text", "label": "Tool 1 text", "default": "Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacını gör." },
+    { "type": "text", "id": "tool_2_title", "label": "Tool 2 title", "default": "Vitamin rutin rehberi" },
+    { "type": "text", "id": "tool_2_text", "label": "Tool 2 text", "default": "Kadın, erkek, aile veya hafif rutin seçenekleri arasında kararını kolaylaştır." },
+    { "type": "text", "id": "note", "label": "Note", "default": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin." }
+  ],
+  "presets": [{ "name": "Vitacoral Tools Teaser" }]
+}
+{% endschema %}
