@@ -88,9 +88,32 @@
     });
   };
 
+  const normalizeText = (value) => (value || '').toLocaleLowerCase('tr-TR').trim();
+
+  const routeRoutineCards = (scope = document) => {
+    const root = scope instanceof Element || scope instanceof Document ? scope : document;
+    const routineRoutes = [
+      { matcher: 'kadın rutin paketi', href: '/pages/kadin-rutini' },
+      { matcher: 'erkek rutin paketi', href: '/pages/erkek-rutini' },
+      { matcher: 'aile günlük rutini', href: '/pages/aile-rutini' },
+      { matcher: 'hafif rutin paketi', href: '/pages/hafif-rutin' },
+    ];
+
+    root.querySelectorAll('.vitacoral-product-family__card').forEach((card) => {
+      const title = normalizeText(card.querySelector('.vitacoral-product-family__title')?.textContent);
+      const route = routineRoutes.find((item) => title.includes(item.matcher));
+      if (!route) return;
+
+      card.querySelectorAll('a[href]').forEach((link) => {
+        link.setAttribute('href', route.href);
+      });
+    });
+  };
+
   const initReveal = (scope = document) => {
     const root = scope instanceof Element || scope instanceof Document ? scope : document;
     registerMotionTargets(root);
+    routeRoutineCards(root);
 
     const revealElements = Array.from(root.querySelectorAll(revealSelector)).filter(
       (element) => !element.closest('.shopify-section-header')
