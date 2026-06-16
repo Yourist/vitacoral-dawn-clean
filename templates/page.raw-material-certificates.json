@@ -7,26 +7,4 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
-  "sections": {
-    "hero": {
-      "type": "vitacoral-page-hero",
-      "settings": {
-        "eyebrow": "Vitacoral belgeleri",
-        "title": "Hammadde sertifikaları",
-        "body": "<p>Ürün aileleriyle ilgili hammadde ve kaynak bilgilerini daha düzenli bir belge yapısıyla sunmak için bu alan kullanılabilir.</p>"
-      }
-    },
-    "content": {
-      "type": "vitacoral-page-richtext",
-      "settings": {
-        "heading": "Hammadde belgeleri hakkında",
-        "body": "<p>Bu sayfa, hammaddeyle ilgili belge ve kaynakların daha kolay incelenebilmesi için hazırlanmıştır.</p><p>Güncel sertifika ve kaynak bağlantıları eklendikçe bu alandan incelenebilir.</p>"
-      }
-    }
-  },
-  "order": [
-    "hero",
-    "content"
-  ]
-}
+{"sections":{"raw_documents":{"type":"vitacoral-document-hub","blocks":{"collagen":{"type":"document_card","settings":{"category":"Collagen","title":"Kolajen hammaddeleri","body":"<p>Collagen ürününde kullanılan hammaddelere ait belge linkleri Shopify Files üzerinden eklenecek.</p>","file_link":"","link_label":"Belgeleri aç"}},"women":{"type":"document_card","settings":{"category":"Women","title":"Women Blend","body":"<p>Premium Women Blend ve ilgili hammadde belgeleri için link eklenecek.</p>","file_link":"","link_label":"Belgeleri aç"}},"men":{"type":"document_card","settings":{"category":"Men","title":"Men Blend","body":"<p>Premium Men Blend ve ilgili hammadde belgeleri için link eklenecek.</p>","file_link":"","link_label":"Belgeleri aç"}},"kids":{"type":"document_card","settings":{"category":"Kids","title":"Balık yağı","body":"<p>IFOS onaylı balık yağı ve Kids içerik belgeleri için link eklenecek.</p>","file_link":"","link_label":"Belgeleri aç"}},"glucomannan":{"type":"document_card","settings":{"category":"Glucomannan","title":"Konjac lif","body":"<p>Glucomannan ve yardımcı hammadde belgeleri için link eklenecek.</p>","file_link":"","link_label":"Belgeleri aç"}},"quali_c":{"type":"document_card","settings":{"category":"Ortak","title":"Quali-C","body":"<p>Quali-C patentli C vitamini hammadde belgesi için link eklenecek.</p>","file_link":"","link_label":"Belgeyi aç"}}},"block_order":["collagen","women","men","kids","glucomannan","quali_c"],"settings":{"eyebrow":"Hammadde belgeleri","heading":"İçeriği belgeyle destekleyin","body":"<p>Ürünlerde kullanılan hammaddelere ait belge linklerini bu sayfadan düzenli şekilde sunabilirsiniz. Linkler Shopify Files üzerinden sonradan eklenebilir.</p>"}}},"order":["raw_documents"]}
