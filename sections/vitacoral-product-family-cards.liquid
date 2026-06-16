@@ -1,4 +1,5 @@
 {{ 'vitacoral-home-routine-polish.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-tools-teaser.css' | asset_url | stylesheet_tag }}
 
 <section class="vitacoral-product-family vitacoral-section" id="VitacoralProductFamily-{{ section.id }}">
   <div class="vitacoral-container">
@@ -184,6 +185,40 @@
   </div>
 </section>
 
+<section class="vc-tools-teaser" id="VitacoralToolsTeaser-home">
+  <div class="page-width vc-tools-teaser__inner">
+    <div class="vc-tools-teaser__copy">
+      <p class="vc-tools-teaser__eyebrow">Etkileşimli rehber</p>
+      <h2 class="vc-tools-teaser__title">Rutininize başlamadan önce kendinizi daha iyi tanıyın</h2>
+      <div class="vc-tools-teaser__body rte">
+        <p>Yaklaşık kalori ihtiyacınızı görün, ardından size en yakın Vitacoral rutinini kısa seçimlerle keşfedin.</p>
+      </div>
+      <div class="vc-tools-teaser__actions">
+        <a class="vc-tools-teaser__button" href="/pages/saglik-hesaplama-araclari">Araçları aç</a>
+        <a class="vc-tools-teaser__button vc-tools-teaser__button--secondary" href="#VitacoralProductFamily-{{ section.id }}">Rutinleri gör</a>
+      </div>
+    </div>
+
+    <div class="vc-tools-teaser__panel" aria-label="Etkileşimli araçlar">
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">01</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">Kalori hesaplayıcı</h3>
+          <p class="vc-tools-teaser__mini-text">Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacını gör.</p>
+        </div>
+      </div>
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">02</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">Vitamin rutin rehberi</h3>
+          <p class="vc-tools-teaser__mini-text">Kadın, erkek, aile veya hafif rutin seçenekleri arasında kararını kolaylaştır.</p>
+        </div>
+      </div>
+      <p class="vc-tools-teaser__note">Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin.</p>
+    </div>
+  </div>
+</section>
+
 {% schema %}
 {
   "name": "Routine Cards",
@@ -284,18 +319,9 @@
           "label": "Accent style",
           "default": "green",
           "options": [
-            {
-              "value": "green",
-              "label": "green"
-            },
-            {
-              "value": "orange",
-              "label": "orange"
-            },
-            {
-              "value": "soft",
-              "label": "soft"
-            }
+            { "value": "green", "label": "green" },
+            { "value": "orange", "label": "orange" },
+            { "value": "soft", "label": "soft" }
           ]
         },
         {
