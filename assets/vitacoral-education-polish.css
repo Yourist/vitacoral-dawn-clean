@@ -1,0 +1,31 @@
+.vitacoral-education{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#f8faf8 48%,#fff7f0 100%)}
+.vitacoral-education:before{content:"";position:absolute;inset:4rem auto auto -14rem;width:34rem;height:34rem;border-radius:999px;background:radial-gradient(circle,rgba(34,89,82,.12),rgba(34,89,82,0) 68%);pointer-events:none}
+.vitacoral-education:after{content:"";position:absolute;right:-12rem;bottom:2rem;width:32rem;height:32rem;border-radius:999px;background:radial-gradient(circle,rgba(225,117,61,.16),rgba(225,117,61,0) 68%);pointer-events:none}
+.vitacoral-education .vitacoral-container{position:relative;z-index:1}
+.vitacoral-education__header{max-width:86rem;margin-inline:auto;text-align:center}
+.vitacoral-education__body{max-width:60rem;margin-inline:auto}
+.vitacoral-education__carousel{margin-top:3rem}
+.vitacoral-education__grid{display:grid;grid-template-columns:1.08fr .96fr .96fr;gap:1.25rem;align-items:stretch}
+.vitacoral-education__item{min-width:0}
+.vitacoral-education__card{position:relative;display:flex;flex-direction:column;min-height:100%;overflow:hidden;border-radius:3rem;background:rgba(255,255,255,.86);border:.1rem solid rgba(34,89,82,.1);box-shadow:0 2rem 5rem rgba(21,44,41,.08);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.vitacoral-education__card:hover{transform:translateY(-.35rem);box-shadow:0 2.6rem 6rem rgba(21,44,41,.12);border-color:rgba(225,117,61,.22)}
+.vitacoral-education__card:before{content:"Bilgi rehberi";position:absolute;z-index:2;top:1rem;right:1rem;display:inline-flex;align-items:center;min-height:3.2rem;padding:0 1rem;border-radius:999px;background:rgba(255,255,255,.72);backdrop-filter:blur(10px);color:#225952;font-size:1rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:.1rem solid rgba(34,89,82,.1)}
+.vitacoral-education__media-wrap{position:relative;margin:0;padding:1rem 1rem 0}
+.vitacoral-education__media{position:relative;overflow:hidden;min-height:19rem;border-radius:2.2rem;background:linear-gradient(135deg,rgba(34,89,82,.1),rgba(225,117,61,.12))}
+.vitacoral-education__image{width:100%;height:100%;min-height:19rem;object-fit:cover;display:block;transform:scale(1.01);transition:transform .35s ease,filter .35s ease}
+.vitacoral-education__card:hover .vitacoral-education__image{transform:scale(1.045);filter:saturate(1.04)}
+.vitacoral-education__placeholder{display:grid;place-items:center;min-height:19rem;padding:1.6rem;text-align:center;background:linear-gradient(135deg,rgba(34,89,82,.08),rgba(225,117,61,.12))}
+.vitacoral-education__badge{position:absolute;z-index:3;left:1.7rem;top:1.7rem;background:#fff;color:#225952;border:.1rem solid rgba(34,89,82,.1);box-shadow:0 .8rem 2rem rgba(21,44,41,.08)}
+.vitacoral-education__item--orange .vitacoral-education__badge{color:#a9542e}
+.vitacoral-education__content{position:relative;display:grid;gap:.9rem;padding:1.5rem 1.5rem .8rem}
+.vitacoral-education__content:before{content:"0" counter(vc-education);counter-increment:vc-education;display:inline-flex;align-items:center;justify-content:center;width:4.2rem;height:4.2rem;margin-bottom:.2rem;border-radius:1.4rem;background:rgba(34,89,82,.08);color:#225952;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-weight:800;letter-spacing:-.04em}
+.vitacoral-education__grid{counter-reset:vc-education}
+.vitacoral-education__item--orange .vitacoral-education__content:before{background:rgba(225,117,61,.13);color:#a9542e}
+.vitacoral-education__title{margin:0;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.35rem,3vw,3.5rem);font-weight:650;letter-spacing:-.055em;line-height:.96}
+.vitacoral-education__description{margin:0;color:rgba(22,49,46,.66);font-size:1.25rem;line-height:1.5}
+.vitacoral-education__actions{margin-top:auto;padding:0 1.5rem 1.5rem}
+.vitacoral-education__actions .vitacoral-button{width:100%;min-height:4.8rem;border-radius:999px}
+.vitacoral-education__footer{margin-top:2rem;text-align:center}
+@media screen and (min-width:990px){.vitacoral-education__item:first-child .vitacoral-education__media,.vitacoral-education__item:first-child .vitacoral-education__image,.vitacoral-education__item:first-child .vitacoral-education__placeholder{min-height:24rem}.vitacoral-education__item:first-child .vitacoral-education__title{font-size:clamp(3rem,4vw,4.4rem)}}
+@media screen and (max-width:989px){.vitacoral-education__grid{grid-template-columns:1fr 1fr}.vitacoral-education__item:first-child{grid-column:1/-1}}
+@media screen and (max-width:749px){.vitacoral-education__header{text-align:left}.vitacoral-education__body{margin-inline:0}.vitacoral-education__carousel{margin-left:-1.5rem;margin-right:-1.5rem;overflow-x:auto;padding:0 1.5rem 1rem;scroll-snap-type:x mandatory}.vitacoral-education__grid{display:flex;gap:1rem}.vitacoral-education__item{flex:0 0 82vw;scroll-snap-align:start}.vitacoral-education__item:first-child{grid-column:auto}.vitacoral-education__card{border-radius:2.5rem}.vitacoral-education__media{min-height:18rem}.vitacoral-education__image,.vitacoral-education__placeholder{min-height:18rem}.vitacoral-education__card:before{display:none}}
