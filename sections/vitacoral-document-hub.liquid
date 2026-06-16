@@ -15,6 +15,14 @@
     {%- if section.blocks.size > 0 -%}
       <div class="vc-doc-hub__grid" role="list">
         {%- for block in section.blocks -%}
+          {%- liquid
+            assign document_url = ''
+            if block.settings.file_picker != blank
+              assign document_url = block.settings.file_picker | file_url
+            elsif block.settings.file_link != blank
+              assign document_url = block.settings.file_link
+            endif
+          -%}
           <article class="vc-doc-hub__card" role="listitem" {{ block.shopify_attributes }}>
             {%- if block.settings.category != blank -%}
               <p class="vc-doc-hub__category">{{ block.settings.category | escape }}</p>
@@ -25,8 +33,8 @@
             {%- if block.settings.body != blank -%}
               <div class="vc-doc-hub__card-body rte">{{ block.settings.body }}</div>
             {%- endif -%}
-            {%- if block.settings.file_link != blank -%}
-              <a class="vc-doc-hub__link" href="{{ block.settings.file_link }}" target="_blank" rel="noopener">
+            {%- if document_url != blank -%}
+              <a class="vc-doc-hub__link" href="{{ document_url }}" target="_blank" rel="noopener">
                 {{ block.settings.link_label | default: 'Belgeyi aç' | escape }}
               </a>
             {%- else -%}
@@ -62,7 +70,8 @@
         {"type":"text","id":"category","label":"Kategori","default":"Kalite"},
         {"type":"text","id":"title","label":"Belge adı","default":"Belge adı"},
         {"type":"richtext","id":"body","label":"Kısa açıklama","default":"<p>Bu kartın dosya linki Shopify Files üzerinden eklenecektir.</p>"},
-        {"type":"url","id":"file_link","label":"Dosya linki"},
+        {"type":"file","id":"file_picker","label":"Belge dosyası"},
+        {"type":"url","id":"file_link","label":"Manuel dosya linki"},
         {"type":"text","id":"link_label","label":"CTA etiketi","default":"Belgeyi aç"}
       ]
     }
