@@ -31,7 +31,14 @@
           </div>
           <div class="vc-field"><label for="vcActivity-{{ section.id }}">Aktivite seviyesi</label><select id="vcActivity-{{ section.id }}" name="activity"><option value="1.2">Düşük hareket</option><option value="1.375">Hafif aktif</option><option value="1.55">Orta aktif</option><option value="1.725">Çok aktif</option></select></div>
           <button class="vc-calculator__button" type="submit">Yaklaşık ihtiyacı hesapla</button>
-          <div class="vc-calculator__result" data-vc-calorie-result><span class="vc-calculator__number" data-vc-calorie-number></span><p class="vc-calculator__result-text" data-vc-calorie-text></p></div>
+          <div class="vc-calculator__result" data-vc-calorie-result>
+            <span class="vc-calculator__number" data-vc-calorie-number></span>
+            <p class="vc-calculator__result-text" data-vc-calorie-text></p>
+            <div class="vc-calculator__result-actions">
+              <a class="vc-tool-link" href="/pages/saglik-hesaplama-araclari#VitacoralTools-{{ section.id }}">Rutin rehberine geç</a>
+              <a class="vc-tool-link vc-tool-link--secondary" href="/collections/all">Ürünleri keşfet</a>
+            </div>
+          </div>
           <p class="vc-tool-note">{{ section.settings.calorie_note | escape }}</p>
         </form>
       </article>
@@ -67,11 +74,37 @@
           <div class="vc-routine-finder__result" data-vc-routine-result>
             <h3 class="vc-routine-finder__result-title" data-vc-routine-title></h3>
             <p class="vc-routine-finder__result-text" data-vc-routine-text></p>
-            <a class="vc-routine-finder__link" data-vc-routine-link href="/collections/all">Rutini incele</a>
+            <a class="vc-routine-finder__link" data-vc-routine-link href="/collections/all">Önerilen rutini incele</a>
           </div>
           <p class="vc-tool-note">{{ section.settings.routine_note | escape }}</p>
         </form>
       </article>
+    </div>
+
+    <div class="vc-tools-products">
+      <div class="vc-tools-products__head">
+        <div>
+          <p class="vc-tools-products__kicker">Ürün yolları</p>
+          <h2 class="vc-tools-products__title">Hesaplamadan sonra nereden başlamalı?</h2>
+        </div>
+      </div>
+      <div class="vc-tools-products__grid">
+        <a class="vc-tools-product" href="/pages/kadin-rutini">
+          <span class="vc-tools-product__label">Kadın rutini</span>
+          <h3 class="vc-tools-product__title">Women + Collagen</h3>
+          <p class="vc-tools-product__text">Günlük destek ve kolajen odağını birlikte değerlendirin.</p>
+        </a>
+        <a class="vc-tools-product" href="/pages/erkek-rutini">
+          <span class="vc-tools-product__label">Erkek rutini</span>
+          <h3 class="vc-tools-product__title">Men + Collagen</h3>
+          <p class="vc-tools-product__text">Günlük tempo ve aktif yaşam rutinini sadeleştirin.</p>
+        </a>
+        <a class="vc-tools-product" href="/collections/all">
+          <span class="vc-tools-product__label">Tüm ürünler</span>
+          <h3 class="vc-tools-product__title">Vitacoral ürün ailesi</h3>
+          <p class="vc-tools-product__text">İçerik, kullanım önerisi ve ürün detaylarını karşılaştırın.</p>
+        </a>
+      </div>
     </div>
   </div>
 </section>
