@@ -34,10 +34,10 @@
           <div class="vc-calculator__result" data-vc-calorie-result>
             <span class="vc-calculator__number" data-vc-calorie-number></span>
             <p class="vc-calculator__result-text" data-vc-calorie-text></p>
-            <div class="vc-calculator__result-actions">
-              <a class="vc-tool-link" href="/pages/saglik-hesaplama-araclari#VitacoralTools-{{ section.id }}">Rutin rehberine geç</a>
-              <a class="vc-tool-link vc-tool-link--secondary" href="/collections/all">Ürünleri keşfet</a>
-            </div>
+          </div>
+          <div class="vc-tool-card__cta-row">
+            <a class="vc-tool-link" href="/pages/saglik-hesaplama-araclari#VitacoralTools-{{ section.id }}">Rutin rehberine geç</a>
+            <a class="vc-tool-link vc-tool-link--secondary" href="/collections/all">Ürünleri keşfet</a>
           </div>
           <p class="vc-tool-note">{{ section.settings.calorie_note | escape }}</p>
         </form>
@@ -75,6 +75,10 @@
             <h3 class="vc-routine-finder__result-title" data-vc-routine-title></h3>
             <p class="vc-routine-finder__result-text" data-vc-routine-text></p>
             <a class="vc-routine-finder__link" data-vc-routine-link href="/collections/all">Önerilen rutini incele</a>
+          </div>
+          <div class="vc-tool-card__cta-row vc-tool-card__cta-row--dark">
+            <a class="vc-routine-finder__link" href="/pages/kadin-rutini">Kadın rutinini gör</a>
+            <a class="vc-routine-finder__link vc-routine-finder__link--ghost" href="/pages/erkek-rutini">Erkek rutinini gör</a>
           </div>
           <p class="vc-tool-note">{{ section.settings.routine_note | escape }}</p>
         </form>
