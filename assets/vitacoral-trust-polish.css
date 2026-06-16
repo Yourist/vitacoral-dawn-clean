@@ -1,0 +1,19 @@
+.vitacoral-trust{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#f8faf8 55%,#fff7f0 100%)}
+.vitacoral-trust:before{content:"";position:absolute;right:-15rem;top:8rem;width:40rem;height:40rem;border-radius:999px;background:radial-gradient(circle,rgba(34,89,82,.13),rgba(34,89,82,0) 70%);pointer-events:none}
+.vitacoral-trust:after{content:"";position:absolute;left:-14rem;bottom:2rem;width:34rem;height:34rem;border-radius:999px;background:radial-gradient(circle,rgba(225,117,61,.15),rgba(225,117,61,0) 70%);pointer-events:none}
+.vitacoral-trust .vitacoral-container{position:relative;z-index:1}
+.vitacoral-trust__layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:2.2rem;align-items:center}
+.vitacoral-trust__intro{position:sticky;top:9rem;align-self:start;max-width:55rem;padding:2rem;border-radius:3rem;background:rgba(255,255,255,.64);border:.1rem solid rgba(34,89,82,.08);box-shadow:0 1.8rem 4.6rem rgba(21,44,41,.06);backdrop-filter:blur(12px)}
+.vitacoral-trust__body{color:rgba(22,49,46,.68)}
+.vitacoral-trust__actions{margin-top:1.6rem}.vitacoral-trust__actions .vitacoral-button{border-radius:999px;min-height:4.8rem}
+.vitacoral-trust__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;counter-reset:trust-card}
+.vitacoral-trust__item{min-width:0}.vitacoral-trust__card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:22rem;padding:1.55rem;border-radius:2.6rem;background:rgba(255,255,255,.86);border:.1rem solid rgba(34,89,82,.1);box-shadow:0 1.6rem 4rem rgba(21,44,41,.07);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.vitacoral-trust__card:hover{transform:translateY(-.32rem);box-shadow:0 2.3rem 5.4rem rgba(21,44,41,.11);border-color:rgba(225,117,61,.22)}
+.vitacoral-trust__card:before{content:"";position:absolute;right:-5rem;top:-5rem;width:13rem;height:13rem;border-radius:999px;background:radial-gradient(circle,rgba(34,89,82,.12),rgba(34,89,82,0) 68%)}
+.vitacoral-trust__item--orange .vitacoral-trust__card:before{background:radial-gradient(circle,rgba(225,117,61,.18),rgba(225,117,61,0) 68%)}
+.vitacoral-trust__label{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:4.4rem;height:4.4rem;margin-bottom:auto;border-radius:1.5rem;background:#173531;color:#fff;font-weight:850;letter-spacing:-.04em;box-shadow:0 1rem 2rem rgba(21,44,41,.12)}
+.vitacoral-trust__item--orange .vitacoral-trust__label{background:#e1753d}.vitacoral-trust__item--soft .vitacoral-trust__label{background:rgba(34,89,82,.1);color:#225952;box-shadow:none}
+.vitacoral-trust__title{position:relative;z-index:1;margin:1.6rem 0 .75rem;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.15rem,2.8vw,3.25rem);font-weight:650;letter-spacing:-.055em;line-height:.96}
+.vitacoral-trust__text{position:relative;z-index:1;margin:0;color:rgba(22,49,46,.64);font-size:1.22rem;line-height:1.48}
+@media screen and (max-width:989px){.vitacoral-trust__layout{grid-template-columns:1fr}.vitacoral-trust__intro{position:relative;top:auto;max-width:none}.vitacoral-trust__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:749px){.vitacoral-trust__intro{padding:1.35rem;border-radius:2.4rem}.vitacoral-trust__grid{grid-template-columns:1fr}.vitacoral-trust__card{min-height:auto;border-radius:2.2rem;padding:1.25rem}.vitacoral-trust__label{width:3.8rem;height:3.8rem;border-radius:1.3rem}.vitacoral-trust__title{margin-top:1.2rem}}
