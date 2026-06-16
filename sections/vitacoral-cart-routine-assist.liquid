@@ -27,6 +27,14 @@
   assign secondary_label = section.settings.secondary_label
   assign secondary_link = section.settings.secondary_link
 
+  if primary_link == blank
+    assign primary_link = '/pages/kadin-gunluk-rutini'
+  endif
+
+  if secondary_link == blank
+    assign secondary_link = '/collections/all'
+  endif
+
   if has_collagen and has_women == false and has_men == false
     assign assist_title = 'Rutini tamamlayın'
     assign assist_body = 'Collagen seçiminizi günlük multivitamin rutiniyle birlikte değerlendirebilirsiniz. Kadın veya erkek rutinleri, ürünü günlük akış içinde düşünmenizi kolaylaştırır.'
@@ -104,9 +112,9 @@
     {"type":"text","id":"heading","label":"Başlık","default":"Rutininizi tamamlayın"},
     {"type":"textarea","id":"body","label":"Açıklama","default":"Sepetinizdeki ürünü günlük rutininiz içinde birlikte düşünebileceğiniz seçeneklerle tamamlayabilirsiniz."},
     {"type":"text","id":"primary_label","label":"Birincil CTA","default":"Rutinleri incele"},
-    {"type":"url","id":"primary_link","label":"Birincil link","default":"/pages/kadin-gunluk-rutini"},
+    {"type":"url","id":"primary_link","label":"Birincil link"},
     {"type":"text","id":"secondary_label","label":"İkincil CTA","default":"Tüm ürünler"},
-    {"type":"url","id":"secondary_link","label":"İkincil link","default":"/collections/all"}
+    {"type":"url","id":"secondary_link","label":"İkincil link"}
   ],
   "presets": [{"name":"Sepet rutin desteği"}]
 }
