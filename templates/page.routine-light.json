@@ -4,19 +4,19 @@
       "type": "vitacoral-routine-choice",
       "settings": {
         "eyebrow": "Hafif rutin",
-        "heading": "Hafif rutini size göre seçin",
-        "body": "<p>Glucomannan odağını kadın veya erkek multivitamin rutiniyle birlikte değerlendirin.</p>",
+        "heading": "Hafif rutininizi seçin",
+        "body": "<p>Glucomannan odağını kadın veya erkek multivitamin seçeneğiyle birlikte inceleyin.</p>",
         "women_label": "Kadın hafif rutini",
         "women_title": "Kadın hafif rutini",
-        "women_text": "Glucomannan + Women Multivitamin ikilisini daha sade ve planlı bir günlük akışta inceleyin.",
-        "women_cta": "Kadın rutinini keşfet",
+        "women_text": "Glucomannan ve Women Multivitamin seçeneklerini aynı akışta değerlendirin.",
+        "women_cta": "Kadın rutinini incele",
         "women_link": "/pages/kadin-hafif-rutini",
         "men_label": "Erkek hafif rutini",
         "men_title": "Erkek hafif rutini",
-        "men_text": "Glucomannan + Men Multivitamin ikilisini günlük tempo ve lif odağıyla birlikte değerlendirin.",
-        "men_cta": "Erkek rutinini keşfet",
+        "men_text": "Glucomannan ve Men Multivitamin seçeneklerini aynı akışta değerlendirin.",
+        "men_cta": "Erkek rutinini incele",
         "men_link": "/pages/erkek-hafif-rutini",
-        "note": "Ürünleri kullanmadan önce her ürünün içerik, kullanım önerisi ve uyarı bilgilerini ürün sayfasından kontrol edin."
+        "note": "Karar vermeden önce her ürünün içerik, kullanım önerisi ve uyarı bilgilerini kontrol edin."
       }
     }
   },
