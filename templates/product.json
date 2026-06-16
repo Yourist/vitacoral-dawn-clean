@@ -126,6 +126,14 @@
         "padding_bottom": 12
       }
     },
+    "vitacoral_pdp_decision_guide": {
+      "type": "vitacoral-pdp-decision-guide",
+      "settings": {
+        "eyebrow": "Ürün rehberi",
+        "heading": "Bu ürünü seçmeden önce",
+        "body": "Ürünü, içerik bilgisi ve günlük rutininizle birlikte değerlendirin."
+      }
+    },
     "vitacoral_product_story": {
       "type": "vitacoral-product-story",
       "blocks": {
@@ -207,6 +215,7 @@
   },
   "order": [
     "main",
+    "vitacoral_pdp_decision_guide",
     "vitacoral_product_story",
     "related-products"
   ]
