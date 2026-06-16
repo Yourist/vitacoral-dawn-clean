@@ -130,7 +130,7 @@
       "type": "vitacoral-pdp-decision-guide",
       "settings": {
         "eyebrow": "Ürün rehberi",
-        "heading": "Bu ürünü seçmeden önce",
+        "heading": "Seçmeden önce",
         "body": "Ürünü, içerik bilgisi ve günlük rutininizle birlikte değerlendirin."
       }
     },
@@ -141,7 +141,7 @@
           "type": "story_card",
           "settings": {
             "badge": "01",
-            "title": "İçeriği daha rahat okuyun",
+            "title": "İçeriği okuyun",
             "body": "<p>Ürün içeriğini, kullanım önerisini ve uyarı bilgilerini aynı karar akışında değerlendirin.</p>",
             "link_label": "",
             "link_url": ""
@@ -151,7 +151,7 @@
           "type": "story_card",
           "settings": {
             "badge": "02",
-            "title": "Rutininize uygun düşünün",
+            "title": "Rutininize bakın",
             "body": "<p>Ürünü tek başına değil, günlük alışkanlıklarınızla birlikte inceleyin.</p>",
             "link_label": "",
             "link_url": ""
@@ -171,7 +171,7 @@
           "type": "story_card",
           "settings": {
             "badge": "04",
-            "title": "Doğru kanaldan ilerleyin",
+            "title": "Doğru kanaldan alın",
             "body": "<p>Vitacoral ürünlerine güvenli ve anlaşılır bir alışveriş akışıyla ulaşmanız bizim için önemlidir.</p>",
             "link_label": "",
             "link_url": ""
@@ -186,7 +186,7 @@
       ],
       "settings": {
         "eyebrow": "Vitacoral yaklaşımı",
-        "heading": "Ürünü seçmeden önce bilginizi netleştirin",
+        "heading": "Bilginizi netleştirin",
         "body": "<p>Takviye seçimi bazen karışık olabilir. İçerik, kullanım ve belge bilgilerini sade bir akışta sunarak kararınızı destekleriz.</p>",
         "primary_cta_label": "Ürün belgelerini incele",
         "primary_cta_link": "/pages/kalite-sertifikalari",
