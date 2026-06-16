@@ -1,21 +1,151 @@
 {%- liquid
-  assign title = product.metafields.custom.pdp_world_title.value | default: 'Ürün dünyası'
-  assign intro = product.metafields.custom.pdp_world_intro.value | default: 'Ürünü formu, içeriği ve rutindeki yeriyle birlikte değerlendirin.'
-  assign note_title = product.metafields.custom.pdp_note_title.value | default: 'İçerik notu'
-  assign note_text = product.metafields.custom.pdp_ingredient_note.value | default: 'İçerik bilgisini ve kullanım önerisini birlikte okuyun.'
-  assign note_more = product.metafields.custom.pdp_ingredient_more.value | default: ''
-  assign routine_title = product.metafields.custom.pdp_routine_title.value | default: 'Rutin fikri'
-  assign routine_text = product.metafields.custom.pdp_routine_note.value | default: 'Ürünü günlük alışkanlıklarınızla birlikte düşünün.'
-  assign next_title = product.metafields.custom.pdp_next_title.value | default: 'Sonraki adım'
-  assign next_text = product.metafields.custom.pdp_next_step.value | default: 'Karar vermeden önce kullanım ve uyarı bilgilerini kontrol edin.'
-  assign pill_1 = product.metafields.custom.pdp_pill_1.value | default: 'İçerik'
-  assign pill_2 = product.metafields.custom.pdp_pill_2.value | default: 'Kullanım'
-  assign pill_3 = product.metafields.custom.pdp_pill_3.value | default: 'Uyarılar'
-  assign micro_1 = product.metafields.custom.pdp_micro_1.value | default: ''
-  assign micro_2 = product.metafields.custom.pdp_micro_2.value | default: ''
-  assign micro_3 = product.metafields.custom.pdp_micro_3.value | default: ''
-  assign cta_label = product.metafields.custom.pdp_cta_label.value | default: 'Ürünleri gör'
-  assign cta_link = product.metafields.custom.pdp_cta_link.value | default: '/collections/all'
+  assign title = 'Ürün dünyası'
+  assign intro = 'Ürünü formu, içeriği ve rutindeki yeriyle birlikte değerlendirin.'
+  assign note_title = 'İçerik notu'
+  assign note_text = 'İçerik bilgisini ve kullanım önerisini birlikte okuyun.'
+  assign note_more = ''
+  assign routine_title = 'Rutin fikri'
+  assign routine_text = 'Ürünü günlük alışkanlıklarınızla birlikte düşünün.'
+  assign next_title = 'Sonraki adım'
+  assign next_text = 'Karar vermeden önce kullanım ve uyarı bilgilerini kontrol edin.'
+  assign pill_1 = 'İçerik'
+  assign pill_2 = 'Kullanım'
+  assign pill_3 = 'Uyarılar'
+  assign micro_1 = ''
+  assign micro_2 = ''
+  assign micro_3 = ''
+  assign cta_label = 'Ürünleri gör'
+  assign cta_link = '/collections/all'
+
+  case product.handle
+    when 'collagen-30-sase'
+      assign title = 'Collagen rutini'
+      assign intro = 'Tip 1-2-3 hidrolize kolajen, Beauty Blend ve 30 saşelik pratik formu birlikte sunar.'
+      assign note_text = 'Bir saşede Tip 1, Tip 2 ve Tip 3 hidrolize kolajen birlikte yer alır. Formül; C Vitamini, Hyaluronik Asit, Alfa Lipoik Asit, Glutatyon, Çinko, Koenzim Q10, E Vitamini, B vitaminleri, Bakır, Biotin ve Selenyum ile birlikte değerlendirilir.'
+      assign note_more = 'Beauty Blend tarafında Hyaluronic Acid, Alpha-Lipoic Acid, Coenzyme Q10 ve Vitamin C öne çıkar. Limon aromalı saşe form, porsiyon takibini kolaylaştırır.'
+      assign routine_text = '30 saşelik yapı, günlük kullanım düzeninizi takip etmeyi kolaylaştırır. Ürünü tek başına veya Women / Men rutini içinde değerlendirebilirsiniz.'
+      assign next_text = 'Kolajen seçimini günlük multivitamin rutininizle birlikte düşünmek isterseniz ilgili rutin sayfasını inceleyin.'
+      assign pill_1 = 'Tip 1-2-3'
+      assign pill_2 = 'Beauty Blend'
+      assign pill_3 = '30 saşe'
+      assign micro_1 = 'C Vitamini'
+      assign micro_2 = 'Hyaluronik Asit'
+      assign micro_3 = 'Koenzim Q10'
+      assign cta_label = 'Rutini incele'
+      assign cta_link = '/pages/kadin-gunluk-rutini'
+    when 'multivitamin-for-women'
+      assign title = 'Kadın rutini'
+      assign intro = '11 vitamin, 8 mineral, Quali-C ve Premium Women Blend ile kadın günlük rutinine odaklanır.'
+      assign note_text = 'Formülde 11 vitamin ve 8 mineral bulunur. Quali-C patentli C vitamini ve Premium Women Blend, bu ürünü standart multivitamin bilgisinin ötesinde konumlandırır.'
+      assign note_more = 'Premium Women Blend; Lutein, Likopen, Yaban Mersini ve Alfa-Lipoik Asit içerikleriyle kadın günlük rutininde ayrı bir içerik odağı sunar.'
+      assign routine_text = 'Günlük multivitamin seçimini sadeleştirmek ve Collagen ile birlikte düşünmek isteyenler için uygun bir başlangıç noktasıdır.'
+      assign next_text = 'Women ürününü Collagen ile birlikte değerlendirmek isterseniz kadın günlük rutini sayfasını inceleyin.'
+      assign pill_1 = '11 vitamin'
+      assign pill_2 = '8 mineral'
+      assign pill_3 = 'Women Blend'
+      assign micro_1 = 'Quali-C'
+      assign micro_2 = 'Lutein'
+      assign micro_3 = 'Yaban Mersini'
+      assign cta_label = 'Rutini incele'
+      assign cta_link = '/pages/kadin-gunluk-rutini'
+    when 'multivitamin-for-men'
+      assign title = 'Erkek rutini'
+      assign intro = '11 vitamin, 8 mineral, Quali-C ve Premium Men Blend ile erkek günlük rutinine odaklanır.'
+      assign note_text = 'Formülde 11 vitamin ve 8 mineral bulunur. Quali-C patentli C vitamini ve Premium Men Blend, erkek günlük multivitamin seçimini daha net okumanıza yardımcı olur.'
+      assign note_more = 'Premium Men Blend; Lutein, Likopen, Isırgan Otu, Cüce Palmiye ve Beta-Glukan içerikleriyle erkek rutinine özel bir içerik çerçevesi sunar.'
+      assign routine_text = 'Günlük multivitamin seçimini sadeleştirmek ve Collagen ile birlikte düşünmek isteyenler için uygun bir başlangıç noktasıdır.'
+      assign next_text = 'Men ürününü Collagen ile birlikte değerlendirmek isterseniz erkek günlük rutini sayfasını inceleyin.'
+      assign pill_1 = '11 vitamin'
+      assign pill_2 = '8 mineral'
+      assign pill_3 = 'Men Blend'
+      assign micro_1 = 'Quali-C'
+      assign micro_2 = 'Isırgan Otu'
+      assign micro_3 = 'Beta-Glukan'
+      assign cta_label = 'Rutini incele'
+      assign cta_link = '/pages/erkek-gunluk-rutini'
+    when 'multivitamin-for-kids'
+      assign title = 'Kids seçimi'
+      assign intro = '13 vitamin, 10 mineral, Norveç balık yağı ve EPA/DHA içeriğiyle ebeveyn kararına odaklanır.'
+      assign note_text = 'Formülde 13 vitamin, 10 mineral ve balık yağı bulunur. Balık yağı içeriği IFOS onaylı, Halal sertifikalı ve Norveç menşei olarak belirtilir.'
+      assign note_more = 'EPA/DHA içeriği, doğal çilek aroması ve şekersiz form bilgisi ebeveynlerin ürün seçimini daha net değerlendirmesine yardımcı olur.'
+      assign routine_text = 'Çocuk ürünlerinde yaş, kullanım önerisi ve uyarı bilgileri kararın önemli parçasıdır. Ürün ebeveyn kontrolünde değerlendirilmelidir.'
+      assign next_text = 'Kids ürününü aile rutini içinde Women ve Men ürünleriyle birlikte inceleyebilirsiniz.'
+      assign pill_1 = '13 vitamin'
+      assign pill_2 = 'EPA / DHA'
+      assign pill_3 = 'Şekersiz'
+      assign micro_1 = '10 mineral'
+      assign micro_2 = 'Norveç yağı'
+      assign micro_3 = 'Çilek aroma'
+      assign cta_label = 'Aile rutini'
+      assign cta_link = '/pages/aile-gunluk-rutini'
+    when 'vitacoral-glucomannan-60-sase'
+      assign title = 'Lif odağı'
+      assign intro = 'Konjac kaynaklı glucomannan, vanilya aromalı saşe form ve 60 saşelik kullanım düzeniyle öne çıkar.'
+      assign note_text = 'Glucomannan, konjac bitkisinden elde edilen çözünür lif odağıdır. Ürün, lif içeriğini saşe formunda değerlendirmek isteyenler için konumlanır.'
+      assign note_more = 'Bu üründe içerik kadar kullanım önerisi, su tüketimi ve uyarı bilgileri de önemlidir. Karar vermeden önce etiket bilgisini dikkatle okuyun.'
+      assign routine_text = 'Hafif rutin içinde, günlük düzeninize ve kullanım önerilerine uygunluğunu değerlendirmeniz için hazırlanmıştır.'
+      assign next_text = 'Glucomannan ürününü hafif rutin seçenekleri içinde inceleyebilirsiniz.'
+      assign pill_1 = 'Konjac lif'
+      assign pill_2 = '60 saşe'
+      assign pill_3 = 'Vanilya'
+      assign micro_1 = 'Çözünür lif'
+      assign micro_2 = 'Su uyarısı'
+      assign micro_3 = 'Etiket önemli'
+      assign cta_label = 'Rutini incele'
+      assign cta_link = '/pages/hafif-rutin'
+  endcase
+
+  if product.metafields.custom.pdp_world_title != blank
+    assign title = product.metafields.custom.pdp_world_title.value
+  endif
+  if product.metafields.custom.pdp_world_intro != blank
+    assign intro = product.metafields.custom.pdp_world_intro.value
+  endif
+  if product.metafields.custom.pdp_note_title != blank
+    assign note_title = product.metafields.custom.pdp_note_title.value
+  endif
+  if product.metafields.custom.pdp_ingredient_note != blank
+    assign note_text = product.metafields.custom.pdp_ingredient_note.value
+  endif
+  if product.metafields.custom.pdp_ingredient_more != blank
+    assign note_more = product.metafields.custom.pdp_ingredient_more.value
+  endif
+  if product.metafields.custom.pdp_routine_title != blank
+    assign routine_title = product.metafields.custom.pdp_routine_title.value
+  endif
+  if product.metafields.custom.pdp_routine_note != blank
+    assign routine_text = product.metafields.custom.pdp_routine_note.value
+  endif
+  if product.metafields.custom.pdp_next_title != blank
+    assign next_title = product.metafields.custom.pdp_next_title.value
+  endif
+  if product.metafields.custom.pdp_next_step != blank
+    assign next_text = product.metafields.custom.pdp_next_step.value
+  endif
+  if product.metafields.custom.pdp_pill_1 != blank
+    assign pill_1 = product.metafields.custom.pdp_pill_1.value
+  endif
+  if product.metafields.custom.pdp_pill_2 != blank
+    assign pill_2 = product.metafields.custom.pdp_pill_2.value
+  endif
+  if product.metafields.custom.pdp_pill_3 != blank
+    assign pill_3 = product.metafields.custom.pdp_pill_3.value
+  endif
+  if product.metafields.custom.pdp_micro_1 != blank
+    assign micro_1 = product.metafields.custom.pdp_micro_1.value
+  endif
+  if product.metafields.custom.pdp_micro_2 != blank
+    assign micro_2 = product.metafields.custom.pdp_micro_2.value
+  endif
+  if product.metafields.custom.pdp_micro_3 != blank
+    assign micro_3 = product.metafields.custom.pdp_micro_3.value
+  endif
+  if product.metafields.custom.pdp_cta_label != blank
+    assign cta_label = product.metafields.custom.pdp_cta_label.value
+  endif
+  if product.metafields.custom.pdp_cta_link != blank
+    assign cta_link = product.metafields.custom.pdp_cta_link.value
+  endif
 -%}
 
 <section class="vc-pdp-world" id="VCProductWorld-{{ section.id }}">
