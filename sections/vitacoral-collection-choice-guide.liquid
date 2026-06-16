@@ -20,24 +20,33 @@
         {%- endif -%}
         <h2>{{ section.settings.heading | escape }}</h2>
         <p>{{ section.settings.body | escape }}</p>
+        <div class="vc-collection-guide__chips" aria-label="Karar alanları">
+          <span>İçerik</span>
+          <span>Kullanım</span>
+          <span>Rutin uyumu</span>
+        </div>
       </div>
 
       <div class="vc-collection-guide__cards" aria-label="Ürün seçim alanları">
         <a class="vc-collection-guide__card" href="/products/collagen-30-sase">
           <span>Collagen</span>
-          <small>Beauty rutini</small>
+          <small>Beauty rutini ve içerik odağı</small>
         </a>
         <a class="vc-collection-guide__card" href="/pages/kadin-gunluk-rutini">
           <span>Women</span>
-          <small>Günlük destek</small>
+          <small>Kadın günlük rutini</small>
         </a>
         <a class="vc-collection-guide__card" href="/pages/erkek-gunluk-rutini">
           <span>Men</span>
-          <small>Günlük destek</small>
+          <small>Erkek günlük rutini</small>
         </a>
         <a class="vc-collection-guide__card" href="/pages/aile-gunluk-rutini">
           <span>Kids</span>
-          <small>Aile rutini</small>
+          <small>Ebeveyn kontrolünde</small>
+        </a>
+        <a class="vc-collection-guide__card vc-collection-guide__card--wide" href="/products/vitacoral-glucomannan-60-sase">
+          <span>Glucomannan</span>
+          <small>Lif odağı ve etiket kontrolü</small>
         </a>
       </div>
 
@@ -50,7 +59,7 @@
 </section>
 
 <style>
-  .vc-collection-guide{padding:0 0 1.4rem;background:linear-gradient(180deg,rgba(247,250,249,.74),rgba(255,255,255,.98))}.vc-collection-guide__shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(28rem,.95fr);gap:1.25rem;align-items:center;padding:1.35rem;border:.1rem solid rgba(34,89,82,.12);border-radius:2rem;background:radial-gradient(circle at 95% 0%,rgba(208,168,94,.22),transparent 30%),#fff;box-shadow:0 1rem 2.4rem rgba(21,44,41,.055)}.vc-collection-guide__eyebrow{margin:0 0 .4rem;color:#d0a85e;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.92rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.vc-collection-guide h2{margin:0;color:var(--vitacoral-color-text,#16312e);font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2rem,3.2vw,3rem);font-weight:650;letter-spacing:-.045em;line-height:1.05}.vc-collection-guide p{max-width:58rem;margin:.62rem 0 0;color:rgba(22,49,46,.72);font-family:var(--vitacoral-font-body,"Manrope",Arial,sans-serif);font-size:1.08rem;line-height:1.5}.vc-collection-guide__cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.vc-collection-guide__card{display:grid;gap:.2rem;min-height:6.2rem;padding:.9rem 1rem;border:.1rem solid rgba(34,89,82,.1);border-radius:1.35rem;background:linear-gradient(180deg,rgba(247,250,249,.95),#fff);color:var(--vitacoral-color-text,#16312e);text-decoration:none;box-shadow:0 .55rem 1.2rem rgba(21,44,41,.04)}.vc-collection-guide__card span{font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.16rem;font-weight:950;line-height:1.1}.vc-collection-guide__card small{color:rgba(22,49,46,.62);font-family:var(--vitacoral-font-body,"Manrope",Arial,sans-serif);font-size:.92rem;line-height:1.25}.vc-collection-guide__actions{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.55rem}.vc-collection-guide__primary,.vc-collection-guide__secondary{display:inline-flex;align-items:center;justify-content:center;min-height:3.85rem;padding:.8rem 1rem;border-radius:999px;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:900;text-decoration:none}.vc-collection-guide__primary{background:#225952;color:#fff}.vc-collection-guide__secondary{border:.1rem solid rgba(34,89,82,.18);background:rgba(34,89,82,.06);color:#225952}@media screen and (max-width:749px){.vc-collection-guide{padding:0 0 1rem}.vc-collection-guide .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-collection-guide__shell{grid-template-columns:1fr;gap:1rem;padding:1.05rem;border-radius:1.45rem}.vc-collection-guide h2{font-size:2.05rem}.vc-collection-guide p{font-size:.98rem;line-height:1.45}.vc-collection-guide__cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}.vc-collection-guide__card{min-height:5.5rem;padding:.78rem .82rem;border-radius:1.12rem}.vc-collection-guide__card span{font-size:1.02rem}.vc-collection-guide__card small{font-size:.82rem}.vc-collection-guide__primary,.vc-collection-guide__secondary{min-height:3.45rem;padding:.72rem .9rem;font-size:.92rem}}
+  .vc-collection-guide{padding:0 0 1.4rem;background:linear-gradient(180deg,rgba(247,250,249,.74),rgba(255,255,255,.98))}.vc-collection-guide__shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(28rem,.9fr);gap:1.35rem;align-items:center;padding:1.45rem;border:.1rem solid rgba(34,89,82,.12);border-radius:2rem;background:radial-gradient(circle at 95% 0%,rgba(208,168,94,.24),transparent 30%),linear-gradient(180deg,#fff,rgba(248,250,249,.96));box-shadow:0 1rem 2.4rem rgba(21,44,41,.055)}.vc-collection-guide__eyebrow{margin:0 0 .4rem;color:#d0a85e;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.92rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.vc-collection-guide h2{max-width:48rem;margin:0;color:var(--vitacoral-color-text,#16312e);font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.1rem,3.4vw,3.15rem);font-weight:650;letter-spacing:-.045em;line-height:1.05}.vc-collection-guide p{max-width:56rem;margin:.62rem 0 0;color:rgba(22,49,46,.72);font-family:var(--vitacoral-font-body,"Manrope",Arial,sans-serif);font-size:1.08rem;line-height:1.5}.vc-collection-guide__chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.95rem}.vc-collection-guide__chips span{display:inline-flex;align-items:center;min-height:2.45rem;padding:.42rem .7rem;border:.1rem solid rgba(34,89,82,.12);border-radius:999px;background:rgba(34,89,82,.055);color:var(--vitacoral-color-primary-deep,#163d38);font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.86rem;font-weight:900}.vc-collection-guide__cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}.vc-collection-guide__card{position:relative;display:grid;gap:.28rem;min-height:6.45rem;padding:.95rem 1rem;border:.1rem solid rgba(34,89,82,.11);border-radius:1.35rem;background:linear-gradient(180deg,rgba(247,250,249,.96),#fff);color:var(--vitacoral-color-text,#16312e);text-decoration:none;box-shadow:0 .55rem 1.2rem rgba(21,44,41,.04);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.vc-collection-guide__card:hover{transform:translateY(-.12rem);border-color:rgba(208,168,94,.38);box-shadow:0 .8rem 1.8rem rgba(21,44,41,.07)}.vc-collection-guide__card--wide{grid-column:1 / -1;min-height:5.6rem}.vc-collection-guide__card span{font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1.16rem;font-weight:950;line-height:1.1}.vc-collection-guide__card small{max-width:20rem;color:rgba(22,49,46,.62);font-family:var(--vitacoral-font-body,"Manrope",Arial,sans-serif);font-size:.92rem;line-height:1.25}.vc-collection-guide__actions{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:.55rem}.vc-collection-guide__primary,.vc-collection-guide__secondary{display:inline-flex;align-items:center;justify-content:center;min-height:3.85rem;padding:.8rem 1rem;border-radius:999px;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:900;text-decoration:none}.vc-collection-guide__primary{background:#225952;color:#fff}.vc-collection-guide__secondary{border:.1rem solid rgba(34,89,82,.18);background:rgba(34,89,82,.06);color:#225952}@media screen and (max-width:749px){.vc-collection-guide{padding:0 0 1rem}.vc-collection-guide .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-collection-guide__shell{grid-template-columns:1fr;gap:1rem;padding:1.05rem;border-radius:1.45rem}.vc-collection-guide h2{font-size:2.08rem}.vc-collection-guide p{font-size:.98rem;line-height:1.45}.vc-collection-guide__chips{gap:.38rem;margin-top:.8rem}.vc-collection-guide__chips span{min-height:2.2rem;padding:.34rem .58rem;font-size:.78rem}.vc-collection-guide__cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}.vc-collection-guide__card{min-height:5.7rem;padding:.78rem .82rem;border-radius:1.12rem}.vc-collection-guide__card--wide{min-height:5.1rem}.vc-collection-guide__card span{font-size:1.02rem}.vc-collection-guide__card small{font-size:.82rem}.vc-collection-guide__primary,.vc-collection-guide__secondary{min-height:3.45rem;padding:.72rem .9rem;font-size:.92rem}}
 </style>
 
 {% schema %}
