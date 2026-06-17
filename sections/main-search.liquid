@@ -136,6 +136,14 @@
           </predictive-search>
         {%- endif -%}
       </div>
+      <nav class="vc-search__suggestions" aria-label="Popüler aramalar">
+        <span>Popüler:</span>
+        <a href="{{ routes.search_url }}?q=collagen&options%5Bprefix%5D=last">Collagen</a>
+        <a href="{{ routes.search_url }}?q=women&options%5Bprefix%5D=last">Women</a>
+        <a href="{{ routes.search_url }}?q=men&options%5Bprefix%5D=last">Men</a>
+        <a href="{{ routes.search_url }}?q=kids&options%5Bprefix%5D=last">Kids</a>
+        <a href="{{ routes.search_url }}?q=glucomannan&options%5Bprefix%5D=last">Glucomannan</a>
+      </nav>
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
           {%- if search.results_count > 0 -%}
