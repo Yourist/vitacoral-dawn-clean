@@ -1,0 +1,68 @@
+@media screen and (max-width: 749px) {
+  .vc-collection .facets-wrapper,
+  .vc-collection .facets-container,
+  .vc-collection .mobile-facets__wrapper,
+  .vc-collection .mobile-facets__open-wrapper {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .vc-collection .facets-wrapper {
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .vc-collection .facets-container,
+  .vc-collection .mobile-facets__wrapper,
+  .vc-collection .mobile-facets__open-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .vc-collection .mobile-facets__open {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 3.8rem !important;
+    padding: 0.55rem 1rem !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: var(--vitacoral-color-primary-deep, #163d38) !important;
+    font-family: var(--vitacoral-font-ui, "Manrope", Arial, sans-serif) !important;
+    font-size: 1.22rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.01em !important;
+    text-decoration: underline !important;
+    text-underline-offset: 0.35rem !important;
+  }
+
+  .vc-collection .mobile-facets__open::before,
+  .vc-collection .mobile-facets__open::after,
+  .vc-collection .mobile-facets__open-wrapper::before,
+  .vc-collection .mobile-facets__open-wrapper::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .vc-collection .mobile-facets__open .svg-wrapper {
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    margin-right: 0.55rem !important;
+    color: var(--vitacoral-color-primary, #225952) !important;
+  }
+
+  .vc-collection .mobile-facets__open-label {
+    white-space: nowrap !important;
+  }
+
+  .vc-collection .mobile-facets__open:hover,
+  .vc-collection .mobile-facets__open:focus-visible {
+    color: var(--vitacoral-color-primary, #225952) !important;
+    outline: none !important;
+  }
+}
