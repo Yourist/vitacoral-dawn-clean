@@ -7,4 +7,352 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{"sections":{"raw_documents":{"type":"vitacoral-document-hub","blocks":{"vitamin_a":{"type":"document_card","settings":{"category":"Vitamin","title":"A Vitamini Sertifikası","body":"<p>A vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"alfa_lipoik_asit":{"type":"document_card","settings":{"category":"Aktif içerik","title":"Alfa Lipoik Asit Sertifikası","body":"<p>Alfa lipoik asit hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"askorbik_asit":{"type":"document_card","settings":{"category":"Vitamin","title":"Askorbik Asit Sertifikası","body":"<p>C vitamini / askorbik asit hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"balik_yagi":{"type":"document_card","settings":{"category":"Omega","title":"Balık Yağı Sertifikası","body":"<p>Balık yağı hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"b1":{"type":"document_card","settings":{"category":"B vitaminleri","title":"B1 Vitamini Sertifikası","body":"<p>B1 vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"b2":{"type":"document_card","settings":{"category":"B vitaminleri","title":"B2 Vitamini Sertifikası","body":"<p>B2 vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"b3":{"type":"document_card","settings":{"category":"B vitaminleri","title":"B3 Vitamini Sertifikası","body":"<p>B3 vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"b6":{"type":"document_card","settings":{"category":"B vitaminleri","title":"B6 Vitamini Sertifikası","body":"<p>B6 vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"b12":{"type":"document_card","settings":{"category":"B vitaminleri","title":"B12 Sertifikası","body":"<p>B12 vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"bakir":{"type":"document_card","settings":{"category":"Mineral","title":"Bakır Sertifikası","body":"<p>Bakır hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"beta_glukan":{"type":"document_card","settings":{"category":"Aktif içerik","title":"Beta Glukan Sertifikası","body":"<p>Beta glukan hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"biotin":{"type":"document_card","settings":{"category":"Vitamin","title":"Biotin Sertifikası","body":"<p>Biotin hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"cinko":{"type":"document_card","settings":{"category":"Mineral","title":"Çinko Sertifikası","body":"<p>Çinko hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"cuce_palmiye":{"type":"document_card","settings":{"category":"Bitkisel içerik","title":"Cüce Palmiye Sertifikası","body":"<p>Cüce palmiye hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"d_vitamini":{"type":"document_card","settings":{"category":"Vitamin","title":"D Vitamini Sertifikası","body":"<p>D vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"e_vitamini":{"type":"document_card","settings":{"category":"Vitamin","title":"E Vitamini Sertifikası","body":"<p>E vitamini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"folik_asit":{"type":"document_card","settings":{"category":"Vitamin","title":"Folik Asit Sertifikası","body":"<p>Folik asit hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"glucomannan":{"type":"document_card","settings":{"category":"Lif","title":"Glucomannan Sertifikası","body":"<p>Glucomannan hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"glutatyon":{"type":"document_card","settings":{"category":"Aktif içerik","title":"Glutatyon Sertifikası","body":"<p>Glutatyon hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"isirgan_otu":{"type":"document_card","settings":{"category":"Bitkisel içerik","title":"Isırgan Otu Sertifikası","body":"<p>Isırgan otu hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"kalsiyum":{"type":"document_card","settings":{"category":"Mineral","title":"Kalsiyum Sertifikası","body":"<p>Kalsiyum hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"koenzim_q10":{"type":"document_card","settings":{"category":"Aktif içerik","title":"Koenzim Q10 Sertifikası","body":"<p>Koenzim Q10 hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"kolajen":{"type":"document_card","settings":{"category":"Kolajen","title":"Kolajen Sertifikası","body":"<p>Kolajen hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"krom":{"type":"document_card","settings":{"category":"Mineral","title":"Krom Sertifikası","body":"<p>Krom hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"likopen":{"type":"document_card","settings":{"category":"Karotenoid","title":"Likopen Sertifikası","body":"<p>Likopen hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"lutein":{"type":"document_card","settings":{"category":"Karotenoid","title":"Lutein Sertifikası","body":"<p>Lutein hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"magnezyum":{"type":"document_card","settings":{"category":"Mineral","title":"Magnezyum Sertifikası","body":"<p>Magnezyum hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"molibdenum":{"type":"document_card","settings":{"category":"Mineral","title":"Molibdenum Sertifikası","body":"<p>Molibdenum hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"selenyum":{"type":"document_card","settings":{"category":"Mineral","title":"Selenyum Sertifikası","body":"<p>Selenyum hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}},"yaban_mersini":{"type":"document_card","settings":{"category":"Bitkisel içerik","title":"Yaban Mersini Sertifikası","body":"<p>Yaban mersini hammaddesine ait sertifika dosyası.</p>","file_link":"","link_label":"Belgeyi aç"}}},"block_order":["vitamin_a","alfa_lipoik_asit","askorbik_asit","balik_yagi","b1","b2","b3","b6","b12","bakir","beta_glukan","biotin","cinko","cuce_palmiye","d_vitamini","e_vitamini","folik_asit","glucomannan","glutatyon","isirgan_otu","kalsiyum","koenzim_q10","kolajen","krom","likopen","lutein","magnezyum","molibdenum","selenyum","yaban_mersini"],"settings":{"eyebrow":"Hammadde sertifikaları","heading":"Hammadde sertifika arşivi","body":"<p>Vitacoral ürünlerinde kullanılan hammaddelere ait sertifikaları bu sayfadan içerik bazında inceleyebilirsiniz. Her kart ilgili hammadde sertifikasına bağlanacak şekilde hazırlanmıştır.</p>"}}},"order":["raw_documents"]}
+{
+  "sections": {
+    "raw_documents": {
+      "type": "vitacoral-document-hub",
+      "blocks": {
+        "vitamin_a": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "A Vitamini Sertifikası",
+            "body": "<p>A vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/vItamIn_a_palmItate_500.000_iu_066730db-64de-494a-b8bb-52ec58a41aca.pdf?v=1781694481",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "alfa_lipoik_asit": {
+          "type": "document_card",
+          "settings": {
+            "category": "Aktif içerik",
+            "title": "Alfa Lipoik Asit Sertifikası",
+            "body": "<p>Alfa lipoik asit hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "askorbik_asit": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "Askorbik Asit Sertifikası",
+            "body": "<p>C vitamini / askorbik asit hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "balik_yagi": {
+          "type": "document_card",
+          "settings": {
+            "category": "Omega",
+            "title": "Balık Yağı Sertifikası",
+            "body": "<p>Balık yağı hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "b1": {
+          "type": "document_card",
+          "settings": {
+            "category": "B vitaminleri",
+            "title": "B1 Vitamini Sertifikası",
+            "body": "<p>B1 vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "b2": {
+          "type": "document_card",
+          "settings": {
+            "category": "B vitaminleri",
+            "title": "B2 Vitamini Sertifikası",
+            "body": "<p>B2 vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "b3": {
+          "type": "document_card",
+          "settings": {
+            "category": "B vitaminleri",
+            "title": "B3 Vitamini Sertifikası",
+            "body": "<p>B3 vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "b6": {
+          "type": "document_card",
+          "settings": {
+            "category": "B vitaminleri",
+            "title": "B6 Vitamini Sertifikası",
+            "body": "<p>B6 vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "b12": {
+          "type": "document_card",
+          "settings": {
+            "category": "B vitaminleri",
+            "title": "B12 Sertifikası",
+            "body": "<p>B12 vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "bakir": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Bakır Sertifikası",
+            "body": "<p>Bakır hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "beta_glukan": {
+          "type": "document_card",
+          "settings": {
+            "category": "Aktif içerik",
+            "title": "Beta Glukan Sertifikası",
+            "body": "<p>Beta glukan hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "biotin": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "Biotin Sertifikası",
+            "body": "<p>Biotin hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "cinko": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Çinko Sertifikası",
+            "body": "<p>Çinko hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "cuce_palmiye": {
+          "type": "document_card",
+          "settings": {
+            "category": "Bitkisel içerik",
+            "title": "Cüce Palmiye Sertifikası",
+            "body": "<p>Cüce palmiye hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "d_vitamini": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "D Vitamini Sertifikası",
+            "body": "<p>D vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "e_vitamini": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "E Vitamini Sertifikası",
+            "body": "<p>E vitamini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/vItamIn_e_50_61353a83-4974-4159-9023-3ed398af2ed6.pdf?v=1781693981",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "folik_asit": {
+          "type": "document_card",
+          "settings": {
+            "category": "Vitamin",
+            "title": "Folik Asit Sertifikası",
+            "body": "<p>Folik asit hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "glucomannan": {
+          "type": "document_card",
+          "settings": {
+            "category": "Lif",
+            "title": "Glucomannan Sertifikası",
+            "body": "<p>Glucomannan hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "glutatyon": {
+          "type": "document_card",
+          "settings": {
+            "category": "Aktif içerik",
+            "title": "Glutatyon Sertifikası",
+            "body": "<p>Glutatyon hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "isirgan_otu": {
+          "type": "document_card",
+          "settings": {
+            "category": "Bitkisel içerik",
+            "title": "Isırgan Otu Sertifikası",
+            "body": "<p>Isırgan otu hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "kalsiyum": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Kalsiyum Sertifikası",
+            "body": "<p>Kalsiyum hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "koenzim_q10": {
+          "type": "document_card",
+          "settings": {
+            "category": "Aktif içerik",
+            "title": "Koenzim Q10 Sertifikası",
+            "body": "<p>Koenzim Q10 hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "kolajen": {
+          "type": "document_card",
+          "settings": {
+            "category": "Kolajen",
+            "title": "Kolajen Sertifikası",
+            "body": "<p>Kolajen hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "krom": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Krom Sertifikası",
+            "body": "<p>Krom hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "likopen": {
+          "type": "document_card",
+          "settings": {
+            "category": "Karotenoid",
+            "title": "Likopen Sertifikası",
+            "body": "<p>Likopen hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "lutein": {
+          "type": "document_card",
+          "settings": {
+            "category": "Karotenoid",
+            "title": "Lutein Sertifikası",
+            "body": "<p>Lutein hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "magnezyum": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Magnezyum Sertifikası",
+            "body": "<p>Magnezyum hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "molibdenum": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Molibdenum Sertifikası",
+            "body": "<p>Molibdenum hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "selenyum": {
+          "type": "document_card",
+          "settings": {
+            "category": "Mineral",
+            "title": "Selenyum Sertifikası",
+            "body": "<p>Selenyum hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        },
+        "yaban_mersini": {
+          "type": "document_card",
+          "settings": {
+            "category": "Bitkisel içerik",
+            "title": "Yaban Mersini Sertifikası",
+            "body": "<p>Yaban mersini hammaddesine ait sertifika dosyası.</p>",
+            "file_link": "",
+            "link_label": "Belgeyi aç"
+          }
+        }
+      },
+      "block_order": [
+        "vitamin_a",
+        "alfa_lipoik_asit",
+        "askorbik_asit",
+        "balik_yagi",
+        "b1",
+        "b2",
+        "b3",
+        "b6",
+        "b12",
+        "bakir",
+        "beta_glukan",
+        "biotin",
+        "cinko",
+        "cuce_palmiye",
+        "d_vitamini",
+        "e_vitamini",
+        "folik_asit",
+        "glucomannan",
+        "glutatyon",
+        "isirgan_otu",
+        "kalsiyum",
+        "koenzim_q10",
+        "kolajen",
+        "krom",
+        "likopen",
+        "lutein",
+        "magnezyum",
+        "molibdenum",
+        "selenyum",
+        "yaban_mersini"
+      ],
+      "settings": {
+        "eyebrow": "Hammadde sertifikaları",
+        "heading": "Hammadde sertifika arşivi",
+        "body": "<p>Vitacoral ürünlerinde kullanılan hammaddelere ait sertifikaları bu sayfadan içerik bazında inceleyebilirsiniz. Her kart ilgili hammadde sertifikasına bağlanacak şekilde hazırlanmıştır.</p>"
+      }
+    }
+  },
+  "order": [
+    "raw_documents"
+  ]
+}
