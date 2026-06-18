@@ -38,7 +38,7 @@
                 {{ block.settings.link_label | default: 'Belgeyi aç' | escape }}
               </a>
             {%- else -%}
-              <span class="vc-doc-hub__empty">Dosya linki eklenecek</span>
+              <span class="vc-doc-hub__empty">Belge bağlantısı kontrol ediliyor</span>
             {%- endif -%}
           </article>
         {%- endfor -%}
@@ -69,7 +69,7 @@
       "settings": [
         {"type":"text","id":"category","label":"Kategori","default":"Kalite"},
         {"type":"text","id":"title","label":"Belge adı","default":"Belge adı"},
-        {"type":"richtext","id":"body","label":"Kısa açıklama","default":"<p>Bu kartın dosya linki Shopify Files üzerinden eklenecektir.</p>"},
+        {"type":"richtext","id":"body","label":"Kısa açıklama","default":"<p>Bu kart ilgili belge bağlantısı için hazırlanmıştır.</p>"},
         {"type":"file","id":"file_picker","label":"Belge dosyası"},
         {"type":"url","id":"file_link","label":"Manuel dosya linki"},
         {"type":"text","id":"link_label","label":"CTA etiketi","default":"Belgeyi aç"}
@@ -80,9 +80,9 @@
     {
       "name": "Belge merkezi",
       "blocks": [
-        {"type":"document_card","settings":{"category":"Kalite","title":"GMP","body":"<p>İyi üretim uygulamaları belgesi için dosya linki eklenecek.</p>"}},
-        {"type":"document_card","settings":{"category":"Kalite","title":"HACCP","body":"<p>Gıda güvenliği ve kritik kontrol süreçlerine dair belge linki eklenecek.</p>"}},
-        {"type":"document_card","settings":{"category":"Kalite","title":"ISO 9001","body":"<p>Kalite yönetim sistemi belgesi için dosya linki eklenecek.</p>"}}
+        {"type":"document_card","settings":{"category":"Kalite","title":"GMP","body":"<p>İyi üretim uygulamaları belgesi.</p>"}},
+        {"type":"document_card","settings":{"category":"Kalite","title":"HACCP","body":"<p>Gıda güvenliği ve kritik kontrol süreçlerine dair belge.</p>"}},
+        {"type":"document_card","settings":{"category":"Kalite","title":"ISO 9001","body":"<p>Kalite yönetim sistemi belgesi.</p>"}}
       ]
     }
   ]
