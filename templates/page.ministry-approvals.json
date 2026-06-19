@@ -12,72 +12,19 @@
     "approval_documents": {
       "type": "vitacoral-document-hub",
       "blocks": {
-        "collagen": {
-          "type": "document_card",
-          "settings": {
-            "category": "Collagen",
-            "title": "Onay bilgisi",
-            "body": "<p>Collagen ürününe ait onay belgesi veya ürün izin linki eklenecek.</p>",
-            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Collagen_Onay.pdf?v=1620415762",
-            "link_label": "Belgeyi aç"
-          }
-        },
-        "women": {
-          "type": "document_card",
-          "settings": {
-            "category": "Women",
-            "title": "Onay bilgisi",
-            "body": "<p>Women Multivitamin için onay belgesi veya ürün izin linki eklenecek.</p>",
-            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Multi_Woman_Onay.pdf?v=1620415762",
-            "link_label": "Belgeyi aç"
-          }
-        },
-        "men": {
-          "type": "document_card",
-          "settings": {
-            "category": "Men",
-            "title": "Onay bilgisi",
-            "body": "<p>Men Multivitamin için onay belgesi veya ürün izin linki eklenecek.</p>",
-            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Multi_Erkek_Onay.pdf?v=1620415762",
-            "link_label": "Belgeyi aç"
-          }
-        },
-        "kids": {
-          "type": "document_card",
-          "settings": {
-            "category": "Kids",
-            "title": "Onay bilgisi",
-            "body": "<p>Kids ürünü için onay belgesi veya ürün izin linki eklenecek.</p>",
-            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/multivitamin_kids_resmi_onay.pdf?v=1620415762",
-            "link_label": "Belgeyi aç"
-          }
-        },
-        "glucomannan": {
-          "type": "document_card",
-          "settings": {
-            "category": "Glucomannan",
-            "title": "Onay bilgisi",
-            "body": "<p>Glucomannan ürünü için onay belgesi veya ürün izin linki eklenecek.</p>",
-            "file_link": "https://cdn.shopify.com/s/files/1/0512/9414/2657/files/glucomannnan-onay.pdf?v=1680152593",
-            "link_label": "Belgeyi aç"
-          }
-        }
+        "collagen": {"type":"document_card","settings":{"category":"Collagen","title":"Onay bilgisi","body":"<p>Collagen ürününe ait onay ve izin belgesi.</p>","file_link":"https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Collagen_Onay.pdf?v=1620415762","link_label":"Belgeyi aç"}},
+        "women": {"type":"document_card","settings":{"category":"Women","title":"Onay bilgisi","body":"<p>Women Multivitamin ürününe ait onay ve izin belgesi.</p>","file_link":"https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Multi_Woman_Onay.pdf?v=1620415762","link_label":"Belgeyi aç"}},
+        "men": {"type":"document_card","settings":{"category":"Men","title":"Onay bilgisi","body":"<p>Men Multivitamin ürününe ait onay ve izin belgesi.</p>","file_link":"https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Multi_Erkek_Onay.pdf?v=1620415762","link_label":"Belgeyi aç"}},
+        "kids": {"type":"document_card","settings":{"category":"Kids","title":"Onay bilgisi","body":"<p>Kids ürününe ait onay ve izin belgesi.</p>","file_link":"https://cdn.shopify.com/s/files/1/0512/9414/2657/files/multivitamin_kids_resmi_onay.pdf?v=1620415762","link_label":"Belgeyi aç"}},
+        "glucomannan": {"type":"document_card","settings":{"category":"Glucomannan","title":"Onay bilgisi","body":"<p>Glucomannan ürününe ait onay ve izin belgesi.</p>","file_link":"https://cdn.shopify.com/s/files/1/0512/9414/2657/files/glucomannnan-onay.pdf?v=1680152593","link_label":"Belgeyi aç"}}
       },
-      "block_order": [
-        "collagen",
-        "women",
-        "men",
-        "kids",
-        "glucomannan"
-      ],
+      "block_order": ["collagen","women","men","kids","glucomannan"],
       "settings": {
         "eyebrow": "Bakanlık onayları",
         "heading": "Ürün onaylarını inceleyin",
-        "body": "<p>Ürünlere ait onay ve izin belgelerini bu sayfadan düzenli şekilde sunabilirsiniz. Linkler Shopify Files üzerinden güncellenebilir.</p>"
+        "body": "<p>Ürünlere ait onay ve izin belgelerini bu sayfadan düzenli şekilde inceleyebilirsiniz.</p>"
       }
     }
   },
-  "order": [
-    "approval_documents"
-  ]
+  "order": ["approval_documents"]
 }
