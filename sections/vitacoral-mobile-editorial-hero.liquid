@@ -20,7 +20,7 @@
   assign primary_cta_link = section.settings.primary_cta_link
   assign secondary_cta_link = section.settings.secondary_cta_link
   assign secondary_cta_label_handle = section.settings.secondary_cta_label | handleize
-  if secondary_cta_label_handle contains 'rutin' and secondary_cta_link contains '/pages/'
+  if secondary_cta_label_handle contains 'rutin'
     assign secondary_cta_link = '#urun-secim-rehberi'
   endif
 
@@ -275,19 +275,50 @@
     if (!root || root.dataset.guideAnchorReady === 'true') return;
     root.dataset.guideAnchorReady = 'true';
 
-    document.addEventListener('click', (event) => {
-      const trigger = event.target.closest('a[href="#urun-secim-rehberi"]');
+    const normalizeText = (text) => (text || '')
+      .toLocaleLowerCase('tr-TR')
+      .replace(/ı/g, 'i')
+      .replace(/İ/g, 'i')
+      .replace(/ğ/g, 'g')
+      .replace(/ü/g, 'u')
+      .replace(/ş/g, 's')
+      .replace(/ö/g, 'o')
+      .replace(/ç/g, 'c');
 
-      if (!trigger) return;
+    const isRoutineGuideLink = (link) => {
+      const label = normalizeText(link.textContent);
+      const href = link.getAttribute('href') || '';
 
-      const target = document.querySelector('.vitacoral-product-family');
+      return href === '#urun-secim-rehberi' || label.includes('rutinini bul');
+    };
+
+    const getGuideTarget = () => document.querySelector('.vitacoral-product-family');
+
+    const prepareRoutineLinks = () => {
+      document.querySelectorAll('a').forEach((link) => {
+        if (!isRoutineGuideLink(link)) return;
+        link.setAttribute('href', '#urun-secim-rehberi');
+        link.setAttribute('data-vc-routine-guide-link', 'true');
+      });
+    };
+
+    const scrollToGuide = (event) => {
+      const trigger = event.target.closest('a[data-vc-routine-guide-link="true"], a[href="#urun-secim-rehberi"]');
+
+      if (!trigger || !isRoutineGuideLink(trigger)) return;
+
+      const target = getGuideTarget();
 
       if (!target) return;
 
       event.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       history.replaceState(null, '', '#urun-secim-rehberi');
-    });
+    };
+
+    prepareRoutineLinks();
+    document.addEventListener('shopify:section:load', prepareRoutineLinks);
+    document.addEventListener('click', scrollToGuide);
   })();
 </script>
 
