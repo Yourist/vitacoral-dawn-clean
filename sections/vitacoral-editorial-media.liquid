@@ -1,3 +1,18 @@
+{%- liquid
+  assign primary_cta_link = section.settings.primary_cta_link
+  assign secondary_cta_link = section.settings.secondary_cta_link
+  assign primary_cta_label_handle = section.settings.primary_cta_label | handleize
+  assign secondary_cta_label_handle = section.settings.secondary_cta_label | handleize
+
+  if primary_cta_label_handle contains 'rutin' and primary_cta_link contains '/pages/'
+    assign primary_cta_link = '#urun-secim-rehberi'
+  endif
+
+  if secondary_cta_label_handle contains 'rutin' and secondary_cta_link contains '/pages/'
+    assign secondary_cta_link = '#urun-secim-rehberi'
+  endif
+-%}
+
 <section
   class="vitacoral-editorial-media vitacoral-editorial-media--{{ section.settings.layout_style | default: 'split' }} vitacoral-section"
   id="VitacoralEditorialMedia-{{ section.id }}"
@@ -23,10 +38,10 @@
           <div class="vitacoral-editorial-media__actions">
             {%- if section.settings.primary_cta_label != blank -%}
               <a
-                {% if section.settings.primary_cta_link == blank %}
+                {% if primary_cta_link == blank %}
                   role="link" aria-disabled="true"
                 {% else %}
-                  href="{{ section.settings.primary_cta_link }}"
+                  href="{{ primary_cta_link }}"
                 {% endif %}
                 class="vitacoral-button"
               >
@@ -36,10 +51,10 @@
 
             {%- if section.settings.secondary_cta_label != blank -%}
               <a
-                {% if section.settings.secondary_cta_link == blank %}
+                {% if secondary_cta_link == blank %}
                   role="link" aria-disabled="true"
                 {% else %}
-                  href="{{ section.settings.secondary_cta_link }}"
+                  href="{{ secondary_cta_link }}"
                 {% endif %}
                 class="vitacoral-button vitacoral-button--secondary"
               >
@@ -104,7 +119,7 @@
               <span class="vitacoral-editorial-media__placeholder-chip">Vitacoral</span>
               <div class="vitacoral-editorial-media__placeholder-card">
                 <span class="vitacoral-editorial-media__placeholder-mark"></span>
-                <p class="vitacoral-heading-lg">İçerikleri ve rutinleri daha görsel bir akışta keşfedin.</p>
+                <p class="vitacoral-heading-lg">İçerikleri ve ürün seçeneklerini daha görsel bir akışta inceleyin.</p>
                 <p class="vitacoral-body-muted">Video ya da görsel ekleyerek bu alanı modern bir marka katmanına dönüştürebilirsiniz.</p>
               </div>
             </div>
@@ -134,19 +149,19 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "VITACORAL’I KEŞFET"
+      "default": "Vitacoral yaklaşımı"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "Heading",
-      "default": "Rutinin daha iyi hissettiren tarafı"
+      "default": "Ürün seçimini sadeleştiren bir rehberlik"
     },
     {
       "type": "richtext",
       "id": "body",
       "label": "Body",
-      "default": "<p>Günlük iyi yaşam rutinin için ürünleri, içerikleri ve kullanım hikayesini daha görsel, daha sade ve daha keyifli bir deneyimle keşfet.</p>"
+      "default": "<p>Vitacoral’de içerik, kullanım ve etiket bilgilerini daha anlaşılır bir akışta sunmaya odaklanıyoruz.</p>"
     },
     {
       "type": "select",
@@ -183,7 +198,7 @@
       "type": "text",
       "id": "secondary_cta_label",
       "label": "Secondary CTA label",
-      "default": "Ürünleri keşfet"
+      "default": "Tüm ürünleri gör"
     },
     {
       "type": "url",
