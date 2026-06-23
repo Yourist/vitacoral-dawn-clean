@@ -27,7 +27,7 @@
             {% endif %}
             class="vitacoral-button"
           >
-            {{ section.settings.cta_label | default: 'Ankete Katıl' | escape }}
+            {{ section.settings.cta_label | default: 'Anketi yanıtla' | escape }}
           </a>
         </div>
 
@@ -35,26 +35,26 @@
           <p class="vitacoral-body-muted vitacoral-quiz__note">{{ section.settings.secondary_note | escape }}</p>
         {%- endif -%}
 
-        <div class="vitacoral-quiz__steps" aria-label="Discovery steps">
+        <div class="vitacoral-quiz__steps" aria-label="Anket adımları">
           <article class="vitacoral-quiz__step vitacoral-card">
             <span class="vitacoral-quiz__step-index">1</span>
             <div class="vitacoral-quiz__step-copy">
-              <h3 class="vitacoral-quiz__step-title">Rutininizi seçin</h3>
-              <p class="vitacoral-body-muted">Günlük kullanım alışkanlığınıza göre keşfe başlayın.</p>
+              <h3 class="vitacoral-quiz__step-title">Anketi açın</h3>
+              <p class="vitacoral-body-muted">Kısa sorularla ürün seçiminize başlangıç yapın.</p>
             </div>
           </article>
           <article class="vitacoral-quiz__step vitacoral-card">
             <span class="vitacoral-quiz__step-index">2</span>
             <div class="vitacoral-quiz__step-copy">
-              <h3 class="vitacoral-quiz__step-title">Kısa soruları yanıtlayın</h3>
-              <p class="vitacoral-body-muted">Kısa quiz ile doğru başlangıç noktasını bulun.</p>
+              <h3 class="vitacoral-quiz__step-title">Soruları yanıtlayın</h3>
+              <p class="vitacoral-body-muted">Alışveriş öncesi önceliklerinizi netleştirin.</p>
             </div>
           </article>
           <article class="vitacoral-quiz__step vitacoral-card">
             <span class="vitacoral-quiz__step-index">3</span>
             <div class="vitacoral-quiz__step-copy">
-              <h3 class="vitacoral-quiz__step-title">Ürünleri keşfedin</h3>
-              <p class="vitacoral-body-muted">Rutininize uygun ürünleri keşfedin.</p>
+              <h3 class="vitacoral-quiz__step-title">Ürünleri inceleyin</h3>
+              <p class="vitacoral-body-muted">Sonucu ürün detayları ve etiket bilgileriyle birlikte kontrol edin.</p>
             </div>
           </article>
         </div>
@@ -79,8 +79,8 @@
               <span class="vitacoral-quiz__placeholder-chip">Kısa anket</span>
               <div class="vitacoral-quiz__placeholder-card">
                 <span class="vitacoral-quiz__placeholder-mark"></span>
-                <p class="vitacoral-heading-lg">Sizin için uygun rutini birkaç adımda keşfedin.</p>
-                <p class="vitacoral-body-muted">Sorular ilerledikçe sade bir ürün öneri akışına yönlenin.</p>
+                <p class="vitacoral-heading-lg">Ürün seçiminizi birkaç adımda netleştirin.</p>
+                <p class="vitacoral-body-muted">Anket sonucu bilgilendirme amaçlıdır; ürün detaylarını ayrıca inceleyin.</p>
               </div>
             </div>
           {%- endif -%}
@@ -92,58 +92,23 @@
 
 {% schema %}
 {
-  "name": "Vitacoral Quiz",
+  "name": "Vitacoral Anket",
   "tag": "section",
   "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Rutininizi Bulun"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Size en uygun Vitacoral ürününü birlikte bulalım"
-    },
-    {
-      "type": "richtext",
-      "id": "body",
-      "label": "Body",
-      "default": "<p>Kısa anketi yanıtlayın, ihtiyacınıza uygun ürün önerilerini keşfedin.</p>"
-    },
-    {
-      "type": "text",
-      "id": "cta_label",
-      "label": "CTA label",
-      "default": "Ankete Katıl"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "CTA link"
-    },
-    {
-      "type": "text",
-      "id": "secondary_note",
-      "label": "Optional secondary note",
-      "default": "Kısa sürer, ürün seçiminizi kolaylaştırır."
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Optional image"
-    }
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Ürün seçim anketi"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Birkaç kısa soruyla başlangıç noktanızı bulun"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>Anketi yanıtlayın, Vitacoral ürün seçeneklerini daha sade bir çerçeveden inceleyin.</p>"},
+    {"type":"text","id":"cta_label","label":"CTA label","default":"Anketi yanıtla"},
+    {"type":"url","id":"cta_link","label":"CTA link"},
+    {"type":"text","id":"secondary_note","label":"Optional secondary note","default":"Kısa sürer; teşhis veya tedavi önerisi sunmaz."},
+    {"type":"image_picker","id":"image","label":"Optional image"}
   ],
   "presets": [
-    {
-      "name": "Vitacoral Quiz"
-    }
+    {"name":"Vitacoral Anket"}
   ]
 }
 {% endschema %}
