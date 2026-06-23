@@ -2,39 +2,55 @@
   <div class="vitacoral-container">
     <div class="vitacoral-faq__layout">
       <div class="vitacoral-faq__intro vitacoral-reveal is-visible">
-        <p class="vitacoral-eyebrow">Sık sorulanlar</p>
-        <h2 class="vitacoral-heading-lg">Alışveriş öncesi kısa cevaplar</h2>
-        <div class="vitacoral-body vitacoral-faq__body rte">
-          <p>Vitacoral ürünlerini incelerken müşterilerin en sık merak ettiği konuları kısa ve net şekilde yanıtladık.</p>
-        </div>
-        <div class="vitacoral-faq__actions">
-          <a href="/collections/all" class="vitacoral-button vitacoral-button--secondary">Tüm ürünleri gör</a>
-        </div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <div class="vitacoral-body vitacoral-faq__body rte">
+            {{ section.settings.body }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank -%}
+          <div class="vitacoral-faq__actions">
+            <a
+              {% if section.settings.cta_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.cta_link }}"
+              {% endif %}
+              class="vitacoral-button vitacoral-button--secondary"
+            >
+              {{ section.settings.cta_label | escape }}
+            </a>
+          </div>
+        {%- endif -%}
       </div>
 
       <div class="vitacoral-faq__items vitacoral-reveal is-visible">
-        <div class="vitacoral-faq__accordion">
-          <details class="vitacoral-faq__item vitacoral-faq__item--green">
-            <summary class="vitacoral-faq__question"><span>Hangi Vitacoral ürününü seçmeliyim?</span></summary>
-            <div class="vitacoral-faq__answer"><p class="vitacoral-body">Önce ürün amacınıza bakın: Collagen, kadın veya erkek multivitamin, Kids ya da Glucomannan. Karar vermeden önce ürün sayfasındaki içerik ve kullanım bilgilerini kontrol edin.</p></div>
-          </details>
-          <details class="vitacoral-faq__item vitacoral-faq__item--soft">
-            <summary class="vitacoral-faq__question"><span>Ürünleri birlikte alabilir miyim?</span></summary>
-            <div class="vitacoral-faq__answer"><p class="vitacoral-body">Bazı ürünler aynı alışverişte birlikte değerlendirilebilir. Her ürünün içerik, kullanım önerisi ve uyarı bilgilerini ayrı ayrı okumanızı öneririz.</p></div>
-          </details>
-          <details class="vitacoral-faq__item vitacoral-faq__item--orange">
-            <summary class="vitacoral-faq__question"><span>Belgeleri ve onayları nerede görebilirim?</span></summary>
-            <div class="vitacoral-faq__answer"><p class="vitacoral-body">Kalite belgeleri, hammadde sertifikaları ve Bakanlık onayları ilgili belge sayfalarında yer alır. Ürün seçmeden önce bu sayfaları inceleyebilirsiniz.</p></div>
-          </details>
-          <details class="vitacoral-faq__item vitacoral-faq__item--green">
-            <summary class="vitacoral-faq__question"><span>Orijinal ürünü nereden aldığımı nasıl anlarım?</span></summary>
-            <div class="vitacoral-faq__answer"><p class="vitacoral-body">Resmi Vitacoral web mağazasını ve yetkili satış kanallarını tercih edin. Pazaryerinde satıcı bilgisini kontrol etmeniz önemlidir.</p></div>
-          </details>
-          <details class="vitacoral-faq__item vitacoral-faq__item--soft">
-            <summary class="vitacoral-faq__question"><span>Kargo ve iade süreci nasıl ilerler?</span></summary>
-            <div class="vitacoral-faq__answer"><p class="vitacoral-body">Kargo, teslimat ve iade detaylarını ödeme adımlarında ve politika sayfalarında kontrol edebilirsiniz.</p></div>
-          </details>
-        </div>
+        {%- if section.blocks.size > 0 -%}
+          <div class="vitacoral-faq__accordion">
+            {%- for block in section.blocks -%}
+              <details class="vitacoral-faq__item vitacoral-faq__item--{{ block.settings.accent_style }}" {{ block.shopify_attributes }}>
+                <summary class="vitacoral-faq__question">
+                  <span>{{ block.settings.question | escape }}</span>
+                </summary>
+                <div class="vitacoral-faq__answer">
+                  <p class="vitacoral-body">{{ block.settings.answer | escape }}</p>
+                </div>
+              </details>
+            {%- endfor -%}
+          </div>
+        {%- else -%}
+          <div class="vitacoral-faq__empty vitacoral-card">
+            <p class="vitacoral-body-muted">SSS soruları Tema Düzenleyici üzerinden eklenebilir.</p>
+          </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -46,7 +62,34 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
-  "settings": [],
-  "presets": [{"name":"Vitacoral FAQ"}]
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Sık sorulanlar"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Alışveriş öncesi kısa cevaplar"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>Vitacoral ürünlerini incelerken en sık merak edilen konuları kısa ve net şekilde yanıtladık.</p>"},
+    {"type":"text","id":"cta_label","label":"Optional CTA label","default":"Tüm ürünleri gör"},
+    {"type":"url","id":"cta_link","label":"Optional CTA link"}
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        {"type":"text","id":"question","label":"Question"},
+        {"type":"textarea","id":"answer","label":"Answer"},
+        {"type":"select","id":"accent_style","label":"Accent style","default":"green","options":[{"value":"green","label":"green"},{"value":"orange","label":"orange"},{"value":"soft","label":"soft"}]}
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Vitacoral FAQ",
+      "blocks": [
+        {"type":"faq_item","settings":{"question":"Hangi Vitacoral ürününü seçmeliyim?","answer":"Önce ürün amacınıza bakın: Collagen, kadın veya erkek multivitamin, Kids ya da Glucomannan. Karar vermeden önce ürün sayfasındaki içerik ve kullanım bilgilerini kontrol edin.","accent_style":"green"}},
+        {"type":"faq_item","settings":{"question":"Ürünleri birlikte alabilir miyim?","answer":"Bazı ürünler aynı alışverişte birlikte değerlendirilebilir. Her ürünün içerik, kullanım önerisi ve uyarı bilgilerini ayrı ayrı okumanızı öneririz.","accent_style":"soft"}},
+        {"type":"faq_item","settings":{"question":"Belgeleri ve onayları nerede görebilirim?","answer":"Kalite belgeleri, hammadde sertifikaları ve Bakanlık onayları ilgili belge sayfalarında yer alır.","accent_style":"orange"}}
+      ]
+    }
+  ]
 }
 {% endschema %}
