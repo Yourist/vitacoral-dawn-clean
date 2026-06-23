@@ -190,7 +190,7 @@
         <p>Yaklaşık günlük ihtiyaçlarınızı ve Vitacoral ürün seçeneklerini bilgilendirme amaçlı araçlarla daha net değerlendirin.</p>
       </div>
       <div class="vc-tools-teaser__actions">
-        <a class="vc-tools-teaser__button" href="/pages/saglik-hesaplama-araclari">Rehberi kullan</a>
+        <a class="vc-tools-teaser__button" href="/pages/saglik-hesaplama-araclari">Araçları aç</a>
       </div>
     </div>
 
@@ -230,12 +230,10 @@
 
 {% schema %}
 {
-  "name": "Routine Cards",
+  "name": "Ürün seçim rehberi",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
     {"type":"text","id":"eyebrow","label":"Eyebrow text","default":"Ürün Rehberi"},
     {"type":"inline_richtext","id":"heading","label":"Heading","default":"Hangi ürünle başlayacağınızı netleştirin"},
@@ -246,7 +244,7 @@
   "blocks": [
     {
       "type": "product_family",
-      "name": "Product guide card",
+      "name": "Ürün rehberi kartı",
       "settings": [
         {"type":"product","id":"primary_product","label":"Primary product"},
         {"type":"product","id":"secondary_product","label":"Secondary product"},
@@ -264,7 +262,7 @@
     }
   ],
   "presets": [
-    {"name":"Routine Cards","blocks":[{"type":"product_family"},{"type":"product_family"},{"type":"product_family"}]}
+    {"name":"Ürün seçim rehberi","blocks":[{"type":"product_family"},{"type":"product_family"},{"type":"product_family"}]}
   ]
 }
 {% endschema %}
