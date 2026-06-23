@@ -17,8 +17,8 @@
 .vitacoral-featured-products__item:first-child .vitacoral-featured-products__image{min-height:24rem;padding:1rem;filter:drop-shadow(0 1.8rem 2rem rgba(21,44,41,.16))}
 .vitacoral-featured-products__card:hover .vitacoral-featured-products__image{transform:scale(1.045) rotate(-1deg)}
 .vitacoral-featured-products__placeholder{display:grid;place-items:center;min-height:20rem;padding:1.4rem;text-align:center;background:linear-gradient(135deg,rgba(34,89,82,.08),rgba(225,117,61,.1))}
-.vitacoral-featured-products__badge{position:absolute;z-index:3;left:1.7rem;top:1.7rem;background:rgba(255,255,255,.96);color:#173f3a;border:.1rem solid rgba(34,89,82,.14);box-shadow:0 .8rem 2rem rgba(21,44,41,.08);font-weight:850;text-shadow:none}
-.vitacoral-featured-products__item--orange .vitacoral-featured-products__badge{background:#fff;color:#173f3a;border-color:rgba(225,117,61,.34);box-shadow:0 .8rem 2rem rgba(225,117,61,.16)}
+.vitacoral-featured-products__badge{position:absolute;z-index:3;left:1.7rem;top:1.7rem;font-weight:850;text-shadow:none}
+.vitacoral-featured-products__item--orange .vitacoral-featured-products__badge,.vitacoral-featured-products__item--orange .vitacoral-featured-products__badge *{color:#fff!important;text-shadow:0 .1rem .25rem rgba(21,44,41,.22)}
 .vitacoral-featured-products__content{display:grid;gap:.8rem;padding:1.5rem 1.5rem .9rem}
 .vitacoral-featured-products__title{margin:0;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.25rem,3vw,3.45rem);font-weight:650;letter-spacing:-.055em;line-height:.96}
 .vitacoral-featured-products__item:first-child .vitacoral-featured-products__title{font-size:clamp(2.9rem,4vw,4.5rem)}
