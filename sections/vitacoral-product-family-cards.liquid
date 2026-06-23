@@ -17,12 +17,6 @@
           {{ section.settings.body }}
         </div>
       {%- endif -%}
-
-      <div class="vitacoral-product-family__discovery-rail" aria-label="Guided discovery">
-        <span class="vitacoral-product-family__discovery-item">1. Rutin çerçevenizi seçin</span>
-        <span class="vitacoral-product-family__discovery-item">2. Size yakın kombinasyonu inceleyin</span>
-        <span class="vitacoral-product-family__discovery-item">3. Detay sayfasında karar verin</span>
-      </div>
     </div>
 
     <div class="vitacoral-product-family__carousel vitacoral-reveal is-visible">
@@ -37,7 +31,7 @@
               assign card_title = primary_product.title
             endif
             if card_title == blank
-              assign card_title = 'Vitacoral rutin paketi'
+              assign card_title = 'Vitacoral ürün rehberi'
             endif
 
             assign card_image = block.settings.product_image
@@ -54,13 +48,15 @@
             assign card_title_handle = card_title | handleize
             if card_cta_link == blank
               case card_title_handle
-                when 'kadin-rutin-paketi'
+                when 'collagen-ile-baslayin'
+                  assign card_cta_link = '/products/collagen-30-sase'
+                when 'kadin-gunluk-destek'
                   assign card_cta_link = '/pages/kadin-rutini'
-                when 'erkek-rutin-paketi'
+                when 'erkek-gunluk-destek'
                   assign card_cta_link = '/pages/erkek-rutini'
-                when 'aile-gunluk-rutini'
+                when 'aile-icin-urunler'
                   assign card_cta_link = '/pages/aile-rutini'
-                when 'hafif-rutin-paketi'
+                when 'lif-odagi'
                   assign card_cta_link = '/pages/hafif-rutin'
               endcase
             endif
@@ -73,7 +69,7 @@
 
             assign card_cta_label = block.settings.cta_label | strip
             if card_cta_label == blank
-              assign card_cta_label = 'Rutini keşfet'
+              assign card_cta_label = 'Rehberi incele'
             endif
           -%}
           <li
@@ -128,7 +124,7 @@
                 {%- endif -%}
 
                 {%- if primary_product != blank or secondary_product != blank or third_product != blank -%}
-                  <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="Routine products">
+                  <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="İlgili ürünler">
                     {%- if primary_product != blank -%}
                       <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
                         {{ primary_product.title | escape }}
@@ -189,13 +185,12 @@
   <div class="page-width vc-tools-teaser__inner">
     <div class="vc-tools-teaser__copy">
       <p class="vc-tools-teaser__eyebrow">Etkileşimli rehber</p>
-      <h2 class="vc-tools-teaser__title">Rutininize başlamadan önce kendinizi daha iyi tanıyın</h2>
+      <h2 class="vc-tools-teaser__title">Ürün seçmeden önce bilgiyi sadeleştirin</h2>
       <div class="vc-tools-teaser__body rte">
-        <p>Yaklaşık kalori ihtiyacınızı görün, ardından size en yakın Vitacoral rutinini kısa seçimlerle keşfedin.</p>
+        <p>Yaklaşık günlük ihtiyaçlarınızı ve Vitacoral ürün seçeneklerini bilgilendirme amaçlı araçlarla daha net değerlendirin.</p>
       </div>
       <div class="vc-tools-teaser__actions">
-        <a class="vc-tools-teaser__button" href="/pages/saglik-hesaplama-araclari">Araçları aç</a>
-        <a class="vc-tools-teaser__button vc-tools-teaser__button--secondary" href="#VitacoralProductFamily-{{ section.id }}">Rutinleri gör</a>
+        <a class="vc-tools-teaser__button" href="/pages/saglik-hesaplama-araclari">Rehberi kullan</a>
       </div>
     </div>
 
@@ -204,14 +199,28 @@
         <span class="vc-tools-teaser__icon">01</span>
         <div>
           <h3 class="vc-tools-teaser__mini-title">Kalori hesaplayıcı</h3>
-          <p class="vc-tools-teaser__mini-text">Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacını gör.</p>
+          <p class="vc-tools-teaser__mini-text">Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacınızı görün.</p>
         </div>
       </div>
       <div class="vc-tools-teaser__mini">
         <span class="vc-tools-teaser__icon">02</span>
         <div>
-          <h3 class="vc-tools-teaser__mini-title">Vitamin rutin rehberi</h3>
-          <p class="vc-tools-teaser__mini-text">Kadın, erkek, aile veya hafif rutin seçenekleri arasında kararını kolaylaştır.</p>
+          <h3 class="vc-tools-teaser__mini-title">Ürün seçim anketi</h3>
+          <p class="vc-tools-teaser__mini-text">Kısa sorularla size yakın başlangıç noktasını netleştirin.</p>
+        </div>
+      </div>
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">03</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">Belge merkezi</h3>
+          <p class="vc-tools-teaser__mini-text">Kalite belgeleri, hammadde sertifikaları ve ürün onaylarını inceleyin.</p>
+        </div>
+      </div>
+      <div class="vc-tools-teaser__mini">
+        <span class="vc-tools-teaser__icon">04</span>
+        <div>
+          <h3 class="vc-tools-teaser__mini-title">Ürün karşılaştırma</h3>
+          <p class="vc-tools-teaser__mini-text">Collagen, multivitamin, Kids ve Glucomannan seçeneklerini birlikte değerlendirin.</p>
         </div>
       </div>
       <p class="vc-tools-teaser__note">Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin.</p>
@@ -228,161 +237,34 @@
     "groups": ["header", "footer"]
   },
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow text",
-      "default": "Ürün Aileleri"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Rutininize uygun ürünü seçin"
-    },
-    {
-      "type": "richtext",
-      "id": "body",
-      "label": "Body text",
-      "default": "<p>Günlük ihtiyacınıza göre Vitacoral ürün ailelerini keşfedin.</p>"
-    },
-    {
-      "type": "text",
-      "id": "bottom_cta_label",
-      "label": "Bottom CTA label",
-      "default": "Tüm ürünleri gör"
-    },
-    {
-      "type": "url",
-      "id": "bottom_cta_link",
-      "label": "Bottom CTA link"
-    }
+    {"type":"text","id":"eyebrow","label":"Eyebrow text","default":"Ürün Rehberi"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Hangi ürünle başlayacağınızı netleştirin"},
+    {"type":"richtext","id":"body","label":"Body text","default":"<p>Günlük ihtiyacınıza göre Vitacoral ürün seçeneklerini inceleyin.</p>"},
+    {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri gör"},
+    {"type":"url","id":"bottom_cta_link","label":"Bottom CTA link"}
   ],
   "blocks": [
     {
       "type": "product_family",
-      "name": "Product family",
+      "name": "Product guide card",
       "settings": [
-        {
-          "type": "product",
-          "id": "primary_product",
-          "label": "Primary product"
-        },
-        {
-          "type": "product",
-          "id": "secondary_product",
-          "label": "Secondary product"
-        },
-        {
-          "type": "product",
-          "id": "third_product",
-          "label": "Third product"
-        },
-        {
-          "type": "text",
-          "id": "badge_text",
-          "label": "Badge text"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "short_description",
-          "label": "Short description"
-        },
-        {
-          "type": "image_picker",
-          "id": "product_image",
-          "label": "Product image"
-        },
-        {
-          "type": "text",
-          "id": "included_products_text",
-          "label": "Included products text"
-        },
-        {
-          "type": "text",
-          "id": "cta_label",
-          "label": "CTA label"
-        },
-        {
-          "type": "url",
-          "id": "cta_link",
-          "label": "CTA link"
-        },
-        {
-          "type": "select",
-          "id": "accent_style",
-          "label": "Accent style",
-          "default": "green",
-          "options": [
-            { "value": "green", "label": "green" },
-            { "value": "orange", "label": "orange" },
-            { "value": "soft", "label": "soft" }
-          ]
-        },
-        {
-          "type": "text",
-          "id": "optional_note",
-          "label": "Optional note text"
-        }
+        {"type":"product","id":"primary_product","label":"Primary product"},
+        {"type":"product","id":"secondary_product","label":"Secondary product"},
+        {"type":"product","id":"third_product","label":"Third product"},
+        {"type":"image_picker","id":"product_image","label":"Custom image"},
+        {"type":"text","id":"badge_text","label":"Badge text","default":"Günlük destek"},
+        {"type":"text","id":"title","label":"Title","default":"Ürün rehberi"},
+        {"type":"textarea","id":"short_description","label":"Short description","default":"Ürünleri içerik ve kullanım bilgisiyle birlikte inceleyin."},
+        {"type":"text","id":"included_products_text","label":"Included products text","default":"Vitacoral ürünleri"},
+        {"type":"text","id":"cta_label","label":"CTA label","default":"Rehberi incele"},
+        {"type":"url","id":"cta_link","label":"CTA link"},
+        {"type":"textarea","id":"optional_note","label":"Optional note"},
+        {"type":"select","id":"accent_style","label":"Accent style","default":"soft","options":[{"value":"orange","label":"Orange"},{"value":"green","label":"Green"},{"value":"soft","label":"Soft"}]}
       ]
     }
   ],
-  "max_blocks": 6,
   "presets": [
-    {
-      "name": "Vitacoral Cards",
-      "blocks": [
-        {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Kadın rutini",
-            "title": "Kadın Rutin Paketi",
-            "short_description": "Günlük multivitamin desteğini kolajen rutiniyle birlikte düşünenler için.",
-            "included_products_text": "Women Multivitamin + Collagen",
-            "cta_label": "Rutini keşfet",
-            "accent_style": "orange"
-          }
-        },
-        {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Erkek rutini",
-            "title": "Erkek Rutin Paketi",
-            "short_description": "Günlük tempo ve aktif yaşam rutinine uygun ürünleri birlikte keşfedin.",
-            "included_products_text": "Men Multivitamin + Collagen",
-            "cta_label": "Rutini keşfet",
-            "accent_style": "green"
-          }
-        },
-        {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Aile rutini",
-            "title": "Aile Günlük Rutini",
-            "short_description": "Aile içinde farklı ihtiyaçlara göre günlük destek ürünlerini birlikte inceleyin.",
-            "included_products_text": "Men + Women + Kids",
-            "cta_label": "Rutini keşfet",
-            "accent_style": "soft"
-          }
-        },
-        {
-          "type": "product_family",
-          "settings": {
-            "badge_text": "Hafif rutin",
-            "title": "Hafif Rutin Paketi",
-            "short_description": "Günlük rutininize lif desteği eklemek isteyenler için sade bir kombinasyon.",
-            "included_products_text": "Glucomannan + Women/Men Multivitamin",
-            "cta_label": "Rutini keşfet",
-            "accent_style": "soft"
-          }
-        }
-      ]
-    }
+    {"name":"Routine Cards","blocks":[{"type":"product_family"},{"type":"product_family"},{"type":"product_family"}]}
   ]
 }
 {% endschema %}
