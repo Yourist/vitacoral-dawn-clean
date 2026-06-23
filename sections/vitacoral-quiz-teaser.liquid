@@ -4,36 +4,17 @@
   <div class="vitacoral-container">
     <div class="vitacoral-quiz__layout vitacoral-card">
       <div class="vitacoral-quiz__content vitacoral-reveal is-visible">
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
-        {%- endif -%}
-
-        {%- if section.settings.heading != blank -%}
-          <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
-        {%- endif -%}
-
-        {%- if section.settings.body != blank -%}
-          <div class="vitacoral-body vitacoral-quiz__body rte">
-            {{ section.settings.body }}
-          </div>
-        {%- endif -%}
-
-        <div class="vitacoral-quiz__actions">
-          <a
-            {% if section.settings.cta_link == blank %}
-              role="link" aria-disabled="true"
-            {% else %}
-              href="{{ section.settings.cta_link }}"
-            {% endif %}
-            class="vitacoral-button"
-          >
-            {{ section.settings.cta_label | default: 'Anketi yanıtla' | escape }}
-          </a>
+        <p class="vitacoral-eyebrow">Ürün seçim anketi</p>
+        <h2 class="vitacoral-heading-lg">Birkaç kısa soruyla başlangıç noktanızı bulun</h2>
+        <div class="vitacoral-body vitacoral-quiz__body rte">
+          <p>Anketi yanıtlayın; Vitacoral ürün seçeneklerini içerik, kullanım ve etiket bilgileriyle daha sade şekilde inceleyin.</p>
         </div>
 
-        {%- if section.settings.secondary_note != blank -%}
-          <p class="vitacoral-body-muted vitacoral-quiz__note">{{ section.settings.secondary_note | escape }}</p>
-        {%- endif -%}
+        <div class="vitacoral-quiz__actions">
+          <a href="{{ section.settings.cta_link | default: '/#quiz-0AH2J3O' }}" class="vitacoral-button">Anketi yanıtla</a>
+        </div>
+
+        <p class="vitacoral-body-muted vitacoral-quiz__note">Kısa sürer; teşhis veya tedavi önerisi sunmaz.</p>
 
         <div class="vitacoral-quiz__steps" aria-label="Anket adımları">
           <article class="vitacoral-quiz__step vitacoral-card">
@@ -61,7 +42,6 @@
       </div>
 
       <div class="vitacoral-quiz__visual vitacoral-reveal is-visible">
-        {%- assign quiz_image_alt = section.settings.heading | default: section.settings.eyebrow | strip_html | escape -%}
         <div class="vitacoral-quiz__media">
           {%- if section.settings.image != blank -%}
             {{
@@ -71,7 +51,7 @@
                 widths: '375, 550, 750, 900, 1200',
                 sizes: '(min-width: 990px) 38vw, (min-width: 750px) 44vw, 100vw',
                 loading: 'lazy',
-                alt: quiz_image_alt,
+                alt: 'Vitacoral ürün seçim anketi',
                 class: 'vitacoral-quiz__image'
             }}
           {%- else -%}
@@ -95,20 +75,11 @@
   "name": "Vitacoral Anket",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Ürün seçim anketi"},
-    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Birkaç kısa soruyla başlangıç noktanızı bulun"},
-    {"type":"richtext","id":"body","label":"Body","default":"<p>Anketi yanıtlayın, Vitacoral ürün seçeneklerini daha sade bir çerçeveden inceleyin.</p>"},
-    {"type":"text","id":"cta_label","label":"CTA label","default":"Anketi yanıtla"},
     {"type":"url","id":"cta_link","label":"CTA link"},
-    {"type":"text","id":"secondary_note","label":"Optional secondary note","default":"Kısa sürer; teşhis veya tedavi önerisi sunmaz."},
     {"type":"image_picker","id":"image","label":"Optional image"}
   ],
-  "presets": [
-    {"name":"Vitacoral Anket"}
-  ]
+  "presets": [{"name":"Vitacoral Anket"}]
 }
 {% endschema %}
