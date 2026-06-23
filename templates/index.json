@@ -48,9 +48,9 @@
         "trust_chip_4"
       ],
       "settings": {
-        "eyebrow": "Günlük takviye rutininiz için",
-        "heading": "Takviye seçimini daha anlaşılır hale getirelim",
-        "body": "<p>Vitacoral, ürün içeriklerini, kullanım bilgilerini ve rutin seçeneklerini sade bir akışta sunarak kararınızı destekler.</p>",
+        "eyebrow": "Vitacoral resmi mağaza",
+        "heading": "Takviye seçiminizi daha anlaşılır hale getirin",
+        "body": "<p>Vitacoral ürünlerini içerik, kullanım ve etiket bilgileriyle birlikte inceleyin; ihtiyacınıza uygun ürün seçeneklerine güvenli ve sade bir alışveriş deneyimiyle ulaşın.</p>",
         "primary_cta_label": "Tüm ürünleri gör",
         "primary_cta_link": "/collections/all",
         "secondary_cta_label": "Rutinini bul",
@@ -62,9 +62,9 @@
     "vitacoral_editorial_media": {
       "type": "vitacoral-editorial-media",
       "settings": {
-        "eyebrow": "Vitacoral rehberi",
-        "heading": "Rutininize uygun seçimi birlikte sadeleştirelim",
-        "body": "<p>Ürün ailelerini, içerik bilgilerini ve kullanım notlarını tek bir akışta inceleyin; kararınızı acele etmeden, daha bilinçli verin.</p>",
+        "eyebrow": "Karar vermeden önce",
+        "heading": "İçerik, etiket ve belge bilgilerini birlikte inceleyin",
+        "body": "<p>Ürün sayfalarında içerik ve kullanım bilgilerine; belge alanlarında kalite, hammadde ve onay dokümanlarına ulaşabilirsiniz. Böylece alışveriş öncesi kararınızı daha net bir çerçevede verebilirsiniz.</p>",
         "layout_style": "split",
         "primary_cta_label": "Rutinini bul",
         "primary_cta_link": "/pages/vitacorali-kesfet",
