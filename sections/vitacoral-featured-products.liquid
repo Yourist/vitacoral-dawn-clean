@@ -44,7 +44,7 @@
 
               assign card_cta_label = block.settings.cta_label | strip
               if card_cta_label == blank
-                assign card_cta_label = 'Ürünü keşfet'
+                assign card_cta_label = 'Ürünü incele'
               endif
             -%}
             <li
@@ -114,7 +114,7 @@
         </ul>
       {%- else -%}
         <div class="vitacoral-featured-products__empty vitacoral-card">
-          <p class="vitacoral-body-muted">Featured products can be added from the Theme Editor.</p>
+          <p class="vitacoral-body-muted">Ürünler Tema Düzenleyici üzerinden eklenebilir.</p>
         </div>
       {%- endif -%}
     </div>
@@ -141,142 +141,31 @@
   "name": "Vitacoral Products",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Öne Çıkanlar"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "En çok ilgi gören Vitacoral ürünleri"
-    },
-    {
-      "type": "richtext",
-      "id": "body",
-      "label": "Body",
-      "default": "<p>Günlük rutininize uygun ürünleri keşfedin.</p>"
-    },
-    {
-      "type": "text",
-      "id": "bottom_cta_label",
-      "label": "Bottom CTA label",
-      "default": "Tüm ürünleri gör"
-    },
-    {
-      "type": "url",
-      "id": "bottom_cta_link",
-      "label": "Bottom CTA link"
-    }
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Öne Çıkan Ürünler"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"En çok incelenen Vitacoral ürünleri"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>Vitacoral ürünlerini içerik, kullanım ve etiket bilgileriyle birlikte inceleyin.</p>"},
+    {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri gör"},
+    {"type":"url","id":"bottom_cta_link","label":"Bottom CTA link"}
   ],
   "blocks": [
     {
       "type": "featured_product",
       "name": "Featured product",
       "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        },
-        {
-          "type": "text",
-          "id": "badge_text",
-          "label": "Badge text"
-        },
-        {
-          "type": "text",
-          "id": "custom_title_override",
-          "label": "Custom title override"
-        },
-        {
-          "type": "text",
-          "id": "custom_description",
-          "label": "Custom description"
-        },
-        {
-          "type": "image_picker",
-          "id": "custom_image_override",
-          "label": "Custom image override"
-        },
-        {
-          "type": "text",
-          "id": "cta_label",
-          "label": "CTA label",
-          "default": "Ürünü keşfet"
-        },
-        {
-          "type": "select",
-          "id": "accent_style",
-          "label": "Accent style",
-          "default": "green",
-          "options": [
-            {
-              "value": "green",
-              "label": "green"
-            },
-            {
-              "value": "orange",
-              "label": "orange"
-            },
-            {
-              "value": "soft",
-              "label": "soft"
-            }
-          ]
-        }
+        {"type":"product","id":"product","label":"Product"},
+        {"type":"text","id":"badge_text","label":"Badge text"},
+        {"type":"text","id":"custom_title_override","label":"Custom title override"},
+        {"type":"text","id":"custom_description","label":"Custom description"},
+        {"type":"image_picker","id":"custom_image_override","label":"Custom image override"},
+        {"type":"text","id":"cta_label","label":"CTA label","default":"Ürünü incele"},
+        {"type":"select","id":"accent_style","label":"Accent style","default":"green","options":[{"value":"orange","label":"Orange"},{"value":"green","label":"Green"},{"value":"soft","label":"Soft"}]}
       ]
     }
   ],
-  "max_blocks": 6,
   "presets": [
-    {
-      "name": "Vitacoral Products",
-      "blocks": [
-        {
-          "type": "featured_product",
-          "settings": {
-            "badge_text": "Premium",
-            "custom_title_override": "Collagen",
-            "cta_label": "Ürünü keşfet",
-            "accent_style": "orange"
-          }
-        },
-        {
-          "type": "featured_product",
-          "settings": {
-            "badge_text": "Günlük rutin",
-            "custom_title_override": "Women Multivitamin",
-            "cta_label": "Ürünü keşfet",
-            "accent_style": "green"
-          }
-        },
-        {
-          "type": "featured_product",
-          "settings": {
-            "badge_text": "Günlük rutin",
-            "custom_title_override": "Men Multivitamin",
-            "cta_label": "Ürünü keşfet",
-            "accent_style": "green"
-          }
-        },
-        {
-          "type": "featured_product",
-          "settings": {
-            "badge_text": "Aile rutini",
-            "custom_title_override": "Kids Multivitamin",
-            "cta_label": "Ürünü keşfet",
-            "accent_style": "soft"
-          }
-        }
-      ]
-    }
+    {"name":"Vitacoral Products","blocks":[{"type":"featured_product"},{"type":"featured_product"},{"type":"featured_product"}]}
   ]
 }
 {% endschema %}
