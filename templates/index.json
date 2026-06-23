@@ -49,7 +49,7 @@
       ],
       "settings": {
         "eyebrow": "Vitacoral resmi mağaza",
-        "heading": "Takviye seçiminizi daha anlaşılır hale getirin",
+        "heading": "Doğru ürünü daha kolay seçin",
         "body": "<p>Vitacoral ürünlerini içerik, kullanım ve etiket bilgileriyle birlikte inceleyin; ihtiyacınıza uygun ürün seçeneklerine güvenli ve sade bir alışveriş deneyimiyle ulaşın.</p>",
         "primary_cta_label": "Tüm ürünleri gör",
         "primary_cta_link": "/collections/all",
@@ -62,9 +62,9 @@
     "vitacoral_editorial_media": {
       "type": "vitacoral-editorial-media",
       "settings": {
-        "eyebrow": "Karar vermeden önce",
-        "heading": "İçerik, etiket ve belge bilgilerini birlikte inceleyin",
-        "body": "<p>Ürün sayfalarında içerik ve kullanım bilgilerine; belge alanlarında kalite, hammadde ve onay dokümanlarına ulaşabilirsiniz. Böylece alışveriş öncesi kararınızı daha net bir çerçevede verebilirsiniz.</p>",
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Ürün seçimini sadeleştiren bir rehberlik",
+        "body": "<p>Vitacoral’de ürünleri yalnızca kategori olarak değil; içerik, kullanım ve alışveriş öncesi karar adımlarıyla birlikte anlatmaya odaklanıyoruz. Video, bu sade seçim yaklaşımını daha net göstermek için hazırlandı.</p>",
         "layout_style": "split",
         "primary_cta_label": "Rutinini bul",
         "primary_cta_link": "/pages/vitacorali-kesfet",
@@ -226,7 +226,7 @@
       "name": "Vitacoral Quiz",
       "settings": {
         "eyebrow": "ÖDÜLLÜ ANKET",
-        "heading": "Nereden başlayacağınızı birlikte netleştirelim",
+        "heading": "Birkaç kısa soruyla başlangıç noktanızı bulun",
         "body": "<p>Kısa sorularla günlük alışkanlıklarınıza ve ürün ailelerine daha yakından bakın; karar vermeden önce seçenekleri sadeleştirin.</p>",
         "cta_label": "Ankete Katıl",
         "cta_link": "/#quiz-0AH2J3O",
@@ -389,8 +389,8 @@
         "education_item_3"
       ],
       "settings": {
-        "eyebrow": "Rutin rehberi",
-        "heading": "Ürün seçmeden önce bilginizi sadeleştirin",
+        "eyebrow": "Bilgi merkezi",
+        "heading": "Ürün seçmeden önce okuyabileceğiniz kısa bilgiler",
         "body": "<p>İçerik, kullanım zamanı ve günlük rutin uyumu hakkında kısa rehberlerle karar sürecinizi destekleyin.</p>",
         "bottom_cta_label": "Tüm yazıları gör",
         "bottom_cta_link": "/blogs/news"
@@ -403,23 +403,23 @@
           "type": "faq_item",
           "settings": {
             "question": "Hangi Vitacoral ürününü seçmeliyim?",
-            "answer": "Ürün seçimine günlük rutininizden, yaş grubunuzdan ve incelemek istediğiniz ürün ailesinden başlayabilirsiniz. Emin değilseniz kısa quiz, seçenekleri daha anlaşılır hale getirmenize yardımcı olur.",
+            "answer": "Ürün seçimine günlük rutininizden, yaş grubunuzdan ve incelemek istediğiniz ürün ailesinden başlayabilirsiniz. Emin değilseniz kısa anket, seçenekleri daha anlaşılır hale getirmenize yardımcı olur.",
             "accent_style": "green"
           }
         },
         "faq_item_2": {
           "type": "faq_item",
           "settings": {
-            "question": "Birden fazla ürünü birlikte değerlendirebilir miyim?",
-            "answer": "Bazı ürünler günlük rutin içinde birlikte değerlendirilebilir. Yine de her ürünün içerik, kullanım önerisi ve uyarı bilgilerini kontrol etmenizi; özel bir durumunuz, düzenli ilaç kullanımınız, hamilelik veya emzirme süreciniz varsa bir uzmana danışmanızı öneririz.",
+            "question": "Orijinal ürünü nereden almalıyım?",
+            "answer": "Resmi Vitacoral web mağazasını ve yetkili satış kanallarını tercih edebilirsiniz. Pazaryerinde satıcı bilgisini kontrol edin.",
             "accent_style": "soft"
           }
         },
         "faq_item_3": {
           "type": "faq_item",
           "settings": {
-            "question": "Ürün içeriklerini nereden görebilirim?",
-            "answer": "Her ürün sayfasında içerik, kullanım önerisi ve ürün bilgilerine ulaşabilirsiniz. Karar vermeden önce etiket bilgilerini ve uyarıları dikkatle incelemenizi öneririz.",
+            "question": "Belgeleri ve onayları nerede görebilirim?",
+            "answer": "Kalite belgeleri, hammadde sertifikaları ve Bakanlık onayları ilgili belge sayfalarında yer alır. Ürün seçmeden önce bu sayfaları inceleyebilirsiniz.",
             "accent_style": "orange"
           }
         },
@@ -449,7 +449,7 @@
       ],
       "settings": {
         "eyebrow": "Sık sorulanlar",
-        "heading": "Ürün seçimini kolaylaştıran kısa cevaplar",
+        "heading": "Alışveriş öncesi kısa cevaplar",
         "body": "<p>Vitacoral ürünlerini incelerken aklınıza takılabilecek temel soruları sade ve anlaşılır şekilde yanıtladık.</p>",
         "cta_label": "Tüm ürünleri gör",
         "cta_link": "/collections/all"
