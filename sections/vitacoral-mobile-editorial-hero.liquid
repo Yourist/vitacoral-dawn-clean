@@ -268,6 +268,29 @@
   </div>
 </section>
 
+<script>
+  (() => {
+    const root = document.getElementById('VitacoralHero-{{ section.id }}');
+
+    if (!root || root.dataset.guideAnchorReady === 'true') return;
+    root.dataset.guideAnchorReady = 'true';
+
+    document.addEventListener('click', (event) => {
+      const trigger = event.target.closest('a[href="#urun-secim-rehberi"]');
+
+      if (!trigger) return;
+
+      const target = document.querySelector('.vitacoral-product-family');
+
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#urun-secim-rehberi');
+    });
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Vitacoral Hero",
