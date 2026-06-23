@@ -79,7 +79,7 @@
     "vitacoral_quiz_teaser_Ggy8Pg": {
       "type": "vitacoral-quiz-teaser",
       "name": "Vitacoral Anket",
-      "settings": {"eyebrow":"Ürün seçim anketi","heading":"Birkaç kısa soruyla başlangıç noktanızı bulun","body":"<p>Anket, ürün seçeneklerine daha sade bir çerçeveden bakmanıza yardımcı olur. Sonuçlar bilgilendirme amaçlıdır; ürün detaylarını ve etiket bilgilerini ayrıca kontrol edin.</p>","cta_label":"Ankete başla","cta_link":"/#quiz-0AH2J3O","secondary_note":"Kısa sürer; teşhis veya tedavi önerisi sunmaz."}
+      "settings": {"eyebrow":"Ürün seçim anketi","heading":"Birkaç kısa soruyla başlangıç noktanızı bulun","body":"<p>Anket, ürün seçeneklerine daha sade bir çerçeveden bakmanıza yardımcı olur. Sonuçlar bilgilendirme amaçlıdır; ürün detaylarını ve etiket bilgilerini ayrıca kontrol edin.</p>","cta_label":"Anketi yanıtla","cta_link":"/#quiz-0AH2J3O","secondary_note":"Kısa sürer; teşhis veya tedavi önerisi sunmaz."}
     },
     "vitacoral_trust_section": {
       "type": "vitacoral-trust-section",
