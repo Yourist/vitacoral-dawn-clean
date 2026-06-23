@@ -17,6 +17,13 @@
     endif
   endif
 
+  assign primary_cta_link = section.settings.primary_cta_link
+  assign secondary_cta_link = section.settings.secondary_cta_link
+  assign secondary_cta_label_handle = section.settings.secondary_cta_label | handleize
+  if secondary_cta_label_handle contains 'rutin' and secondary_cta_link contains '/pages/'
+    assign secondary_cta_link = '#urun-secim-rehberi'
+  endif
+
   assign desktop_sizes = '(min-width: 990px) 42vw, 100vw'
   assign mobile_sizes = '100vw'
 -%}
@@ -77,9 +84,9 @@
     }
 
     #VitacoralHero-{{ section.id }} .vitacoral-heading-xl {
-      max-width: 11ch;
-      font-size: clamp(2.65rem, 8vw, 3.25rem);
-      line-height: 0.98;
+      max-width: 15ch;
+      font-size: clamp(2.4rem, 7.3vw, 3.05rem);
+      line-height: 1.02;
     }
 
     #VitacoralHero-{{ section.id }} .vitacoral-hero__body {
@@ -176,10 +183,10 @@
           <div class="vitacoral-hero__actions vitacoral-reveal is-visible">
             {%- if section.settings.primary_cta_label != blank -%}
               <a
-                {% if section.settings.primary_cta_link == blank %}
+                {% if primary_cta_link == blank %}
                   role="link" aria-disabled="true"
                 {% else %}
-                  href="{{ section.settings.primary_cta_link }}"
+                  href="{{ primary_cta_link }}"
                 {% endif %}
                 class="vitacoral-button"
               >
@@ -189,10 +196,10 @@
 
             {%- if section.settings.secondary_cta_label != blank -%}
               <a
-                {% if section.settings.secondary_cta_link == blank %}
+                {% if secondary_cta_link == blank %}
                   role="link" aria-disabled="true"
                 {% else %}
-                  href="{{ section.settings.secondary_cta_link }}"
+                  href="{{ secondary_cta_link }}"
                 {% endif %}
                 class="vitacoral-button vitacoral-button--secondary"
               >
@@ -274,25 +281,25 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow text",
-      "default": "Vitacoral’i Keşfet"
+      "default": "Vitacoral resmi mağaza"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "Main heading",
-      "default": "Bugün daha iyi başla"
+      "default": "Doğru ürünü daha kolay seçin"
     },
     {
       "type": "richtext",
       "id": "body",
       "label": "Body text",
-      "default": "<p>Günlük rutininize uygun Vitacoral ürünlerini keşfedin.</p>"
+      "default": "<p>Vitacoral ürünlerini içerik, kullanım ve etiket bilgileriyle birlikte inceleyin.</p>"
     },
     {
       "type": "text",
       "id": "primary_cta_label",
       "label": "Primary CTA label",
-      "default": "Ürünleri Keşfet"
+      "default": "Tüm ürünleri gör"
     },
     {
       "type": "url",
@@ -303,7 +310,7 @@
       "type": "text",
       "id": "secondary_cta_label",
       "label": "Secondary CTA label",
-      "default": "Rutininizi Bulun"
+      "default": "Rutinini bul"
     },
     {
       "type": "url",
@@ -335,7 +342,7 @@
           "type": "text",
           "id": "text",
           "label": "Chip text",
-          "default": "Günlük kullanım"
+          "default": "İçerik bilgisi"
         },
         {
           "type": "text",
