@@ -160,17 +160,25 @@
 
 @media screen and (max-width: 989px) {
   .header {
-    min-height: 7.4rem;
-    padding-inline: 1.4rem;
+    min-height: 7.8rem;
+    padding-inline: 1.2rem;
   }
 
   header-drawer {
     margin-left: 0;
   }
 
+  .header__heading,
+  .header__heading-link,
+  .header__heading-logo-wrapper {
+    min-width: 13.2rem;
+  }
+
+  .header__heading-logo,
   .header__heading-logo-wrapper img {
-    max-height: 5.2rem;
-    width: auto;
+    width: auto !important;
+    max-width: 15.8rem !important;
+    max-height: 6.2rem !important;
   }
 
   .header__icons {
@@ -185,11 +193,20 @@
 
 @media screen and (max-width: 749px) {
   .header {
-    min-height: 7.2rem;
+    min-height: 7.6rem;
+    grid-template-columns: auto 1fr auto;
   }
 
+  .header__heading,
+  .header__heading-link,
+  .header__heading-logo-wrapper {
+    min-width: 12.4rem;
+  }
+
+  .header__heading-logo,
   .header__heading-logo-wrapper img {
-    max-height: 5.2rem;
+    max-width: 14.8rem !important;
+    max-height: 6rem !important;
   }
 
   .menu-drawer__menu-item {
