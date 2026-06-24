@@ -4,6 +4,8 @@
 {%- endcomment -%}
 
 {%- if product.handle == 'collagen-30-sase' -%}
+  {{ 'vitacoral-collagen-pdp-preview.css' | asset_url | stylesheet_tag }}
+
   <style>
     #ProductInfo-{{ section.id }} .product__description.quick-add-hidden { display: none !important; }
   </style>
