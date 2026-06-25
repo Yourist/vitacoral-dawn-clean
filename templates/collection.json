@@ -26,19 +26,6 @@
         "color_scheme": "scheme-1"
       }
     },
-    "choice_guide": {
-      "type": "vitacoral-collection-choice-guide",
-      "disabled": true,
-      "settings": {
-        "eyebrow": "Seçim rehberi",
-        "heading": "Ürünü rutininize göre seçin",
-        "body": "Vitacoral ürünlerini günlük kullanım alışkanlığınıza, içerik beklentinize ve aile rutininize göre daha kolay karşılaştırabilirsiniz.",
-        "primary_label": "Rutininizi bulun",
-        "primary_link": "/pages/kadin-gunluk-rutini",
-        "secondary_label": "Tüm ürünleri gör",
-        "secondary_link": "/collections/all"
-      }
-    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
