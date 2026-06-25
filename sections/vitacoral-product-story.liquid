@@ -19,7 +19,7 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank -%}
+        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank or section.settings.ministry_cta_label != blank -%}
           <div class="vitacoral-product-story__actions">
             {%- if section.settings.primary_cta_label != blank -%}
               <a
@@ -44,6 +44,19 @@
                 class="vitacoral-button vitacoral-button--secondary"
               >
                 {{ section.settings.secondary_cta_label | escape }}
+              </a>
+            {%- endif -%}
+
+            {%- if section.settings.ministry_cta_label != blank -%}
+              <a
+                {% if section.settings.ministry_cta_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.ministry_cta_link }}"
+                {% endif %}
+                class="vitacoral-button vitacoral-button--secondary"
+              >
+                {{ section.settings.ministry_cta_label | escape }}
               </a>
             {%- endif -%}
           </div>
@@ -142,6 +155,17 @@
       "type": "url",
       "id": "secondary_cta_link",
       "label": "Secondary CTA link"
+    },
+    {
+      "type": "text",
+      "id": "ministry_cta_label",
+      "label": "Ministry approval CTA label",
+      "default": "Bakanlık onayı"
+    },
+    {
+      "type": "url",
+      "id": "ministry_cta_link",
+      "label": "Ministry approval CTA link"
     }
   ],
   "blocks": [
