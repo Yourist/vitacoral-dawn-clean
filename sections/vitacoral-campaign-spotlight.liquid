@@ -1,0 +1,68 @@
+{{ 'vitacoral-campaign-surfaces.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'vitacoral-campaign-surfaces.js' | asset_url }}" defer="defer"></script>
+
+<section class="vc-campaign-spotlight" id="VitacoralCampaignSpotlight-{{ section.id }}">
+  <div class="page-width">
+    <div class="vc-campaign-spotlight__inner">
+      <div class="vc-campaign-spotlight__copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vc-campaign-spotlight__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="vc-campaign-spotlight__title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <div class="vc-campaign-spotlight__body rte">{{ section.settings.body }}</div>
+        {%- endif -%}
+
+        <div class="vc-campaign-spotlight__actions">
+          {%- if section.settings.primary_label != blank -%}
+            <a class="vc-campaign-spotlight__button" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">
+              {{ section.settings.primary_label | escape }}
+            </a>
+          {%- endif -%}
+          {%- if section.settings.secondary_label != blank -%}
+            <a class="vc-campaign-spotlight__button vc-campaign-spotlight__button--secondary" href="{{ section.settings.secondary_link | default: routes.all_products_collection_url }}">
+              {{ section.settings.secondary_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="vc-campaign-spotlight__panel">
+        {%- if section.settings.featured_product != blank -%}
+          {%- assign spotlight_product = section.settings.featured_product -%}
+          {%- render 'vitacoral-campaign-surface', product: spotlight_product, context: 'home' -%}
+          <div class="vc-campaign-spotlight__featured">
+            {% render 'card-product', card_product: spotlight_product, media_aspect_ratio: 'square', image_shape: 'default', show_secondary_image: false, show_vendor: false, show_rating: false, lazy_load: true, quick_add: 'standard', section_id: section.id %}
+          </div>
+        {%- else -%}
+          <p class="vc-campaign-spotlight__body">Öne çıkarılacak ürünü Theme Editor üzerinden seçin.</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kampanya spotlight",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Kampanya"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Öne çıkan Vitacoral fırsatını keşfedin"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>"},
+    {"type":"product","id":"featured_product","label":"Featured product"},
+    {"type":"text","id":"primary_label","label":"Primary CTA label","default":"Kampanyalı ürünleri gör"},
+    {"type":"url","id":"primary_link","label":"Primary CTA link"},
+    {"type":"text","id":"secondary_label","label":"Secondary CTA label","default":"Tüm ürünler"},
+    {"type":"url","id":"secondary_link","label":"Secondary CTA link"}
+  ],
+  "presets": [
+    {"name":"Kampanya spotlight"}
+  ]
+}
+{% endschema %}
