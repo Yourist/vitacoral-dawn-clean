@@ -6,37 +6,48 @@
       {%- if section.settings.eyebrow != blank -%}
         <p class="vc-tools-teaser__eyebrow">{{ section.settings.eyebrow | escape }}</p>
       {%- endif -%}
+
       {%- if section.settings.heading != blank -%}
         <h2 class="vc-tools-teaser__title">{{ section.settings.heading }}</h2>
       {%- endif -%}
+
       {%- if section.settings.body != blank -%}
-        <div class="vc-tools-teaser__body rte">{{ section.settings.body }}</div>
+        <div class="vc-tools-teaser__body rte">
+          {{ section.settings.body }}
+        </div>
       {%- endif -%}
-      <div class="vc-tools-teaser__actions">
-        {%- if section.settings.primary_label != blank and section.settings.primary_link != blank -%}
-          <a class="vc-tools-teaser__button" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label | escape }}</a>
-        {%- endif -%}
-        {%- if section.settings.secondary_label != blank and section.settings.secondary_link != blank -%}
-          <a class="vc-tools-teaser__button vc-tools-teaser__button--secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label | escape }}</a>
-        {%- endif -%}
-      </div>
+
+      {%- if section.settings.cta_label != blank -%}
+        <div class="vc-tools-teaser__actions">
+          <a
+            class="vc-tools-teaser__button"
+            {% if section.settings.cta_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.cta_link }}"
+            {% endif %}
+          >
+            {{ section.settings.cta_label | escape }}
+          </a>
+        </div>
+      {%- endif -%}
     </div>
 
-    <div class="vc-tools-teaser__panel" aria-label="Etkileşimli araçlar">
-      <div class="vc-tools-teaser__mini">
-        <span class="vc-tools-teaser__icon">01</span>
-        <div>
-          <h3 class="vc-tools-teaser__mini-title">{{ section.settings.tool_1_title | escape }}</h3>
-          <p class="vc-tools-teaser__mini-text">{{ section.settings.tool_1_text | escape }}</p>
+    <div class="vc-tools-teaser__panel" aria-label="{{ section.settings.panel_label | default: 'Etkileşimli araçlar' | escape }}">
+      {%- for block in section.blocks -%}
+        <div class="vc-tools-teaser__mini" {{ block.shopify_attributes }}>
+          <span class="vc-tools-teaser__icon">{{ block.settings.index | default: forloop.index | escape }}</span>
+          <div>
+            {%- if block.settings.title != blank -%}
+              <h3 class="vc-tools-teaser__mini-title">{{ block.settings.title | escape }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="vc-tools-teaser__mini-text">{{ block.settings.text | escape }}</p>
+            {%- endif -%}
+          </div>
         </div>
-      </div>
-      <div class="vc-tools-teaser__mini">
-        <span class="vc-tools-teaser__icon">02</span>
-        <div>
-          <h3 class="vc-tools-teaser__mini-title">{{ section.settings.tool_2_title | escape }}</h3>
-          <p class="vc-tools-teaser__mini-text">{{ section.settings.tool_2_text | escape }}</p>
-        </div>
-      </div>
+      {%- endfor -%}
+
       {%- if section.settings.note != blank -%}
         <p class="vc-tools-teaser__note">{{ section.settings.note | escape }}</p>
       {%- endif -%}
@@ -46,23 +57,40 @@
 
 {% schema %}
 {
-  "name": "Vitacoral Tools Teaser",
+  "name": "Araçlar teaser",
   "tag": "section",
   "class": "section",
+  "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Etkileşimli rehber" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Rutininize başlamadan önce kendinizi daha iyi tanıyın" },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Yaklaşık kalori ihtiyacınızı görün, ardından size en yakın Vitacoral rutinini kısa seçimlerle keşfedin.</p>" },
-    { "type": "text", "id": "primary_label", "label": "Primary label", "default": "Araçları aç" },
-    { "type": "url", "id": "primary_link", "label": "Primary link", "default": "/pages/saglik-hesaplama-araclari" },
-    { "type": "text", "id": "secondary_label", "label": "Secondary label", "default": "Rutinleri gör" },
-    { "type": "url", "id": "secondary_link", "label": "Secondary link", "default": "/#VitacoralProductFamily" },
-    { "type": "text", "id": "tool_1_title", "label": "Tool 1 title", "default": "Kalori hesaplayıcı" },
-    { "type": "text", "id": "tool_1_text", "label": "Tool 1 text", "default": "Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacını gör." },
-    { "type": "text", "id": "tool_2_title", "label": "Tool 2 title", "default": "Vitamin rutin rehberi" },
-    { "type": "text", "id": "tool_2_text", "label": "Tool 2 text", "default": "Kadın, erkek, aile veya hafif rutin seçenekleri arasında kararını kolaylaştır." },
-    { "type": "text", "id": "note", "label": "Note", "default": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin." }
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Etkileşimli rehber"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Ürün seçmeden önce bilgiyi sadeleştirin"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>Yaklaşık günlük ihtiyaçlarınızı ve Vitacoral ürün seçeneklerini bilgilendirme amaçlı araçlarla daha net değerlendirin.</p>"},
+    {"type":"text","id":"cta_label","label":"CTA label","default":"Araçları aç"},
+    {"type":"url","id":"cta_link","label":"CTA link","default":"/pages/saglik-hesaplama-araclari"},
+    {"type":"text","id":"panel_label","label":"Panel accessibility label","default":"Etkileşimli araçlar"},
+    {"type":"text","id":"note","label":"Note","default":"Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin."}
   ],
-  "presets": [{ "name": "Vitacoral Tools Teaser" }]
+  "blocks": [
+    {
+      "type": "tool_item",
+      "name": "Araç kartı",
+      "settings": [
+        {"type":"text","id":"index","label":"Index","default":"01"},
+        {"type":"text","id":"title","label":"Title","default":"Araç başlığı"},
+        {"type":"textarea","id":"text","label":"Text","default":"Kısa açıklama metni."}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Araçlar teaser",
+      "blocks":[
+        {"type":"tool_item","settings":{"index":"01","title":"Kalori hesaplayıcı","text":"Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacınızı görün."}},
+        {"type":"tool_item","settings":{"index":"02","title":"Ürün seçim anketi","text":"Kısa sorularla size yakın başlangıç noktasını netleştirin."}},
+        {"type":"tool_item","settings":{"index":"03","title":"Belge merkezi","text":"Kalite belgeleri, hammadde sertifikaları ve ürün onaylarını inceleyin."}},
+        {"type":"tool_item","settings":{"index":"04","title":"Ürün karşılaştırma","text":"Collagen, multivitamin, Kids ve Glucomannan seçeneklerini birlikte değerlendirin."}}
+      ]
+    }
+  ]
 }
 {% endschema %}
