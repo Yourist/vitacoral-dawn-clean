@@ -159,6 +159,59 @@
         "bottom_cta_link": "/collections/all"
       }
     },
+    "vitacoral_tools_teaser_dHFfXt": {
+      "type": "vitacoral-tools-teaser",
+      "blocks": {
+        "tool_item_zYUymk": {
+          "type": "tool_item",
+          "settings": {
+            "index": "01",
+            "title": "Kalori hesaplayıcı",
+            "text": "Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacınızı görün."
+          }
+        },
+        "tool_item_kbMfAj": {
+          "type": "tool_item",
+          "settings": {
+            "index": "02",
+            "title": "Ürün seçim anketi",
+            "text": "Kısa sorularla size yakın başlangıç noktasını netleştirin."
+          }
+        },
+        "tool_item_KjLFt9": {
+          "type": "tool_item",
+          "settings": {
+            "index": "03",
+            "title": "Belge merkezi",
+            "text": "Kalite belgeleri, hammadde sertifikaları ve ürün onaylarını inceleyin."
+          }
+        },
+        "tool_item_eWT48R": {
+          "type": "tool_item",
+          "settings": {
+            "index": "04",
+            "title": "Ürün karşılaştırma",
+            "text": "Collagen, multivitamin, Kids ve Glucomannan seçeneklerini birlikte değerlendirin."
+          }
+        }
+      },
+      "block_order": [
+        "tool_item_zYUymk",
+        "tool_item_kbMfAj",
+        "tool_item_KjLFt9",
+        "tool_item_eWT48R"
+      ],
+      "name": "Araçlar teaser",
+      "settings": {
+        "eyebrow": "Etkileşimli rehber",
+        "heading": "Ürün seçmeden önce kendinizi tanıyın",
+        "body": "<p>Yaklaşık günlük ihtiyaçlarınızı ve Vitacoral ürün seçeneklerini bilgilendirme amaçlı araçlarla daha net değerlendirin.</p>",
+        "cta_label": "Araçları aç",
+        "cta_link": "",
+        "panel_label": "Etkileşimli araçlar",
+        "note": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin."
+      }
+    },
     "vitacoral_featured_products": {
       "type": "vitacoral-featured-products",
       "blocks": {
@@ -466,6 +519,7 @@
     "vitacoral_mobile_editorial_hero",
     "vitacoral_editorial_media",
     "vitacoral_product_family_cards",
+    "vitacoral_tools_teaser_dHFfXt",
     "vitacoral_featured_products",
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
