@@ -1,4 +1,7 @@
 (() => {
+  if (window.__vitacoralCampaignSurfacesReady) return;
+  window.__vitacoralCampaignSurfacesReady = true;
+
   const openModal = (modal) => {
     if (!modal) return;
     modal.hidden = false;
