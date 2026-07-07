@@ -18,6 +18,22 @@
       {%- endif -%}
     </div>
 
+    {%- assign campaign_spotlight_product = blank -%}
+    {%- for block in section.blocks -%}
+      {%- if campaign_spotlight_product == blank and block.settings.product != blank -%}
+        {%- assign candidate_product = block.settings.product -%}
+        {%- if candidate_product.metafields.custom.campaign_badge != blank or candidate_product.metafields.custom.campaign_title != blank or candidate_product.metafields.custom.campaign_description != blank or candidate_product.metafields.custom.campaign_code != blank or candidate_product.compare_at_price > candidate_product.price -%}
+          {%- assign campaign_spotlight_product = candidate_product -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if campaign_spotlight_product != blank -%}
+      <div class="vitacoral-featured-products__campaign vitacoral-reveal is-visible">
+        {%- render 'vitacoral-campaign-surface', product: campaign_spotlight_product, context: 'home-featured' -%}
+      </div>
+    {%- endif -%}
+
     <div class="vitacoral-featured-products__carousel vitacoral-reveal is-visible">
       {%- if section.blocks.size > 0 -%}
         <ul class="vitacoral-featured-products__grid list-unstyled" role="list">
@@ -87,6 +103,7 @@
                     <div class="vitacoral-featured-products__price">
                       {% render 'price', product: selected_product, price_class: 'vitacoral-featured-products__price-block' %}
                     </div>
+                    {%- render 'vitacoral-campaign-surface', product: selected_product, context: 'home-card' -%}
                   {%- endif -%}
 
                   {%- if block.settings.custom_description != blank -%}
