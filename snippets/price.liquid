@@ -122,4 +122,8 @@
       </span>
     {%- endif -%}
   </div>
+
+  {%- unless show_badges or price_class contains 'price--large' or price_class contains 'vitacoral-featured-products' -%}
+    {%- render 'vitacoral-campaign-surface', product: product, context: 'card' -%}
+  {%- endunless -%}
 {% endunless %}
