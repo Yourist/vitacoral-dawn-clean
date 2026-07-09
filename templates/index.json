@@ -513,6 +513,20 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "vitacoral_campaign_spotlight_GzGGjG": {
+      "type": "vitacoral-campaign-spotlight",
+      "name": "Kampanya spotlight",
+      "settings": {
+        "eyebrow": "Kampanya",
+        "heading": "Öne çıkan Vitacoral fırsatını keşfedin",
+        "body": "<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>",
+        "featured_product": "",
+        "primary_label": "Kampanyalı ürünleri gör",
+        "primary_link": "",
+        "secondary_label": "Tüm ürünler",
+        "secondary_link": ""
+      }
     }
   },
   "order": [
@@ -520,6 +534,7 @@
     "vitacoral_editorial_media",
     "vitacoral_product_family_cards",
     "vitacoral_tools_teaser_dHFfXt",
+    "vitacoral_campaign_spotlight_GzGGjG",
     "vitacoral_featured_products",
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
