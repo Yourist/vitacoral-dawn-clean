@@ -27,6 +27,14 @@
   assign campaign_end_date = campaign_product.metafields.custom.campaign_end_date.value | default: campaign_product.metafields.custom.campaign_end_date | strip
   assign has_sale_price = false
 
+  if campaign_product.handle == 'collagen-30-sase' and campaign_badge == blank and campaign_title == blank and campaign_description == blank and campaign_code == blank
+    assign campaign_badge = 'Collagen özel'
+    assign campaign_title = 'Collagen için özel başlangıç fırsatı'
+    assign campaign_description = 'COLLAGEN10 koduyla Collagen ürününde indirim fırsatını kullanabilirsiniz.'
+    assign campaign_code = 'COLLAGEN10'
+    assign campaign_terms = 'Kampanya koşulları sepet ve ödeme adımında geçerlidir.'
+  endif
+
   if campaign_product.compare_at_price > campaign_product.price and campaign_product.available
     assign has_sale_price = true
   endif
