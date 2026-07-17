@@ -182,11 +182,29 @@
   font-size: 1.18rem;
   font-weight: 800;
   cursor: pointer;
+  transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
 }
 
 .vc-campaign-copy.is-copied {
-  background: #ec6542;
+  background: #1f8f5f;
+  border-color: #1f8f5f;
   color: #fff;
+  box-shadow: 0 8px 18px rgba(31, 143, 95, .22);
+  transform: scale(1.04);
+}
+
+.vc-campaign-copy-feedback {
+  margin: -.2rem .2rem .2rem;
+  padding: .8rem 1rem;
+  border-radius: 14px;
+  background: rgba(31, 143, 95, .1);
+  color: #176947;
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+.vc-campaign-copy-feedback[hidden] {
+  display: none;
 }
 
 .vc-campaign-modal__cta,
