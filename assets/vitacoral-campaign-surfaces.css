@@ -68,8 +68,9 @@
   inset: 0;
   z-index: 9999;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  padding: 1.6rem;
 }
 
 .vc-campaign-modal__overlay {
@@ -81,12 +82,12 @@
 .vc-campaign-modal__panel {
   position: relative;
   width: min(560px, calc(100vw - 2rem));
-  max-height: calc(100vh - 4rem);
+  max-height: calc(100vh - 3.2rem);
   overflow: auto;
   padding: 2.2rem;
-  border-radius: 28px 28px 0 0;
+  border-radius: 28px;
   background: #fff;
-  box-shadow: 0 -18px 52px rgba(27, 19, 14, .22);
+  box-shadow: 0 18px 52px rgba(27, 19, 14, .22);
 }
 
 .vc-campaign-modal__close {
@@ -142,24 +143,50 @@
   background: rgba(247, 238, 230, .58);
 }
 
+.vc-campaign-modal__fact--code {
+  align-items: center;
+}
+
 .vc-campaign-modal__fact dt {
   color: rgba(var(--color-foreground), .62);
   font-weight: 700;
 }
 
 .vc-campaign-modal__fact dd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .7rem;
   margin: 0;
   font-weight: 750;
   text-align: right;
 }
 
 .vc-campaign-modal__fact code {
-  padding: .25rem .55rem;
+  padding: .35rem .65rem;
   border-radius: 8px;
   background: rgba(236, 101, 66, .12);
   color: #ec6542;
   font-family: inherit;
   font-weight: 850;
+}
+
+.vc-campaign-copy {
+  min-height: 3.2rem;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(236, 101, 66, .22);
+  border-radius: 999px;
+  background: #fff;
+  color: #ec6542;
+  font: inherit;
+  font-size: 1.18rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.vc-campaign-copy.is-copied {
+  background: #ec6542;
+  color: #fff;
 }
 
 .vc-campaign-modal__cta,
@@ -243,17 +270,17 @@
   margin-top: 1.2rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (max-width: 749px) {
   .vc-campaign-modal {
-    align-items: center;
+    align-items: flex-start;
+    padding-top: 7vh;
   }
 
   .vc-campaign-modal__panel {
-    border-radius: 28px;
+    max-height: calc(100vh - 14vh);
+    border-radius: 24px;
   }
-}
 
-@media screen and (max-width: 749px) {
   .vc-campaign-surface__trigger,
   .vc-campaign-spotlight__inner {
     grid-template-columns: 1fr;
@@ -266,5 +293,15 @@
 
   .vc-campaign-spotlight__inner {
     border-radius: 26px;
+  }
+
+  .vc-campaign-modal__fact {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .vc-campaign-modal__fact dd {
+    justify-content: flex-start;
+    text-align: left;
   }
 }
