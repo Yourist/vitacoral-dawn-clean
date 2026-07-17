@@ -1,0 +1,61 @@
+{{ 'vitacoral-routine-suggestion.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign source_product = product
+  assign routine_product = blank
+  assign routine_badge = source_product.metafields.custom.routine_badge.value | default: source_product.metafields.custom.routine_badge | strip
+  assign routine_title = source_product.metafields.custom.routine_title.value | default: source_product.metafields.custom.routine_title | strip
+  assign routine_description = source_product.metafields.custom.routine_description.value | default: source_product.metafields.custom.routine_description | strip
+  assign routine_product_ref = source_product.metafields.custom.routine_product.value | default: source_product.metafields.custom.routine_product
+
+  if routine_product_ref != blank
+    assign routine_product = routine_product_ref
+  endif
+
+  if source_product.handle == 'collagen-30-sase' and routine_product == blank
+    assign routine_product = all_products['multivitamin-for-women']
+    assign routine_badge = 'Rutin önerisi'
+    assign routine_title = 'Collagen + Women Multivitamin'
+    assign routine_description = 'Güzellik ve günlük destek rutini için birlikte incelenebilir.'
+  elsif source_product.handle == 'multivitamin-for-women' and routine_product == blank
+    assign routine_product = all_products['collagen-30-sase']
+    assign routine_badge = 'Rutin önerisi'
+    assign routine_title = 'Women Multivitamin + Collagen'
+    assign routine_description = 'Günlük vitamin desteğini Collagen rutiniyle birlikte inceleyebilirsiniz.'
+  endif
+
+  assign has_routine = false
+  if routine_product != blank and routine_product.available
+    assign has_routine = true
+  endif
+-%}
+
+{%- if has_routine -%}
+  <section class="vc-routine-suggestion" id="VitacoralRoutineSuggestion-{{ section.id }}">
+    <div class="page-width">
+      <div class="vc-routine-suggestion__inner">
+        <div class="vc-routine-suggestion__copy">
+          <p class="vc-routine-suggestion__badge">{{ routine_badge | default: 'Rutin önerisi' | escape }}</p>
+          <h2 class="vc-routine-suggestion__title">{{ routine_title | default: routine_product.title | escape }}</h2>
+          {%- if routine_description != blank -%}
+            <p class="vc-routine-suggestion__description">{{ routine_description | escape }}</p>
+          {%- endif -%}
+        </div>
+
+        <a class="vc-routine-suggestion__product" href="{{ routine_product.url }}">
+          {%- if routine_product.featured_image != blank -%}
+            {{ routine_product.featured_image | image_url: width: 220 | image_tag: loading: 'lazy', widths: '120, 180, 220', sizes: '96px', class: 'vc-routine-suggestion__image', alt: routine_product.title }}
+          {%- endif -%}
+          <span class="vc-routine-suggestion__product-copy">
+            <span class="vc-routine-suggestion__product-label">Birlikte incele</span>
+            <span class="vc-routine-suggestion__product-title">{{ routine_product.title | escape }}</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "
