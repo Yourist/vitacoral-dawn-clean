@@ -18,6 +18,16 @@
       {%- endif -%}
     </div>
 
+    <div class="vitacoral-featured-products__campaign vitacoral-reveal is-visible">
+      <div class="vc-campaign-surface vc-campaign-surface--home-welcome">
+        <button class="vc-campaign-surface__trigger" type="button" disabled>
+          <span class="vc-campaign-surface__badge">WELCOME10</span>
+          <span class="vc-campaign-surface__text">İlk siparişinizde %10 başlangıç avantajı</span>
+          <span class="vc-campaign-surface__chevron">Kod</span>
+        </button>
+      </div>
+    </div>
+
     {%- assign campaign_spotlight_product = blank -%}
     {%- for block in section.blocks -%}
       {%- if campaign_spotlight_product == blank and block.settings.product != blank -%}
