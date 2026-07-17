@@ -39,7 +39,13 @@
             {% render 'card-product', card_product: spotlight_product, media_aspect_ratio: 'square', image_shape: 'default', show_secondary_image: false, show_vendor: false, show_rating: false, lazy_load: true, quick_add: 'standard', section_id: section.id %}
           </div>
         {%- else -%}
-          <p class="vc-campaign-spotlight__body">Öne çıkarılacak ürünü Theme Editor üzerinden seçin.</p>
+          <div class="vc-campaign-surface vc-campaign-surface--home-static">
+            <button class="vc-campaign-surface__trigger" type="button" disabled>
+              <span class="vc-campaign-surface__badge">WELCOME10</span>
+              <span class="vc-campaign-surface__text">İlk siparişinizde %10 başlangıç avantajı</span>
+              <span class="vc-campaign-surface__chevron">Kod</span>
+            </button>
+          </div>
         {%- endif -%}
       </div>
     </div>
@@ -52,13 +58,13 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Kampanya"},
-    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Öne çıkan Vitacoral fırsatını keşfedin"},
-    {"type":"richtext","id":"body","label":"Body","default":"<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"İlk alışveriş avantajı"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Vitacoral’e başlarken daha avantajlı başlayın"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>WELCOME10 koduyla ilk siparişinizde %10 indirim fırsatını kullanabilirsiniz. Ürünleri içerik ve kullanım bilgileriyle birlikte inceleyin.</p>"},
     {"type":"product","id":"featured_product","label":"Featured product"},
-    {"type":"text","id":"primary_label","label":"Primary CTA label","default":"Kampanyalı ürünleri gör"},
+    {"type":"text","id":"primary_label","label":"Primary CTA label","default":"Ürünleri incele"},
     {"type":"url","id":"primary_link","label":"Primary CTA link"},
-    {"type":"text","id":"secondary_label","label":"Secondary CTA label","default":"Tüm ürünler"},
+    {"type":"text","id":"secondary_label","label":"Secondary CTA label","default":"Rutinini bul"},
     {"type":"url","id":"secondary_link","label":"Secondary CTA link"}
   ],
   "presets": [
