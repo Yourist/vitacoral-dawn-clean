@@ -1,3 +1,4 @@
+@import url("vitacoral-home-mobile-rhythm.css");
 .vitacoral-featured-products{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#f8faf8 56%,#fff 100%)}
 .vitacoral-featured-products:before{content:"";position:absolute;right:-14rem;top:6rem;width:38rem;height:38rem;border-radius:999px;background:radial-gradient(circle,rgba(34,89,82,.12),rgba(34,89,82,0) 70%);pointer-events:none}
 .vitacoral-featured-products:after{content:"";position:absolute;left:-15rem;bottom:0;width:36rem;height:36rem;border-radius:999px;background:radial-gradient(circle,rgba(225,117,61,.14),rgba(225,117,61,0) 70%);pointer-events:none}
