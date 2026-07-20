@@ -2,6 +2,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-collection-polish.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-collection-mobile-conversion.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -65,7 +66,7 @@
                     >
                       {{ option.name | escape }}
                     </option>
-                  {%- endfor -%}
+                  {%- endfor %}
                 </select>
                 <span class="svg-wrapper">
                   {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -191,9 +192,6 @@
       </div>
     </div>
   {%- endpaginate -%}
-  {% if section.settings.image_shape == 'arch' %}
-    {{ 'mask-arch.svg' | inline_asset_content }}
-  {%- endif -%}
 </div>
 
 {% schema %}
@@ -234,7 +232,7 @@
           "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
       ]
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -303,8 +301,8 @@
           "label": "t:sections.all.image_shape.options__8.label"
         }
       ],
-      "default": "default",
-      "label": "t:sections.all.image_shape.label"
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_shape.label"
     },
     {
       "type": "checkbox",
@@ -346,10 +344,6 @@
       ]
     },
     {
-      "type": "header",
-      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
-    },
-    {
       "type": "checkbox",
       "id": "enable_filtering",
       "default": true,
@@ -381,6 +375,10 @@
       "id": "enable_sorting",
       "default": true,
       "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
     },
     {
       "type": "range",
