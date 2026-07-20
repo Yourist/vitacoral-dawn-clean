@@ -24,7 +24,7 @@
             </a>
           {%- endif -%}
           {%- if section.settings.secondary_label != blank -%}
-            <a class="vc-campaign-spotlight__button vc-campaign-spotlight__button--secondary" href="{{ section.settings.secondary_link | default: routes.all_products_collection_url }}">
+            <a class="vc-campaign-spotlight__button vc-campaign-spotlight__button--secondary" href="{{ section.settings.secondary_link | default: '#urun-secim-rehberi' }}">
               {{ section.settings.secondary_label | escape }}
             </a>
           {%- endif -%}
@@ -39,13 +39,13 @@
             {% render 'card-product', card_product: spotlight_product, media_aspect_ratio: 'square', image_shape: 'default', show_secondary_image: false, show_vendor: false, show_rating: false, lazy_load: true, quick_add: 'standard', section_id: section.id %}
           </div>
         {%- else -%}
-          <div class="vc-campaign-surface vc-campaign-surface--home-static">
-            <button class="vc-campaign-surface__trigger" type="button" disabled>
+          <a class="vc-campaign-surface vc-campaign-surface--home-static vc-campaign-surface--home-link" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">
+            <span class="vc-campaign-surface__trigger">
               <span class="vc-campaign-surface__badge">WELCOME10</span>
               <span class="vc-campaign-surface__text">İlk siparişinizde %10 başlangıç avantajı</span>
-              <span class="vc-campaign-surface__chevron">Kod</span>
-            </button>
-          </div>
+              <span class="vc-campaign-surface__chevron">Ürünleri gör</span>
+            </span>
+          </a>
         {%- endif -%}
       </div>
     </div>
