@@ -1,12 +1,16 @@
 .vitacoral-product-family__header{max-width:76rem;margin-inline:auto;text-align:center}
 .vitacoral-product-family__body{max-width:52rem;margin-inline:auto;color:rgba(22,49,46,.68)}
 .vitacoral-product-family__carousel{margin-top:2.4rem}
-.vitacoral-product-family__card{border-radius:2.8rem;box-shadow:0 1.5rem 3.8rem rgba(21,44,41,.07)}
-.vitacoral-product-family__media{min-height:18.5rem}
+.vitacoral-product-family__card{position:relative;overflow:hidden;border-radius:2.8rem;box-shadow:0 1.5rem 3.8rem rgba(21,44,41,.07);transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s cubic-bezier(.22,1,.36,1),border-color .32s ease}
+.vitacoral-product-family__card:after{content:"";position:absolute;inset:-35% auto auto -40%;width:34%;height:170%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.24),transparent);transform:translateX(-120%) rotate(12deg);pointer-events:none;transition:transform .86s cubic-bezier(.22,1,.36,1)}
+.vitacoral-product-family__media{min-height:18.5rem;transition:transform .42s cubic-bezier(.22,1,.36,1)}
 .vitacoral-product-family__title{max-width:13ch;font-size:clamp(2.3rem,3vw,3.35rem)}
 .vitacoral-product-family__description{font-size:1.18rem;line-height:1.45;color:rgba(22,49,46,.66)}
-.vitacoral-product-family__includes{padding:.85rem 1rem;border-radius:1.5rem}
+.vitacoral-product-family__includes{padding:.85rem 1rem;border-radius:1.5rem;transition:background .24s ease,border-color .24s ease}
 .vitacoral-product-family__includes-label{font-size:.92rem}
 .vitacoral-product-family__product-chip{font-size:.95rem;line-height:1.25}
-.vitacoral-product-family__actions .vitacoral-button{min-height:4.55rem;border-radius:999px}
-@media screen and (max-width:749px){.vitacoral-product-family__header{text-align:left}.vitacoral-product-family__body{margin-inline:0}.vitacoral-product-family__carousel{margin-top:1.8rem;margin-left:-1.5rem;margin-right:-1.5rem;overflow-x:auto;padding:0 1.5rem 1rem;scroll-snap-type:x mandatory}.vitacoral-product-family__grid{display:flex;gap:1rem}.vitacoral-product-family__item{flex:0 0 82vw;scroll-snap-align:start}.vitacoral-product-family__card{border-radius:2.25rem}.vitacoral-product-family__media{min-height:16.5rem}.vitacoral-product-family__title{font-size:2.25rem;line-height:1;max-width:12ch}.vitacoral-product-family__description{font-size:1.08rem}.vitacoral-product-family__product-chips{max-height:5.8rem;overflow:hidden}.vitacoral-product-family__actions .vitacoral-button{min-height:4.45rem}}
+.vitacoral-product-family__actions .vitacoral-button{min-height:4.55rem;border-radius:999px;transition:transform .22s cubic-bezier(.22,1,.36,1),box-shadow .22s cubic-bezier(.22,1,.36,1)}
+@media (hover:hover) and (pointer:fine){.vitacoral-product-family__card:hover{transform:translateY(-.42rem);box-shadow:0 2.1rem 5rem rgba(21,44,41,.11)}.vitacoral-product-family__card:hover:after{transform:translateX(420%) rotate(12deg)}.vitacoral-product-family__card:hover .vitacoral-product-family__media{transform:scale(1.018)}.vitacoral-product-family__actions .vitacoral-button:hover{transform:translateY(-2px);box-shadow:0 1.2rem 2.6rem rgba(21,44,41,.14)}}
+.vitacoral-product-family__card:active{transform:scale(.992)}
+@media screen and (max-width:749px){.vitacoral-product-family__header{text-align:left}.vitacoral-product-family__body{margin-inline:0}.vitacoral-product-family__carousel{margin-top:1.8rem;margin-left:-1.5rem;margin-right:-1.5rem;overflow-x:auto;padding:0 1.5rem 1rem;scroll-snap-type:x mandatory}.vitacoral-product-family__grid{display:flex;gap:1rem}.vitacoral-product-family__item{flex:0 0 82vw;scroll-snap-align:start}.vitacoral-product-family__card{border-radius:2.25rem}.vitacoral-product-family__card:after{display:none}.vitacoral-product-family__media{min-height:16.5rem}.vitacoral-product-family__title{font-size:2.25rem;line-height:1;max-width:12ch}.vitacoral-product-family__description{font-size:1.08rem}.vitacoral-product-family__product-chips{max-height:5.8rem;overflow:hidden}.vitacoral-product-family__actions .vitacoral-button{min-height:4.45rem}}
+@media (prefers-reduced-motion:reduce){.vitacoral-product-family__card,.vitacoral-product-family__media,.vitacoral-product-family__actions .vitacoral-button{transition:none!important;transform:none!important}.vitacoral-product-family__card:after{display:none!important}}
