@@ -1,5 +1,12 @@
 {{ 'vitacoral-tools-teaser.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign tools_cta_link = section.settings.cta_link
+  if tools_cta_link == blank
+    assign tools_cta_link = '/pages/saglik-hesaplama-araclari'
+  endif
+-%}
+
 <section class="vc-tools-teaser" id="VitacoralToolsTeaser-{{ section.id }}">
   <div class="page-width vc-tools-teaser__inner">
     <div class="vc-tools-teaser__copy">
@@ -21,11 +28,7 @@
         <div class="vc-tools-teaser__actions">
           <a
             class="vc-tools-teaser__button"
-            {% if section.settings.cta_link == blank %}
-              role="link" aria-disabled="true"
-            {% else %}
-              href="{{ section.settings.cta_link }}"
-            {% endif %}
+            href="{{ tools_cta_link }}"
           >
             {{ section.settings.cta_label | escape }}
           </a>
