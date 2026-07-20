@@ -1,0 +1,20 @@
+/* Vitacoral collection mobile conversion layer */
+@media screen and (max-width:749px){
+  .vc-collection-grid__surface.page-width{padding-left:1.25rem;padding-right:1.25rem}
+  .vc-collection-grid__items.grid{gap:1.05rem}
+  .vc-collection .card{grid-template-columns:minmax(9.4rem,34%) minmax(0,1fr);gap:.86rem;padding:.78rem;border-radius:1.65rem;box-shadow:0 .9rem 2.2rem rgba(21,44,41,.07)}
+  .vc-collection .card__inner{min-height:11.8rem;border-radius:1.3rem}
+  .vc-collection .card__inner.ratio:before{padding-bottom:104%}
+  .vc-collection .card__media .media img{padding:.58rem}
+  .vc-collection .card__information{gap:.42rem;padding:.08rem}
+  .vc-collection .card__heading{font-size:1.48rem;line-height:1.03;letter-spacing:-.04em}
+  .vc-collection .price{font-size:1.28rem;line-height:1.1}
+  .vc-collection .vc-campaign-surface--card{margin:.42rem 0 0}
+  .vc-collection .vc-campaign-surface--card .vc-campaign-surface__trigger{padding:.48rem .56rem;border-radius:1rem;box-shadow:0 .45rem 1.2rem rgba(54,37,26,.055)}
+  .vc-collection .vc-campaign-surface--card .vc-campaign-surface__badge{font-size:.88rem}
+  .vc-collection .vc-campaign-surface--card .vc-campaign-surface__text{font-size:.98rem;line-height:1.2}
+  .vc-collection .vc-campaign-surface--card .vc-campaign-surface__chevron{font-size:.9rem}
+  .vc-collection .quick-add{margin:.55rem 0 0}
+  .vc-collection .quick-add__submit{min-height:3.65rem;font-size:1.18rem;box-shadow:0 .75rem 1.7rem rgba(21,44,41,.1)}
+}
+@media (prefers-reduced-motion:reduce){.vc-collection .card,.vc-collection .quick-add__submit{transition:none!important;transform:none!important}}
