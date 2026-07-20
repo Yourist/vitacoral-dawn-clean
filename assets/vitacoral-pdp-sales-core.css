@@ -2,14 +2,4 @@
 product-info[data-vc-has-sticky-atc="true"] .product__info-container{gap:.72rem}
 product-info[data-vc-has-sticky-atc="true"] .product__title h1{max-width:13ch}
 product-info[data-vc-has-sticky-atc="true"] [data-vc-price-source]{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin:.1rem 0 .15rem}
-product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface{margin:.1rem 0 .2rem}
-product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface__trigger{min-height:4.7rem;padding:.78rem .92rem;border-radius:1.35rem;box-shadow:0 .9rem 2.2rem rgba(54,37,26,.08)}
-product-info[data-vc-has-sticky-atc="true"] .product-form{margin:.05rem 0 0}
-product-info[data-vc-has-sticky-atc="true"] .product-form__buttons{gap:.62rem}
-product-info[data-vc-has-sticky-atc="true"] .product-form__submit{min-height:5.35rem}
-product-info[data-vc-has-sticky-atc="true"] .shopify-payment-button__button{min-height:4.85rem!important}
-product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-highlights{margin-top:.2rem}
-product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials,product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-details,product-info[data-vc-has-sticky-atc="true"] .product__description{margin-top:.1rem}
-@media screen and (min-width:990px){product-info[data-vc-has-sticky-atc="true"] .product__info-container{position:sticky;top:9.2rem}product-info[data-vc-has-sticky-atc="true"] .product__title h1{font-size:clamp(3.25rem,3.6vw,4.75rem)}product-info[data-vc-has-sticky-atc="true"] .product__media-item>*{min-height:48rem}}
-@media screen and (max-width:749px){product-info[data-vc-has-sticky-atc="true"] .product.grid{gap:.78rem}product-info[data-vc-has-sticky-atc="true"] .product__media img{max-height:26rem;padding:.75rem}product-info[data-vc-has-sticky-atc="true"] .product__info-container{gap:.58rem;padding:.95rem 1rem 1.05rem}product-info[data-vc-has-sticky-atc="true"] .product__title h1{font-size:2.38rem;line-height:1.02}product-info[data-vc-has-sticky-atc="true"] [data-vc-price-source]{padding:.58rem .72rem}product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface__trigger{min-height:auto;padding:.68rem .74rem}product-info[data-vc-has-sticky-atc="true"] .product-form__submit{min-height:4.72rem}product-info[data-vc-has-sticky-atc="true"] .shopify-payment-button__button{min-height:4.35rem!important}product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-highlights{padding:.86rem .9rem}}
-@media (prefers-reduced-motion:reduce){product-info[data-vc-has-sticky-atc="true"] .product__info-container{position:static}}
+product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface{margin:.1rem
