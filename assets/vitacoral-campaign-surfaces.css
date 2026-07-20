@@ -23,9 +23,9 @@
 }
 
 .vc-campaign-surface--card .vc-campaign-surface__trigger {
-  padding: .72rem .82rem;
-  border-radius: 14px;
-  box-shadow: none;
+  padding: .78rem .86rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(54, 37, 26, .055);
 }
 
 .vc-campaign-surface__badge {
@@ -272,6 +272,31 @@
   margin-top: 1.2rem;
 }
 
+.vitacoral-anchor-target {
+  display: block;
+  position: relative;
+  top: -8rem;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.vc-campaign-surface--home-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.vc-campaign-surface--home-link .vc-campaign-surface__trigger {
+  min-height: 9.6rem;
+  cursor: pointer;
+  box-shadow: 0 16px 34px rgba(54, 37, 26, .09);
+}
+
+.vc-campaign-surface--home-link:hover .vc-campaign-surface__trigger {
+  transform: translateY(-1px);
+}
+
 @media screen and (max-width: 749px) {
   .vc-campaign-modal {
     align-items: flex-start;
@@ -305,5 +330,19 @@
 
   .vc-campaign-spotlight__inner {
     border-radius: 26px;
+    padding: 1.8rem;
+  }
+
+  .vc-campaign-surface--card .vc-campaign-surface__trigger {
+    gap: .55rem;
+    padding: .8rem;
+  }
+
+  .vc-campaign-surface--card .vc-campaign-surface__badge {
+    font-size: 1rem;
+  }
+
+  .vc-campaign-surface--card .vc-campaign-surface__text {
+    font-size: 1.18rem;
   }
 }
