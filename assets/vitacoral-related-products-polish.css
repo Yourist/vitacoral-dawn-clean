@@ -1,0 +1,121 @@
+/* Vitacoral PDP related products sales polish */
+.related-products{
+  position:relative;
+  overflow:hidden;
+}
+.related-products:before{
+  content:"";
+  position:absolute;
+  right:-12rem;
+  top:1rem;
+  width:30rem;
+  height:30rem;
+  border-radius:999px;
+  background:radial-gradient(circle,rgba(34,89,82,.09),rgba(34,89,82,0) 68%);
+  pointer-events:none;
+}
+.related-products__heading{
+  position:relative;
+  max-width:72rem;
+  margin:0 auto 1.8rem;
+  color:var(--vitacoral-color-text,#16312e);
+  font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);
+  letter-spacing:-.045em;
+  line-height:1.02;
+  text-align:center;
+}
+.related-products .product-grid{
+  position:relative;
+  z-index:1;
+}
+.related-products .card-wrapper{
+  height:100%;
+}
+.related-products .card{
+  height:100%;
+  overflow:hidden;
+  padding:1rem;
+  border:.1rem solid rgba(34,89,82,.1);
+  border-radius:2.2rem;
+  background:linear-gradient(180deg,#fff,rgba(248,250,249,.96));
+  box-shadow:0 1.2rem 3rem rgba(21,44,41,.06);
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1),border-color .3s ease;
+}
+.related-products .card__inner{
+  overflow:hidden;
+  border-radius:1.7rem;
+  background:radial-gradient(circle at 50% 36%,#fff,rgba(34,89,82,.07) 68%,rgba(225,117,61,.08));
+}
+.related-products .card__media .media img{
+  object-fit:contain;
+  padding:1rem;
+  transition:transform .34s cubic-bezier(.22,1,.36,1),filter .34s cubic-bezier(.22,1,.36,1);
+}
+.related-products .card__content{
+  padding:0;
+}
+.related-products .card__information{
+  padding:1rem .15rem .15rem;
+}
+.related-products .card__heading{
+  font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);
+  font-size:clamp(1.55rem,2vw,2.1rem);
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+.related-products .price{
+  color:var(--vitacoral-color-primary-deep,#163d38);
+  font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);
+  font-weight:900;
+}
+@media (hover:hover) and (pointer:fine){
+  .related-products .card:hover{
+    transform:translateY(-.34rem);
+    border-color:rgba(225,117,61,.22);
+    box-shadow:0 1.9rem 4.8rem rgba(21,44,41,.11);
+  }
+  .related-products .card:hover .card__media .media img{
+    transform:scale(1.028);
+    filter:drop-shadow(0 1rem 1.4rem rgba(21,44,41,.12));
+  }
+}
+.related-products .card:active{
+  transform:scale(.992);
+}
+@media screen and (max-width:749px){
+  .related-products{
+    padding-inline:1.6rem;
+  }
+  .related-products__heading{
+    margin-bottom:1.35rem;
+    text-align:left;
+    font-size:2.05rem;
+  }
+  .related-products .product-grid{
+    gap:1rem!important;
+  }
+  .related-products .card{
+    padding:.78rem;
+    border-radius:1.75rem;
+    box-shadow:0 .8rem 2rem rgba(21,44,41,.055);
+  }
+  .related-products .card__inner{
+    border-radius:1.35rem;
+  }
+  .related-products .card__media .media img{
+    padding:.72rem;
+  }
+  .related-products .card__information{
+    padding:.82rem .05rem .05rem;
+  }
+  .related-products .card__heading{
+    font-size:1.38rem;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .related-products .card,
+  .related-products .card__media .media img{
+    transition:none!important;
+    transform:none!important;
+  }
+}
