@@ -1,0 +1,18 @@
+/* Vitacoral PDP Core Sales Layer */
+product-info[data-vc-has-sticky-atc="true"] .product__info-container{
+  gap:.72rem;
+}
+
+product-info[data-vc-has-sticky-atc="true"] .product__title h1{
+  max-width:13ch;
+}
+
+product-info[data-vc-has-sticky-atc="true"] [data-vc-price-source]{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.8rem;
+  margin:.1rem 0 .15rem;
+}
+
+product-info[data-vc-h
