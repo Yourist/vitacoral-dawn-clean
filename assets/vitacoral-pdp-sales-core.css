@@ -4,6 +4,7 @@ product-info[data-vc-has-sticky-atc="true"] .product__title h1{max-width:13ch}
 product-info[data-vc-has-sticky-atc="true"] [data-vc-price-source]{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin:.08rem 0 .12rem}
 product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface{margin:.05rem 0 .16rem}
 product-info[data-vc-has-sticky-atc="true"] .vc-campaign-surface__trigger{min-height:4.55rem;padding:.72rem .86rem;border-radius:1.28rem;box-shadow:0 .9rem 2.2rem rgba(54,37,26,.08)}
+product-info[data-vc-has-sticky-atc="true"] .vc-campaign-modal__cta{display:none!important}
 product-info[data-vc-has-sticky-atc="true"] .product-form{margin:.02rem 0 0}
 product-info[data-vc-has-sticky-atc="true"] .product-form__buttons{gap:.56rem}
 product-info[data-vc-has-sticky-atc="true"] .product-form__submit{min-height:5.35rem}
