@@ -1,6 +1,7 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-related-products-polish.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -219,8 +220,8 @@
           "label": "t:sections.all.image_shape.options__8.label"
         }
       ],
-      "default": "default",
-      "label": "t:sections.all.image_shape.label"
+      "default": "adapt",
+      "label": "t:sections.related-products.settings.image_shape.label"
     },
     {
       "type": "checkbox",
@@ -263,7 +264,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "default": 28
     }
   ]
 }
