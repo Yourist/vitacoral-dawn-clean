@@ -12,7 +12,7 @@
     "commerce_style_loader": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-collection-card-roles.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-collection-filter-flat.css' | asset_url | stylesheet_tag }}",
+        "custom_liquid": "{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-collection-card-roles.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-collection-filter-flat.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-campaign-surfaces.css' | asset_url | stylesheet_tag }}\n<script src=\"{{ 'vitacoral-campaign-surfaces.js' | asset_url }}\" defer=\"defer\"></script>\n<section class=\"vc-general-campaign-strip vc-general-campaign-strip--template\" data-vc-campaign-surface>\n  <style>\n    .vc-general-campaign-strip--template{padding:0 1.5rem 1.2rem}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__inner{display:grid;gap:1rem;max-width:var(--page-width,1200px);margin:0 auto;padding:1.2rem;border:1px solid rgba(236,101,66,.18);border-radius:22px;background:linear-gradient(135deg,rgba(255,248,244,.98),rgba(255,255,255,.98));box-shadow:0 12px 32px rgba(54,37,26,.07)}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__copy{display:grid;gap:.35rem}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__badge{width:fit-content;padding:.35rem .75rem;border-radius:999px;background:#ec6542;color:#fff;font-size:1.12rem;font-weight:800}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__title{margin:0;font-size:clamp(1.65rem,4vw,2.2rem);line-height:1.12;font-weight:850}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__note,.vc-general-campaign-strip--template .vc-campaign-copy-feedback{margin:0;color:rgba(var(--color-foreground),.68);font-size:1.25rem;line-height:1.35}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__code{display:inline-flex;align-items:center;min-height:3.8rem;padding:0 1rem;border-radius:999px;background:rgba(236,101,66,.1);color:#ec6542;font-family:inherit;font-size:1.3rem;font-weight:900;letter-spacing:.03em}\n    .vc-general-campaign-strip--template .vc-general-campaign-strip__link{display:inline-flex;align-items:center;min-height:3.8rem;padding:0 1.2rem;border-radius:999px;background:rgba(236,101,66,.1);color:#ec6542;font-size:1.18rem;font-weight:850;text-decoration:none}\n    @media screen and (min-width:750px){.vc-general-campaign-strip--template .vc-general-campaign-strip__inner{grid-template-columns:minmax(0,1fr) auto;align-items:center;padding:1.4rem 1.6rem}.vc-general-campaign-strip--template .vc-general-campaign-strip__actions{justify-content:flex-end}}\n  </style>\n  <div class=\"vc-general-campaign-strip__inner\">\n    <div class=\"vc-general-campaign-strip__copy\">\n      <span class=\"vc-general-campaign-strip__badge\">İlk sipariş</span>\n      <h2 class=\"vc-general-campaign-strip__title\">İlk siparişinize %10 indirim</h2>\n      <p class=\"vc-general-campaign-strip__note\">Kodu ödeme adımında kullanabilirsiniz.</p>\n      <p class=\"vc-campaign-copy-feedback\" hidden data-vc-copy-feedback aria-live=\"polite\"></p>\n    </div>\n    <div class=\"vc-general-campaign-strip__actions\">\n      <code class=\"vc-general-campaign-strip__code\">WELCOME10</code>\n      <button class=\"vc-campaign-copy\" type=\"button\" data-vc-copy-code=\"WELCOME10\">Kopyala</button>\n      <a class=\"vc-general-campaign-strip__link\" href=\"/collections/all\">Ürünleri incele</a>\n    </div>\n  </div>\n</section>",
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 0
@@ -24,18 +24,6 @@
         "show_collection_description": false,
         "show_collection_image": false,
         "color_scheme": "scheme-1"
-      }
-    },
-    "general_campaign_strip": {
-      "type": "vitacoral-general-campaign-strip",
-      "settings": {
-        "enabled": true,
-        "badge": "İlk sipariş",
-        "title": "İlk siparişinize %10 indirim",
-        "code": "WELCOME10",
-        "note": "Kodu ödeme adımında kullanabilirsiniz.",
-        "link_label": "Ürünleri incele",
-        "link": "shopify://collections/all"
       }
     },
     "product-grid": {
@@ -62,7 +50,6 @@
   "order": [
     "commerce_style_loader",
     "banner",
-    "general_campaign_strip",
     "product-grid"
   ]
 }
