@@ -1,6 +1,7 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-inner-pages.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-inner-pages-motion.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-routine-bundle-flow.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -29,6 +30,8 @@
     </div>
   </div>
 </div>
+
+<script src="{{ 'vitacoral-routine-bundle-flow.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
