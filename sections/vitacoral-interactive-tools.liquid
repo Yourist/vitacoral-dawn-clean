@@ -3,100 +3,63 @@
 
 <section class="vc-tools" id="VitacoralTools-{{ section.id }}">
   <div class="page-width vc-tools__inner">
-    <div class="vc-tools__header">
-      {%- if section.settings.eyebrow != blank -%}<p class="vc-tools__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-      {%- if section.settings.heading != blank -%}<h1 class="vc-tools__title">{{ section.settings.heading }}</h1>{%- endif -%}
-      {%- if section.settings.body != blank -%}<div class="vc-tools__body rte">{{ section.settings.body }}</div>{%- endif -%}
-    </div>
+    <header class="vc-tools__header">
+      <p class="vc-tools__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1 class="vc-tools__title">{{ section.settings.heading }}</h1>
+      <div class="vc-tools__body rte">{{ section.settings.body }}</div>
+    </header>
 
     <div class="vc-tools__grid">
       <article class="vc-tool-card">
-        <div class="vc-tool-card__head">
-          <div>
-            <p class="vc-tool-card__kicker">{{ section.settings.calorie_kicker | escape }}</p>
-            <h2 class="vc-tool-card__title">{{ section.settings.calorie_heading | escape }}</h2>
-            <p class="vc-tool-card__text">{{ section.settings.calorie_body | escape }}</p>
-          </div>
-          <span class="vc-tool-card__mark">01</span>
-        </div>
-
-        <form class="vc-calculator" data-vc-calculator>
-          <div class="vc-calculator__row">
-            <div class="vc-field"><label for="vcGender-{{ section.id }}">Cinsiyet</label><select id="vcGender-{{ section.id }}" name="gender"><option value="female">Kadın</option><option value="male">Erkek</option></select></div>
-            <div class="vc-field"><label for="vcAge-{{ section.id }}">Yaş</label><input id="vcAge-{{ section.id }}" name="age" inputmode="numeric" type="number" min="14" max="90" required></div>
-          </div>
-          <div class="vc-calculator__row">
-            <div class="vc-field"><label for="vcHeight-{{ section.id }}">Boy / cm</label><input id="vcHeight-{{ section.id }}" name="height" inputmode="numeric" type="number" min="120" max="230" required></div>
-            <div class="vc-field"><label for="vcWeight-{{ section.id }}">Kilo / kg</label><input id="vcWeight-{{ section.id }}" name="weight" inputmode="numeric" type="number" min="35" max="220" required></div>
-          </div>
-          <div class="vc-field"><label for="vcActivity-{{ section.id }}">Aktivite seviyesi</label><select id="vcActivity-{{ section.id }}" name="activity"><option value="1.2">Düşük hareket</option><option value="1.375">Hafif aktif</option><option value="1.55">Orta aktif</option><option value="1.725">Çok aktif</option></select></div>
-          <button class="vc-calculator__button" type="submit">Yaklaşık ihtiyacı hesapla</button>
-          <div class="vc-calculator__result" data-vc-calorie-result>
-            <span class="vc-calculator__number" data-vc-calorie-number></span>
-            <p class="vc-calculator__result-text" data-vc-calorie-text></p>
-          </div>
-          <p class="vc-tool-note">{{ section.settings.calorie_note | escape }}</p>
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">01 · Kalori</p><h2 class="vc-tool-card__title">Günlük kalori ihtiyacı</h2><p class="vc-tool-card__text">Yaş, boy, kilo ve hareket düzeyinize göre yaklaşık günlük enerji ihtiyacınızı görün.</p></div><span class="vc-tool-card__mark">01</span></div>
+        <form class="vc-tool-form" data-vc-tool="calorie">
+          <div class="vc-calculator__row"><div class="vc-field"><label>Cinsiyet</label><select name="gender"><option value="female">Kadın</option><option value="male">Erkek</option></select></div><div class="vc-field"><label>Yaş</label><input name="age" type="number" inputmode="numeric" min="14" max="90" required></div></div>
+          <div class="vc-calculator__row"><div class="vc-field"><label>Boy / cm</label><input name="height" type="number" inputmode="numeric" min="120" max="230" required></div><div class="vc-field"><label>Kilo / kg</label><input name="weight" type="number" inputmode="decimal" min="35" max="220" step="0.1" required></div></div>
+          <div class="vc-field"><label>Aktivite düzeyi</label><select name="activity"><option value="1.2">Düşük hareket</option><option value="1.375">Hafif aktif</option><option value="1.55">Orta aktif</option><option value="1.725">Çok aktif</option></select></div>
+          <button class="vc-tool-submit" type="submit">Hesapla</button><div class="vc-tool-result" data-vc-tool-result></div>
         </form>
+      </article>
+
+      <article class="vc-tool-card">
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">02 · VKİ</p><h2 class="vc-tool-card__title">Vücut kitle indeksi</h2><p class="vc-tool-card__text">Boy ve kilo bilginizle yaklaşık vücut kitle indeksinizi hesaplayın.</p></div><span class="vc-tool-card__mark">02</span></div>
+        <form class="vc-tool-form" data-vc-tool="bmi"><div class="vc-calculator__row"><div class="vc-field"><label>Boy / cm</label><input name="height" type="number" min="120" max="230" required></div><div class="vc-field"><label>Kilo / kg</label><input name="weight" type="number" min="35" max="220" step="0.1" required></div></div><button class="vc-tool-submit" type="submit">VKİ hesapla</button><div class="vc-tool-result" data-vc-tool-result></div></form>
+      </article>
+
+      <article class="vc-tool-card">
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">03 · Kilo aralığı</p><h2 class="vc-tool-card__title">Yaklaşık kilo aralığı</h2><p class="vc-tool-card__text">Boyunuza göre genel VKİ referans aralığındaki yaklaşık kilo aralığını görün.</p></div><span class="vc-tool-card__mark">03</span></div>
+        <form class="vc-tool-form" data-vc-tool="weight-range"><div class="vc-field"><label>Boy / cm</label><input name="height" type="number" min="120" max="230" required></div><button class="vc-tool-submit" type="submit">Aralığı hesapla</button><div class="vc-tool-result" data-vc-tool-result></div></form>
+      </article>
+
+      <article class="vc-tool-card">
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">04 · Su</p><h2 class="vc-tool-card__title">Günlük su ihtiyacı</h2><p class="vc-tool-card__text">Kilonuz ve hareket düzeyinize göre yaklaşık günlük su miktarını görün.</p></div><span class="vc-tool-card__mark">04</span></div>
+        <form class="vc-tool-form" data-vc-tool="water"><div class="vc-calculator__row"><div class="vc-field"><label>Kilo / kg</label><input name="weight" type="number" min="35" max="220" step="0.1" required></div><div class="vc-field"><label>Aktivite</label><select name="activity"><option value="0">Düşük</option><option value="350">Orta</option><option value="700">Yüksek</option></select></div></div><button class="vc-tool-submit" type="submit">Su ihtiyacını hesapla</button><div class="vc-tool-result" data-vc-tool-result></div></form>
+      </article>
+
+      <article class="vc-tool-card">
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">05 · Protein</p><h2 class="vc-tool-card__title">Günlük protein ihtiyacı</h2><p class="vc-tool-card__text">Kilonuz ve günlük hareket düzeyinize göre yaklaşık protein aralığını görün.</p></div><span class="vc-tool-card__mark">05</span></div>
+        <form class="vc-tool-form" data-vc-tool="protein"><div class="vc-calculator__row"><div class="vc-field"><label>Kilo / kg</label><input name="weight" type="number" min="35" max="220" step="0.1" required></div><div class="vc-field"><label>Aktivite</label><select name="factor"><option value="0.8">Düşük hareket</option><option value="1.0">Hafif aktif</option><option value="1.2">Orta aktif</option><option value="1.6">Yoğun aktif</option></select></div></div><button class="vc-tool-submit" type="submit">Protein ihtiyacını hesapla</button><div class="vc-tool-result" data-vc-tool-result></div></form>
       </article>
 
       <article class="vc-tool-card vc-tool-card--dark">
-        <div class="vc-tool-card__head">
-          <div>
-            <p class="vc-tool-card__kicker">{{ section.settings.routine_kicker | escape }}</p>
-            <h2 class="vc-tool-card__title">{{ section.settings.routine_heading | escape }}</h2>
-            <p class="vc-tool-card__text">{{ section.settings.routine_body | escape }}</p>
-          </div>
-          <span class="vc-tool-card__mark">02</span>
-        </div>
-
-        <form class="vc-routine-finder" data-vc-routine-finder>
-          <div class="vc-choice-group">
-            <span class="vc-choice-group__label">Kime yakın?</span>
-            <div class="vc-choice-list">
-              <label class="vc-choice"><input type="radio" name="profile" value="women" checked><span>Kadın</span></label>
-              <label class="vc-choice"><input type="radio" name="profile" value="men"><span>Erkek</span></label>
-              <label class="vc-choice"><input type="radio" name="profile" value="family"><span>Aile</span></label>
-            </div>
-          </div>
-          <div class="vc-choice-group">
-            <span class="vc-choice-group__label">Odak ne?</span>
-            <div class="vc-choice-list">
-              <label class="vc-choice"><input type="radio" name="focus" value="daily" checked><span>Günlük destek</span></label>
-              <label class="vc-choice"><input type="radio" name="focus" value="collagen"><span>Kolajen</span></label>
-              <label class="vc-choice"><input type="radio" name="focus" value="light"><span>Hafif rutin</span></label>
-            </div>
-          </div>
-          <button class="vc-routine-finder__button" type="submit">Rutin önerisini göster</button>
-          <div class="vc-routine-finder__result" data-vc-routine-result>
-            <h3 class="vc-routine-finder__result-title" data-vc-routine-title></h3>
-            <p class="vc-routine-finder__result-text" data-vc-routine-text></p>
-            <a class="vc-routine-finder__link" data-vc-routine-link href="/collections/all">Önerilen rutini incele</a>
-          </div>
-          <p class="vc-tool-note">{{ section.settings.routine_note | escape }}</p>
-        </form>
+        <div class="vc-tool-card__head"><div><p class="vc-tool-card__kicker">06 · Rutin</p><h2 class="vc-tool-card__title">Rutinini bul</h2><p class="vc-tool-card__text">Kısa seçimlerle size en yakın Vitacoral rutin sayfasına ulaşın.</p></div><span class="vc-tool-card__mark">06</span></div>
+        <form class="vc-tool-form vc-routine-finder" data-vc-tool="routine"><div class="vc-choice-group"><span class="vc-choice-group__label">Kimin için?</span><div class="vc-choice-list"><label class="vc-choice"><input type="radio" name="profile" value="women" checked><span>Kadın</span></label><label class="vc-choice"><input type="radio" name="profile" value="men"><span>Erkek</span></label><label class="vc-choice"><input type="radio" name="profile" value="family"><span>Aile</span></label></div></div><div class="vc-choice-group"><span class="vc-choice-group__label">Rutin tipi</span><div class="vc-choice-list"><label class="vc-choice"><input type="radio" name="focus" value="daily" checked><span>Günlük</span></label><label class="vc-choice"><input type="radio" name="focus" value="light"><span>Hafif</span></label></div></div><button class="vc-tool-submit" type="submit">Rutinimi göster</button><div class="vc-tool-result vc-tool-result--dark" data-vc-tool-result></div></form>
       </article>
     </div>
+
+    <p class="vc-tools__disclaimer">Bu araçlardaki sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir; tıbbi değerlendirme veya kişisel beslenme danışmanlığı yerine geçmez.</p>
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Interactive Tools",
+  "name": "Sağlık hesaplama araçları",
   "tag": "section",
   "class": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Etkileşimli rehber" },
-    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Rutininizi daha bilinçli oluşturun" },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Yaklaşık hesaplamalar ve kısa seçim adımlarıyla günlük rutininize daha net başlayın.</p>" },
-    { "type": "text", "id": "calorie_kicker", "label": "Calorie kicker", "default": "Kalori hesaplayıcı" },
-    { "type": "text", "id": "calorie_heading", "label": "Calorie heading", "default": "Günlük ihtiyacınızı yaklaşık görün" },
-    { "type": "text", "id": "calorie_body", "label": "Calorie body", "default": "Yaş, boy, kilo ve aktivite düzeyinize göre yaklaşık günlük enerji ihtiyacınızı hesaplayın." },
-    { "type": "text", "id": "calorie_note", "label": "Calorie note", "default": "Bu araç tıbbi veya beslenme danışmanlığı yerine geçmez; sonuçlar yaklaşık bilgilendirme amaçlıdır." },
-    { "type": "text", "id": "routine_kicker", "label": "Routine kicker", "default": "Vitamin rutin rehberi" },
-    { "type": "text", "id": "routine_heading", "label": "Routine heading", "default": "Size yakın rutini bulun" },
-    { "type": "text", "id": "routine_body", "label": "Routine body", "default": "Kısa seçimlerle kadın, erkek, aile veya hafif rutin seçeneklerinden size en yakın akışı görün." },
-    { "type": "text", "id": "routine_note", "label": "Routine note", "default": "Rutin önerileri genel yönlendirme amaçlıdır. Ürün içerik, kullanım ve uyarı bilgilerini ürün sayfalarında kontrol edin." }
+    {"type":"text","id":"eyebrow","label":"Üst başlık","default":"Vitacoral araçları"},
+    {"type":"inline_richtext","id":"heading","label":"Başlık","default":"Günlük ihtiyaçlarınızı yaklaşık değerlerle görün"},
+    {"type":"richtext","id":"body","label":"Açıklama","default":"<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>"}
   ],
-  "presets": [{ "name": "Interactive Tools" }]
+  "presets": [{"name":"Sağlık hesaplama araçları"}]
 }
 {% endschema %}
