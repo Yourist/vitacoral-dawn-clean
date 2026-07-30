@@ -1,54 +1,32 @@
-.vc-tools{position:relative;overflow:hidden;background:linear-gradient(180deg,#f8faf8 0%,#fff 55%,#fbf3ea 100%);color:var(--vitacoral-color-text,#16312e)}
+.vc-tools{position:relative;overflow:hidden;background:linear-gradient(180deg,#f8faf8 0%,#fff 58%,#fbf3ea 100%);color:var(--vitacoral-color-text,#16312e)}
 .vc-tools__inner{padding:5.8rem 0}
-.vc-tools__header{max-width:80rem;margin:0 auto 3.4rem;text-align:center}
-.vc-tools__eyebrow{margin:0 0 1rem;color:var(--vitacoral-color-primary,#225952);font-size:1.08rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-.vc-tools__title{margin:0;color:var(--vitacoral-color-text,#16312e);font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(4rem,8vw,8rem);font-weight:650;letter-spacing:-.075em;line-height:.9}
-.vc-tools__body{max-width:58rem;margin:1.5rem auto 0;color:rgba(22,49,46,.72);font-size:1.55rem;line-height:1.55}
-.vc-tools__grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:1.8rem;align-items:start}
-.vc-tool-card{position:relative;overflow:hidden;padding:2rem;border-radius:3rem;background:rgba(255,255,255,.84);border:.1rem solid rgba(34,89,82,.1);box-shadow:0 2rem 5rem rgba(21,44,41,.08)}
+.vc-tools__header{max-width:82rem;margin:0 auto 3.2rem;text-align:center}
+.vc-tools__eyebrow{margin:0 0 .8rem;color:#225952;font-size:1rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.vc-tools__title{margin:0;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(4rem,7vw,7.2rem);font-weight:650;letter-spacing:-.07em;line-height:.94}
+.vc-tools__body{max-width:64rem;margin:1.35rem auto 0;color:rgba(22,49,46,.7);font-size:1.42rem;line-height:1.55}
+.vc-tools__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;align-items:start}
+.vc-tool-card{position:relative;overflow:hidden;padding:1.7rem;border:.1rem solid rgba(34,89,82,.1);border-radius:2.4rem;background:rgba(255,255,255,.9);box-shadow:0 1.5rem 4rem rgba(21,44,41,.065)}
 .vc-tool-card--dark{background:linear-gradient(145deg,#173531,#225952);color:#fff}
-.vc-tool-card__head{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1.6rem}
-.vc-tool-card__kicker{margin:0;color:#a9542e;font-size:1.02rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.vc-tool-card__head{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1.35rem}
+.vc-tool-card__kicker{margin:0;color:#a9542e;font-size:.9rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
 .vc-tool-card--dark .vc-tool-card__kicker{color:#f7c7a8}
-.vc-tool-card__title{margin:.4rem 0 0;color:inherit;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.7rem,4.4vw,4.6rem);font-weight:650;letter-spacing:-.06em;line-height:.94}
-.vc-tool-card__text{margin:.9rem 0 0;color:rgba(22,49,46,.68);font-size:1.32rem;line-height:1.5}
+.vc-tool-card__title{margin:.35rem 0 0;color:inherit;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.35rem,3.4vw,3.7rem);font-weight:650;letter-spacing:-.055em;line-height:.98}
+.vc-tool-card__text{margin:.75rem 0 0;color:rgba(22,49,46,.67);font-size:1.12rem;line-height:1.48}
 .vc-tool-card--dark .vc-tool-card__text{color:rgba(255,255,255,.74)}
-.vc-tool-card__mark{display:inline-flex;align-items:center;justify-content:center;width:4.6rem;height:4.6rem;border-radius:1.6rem;background:rgba(34,89,82,.09);color:var(--vitacoral-color-primary,#225952);font-weight:800}
+.vc-tool-card__mark{display:inline-flex;flex:0 0 auto;align-items:center;justify-content:center;width:4rem;height:4rem;border-radius:1.3rem;background:rgba(34,89,82,.08);color:#225952;font-weight:850}
 .vc-tool-card--dark .vc-tool-card__mark{background:rgba(255,255,255,.12);color:#fff}
-.vc-calculator,.vc-routine-finder{display:grid;gap:1.1rem}
-.vc-calculator__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-.vc-field{display:grid;gap:.45rem}
-.vc-field label{font-size:1.05rem;font-weight:750;color:rgba(22,49,46,.76)}
-.vc-tool-card--dark .vc-field label{color:rgba(255,255,255,.78)}
-.vc-field input,.vc-field select{width:100%;min-height:4.8rem;border-radius:1.6rem;border:.1rem solid rgba(34,89,82,.14);background:rgba(255,255,255,.88);color:#16312e;padding:0 1.2rem;font:inherit;outline:none}
-.vc-field input:focus,.vc-field select:focus{border-color:rgba(225,117,61,.7);box-shadow:0 0 0 .3rem rgba(225,117,61,.12)}
-.vc-calculator__button,.vc-routine-finder__button{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:5rem;border:0;border-radius:999px;background:#e1753d;color:#fff;font-weight:850;cursor:pointer}
-.vc-calculator__result,.vc-routine-finder__result{display:none;margin-top:.5rem;padding:1.2rem;border-radius:1.8rem;background:rgba(225,117,61,.11);border:.1rem solid rgba(225,117,61,.18)}
-.vc-routine-finder__result{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14)}
-.vc-calculator__result.is-visible,.vc-routine-finder__result.is-visible{display:block}
-.vc-calculator__number{display:block;color:#a9542e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:4rem;font-weight:650;letter-spacing:-.06em;line-height:1}
-.vc-calculator__result-text,.vc-tool-note{margin:.5rem 0 0;color:rgba(22,49,46,.64);font-size:1.12rem;line-height:1.45}
-.vc-tool-card--dark .vc-tool-note{color:rgba(255,255,255,.62)}
-.vc-calculator__result-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
-.vc-tool-link{display:inline-flex;align-items:center;justify-content:center;min-height:4.2rem;padding:0 1.25rem;border-radius:999px;background:#225952;color:#fff;font-size:1.08rem;font-weight:800;text-decoration:none}
-.vc-tool-link--secondary{background:rgba(34,89,82,.08);color:#225952;border:.1rem solid rgba(34,89,82,.12)}
-.vc-choice-group{display:grid;gap:.7rem}
-.vc-choice-group__label{font-size:1.05rem;font-weight:750;color:rgba(255,255,255,.78);letter-spacing:.04em;text-transform:uppercase}
-.vc-choice-list{display:flex;flex-wrap:wrap;gap:.7rem}
-.vc-choice{position:relative}.vc-choice input{position:absolute;opacity:0;pointer-events:none}
-.vc-choice span{display:inline-flex;align-items:center;min-height:3.9rem;padding:0 1.1rem;border-radius:999px;background:rgba(255,255,255,.1);border:.1rem solid rgba(255,255,255,.16);color:rgba(255,255,255,.82);font-size:1.15rem;font-weight:750;cursor:pointer}
-.vc-choice input:checked+span{background:#fff;color:#173531;border-color:#fff}
-.vc-routine-finder__result-title{margin:0;color:#fff;font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
-.vc-routine-finder__result-text{margin:.55rem 0 1rem;color:rgba(255,255,255,.74);font-size:1.25rem;line-height:1.45}
-.vc-routine-finder__link{display:inline-flex;align-items:center;justify-content:center;min-height:4.4rem;padding:0 1.4rem;border-radius:999px;background:#fff;color:#173531;font-weight:850;text-decoration:none}
-.vc-tools-products{margin-top:2rem;padding:1.5rem;border-radius:2.6rem;background:rgba(255,255,255,.72);border:.1rem solid rgba(34,89,82,.1);box-shadow:0 1.6rem 4rem rgba(21,44,41,.06)}
-.vc-tools-products__head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:1rem}
-.vc-tools-products__kicker{margin:0 0 .35rem;color:#a9542e;font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
-.vc-tools-products__title{margin:0;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2.6rem,4vw,4rem);font-weight:650;letter-spacing:-.055em;line-height:.95}
-.vc-tools-products__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
-.vc-tools-product{display:grid;gap:.6rem;padding:1.1rem;border-radius:1.8rem;background:rgba(255,255,255,.82);border:.1rem solid rgba(34,89,82,.08);color:inherit;text-decoration:none}
-.vc-tools-product__label{color:#225952;font-size:1rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.vc-tools-product__title{margin:0;color:#16312e;font-size:1.36rem;font-weight:800;letter-spacing:-.02em}
-.vc-tools-product__text{margin:0;color:rgba(22,49,46,.62);font-size:1.08rem;line-height:1.4}
-@media screen and (max-width:899px){.vc-tools__grid{grid-template-columns:1fr}.vc-calculator__row,.vc-tools-products__grid{grid-template-columns:1fr}.vc-tools-products__head{display:block}}
-@media screen and (max-width:749px){.vc-tools__inner{padding:3.6rem 0}.vc-tools__title{font-size:clamp(4rem,15vw,6rem)}.vc-tool-card{padding:1.55rem;border-radius:2.5rem}.vc-tool-card__mark{width:4rem;height:4rem}.vc-calculator__result-actions{display:grid}.vc-tool-link{width:100%}}
+.vc-tool-form{display:grid;gap:1rem}
+.vc-calculator__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.vc-field{display:grid;gap:.4rem}.vc-field label{font-size:.98rem;font-weight:750;color:rgba(22,49,46,.76)}
+.vc-tool-card--dark .vc-field label{color:rgba(255,255,255,.8)}
+.vc-field input,.vc-field select{width:100%;min-height:4.6rem;padding:0 1.05rem;border:.1rem solid rgba(34,89,82,.14);border-radius:1.4rem;background:rgba(255,255,255,.92);color:#16312e;font:inherit;outline:none}
+.vc-field input:focus,.vc-field select:focus{border-color:rgba(225,117,61,.72);box-shadow:0 0 0 .3rem rgba(225,117,61,.11)}
+.vc-tool-submit{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:4.7rem;border:0;border-radius:999px;background:#225952;color:#fff;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-weight:850;cursor:pointer}
+.vc-tool-card--dark .vc-tool-submit{background:#fff;color:#173531}
+.vc-tool-result{display:none;padding:1.05rem 1.1rem;border:.1rem solid rgba(34,89,82,.12);border-radius:1.5rem;background:rgba(34,89,82,.055)}
+.vc-tool-result.is-visible{display:block}.vc-tool-result strong{display:block;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:2.45rem;line-height:1}.vc-tool-result p{margin:.55rem 0 0;color:rgba(22,49,46,.68);font-size:1rem;line-height:1.45}.vc-tool-result a{display:inline-flex;margin-top:.8rem;color:#225952;font-weight:850;text-decoration:underline;text-underline-offset:.2rem}
+.vc-tool-result--dark{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.1)}.vc-tool-result--dark strong,.vc-tool-result--dark a{color:#fff}.vc-tool-result--dark p{color:rgba(255,255,255,.72)}
+.vc-choice-group{display:grid;gap:.65rem}.vc-choice-group__label{font-size:.95rem;font-weight:750;color:rgba(255,255,255,.78);letter-spacing:.04em;text-transform:uppercase}.vc-choice-list{display:flex;flex-wrap:wrap;gap:.6rem}.vc-choice{position:relative}.vc-choice input{position:absolute;opacity:0;pointer-events:none}.vc-choice span{display:inline-flex;align-items:center;min-height:3.7rem;padding:0 1rem;border:.1rem solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.82);font-size:1.05rem;font-weight:750;cursor:pointer}.vc-choice input:checked+span{border-color:#fff;background:#fff;color:#173531}
+.vc-tools__disclaimer{max-width:78rem;margin:1.6rem auto 0;color:rgba(22,49,46,.58);font-size:.98rem;line-height:1.5;text-align:center}
+@media screen and (max-width:899px){.vc-tools__grid{grid-template-columns:1fr}}
+@media screen and (max-width:749px){.vc-tools__inner{padding:3.6rem 0}.vc-tools__header{margin-bottom:2.2rem}.vc-tools__title{font-size:clamp(3.7rem,14vw,5.5rem)}.vc-tools__body{font-size:1.2rem}.vc-tool-card{padding:1.35rem;border-radius:2rem}.vc-tool-card__title{font-size:2.45rem}.vc-tool-card__mark{width:3.7rem;height:3.7rem}.vc-calculator__row{grid-template-columns:1fr}.vc-tool-result strong{font-size:2.15rem}}
