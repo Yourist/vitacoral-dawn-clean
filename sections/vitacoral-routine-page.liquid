@@ -22,7 +22,9 @@
             echo routine_cart_separator
             echo '{"id":'
             echo routine_variant.id | json
-            echo ',"quantity":1}'
+            echo ',"quantity":1,"title":'
+            echo routine_product.title | json
+            echo '}'
             assign routine_cart_separator = ','
             assign routine_cart_count = routine_cart_count | plus: 1
           endif
@@ -51,7 +53,11 @@
   endfor
 -%}
 
-<section class="vc-routine-page" id="VitacoralRoutinePage-{{ section.id }}">
+<section
+  class="vc-routine-page"
+  id="VitacoralRoutinePage-{{ section.id }}"
+  data-vc-routine-name="{{ section.settings.eyebrow | default: section.settings.heading | escape }}"
+>
   <div class="page-width vc-routine-page__inner">
     <div class="vc-routine-hero">
       <div class="vc-routine-hero__copy">
@@ -65,10 +71,17 @@
           <div class="vc-routine-body rte">{{ section.settings.body }}</div>
         {%- endif -%}
         <div class="vc-routine-hero__actions">
-          <a class="vc-routine-button vc-routine-button--hero" href="#routine-cart">Rutini sepete ekle</a>
-          {%- if section.settings.hero_note != blank -%}
-            <span class="vc-routine-hero__microcopy">{{ section.settings.hero_note | escape }}</span>
-          {%- endif -%}
+          <button
+            class="vc-routine-button vc-routine-button--hero"
+            type="button"
+            data-vc-routine-add
+            {% if routine_cart_count == 0 %}disabled aria-disabled="true"{% endif %}
+          >
+            Rutini sepete ekle
+          </button>
+          <span class="vc-routine-hero__microcopy">
+            {{ routine_cart_count }} ürün · Her birinden 1 adet
+          </span>
         </div>
       </div>
       <div class="vc-routine-hero__visual" aria-label="Rutin ürün görseli">
@@ -88,15 +101,42 @@
       </div>
     </div>
 
-    <div class="vc-routine-cart-panel" id="routine-cart" data-vc-routine-cart data-vc-routine-cart-items='{{ routine_cart_items | strip | escape }}'>
-      <p class="vc-routine-cart-panel__eyebrow">Tek satın alma akışı</p>
-      <h2 class="vc-routine-cart-panel__title">Rutini birlikte sepete ekleyin</h2>
-      <p class="vc-routine-cart-panel__text">Bu sayfadaki ürünler rutin içeriğini gösterir. Ürünleri ayrı ayrı aramak yerine, aşağıdaki butonla rutindeki uygun ürünleri birlikte sepetinize ekleyebilirsiniz.</p>
+    <div
+      class="vc-routine-cart-panel"
+      id="routine-cart"
+      data-vc-routine-cart
+      data-vc-routine-cart-items='{{ routine_cart_items | strip | escape }}'
+    >
+      <p class="vc-routine-cart-panel__eyebrow">Rutin özeti</p>
+      <h2 class="vc-routine-cart-panel__title">Sepete eklenecek ürünler</h2>
+      <p class="vc-routine-cart-panel__text">
+        Bu rutin toplam {{ routine_cart_count }} üründen oluşur. Aşağıdaki ürünlerin her biri sepete 1 adet olarak eklenir.
+      </p>
+      <ul class="vc-routine-cart-panel__items" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'routine_product' and block.settings.product != blank -%}
+            {%- assign summary_product = block.settings.product -%}
+            {%- assign summary_variant = summary_product.selected_or_first_available_variant -%}
+            <li class="vc-routine-cart-panel__item">
+              <span class="vc-routine-cart-panel__item-name">{{ summary_product.title | escape }}</span>
+              <span class="vc-routine-cart-panel__item-quantity">
+                {% if summary_variant != blank and summary_variant.available %}1 adet{% else %}Stokta yok{% endif %}
+              </span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
       <div class="vc-routine-cart-panel__actions">
-        <button class="vc-routine-button vc-routine-button--hero" type="button" data-vc-routine-add{% if routine_cart_count == 0 %} disabled aria-disabled="true"{% endif %}>
-          Rutini sepete ekle
+        <button
+          class="vc-routine-button vc-routine-button--hero"
+          type="button"
+          data-vc-routine-add
+          {% if routine_cart_count == 0 %}disabled aria-disabled="true"{% endif %}
+        >
+          {{ routine_cart_count }} ürünü sepete ekle
         </button>
-        <a class="vc-routine-button" href="#routine-products">Paket içeriğini gör</a>
+        <a class="vc-routine-button" href="#routine-products">Ürün detaylarını gör</a>
+        <a class="vc-routine-button" href="/cart" data-vc-routine-cart-link hidden>Sepete git</a>
       </div>
       <p class="vc-routine-cart-panel__status" data-vc-routine-status aria-live="polite"></p>
     </div>
@@ -151,6 +191,7 @@
                 {%- endif -%}
                 {%- if routine_product != blank -%}
                   <div class="vc-routine-product__price">{% render 'price', product: routine_product, show_compare_at_price: true %}</div>
+                  <p class="vc-routine-product__quantity">Rutin içeriği: 1 adet</p>
                 {%- endif -%}
               </div>
               <div class="vc-routine-product__actions">
@@ -187,7 +228,14 @@
       <div class="vc-routine-final">
         {%- if section.settings.final_heading != blank -%}<h2 class="vc-routine-final__title">{{ section.settings.final_heading }}</h2>{%- endif -%}
         {%- if section.settings.final_body != blank -%}<p class="vc-routine-final__text">{{ section.settings.final_body | escape }}</p>{%- endif -%}
-        <a class="vc-routine-final__link" href="#routine-cart">Rutini sepete ekle</a>
+        <button
+          class="vc-routine-final__link"
+          type="button"
+          data-vc-routine-add
+          {% if routine_cart_count == 0 %}disabled aria-disabled="true"{% endif %}
+        >
+          Rutini sepete ekle
+        </button>
       </div>
     {%- endif -%}
   </div>
@@ -198,32 +246,47 @@
     const root = document.getElementById('VitacoralRoutinePage-{{ section.id }}');
     if (!root) return;
 
-    root.addEventListener('click', async (event) => {
-      const button = event.target.closest('[data-vc-routine-add]');
-      if (!button || button.disabled) return;
+    const panel = root.querySelector('[data-vc-routine-cart]');
+    const status = root.querySelector('[data-vc-routine-status]');
+    const cartLink = root.querySelector('[data-vc-routine-cart-link]');
+    const routineName = root.getAttribute('data-vc-routine-name') || 'Vitacoral rutini';
 
-      const panel = button.closest('[data-vc-routine-cart]');
-      const status = panel?.querySelector('[data-vc-routine-status]');
-      let items = [];
+    let items = [];
 
-      try {
-        items = JSON.parse(panel?.getAttribute('data-vc-routine-cart-items') || '[]');
-      } catch (error) {
-        items = [];
-      }
+    try {
+      items = JSON.parse(panel?.getAttribute('data-vc-routine-cart-items') || '[]');
+    } catch (error) {
+      items = [];
+    }
+
+    const addRoutine = async () => {
+      const buttons = Array.from(root.querySelectorAll('[data-vc-routine-add]'));
 
       if (!items.length) {
         if (status) {
           status.textContent = 'Bu rutinde sepete eklenebilir ürün bulunamadı.';
           status.setAttribute('role', 'alert');
         }
+        panel?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
-      button.disabled = true;
-      button.setAttribute('aria-busy', 'true');
+      const payloadItems = items.map((item) => ({
+        id: item.id,
+        quantity: item.quantity || 1,
+        properties: {
+          Rutin: routineName,
+          'Rutin içeriği': `${item.title} · ${item.quantity || 1} adet`
+        }
+      }));
+
+      buttons.forEach((button) => {
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+      });
+
       if (status) {
-        status.textContent = 'Rutin sepetinize ekleniyor...';
+        status.textContent = `${items.length} ürün sepetinize ekleniyor...`;
         status.removeAttribute('role');
       }
 
@@ -234,20 +297,43 @@
             'Content-Type': 'application/json',
             Accept: 'application/json'
           },
-          body: JSON.stringify({ items })
+          body: JSON.stringify({ items: payloadItems })
         });
 
         if (!response.ok) throw new Error('Cart add failed');
 
-        window.location.href = '/cart';
+        buttons.forEach((button) => {
+          button.removeAttribute('aria-busy');
+          button.textContent = 'Sepete eklendi';
+        });
+
+        if (status) {
+          status.textContent = `${items.length} ürün sepete eklendi. Her üründen 1 adet eklendi; adetleri sepet sayfasında değiştirebilirsiniz.`;
+          status.removeAttribute('role');
+        }
+
+        if (cartLink) cartLink.hidden = false;
+        panel?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (error) {
-        button.disabled = false;
-        button.removeAttribute('aria-busy');
+        buttons.forEach((button) => {
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+        });
+
         if (status) {
           status.textContent = 'Rutin sepete eklenemedi. Lütfen ürün stoklarını kontrol edip tekrar deneyin.';
           status.setAttribute('role', 'alert');
         }
+
+        panel?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
+    };
+
+    root.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-vc-routine-add]');
+      if (!button || button.disabled) return;
+      event.preventDefault();
+      addRoutine();
     });
   })();
 </script>
