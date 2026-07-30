@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "routine_men": {
@@ -24,11 +33,16 @@
           }
         }
       },
-      "block_order": ["men_multivitamin", "men_collagen"],
+      "block_order": [
+        "men_multivitamin",
+        "men_collagen"
+      ],
       "settings": {
         "eyebrow": "Erkek rutin paketi",
         "heading": "Erkek günlük rutininizi tek akışta sepete ekleyin",
         "body": "<p>Multivitamin For Men ve Collagen ürünlerini birlikte almak isteyenler için hazırlanan rutin akışı. Ürünler aşağıda ayrı ayrı görünür; satın alma için tek ana butonu kullanabilirsiniz.</p>",
+        "hero_image": "shopify://shop_images/ChatGPTImage30Tem202614_54_20_1_63f631c0-31b5-4364-994b-8b7c32d33691.png",
+        "hero_image_alt": "",
         "orbit_1": "Men",
         "orbit_2": "Collagen",
         "orbit_3": "Tek sepet",
@@ -66,6 +80,7 @@
         "usage_3_text": "Sepette ürünleri, adetleri ve fiyatları kontrol ederek alışverişe devam edin.",
         "usage_note": "Takviye edici gıdalar ilaç değildir. Ürünleri kullanmadan önce etiket bilgilerini ve uyarıları okuyun.",
         "steps_heading": "Rutin satın alma akışı",
+        "steps_body": "",
         "step_1_title": "İçeriği gör",
         "step_1_text": "Rutindeki ürünleri ayrı kartlarda inceleyin.",
         "step_2_title": "Tek butonla ekle",
@@ -79,5 +94,7 @@
       }
     }
   },
-  "order": ["routine_men"]
+  "order": [
+    "routine_men"
+  ]
 }
