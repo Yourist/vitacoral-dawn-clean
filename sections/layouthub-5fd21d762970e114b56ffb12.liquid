@@ -1,0 +1,982 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ 
+ <div class="lh-sections-wrapper" data-id="5fd21d762970e114b56ffb12" data-type="product">
+<section id="" data-section-id="g5SajtMdv3" data-section="product-detail-9" data-dev="huynh-duc" data-lh-page-id="303" data-lh-page-name="Gent" data-layouthub="section">  
+ <!--  Product single Swatch images -->
+{%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['multivitamin-for-men']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}' data-vid_url="{%- if tpl != 'product' -%}
+				{%- assign vid_url = false -%}
+			{%- else -%}
+				{%- assign vid_url = true -%}
+			{%- endif -%}
+			{{- vid_url -}}">
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-product-sync-images">
+					<div class="lh-details-images lh-row lh-no-gutters use-zoom-no lh-promote-yes" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20lh-no-gutters%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%20lh-promote-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%22"  data-hub-attr-use_zoom  data-hub-attr-show_badge >
+						<div class="lh-big-slide lh-col-md-10">
+							<div class="lh-big_slide-lg">
+								<div class="lh-label lh-absolute">
+					{% assign first_variant = product.selected_or_first_available_variant %}
+					{%- assign compare_at_price = product.compare_at_price -%}
+					{%- assign price = product.price -%}
+					{%- assign price_varies = product.price_varies -%}
+					{%- assign available = product.available -%}
+					{%-assign on_new = false-%}
+					{%-unless product.tags contains 'notnew'%}
+							{%-assign now_date_int = "now" | date: "%j" | plus: 0-%}
+							{%-assign now_year_int = "now" | date: '%Y' | plus: 0-%}
+							{%-assign pub_date_int = product.published_at | date: "%j" | plus: 0-%}
+							{%-assign pub_year_int = product.published_at | date: '%Y' | plus: 0-%}
+							{%-if now_year_int == pub_year_int-%}
+								{%-assign new_day_int = 30 -%}
+								{%-assign check_new = now_date_int | minus: pub_date_int-%}
+								{%-if check_new >= 0 and check_new <= new_day_int-%}
+									<span class="lh-new_label"  data-lhi="trans_new" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_new' | t }}</span>
+								{%-endif-%}
+							{%-else-%}
+								{%-assign new_day_int = 30 | plus: 366-%}
+								{%-assign check_new = now_date_int | plus: 366-%}
+								{%-if check_new <= new_day_int-%}
+												<span class="lh-new_label"  data-lhi="trans_new" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_new' | t }}</span>
+								{%-endif-%}
+							{%-endif-%}
+					{%-endunless-%}
+					{%-assign on_sale = false-%}
+					{%-if first_variant.price < first_variant.compare_at_price and first_variant.available -%}
+						{%-unless product.tags contains 'notsale'-%}
+						{%-assign on_sale = true-%}
+						{%-endunless-%}
+					{%-endif-%}
+					{%-assign sold_out = true-%}
+
+					{%-unless available == false-%}
+						{%-assign sold_out = false-%}
+					{%-endunless-%}
+					<span class="lh-sale_label" style="display: {%- if on_sale -%}block{%- else -%}none{%- endif -%}"  data-lhi="trans_sale" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_sale' | t }}</span>
+					{%- if sold_out -%}
+						<span class="lh-soldout_label"  data-lhi="trans_sold_out" data-lh-lang>{{'g5SajtMdv3.lh_k4hsr9_out' | t }}</span>
+					{%- endif -%}
+				</div><div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="lh-small-slide lh-col-md-2">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<include data-live-show_social data-live-items_social data-name="social" data-id="1">  
+  
+  <div class="lh-social">
+      <div class="lh-share-on">
+          <div class="lh-share_network">
+              <ul class="lh-social-network" >
+                  
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" class="lh-icon-network lh-social-facebook lh-tooltip_top" data-lh-tooltip="Facebook" target="_blank">
+                      <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <path fill="currentColor" d="M85.56,10H14.44C11.99,10,10,11.99,10,14.44v71.11c0,2.45,1.99,4.44,4.44,4.44h38.29V59.07H42.34V46.96h10.39v-8.89
+                      	c0-10.33,6.31-15.97,15.56-15.97c3.11-0.01,6.22,0.15,9.31,0.48v10.76h-6.38c-5.01,0-5.99,2.39-5.99,5.89v7.71h11.99l-1.56,12.11
+                      	H65.23V90h20.32c2.45,0,4.44-1.99,4.44-4.44V14.44C90,11.99,88.01,10,85.56,10z"></path>
+                      </svg>
+                    </a></li>
+                   
+                   
+                   
+                   
+                   
+                  
+                   
+                   
+                  <li><a href="https://twitter.com/share?url={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}&text={{product.title | url_encode}}" class="lh-icon-network lh-social-twitter lh-tooltip_top" data-lh-tooltip="Twitter" target="_blank">
+                    <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <path fill="currentColor" d="M32.4,88.6c35.9,0,55.5-29.7,55.5-55.5c0-0.8,0-1.7-0.1-2.5c3.8-2.8,7.1-6.2,9.7-10.1c-3.5,1.6-7.3,2.6-11.2,3.1
+                    	c4-2.4,7.1-6.2,8.6-10.8c-3.8,2.2-7.9,3.9-12.4,4.7c-3.6-3.8-8.6-6.2-14.2-6.2c-10.8,0-19.5,8.7-19.5,19.5c0,1.5,0.2,3,0.5,4.4
+                    	C33.1,34.5,18.7,26.8,9.1,15c-1.7,2.9-2.6,6.2-2.6,9.8c0,6.8,3.4,12.7,8.7,16.2c-3.2-0.1-6.2-1-8.8-2.4c0,0.1,0,0.2,0,0.2
+                    	c0,9.4,6.7,17.3,15.6,19.1c-1.6,0.4-3.4,0.7-5.1,0.7c-1.3,0-2.5-0.1-3.7-0.4c2.5,7.7,9.7,13.4,18.2,13.5c-6.7,5.2-15.1,8.3-24.2,8.3
+                    	c-1.6,0-3.1-0.1-4.6-0.3C11.1,85.4,21.4,88.6,32.4,88.6"></path>
+                    </svg>
+                  </a></li>
+                   
+                   
+                   
+                  
+                   
+                   
+                   
+                  <li><a href="mailto:?subject={{product.title | url_encode}}&body=Check%20this%20out:%20{% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" target="_blank" class="lh-icon-network lh-social-mail lh-tooltip_top" data-lh-tooltip="Mail" target="_blank">
+                    <svg width="30" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                  </a></li>
+                   
+                   
+                 
+              </ul>
+          </div>
+    </div>
+  </div>
+   </include><div class="lh-block-custom lh-custom-html"  data-lhi="c_html_image" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_image_html' | t }}</div>
+				</div>
+				<div class="lh-summary">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h1 class="product-name lh-product-title">
+							{{product.title}}</h1>
+						<div class="clearfix"></div>
+						 
+						<div class="lh-wrap-product-rating">
+							{% render 'layouthub_review',  review_type: 'single' , product: product %}</div>
+						<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins>
+		    <p class="lh-sold-out-title" style="display: none"><span  data-lhi="trans_outstock" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_outstock' | t }}</span></p></span>
+						<div class="clearfix"></div>
+						<div class="lh-block-custom lh-custom-html"  data-lhi="c_html_price" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_price_html' | t }}</div>
+						<include data-live-use_countdown data-live-label_countdown data-live-trans_label_dd data-live-trans_label_hh data-live-trans_label_mm data-live-trans_label_ss data-name="countdown" data-id="2">  
+ <div class="lh-wrap-countdown">
+	 
+</div>
+   </include><div class="clearfix"></div>
+						<include data-live-enable_external data-live-external_link data-live-trans_add_to_cart data-live-trans_pre_order data-live-trans_external data-live-enable_buynow data-live-trans_buynow data-live-c_html_addcart data-live-use_wishlist data-live-shipping data-live-shipping data-live-trans_shipping data-live-trans_unavai data-live-trans_outstock data-name="product-form" data-id="3">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% capture size_guide %}
+						 
+							<div class="lh-item-button lh-wrap-size-chart">
+								<a href="javascript:;" class="lh-size-chart" data-modal="modal-size-guild" data-id="modal-size-guild-{{product.id}}">
+									<span class="entry-title"  data-lhi="title_size" data-lh-lang>{{'g5SajtMdv3.lh_unv29k_size' | t }}</span>
+								</a>
+							</div>
+						 
+			{% endcapture %}{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign arr_swatch = 'Bitkisel Kapsül 30lu' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains option -%}
+								{% assign hasSizeGuide = false %}
+								{%- if o contains 'siz' -%}
+									{% assign hasSizeGuide = true %}
+								{%- endif -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:
+												</label>
+											</td>
+											<td class="wrap-values lh-sizeguide-{{hasSizeGuide}}">
+												<div class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-tooltip_top lh-swatch-color {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value | escape}}">
+																 
+																	{% assign index_color = -1 %}
+																	{% assign color_val = option_value | downcase %}
+																	{%- for color_setting in color_names -%}
+																		{% assign color_downcase = color_setting | downcase %}
+																		{%- if color_downcase == color_val -%}
+																			{% assign index_color = forloop.index0 %}
+																			{%- break -%}
+																		{%- endif -%}
+																	{%- endfor -%}
+																	{%- if index_color > -1 -%}
+																			<span style="background: {{color_values[index_color]}}"></span>
+																	{%- else -%}
+																			<span class="lh-no-color"></span>
+																	{%- endif -%}
+																 
+															</li>
+														{%- endfor -%}
+												</div>
+												{%- if hasSizeGuide -%}
+													{{size_guide}}
+												{%- endif -%}
+											</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}{%- if product.variants.size >= 1%}
+					{%- for option in product.options_with_values -%}
+
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option.name | downcase -%}
+							{%- if arr_swatch contains option.name or option.name == "Title" and product.options_with_values.size == 1 and option.values contains "Default Title" -%}
+								{%- continue -%}
+							{%- endif -%}
+							{% assign hasSizeGuide = false %}
+							{%- if o contains 'siz' -%}
+								{% assign hasSizeGuide = true %}
+							{%- endif -%}
+							{%- assign index = 'option' | append: forloop.index -%}
+							<tr class="lh-swatch-simple select-{{option.name | handleize }} swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+						      <td class="meta">
+						         <label title="">{{ option.name }}:
+						         </label>
+						      </td>
+									<td class="wrap-values lh-sizeguide-{{hasSizeGuide}}">
+										<div class="lh-wrap-combobox">
+									      <ul class="list-swatch-items" >
+													{%- for value in option.values -%}
+														<li class="lh-swatch-select {% if value == variant_slected[index] %} active{% endif %}" data-option-index="{{ option_index }}" data-value="{{value | escape}}"><span  title="{{value}}" >{{ value}}</span></li>
+													{%- endfor -%}
+									      </ul>
+										</div>
+										{%- if hasSizeGuide -%}
+											{{size_guide}}
+										{%- endif -%}
+	   					</tr>
+					{%- endfor -%}
+				{%- endif -%}</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+   	<div class="cart-form lh-d-flex lh-flex-wrap ">
+			<div class="lh-quantity">
+				<div class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										 <input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'));return false"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'));return false" title=""></a>
+									</div>
+							 </div>
+						 </div>
+			</div>
+			 
+				<button type="submit" class="lh-add_to_cart lh-bt lh-bt-primary" data-add-cart="Sepete Ekle" data-pre-order="Ön Sipariş" data-hub-attr-state="type%3D%22submit%22%20class%3D%22lh-add_to_cart%20lh-bt%20lh-bt-primary%22%20data-add-cart%3D%22%257B%253A%257Bsection.settings.trans_add_to_cart%257D%253A%257D%22%20data-pre-order%3D%22%257B%253A%257Bsection.settings.trans_pre_order%257D%253A%257D%22"  data-hub-attr-trans_add_to_cart  data-hub-attr-trans_pre_order >
+					{% assign f_inventory_policy = first_variant.inventory_policy %}
+			{% assign f_quantity = first_variant.inventory_quantity %}
+			{% if f_inventory_policy == 'continue' and f_quantity < 1  %}
+			  {{'g5SajtMdv3.lh_rv7xkc_order' | t }}
+			{% else  %}
+			  {{'g5SajtMdv3.lh_k1su5s_cart' | t }}
+			{% endif %}</button>
+			 
+
+		</div>
+		<div class="clearfix"></div>
+		 
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		 
+		<div class="clearfix"></div>
+   </div>
+	 <div class="lh-block-custom lh-custom-html"  data-lhi="c_html_addcart" data-lh-lang data-lh-live-editor></div>
+	 <div class="lh-button-more">
+	 	 
+	 	<div class="lh-wrap-wishlist">{%- capture wishlist_content -%}
+			<a href="javascript:;" class="lh-button-wl">
+			<svg version="1.1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+			<path fill="currentColor" d="M90.4,14.9c-5-5-11.6-7.7-18.7-7.7c-7.1,0-13.8,2.7-18.7,7.7l-3,3l-3-3c-5-4.8-11.8-7.6-18.6-7.6c-7.1,0-13.7,2.7-18.7,7.6
+			 C-0.7,25.2-0.7,42,9.7,52.4l15.8,15.8l5.9,5.9l0.2,0.2L50.3,93L69,74.3l16.8-17l4.9-4.9c4.9-4.9,7.7-11.6,7.7-18.7
+			 C98.1,26.5,95.4,19.8,90.4,14.9z M86.5,48.3l-5,5l-16.7,17L50.1,85.1L35.4,70.3l-0.2-0.2l-5.9-5.9L13.6,48.5
+			 c-8.2-8.2-8.2-21.5,0-29.7c3.9-3.9,9.1-6,14.8-6c5.4,0,10.8,2.2,14.8,6l6.9,6.9l6.9-6.9c3.9-3.9,9.2-6.1,14.8-6.1
+			 c5.6,0,10.9,2.2,14.8,6.1c3.9,3.9,6,9.1,6,14.8C92.6,39.2,90.4,44.4,86.5,48.3z"></path>
+			</svg>
+			<text  data-lhi="trans_wl" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_wl' | t }}</text>
+			 </a>
+			{%- endcapture -%}
+			{%- render 'layouthub_wishlist', wishlist_content:wishlist_content, wishlist_type: 'other',product: product -%}</div>
+	 	 
+	 	 
+	 		<div class="lh-item-button lh-wrap-shipping">
+	 			<a class="lh-shipping" href="javascript:void(0)" data-id="modal-shipping-{{- product.id -}}">
+	 				<svg version="1.1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 					 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+	 				<path fill="currentColor" d="M86.5,17.6H41c-3.7,0-6.8,3-6.8,6.8v7.3H17.8c-1.9,0-3.6,1.1-4.3,2.9L10.8,41l-4,9.4v3.3v13c0,2.6,2.1,4.8,4.8,4.8h1.1
+	 					c0,0.1,0,0.2,0,0.3c0,5.9,4.8,10.8,10.8,10.8s10.8-4.8,10.8-10.8c0-0.1,0-0.2,0-0.3h0.2H37h26.6c0,0.1,0,0.2,0,0.3
+	 					c0,5.9,4.8,10.8,10.8,10.8S85,77.5,85,71.6c0-0.1,0-0.2,0-0.3h4.5c2.1,0,3.8-1.6,3.8-3.8V24.4C93.3,20.7,90.2,17.6,86.5,17.6z
+	 					 M18.3,37.1h15.9v11H13.7L18.3,37.1z M23.3,76.9c-2.9,0-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3s5.3,2.4,5.3,5.3S26.2,76.9,23.3,76.9z
+	 					 M32.4,65.9c-1.9-3-5.3-5-9.1-5s-7.2,2-9.1,5h-2V53.6h22v12.2h-1.8V65.9z M74.3,76.9c-2.9,0-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3
+	 					s5.3,2.4,5.3,5.3S77.2,76.9,74.3,76.9z M87.8,65.9h-4.4c-1.9-3-5.3-5-9.1-5s-7.2,2-9.1,5H39.8V53.6v-22V23h48.1L87.8,65.9L87.8,65.9
+	 					z"></path>
+	 				</svg>
+	 				<text  data-lhi="trans_shipping" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_shipping' | t }}</text>
+	 			</a>
+	 		</div>
+	 	 
+	 </div>
+</form>
+
+{%- unless product == empty -%}
+							<script type="application/json" id="lh-product-json-{{product.id}}">
+							{
+							"id": {{product.id}},
+							"title": {{product.title | json}},
+							"handle": {{product.handle | json}},
+							"price": {{product.price| json}},
+							"price_min": {{product.price_min| json}},
+							"price_max": {{product.price_max| json}},
+							"available": {{product.available | json}},
+							"price_varies": {{product.price_varies| json}},
+							"compare_at_price": {{product.compare_at_price| json}},
+							"compare_at_price_min": {{product.compare_at_price_min| json}},
+							"compare_at_price_max": {{product.compare_at_price_max| json}},
+							"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+							"variants": [
+							{%- for variant in product.variants -%}
+							{
+							"id": {{variant.id}},
+							"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+							"option1": {{variant.option1  | json}},
+							"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+							"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+							"sku": {{variant.sku | json}},
+							"requires_shipping": {{variant.requires_shipping}},
+							"taxable": {{variant.taxable |json}},
+							"featured_image": {%- if variant.image.id != blank -%}{
+									"id": {{variant.image.id | json}},
+									"product_id": {{product.id | json}},
+									"width": {{variant.image.width | json}},
+									"height": {{variant.image.height | json}},
+									"src": {{variant.image.src | json}},
+									"position":{{variant.image.position}}
+								}{%- else-%}null{%-endif-%},
+							"available": {{variant.available}},
+							"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+							"options":  {{variant.options | json}},
+							"price": {{variant.price| json}},
+							"weight": {{variant.weight| json}},
+							"compare_at_price": {{variant.compare_at_price | json}},
+							"inventory_quantity": {{variant.inventory_quantity | json}},
+							"inventory_management": {{variant.inventory_management | json}},
+							"inventory_policy": {{variant.inventory_policy | json}},
+							"barcode": {{variant.barcode | json}}
+							}{%- if forloop.last == false -%},{%- endif -%}
+							{%- endfor -%}
+							],
+							"featured_image": {{product.featured_image | json}},
+							"options": [
+							{%- for option in product.options -%}
+							{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+							{%-endfor -%}
+							]
+							}
+							</script>
+						{%- endunless -%}   </include><include data-live-badge_banner data-live-trans_safe data-live-badge_banner data-name="badge" data-id="4">  
+  
+<div class="lh-safe-checkout">
+	<div class="lh-product-badge">
+		<p class="lh-title"><span  data-lhi="trans_safe" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_safe_html' | t }}</span></p>
+		<text  data-lhi="badge_banner"><img src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/logo-band1x.png?v=1613559938534" alt="safe checkout" /></text>
+	</div>
+</div>
+   </include><div class="lh-hide-desktop">
+                            <div class="lh-block-custom lh-custom-html"  data-lhi="c_html_image" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_image_html' | t }}</div>
+                            <include data-live-show_social data-live-items_social data-name="social" data-id="5">  
+  
+  <div class="lh-social">
+      <div class="lh-share-on">
+          <div class="lh-share_network">
+              <ul class="lh-social-network" >
+                  
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" class="lh-icon-network lh-social-facebook lh-tooltip_top" data-lh-tooltip="Facebook" target="_blank">
+                      <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <path fill="currentColor" d="M85.56,10H14.44C11.99,10,10,11.99,10,14.44v71.11c0,2.45,1.99,4.44,4.44,4.44h38.29V59.07H42.34V46.96h10.39v-8.89
+                      	c0-10.33,6.31-15.97,15.56-15.97c3.11-0.01,6.22,0.15,9.31,0.48v10.76h-6.38c-5.01,0-5.99,2.39-5.99,5.89v7.71h11.99l-1.56,12.11
+                      	H65.23V90h20.32c2.45,0,4.44-1.99,4.44-4.44V14.44C90,11.99,88.01,10,85.56,10z"></path>
+                      </svg>
+                    </a></li>
+                   
+                   
+                   
+                   
+                   
+                  
+                   
+                   
+                  <li><a href="https://twitter.com/share?url={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}&text={{product.title | url_encode}}" class="lh-icon-network lh-social-twitter lh-tooltip_top" data-lh-tooltip="Twitter" target="_blank">
+                    <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <path fill="currentColor" d="M32.4,88.6c35.9,0,55.5-29.7,55.5-55.5c0-0.8,0-1.7-0.1-2.5c3.8-2.8,7.1-6.2,9.7-10.1c-3.5,1.6-7.3,2.6-11.2,3.1
+                    	c4-2.4,7.1-6.2,8.6-10.8c-3.8,2.2-7.9,3.9-12.4,4.7c-3.6-3.8-8.6-6.2-14.2-6.2c-10.8,0-19.5,8.7-19.5,19.5c0,1.5,0.2,3,0.5,4.4
+                    	C33.1,34.5,18.7,26.8,9.1,15c-1.7,2.9-2.6,6.2-2.6,9.8c0,6.8,3.4,12.7,8.7,16.2c-3.2-0.1-6.2-1-8.8-2.4c0,0.1,0,0.2,0,0.2
+                    	c0,9.4,6.7,17.3,15.6,19.1c-1.6,0.4-3.4,0.7-5.1,0.7c-1.3,0-2.5-0.1-3.7-0.4c2.5,7.7,9.7,13.4,18.2,13.5c-6.7,5.2-15.1,8.3-24.2,8.3
+                    	c-1.6,0-3.1-0.1-4.6-0.3C11.1,85.4,21.4,88.6,32.4,88.6"></path>
+                    </svg>
+                  </a></li>
+                   
+                   
+                   
+                  
+                   
+                   
+                   
+                  <li><a href="mailto:?subject={{product.title | url_encode}}&body=Check%20this%20out:%20{% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" target="_blank" class="lh-icon-network lh-social-mail lh-tooltip_top" data-lh-tooltip="Mail" target="_blank">
+                    <svg width="30" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                  </a></li>
+                   
+                   
+                 
+              </ul>
+          </div>
+    </div>
+  </div>
+   </include></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="lh-wrap-tab lh-bt">
+			<include data-live-tabs data-live-tabs data-live-tabs__active data-live-tabs__active data-live-tabs__active data-live-tabs data-live-tabs__active data-live-tabs__active data-live-tabs__active data-name="tabs" data-id="6">  
+ <div class="lh-tabs-product">
+    <ul class="lh-nav lh-nav-tabs">
+        
+           
+          <li><a class="tab-link  active" data-tab-handle="description" data-tab="tab-0" href="#tab-0" title=""  data-lhi="tabs[0]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh73_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="addition_information" data-tab="tab-1" href="#tab-1" title=""  data-lhi="tabs[1]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh74_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="addition_information" data-tab="tab-2" href="#tab-2" title=""  data-lhi="tabs[2]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh75_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="review" data-tab="tab-3" href="#tab-3" title=""  data-lhi="tabs[3]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh76_title' | t }}</a></li>
+           
+           
+         
+       </ul>
+    <div class="clearfix">
+    </div>
+    <div class="lh-tab-contents" data-pid="{{- product.id -}}">
+       
+         <div id="tab-0" class="lh-tab-content lh-custom-html active" data-tab-handle="description" >
+             
+              <div class="description">
+                  {%- capture tag -%}<h1>{%- endcapture -%}
+									 
+											{{-product.description-}}</div>
+             
+
+         </div>
+          
+       
+         <div id="tab-1" class="lh-tab-content lh-custom-html " data-tab-handle="addition_information" >
+             
+               <div class="addition-information"  data-lhi="tabs[1]addition_infor" data-lh-lang data-lh-live-editor data-lhis="tabs-addition_infor"><table>
+<tbody>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Bileşen</strong></p>
+</td>
+<td width="1108">
+<p><strong style="color: rgb(34, 89, 82);">Fayda</strong></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">A Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal görme yetisinin, bağışıklık sisteminin, mukozanın ve cildin korunmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">C Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Yorgunluğun ve bitkinliğin azalmasına ve bağışıklık sisteminin korunmasına katkıda bulunur. *</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">D3 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal kas, kemik, diş, konsantrasyonun ve bağışıklık sisteminin korunmasına katkıda bulunur. *</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">E Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Cilt sağlığının korunmasında önemli görevlere sahiptir ve cildin nem dengesinin korunmasına, yara ve yanık izlerinin hızlı bir şekilde iyileşmesine, kırışıklıkların ve diğer cilt sorunlarının önlenmesine katkı sağlar.</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">B1 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal kalp fonksiyonuna ve enerji oluşum metabolizmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">B2 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal görme yetisinin, cildin ve kırmızı kan hücrelerinin korunmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">B3 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal kırmızı kan hücresi oluşumuna, bağışıklık sistemine ve yorgunluğun azaltılmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">B6 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal kırmızı kan hücresi oluşumuna, bağışıklık sistemine ve yorgunluğun azaltılmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">B12 Vitamini</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal hücre bölünmesine yardımcı olur, kırmızı kan hücre oluşumunu destekler ve homosistein metobolizmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Folik Asit</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Erkeklerde sperm kalitesini artmasına yardımcı olur. Folik Asit eksikliği sperm sayısında azalmaya neden olabilir.</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Biotin</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal saçın, mukoza ve cildin korunmasına katkıda bulunur. Kalsiyum: Normal kemik, diş, sindirim ve kas fonksiyonlarının korunması için gereklidir.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Çinko</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal bağışıklık sisteminin, tırnakların, cildin, saçların ve görme yetisinin korunmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Kalsiyum</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal enerji oluşum metabolizmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Selenyum</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal tiroit, saç, tırnak ve bağışıklık sisteminin korunmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Bakır</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal saç ve cilt pigmentlerinin ve bağ dokularının korunmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Krom</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal makro besin öğeleri metabolizmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Molibden</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal amino asit metabolizmasına katkıda bulunur.*</span></p>
+</td>
+</tr>
+<tr>
+<td width="153">
+<p><strong style="color: rgb(34, 89, 82);">Manganez</strong></p>
+</td>
+<td width="1108">
+<p><span style="color: rgb(34, 89, 82);">Normal bağ dokusunun oluşumuna ve kemiklerin korunmasına katkıda bulunur.*</span></p></td></tr>
+<tr>
+</tr><tr>
+<td width="153">
+<p><span style="color: rgb(34, 89, 82);">Beta-Glukan </span></p></td><td width="1108"><span style="color: rgb(34, 89, 82);">Normal kan kolesterol düzeyinin korunmasına katkıda bulunur.*  </span>  </td></tr>
+<tr>
+<td width="153">
+<p></p></td><td width="1108"><br></td></tr>
+</tbody>
+</table></div>
+             
+
+         </div>
+          
+       
+         <div id="tab-2" class="lh-tab-content lh-custom-html " data-tab-handle="addition_information" >
+             
+               <div class="addition-information"  data-lhi="tabs[2]addition_infor" data-lh-lang data-lh-live-editor data-lhis="tabs-addition_infor"><br><p><span><img src="https://cdn.shopify.com/s/files/1/0512/9414/2657/products/vitacoral-multivitamin-for-men-32945175724225.jpg?v=1662646990520" class="lh-texteditor-img"></div>
+             
+
+         </div>
+          
+       
+         <div id="tab-3" class="lh-tab-content lh-custom-html " data-tab-handle="review" >
+             
+                <div class="lh-review-tab review">
+                  {% render 'layouthub_review',  review_type: 'form' , product: product %}</div>
+             
+
+         </div>
+          
+       
+    </div>
+  </div>
+   </include></div>
+	</div>
+	 
+	<div class="lh-modal-size-guild lh-modal" id="modal-size-guild-{{- product.id -}}" style="display:none">
+	    <div class="lh-modal-box">
+		    <div class="modal-header">
+		      <span class="lh-close-modal lh-modal-sizechart"><span class="lh-close" title="Close">✖</span></span>
+		    </div>
+		    <figure class="lh-modal-body lh-custom-html"  data-lhi="size_guide_content" data-lh-live-editor><h3 style="text-align: center;margin-bottom: 0;">SIZE GUIDE</h3><p style="text-align: center;"> This is an approximate conversion table to help you find your size. </p><table class="tt-table-modal-info" style="text-align: center;"><thead><tr><th>VN</th><th>JP</th><th>UK</th><th>US</th><th>KOR</th></tr></thead><tbody><tr><td>34</td><td>30</td><td>28</td><td>4</td><td>00</td></tr><tr><td>36</td><td>32</td><td>30</td><td>6</td><td>0</td></tr><tr><td>38</td><td>34</td><td>32</td><td>8</td><td>2</td></tr><tr><td>40</td><td>36</td><td>34</td><td>10</td><td>4</td></tr><tr><td>42</td><td>38</td><td>36</td><td>12</td><td>6</td></tr><tr><td>44</td><td>40</td><td>38</td><td>14</td><td>8</td></tr><tr><td>46</td><td>42</td><td>40</td><td>16</td><td>10</td></tr><tr><td>48</td><td>44</td><td>42</td><td>18</td><td>12</td></tr><tr><td>50</td><td>46</td><td>44</td><td>20</td><td>14</td></tr><tr><td>52</td><td>48</td><td>46</td><td>22</td><td>16</td></tr></tbody></table></figure>
+	    </div>
+	</div>
+	 
+	 
+	<div class="lh-modal-shipping lh-modal" id="modal-shipping-{{- product.id -}}" style="display:none">
+	    <div class="lh-modal-box">
+		    <div class="modal-header">
+		      <span class="lh-close-modal"><span class="lh-close" title="Close">✖</span></span>
+		    </div>
+		    <figure class="lh-modal-body lh-modal-shipping__content lh-custom-html">
+		      {{pages['standard-pagesbsh7'].content}}</figure>
+	    </div>
+	</div>
+	 
+</div>
+ 
+  </section><section id="" data-section-id="vmpxy66teto" data-section="features-12" data-dev="nguyen-minh" data-lh-page-id="944" data-lh-page-name="Cactus - Sale Page" data-layouthub="section">  
+ <div class="lh-wrapper">
+
+	<div class="lh-container">
+
+		<h3  data-lhi="heading" data-lh-lang>{{'vmpxy66teto.heading_html' | t }}</h3>
+
+		<div class="lh-wrap">
+
+			 <div class="lh-row lh-item " >
+
+				<div class="lh-col-md-5">
+
+					<div class="lh-img"  data-lhi="collection_items[0]img" data-lhi-child="a" data-lhis="collection_items-img"><a data-ga-action="img" data-ga-label="Image" href="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/adsztasarm2_6UaC.gif?v=1640349061165" data-lhlink><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/adsztasarm2_6UaC.gif?v=1640349061839" class="lh-lazy"/></a></div>
+
+				</div>
+
+				<div class="lh-col-md-2 lh-decor">
+
+					<div class="lh-count">1</div>
+
+				</div>
+
+				<div class="lh-col-md-5 lh-faic">
+
+					<div class="lh-text">
+
+						<div class="lh-count lh-dn">1</div>
+
+						<h5  data-lhi="collection_items[0]title" data-lh-lang data-lhis="collection_items-title">{{'vmpxy66teto.lh_u7b55c_title' | t }}</h5>
+
+						<p  data-lhi="collection_items[0]des" data-lh-lang data-lhis="collection_items-des">{{'vmpxy66teto.lh_u7b55c_des_html' | t }}</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			 <div class="lh-row lh-item lh-rr" >
+
+				<div class="lh-col-md-5">
+
+					<div class="lh-img"  data-lhi="collection_items[1]img" data-lhi-child="a" data-lhis="collection_items-img"><a href="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/adsztasarm1_ShWU.gif?v=164034857472" data-lhlink><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/adsztasarm1_ShWU.gif?v=1640348574599" class="lh-lazy"/></a></div>
+
+				</div>
+
+				<div class="lh-col-md-2 lh-decor">
+
+					<div class="lh-count">2</div>
+
+				</div>
+
+				<div class="lh-col-md-5 lh-faic">
+
+					<div class="lh-text">
+
+						<div class="lh-count lh-dn">2</div>
+
+						<h5  data-lhi="collection_items[1]title" data-lh-lang data-lhis="collection_items-title">{{'vmpxy66teto.lh_u7b55d_title' | t }}</h5>
+
+						<p  data-lhi="collection_items[1]des" data-lh-lang data-lhis="collection_items-des">{{'vmpxy66teto.lh_u7b55d_des_html' | t }}</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			 <div class="lh-row lh-item " >
+
+				<div class="lh-col-md-5">
+
+					<div class="lh-img"  data-lhi="collection_items[2]img" data-lhi-child="a" data-lhis="collection_items-img"><a href="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/sporcubesini-erkek.png?v=1611326358153" data-lhlink><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/sporcubesini-erkek.png?v=1611326358794" class="lh-lazy"/></a></div>
+
+				</div>
+
+				<div class="lh-col-md-2 lh-decor">
+
+					<div class="lh-count">3</div>
+
+				</div>
+
+				<div class="lh-col-md-5 lh-faic">
+
+					<div class="lh-text">
+
+						<div class="lh-count lh-dn">3</div>
+
+						<h5  data-lhi="collection_items[2]title" data-lh-lang data-lhis="collection_items-title">{{'vmpxy66teto.lh_u7b55e_title' | t }}</h5>
+
+						<p  data-lhi="collection_items[2]des" data-lh-lang data-lhis="collection_items-des">{{'vmpxy66teto.lh_u7b55e_des_html' | t }}</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			 
+
+		</div>
+
+	</div>
+
+</div>
+  </section><section id="" data-section-id="tajsjbqnu8s" data-section="product-related-8" data-dev="huynh-duc" data-lh-page-id="582" data-lh-page-name="Product detail - Bago" data-layouthub="section">  
+ <div class="lh-wrapper">
+   <div class="lh-container">
+    <div class="lh-product-content">
+      <include data-live-related_heading data-live-related_des data-live-name_product data-live-show_badge data-live-show_2 data-live-item data-name="product-grid" data-id="1">  
+ {% assign arr_product = collections['all'].products %}
+			 
+			{% assign text_handle_temp = "" %}
+			{%- for p in arr_product -%}
+				{% assign text_handle_temp = text_handle_temp | append: "," | append : p.handle %}
+			{%- endfor -%}
+			{% assign limit = 8 %}
+			{% assign count = 1 %}
+			{% if product and template contains 'product' %}
+				{% assign text_handle = "" %}
+				{%- if product.collections.size > 0 -%}
+						{%- for item_c in product.collections -%}
+							{%- for item_p in item_c.products -%}
+								{%- if count <= limit -%}
+									{%- if item_p.handle != product.handle -%}
+										{% assign count = count | plus : 1 %}
+										{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+									{%- endif -%}
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endfor -%}
+				{%- endif -%}
+				{%- if count < limit -%}
+					{% assign p_realted = collections['all'].products | where: "vendor", product.vendor | where: "type", product.type %}
+					{%- for item_p in p_realted -%}
+						{%- if count <= limit -%}
+							{%- if item_p.handle != product.handle -%}
+								{% assign count = count | plus : 1 %}
+								{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+							{%- endif -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endif -%}
+			{% endif %}
+			{%- if text_handle != blank -%}
+				{% assign arr_handle = text_handle | split: "," %}
+			{%- else -%}
+				{% assign arr_handle = text_handle_temp | split: "," %}
+			{%- endif -%}
+			{% assign arr_handle = arr_handle | uniq %}
+			{% assign limit = limit | plus : 1 %}<div class="lh-product-grid">
+	<div class="lh-collection-heading">
+		<div class="lh-collection-title"><h4  data-lhi="related_heading" data-lh-lang>{{'tajsjbqnu8s.lh_k191aj_heading' | t }}</h4>
+		</div>
+		<div class="lh-collection-des"><p  data-lhi="related_des" data-lh-lang>{{'tajsjbqnu8s.lh_k191aj_des' | t }}</p>
+		</div>
+	</div>
+	<div class="lh-product-slider lh-product-related n_full lh-badge-no" data-product_id="{{- product.id -}}" data-money-format={{shop.money_format | json}} data-hub-attr-state="class%3D%22lh-product-slider%20lh-product-related%20%257B%253A%257Bsection.settings.name_product%257D%253A%257D%20lh-badge-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%22%20data-product_id%3D%22%7B%3A%7Bsection.liquid.product_id%7D%3A%7D%22%20data-money-format%3D%7B%3A%7Bsection.liquid.money_format%7D%3A%7D"  data-hub-attr-name_product  data-hub-attr-show_badge >
+		<div class="owl-carousel owl-theme">
+			{% for item in arr_handle limit:limit %}
+					{%- if item == blank -%}
+						{%- continue -%}
+					{%- endif -%}
+					{% assign i_product = all_products[item] %}
+					{% assign first_variant = i_product.selected_or_first_available_variant %}
+					<div class="lh-collection-item">
+						<div class="lh-product-thumb">
+							<a href="{{i_product.url | within: collection}}">
+								 
+									<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ i_product.featured_image | img_url: '' }}" alt="{{i_product.title}}" class="lh-lazy"/>
+									{% if i_product.images.size > 1 %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.images[1] | img_url : '' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% else %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.featured_image | img_url: '' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% endif %}
+								 
+							</a>
+							<div class="lh-product-badges">
+
+
+								{% if first_variant.available == true %}
+									{% if first_variant.price < first_variant.compare_at_price and first_variant.available %}
+										{% assign onehundred = 100 %}
+										<span class="lh-onsale"  data-lhi="trans_sale_text" data-lh-lang>{{'tajsjbqnu8s.lh_k4izmq_text' | t }}</span>
+									{% else %}
+									{%- for tag in i_product.tags -%}
+										{%- if tag == 'new' -%}
+											<span class="lh-hot"  data-lhi="trans_new_text" data-lh-lang>{{'tajsjbqnu8s.lh_rv7qtl_text' | t }}</span>
+											{%- break -%}
+										{%- endif -%}
+									{%- endfor -%}
+									{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						<div class="lh-product-info">
+							<h3 class="lh-product-title">
+								<a href="{{i_product.url | within: collection}}">{{i_product.title}}</a>
+							</h3>
+							 
+							<div class="lh-wrap-price">
+								{% if first_variant.available == true %}
+									{% if first_variant.compare_at_price > first_variant.price %}
+									<span class="lh-sale">{{i_product.compare_at_price | money}}</span>
+									{% endif %}
+									<span class="lh-cost">{{first_variant.price | money}}</span>
+								{% else %}
+									<span class="lh-sold-out"  data-lhi="trans_soldout_text" data-lh-lang>{{'tajsjbqnu8s.lh_rivarn_text' | t }}</span>
+								{% endif %}
+							</div>
+
+						</div>
+					</div>
+			{% endfor %}</div>
+
+	</div>
+</div>
+
+   </include></div>
+  </div>
+ </div>
+
+ 
+  </section>
+</div>
+ {%schema%} 
+{"locales":{"en":{"g5SajtMdv3":{"lh_up5omg_wl":"\u00c7ok Sevilen Multivitamin","lh_pnhrjt_type":"\u00dcr\u00fcn Tipi","lh_pnhrjt_vendor_html":"Kullan\u0131m \u00d6nerisi: \r Yeti\u015fkinlerin tercihen yemeklerden sonra g\u00fcnde 1 yumu\u015fak kaps\u00fcl almalar\u0131 \u00f6nerilir.\r \r <br>Saklama Ko\u015fullar\u0131: \r Kuru ve serin yerde muhafaza edilmelidir. G\u00fcne\u015f \u0131\u015f\u0131\u011f\u0131ndan ve nemli alanlardan uzak tutunuz.\r \r <br>Porsiyon: 30","lh_unv29k_size":"Size Guide","countdown":"2025-12-08T16:47:00+0000","lh_rv7xkc_order":"\u00d6n Sipari\u015f","lh_k1su5s_cart":"Sepete Ekle","lh_up5omg_outstock":"Yak\u0131nda!","lh_up5omg_new":"\u0130lk sipari\u015finize %10 indirim!","lh_up5omg_sale":"Sepette %30'a varan \u0130ndirim","lh_k4hsr9_out":"T\u00fckendi!","lh_gdekg7_image_html":"<div style=\"text-align: left;\"><span style=\"font-size: calc(var(--lh-font-size) * 1.2); font-style: var(--font-style-body);\"><b>Multivitamin ve Multimineral \u0130\u00e7eren Takviye Edici G\u0131da&nbsp;<\/b><\/span><\/div><div style=\"text-align: left;\"><b><span style=\"font-size: calc(var(--lh-font-size) * 1.2); font-style: var(--font-style-body);\">Onay No:&nbsp;&nbsp;&nbsp;<\/span><span style=\"font-size: calc(var(--lh-font-size) * 1.2); font-style: var(--font-style-body);\">009919-29.01.2021<\/span><\/b><\/div><div style=\"text-align: left;\"><font size=\"3\"><b>T.E.T.T: 04\/2027<\/b><\/font><\/div><!--lh-live-editor-->","lh_gdekg7_price_html":"<div style=\"text-align: left;\"><span style=\"color: rgb(198, 84, 32); font-weight: bold;\"><span style=\"font-size: large; font-style: var(--font-style-body);\">Erkeklere \u00f6zel i\u00e7eri\u011fe sahip Premium Multivitamin<\/span><span style=\"font-size: large; font-style: var(--font-style-body); text-size-adjust: 100%;\">!<\/span><\/span><\/div><!--lh-live-editor-->","lh_up5omg_buynow":"\u015eimdi Sat\u0131n Al","lh_up5omg_shipping":"\u00dccretsiz Kargo","lh_up5omg_safe_html":"\u0130ndirimler sepette otomatik olarak uygulan\u0131r. <br>Kampanya stoklarla s\u0131n\u0131rl\u0131d\u0131r.&nbsp;","lh_brmh73_title":"\u00d6zellikler","lh_brmh74_title":"Faydalar","lh_brmh75_title":"\u0130\u00e7indekiler","lh_brmh76_title":"Yorumlar"},"vmpxy66teto":{"heading_html":"Neden Vitacoral&nbsp;<div>Multivitamin For Men ?<\/div>","lh_u7b55c_title":"G\u00fcnl\u00fck \u0130htiyac\u0131n\u0131za Uygun Oranda D Vitamini \u0130\u00e7erir.","lh_u7b55c_des_html":"T\u00fcrkiye'de her 10 ki\u015fiden 9'unda D Vitamini eksikli\u011fi g\u00f6r\u00fcl\u00fcyor ve uzmanlar D Vitamini eksikli\u011finin hem g\u00fc\u00e7l\u00fc ba\u011f\u0131\u015f\u0131kl\u0131k hem de kemik sa\u011fl\u0131\u011f\u0131 i\u00e7in takviye edici g\u0131dalar ile desteklenmesi gerekti\u011fine dikkat \u00e7ekiyor. Vitacoral Multivitamin For Men 10 mcg D Vitamini i\u00e7eri\u011fi ile g\u00fcnl\u00fck ihtiyac\u0131n\u0131z\u0131n %100'\u00fcn\u00fc kar\u015f\u0131l\u0131yor.<!--lh-live-editor-->","lh_u7b55d_title":"Kalp Dostu Lif : Beta Glukan","lh_u7b55d_des_html":"Beta glukan (\u03b2-glukan), yulaf ve arpa taneleri yan\u0131 s\u0131ra mantarlardan da temin edilebilen, glukoz molek\u00fcllerinin bir araya gelmesi ile olu\u015fan suda \u00e7\u00f6z\u00fcn\u00fcr lif t\u00fcr\u00fcd\u00fcr. Beta glukan ayr\u0131ca baz\u0131 bakteri t\u00fcrlerinde de bulunur.&nbsp; Vitacoral Multivitamin For Men'in erkeklere \u00f6zel kar\u0131\u015f\u0131m\u0131 Vitacoral Men Blend i\u00e7erisinde ihtiyac\u0131n\u0131za uygun \u015fekilde Beta Glukan bulunmaktad\u0131r.<!--lh-live-editor-->","lh_u7b55e_title":"Bitkisel \u0130\u00e7erikler : Is\u0131rgan Otu ve C\u00fcce Palmiye","lh_u7b55e_des_html":"Vitacoral Multivitamin For Men'in erkeklere \u00f6zel kar\u0131\u015f\u0131m\u0131 Vitacoral Men Blend i\u00e7erisinde ihtiyac\u0131n\u0131za uygun \u015fekilde Is\u0131rgan Otu ve C\u00fcce Palmiye bulunmaktad\u0131r.<!--lh-live-editor-->"},"tajsjbqnu8s":{"lh_k4izmq_text":"\u0130ndirim!","lh_rv7qtl_text":"Yeni","lh_rivarn_text":"Yak\u0131nda!","lh_k191aj_heading":"Bu \u00dcr\u00fcnleri De G\u00f6rmenizi \u0130stedik.","lh_k191aj_des":"Vitacoral'in En \u0130yileri"}}},"name":"Multivitamin For Men \u00dc"}
+ {%endschema%}

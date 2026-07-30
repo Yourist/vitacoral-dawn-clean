@@ -1,0 +1,217 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ 
+ <div class="lh-sections-wrapper" data-id="60744c8641eae4448d584c02" data-type="blog">
+<section id="" data-section-id="0pu921k5w4n8" data-section="blog" data-dev="le-vi" data-lh-page-id="174" data-lh-page-name="Homepage - Soho" data-layouthub="section">  
+  
+
+
+
+
+<div class="lh-blog-block">
+
+	<div class="lh-blog-wrapper">
+
+		<div class="lh-container">
+
+			<div class="lh-heading">
+
+				<h2 class="lh-title"  data-lhi="title" data-lh-lang>{{'0pu921k5w4n8.title' | t }}</h2>
+
+			</div>
+
+			<div class="lh-row">
+
+				{% assign current = blogs['vitacoral-saglikli-yasam-rehberi'] %}
+			 
+
+			{% assign limit = 12 %}
+
+			{% for item in current.articles limit:limit%}
+			<div class="lh-col-md-3">
+				<div class="lh-blog-item">
+					<div class="lh-blog--thumbnail">
+						<a href="{{item.url}}">
+							 
+								<img src="{{ item.image | img_url: '360x246', crop: 'center' }}" alt="Image">
+							 
+						</a>
+					</div>
+					<div class="lh-blog--body">
+						<div class="lh-body--meta">
+							<span class="lh-body--meta__general lh-body--meta__date">
+								<a href="{{item.url}}">{{ item.created_at | date : format : 'abbreviated_date' }}</a>
+							</span>
+							{% if item.comments_count > 0 %}
+							<span class="lh-body--meta__general lh-body--meta__comment">
+								<a href="{{item.url}}#comments">{{item.comments_count}} Comment</a>
+							</span>
+							{% endif %}
+						</div>
+						<div class="lh-body--header  ">
+							<h3 class="lh-body--header__title full_text">
+								<a href="{{item.url}}">{{item.title}}</a>
+							</h3>
+						</div>
+						<!-- <div class="lh-body--content ">
+							{% if item.excerpt.size > 0 %}
+							<p>
+								{{ item.excerpt | strip_html | truncate : 150 }}
+							</p>
+							{% else %}
+							<p>
+								{{ item.content | strip_html | truncate : 150 }}
+							</p>
+							{% endif %}
+						</div> -->
+
+						<!-- <div class="lh-body--action">
+							<a href="{{item.url}}" class="lh-body--action__btn"  data-lhi="read_more"></a>
+						</div> -->
+					</div>
+				</div>
+			</div>
+			{% endfor %}</div>
+
+			<div class="lh-button"  data-lhi="link" data-lh-lang data-lhi-child="a"><a href="#" class="lh-btn-link" data-ga-action="link" data-ga-label="Link button" data-lhlink>{{'0pu921k5w4n8.link' | t }}</a></div>
+
+		</div>
+
+	</div>
+
+</div>
+
+  </section><section id="" data-section-id="elra792h45t" data-section="product-related-81" data-dev="huynh-duc" data-lh-page-id="582" data-lh-page-name="Product detail - Bago" data-layouthub="section">  
+  
+
+
+ <div class="lh-wrapper">
+   <div class="lh-container">
+    <div class="lh-product-content">
+      <include data-live-related_heading data-live-related_des data-live-name_product data-live-show_badge data-live-show_2 data-live-item data-name="product-grid" data-id="1">  
+ {% assign arr_product = collections['all'].products %}
+			 
+			{% assign text_handle_temp = "" %}
+			{%- for p in arr_product -%}
+				{% assign text_handle_temp = text_handle_temp | append: "," | append : p.handle %}
+			{%- endfor -%}
+			{% assign limit = 8 %}
+			{% assign count = 1 %}
+			{% if product and template contains 'product' %}
+				{% assign text_handle = "" %}
+				{%- if product.collections.size > 0 -%}
+						{%- for item_c in product.collections -%}
+							{%- for item_p in item_c.products -%}
+								{%- if count <= limit -%}
+									{%- if item_p.handle != product.handle -%}
+										{% assign count = count | plus : 1 %}
+										{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+									{%- endif -%}
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endfor -%}
+				{%- endif -%}
+				{%- if count < limit -%}
+					{% assign p_realted = collections['all'].products | where: "vendor", product.vendor | where: "type", product.type %}
+					{%- for item_p in p_realted -%}
+						{%- if count <= limit -%}
+							{%- if item_p.handle != product.handle -%}
+								{% assign count = count | plus : 1 %}
+								{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+							{%- endif -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endif -%}
+			{% endif %}
+			{%- if text_handle != blank -%}
+				{% assign arr_handle = text_handle | split: "," %}
+			{%- else -%}
+				{% assign arr_handle = text_handle_temp | split: "," %}
+			{%- endif -%}
+			{% assign arr_handle = arr_handle | uniq %}
+			{% assign limit = limit | plus : 1 %}<div class="lh-product-grid">
+	<div class="lh-collection-heading">
+		<div class="lh-collection-title"><h4  data-lhi="related_heading" data-lh-lang>{{'elra792h45t.lh_k191aj_heading' | t }}</h4>
+		</div>
+		<div class="lh-collection-des"><p  data-lhi="related_des" data-lh-lang>{{'elra792h45t.lh_k191aj_des' | t }}</p>
+		</div>
+	</div>
+	<div class="lh-product-slider lh-product-related n_ellipsis lh-badge-yes" data-product_id="{{- product.id -}}" data-money-format={{shop.money_format | json}} data-hub-attr-state="class%3D%22lh-product-slider%20lh-product-related%20%257B%253A%257Bsection.settings.name_product%257D%253A%257D%20lh-badge-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%22%20data-product_id%3D%22%7B%3A%7Bsection.liquid.product_id%7D%3A%7D%22%20data-money-format%3D%7B%3A%7Bsection.liquid.money_format%7D%3A%7D"  data-hub-attr-name_product  data-hub-attr-show_badge >
+		<div class="owl-carousel owl-theme">
+			{% for item in arr_handle limit:limit %}
+					{%- if item == blank -%}
+						{%- continue -%}
+					{%- endif -%}
+					{% assign i_product = all_products[item] %}
+					{% assign first_variant = i_product.selected_or_first_available_variant %}
+					<div class="lh-collection-item">
+						<div class="lh-product-thumb">
+							<a href="{{i_product.url | within: collection}}">
+								 
+									<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ i_product.featured_image | img_url: '170x' }}" alt="{{i_product.title}}" class="lh-lazy"/>
+									{% if i_product.images.size > 1 %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.images[1] | img_url : '170x' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% else %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.featured_image | img_url: '170x' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% endif %}
+								 
+							</a>
+							<div class="lh-product-badges">
+
+
+								{% if first_variant.available == true %}
+									{% if first_variant.price < first_variant.compare_at_price and first_variant.available %}
+										{% assign onehundred = 100 %}
+										<span class="lh-onsale"  data-lhi="trans_sale_text" data-lh-lang>{{'elra792h45t.lh_k4izmq_text' | t }}</span>
+									{% else %}
+									{%- for tag in i_product.tags -%}
+										{%- if tag == 'new' -%}
+											<span class="lh-hot"  data-lhi="trans_new_text" data-lh-lang>{{'elra792h45t.lh_rv7qtl_text' | t }}</span>
+											{%- break -%}
+										{%- endif -%}
+									{%- endfor -%}
+									{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						<div class="lh-product-info">
+							<h3 class="lh-product-title">
+								<a href="{{i_product.url | within: collection}}">{{i_product.title}}</a>
+							</h3>
+							 
+							<div class="lh-wrap-product-rating">
+								{% render 'layouthub_review',  review_type: 'rating' , product: i_product %}
+							</div>
+							 
+							<div class="lh-wrap-price">
+								{% if first_variant.available == true %}
+									{% if first_variant.compare_at_price > first_variant.price %}
+									<span class="lh-sale">{{i_product.compare_at_price | money}}</span>
+									{% endif %}
+									<span class="lh-cost">{{first_variant.price | money}}</span>
+								{% else %}
+									<span class="lh-sold-out"  data-lhi="trans_soldout_text" data-lh-lang>{{'elra792h45t.lh_rivarn_text' | t }}</span>
+								{% endif %}
+							</div>
+
+						</div>
+					</div>
+			{% endfor %}</div>
+
+	</div>
+</div>
+
+ 
+  </include></div>
+  </div>
+ </div>
+
+ 
+  </section>
+</div>
+ {%schema%} 
+{"locales":{"en":{"0pu921k5w4n8":{"title":"Merak ettiklerinize cevap verdik.","link":"Daha Fazla"},"elra792h45t":{"lh_k4izmq_text":"\u0130ndirim!","lh_rv7qtl_text":"Yeni","lh_rivarn_text":"T\u00fckendi!","lh_k191aj_heading":"Daha \u0130yi Takviyeler Vitacoral'de","lh_k191aj_des":"Daha \u0130yi Ya\u015famaya Ba\u015fla!"}}},"name":"Vitacoral_Blog"}
+ {%endschema%}

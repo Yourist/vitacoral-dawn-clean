@@ -1,0 +1,1130 @@
+{% comment %}
+ LayoutHub (https://layouthub.com)
+ You SHOULD NOT modify source code in this page because
+ It is automatically generated from LayoutHub
+ {% endcomment %} 
+ 
+ <div class="lh-sections-wrapper" data-id="5fd23a322d30690ea47a7fd2" data-type="product">
+<section id="" data-section-id="g5SajtMdv3" data-section="product-detail-9" data-dev="huynh-duc" data-lh-page-id="303" data-lh-page-name="Gent" data-layouthub="section">  
+ <!--  Product single Swatch images -->
+{%- assign tpl =  template | replace: '.', ' ' | truncatewords: 1, '' | handle  -%}
+		 	 
+		 		{%- comment -%} Assign product when not in product page {%- endcomment -%}
+		 		{%- assign p  = all_products['collagen-30-sase']  -%}
+		 		{%- if  p.id != ""  and tpl != 'product' -%}
+		 			{% assign product  = p  %}
+		 		{%- endif -%}{%- assign color_names = '' | split: ',' -%}
+		{%- assign color_names_downcase = '' | split: ',' -%}
+		{%- assign color_values = '' | split: ','  -%}
+		{%- if shop.metafields.layouthub and shop.metafields.layouthub.colors and shop.metafields.layouthub.colors contains '|' -%}
+			{% assign colors = shop.metafields.layouthub.colors | split: '|' %}
+			{%- assign color_names = colors | first | strip | split: ',' -%}
+			{%- assign color_names_downcase = colors | first | strip | downcase | split: ',' -%}
+			{%- assign color_values = colors | last | strip | split: ',' -%}
+		 {%- endif -%}<div  class="lh-wrapper lh-product-single" data-pid="{{- product.id -}}" data-money-format='{{shop.money_format | url_encode }}' data-vid_url="{%- if tpl != 'product' -%}
+				{%- assign vid_url = false -%}
+			{%- else -%}
+				{%- assign vid_url = true -%}
+			{%- endif -%}
+			{{- vid_url -}}">
+		<div class="lh-container">
+			<div class="lh-details-product">
+			<div class="lh-row lh-align-start">
+				<div class="lh-product-sync-images">
+					<div class="lh-details-images lh-row lh-no-gutters use-zoom-no lh-promote-yes" data-hub-attr-state="class%3D%22lh-details-images%20lh-row%20lh-no-gutters%20use-zoom-%257B%253A%257Bsection.settings.use_zoom%257D%253A%257D%20lh-promote-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%22"  data-hub-attr-use_zoom  data-hub-attr-show_badge >
+						<div class="lh-big-slide lh-col-md-10">
+							<div class="lh-big_slide-lg">
+								<div class="lh-label lh-absolute">
+					{% assign first_variant = product.selected_or_first_available_variant %}
+					{%- assign compare_at_price = product.compare_at_price -%}
+					{%- assign price = product.price -%}
+					{%- assign price_varies = product.price_varies -%}
+					{%- assign available = product.available -%}
+					{%-assign on_new = false-%}
+					{%-unless product.tags contains 'notnew'%}
+							{%-assign now_date_int = "now" | date: "%j" | plus: 0-%}
+							{%-assign now_year_int = "now" | date: '%Y' | plus: 0-%}
+							{%-assign pub_date_int = product.published_at | date: "%j" | plus: 0-%}
+							{%-assign pub_year_int = product.published_at | date: '%Y' | plus: 0-%}
+							{%-if now_year_int == pub_year_int-%}
+								{%-assign new_day_int = 30 -%}
+								{%-assign check_new = now_date_int | minus: pub_date_int-%}
+								{%-if check_new >= 0 and check_new <= new_day_int-%}
+									<span class="lh-new_label"  data-lhi="trans_new" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_new' | t }}</span>
+								{%-endif-%}
+							{%-else-%}
+								{%-assign new_day_int = 30 | plus: 366-%}
+								{%-assign check_new = now_date_int | plus: 366-%}
+								{%-if check_new <= new_day_int-%}
+												<span class="lh-new_label"  data-lhi="trans_new" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_new' | t }}</span>
+								{%-endif-%}
+							{%-endif-%}
+					{%-endunless-%}
+					{%-assign on_sale = false-%}
+					{%-if first_variant.price < first_variant.compare_at_price and first_variant.available -%}
+						{%-unless product.tags contains 'notsale'-%}
+						{%-assign on_sale = true-%}
+						{%-endunless-%}
+					{%-endif-%}
+					{%-assign sold_out = true-%}
+
+					{%-unless available == false-%}
+						{%-assign sold_out = false-%}
+					{%-endunless-%}
+					<span class="lh-sale_label" style="display: {%- if on_sale -%}block{%- else -%}none{%- endif -%}"  data-lhi="trans_sale" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_sale' | t }}</span>
+					{%- if sold_out -%}
+						<span class="lh-soldout_label"  data-lhi="trans_sold_out" data-lh-lang>{{'g5SajtMdv3.lh_k4hsr9_out' | t }}</span>
+					{%- endif -%}
+				</div><div class=" block-slide-lg lh-slick-big swiper-container">
+									<div class="swiper-wrapper">
+										{%- for image in product.images -%}
+		          <div class="items-img swiper-slide zoom__image" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                      <img src="{{ image | img_url: "master"}}" data-width="{{image.width}}" data-height="{{image.height}}" data-bigimg="{{ image | img_url: "master"}}" alt="{{ image.alt}}">
+		                  </div>
+		        {%- endfor -%}</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="lh-small-slide lh-col-md-2">
+							<div class="block-slide-sm lh-slick-nav swiper-container">
+								<div class="swiper-wrapper">
+									{%- for image in product.images -%}
+				   <div class="items-img swiper-slide" data-variant_id="{{image.variants | map:'id' | join: ','}}">
+		                <img src="{{ image | img_url: "medium"}}"   alt="{{ image.alt}}">
+		            </div>
+				{%- endfor -%}</div>
+
+							</div>
+							<div class="lh-slide-small-nav">
+								<div class="swiper-button-prev">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M70.4,2.4L26.2,46.8c-0.9,0.9-1.3,2.1-1.3,3.3c0,1.2,0.5,2.4,1.3,3.3l44.2,44.2c1.1,1.1,2.8,1.1,3.9,0
+													c0.5-0.5,0.8-1.2,0.8-1.9c0-0.7-0.3-1.4-0.8-1.9L30.7,50.1L74.3,6.3c1.1-1.1,1.1-2.8,0-3.9C73.2,1.3,71.5,1.3,70.4,2.4z" ></path>
+									</svg>
+
+								</div>
+								<div class="swiper-button-next">
+									<svg version="1.1" width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+										<path fill="currentColor" d="M29.6,97.6l44.2-44.4c0.9-0.9,1.3-2.1,1.3-3.3c0-1.2-0.5-2.4-1.3-3.3L29.6,2.4c-1.1-1.1-2.8-1.1-3.9,0
+													c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.3,1.4,0.8,1.9l43.6,43.6L25.7,93.7c-1.1,1.1-1.1,2.8,0,3.9C26.8,98.7,28.5,98.7,29.6,97.6z" ></path>
+									</svg>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<include data-live-show_social data-live-items_social data-name="social" data-id="1">  
+  
+  <div class="lh-social">
+      <div class="lh-share-on">
+          <div class="lh-share_network">
+              <ul class="lh-social-network" >
+                  
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" class="lh-icon-network lh-social-facebook lh-tooltip_top" data-lh-tooltip="Facebook" target="_blank">
+                      <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <path fill="currentColor" d="M85.56,10H14.44C11.99,10,10,11.99,10,14.44v71.11c0,2.45,1.99,4.44,4.44,4.44h38.29V59.07H42.34V46.96h10.39v-8.89
+                      	c0-10.33,6.31-15.97,15.56-15.97c3.11-0.01,6.22,0.15,9.31,0.48v10.76h-6.38c-5.01,0-5.99,2.39-5.99,5.89v7.71h11.99l-1.56,12.11
+                      	H65.23V90h20.32c2.45,0,4.44-1.99,4.44-4.44V14.44C90,11.99,88.01,10,85.56,10z"/>
+                      </svg>
+                    </a></li>
+                   
+                   
+                   
+                   
+                   
+                  
+                   
+                   
+                  <li><a href="https://twitter.com/share?url={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}&text={{product.title | url_encode}}" class="lh-icon-network lh-social-twitter lh-tooltip_top" data-lh-tooltip="Twitter" target="_blank">
+                    <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <path fill="currentColor" d="M32.4,88.6c35.9,0,55.5-29.7,55.5-55.5c0-0.8,0-1.7-0.1-2.5c3.8-2.8,7.1-6.2,9.7-10.1c-3.5,1.6-7.3,2.6-11.2,3.1
+                    	c4-2.4,7.1-6.2,8.6-10.8c-3.8,2.2-7.9,3.9-12.4,4.7c-3.6-3.8-8.6-6.2-14.2-6.2c-10.8,0-19.5,8.7-19.5,19.5c0,1.5,0.2,3,0.5,4.4
+                    	C33.1,34.5,18.7,26.8,9.1,15c-1.7,2.9-2.6,6.2-2.6,9.8c0,6.8,3.4,12.7,8.7,16.2c-3.2-0.1-6.2-1-8.8-2.4c0,0.1,0,0.2,0,0.2
+                    	c0,9.4,6.7,17.3,15.6,19.1c-1.6,0.4-3.4,0.7-5.1,0.7c-1.3,0-2.5-0.1-3.7-0.4c2.5,7.7,9.7,13.4,18.2,13.5c-6.7,5.2-15.1,8.3-24.2,8.3
+                    	c-1.6,0-3.1-0.1-4.6-0.3C11.1,85.4,21.4,88.6,32.4,88.6"/>
+                    </svg>
+                  </a></li>
+                   
+                   
+                   
+                  
+                   
+                   
+                   
+                  <li><a href="mailto:?subject={{product.title | url_encode}}&amp;body=Check%20this%20out:%20{% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" target="_blank" class="lh-icon-network lh-social-mail lh-tooltip_top" data-lh-tooltip="Mail" target="_blank">
+                    <svg width="30" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                  </a></li>
+                   
+                   
+                 
+              </ul>
+          </div>
+    </div>
+  </div>
+   </include><div class="lh-block-custom lh-custom-html"  data-lhi="c_html_image" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_image_html' | t }}</div>
+				</div>
+				<div class="lh-summary">
+					<div class="lh-content-summary" data-hidden="{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign isHidden = true %}
+				{%- if variant_slected.available and variant_slected.price < variant_slected.compare_at_price -%}
+						{% assign isHidden = false %}
+				{%- endif -%}
+				{{isHidden}}">
+						<h1 class="product-name lh-product-title">
+							{{product.title}}</h1>
+						<div class="clearfix"></div>
+						 
+						<div class="lh-wrap-product-rating">
+							{% render 'layouthub_review',  review_type: 'single' , product: product %}</div>
+						<div class="clearfix"></div>
+						 
+						<span class="lh-price-block price ">
+							<del class="lh-compare-at-price">
+					<span class="money">{%- if product.compare_at_price  > product.price  -%}{{ product.compare_at_price  | money }}{%- endif -%}</span>
+				</del>
+				<ins class="lh-price">
+		         <span class="money">{{ product.price | money }}</span>
+		    </ins>
+		    <p class="lh-sold-out-title" style="display: none"><span  data-lhi="trans_outstock" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_outstock' | t }}</span></p></span>
+						<div class="clearfix"></div>
+						<div class="lh-block-custom lh-custom-html"  data-lhi="c_html_price" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_price_html' | t }}</div>
+						<include data-live-use_countdown data-live-label_countdown data-live-trans_label_dd data-live-trans_label_hh data-live-trans_label_mm data-live-trans_label_ss data-name="countdown" data-id="2">  
+ <div class="lh-wrap-countdown">
+	 
+</div>
+   </include><div class="clearfix"></div>
+						<include data-live-enable_external data-live-external_link data-live-trans_add_to_cart data-live-trans_pre_order data-live-trans_external data-live-enable_buynow data-live-trans_buynow data-live-c_html_addcart data-live-use_wishlist data-live-shipping data-live-shipping data-live-trans_shipping data-live-trans_unavai data-live-trans_outstock data-name="product-form" data-id="3">  
+ <form class="lh-product-form {% if product.variants.size > 1%} lh-form-product-variants{% else %} lh-form-product-variant {% endif%}" method="POST" accept-charset="utf-8" enctype="multipart/form-data"  action="/cart/add" data-pid="{{- product.id -}}">
+	<table class="lh-wrap-variant" data-variants-size="">
+		{% capture size_guide %}
+						 
+							<div class="lh-item-button lh-wrap-size-chart">
+								<a href="javascript:;" class="lh-size-chart" data-modal="modal-size-guild" data-id="modal-size-guild-{{product.id}}">
+									<span class="entry-title"  data-lhi="title_size" data-lh-lang></span>
+								</a>
+							</div>
+						 
+			{% endcapture %}{% assign variant_slected = product.selected_or_first_available_variant %}
+				{% assign arr_swatch = '30lu Sase' | split: ',' %}
+				{%- if  arr_swatch.size > 0 %}
+					{%- if product.variants.size >= 1%}
+						{%- for option in product.options -%}
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option | downcase -%}
+								{%- if arr_swatch contains option -%}
+								{% assign hasSizeGuide = false %}
+								{%- if o contains 'siz' -%}
+									{% assign hasSizeGuide = true %}
+								{%- endif -%}
+									{%- assign index = 'option' | append: forloop.index -%}
+									 	<tr class="lh-swatch-images  swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+											<td class="meta">
+												<label title="">{{ option }}:
+												</label>
+											</td>
+											<td class="wrap-values lh-sizeguide-{{hasSizeGuide}}">
+												<div class="list-swatch-images">
+														{%- assign values = ""  -%}
+														{%- for variant in product.variants -%}
+															{%- assign option_value = variant[index] -%}
+															{%- assign option_value_downcase = variant[index] | downcase -%}
+															{%- if values != ""%}
+																{%- assign tmp = values | split: '|' -%}
+																{%- if tmp contains option_value_downcase  -%} {%- continue-%}{%- endif -%}
+																{%- assign values = values  | append:   '|' | append: option_value_downcase -%}
+															{%- else -%}
+																{%- assign values =   option_value_downcase -%}
+															{%- endif -%}
+															<li data-option-index="{{ option_index }}" data-lh-tooltip="{{option_value}}" class="lh-swatch-select lh-tooltip_top lh-swatch-image {% if option_value == variant_slected[index] %} active{% endif %}" data-value="{{option_value | escape}}">
+																 
+																	<span><img src="{{ variant | img_url: "120x120", crop: 'center' }}" alt="{{option_value}}">
+																	</span>
+																 
+															</li>
+														{%- endfor -%}
+												</div>
+												{%- if hasSizeGuide -%}
+													{{size_guide}}
+												{%- endif -%}
+											</td>
+									  </tr>
+								{%- endif -%}
+						{%- endfor -%}
+					{%- endif -%}
+				{%- endif%}{%- if product.variants.size >= 1%}
+					{%- for option in product.options_with_values -%}
+
+							{%- assign option_index = forloop.index0 -%}
+							{%- assign o = option.name | downcase -%}
+							{%- if arr_swatch contains option.name or option.name == "Title" and product.options_with_values.size == 1 and option.values contains "Default Title" -%}
+								{%- continue -%}
+							{%- endif -%}
+							{% assign hasSizeGuide = false %}
+							{%- if o contains 'siz' -%}
+								{% assign hasSizeGuide = true %}
+							{%- endif -%}
+							{%- assign index = 'option' | append: forloop.index -%}
+							<tr class="lh-swatch-simple select-{{option.name | handleize }} swatch-index lh-swatch-variations"  data-option-index="{{ option_index }}">
+						      <td class="meta">
+						         <label title="">{{ option.name }}:
+						         </label>
+						      </td>
+									<td class="wrap-values lh-sizeguide-{{hasSizeGuide}}">
+										<div class="lh-wrap-combobox">
+									      <ul class="list-swatch-items" >
+													{%- for value in option.values -%}
+														<li class="lh-swatch-select {% if value == variant_slected[index] %} active{% endif %}" data-option-index="{{ option_index }}" data-value="{{value | escape}}"><span  title="{{value}}" >{{ value}}</span></li>
+													{%- endfor -%}
+									      </ul>
+										</div>
+										{%- if hasSizeGuide -%}
+											{{size_guide}}
+										{%- endif -%}
+	   					</tr>
+					{%- endfor -%}
+				{%- endif -%}</table>
+	<div class="clearfix"></div>
+   <div class="lh-option-wrappers show-swatch-no" >
+       <select name="id"  id="product-select-{{- product.id -}}" style="display: none">
+          {%- assign current_variant = product.selected_or_first_available_variant -%}
+					{%- for variant in product.variants -%}
+		                {%- if variant.available -%}
+		                  <option {%  if variant == product.selected_or_first_available_variant   %} selected="selected" {%  endif  %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+		                {%- else -%}
+		                  <option disabled="disabled">
+		                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+		                  </option>
+		                {%- endif -%}
+		              {%- endfor -%}</select>
+    </div>
+
+   <div class="lh-cart-button-group" data-available='{{product.selected_or_first_available_variant.available}}'>
+   	<div class="cart-form lh-d-flex lh-flex-wrap ">
+			<div class="lh-quantity">
+				<div class="lh-quantity-form quantity-form lh-flex lh-flex-wrap">
+							 <div class="lh-quantity_form">
+									<div class="lh-control">
+										 <input type="number" class="lh-input-qty lh-input-number lh-qty number "  name="quantity" value="1" min="1" max="{%- if current_variant.inventory_management != null -%}{{current_variant.inventory_quantity}}{%- else -%}999{%- endif -%}"><a href="javascript:;" class="lh-btn-number lh-qtyminus lh-quantity-minus" onclick="this.parentNode.querySelector('input[type=number]').stepDown();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'));return false"  title=""> </a>
+										 <a href="javascript:;" class="lh-btn-number lh-qtyplus lh-quantity-plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp();this.parentNode.querySelector('input[type=number]').dispatchEvent(new Event('change'));return false" title=""></a>
+									</div>
+							 </div>
+						 </div>
+			</div>
+			 
+				<button type="submit" class="lh-add_to_cart lh-bt lh-bt-primary" data-add-cart="Sepete Ekle" data-pre-order="Ön Sipariş" data-hub-attr-state="type%3D%22submit%22%20class%3D%22lh-add_to_cart%20lh-bt%20lh-bt-primary%22%20data-add-cart%3D%22%257B%253A%257Bsection.settings.trans_add_to_cart%257D%253A%257D%22%20data-pre-order%3D%22%257B%253A%257Bsection.settings.trans_pre_order%257D%253A%257D%22"  data-hub-attr-trans_add_to_cart  data-hub-attr-trans_pre_order >
+					{% assign f_inventory_policy = first_variant.inventory_policy %}
+			{% assign f_quantity = first_variant.inventory_quantity %}
+			{% if f_inventory_policy == 'continue' and f_quantity < 1  %}
+			  {{'g5SajtMdv3.lh_rv7xkc_order' | t }}
+			{% else  %}
+			  {{'g5SajtMdv3.lh_k1su5s_cart' | t }}
+			{% endif %}</button>
+			 
+
+		</div>
+		<div class="clearfix"></div>
+		 
+		<div class="lh-d-flex lh-flex-wrap lh-wrap-buynow">
+			    <button class="lh-buy-now bt lh-bt-primary lh-bt-type_01"  data-lhi="trans_buynow" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_buynow' | t }}</button>
+
+		</div>
+		 
+		<div class="clearfix"></div>
+   </div>
+	 <div class="lh-block-custom lh-custom-html"  data-lhi="c_html_addcart" data-lh-lang data-lh-live-editor></div>
+	 <div class="lh-button-more">
+	 	 
+	 	<div class="lh-wrap-wishlist">{%- capture wishlist_content -%}
+			<a href="javascript:;" class="lh-button-wl">
+			<svg version="1.1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+			<path fill="currentColor" d="M90.4,14.9c-5-5-11.6-7.7-18.7-7.7c-7.1,0-13.8,2.7-18.7,7.7l-3,3l-3-3c-5-4.8-11.8-7.6-18.6-7.6c-7.1,0-13.7,2.7-18.7,7.6
+			 C-0.7,25.2-0.7,42,9.7,52.4l15.8,15.8l5.9,5.9l0.2,0.2L50.3,93L69,74.3l16.8-17l4.9-4.9c4.9-4.9,7.7-11.6,7.7-18.7
+			 C98.1,26.5,95.4,19.8,90.4,14.9z M86.5,48.3l-5,5l-16.7,17L50.1,85.1L35.4,70.3l-0.2-0.2l-5.9-5.9L13.6,48.5
+			 c-8.2-8.2-8.2-21.5,0-29.7c3.9-3.9,9.1-6,14.8-6c5.4,0,10.8,2.2,14.8,6l6.9,6.9l6.9-6.9c3.9-3.9,9.2-6.1,14.8-6.1
+			 c5.6,0,10.9,2.2,14.8,6.1c3.9,3.9,6,9.1,6,14.8C92.6,39.2,90.4,44.4,86.5,48.3z"></path>
+			</svg>
+			<text  data-lhi="trans_wl" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_wl' | t }}</text>
+			 </a>
+			{%- endcapture -%}
+			{%- render 'layouthub_wishlist', wishlist_content:wishlist_content, wishlist_type: 'other',product: product -%}</div>
+	 	 
+	 	 
+	 		<div class="lh-item-button lh-wrap-shipping">
+	 			<a class="lh-shipping" href="javascript:void(0)" data-id="modal-shipping-{{- product.id -}}">
+	 				<svg version="1.1" width="24" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 					 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+	 				<path fill="currentColor" d="M86.5,17.6H41c-3.7,0-6.8,3-6.8,6.8v7.3H17.8c-1.9,0-3.6,1.1-4.3,2.9L10.8,41l-4,9.4v3.3v13c0,2.6,2.1,4.8,4.8,4.8h1.1
+	 					c0,0.1,0,0.2,0,0.3c0,5.9,4.8,10.8,10.8,10.8s10.8-4.8,10.8-10.8c0-0.1,0-0.2,0-0.3h0.2H37h26.6c0,0.1,0,0.2,0,0.3
+	 					c0,5.9,4.8,10.8,10.8,10.8S85,77.5,85,71.6c0-0.1,0-0.2,0-0.3h4.5c2.1,0,3.8-1.6,3.8-3.8V24.4C93.3,20.7,90.2,17.6,86.5,17.6z
+	 					 M18.3,37.1h15.9v11H13.7L18.3,37.1z M23.3,76.9c-2.9,0-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3s5.3,2.4,5.3,5.3S26.2,76.9,23.3,76.9z
+	 					 M32.4,65.9c-1.9-3-5.3-5-9.1-5s-7.2,2-9.1,5h-2V53.6h22v12.2h-1.8V65.9z M74.3,76.9c-2.9,0-5.3-2.4-5.3-5.3s2.4-5.3,5.3-5.3
+	 					s5.3,2.4,5.3,5.3S77.2,76.9,74.3,76.9z M87.8,65.9h-4.4c-1.9-3-5.3-5-9.1-5s-7.2,2-9.1,5H39.8V53.6v-22V23h48.1L87.8,65.9L87.8,65.9
+	 					z"></path>
+	 				</svg>
+	 				<text  data-lhi="trans_shipping" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_shipping' | t }}</text>
+	 			</a>
+	 		</div>
+	 	 
+	 </div>
+</form>
+
+{%- unless product == empty -%}
+							<script type="application/json" id="lh-product-json-{{product.id}}">
+							{
+							"id": {{product.id}},
+							"title": {{product.title | json}},
+							"handle": {{product.handle | json}},
+							"price": {{product.price| json}},
+							"price_min": {{product.price_min| json}},
+							"price_max": {{product.price_max| json}},
+							"available": {{product.available | json}},
+							"price_varies": {{product.price_varies| json}},
+							"compare_at_price": {{product.compare_at_price| json}},
+							"compare_at_price_min": {{product.compare_at_price_min| json}},
+							"compare_at_price_max": {{product.compare_at_price_max| json}},
+							"compare_at_price_varies": {{product.compare_at_price_varies| json}},
+							"variants": [
+							{%- for variant in product.variants -%}
+							{
+							"id": {{variant.id}},
+							"title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+							"option1": {{variant.option1  | json}},
+							"option2": {%- if product.options.size == 1 -%}null{%-else-%}{{variant.option2  | json}}{%-endif-%},
+							"option3": {%- if product.options.size == 1 or product.options.size == 2 -%}null{%-else-%}{{variant.option3  | json}}{%-endif-%},
+							"sku": {{variant.sku | json}},
+							"requires_shipping": {{variant.requires_shipping}},
+							"taxable": {{variant.taxable |json}},
+							"featured_image": {%- if variant.image.id != blank -%}{
+									"id": {{variant.image.id | json}},
+									"product_id": {{product.id | json}},
+									"width": {{variant.image.width | json}},
+									"height": {{variant.image.height | json}},
+									"src": {{variant.image.src | json}},
+									"position":{{variant.image.position}}
+								}{%- else-%}null{%-endif-%},
+							"available": {{variant.available}},
+							"public_title": "{{variant.option1 | handleize }}{%- if product.options.size == 2 -%} / {%- endif -%}{{variant.option2 | handleize }}{%- if product.options.size == 3 -%} / {%- endif -%}{{variant.option3 | handleize }}",
+							"options":  {{variant.options | json}},
+							"price": {{variant.price| json}},
+							"weight": {{variant.weight| json}},
+							"compare_at_price": {{variant.compare_at_price | json}},
+							"inventory_quantity": {{variant.inventory_quantity | json}},
+							"inventory_management": {{variant.inventory_management | json}},
+							"inventory_policy": {{variant.inventory_policy | json}},
+							"barcode": {{variant.barcode | json}}
+							}{%- if forloop.last == false -%},{%- endif -%}
+							{%- endfor -%}
+							],
+							"featured_image": {{product.featured_image | json}},
+							"options": [
+							{%- for option in product.options -%}
+							{{ option | json}}{%- if forloop.last == false -%},{%- endif -%}
+							{%-endfor -%}
+							]
+							}
+							</script>
+						{%- endunless -%}   </include><include data-live-badge_banner data-live-trans_safe data-live-badge_banner data-name="badge" data-id="4">  
+  
+<div class="lh-safe-checkout">
+	<div class="lh-product-badge">
+		<p class="lh-title"><span  data-lhi="trans_safe" data-lh-lang>{{'g5SajtMdv3.lh_up5omg_safe' | t }}</span></p>
+		<text  data-lhi="badge_banner"><img src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/logo-band1x.png?v=1613559938676" alt="safe checkout" /></text>
+	</div>
+</div>
+   </include><div class="lh-hide-desktop">
+                            <div class="lh-block-custom lh-custom-html"  data-lhi="c_html_image" data-lh-lang>{{'g5SajtMdv3.lh_gdekg7_image_html' | t }}</div>
+                            <include data-live-show_social data-live-items_social data-name="social" data-id="5">  
+  
+  <div class="lh-social">
+      <div class="lh-share-on">
+          <div class="lh-share_network">
+              <ul class="lh-social-network" >
+                  
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" class="lh-icon-network lh-social-facebook lh-tooltip_top" data-lh-tooltip="Facebook" target="_blank">
+                      <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                      <path fill="currentColor" d="M85.56,10H14.44C11.99,10,10,11.99,10,14.44v71.11c0,2.45,1.99,4.44,4.44,4.44h38.29V59.07H42.34V46.96h10.39v-8.89
+                      	c0-10.33,6.31-15.97,15.56-15.97c3.11-0.01,6.22,0.15,9.31,0.48v10.76h-6.38c-5.01,0-5.99,2.39-5.99,5.89v7.71h11.99l-1.56,12.11
+                      	H65.23V90h20.32c2.45,0,4.44-1.99,4.44-4.44V14.44C90,11.99,88.01,10,85.56,10z"/>
+                      </svg>
+                    </a></li>
+                   
+                   
+                   
+                   
+                   
+                  
+                   
+                   
+                  <li><a href="https://twitter.com/share?url={% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}&text={{product.title | url_encode}}" class="lh-icon-network lh-social-twitter lh-tooltip_top" data-lh-tooltip="Twitter" target="_blank">
+                    <svg version="1.1" width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <path fill="currentColor" d="M32.4,88.6c35.9,0,55.5-29.7,55.5-55.5c0-0.8,0-1.7-0.1-2.5c3.8-2.8,7.1-6.2,9.7-10.1c-3.5,1.6-7.3,2.6-11.2,3.1
+                    	c4-2.4,7.1-6.2,8.6-10.8c-3.8,2.2-7.9,3.9-12.4,4.7c-3.6-3.8-8.6-6.2-14.2-6.2c-10.8,0-19.5,8.7-19.5,19.5c0,1.5,0.2,3,0.5,4.4
+                    	C33.1,34.5,18.7,26.8,9.1,15c-1.7,2.9-2.6,6.2-2.6,9.8c0,6.8,3.4,12.7,8.7,16.2c-3.2-0.1-6.2-1-8.8-2.4c0,0.1,0,0.2,0,0.2
+                    	c0,9.4,6.7,17.3,15.6,19.1c-1.6,0.4-3.4,0.7-5.1,0.7c-1.3,0-2.5-0.1-3.7-0.4c2.5,7.7,9.7,13.4,18.2,13.5c-6.7,5.2-15.1,8.3-24.2,8.3
+                    	c-1.6,0-3.1-0.1-4.6-0.3C11.1,85.4,21.4,88.6,32.4,88.6"/>
+                    </svg>
+                  </a></li>
+                   
+                   
+                   
+                  
+                   
+                   
+                   
+                  <li><a href="mailto:?subject={{product.title | url_encode}}&amp;body=Check%20this%20out:%20{% if tpl == 'product'%}{{-canonical_url-}}{%- else -%}{{-shop.secure_url-}}{{-product.url-}}{%- endif-%}" target="_blank" class="lh-icon-network lh-social-mail lh-tooltip_top" data-lh-tooltip="Mail" target="_blank">
+                    <svg width="30" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                  </a></li>
+                   
+                   
+                 
+              </ul>
+          </div>
+    </div>
+  </div>
+   </include></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="lh-wrap-tab lh-bt">
+			<include data-live-tabs data-live-tabs data-live-tabs__active data-live-tabs__active data-live-tabs__active data-live-tabs data-live-tabs__active data-live-tabs__active data-live-tabs__active data-name="tabs" data-id="6">  
+ <div class="lh-tabs-product">
+    <ul class="lh-nav lh-nav-tabs">
+        
+           
+          <li><a class="tab-link  " data-tab-handle="description" data-tab="tab-0" href="#tab-0" title=""  data-lhi="tabs[0]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh73_title' | t }}</a></li>
+           
+                 {%- capture end_tag -%}</h4>{%- endcapture -%}
+											{%- capture start_tag -%}<h4>{%- endcapture -%}
+											{%- assign tabs = product.description | split: start_tag -%}
+											{%- if tabs.size > 1-%}
+													{%- for tab in tabs -%}
+															{% if forloop.first %}{% continue %}{% endif %}
+															{%- assign div =  tab  | split: end_tag-%}
+															{%- assign heading = div | first  | split: end_tag | first -%}
+															<li><a class="tab-link " data-tab-handle="description" data-tab="auto-tab-{{forloop.index}}" href="auto-tab-{{forloop.index}}" title="">{{ heading }}</a></li>
+													{%- endfor -%}
+											{%- endif -%} 
+           
+          <li><a class="tab-link  active" data-tab-handle="addition_information" data-tab="tab-1" href="#tab-1" title=""  data-lhi="tabs[1]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh74_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="addition_information" data-tab="tab-2" href="#tab-2" title=""  data-lhi="tabs[2]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh75_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="review" data-tab="tab-3" href="#tab-3" title=""  data-lhi="tabs[3]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh76_title' | t }}</a></li>
+           
+           
+          <li><a class="tab-link  " data-tab-handle="addition_information" data-tab="tab-4" href="#tab-4" title=""  data-lhi="tabs[4]title" data-lh-lang data-lhis="tabs-title" >{{'g5SajtMdv3.lh_brmh77_title' | t }}</a></li>
+           
+           
+         
+       </ul>
+    <div class="clearfix">
+    </div>
+    <div class="lh-tab-contents" data-pid="{{- product.id -}}">
+       
+         <div id="tab-0" class="lh-tab-content lh-custom-html " data-tab-handle="description" >
+             
+              <div class="description">
+                  {%- capture tag -%}<h4>{%- endcapture -%}
+									 
+											{{ product.description | split: tag | first }}</div>
+             
+
+         </div>
+          
+                {%- capture end_tag -%}</h4>{%- endcapture -%}
+											{%- capture start_tag -%}<h4>{%- endcapture -%}
+											{%- assign tabs = product.description | split: start_tag -%}
+											{%- if tabs.size > 1-%}
+													{%- for tab in tabs -%}
+															{% if forloop.first %}{% continue %}{% endif %}
+															{%- assign div =  tab  | split: end_tag-%}
+															{% assign tab_content = div | last %}
+															 <div id="auto-tab-{{forloop.index}}" class="lh-tab-content lh-custom-html" data-tab-handle="description">
+																 {{ tab_content }}
+															</div>
+													{%- endfor -%}
+											{%- endif -%} 
+       
+         <div id="tab-1" class="lh-tab-content lh-custom-html active" data-tab-handle="addition_information" >
+             
+               <div class="addition-information"  data-lhi="tabs[1]addition_infor" data-lh-lang data-lh-live-editor data-lhis="tabs-addition_infor"><table>
+  <tbody>
+    <tr>
+      <td width="200">
+        <p><strong style="color: rgb(34, 89, 82);">Bileşen</strong></p>
+      </td>
+      <td width="1376">
+        <p><strong style="color: rgb(34, 89, 82);">Fayda</strong></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><span style="color: rgb(34, 89, 82);"><b>C Vitamini</b></span></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);"><strong>Kan damarlarının normal fonksiyonu</strong> için gerekli olan normal kollajen oluşumuna katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">E Vitamini</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">E vitamini <strong>hücrelerin oksidatif stresten korunmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">Biotin</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>saç</strong>ın, <strong>mukoza</strong> ve <strong>cildin korunmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">B3 Vitamini</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>kırmızı kan hücresi oluşumu</strong>na, <strong>bağışıklık sistemine</strong> ve <strong>yorgunluğun azaltılmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">B6 Vitamini</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>kırmızı kan hücresi oluşumu</strong>na, <strong>bağışıklık</strong> sistemine ve <strong>yorgunluğun azaltılmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">B12 Vitamini</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>hücre bölünmesine</strong> yardımcı olur, <strong>kırmızı kan hücresi oluşumunu</strong> destekler ve <strong>homosistein metabolizmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">Çinko</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>bağışıklık sistemi</strong>nin, <strong>tırnakların</strong>, <strong>cildin</strong>, <strong>saçların</strong> ve <strong>görme yetisinin</strong> korunmasına katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">Kalsiyum</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>enerji oluşum metabolizmasına</strong> katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">Selenyum</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>tiroit</strong>, <strong>saç</strong>, <strong>tırnak</strong> ve <strong>bağışıklık sisteminin</strong> korunmasına katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="190">
+        <p><strong style="color: rgb(34, 89, 82);">Bakır</strong></p>
+      </td>
+      <td width="1376">
+        <p><span style="color: rgb(34, 89, 82);">Normal <strong>saç ve cilt pigmentlerinin</strong> ve <strong>bağ dokularının</strong> korunmasına katkıda bulunur.*</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+             
+
+         </div>
+          
+       
+         <div id="tab-2" class="lh-tab-content lh-custom-html " data-tab-handle="addition_information" >
+             
+               <div class="addition-information"  data-lhi="tabs[2]addition_infor" data-lh-lang data-lh-live-editor data-lhis="tabs-addition_infor"><br><p><span class="lh-texteditor-image active" contenteditable="false"><img src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/iceriklersite-2022-calsmayuzeyi1kopya2_YTYB.jpg?v=1661944804625" class="lh-texteditor-img" style="width: 720px;"></span></p><p><br></p></div>
+             
+
+         </div>
+          
+       
+         <div id="tab-3" class="lh-tab-content lh-custom-html " data-tab-handle="review" >
+             
+                <div class="lh-review-tab review">
+                  {% render 'layouthub_review',  review_type: 'form' , product: product %}</div>
+             
+
+         </div>
+          
+       
+         <div id="tab-4" class="lh-tab-content lh-custom-html " data-tab-handle="addition_information" >
+             
+               <div class="addition-information"  data-lhi="tabs[4]addition_infor" data-lh-lang data-lhis="tabs-addition_infor">{{'g5SajtMdv3.lh_88toy0_infor_html' | t }}</div>
+             
+
+         </div>
+          
+       
+    </div>
+  </div>
+   </include></div>
+	</div>
+	 
+	<div class="lh-modal-size-guild lh-modal" id="modal-size-guild-{{- product.id -}}" style="display:none">
+	    <div class="lh-modal-box">
+		    <div class="modal-header">
+		      <span class="lh-close-modal lh-modal-sizechart"><span class="lh-close" title="Close">✖</span></span>
+		    </div>
+		    <figure class="lh-modal-body lh-custom-html"  data-lhi="size_guide_content" data-lh-live-editor><h3 style="text-align: center;margin-bottom: 0;">SIZE GUIDE</h3><p style="text-align: center;"> This is an approximate conversion table to help you find your size. </p><table class="tt-table-modal-info" style="text-align: center;"><thead><tr><th>VN</th><th>JP</th><th>UK</th><th>US</th><th>KOR</th></tr></thead><tbody><tr><td>34</td><td>30</td><td>28</td><td>4</td><td>00</td></tr><tr><td>36</td><td>32</td><td>30</td><td>6</td><td>0</td></tr><tr><td>38</td><td>34</td><td>32</td><td>8</td><td>2</td></tr><tr><td>40</td><td>36</td><td>34</td><td>10</td><td>4</td></tr><tr><td>42</td><td>38</td><td>36</td><td>12</td><td>6</td></tr><tr><td>44</td><td>40</td><td>38</td><td>14</td><td>8</td></tr><tr><td>46</td><td>42</td><td>40</td><td>16</td><td>10</td></tr><tr><td>48</td><td>44</td><td>42</td><td>18</td><td>12</td></tr><tr><td>50</td><td>46</td><td>44</td><td>20</td><td>14</td></tr><tr><td>52</td><td>48</td><td>46</td><td>22</td><td>16</td></tr></tbody></table></figure>
+	    </div>
+	</div>
+	 
+	 
+	<div class="lh-modal-shipping lh-modal" id="modal-shipping-{{- product.id -}}" style="display:none">
+	    <div class="lh-modal-box">
+		    <div class="modal-header">
+		      <span class="lh-close-modal"><span class="lh-close" title="Close">✖</span></span>
+		    </div>
+		    <figure class="lh-modal-body lh-modal-shipping__content lh-custom-html">
+		      {{pages['standard-pagesbsh7'].content}}</figure>
+	    </div>
+	</div>
+	 
+</div>
+ 
+  </section><section id="" data-section-id="lqfq5xb76vh" data-section="the-best-benefits-2" data-dev="hongyen" data-lh-page-id="1073" data-lh-page-name="Xmas - Landing" data-layouthub="section">  
+ <div class="lh-benefits" >
+    <div class="lh-container">
+    	<div class="lh-row">
+    		<div class="lh-col-md-12">
+    			<h3 class="lh-title"  data-lhi="txt_title" data-lh-lang>{{'lqfq5xb76vh.lh_a168_title' | t }}</h3>	
+    		</div>
+        </div>
+        <div class="lh-list">
+              
+            <div class="lh-item right" data-hub-attr-state="class%3D%22lh-item%20%22"   data-hub-attr-list_item_0_img_value="list_item[0]img_value" data-lhis="list_item-img_value" >
+                
+                <div class="lh-row">
+                    <div class="lh-col-md-5 order">
+                        <div class="lh-infor ">
+                            <h4 class="lh-text"  data-lhi="list_item[0]txt_lable" data-lh-lang data-lhis="list_item-txt_lable">{{'lqfq5xb76vh.lh_9wid92_lable' | t }}</h4>
+                            <div class="lh-desc"  data-lhi="list_item[0]txt_desc" data-lh-lang data-lhis="list_item-txt_desc">{{'lqfq5xb76vh.lh_9wid92_desc_html' | t }}</div>
+                        </div>
+                    </div>
+                    <div class="lh-col-md-1"></div>
+                    <div class="lh-col-md-6 ">    
+                       <div class="lh-img"  data-lhi="list_item[0]bg_img" data-lhis="list_item-bg_img"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/files/Adsiz_tasarim_19.png?v=1749560938906" class="lh-lazy"/></div>         
+                    </div>
+                </div>
+            </div>
+                 
+              
+            <div class="lh-item left" data-hub-attr-state="class%3D%22lh-item%20%22"   data-hub-attr-list_item_1_img_value="list_item[1]img_value" data-lhis="list_item-img_value" >
+                <div class="lh-row">
+                    
+                    <div class="lh-col-md-6 ">    
+                         <div class="lh-img"  data-lhi="list_item[1]bg_img" data-lhis="list_item-bg_img"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/files/kolajen_nedir.jpg?v=1636030409965" class="lh-lazy"/></div>                     
+                    </div>
+                    <div class="lh-col-md-1"></div>
+                    <div class="lh-col-md-5 order">
+                        <div class="lh-infor ">
+                            <h4 class="lh-text"  data-lhi="list_item[1]txt_lable" data-lh-lang data-lhis="list_item-txt_lable">{{'lqfq5xb76vh.lh_a5w0bb_lable_html' | t }}</h4>
+                            <div class="lh-desc"  data-lhi="list_item[1]txt_desc" data-lh-lang data-lhis="list_item-txt_desc">{{'lqfq5xb76vh.lh_a5w0bb_desc_html' | t }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+              
+            <div class="lh-item right" data-hub-attr-state="class%3D%22lh-item%20%22"   data-hub-attr-list_item_2_img_value="list_item[2]img_value" data-lhis="list_item-img_value" >
+                
+                <div class="lh-row">
+                    <div class="lh-col-md-5 order">
+                        <div class="lh-infor ">
+                            <h4 class="lh-text"  data-lhi="list_item[2]txt_lable" data-lh-lang data-lhis="list_item-txt_lable">{{'lqfq5xb76vh.lh_af9ndk_lable' | t }}</h4>
+                            <div class="lh-desc"  data-lhi="list_item[2]txt_desc" data-lh-lang data-lhis="list_item-txt_desc">{{'lqfq5xb76vh.lh_af9ndk_desc_html' | t }}</div>
+                        </div>
+                    </div>
+                    <div class="lh-col-md-1"></div>
+                    <div class="lh-col-md-6 ">    
+                       <div class="lh-img"  data-lhi="list_item[2]bg_img" data-lhis="list_item-bg_img"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/web-collagen-3_Hoid.png?v=1627987913990" class="lh-lazy"/></div>         
+                    </div>
+                </div>
+            </div>
+                 
+                
+        </div>
+    </div>
+</div>
+  </section><section id="" data-section-id="orh4hotcrar" data-section="best-benefits-6" data-dev="hongyen" data-lh-page-id="1469" data-lh-page-name="Green - Landing" data-layouthub="section">  
+ <div class="lh-benefits">
+    <div class="lh-container">
+        <div class="lh-row">
+            <div class="lh-col-md-12">
+                <h5 class="lh-txt-top"  data-lhi="txt_title_top" data-lh-lang>{{'orh4hotcrar.lh_f5dibt_top' | t }}</h5>
+                <h3 class="lh-title"  data-lhi="txt_title" data-lh-lang>{{'orh4hotcrar.lh_a168_title' | t }}</h3>
+            </div>
+             <div class="lh-col-md-6">
+                <div class="lh-img"  data-lhi="img"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/files/dsc09135_exjq.png?v=175378947135" alt="Image Product" class="lh-lazy"/></div>           
+            </div>
+            <div class="lh-col-md-6">
+                     <div class="lh-item" >
+                            <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_0_font_icon="list_item[0]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                            </div>
+                            <div class="lh-text">
+                                <h5 class="lh-item-title"  data-lhi="list_item[0]title" data-lh-lang data-lhis="list_item-title">{{'orh4hotcrar.lh_hpo2th_title' | t }}</h5>
+                                <div class="lh-desc"  data-lhi="list_item[0]des" data-lh-lang data-lhis="list_item-des">{{'orh4hotcrar.lh_hpo2th_des_html' | t }}</div>
+                            </div>
+                        </div>
+                     <div class="lh-item" >
+                            <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_1_font_icon="list_item[1]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                            </div>
+                            <div class="lh-text">
+                                <h5 class="lh-item-title"  data-lhi="list_item[1]title" data-lh-lang data-lhis="list_item-title">{{'orh4hotcrar.lh_hpo2ti_title' | t }}</h5>
+                                <div class="lh-desc"  data-lhi="list_item[1]des" data-lh-lang data-lhis="list_item-des">{{'orh4hotcrar.lh_hpo2ti_des_html' | t }}</div>
+                            </div>
+                        </div>
+                     <div class="lh-item" >
+                            <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_2_font_icon="list_item[2]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                            </div>
+                            <div class="lh-text">
+                                <h5 class="lh-item-title"  data-lhi="list_item[2]title" data-lh-lang data-lhis="list_item-title">{{'orh4hotcrar.lh_hpo2tj_title' | t }}</h5>
+                                <div class="lh-desc"  data-lhi="list_item[2]des" data-lh-lang data-lhis="list_item-des">{{'orh4hotcrar.lh_hpo2tj_des_html' | t }}</div>
+                            </div>
+                        </div>
+                     
+            </div>
+        </div>
+    </div>        
+</div>
+  </section><section id="" data-section-id="2m00f7jgoaq" data-section="faq-16" data-dev="anh-tu" data-lh-page-id="935" data-lh-page-name="Joon - Landing" data-layouthub="section">  
+ <div class="lh-accordion-section">
+
+    <div class="lh-container">
+
+        <div class="lh-heading">
+
+            <h3  data-lhi="faq_heading" data-lh-lang>{{'2m00f7jgoaq.lh_8t6e_heading_html' | t }}</h3>
+
+        </div>
+
+        <div class="lh-row">
+
+            <div class="lh-col-md-6">
+
+                <div class="lh-banner"  data-lhi="faq_image"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/faqs-wom.png?v=1611324776829" alt="Avatar" class="lh-lazy hub-img"/></div>
+
+            </div>
+
+            <div class="lh-col-md-6">
+
+                  
+
+                   <include data-live-accordion_items data-live-faq_style data-name="style_1" data-id="1">  
+ <div class="lh-accordion-wrapper">
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[0]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ezc4q5_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[0]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ezc4q5_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[1]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ezhhnw_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[1]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ezhhnw_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 active" data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[2]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ezmuln_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[2]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ezmuln_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[3]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ezs7je_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[3]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ezs7je_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[4]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ezxkh5_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[4]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ezxkh5_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[5]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_f02xew_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[5]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_f02xew_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[6]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_f08acn_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[6]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_f08acn_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[7]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_f0dnae_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[7]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_f0dnae_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[8]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_f0j085_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[8]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_f0j085_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[9]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_f0od5w_name_html' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[9]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_f0od5w_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[10]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_ki54mq_name_html' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[10]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_ki54mq_content_html' | t }}</div>
+                        </div>
+                     <div class="lh-accordion-item lh-accordion-item-style_1 " data-hub-attr-state="class%3D%22lh-accordion-item%20lh-accordion-item-%257B%253A%257Bsection.settings.faq_style%257D%253A%257D%20%7Battr%7Bitem.toggle%20%3D%3D%20'yes'%20%3F%20'active'%20%3A%20''%20%7Dattr%7D%22"  data-hub-attr-faq_style >
+                            <div class="lh-header">
+                                <p class="title"  data-lhi="accordion_items[11]ai_name" data-lh-lang data-lhis="accordion_items-ai_name">{{'2m00f7jgoaq.lh_kiahkh_name' | t }}</p>
+                            </div>
+                            <div class="content"  data-lhi="accordion_items[11]ai_content" data-lh-lang data-lhis="accordion_items-ai_content">{{'2m00f7jgoaq.lh_kiahkh_content_html' | t }}</div>
+                        </div>
+                     
+                </div>
+   </include></div>
+
+        </div>
+
+    </div>
+
+</div>
+  </section><section id="" data-section-id="j86azq35nv" data-section="benefits-4" data-dev="hongyen" data-lh-page-id="1275" data-lh-page-name="Dottle" data-layouthub="section">  
+  
+ 
+ 
+ 
+
+<div class="lh-benefits">
+    <div class="lh-container">
+        <div class="lh-row">
+            <div class="lh-col-md-4">
+                <h3 class="lh-title"  data-lhi="text1" data-lh-lang>{{'j86azq35nv.text1' | t }}</h3>
+                <div class="lh-img"  data-lhi="img"><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="https://cdn.shopify.com/s/files/1/0512/9414/2657/t/8/assets/kollajenbannerwebsite2_AXWj_370x176_crop_center.png" alt="Image Product" class="lh-lazy"/></div>           
+            </div>
+            <div class="lh-col-md-8">
+                <div class="lh-list-item">
+                <div class="lh-row">
+                     <div class="lh-col-md-6">
+                        <div class="lh-item">
+                            <div class="lh-item-top">
+                                <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="lni lni-checkmark" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_0_font_icon="list_item[0]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                                </div>
+                                <h5 class="lh-item-title"  data-lhi="list_item[0]title" data-lh-lang data-lhis="list_item-title">{{'j86azq35nv.lh_hpo2th_title' | t }}</h5>
+                            </div>
+                            <div class="lh-desc"  data-lhi="list_item[0]des" data-lh-lang data-lhis="list_item-des">{{'j86azq35nv.lh_hpo2th_des_html' | t }}</div>
+                        </div>
+                    </div>
+                     <div class="lh-col-md-6">
+                        <div class="lh-item">
+                            <div class="lh-item-top">
+                                <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="lni lni-checkmark" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_1_font_icon="list_item[1]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                                </div>
+                                <h5 class="lh-item-title"  data-lhi="list_item[1]title" data-lh-lang data-lhis="list_item-title">{{'j86azq35nv.lh_hpo2ti_title' | t }}</h5>
+                            </div>
+                            <div class="lh-desc"  data-lhi="list_item[1]des" data-lh-lang data-lhis="list_item-des">{{'j86azq35nv.lh_hpo2ti_des_html' | t }}</div>
+                        </div>
+                    </div>
+                     <div class="lh-col-md-6">
+                        <div class="lh-item">
+                            <div class="lh-item-top">
+                                <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="lni lni-checkmark" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_2_font_icon="list_item[2]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                                </div>
+                                <h5 class="lh-item-title"  data-lhi="list_item[2]title" data-lh-lang data-lhis="list_item-title">{{'j86azq35nv.lh_hpo2tj_title' | t }}</h5>
+                            </div>
+                            <div class="lh-desc"  data-lhi="list_item[2]des" data-lh-lang data-lhis="list_item-des">{{'j86azq35nv.lh_hpo2tj_des_html' | t }}</div>
+                        </div>
+                    </div>
+                     <div class="lh-col-md-6">
+                        <div class="lh-item">
+                            <div class="lh-item-top">
+                                <div class="lh-item-icon">
+                                 
+                                    <p class="lh-icon-font"><i class="lni lni-checkmark" data-hub-attr-state="class%3D%22%22"   data-hub-attr-list_item_3_font_icon="list_item[3]font_icon" data-lhis="list_item-font_icon" ></i></p>
+                                 
+                                </div>
+                                <h5 class="lh-item-title"  data-lhi="list_item[3]title" data-lh-lang data-lhis="list_item-title">{{'j86azq35nv.lh_hpo2tk_title' | t }}</h5>
+                            </div>
+                            <div class="lh-desc"  data-lhi="list_item[3]des" data-lh-lang data-lhis="list_item-des">{{'j86azq35nv.lh_hpo2tk_des_html' | t }}</div>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>        
+</div>
+      </section><section id="" data-section-id="tajsjbqnu8s" data-section="product-related-8" data-dev="huynh-duc" data-lh-page-id="582" data-lh-page-name="Product detail - Bago" data-layouthub="section">  
+ <div class="lh-wrapper">
+   <div class="lh-container">
+    <div class="lh-product-content">
+      <include data-live-related_heading data-live-related_des data-live-name_product data-live-show_badge data-live-show_2 data-live-item data-name="product-grid" data-id="1">  
+ {% assign arr_product = collections['multivitaminler'].products %}
+			 
+			{% assign text_handle_temp = "" %}
+			{%- for p in arr_product -%}
+				{% assign text_handle_temp = text_handle_temp | append: "," | append : p.handle %}
+			{%- endfor -%}
+			{% assign limit = 8 %}
+			{% assign count = 1 %}
+			{% if product and template contains 'product' %}
+				{% assign text_handle = "" %}
+				{%- if product.collections.size > 0 -%}
+						{%- for item_c in product.collections -%}
+							{%- for item_p in item_c.products -%}
+								{%- if count <= limit -%}
+									{%- if item_p.handle != product.handle -%}
+										{% assign count = count | plus : 1 %}
+										{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+									{%- endif -%}
+								{%- endif -%}
+							{%- endfor -%}
+						{%- endfor -%}
+				{%- endif -%}
+				{%- if count < limit -%}
+					{% assign p_realted = collections['all'].products | where: "vendor", product.vendor | where: "type", product.type %}
+					{%- for item_p in p_realted -%}
+						{%- if count <= limit -%}
+							{%- if item_p.handle != product.handle -%}
+								{% assign count = count | plus : 1 %}
+								{% assign text_handle = text_handle | append: "," | append: item_p.handle %}
+							{%- endif -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endif -%}
+			{% endif %}
+			{%- if text_handle != blank -%}
+				{% assign arr_handle = text_handle | split: "," %}
+			{%- else -%}
+				{% assign arr_handle = text_handle_temp | split: "," %}
+			{%- endif -%}
+			{% assign arr_handle = arr_handle | uniq %}
+			{% assign limit = limit | plus : 1 %}<div class="lh-product-grid">
+	<div class="lh-collection-heading">
+		<div class="lh-collection-title"><h4  data-lhi="related_heading" data-lh-lang>{{'tajsjbqnu8s.lh_k191aj_heading' | t }}</h4>
+		</div>
+		<div class="lh-collection-des"><p  data-lhi="related_des" data-lh-lang>{{'tajsjbqnu8s.lh_k191aj_des' | t }}</p>
+		</div>
+	</div>
+	<div class="lh-product-slider lh-product-related n_ellipsis lh-badge-yes" data-product_id="{{- product.id -}}" data-money-format={{shop.money_format | json}} data-hub-attr-state="class%3D%22lh-product-slider%20lh-product-related%20%257B%253A%257Bsection.settings.name_product%257D%253A%257D%20lh-badge-%257B%253A%257Bsection.settings.show_badge%257D%253A%257D%22%20data-product_id%3D%22%7B%3A%7Bsection.liquid.product_id%7D%3A%7D%22%20data-money-format%3D%7B%3A%7Bsection.liquid.money_format%7D%3A%7D"  data-hub-attr-name_product  data-hub-attr-show_badge >
+		<div class="owl-carousel owl-theme">
+			{% for item in arr_handle limit:limit %}
+					{%- if item == blank -%}
+						{%- continue -%}
+					{%- endif -%}
+					{% assign i_product = all_products[item] %}
+					{% assign first_variant = i_product.selected_or_first_available_variant %}
+					<div class="lh-collection-item">
+						<div class="lh-product-thumb">
+							<a href="{{i_product.url | within: collection}}">
+								 
+									<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ i_product.featured_image | img_url: '240x240' }}" alt="{{i_product.title}}" class="lh-lazy"/>
+									{% if i_product.images.size > 1 %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.images[1] | img_url : '240x240' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% else %}
+										<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{i_product.featured_image | img_url: '240x240' }}" class="lh-lazy lh-img-hover" alt="{{i_product.title}}"/>
+									{% endif %}
+								 
+							</a>
+							<div class="lh-product-badges">
+
+
+								{% if first_variant.available == true %}
+									{% if first_variant.price < first_variant.compare_at_price and first_variant.available %}
+										{% assign onehundred = 100 %}
+										<span class="lh-onsale"  data-lhi="trans_sale_text" data-lh-lang>{{'tajsjbqnu8s.lh_k4izmq_text' | t }}</span>
+									{% else %}
+									{%- for tag in i_product.tags -%}
+										{%- if tag == 'new' -%}
+											<span class="lh-hot"  data-lhi="trans_new_text" data-lh-lang>{{'tajsjbqnu8s.lh_rv7qtl_text' | t }}</span>
+											{%- break -%}
+										{%- endif -%}
+									{%- endfor -%}
+									{% endif %}
+								{% endif %}
+							</div>
+						</div>
+						<div class="lh-product-info">
+							<h3 class="lh-product-title">
+								<a href="{{i_product.url | within: collection}}">{{i_product.title}}</a>
+							</h3>
+							 
+							<div class="lh-wrap-product-rating">
+								{% render 'layouthub_review',  review_type: 'rating' , product: i_product %}
+							</div>
+							 
+							<div class="lh-wrap-price">
+								{% if first_variant.available == true %}
+									{% if first_variant.compare_at_price > first_variant.price %}
+									<span class="lh-sale">{{i_product.compare_at_price | money}}</span>
+									{% endif %}
+									<span class="lh-cost">{{first_variant.price | money}}</span>
+								{% else %}
+									<span class="lh-sold-out"  data-lhi="trans_soldout_text" data-lh-lang>{{'tajsjbqnu8s.lh_rivarn_text' | t }}</span>
+								{% endif %}
+							</div>
+
+						</div>
+					</div>
+			{% endfor %}</div>
+
+	</div>
+</div>
+
+   </include></div>
+  </div>
+ </div>
+
+ 
+  </section>
+</div>
+ {%schema%} 
+{"locales":{"en":{"g5zw0amdwb5":{"icon":"Gift","gift_html":"LEVEL UP DEALS - 12-22 EYL\u00dcL | 1 \u00dcR\u00dcN %20 | 2 \u00dcR\u00dcN %30 | 3 \u00dcR\u00dcN %40<!--lh-live-editor-->","link":"\u0130NCELE"},"g5SajtMdv3":{"lh_up5omg_wl":"T\u00fcrkiye'nin En Sevilen Kollajeni","lh_pnhrjt_type":"\u00dcr\u00fcn Tipi","lh_pnhrjt_vendor_html":"Kullan\u0131m \u00d6nerisi:  Yeti\u015fkinlerin tercihen g\u00fcnde 1 sa\u015fe t\u00fcketmeleri \u00f6nerilir.  <br>Saklama Ko\u015fullar\u0131:  Kuru ve serin yerde muhafaza edilmelidir. G\u00fcne\u015f \u0131\u015f\u0131\u011f\u0131ndan ve nemli alanlardan uzak tutunuz.  <br>Porsiyon: 30","lh_rv7xkc_order":"\u00d6n Sipari\u015f","lh_k1su5s_cart":"Sepete Ekle","lh_up5omg_outstock":"Yak\u0131nda!","lh_up5omg_new":"Yeni","lh_up5omg_sale":"Sepette %30'a varan \u0130ndirim","lh_k4hsr9_out":"T\u00fckendi!","lh_gdekg7_image_html":"<p style=\"text-align: left;\"><span style=\"font-size: calc(var(--lh-font-size) * 1.25); font-style: var(--font-style-body); color: rgb(34, 89, 82);\"><b>Hidrolize Kollajen ve Hyaluronik Asit \u0130\u00e7eren Sa\u015fe Takviye Edici G\u0131da<\/b><\/span><\/p><p style=\"text-align: left;\"><span style=\"font-size: calc(var(--lh-font-size) * 1.25); font-style: var(--font-style-body); font-weight: var(--font-weight-body); color: rgb(34, 89, 82);\">Onay No: 009991-10.02.2021<\/span><\/p><p><span style=\"color: rgb(34, 89, 82);\">T.E.T.T. : 01\/2027<\/span><\/p><!--lh-live-editor-->","lh_gdekg7_price_html":"<font size=\"4\"><span style=\"color: rgb(236, 101, 66); font-weight: bold;\">COLLAGEN15 indirim koduyla SADECE \u20ba1019.15<\/span><\/font><!--lh-live-editor-->","lh_up5omg_buynow":"\u015eimdi Sat\u0131n Al","lh_up5omg_shipping":"\u00dccretsiz Kargo","lh_up5omg_safe":"G\u00fcvenli \u00d6deme","lh_brmh73_title":"\u00d6zellikler","lh_brmh74_title":"Faydalar","lh_brmh75_title":"\u0130\u00e7indekiler","lh_brmh76_title":"Yorumlar","lh_brmh77_title":"Ara\u015ft\u0131rmalar","lh_88toy0_infor_html":"<br>Vitacoral Collagen \u00fcr\u00fcn\u00fcnde bulunan hammaddelere ili\u015fkin klinik ara\u015ft\u0131rmalar\u0131 incelemek i\u00e7in <a href=\"https:\/\/vitacoral.com\/pages\/klinik-arastirmalar\" target=\"_blank\" rel=\"noopener noreferrer\">t\u0131klay\u0131n<\/a>.<br>\n<br>Vitacoral Collagen \u00fcr\u00fcn\u00fcne ili\u015fkin t\u00fcm i\u00e7erik analizlerini incelemek i\u00e7in <a href=\"https:\/\/vitacoral.com\/pages\/klinik-arastirmalar\" target=\"_blank\" rel=\"noopener noreferrer\">t\u0131klay\u0131n<\/a>.<!--lh-live-editor-->"},"lqfq5xb76vh":{"lh_a168_title":"Neden Vitacoral Collagen?","lh_9wid92_lable":"Daha \u0130yi Tat,  Daha Kolay \u0130\u00e7im","lh_9wid92_desc_html":"Vitacoral Collagen kulland\u0131\u011f\u0131n\u0131zda kollajenden gelen tad\u0131 veya kokuyu hissetmezsiniz bile. Vitacoral Collagen\u2019i sadece su ile kar\u0131\u015ft\u0131r\u0131p do\u011fal limon aromas\u0131 sayesinde limonata tad\u0131nda keyifle i\u00e7ebilirsiniz. \u00dcstelik i\u00e7erisinde \u015feker de yok! \u00dcstelik i\u00e7erisinde \u015feker de yok! Can\u0131n\u0131z isterse kahvenize, meyve sular\u0131n\u0131za veya yo\u011furdunuza da kar\u0131\u015ft\u0131rabilirsiniz. Tatl\u0131 yaparken i\u00e7ine ekleyen m\u00fc\u015fterilerimiz bile var:)<!--lh-live-editor-->","lh_a5w0bb_lable_html":"Daha \u0130yi \u0130\u00e7erik,  Daha \u0130yi Kolajen&nbsp;","lh_a5w0bb_desc_html":"Di\u011fer takviye edici g\u0131dalar gibi Kollajen takviyelerinin de etkilerini g\u00f6zlemlemek her zaman \u00e7ok kolay de\u011fildir. Vitacoral Collagen\u2019i 20 ki\u015filik farmakolog,diyetisyen ve doktorlardan olu\u015fan bir ekip taraf\u0131ndan geli\u015ftirdik ve faydalar\u0131n\u0131 maksimuma \u00e7\u0131karan bir form\u00fcl olu\u015fturduk. Kullanmaya ba\u015flad\u0131\u011f\u0131n\u0131z ilk g\u00fcnden itibaren etkilerini hissetmeye ba\u015flars\u0131n\u0131z. Ayr\u0131ca \u015funu da belirtelim: Kollajen takviyelerinin en y\u00fcksek verimi ve fayday\u0131 12 haftal\u0131k kullan\u0131m sonucunda g\u00f6sterece\u011fi klinik ara\u015ft\u0131rmalar ile kan\u0131tlanm\u0131\u015ft\u0131r.<!--lh-live-editor-->","lh_af9ndk_lable":"Daha \u0130yi Paketleme, Daha D\u00fczenli Kullan\u0131m","lh_af9ndk_desc_html":"Vitacoral Collagen kullan\u0131rken \u201c\u00fcr\u00fcn\u00fcm ne zaman bitecek? 30 g\u00fcnde de\u011fil de neden 25 g\u00fcnde bitti?\u201d Gibi sorular akl\u0131n\u0131za bile gelmez \u00e7\u00fcnk\u00fc Vitacoral Collagen size \u00f6zel metal kutusunda \u015faseleri tek tek separat\u00f6rler ile ayr\u0131lm\u0131\u015f \u015fekilde gelir. B\u00f6ylece, hem her kullan\u0131mdan sonra kalan adedi rahat\u00e7a hesaplars\u0131n\u0131z hem de \u201cger\u00e7ekten\u201d 30 g\u00fcn boyunca kullan\u0131rs\u0131n\u0131z. Bir de tabii, i\u00e7erisindeki \u015faseler bittikten sonra diki\u015f kutusu, kurabiye kutusu gibi kullanabilece\u011finiz harika bir depolama kutusuna sahip olmu\u015f olursunuz:)<!--lh-live-editor-->"},"orh4hotcrar":{"lh_f5dibt_top":"The best benefits","lh_a168_title":"Neden Vitacoral Collagen?","lh_hpo2th_title":"Daha \u0130yi Tat, Daha Kolay \u0130\u00e7im","lh_hpo2th_des_html":"Vitacoral Collagen kulland\u0131\u011f\u0131n\u0131zda kollajenden gelen tad\u0131 veya kokuyu hissetmezsiniz bile. Vitacoral Collagen\u2019i sadece su ile kar\u0131\u015ft\u0131r\u0131p do\u011fal limon aromas\u0131 sayesinde limonata tad\u0131nda keyifle i\u00e7ebilirsiniz.\u00a0<div><u>\u00dcstelik i\u00e7erisinde \u015feker de yok!<\/u>\u00a0<\/div><div>Can\u0131n\u0131z isterse kahvenize, meyve sular\u0131n\u0131za veya yo\u011furdunuza da kar\u0131\u015ft\u0131rabilirsiniz. Tatl\u0131 yaparken i\u00e7ine ekleyen m\u00fc\u015fterilerimiz bile var:)<\/div><!--lh-live-editor-->","lh_hpo2ti_title":"Daha \u0130yi \u0130\u00e7erik, Daha \u0130yi Kolajen","lh_hpo2ti_des_html":"Di\u011fer takviye edici g\u0131dalar gibi Kollajen takviyelerinin de etkilerini g\u00f6zlemlemek her zaman \u00e7ok kolay de\u011fildir.&nbsp;<div>Vitacoral Collagen\u2019i <u>20 ki\u015filik farmakolog,diyetisyen ve doktorlardan olu\u015fan bir ekip taraf\u0131ndan geli\u015ftirdik<\/u> ve faydalar\u0131n\u0131 maksimuma \u00e7\u0131karan bir form\u00fcl olu\u015fturduk. Kullanmaya ba\u015flad\u0131\u011f\u0131n\u0131z ilk g\u00fcnden itibaren etkilerini hissetmeye ba\u015flars\u0131n\u0131z.&nbsp;<\/div><div>Ayr\u0131ca \u015funu da belirtelim: Kollajen takviyelerinin en y\u00fcksek verimi ve fayday\u0131 <u>12 haftal\u0131k kullan\u0131m sonucunda<\/u> g\u00f6sterece\u011fi klinik ara\u015ft\u0131rmalar ile kan\u0131tlanm\u0131\u015ft\u0131r.<!--lh-live-editor--><\/div>","lh_hpo2tj_title":"Daha \u0130yi Paketleme, Daha D\u00fczenli Kullan\u0131m","lh_hpo2tj_des_html":"Vitacoral Collagen kullan\u0131rken \u201c\u00fcr\u00fcn\u00fcm ne zaman bitecek? 30 g\u00fcnde de\u011fil de neden 25 g\u00fcnde bitti?\u201d gibi sorular akl\u0131n\u0131za bile gelmez \u00e7\u00fcnk\u00fc Vitacoral Collagen size \u00f6zel metal kutusunda \u015faseleri tek tek separat\u00f6rler ile ayr\u0131lm\u0131\u015f \u015fekilde gelir.&nbsp;<div>B\u00f6ylece, hem her kullan\u0131mdan sonra kalan adedi rahat\u00e7a hesaplars\u0131n\u0131z hem de \u201cger\u00e7ekten\u201d 30 g\u00fcn boyunca kullan\u0131rs\u0131n\u0131z.&nbsp;<\/div><div>Bir de tabii, i\u00e7erisindeki \u015faseler bittikten sonra diki\u015f kutusu, kurabiye kutusu gibi kullanabilece\u011finiz harika bir depolama kutusuna sahip olmu\u015f olursunuz:)<!--lh-live-editor--><\/div>"},"2m00f7jgoaq":{"lh_8t6e_heading_html":"KOLLAJEN HAKKINDA HER \u015eEY&nbsp;","lh_ezc4q5_name":"Kollajen nedir?","lh_ezc4q5_content_html":"<span style=\"color: rgb(34, 89, 82); font-weight: bold; font-size: medium;\">Kolajen, sa\u011fl\u0131kl\u0131 eklemlerden ve cilt elastikiyetinden veya esnekli\u011finden sorumlu bir proteindir. \n Kemiklerin, cildin, kaslar\u0131n, tendonlar\u0131n ve ba\u011flar\u0131n ana yap\u0131 ta\u015flar\u0131ndan biridir. Kolajen ayr\u0131ca kan damarlar\u0131, kornealar ve di\u015fler dahil olmak \u00fczere v\u00fccudun di\u011fer bir\u00e7ok b\u00f6l\u00fcm\u00fcnde bulunur.&nbsp;<\/span><div><span style=\"color: rgb(34, 89, 82); font-weight: bold; font-size: medium;\">T\u00fcm bunlar\u0131 bir arada tutan \u201ctutkal\u201d olarak d\u00fc\u015f\u00fcnebilirsiniz. Asl\u0131nda kelime, yap\u0131\u015ft\u0131r\u0131c\u0131 anlam\u0131na gelen Yunanca \u201ck\u00f3lla\u201d kelimesinden gelir.\n&nbsp;<\/span><!--lh-live-editor--><\/div>","lh_ezhhnw_name":"Kollajen ne i\u015fe yarar?","lh_ezhhnw_content_html":"<span style=\"color: rgb(34, 89, 82); font-weight: bold; font-size: medium;\">Kollajen takviyeleri,&nbsp; kas k\u00fctlesini art\u0131rabilir, kemik kayb\u0131n\u0131 \u00f6nleyebilir, eklem a\u011fr\u0131lar\u0131n\u0131 hafifletebilir, k\u0131r\u0131\u015f\u0131kl\u0131klar\u0131 ve kurulu\u011fu azaltarak cilt sa\u011fl\u0131\u011f\u0131n\u0131 iyile\u015ftirebilir, t\u0131rnaklar\u0131 g\u00fc\u00e7lendirebilir ve daha zor k\u0131r\u0131lmalar\u0131n\u0131 sa\u011flayabilir, sa\u00e7 d\u00f6k\u00fclmesini azaltabilir ve sa\u00e7 k\u00f6klerini g\u00fc\u00e7lendirebilir.<\/span><!--lh-live-editor-->","lh_ezmuln_name":"Kollajen tipleri nelerdir? Hangi tipler faydal\u0131d\u0131r?","lh_ezmuln_content_html":"<span style=\"font-size: medium; font-weight: bold; color: rgb(34, 89, 82);\">28 \u00c7e\u015fit Kollajen vard\u0131r ancak bunlardan sadece Tip 1, Tip 2, Tip 3 klinik \u00e7al\u0131\u015fmalara konu olmu\u015f ve etkileri kan\u0131tlanm\u0131\u015ft\u0131r.&nbsp;<\/span><div><span style=\"font-size: medium; font-weight: bold; color: rgb(34, 89, 82);\">- Tip I: T\u00fcm ba\u011f dokular\u0131nda bulunan en yayg\u0131n tiptir.<\/span><\/div><div><span style=\"font-size: medium; font-weight: bold; color: rgb(34, 89, 82);\">- Tip II: eklemlerde ve omurlararas\u0131 disklerde bulunur&nbsp;<\/span><\/div><div><span style=\"font-size: medium; font-weight: bold; color: rgb(34, 89, 82);\">- Tip III: Cildinizde ve kan damarlar\u0131n\u0131zda bulunan retik\u00fcler liflerin ana bile\u015fenidir.<\/span><\/div><!--lh-live-editor-->","lh_ezs7je_name":"Kollajen takviyeleri ne kadar s\u00fcrede etkisini g\u00f6sterir?","lh_ezs7je_content_html":"<span style=\"font-weight: bold;\"><span style=\"color: rgb(34, 89, 81);\">Kollajen takviyeleri ile ilgili yap\u0131lan klinik \u00e7al\u0131\u015fmalar sonucunda minimum <\/span><span style=\"font-style: italic; text-decoration-line: underline; color: rgb(236, 101, 66);\">12 Hafta d\u00fczenli kullan\u0131m <\/span><span style=\"color: rgb(34, 89, 81);\">sonucunda en y\u00fcksek etkiyi g\u00f6sterece\u011fi g\u00f6zlemlenmi\u015ftir. Bu s\u00fcre, beslenme al\u0131\u015fkanl\u0131klar\u0131 ve g\u00fcne\u015f \u0131\u015f\u0131nlar\u0131n\u0131n ciltteki etkisine g\u00f6re uzayabilir.<\/span><\/span><div><span style=\"font-weight: bold;\"><span style=\"color: rgb(34, 89, 81);\">Bununla birlikte, Vitacoral Collagen i\u00e7eri\u011findeki <\/span><span style=\"text-decoration-line: underline; font-style: italic; color: rgb(236, 101, 66);\">14 yard\u0131mc\u0131 hammadde<\/span><span style=\"color: rgb(34, 89, 81);\"> sayesinde, ilk ay kullan\u0131m\u0131n sonunda sa\u00e7 d\u00f6k\u00fclmesinde azalma, cilte parlakl\u0131k ve canl\u0131l\u0131k, eklem a\u011fr\u0131lar\u0131nda azalma gibi etkiler g\u00f6stermesi beklenir.<\/span><\/span><\/div><!--lh-live-editor-->","lh_ezxkh5_name":"Kollajen ka\u00e7 ya\u015f\u0131ndan itibaren kullan\u0131lmal\u0131?","lh_ezxkh5_content_html":"<span style=\"color: rgb(34, 89, 82);\">Y<span style=\"font-weight: bold;\">ap\u0131lan ara\u015ft\u0131rmalara g\u00f6re, v\u00fccut 25-30 ya\u015flar\u0131ndan sonra kolajen \u00fcretmemeye ba\u015flar ve yirmili ya\u015flardan itibaren her sene %1 kolajen kaybeder. Bu sebeple 25 ya\u015f\u0131ndan itibaren senede  en az 3-6 ay kolajen kullan\u0131lmas\u0131 \u00f6nerilmektedir. Vitacoral Collagen 25 ya\u015f\u0131ndan itibaren kollajen \u00fcretimini art\u0131rmak amac\u0131yla kullan\u0131labilir. Buna ek olarak, Vitacoral Collagen kullan\u0131m\u0131nda herhangi bir ya\u015f s\u0131n\u0131r yoktur.<\/span><\/span><!--lh-live-editor-->","lh_f02xew_name":"Kollajen \u00fcretimini art\u0131ran vitamin ve mineraller nelerdir?","lh_f02xew_content_html":"<span style=\"font-weight: bold; color: rgb(34, 89, 82);\">Sadece Kollajen i\u00e7eren takviyeleri kullanmak her zaman yeterli olmayabilir. C Vitamini, \u00c7inko, E Vitamini, Selenyum, Koenzim Q10 v\u00fccuttaki kollajen \u00fcretimini art\u0131r\u0131r ve kollajenin etkilerini h\u0131zland\u0131r\u0131r. Buna ek olarak, Glutatyon, Hyaluronik Asit, Alfa-Lipoik Asit ise cilde nem veren ve gen\u00e7le\u015fmesini sa\u011flayan bile\u015fenlerdir ve Kollajen ile birlikte kullan\u0131m\u0131 cildinize \u00f6zel faydalar sa\u011flar.<\/span><!--lh-live-editor-->","lh_f08acn_name":"Bal\u0131k kollajeni ve s\u0131\u011f\u0131r kollajenin fark\u0131 nedir?","lh_f08acn_content_html":"<span style=\"font-weight: bold; color: rgb(34, 89, 82);\">Pratikte, s\u0131\u011f\u0131r ve deniz kollajeni aras\u0131nda asl\u0131nda \u00e7ok b\u00fcy\u00fck bir fark yoktur ve her ikisinin de faydalar\u0131 vard\u0131r.&nbsp;<\/span><div><span style=\"font-weight: bold; color: rgb(34, 89, 82);\">\u0130simlerinden de anla\u015f\u0131laca\u011f\u0131 gibi, bunlar farkl\u0131 kaynaklardan t\u00fcretilmi\u015ftir.<br>S\u0131\u011f\u0131r kollajeni ineklerden gelir. Deniz kollajeni ise bal\u0131ktan gelir (esas olarak pullardan ve kemiklerden).&nbsp;<\/span><\/div><div><span style=\"font-weight: bold; color: rgb(34, 89, 82);\">S\u0131\u011f\u0131r kollajeni, her ikisi de insan v\u00fccudunda yayg\u0131n olarak bulunan tip I ve tip III kollajen i\u00e7erir.&nbsp;<\/span><\/div><div><span style=\"font-weight: bold; color: rgb(34, 89, 82);\">Bal\u0131k kollajeni de benzer faydalar\u0131 sa\u011flamaktad\u0131r. \u00d6te yandan, Tip 2 Kollajen ise tavuktan elde edilir.<\/span><!--lh-live-editor--><\/div>","lh_f0dnae_name":"Kemik suyundan yeterli kollajeni al\u0131r m\u0131y\u0131m?","lh_f0dnae_content_html":"<span style=\"font-weight: bold; color: rgb(34, 89, 82);\">Kemik suyu, ilik suyu veya pa\u00e7a \u00e7orbas\u0131 gibi yiyeceklerde kollajen bulunur ancak bu besinleri t\u00fcketerek yeterli kollajeni almak m\u00fcmk\u00fcn de\u011fildir. 1 kase pa\u00e7a \u00e7orbas\u0131nda <\/span><span style=\"font-weight: bold; color: rgb(34, 89, 82);\">3.8mg ile 17.6mg aras\u0131nda<\/span><span style=\"font-weight: bold; color: rgb(34, 89, 82);\"> kollajen bulunur ve <\/span><span style=\"font-weight: bold; font-style: italic; text-decoration-line: underline; color: rgb(236, 101, 66);\">g\u00fcnl\u00fck kollajen ihtiyac\u0131 minimum 7.000 mg'dir<\/span><span style=\"color: rgb(236, 101, 66); font-style: italic;\">.<\/span><span style=\"font-weight: bold; color: rgb(34, 89, 82);\"> Ayr\u0131ca, bu kollajen hidrolize formda olmad\u0131\u011f\u0131ndan emilimi \u00e7ok zordur.&nbsp;<\/span><!--lh-live-editor-->","lh_f0j085_name":"Vitacoral collagen sadece suda m\u0131 \u00e7\u00f6z\u00fcn\u00fcr?","lh_f0j085_content_html":"<span style=\"color: rgb(34, 89, 82); font-weight: bold;\">Hay\u0131r, Vitacoral Collagen'i kahve, mevye suyu, yo\u011furt ve tatl\u0131lara ekleyerek de kullanabilirsiniz.<\/span><!--lh-live-editor-->","lh_f0od5w_name_html":"Vitaoral Collagen kilo ald\u0131r\u0131r m\u0131?&nbsp;&nbsp;","lh_f0od5w_content_html":"<span style=\"font-weight: bold; font-size: large;\"><span style=\"color: rgb(34, 89, 82);\">Hay\u0131r, Vitacoral Collagen kilo ald\u0131rmaz. Vitacoral Collagen \u015eeker, Yapay Tatland\u0131r\u0131c\u0131 ve Gluten \u0130\u00e7ermez. <\/span><span style=\"text-decoration-line: underline; font-style: italic; color: rgb(236, 101, 66);\">Bir sa\u015fede sadece 32 kalori i\u00e7erir.<\/span><span style=\"color: rgb(34, 89, 82);\"> Bununla birlikte, Vitacoral Collagen zengin i\u00e7eri\u011fi sayesinde kas k\u00fctlesini art\u0131rmaya ve ya\u011f yak\u0131m\u0131n\u0131 h\u0131zland\u0131rmaya destek olur.&nbsp;<\/span><\/span><!--lh-live-editor-->","lh_ki54mq_name_html":"Vitacoral Collagen'in yan etkisi var m\u0131? &nbsp;&nbsp;","lh_ki54mq_content_html":"<span style=\"color: rgb(34, 89, 82); font-weight: bold;\">Vitacoral Collagen'in beklenen ve g\u00f6zlemlenen her hangi bir yan etkisi yoktur.&nbsp;<\/span><!--lh-live-editor-->","lh_kiahkh_name":"Vitacoral Collagen'i kimler kullanabilir?","lh_kiahkh_content_html":"<span style=\"color: rgb(34, 89, 82); font-weight: bold;\">Vitacoral Collagen \u015feker i\u00e7ermeyen form\u00fcl\u00fc sayesinde diabet hastalar\u0131 taraf\u0131ndan kullan\u0131labilir.&nbsp; Hamile veya emziren kad\u0131nlar\u0131n kullan\u0131m\u0131nda her hangi bir sak\u0131nca yoktur ancak yine de doktorunuza dan\u0131\u015farak kullanman\u0131z\u0131 \u00f6neririz.<\/span><!--lh-live-editor-->"},"j86azq35nv":{"text1":"NE KADAR S\u00dcRE KULLANMALIYIM?","lh_hpo2th_title":"25-35 ya\u015f aras\u0131","lh_hpo2th_des_html":"3 ay d\u00fczenli kullan\u0131m sonras\u0131nda&nbsp;&nbsp;<div>3 ay ara verilmesi \u00f6nerilmektedir.<!--lh-live-editor--><\/div>","lh_hpo2ti_title":"35-45 ya\u015f aras\u0131","lh_hpo2ti_des_html":"4 ay d\u00fczenli kullan\u0131m sonras\u0131nda&nbsp;<div>2 ay ara verilmesi \u00f6nerilmektedir.<!--lh-live-editor--><\/div>","lh_hpo2tj_title":"45-60 ya\u015f aras\u0131","lh_hpo2tj_des_html":"6 ay d\u00fczenli kullan\u0131m sonras\u0131nda&nbsp;<div>1 ay ara verilmesi \u00f6nerilmektedir.<!--lh-live-editor--><\/div>","lh_hpo2tk_title":"60 ya\u015f ve \u00fcst\u00fc","lh_hpo2tk_des_html":"Ara vermeden veya k\u0131sa aral\u0131klarla d\u00fczenli kullan\u0131m \u00f6nerilmektedir.<!--lh-live-editor-->"},"tajsjbqnu8s":{"lh_k4izmq_text":"SALE","lh_rv7qtl_text":"NEW","lh_rivarn_text":"SOLD OUT","lh_k191aj_heading":"Premium Multivitaminler","lh_k191aj_des":"Vitacoral Multivitamins"}}},"name":"Vitacoral Collagen \u00dcr\u00fc"}
+ {%endschema%}
