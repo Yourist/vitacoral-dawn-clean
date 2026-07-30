@@ -53,13 +53,13 @@
                 when 'collagen-ile-baslayin'
                   assign card_cta_link = '/products/collagen-30-sase'
                 when 'kadin-gunluk-destek', 'kadin-gunluk-rutini'
-                  assign card_cta_link = '/products/multivitamin-for-women'
+                  assign card_cta_link = '/pages/routine-women'
                 when 'erkek-gunluk-destek', 'erkek-gunluk-rutini'
-                  assign card_cta_link = '/products/multivitamin-for-men'
+                  assign card_cta_link = '/pages/routine-men'
                 when 'aile-icin-urunler', 'aile-gunluk-rutini'
-                  assign card_cta_link = '/collections/all'
+                  assign card_cta_link = '/pages/routine-family'
                 when 'lif-odagi', 'hafif-gunluk-rutin'
-                  assign card_cta_link = '/products/vitacoral-glucomannan-60-sase'
+                  assign card_cta_link = '/pages/routine-light-women'
               endcase
             endif
             if card_cta_link == blank and primary_product != blank
