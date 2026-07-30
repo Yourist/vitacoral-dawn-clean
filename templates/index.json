@@ -143,13 +143,30 @@
             "optional_note": "",
             "accent_style": "soft"
           }
+        },
+        "product_family_Vwh3xR": {
+          "type": "product_family",
+          "settings": {
+            "primary_product": "vitacoral-glucomannan-60-sase",
+            "secondary_product": "multivitamin-for-women",
+            "third_product": "",
+            "badge_text": "Hafif rutin",
+            "title": "Hafif Günlük Rutin",
+            "short_description": "Günlük rutine lif desteği eklemeyi düşünürken içerik, kullanım ve uyarı bilgilerini birlikte incelemek isteyenler için.",
+            "included_products_text": "Glucomannan + Women/Men Multivitamin",
+            "cta_label": "Rutini incele",
+            "cta_link": "",
+            "optional_note": "",
+            "accent_style": "soft"
+          }
         }
       },
       "block_order": [
         "product_family_1",
         "product_family_2",
         "product_family_3",
-        "product_family_4"
+        "product_family_4",
+        "product_family_Vwh3xR"
       ],
       "settings": {
         "eyebrow": "Rutin rehberi",
@@ -210,6 +227,20 @@
         "cta_link": "",
         "panel_label": "Etkileşimli araçlar",
         "note": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin."
+      }
+    },
+    "vitacoral_campaign_spotlight_GzGGjG": {
+      "type": "vitacoral-campaign-spotlight",
+      "name": "Kampanya spotlight",
+      "settings": {
+        "eyebrow": "Kampanya",
+        "heading": "Öne çıkan Vitacoral fırsatını keşfedin",
+        "body": "<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>",
+        "featured_product": "",
+        "primary_label": "Kampanyalı ürünleri gör",
+        "primary_link": "",
+        "secondary_label": "Tüm ürünler",
+        "secondary_link": ""
       }
     },
     "vitacoral_featured_products": {
@@ -512,20 +543,6 @@
       "type": "apps",
       "settings": {
         "include_margins": true
-      }
-    },
-    "vitacoral_campaign_spotlight_GzGGjG": {
-      "type": "vitacoral-campaign-spotlight",
-      "name": "Kampanya spotlight",
-      "settings": {
-        "eyebrow": "Kampanya",
-        "heading": "Öne çıkan Vitacoral fırsatını keşfedin",
-        "body": "<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>",
-        "featured_product": "",
-        "primary_label": "Kampanyalı ürünleri gör",
-        "primary_link": "",
-        "secondary_label": "Tüm ürünler",
-        "secondary_link": ""
       }
     }
   },
