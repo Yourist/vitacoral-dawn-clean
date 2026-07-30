@@ -4,11 +4,13 @@
   assign has_men = false
   assign has_kids = false
   assign has_glucomannan = false
+  assign collagen_total = 0
 
   for item in cart.items
     case item.product.handle
       when 'collagen-30-sase'
         assign has_collagen = true
+        assign collagen_total = collagen_total | plus: item.final_line_price
       when 'multivitamin-for-women'
         assign has_women = true
       when 'multivitamin-for-men'
@@ -20,102 +22,191 @@
     endcase
   endfor
 
-  assign assist_title = section.settings.heading
-  assign assist_body = section.settings.body
-  assign primary_label = section.settings.primary_label
-  assign primary_link = section.settings.primary_link
-  assign secondary_label = section.settings.secondary_label
-  assign secondary_link = section.settings.secondary_link
-
-  if primary_link == blank
-    assign primary_link = '/pages/kadin-gunluk-rutini'
-  endif
-
-  if secondary_link == blank
-    assign secondary_link = '/collections/all'
-  endif
+  assign suggestion_one = blank
+  assign suggestion_two = blank
 
   if has_collagen and has_women == false and has_men == false
-    assign assist_title = 'Rutini tamamlayın'
-    assign assist_body = 'Collagen seçiminizi günlük multivitamin rutiniyle birlikte değerlendirebilirsiniz. Kadın veya erkek rutinleri, ürünü günlük akış içinde düşünmenizi kolaylaştırır.'
-    assign primary_label = 'Kadın rutini'
-    assign primary_link = '/pages/kadin-gunluk-rutini'
-    assign secondary_label = 'Erkek rutini'
-    assign secondary_link = '/pages/erkek-gunluk-rutini'
+    assign suggestion_one = all_products['multivitamin-for-women']
+    assign suggestion_two = all_products['multivitamin-for-men']
   elsif has_women and has_collagen == false
-    assign assist_title = 'Birlikte düşünün'
-    assign assist_body = 'Women multivitamin seçiminizi Collagen ile birlikte değerlendirmek isterseniz kadın günlük rutini sayfasından önerilen akışı inceleyebilirsiniz.'
-    assign primary_label = 'Kadın rutini'
-    assign primary_link = '/pages/kadin-gunluk-rutini'
-    assign secondary_label = 'Collagen incele'
-    assign secondary_link = '/products/collagen-30-sase'
+    assign suggestion_one = all_products['collagen-30-sase']
   elsif has_men and has_collagen == false
-    assign assist_title = 'Birlikte düşünün'
-    assign assist_body = 'Men multivitamin seçiminizi Collagen ile birlikte değerlendirmek isterseniz erkek günlük rutini sayfasından önerilen akışı inceleyebilirsiniz.'
-    assign primary_label = 'Erkek rutini'
-    assign primary_link = '/pages/erkek-gunluk-rutini'
-    assign secondary_label = 'Collagen incele'
-    assign secondary_link = '/products/collagen-30-sase'
-  elsif has_kids
-    assign assist_title = 'Aile rutini'
-    assign assist_body = 'Kids ürününü ebeveyn kontrolünde değerlendirirken aile rutini içindeki diğer seçenekleri de birlikte inceleyebilirsiniz.'
-    assign primary_label = 'Aile rutini'
-    assign primary_link = '/pages/aile-gunluk-rutini'
-    assign secondary_label = 'Ürünleri gör'
-    assign secondary_link = '/collections/all'
-  elsif has_glucomannan
-    assign assist_title = 'Hafif rutin'
-    assign assist_body = 'Glucomannan seçiminde kullanım önerisi, su tüketimi ve etiket uyarıları önemlidir. Hafif rutin sayfasından ürünü günlük düzeniniz içinde değerlendirebilirsiniz.'
-    assign primary_label = 'Hafif rutin'
-    assign primary_link = '/pages/hafif-rutin'
-    assign secondary_label = 'Etiketi kontrol edin'
-    assign secondary_link = '/products/vitacoral-glucomannan-60-sase'
+    assign suggestion_one = all_products['collagen-30-sase']
+  elsif has_kids and has_women == false and has_men == false
+    assign suggestion_one = all_products['multivitamin-for-women']
+    assign suggestion_two = all_products['multivitamin-for-men']
+  elsif has_glucomannan and has_women == false and has_men == false
+    assign suggestion_one = all_products['multivitamin-for-women']
+    assign suggestion_two = all_products['multivitamin-for-men']
   endif
+
+  assign collagen_discount = collagen_total | times: 10 | divided_by: 100
+  assign estimated_total = cart.total_price | minus: collagen_discount
 -%}
 
 {%- unless cart == empty -%}
-  <section class="vc-cart-assist" id="VCCartAssist-{{ section.id }}">
+  <section class="vc-smart-cart" id="VCSmartCart-{{ section.id }}" data-vc-smart-cart>
     <div class="page-width">
-      <div class="vc-cart-assist__shell">
-        <div>
-          {%- if section.settings.eyebrow != blank -%}
-            <p class="vc-cart-assist__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-          {%- endif -%}
-          <h2>{{ assist_title | escape }}</h2>
-          <p>{{ assist_body | escape }}</p>
+      {%- if suggestion_one != blank or suggestion_two != blank -%}
+        <div class="vc-smart-cart__recommendations">
+          <div class="vc-smart-cart__head">
+            <p class="vc-smart-cart__eyebrow">Rutini tamamlayın</p>
+            <h2>Sepetinize uygun tamamlayıcı ürünler</h2>
+            <p>Sayfadan ayrılmadan ekleyebilirsiniz. Sepetinizde bulunan ürünler tekrar önerilmez.</p>
+          </div>
+
+          <div class="vc-smart-cart__grid">
+            {%- for recommendation in (1..2) -%}
+              {%- liquid
+                if recommendation == 1
+                  assign recommended_product = suggestion_one
+                else
+                  assign recommended_product = suggestion_two
+                endif
+              -%}
+              {%- if recommended_product != blank and recommended_product.available -%}
+                {%- assign recommended_variant = recommended_product.selected_or_first_available_variant -%}
+                <article class="vc-smart-cart__product">
+                  <a class="vc-smart-cart__media" href="{{ recommended_product.url }}" aria-label="{{ recommended_product.title | escape }} ürün detayını aç">
+                    {%- if recommended_product.featured_image -%}
+                      {{ recommended_product.featured_image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120,180,240', sizes: '96px', alt: recommended_product.title }}
+                    {%- endif -%}
+                  </a>
+                  <div class="vc-smart-cart__product-copy">
+                    <p class="vc-smart-cart__product-kicker">Tamamlayıcı ürün</p>
+                    <h3><a href="{{ recommended_product.url }}">{{ recommended_product.title | escape }}</a></h3>
+                    <p class="vc-smart-cart__price">{{ recommended_variant.price | money }}</p>
+                  </div>
+                  <button
+                    class="vc-smart-cart__add"
+                    type="button"
+                    data-vc-cart-add
+                    data-variant-id="{{ recommended_variant.id }}"
+                    data-product-title="{{ recommended_product.title | escape }}"
+                  >
+                    Sepete ekle
+                  </button>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          <p class="vc-smart-cart__status" role="status" aria-live="polite" data-vc-cart-status></p>
         </div>
-        <div class="vc-cart-assist__actions">
-          {%- if primary_label != blank and primary_link != blank -%}
-            <a class="vc-cart-assist__primary" href="{{ primary_link }}">{{ primary_label | escape }}</a>
-          {%- endif -%}
-          {%- if secondary_label != blank and secondary_link != blank -%}
-            <a class="vc-cart-assist__secondary" href="{{ secondary_link }}">{{ secondary_label | escape }}</a>
-          {%- endif -%}
+      {%- endif -%}
+
+      {%- if has_collagen and collagen_total > 0 -%}
+        <div class="vc-smart-cart__campaign" data-vc-cart-campaign>
+          <div>
+            <p class="vc-smart-cart__campaign-eyebrow">Collagen fırsatı</p>
+            <h2>COLLAGEN10 ile Collagen ürününde %10 indirim</h2>
+            <p>İndirim Shopify ödeme adımında hesaplanır. Aşağıdaki tutar, mevcut sepetiniz için tahmini gösterimdir.</p>
+          </div>
+          <div class="vc-smart-cart__campaign-summary">
+            <div><span>Tahmini indirim</span><strong>-{{ collagen_discount | money }}</strong></div>
+            <div><span>Tahmini indirim sonrası</span><strong>{{ estimated_total | money }}</strong></div>
+          </div>
+          <div class="vc-smart-cart__campaign-actions">
+            <button type="button" class="vc-smart-cart__copy" data-vc-copy-discount="COLLAGEN10">Kodu kopyala</button>
+            <span class="vc-smart-cart__code">COLLAGEN10</span>
+          </div>
+          <p class="vc-smart-cart__campaign-note" data-vc-copy-feedback>Kodu ödeme ekranındaki indirim kodu alanına yapıştırın.</p>
         </div>
-      </div>
+      {%- endif -%}
     </div>
   </section>
 {%- endunless -%}
 
 <style>
-  .vc-cart-assist{padding:0 0 1.2rem;background:linear-gradient(180deg,rgba(247,250,249,.9),#fff)}.vc-cart-assist__shell{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.2rem;align-items:center;padding:1.35rem;border:.1rem solid rgba(34,89,82,.12);border-radius:1.8rem;background:radial-gradient(circle at 94% 0%,rgba(208,168,94,.2),transparent 28%),#fff;box-shadow:0 .9rem 2.2rem rgba(21,44,41,.055)}.vc-cart-assist__eyebrow{margin:0 0 .35rem;color:#d0a85e;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.92rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.vc-cart-assist h2{margin:0;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2rem,3vw,2.8rem);font-weight:650;letter-spacing:-.04em;line-height:1.05}.vc-cart-assist p{max-width:62rem;margin:.55rem 0 0;color:rgba(22,49,46,.74);font-size:1.08rem;line-height:1.48}.vc-cart-assist__actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.55rem}.vc-cart-assist__primary,.vc-cart-assist__secondary{display:inline-flex;align-items:center;justify-content:center;min-height:3.9rem;padding:.82rem 1.05rem;border-radius:999px;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:1rem;font-weight:900;text-decoration:none;white-space:nowrap}.vc-cart-assist__primary{background:#225952;color:#fff}.vc-cart-assist__secondary{border:.1rem solid rgba(34,89,82,.18);background:rgba(34,89,82,.06);color:#225952}@media screen and (max-width:749px){.vc-cart-assist{padding:0 0 .85rem}.vc-cart-assist .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-cart-assist__shell{grid-template-columns:1fr;gap:.95rem;padding:1.05rem;border-radius:1.45rem;box-shadow:0 .65rem 1.4rem rgba(21,44,41,.045)}.vc-cart-assist h2{font-size:2rem}.vc-cart-assist p{font-size:.98rem;line-height:1.44}.vc-cart-assist__actions{justify-content:flex-start}.vc-cart-assist__primary,.vc-cart-assist__secondary{min-height:3.45rem;padding:.72rem .9rem;font-size:.92rem}}
+  .vc-smart-cart{padding:0 0 1.2rem;background:linear-gradient(180deg,rgba(247,250,249,.9),#fff)}
+  .vc-smart-cart__recommendations,.vc-smart-cart__campaign{border:.1rem solid rgba(34,89,82,.12);border-radius:1.8rem;background:#fff;box-shadow:0 .9rem 2.2rem rgba(21,44,41,.055)}
+  .vc-smart-cart__recommendations{padding:1.35rem}
+  .vc-smart-cart__head{max-width:68rem}
+  .vc-smart-cart__eyebrow,.vc-smart-cart__campaign-eyebrow,.vc-smart-cart__product-kicker{margin:0 0 .35rem;color:#b06f48;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.86rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+  .vc-smart-cart h2{margin:0;color:#16312e;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:clamp(2rem,3vw,2.8rem);font-weight:650;letter-spacing:-.04em;line-height:1.06}
+  .vc-smart-cart__head>p:last-child,.vc-smart-cart__campaign>div>p:last-child{margin:.55rem 0 0;color:rgba(22,49,46,.7);font-size:1.02rem;line-height:1.48}
+  .vc-smart-cart__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1.15rem}
+  .vc-smart-cart__product{display:grid;grid-template-columns:8.4rem minmax(0,1fr) auto;gap:.9rem;align-items:center;padding:.85rem;border:.1rem solid rgba(34,89,82,.11);border-radius:1.35rem;background:rgba(247,250,249,.72)}
+  .vc-smart-cart__media{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:1rem;background:#fff;overflow:hidden}
+  .vc-smart-cart__media img{width:100%;height:100%;object-fit:contain}
+  .vc-smart-cart__product h3{margin:0;font-family:var(--vitacoral-font-brand,"Gibbs Book",Arial,sans-serif);font-size:1.3rem;line-height:1.15}
+  .vc-smart-cart__product h3 a{color:#16312e;text-decoration:none}
+  .vc-smart-cart__price{margin:.35rem 0 0;color:#225952;font-weight:800}
+  .vc-smart-cart__add,.vc-smart-cart__copy{min-height:3.8rem;padding:.8rem 1rem;border:0;border-radius:999px;background:#225952;color:#fff;font-family:var(--vitacoral-font-ui,"Manrope",Arial,sans-serif);font-size:.94rem;font-weight:900;cursor:pointer}
+  .vc-smart-cart__add[disabled]{opacity:.55;cursor:wait}
+  .vc-smart-cart__status{min-height:1.4rem;margin:.7rem 0 0;color:#225952;font-size:.92rem;font-weight:750}
+  .vc-smart-cart__campaign{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(18rem,.8fr) auto;gap:1rem;align-items:center;margin-top:.85rem;padding:1.2rem 1.35rem;background:radial-gradient(circle at 100% 0%,rgba(208,168,94,.17),transparent 34%),#fff}
+  .vc-smart-cart__campaign h2{font-size:clamp(1.75rem,2.5vw,2.35rem)}
+  .vc-smart-cart__campaign-summary{display:grid;gap:.4rem;padding:.75rem .9rem;border-radius:1.1rem;background:rgba(34,89,82,.055)}
+  .vc-smart-cart__campaign-summary div{display:flex;justify-content:space-between;gap:1rem;color:rgba(22,49,46,.72);font-size:.9rem}
+  .vc-smart-cart__campaign-summary strong{color:#16312e;white-space:nowrap}
+  .vc-smart-cart__campaign-actions{display:flex;align-items:center;gap:.55rem}
+  .vc-smart-cart__code{padding:.72rem .85rem;border:.1rem dashed rgba(34,89,82,.28);border-radius:.8rem;color:#225952;font-weight:950;letter-spacing:.08em}
+  .vc-smart-cart__campaign-note{grid-column:1/-1;margin:0;color:rgba(22,49,46,.65);font-size:.88rem}
+  @media screen and (max-width:989px){.vc-smart-cart__grid{grid-template-columns:1fr}.vc-smart-cart__campaign{grid-template-columns:1fr 1fr}.vc-smart-cart__campaign-actions{justify-content:flex-start}.vc-smart-cart__campaign-note{grid-column:1/-1}}
+  @media screen and (max-width:749px){.vc-smart-cart{padding:0 0 .85rem}.vc-smart-cart .page-width{padding-left:1.6rem;padding-right:1.6rem}.vc-smart-cart__recommendations,.vc-smart-cart__campaign{border-radius:1.45rem}.vc-smart-cart__recommendations{padding:1.05rem}.vc-smart-cart h2{font-size:2rem}.vc-smart-cart__product{grid-template-columns:6.8rem minmax(0,1fr);padding:.72rem}.vc-smart-cart__add{grid-column:1/-1;width:100%}.vc-smart-cart__campaign{grid-template-columns:1fr;padding:1.05rem}.vc-smart-cart__campaign-summary,.vc-smart-cart__campaign-actions{width:100%}.vc-smart-cart__copy{flex:1}.vc-smart-cart__campaign-note{grid-column:auto}}
 </style>
+
+<script>
+  (() => {
+    const root = document.getElementById('VCSmartCart-{{ section.id }}');
+    if (!root) return;
+
+    const status = root.querySelector('[data-vc-cart-status]');
+    root.querySelectorAll('[data-vc-cart-add]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const variantId = Number(button.dataset.variantId);
+        if (!variantId) return;
+        button.disabled = true;
+        const original = button.textContent;
+        button.textContent = 'Ekleniyor…';
+        if (status) status.textContent = '';
+
+        try {
+          const response = await fetch(`${window.Shopify?.routes?.root || '/'}cart/add.js`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ items: [{ id: variantId, quantity: 1, properties: { 'Sepet önerisi': 'Rutin tamamlama' } }] })
+          });
+          if (!response.ok) throw new Error('Cart add failed');
+          if (status) status.textContent = `${button.dataset.productTitle} sepete eklendi.`;
+          window.location.reload();
+        } catch (error) {
+          button.disabled = false;
+          button.textContent = original;
+          if (status) status.textContent = 'Ürün eklenemedi. Lütfen tekrar deneyin.';
+        }
+      });
+    });
+
+    const copyButton = root.querySelector('[data-vc-copy-discount]');
+    const feedback = root.querySelector('[data-vc-copy-feedback]');
+    if (copyButton) {
+      copyButton.addEventListener('click', async () => {
+        const code = copyButton.dataset.vcCopyDiscount;
+        try {
+          await navigator.clipboard.writeText(code);
+        } catch (error) {
+          const input = document.createElement('input');
+          input.value = code;
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          input.remove();
+        }
+        copyButton.textContent = 'Kod kopyalandı';
+        if (feedback) feedback.textContent = 'COLLAGEN10 kopyalandı. Ödeme ekranındaki indirim kodu alanına yapıştırın.';
+      });
+    }
+  })();
+</script>
 
 {% schema %}
 {
-  "name": "Sepet rutin desteği",
+  "name": "Akıllı sepet önerileri",
   "tag": "section",
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
-  "settings": [
-    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Rutin desteği"},
-    {"type":"text","id":"heading","label":"Başlık","default":"Rutininizi tamamlayın"},
-    {"type":"textarea","id":"body","label":"Açıklama","default":"Sepetinizdeki ürünü günlük rutininiz içinde birlikte düşünebileceğiniz seçeneklerle tamamlayabilirsiniz."},
-    {"type":"text","id":"primary_label","label":"Birincil CTA","default":"Rutinleri incele"},
-    {"type":"url","id":"primary_link","label":"Birincil link"},
-    {"type":"text","id":"secondary_label","label":"İkincil CTA","default":"Tüm ürünler"},
-    {"type":"url","id":"secondary_link","label":"İkincil link"}
-  ],
-  "presets": [{"name":"Sepet rutin desteği"}]
+  "settings": [],
+  "presets": [{"name":"Akıllı sepet önerileri"}]
 }
 {% endschema %}
