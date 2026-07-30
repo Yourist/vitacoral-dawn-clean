@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "routine_light_men": {
@@ -24,11 +33,16 @@
           }
         }
       },
-      "block_order": ["light_men_glucomannan", "light_men_multivitamin"],
+      "block_order": [
+        "light_men_glucomannan",
+        "light_men_multivitamin"
+      ],
       "settings": {
         "eyebrow": "Erkek hafif rutin paketi",
         "heading": "Erkek hafif rutinini tek akışta sepete ekleyin",
         "body": "<p>Glucomannan ve Multivitamin For Men ürünlerini birlikte almak isteyenler için hazırlanan hafif rutin akışı. Ürünler aşağıda ayrı ayrı görünür; satın alma için tek ana butonu kullanabilirsiniz.</p>",
+        "hero_image": "shopify://shop_images/ChatGPTImage30Tem202614_54_20_2.png",
+        "hero_image_alt": "",
         "orbit_1": "Glucomannan",
         "orbit_2": "Men",
         "orbit_3": "Tek sepet",
@@ -66,6 +80,7 @@
         "usage_3_text": "Sepette ürünleri, adetleri ve fiyatları kontrol ederek alışverişe devam edin.",
         "usage_note": "Takviye edici gıdalar ilaç değildir. Lif odaklı ürünlerde kullanım önerisi, su tüketimi ve uyarılar özellikle önemlidir.",
         "steps_heading": "Rutin satın alma akışı",
+        "steps_body": "",
         "step_1_title": "İçeriği gör",
         "step_1_text": "Rutindeki ürünleri ayrı kartlarda inceleyin.",
         "step_2_title": "Tek butonla ekle",
@@ -79,5 +94,7 @@
       }
     }
   },
-  "order": ["routine_light_men"]
+  "order": [
+    "routine_light_men"
+  ]
 }
