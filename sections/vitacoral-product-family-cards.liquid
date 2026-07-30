@@ -6,34 +6,79 @@
 <section class="vitacoral-product-family vitacoral-section" id="VitacoralProductFamily-{{ section.id }}">
   <div class="vitacoral-container">
     <div class="vitacoral-product-family__header vitacoral-reveal is-visible">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="vitacoral-eyebrow">{{ section.settings.eyebrow | escape }}</p>
-      {%- endif -%}
-
-      {%- if section.settings.heading != blank -%}
-        <h2 class="vitacoral-heading-lg">{{ section.settings.heading }}</h2>
-      {%- endif -%}
-
-      {%- if section.settings.body != blank -%}
-        <div class="vitacoral-body vitacoral-product-family__body rte">
-          {{ section.settings.body }}
-        </div>
-      {%- endif -%}
+      <p class="vitacoral-eyebrow">Hazır rutinler</p>
+      <h2 class="vitacoral-heading-lg">Rutininizi seçin, ürünleri tek seferde sepete ekleyin</h2>
+      <div class="vitacoral-body vitacoral-product-family__body rte">
+        <p>Size uygun ürün kombinasyonunu seçin; rutin içeriğini görün ve tüm ürünleri tek satın alma akışında birlikte sepete ekleyin.</p>
+      </div>
     </div>
 
     <div class="vitacoral-product-family__carousel vitacoral-reveal is-visible">
       <ul class="vitacoral-product-family__grid list-unstyled" role="list">
         {%- for block in section.blocks -%}
           {%- liquid
+            assign card_title = block.settings.title | strip
+            assign card_title_handle = card_title | handleize
+
             assign primary_product = block.settings.primary_product
             assign secondary_product = block.settings.secondary_product
             assign third_product = block.settings.third_product
-            assign card_title = block.settings.title | strip
+            assign card_description = block.settings.short_description | strip
+            assign card_cta_label = block.settings.cta_label | strip
+            assign card_cta_link = block.settings.cta_link
+
+            case card_title_handle
+              when 'kadin-gunluk-rutini', 'kadin-gunluk-destek'
+                assign primary_product = all_products['multivitamin-for-women']
+                assign secondary_product = all_products['collagen-30-sase']
+                assign third_product = blank
+                assign card_description = 'Women Multivitamin ve Collagen ürünlerini tek rutinde alın; iki ürünü birlikte ve tek butonla sepete ekleyin.'
+                if card_cta_link == blank
+                  assign card_cta_link = '/pages/routine-women'
+                endif
+              when 'erkek-gunluk-rutini', 'erkek-gunluk-destek'
+                assign primary_product = all_products['multivitamin-for-men']
+                assign secondary_product = all_products['collagen-30-sase']
+                assign third_product = blank
+                assign card_description = 'Men Multivitamin ve Collagen ürünlerini tek rutinde alın; iki ürünü birlikte ve tek butonla sepete ekleyin.'
+                if card_cta_link == blank
+                  assign card_cta_link = '/pages/routine-men'
+                endif
+              when 'aile-gunluk-rutini', 'aile-icin-urunler'
+                assign primary_product = all_products['multivitamin-for-women']
+                assign secondary_product = all_products['multivitamin-for-men']
+                assign third_product = all_products['multivitamin-for-kids']
+                assign card_description = 'Women, Men ve Kids ürünlerini tek aile rutininde birleştirin; üç ürünü aynı anda sepete ekleyin.'
+                if card_cta_link == blank
+                  assign card_cta_link = '/pages/routine-family'
+                endif
+              when 'erkek-hafif-rutini'
+                assign primary_product = all_products['vitacoral-glucomannan-60-sase']
+                assign secondary_product = all_products['multivitamin-for-men']
+                assign third_product = blank
+                assign card_description = 'Glucomannan ve Men Multivitamin ürünlerini hazır hafif rutinde birlikte alın ve tek butonla sepete ekleyin.'
+                if card_cta_link == blank
+                  assign card_cta_link = '/pages/routine-light-men'
+                endif
+              when 'kadin-hafif-rutini', 'hafif-gunluk-rutin', 'lif-odagi'
+                assign primary_product = all_products['vitacoral-glucomannan-60-sase']
+                assign secondary_product = all_products['multivitamin-for-women']
+                assign third_product = blank
+                assign card_description = 'Glucomannan ve Women Multivitamin ürünlerini hazır hafif rutinde birlikte alın ve tek butonla sepete ekleyin.'
+                if card_cta_link == blank
+                  assign card_cta_link = '/pages/routine-light-women'
+                endif
+              when 'collagen-ile-baslayin'
+                if card_cta_link == blank
+                  assign card_cta_link = '/products/collagen-30-sase'
+                endif
+            endcase
+
             if card_title == blank and primary_product != blank
               assign card_title = primary_product.title
             endif
             if card_title == blank
-              assign card_title = 'Vitacoral ürün rehberi'
+              assign card_title = 'Vitacoral rutini'
             endif
 
             assign card_image = block.settings.product_image
@@ -46,22 +91,6 @@
               assign image_alt = card_image.alt
             endif
 
-            assign card_cta_link = block.settings.cta_link
-            assign card_title_handle = card_title | handleize
-            if card_cta_link == blank
-              case card_title_handle
-                when 'collagen-ile-baslayin'
-                  assign card_cta_link = '/products/collagen-30-sase'
-                when 'kadin-gunluk-destek', 'kadin-gunluk-rutini'
-                  assign card_cta_link = '/pages/routine-women'
-                when 'erkek-gunluk-destek', 'erkek-gunluk-rutini'
-                  assign card_cta_link = '/pages/routine-men'
-                when 'aile-icin-urunler', 'aile-gunluk-rutini'
-                  assign card_cta_link = '/pages/routine-family'
-                when 'lif-odagi', 'hafif-gunluk-rutin'
-                  assign card_cta_link = '/pages/routine-light-women'
-              endcase
-            endif
             if card_cta_link == blank and primary_product != blank
               assign card_cta_link = primary_product.url
             endif
@@ -69,35 +98,32 @@
               assign card_cta_link = '#'
             endif
 
-            assign card_cta_label = block.settings.cta_label | strip
-            if card_cta_label == blank
-              assign card_cta_label = 'Rehberi incele'
+            if card_cta_label == blank or card_cta_label == 'Rutini incele' or card_cta_label == 'Rehberi incele'
+              assign card_cta_label = 'Rutini satın al'
+            endif
+
+            assign routine_product_count = 0
+            if primary_product != blank
+              assign routine_product_count = routine_product_count | plus: 1
+            endif
+            if secondary_product != blank
+              assign routine_product_count = routine_product_count | plus: 1
+            endif
+            if third_product != blank
+              assign routine_product_count = routine_product_count | plus: 1
             endif
           -%}
-          <li
-            class="vitacoral-product-family__item vitacoral-product-family__item--{{ block.settings.accent_style }}"
-            {{ block.shopify_attributes }}
-          >
+
+          <li class="vitacoral-product-family__item vitacoral-product-family__item--{{ block.settings.accent_style }}" {{ block.shopify_attributes }}>
             <article class="vitacoral-product-family__card vitacoral-card vitacoral-lift">
               <div class="vitacoral-product-family__card-top">
                 {%- if block.settings.badge_text != blank -%}
-                  <span class="vitacoral-chip vitacoral-product-family__badge">
-                    {{ block.settings.badge_text | escape }}
-                  </span>
+                  <span class="vitacoral-chip vitacoral-product-family__badge">{{ block.settings.badge_text | escape }}</span>
                 {%- endif -%}
 
                 <div class="vitacoral-product-family__media">
                   {%- if card_image != blank -%}
-                    {{
-                      card_image
-                      | image_url: width: 900
-                      | image_tag:
-                        widths: '320, 450, 660, 900',
-                        sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 76vw',
-                        loading: 'lazy',
-                        alt: image_alt,
-                        class: 'vitacoral-product-family__image'
-                    }}
+                    {{ card_image | image_url: width: 900 | image_tag: widths: '320, 450, 660, 900', sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 76vw', loading: 'lazy', alt: image_alt, class: 'vitacoral-product-family__image' }}
                   {%- else -%}
                     <div class="vitacoral-product-family__placeholder" aria-hidden="true">
                       <span class="vitacoral-product-family__placeholder-mark"></span>
@@ -110,53 +136,38 @@
               <div class="vitacoral-product-family__content">
                 <h3 class="vitacoral-product-family__title">{{ card_title }}</h3>
 
-                {%- if block.settings.short_description != blank -%}
-                  <p class="vitacoral-body vitacoral-product-family__description">
-                    {{ block.settings.short_description | escape }}
-                  </p>
+                {%- if card_description != blank -%}
+                  <p class="vitacoral-body vitacoral-product-family__description">{{ card_description | escape }}</p>
                 {%- endif -%}
 
-                {%- if block.settings.included_products_text != blank -%}
+                {%- if routine_product_count > 0 -%}
                   <div class="vitacoral-product-family__includes">
-                    <span class="vitacoral-product-family__includes-label">İçerik</span>
+                    <span class="vitacoral-product-family__includes-label">Rutin içeriği</span>
                     <p class="vitacoral-body-muted vitacoral-product-family__includes-text">
-                      {{ block.settings.included_products_text | escape }}
+                      {{ routine_product_count }} ürün · Her birinden 1 adet
                     </p>
                   </div>
-                {%- endif -%}
 
-                {%- if primary_product != blank or secondary_product != blank or third_product != blank -%}
-                  <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="İlgili ürünler">
+                  <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="Rutindeki ürünler">
                     {%- if primary_product != blank -%}
-                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
-                        {{ primary_product.title | escape }}
-                      </li>
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">{{ primary_product.title | escape }}</li>
                     {%- endif -%}
                     {%- if secondary_product != blank -%}
-                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
-                        {{ secondary_product.title | escape }}
-                      </li>
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">{{ secondary_product.title | escape }}</li>
                     {%- endif -%}
                     {%- if third_product != blank -%}
-                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">
-                        {{ third_product.title | escape }}
-                      </li>
+                      <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">{{ third_product.title | escape }}</li>
                     {%- endif -%}
                   </ul>
                 {%- endif -%}
 
                 {%- if block.settings.optional_note != blank -%}
-                  <p class="vitacoral-body-muted vitacoral-product-family__note">
-                    {{ block.settings.optional_note | escape }}
-                  </p>
+                  <p class="vitacoral-body-muted vitacoral-product-family__note">{{ block.settings.optional_note | escape }}</p>
                 {%- endif -%}
               </div>
 
               <div class="vitacoral-product-family__actions">
-                <a
-                  href="{{ card_cta_link }}"
-                  class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}"
-                >
+                <a href="{{ card_cta_link }}" class="vitacoral-button{% if block.settings.accent_style == 'soft' %} vitacoral-button--secondary{% endif %}">
                   {{ card_cta_label | escape }}
                 </a>
               </div>
@@ -166,20 +177,9 @@
       </ul>
     </div>
 
-    {%- if section.settings.bottom_cta_label != blank -%}
-      <div class="vitacoral-product-family__footer vitacoral-reveal is-visible">
-        <a
-          {% if section.settings.bottom_cta_link == blank %}
-            role="link" aria-disabled="true"
-          {% else %}
-            href="{{ section.settings.bottom_cta_link }}"
-          {% endif %}
-          class="vitacoral-button vitacoral-button--secondary"
-        >
-          {{ section.settings.bottom_cta_label | escape }}
-        </a>
-      </div>
-    {%- endif -%}
+    <div class="vitacoral-product-family__footer vitacoral-reveal is-visible">
+      <a href="/collections/all" class="vitacoral-button vitacoral-button--secondary">Tüm ürünleri ayrıca incele</a>
+    </div>
   </div>
 </section>
 
@@ -190,10 +190,10 @@
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {"type":"text","id":"eyebrow","label":"Eyebrow text","default":"Ürün Rehberi"},
-    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Hangi ürünle başlayacağınızı netleştirin"},
-    {"type":"richtext","id":"body","label":"Body text","default":"<p>Günlük ihtiyacınıza göre Vitacoral ürün seçeneklerini inceleyin.</p>"},
-    {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri gör"},
+    {"type":"text","id":"eyebrow","label":"Eyebrow text","default":"Hazır rutinler"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Rutininizi seçin, ürünleri tek seferde sepete ekleyin"},
+    {"type":"richtext","id":"body","label":"Body text","default":"<p>Size uygun ürün kombinasyonunu seçin; rutin içeriğini görün ve tüm ürünleri tek satın alma akışında birlikte sepete ekleyin.</p>"},
+    {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri ayrıca incele"},
     {"type":"url","id":"bottom_cta_link","label":"Bottom CTA link"}
   ],
   "blocks": [
@@ -205,11 +205,11 @@
         {"type":"product","id":"secondary_product","label":"Secondary product"},
         {"type":"product","id":"third_product","label":"Third product"},
         {"type":"image_picker","id":"product_image","label":"Custom image"},
-        {"type":"text","id":"badge_text","label":"Badge text","default":"Günlük destek"},
-        {"type":"text","id":"title","label":"Title","default":"Ürün rehberi"},
-        {"type":"textarea","id":"short_description","label":"Short description","default":"Ürünleri içerik ve kullanım bilgisiyle birlikte inceleyin."},
-        {"type":"text","id":"included_products_text","label":"Included products text","default":"Vitacoral ürünleri"},
-        {"type":"text","id":"cta_label","label":"CTA label","default":"Rehberi incele"},
+        {"type":"text","id":"badge_text","label":"Badge text","default":"Hazır rutin"},
+        {"type":"text","id":"title","label":"Title","default":"Vitacoral rutini"},
+        {"type":"textarea","id":"short_description","label":"Short description","default":"Rutindeki ürünleri birlikte alın ve tek butonla sepete ekleyin."},
+        {"type":"text","id":"included_products_text","label":"Legacy included products text","info":"Bu alan artık kullanılmıyor; içerik seçili ürünlerden otomatik oluşturulur."},
+        {"type":"text","id":"cta_label","label":"CTA label","default":"Rutini satın al"},
         {"type":"url","id":"cta_link","label":"CTA link"},
         {"type":"textarea","id":"optional_note","label":"Optional note"},
         {"type":"select","id":"accent_style","label":"Accent style","default":"soft","options":[{"value":"orange","label":"Orange"},{"value":"green","label":"Green"},{"value":"soft","label":"Soft"}]}
