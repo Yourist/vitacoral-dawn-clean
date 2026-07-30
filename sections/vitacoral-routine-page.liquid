@@ -1,12 +1,37 @@
 {{ 'vitacoral-routine-pages.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-routine-usage.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-routine-benefits.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-routine-cart-flow.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign hero_product_one = blank
   assign hero_product_two = blank
   assign hero_image_one = blank
   assign hero_image_two = blank
+  assign routine_cart_count = 0
+
+  capture routine_cart_items
+    echo '['
+    assign routine_cart_separator = ''
+    for block in section.blocks
+      if block.type == 'routine_product'
+        assign routine_product = block.settings.product
+        if routine_product != blank
+          assign routine_variant = routine_product.selected_or_first_available_variant
+          if routine_variant != blank and routine_variant.available
+            echo routine_cart_separator
+            echo '{"id":'
+            echo routine_variant.id | json
+            echo ',"quantity":1}'
+            assign routine_cart_separator = ','
+            assign routine_cart_count = routine_cart_count | plus: 1
+          endif
+        endif
+      endif
+    endfor
+    echo ']'
+  endcapture
+
   for block in section.blocks
     if block.type == 'routine_product'
       if hero_product_one == blank
@@ -26,55 +51,206 @@
   endfor
 -%}
 
-<section class="vc-routine-page" id="VitacoralRoutinePage-{{ section.id }}"><div class="page-width vc-routine-page__inner">
-  <div class="vc-routine-hero"><div class="vc-routine-hero__copy">
-    {%- if section.settings.eyebrow != blank -%}<p class="vc-routine-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-    {%- if section.settings.heading != blank -%}<h1 class="vc-routine-title">{{ section.settings.heading }}</h1>{%- endif -%}
-    {%- if section.settings.body != blank -%}<div class="vc-routine-body rte">{{ section.settings.body }}</div>{%- endif -%}
-    <div class="vc-routine-hero__actions"><a class="vc-routine-button vc-routine-button--hero" href="#routine-products">Rutini keşfet</a>{%- if section.settings.hero_note != blank -%}<span class="vc-routine-hero__microcopy">{{ section.settings.hero_note | escape }}</span>{%- endif -%}</div>
-  </div><div class="vc-routine-hero__visual" aria-label="Rutin ürün görseli">
-    <div class="vc-routine-visual-card vc-routine-visual-card--primary">{%- if hero_image_one != blank -%}{{ hero_image_one | image_url: width: 900 | image_tag: widths: '360, 520, 720, 900', sizes: '(min-width: 990px) 28vw, 62vw', loading: 'eager', alt: hero_product_one.title, class: 'vc-routine-visual-card__image' }}{%- endif -%}</div>
-    <div class="vc-routine-visual-card vc-routine-visual-card--secondary">{%- if hero_image_two != blank -%}{{ hero_image_two | image_url: width: 700 | image_tag: widths: '300, 480, 700', sizes: '(min-width: 990px) 18vw, 42vw', loading: 'eager', alt: hero_product_two.title, class: 'vc-routine-visual-card__image' }}{%- endif -%}</div>
-    <div class="vc-routine-visual-badge vc-routine-visual-badge--top">{{ section.settings.orbit_1 | escape }}</div><div class="vc-routine-visual-badge vc-routine-visual-badge--bottom">{{ section.settings.orbit_2 | escape }}</div><div class="vc-routine-visual-glow" aria-hidden="true"></div>
-  </div></div>
+<section class="vc-routine-page" id="VitacoralRoutinePage-{{ section.id }}">
+  <div class="page-width vc-routine-page__inner">
+    <div class="vc-routine-hero">
+      <div class="vc-routine-hero__copy">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="vc-routine-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h1 class="vc-routine-title">{{ section.settings.heading }}</h1>
+        {%- endif -%}
+        {%- if section.settings.body != blank -%}
+          <div class="vc-routine-body rte">{{ section.settings.body }}</div>
+        {%- endif -%}
+        <div class="vc-routine-hero__actions">
+          <a class="vc-routine-button vc-routine-button--hero" href="#routine-cart">Rutini sepete ekle</a>
+          {%- if section.settings.hero_note != blank -%}
+            <span class="vc-routine-hero__microcopy">{{ section.settings.hero_note | escape }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="vc-routine-hero__visual" aria-label="Rutin ürün görseli">
+        <div class="vc-routine-visual-card vc-routine-visual-card--primary">
+          {%- if hero_image_one != blank -%}
+            {{ hero_image_one | image_url: width: 900 | image_tag: widths: '360, 520, 720, 900', sizes: '(min-width: 990px) 28vw, 62vw', loading: 'eager', alt: hero_product_one.title, class: 'vc-routine-visual-card__image' }}
+          {%- endif -%}
+        </div>
+        <div class="vc-routine-visual-card vc-routine-visual-card--secondary">
+          {%- if hero_image_two != blank -%}
+            {{ hero_image_two | image_url: width: 700 | image_tag: widths: '300, 480, 700', sizes: '(min-width: 990px) 18vw, 42vw', loading: 'eager', alt: hero_product_two.title, class: 'vc-routine-visual-card__image' }}
+          {%- endif -%}
+        </div>
+        <div class="vc-routine-visual-badge vc-routine-visual-badge--top">{{ section.settings.orbit_1 | escape }}</div>
+        <div class="vc-routine-visual-badge vc-routine-visual-badge--bottom">{{ section.settings.orbit_2 | escape }}</div>
+        <div class="vc-routine-visual-glow" aria-hidden="true"></div>
+      </div>
+    </div>
 
-  <div class="vc-routine-section" id="routine-products"><div class="vc-routine-section__header vc-routine-section__header--compact">{%- if section.settings.products_heading != blank -%}<h2 class="vc-routine-section__title">{{ section.settings.products_heading }}</h2>{%- endif -%}{%- if section.settings.products_body != blank -%}<div class="vc-routine-section__body rte">{{ section.settings.products_body }}</div>{%- endif -%}</div><div class="vc-routine-products" role="list">
-    {%- for block in section.blocks -%}{%- if block.type == 'routine_product' -%}{%- liquid
-      assign routine_product = block.settings.product
-      assign custom_title = block.settings.title | strip
-      assign product_title = custom_title
-      if product_title == blank and routine_product != blank
-        assign product_title = routine_product.title
-      endif
-      assign product_image = block.settings.image
-      if product_image == blank and routine_product != blank and routine_product.featured_image != blank
-        assign product_image = routine_product.featured_image
-      endif
-      assign image_alt = product_title
-      if product_image != blank and product_image.alt != blank
-        assign image_alt = product_image.alt
-      endif
-      assign product_url = '#'
-      if routine_product != blank
-        assign product_url = routine_product.url
-      endif
-    -%}<article class="vc-routine-product" role="listitem" {{ block.shopify_attributes }}><div class="vc-routine-product__media">{%- if product_image != blank -%}{{ product_image | image_url: width: 900 | image_tag: widths: '320, 480, 700, 900', sizes: '(min-width: 990px) 34vw, 92vw', loading: 'lazy', alt: image_alt, class: 'vc-routine-product__image' }}{%- else -%}<div class="vc-routine-product__placeholder">{{ product_title | default: 'Vitacoral ürünü' | escape }}</div>{%- endif -%}</div><div class="vc-routine-product__content">{%- if block.settings.kicker != blank -%}<p class="vc-routine-product__kicker">{{ block.settings.kicker | escape }}</p>{%- endif -%}<h3 class="vc-routine-product__title">{{ product_title | default: 'Vitacoral ürünü' | escape }}</h3>{%- if block.settings.text != blank -%}<p class="vc-routine-product__text">{{ block.settings.text | escape }}</p>{%- endif -%}{%- if routine_product != blank -%}<div class="vc-routine-product__price">{% render 'price', product: routine_product, show_compare_at_price: true %}</div>{%- endif -%}</div><div class="vc-routine-product__actions"><a class="vc-routine-button" href="{{ product_url }}">{{ block.settings.cta_label | default: 'Ürünü incele' | escape }}</a></div></article>{%- endif -%}{%- endfor -%}
-  </div></div>
+    <div class="vc-routine-cart-panel" id="routine-cart" data-vc-routine-cart data-vc-routine-cart-items='{{ routine_cart_items | strip | escape }}'>
+      <p class="vc-routine-cart-panel__eyebrow">Tek satın alma akışı</p>
+      <h2 class="vc-routine-cart-panel__title">Rutini birlikte sepete ekleyin</h2>
+      <p class="vc-routine-cart-panel__text">Bu sayfadaki ürünler rutin içeriğini gösterir. Ürünleri ayrı ayrı aramak yerine, aşağıdaki butonla rutindeki uygun ürünleri birlikte sepetinize ekleyebilirsiniz.</p>
+      <div class="vc-routine-cart-panel__actions">
+        <button class="vc-routine-button vc-routine-button--hero" type="button" data-vc-routine-add{% if routine_cart_count == 0 %} disabled aria-disabled="true"{% endif %}>
+          Rutini sepete ekle
+        </button>
+        <a class="vc-routine-button" href="#routine-products">Paket içeriğini gör</a>
+      </div>
+      <p class="vc-routine-cart-panel__status" data-vc-routine-status aria-live="polite"></p>
+    </div>
 
-  <div class="vc-routine-section vc-routine-section--benefits"><div class="vc-routine-benefits"><div class="vc-routine-benefits__panel">{%- if section.settings.benefits_eyebrow != blank -%}<p class="vc-routine-benefits__eyebrow">{{ section.settings.benefits_eyebrow | escape }}</p>{%- endif -%}{%- if section.settings.benefits_heading != blank -%}<h2 class="vc-routine-benefits__title">{{ section.settings.benefits_heading }}</h2>{%- endif -%}{%- if section.settings.benefits_body != blank -%}<p class="vc-routine-benefits__text">{{ section.settings.benefits_body | escape }}</p>{%- endif -%}</div><div class="vc-routine-benefit-list">
-    <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">01</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_1_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_1_text | escape }}</p>{%- if hero_product_one != blank -%}<a class="vc-routine-benefit__link" href="{{ hero_product_one.url }}">Ürün detayına bak</a>{%- endif -%}</div></article>
-    <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">02</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_2_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_2_text | escape }}</p>{%- if hero_product_two != blank -%}<a class="vc-routine-benefit__link" href="{{ hero_product_two.url }}">Ürün detayına bak</a>{%- endif -%}</div></article>
-    <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">03</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_3_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_3_text | escape }}</p><a class="vc-routine-benefit__link" href="#routine-products">Rutindeki ürünleri gör</a></div></article>
-  </div></div></div>
+    <div class="vc-routine-section" id="routine-products">
+      <div class="vc-routine-section__header vc-routine-section__header--compact">
+        {%- if section.settings.products_heading != blank -%}
+          <h2 class="vc-routine-section__title">{{ section.settings.products_heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.products_body != blank -%}
+          <div class="vc-routine-section__body rte">{{ section.settings.products_body }}</div>
+        {%- endif -%}
+      </div>
+      <div class="vc-routine-products" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'routine_product' -%}
+            {%- liquid
+              assign routine_product = block.settings.product
+              assign custom_title = block.settings.title | strip
+              assign product_title = custom_title
+              if product_title == blank and routine_product != blank
+                assign product_title = routine_product.title
+              endif
+              assign product_image = block.settings.image
+              if product_image == blank and routine_product != blank and routine_product.featured_image != blank
+                assign product_image = routine_product.featured_image
+              endif
+              assign image_alt = product_title
+              if product_image != blank and product_image.alt != blank
+                assign image_alt = product_image.alt
+              endif
+              assign product_url = '#'
+              if routine_product != blank
+                assign product_url = routine_product.url
+              endif
+            -%}
+            <article class="vc-routine-product" role="listitem" {{ block.shopify_attributes }}>
+              <div class="vc-routine-product__media">
+                {%- if product_image != blank -%}
+                  {{ product_image | image_url: width: 900 | image_tag: widths: '320, 480, 700, 900', sizes: '(min-width: 990px) 34vw, 92vw', loading: 'lazy', alt: image_alt, class: 'vc-routine-product__image' }}
+                {%- else -%}
+                  <div class="vc-routine-product__placeholder">{{ product_title | default: 'Vitacoral ürünü' | escape }}</div>
+                {%- endif -%}
+              </div>
+              <div class="vc-routine-product__content">
+                {%- if block.settings.kicker != blank -%}
+                  <p class="vc-routine-product__kicker">{{ block.settings.kicker | escape }}</p>
+                {%- endif -%}
+                <h3 class="vc-routine-product__title">{{ product_title | default: 'Vitacoral ürünü' | escape }}</h3>
+                {%- if block.settings.text != blank -%}
+                  <p class="vc-routine-product__text">{{ block.settings.text | escape }}</p>
+                {%- endif -%}
+                {%- if routine_product != blank -%}
+                  <div class="vc-routine-product__price">{% render 'price', product: routine_product, show_compare_at_price: true %}</div>
+                {%- endif -%}
+              </div>
+              <div class="vc-routine-product__actions">
+                <a class="vc-routine-button" href="{{ product_url }}">Ürün detayını gör</a>
+              </div>
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
 
-  <div class="vc-routine-section vc-routine-section--insights"><div class="vc-routine-section__header">{%- if section.settings.insight_heading != blank -%}<h2 class="vc-routine-section__title">{{ section.settings.insight_heading }}</h2>{%- endif -%}{%- if section.settings.insight_body != blank -%}<div class="vc-routine-section__body rte">{{ section.settings.insight_body }}</div>{%- endif -%}</div><div class="vc-routine-insights"><article class="vc-routine-insight"><span class="vc-routine-insight__label">01</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_1_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_1_text | escape }}</p></article><article class="vc-routine-insight"><span class="vc-routine-insight__label">02</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_2_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_2_text | escape }}</p></article><article class="vc-routine-insight vc-routine-insight--accent"><span class="vc-routine-insight__label">03</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_3_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_3_text | escape }}</p></article></div></div>
+    <div class="vc-routine-section vc-routine-section--benefits">
+      <div class="vc-routine-benefits">
+        <div class="vc-routine-benefits__panel">
+          {%- if section.settings.benefits_eyebrow != blank -%}<p class="vc-routine-benefits__eyebrow">{{ section.settings.benefits_eyebrow | escape }}</p>{%- endif -%}
+          {%- if section.settings.benefits_heading != blank -%}<h2 class="vc-routine-benefits__title">{{ section.settings.benefits_heading }}</h2>{%- endif -%}
+          {%- if section.settings.benefits_body != blank -%}<p class="vc-routine-benefits__text">{{ section.settings.benefits_body | escape }}</p>{%- endif -%}
+        </div>
+        <div class="vc-routine-benefit-list">
+          <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">01</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_1_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_1_text | escape }}</p>{%- if hero_product_one != blank -%}<a class="vc-routine-benefit__link" href="{{ hero_product_one.url }}">Ürün detayına bak</a>{%- endif -%}</div></article>
+          <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">02</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_2_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_2_text | escape }}</p>{%- if hero_product_two != blank -%}<a class="vc-routine-benefit__link" href="{{ hero_product_two.url }}">Ürün detayına bak</a>{%- endif -%}</div></article>
+          <article class="vc-routine-benefit"><span class="vc-routine-benefit__icon">03</span><div><h3 class="vc-routine-benefit__title">{{ section.settings.benefit_3_title | escape }}</h3><p class="vc-routine-benefit__text">{{ section.settings.benefit_3_text | escape }}</p><a class="vc-routine-benefit__link" href="#routine-products">Rutindeki ürünleri gör</a></div></article>
+        </div>
+      </div>
+    </div>
 
-  <div class="vc-routine-section vc-routine-section--usage"><div class="vc-routine-usage"><div class="vc-routine-usage__intro"><div>{%- if section.settings.usage_eyebrow != blank -%}<p class="vc-routine-usage__eyebrow">{{ section.settings.usage_eyebrow | escape }}</p>{%- endif -%}{%- if section.settings.usage_heading != blank -%}<h2 class="vc-routine-usage__title">{{ section.settings.usage_heading }}</h2>{%- endif -%}</div>{%- if section.settings.usage_body != blank -%}<p class="vc-routine-usage__text">{{ section.settings.usage_body | escape }}</p>{%- endif -%}</div><div class="vc-routine-usage__rail"><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_1_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_1_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_1_text | escape }}</p></div></article><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_2_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_2_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_2_text | escape }}</p></div></article><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_3_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_3_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_3_text | escape }}</p></div></article></div>{%- if section.settings.usage_note != blank -%}<p class="vc-routine-usage__note">{{ section.settings.usage_note | escape }}</p>{%- endif -%}</div></div>
+    <div class="vc-routine-section vc-routine-section--insights"><div class="vc-routine-section__header">{%- if section.settings.insight_heading != blank -%}<h2 class="vc-routine-section__title">{{ section.settings.insight_heading }}</h2>{%- endif -%}{%- if section.settings.insight_body != blank -%}<div class="vc-routine-section__body rte">{{ section.settings.insight_body }}</div>{%- endif -%}</div><div class="vc-routine-insights"><article class="vc-routine-insight"><span class="vc-routine-insight__label">01</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_1_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_1_text | escape }}</p></article><article class="vc-routine-insight"><span class="vc-routine-insight__label">02</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_2_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_2_text | escape }}</p></article><article class="vc-routine-insight vc-routine-insight--accent"><span class="vc-routine-insight__label">03</span><h3 class="vc-routine-insight__title">{{ section.settings.insight_3_title | escape }}</h3><p class="vc-routine-insight__text">{{ section.settings.insight_3_text | escape }}</p></article></div></div>
 
-  <div class="vc-routine-section vc-routine-section--steps"><div class="vc-routine-section__header vc-routine-section__header--compact">{%- if section.settings.steps_heading != blank -%}<h2 class="vc-routine-section__title">{{ section.settings.steps_heading }}</h2>{%- endif -%}</div><div class="vc-routine-steps"><div class="vc-routine-step"><span class="vc-routine-step__index">01</span><h3 class="vc-routine-step__title">{{ section.settings.step_1_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_1_text | escape }}</p></div><div class="vc-routine-step"><span class="vc-routine-step__index">02</span><h3 class="vc-routine-step__title">{{ section.settings.step_2_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_2_text | escape }}</p></div><div class="vc-routine-step"><span class="vc-routine-step__index">03</span><h3 class="vc-routine-step__title">{{ section.settings.step_3_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_3_text | escape }}</p></div></div></div>
+    <div class="vc-routine-section vc-routine-section--usage"><div class="vc-routine-usage"><div class="vc-routine-usage__intro"><div>{%- if section.settings.usage_eyebrow != blank -%}<p class="vc-routine-usage__eyebrow">{{ section.settings.usage_eyebrow | escape }}</p>{%- endif -%}{%- if section.settings.usage_heading != blank -%}<h2 class="vc-routine-usage__title">{{ section.settings.usage_heading }}</h2>{%- endif -%}</div>{%- if section.settings.usage_body != blank -%}<p class="vc-routine-usage__text">{{ section.settings.usage_body | escape }}</p>{%- endif -%}</div><div class="vc-routine-usage__rail"><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_1_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_1_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_1_text | escape }}</p></div></article><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_2_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_2_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_2_text | escape }}</p></div></article><article class="vc-routine-usage__step"><span class="vc-routine-usage__time">{{ section.settings.usage_3_time | escape }}</span><div><h3 class="vc-routine-usage__step-title">{{ section.settings.usage_3_title | escape }}</h3><p class="vc-routine-usage__step-text">{{ section.settings.usage_3_text | escape }}</p></div></article></div>{%- if section.settings.usage_note != blank -%}<p class="vc-routine-usage__note">{{ section.settings.usage_note | escape }}</p>{%- endif -%}</div></div>
 
-  {%- if section.settings.final_heading != blank or section.settings.final_body != blank -%}<div class="vc-routine-final">{%- if section.settings.final_heading != blank -%}<h2 class="vc-routine-final__title">{{ section.settings.final_heading }}</h2>{%- endif -%}{%- if section.settings.final_body != blank -%}<p class="vc-routine-final__text">{{ section.settings.final_body | escape }}</p>{%- endif -%}{%- if section.settings.final_cta_label != blank and section.settings.final_cta_link != blank -%}<a class="vc-routine-final__link" href="{{ section.settings.final_cta_link }}">{{ section.settings.final_cta_label | escape }}</a>{%- endif -%}</div>{%- endif -%}
-</div></section>
+    <div class="vc-routine-section vc-routine-section--steps"><div class="vc-routine-section__header vc-routine-section__header--compact">{%- if section.settings.steps_heading != blank -%}<h2 class="vc-routine-section__title">{{ section.settings.steps_heading }}</h2>{%- endif -%}</div><div class="vc-routine-steps"><div class="vc-routine-step"><span class="vc-routine-step__index">01</span><h3 class="vc-routine-step__title">{{ section.settings.step_1_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_1_text | escape }}</p></div><div class="vc-routine-step"><span class="vc-routine-step__index">02</span><h3 class="vc-routine-step__title">{{ section.settings.step_2_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_2_text | escape }}</p></div><div class="vc-routine-step"><span class="vc-routine-step__index">03</span><h3 class="vc-routine-step__title">{{ section.settings.step_3_title | escape }}</h3><p class="vc-routine-step__text">{{ section.settings.step_3_text | escape }}</p></div></div></div>
+
+    {%- if section.settings.final_heading != blank or section.settings.final_body != blank -%}
+      <div class="vc-routine-final">
+        {%- if section.settings.final_heading != blank -%}<h2 class="vc-routine-final__title">{{ section.settings.final_heading }}</h2>{%- endif -%}
+        {%- if section.settings.final_body != blank -%}<p class="vc-routine-final__text">{{ section.settings.final_body | escape }}</p>{%- endif -%}
+        <a class="vc-routine-final__link" href="#routine-cart">Rutini sepete ekle</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.getElementById('VitacoralRoutinePage-{{ section.id }}');
+    if (!root) return;
+
+    root.addEventListener('click', async (event) => {
+      const button = event.target.closest('[data-vc-routine-add]');
+      if (!button || button.disabled) return;
+
+      const panel = button.closest('[data-vc-routine-cart]');
+      const status = panel?.querySelector('[data-vc-routine-status]');
+      let items = [];
+
+      try {
+        items = JSON.parse(panel?.getAttribute('data-vc-routine-cart-items') || '[]');
+      } catch (error) {
+        items = [];
+      }
+
+      if (!items.length) {
+        if (status) {
+          status.textContent = 'Bu rutinde sepete eklenebilir ürün bulunamadı.';
+          status.setAttribute('role', 'alert');
+        }
+        return;
+      }
+
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      if (status) {
+        status.textContent = 'Rutin sepetinize ekleniyor...';
+        status.removeAttribute('role');
+      }
+
+      try {
+        const response = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({ items })
+        });
+
+        if (!response.ok) throw new Error('Cart add failed');
+
+        window.location.href = '/cart';
+      } catch (error) {
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        if (status) {
+          status.textContent = 'Rutin sepete eklenemedi. Lütfen ürün stoklarını kontrol edip tekrar deneyin.';
+          status.setAttribute('role', 'alert');
+        }
+      }
+    });
+  })();
+</script>
 
 {% schema %}
 {
@@ -134,8 +310,23 @@
     { "type": "text", "id": "final_cta_label", "label": "Final CTA label", "default": "Tüm ürünleri keşfet" },
     { "type": "url", "id": "final_cta_link", "label": "Final CTA link", "default": "/collections/all" }
   ],
-  "blocks": [{"type":"routine_product","name":"Routine product","settings":[{"type":"product","id":"product","label":"Product"},{"type":"text","id":"kicker","label":"Kicker","default":"Rutindeki ürün"},{"type":"text","id":"title","label":"Title override"},{"type":"image_picker","id":"image","label":"Image override"},{"type":"text","id":"text","label":"Short text","default":"Bu ürünü rutininizin bir parçası olarak inceleyebilirsiniz."},{"type":"text","id":"cta_label","label":"CTA label","default":"Ürünü incele"}]}],
+  "blocks": [
+    {
+      "type": "routine_product",
+      "name": "Routine product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "kicker", "label": "Kicker", "default": "Rutindeki ürün" },
+        { "type": "text", "id": "title", "label": "Title override" },
+        { "type": "image_picker", "id": "image", "label": "Image override" },
+        { "type": "text", "id": "text", "label": "Short text", "default": "Bu ürünü rutininizin bir parçası olarak inceleyebilirsiniz." },
+        { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Ürünü incele" }
+      ]
+    }
+  ],
   "max_blocks": 4,
-  "presets": [{"name":"Vitacoral Routine Page","blocks":[{"type":"routine_product"},{"type":"routine_product"}]}]
+  "presets": [
+    { "name": "Vitacoral Routine Page", "blocks": [{ "type": "routine_product" }, { "type": "routine_product" }] }
+  ]
 }
 {% endschema %}
