@@ -137,10 +137,28 @@
             "primary_product": "vitacoral-glucomannan-60-sase",
             "secondary_product": "multivitamin-for-women",
             "third_product": "",
-            "badge_text": "Hafif rutin",
-            "title": "Hafif Günlük Rutin",
-            "short_description": "Günlük rutine lif desteği eklemeyi düşünürken içerik, kullanım ve uyarı bilgilerini birlikte incelemek isteyenler için.",
-            "included_products_text": "Glucomannan + Women/Men Multivitamin",
+            "product_image": "shopify://shop_images/ChatGPTImage30Tem202614_54_20_2.png",
+            "badge_text": "Erkek Hafif Rutini",
+            "title": "Erkek Hafif Rutini",
+            "short_description": "Günlük rutinde lif desteği ve erkeklere özel multivitamin kullanımını birlikte değerlendirmek isteyenler için",
+            "included_products_text": "Glucomannan + Men Multivitamin",
+            "cta_label": "Rutini incele",
+            "cta_link": "",
+            "optional_note": "",
+            "accent_style": "soft"
+          }
+        },
+        "product_family_np3fUR": {
+          "type": "product_family",
+          "settings": {
+            "primary_product": "vitacoral-glucomannan-60-sase",
+            "secondary_product": "multivitamin-for-women",
+            "third_product": "",
+            "product_image": "shopify://shop_images/ChatGPTImage30Tem202614_54_34.png",
+            "badge_text": "Kadın Hafif Rutini",
+            "title": "Kadın Hafif Rutini",
+            "short_description": "Günlük rutinde lif desteği ve kadınlara özel multivitamin kullanımını birlikte değerlendirmek isteyenler için",
+            "included_products_text": "Glucomannan + Women Multivitamin",
             "cta_label": "Rutini incele",
             "cta_link": "",
             "optional_note": "",
@@ -152,7 +170,8 @@
         "product_family_1",
         "product_family_2",
         "product_family_3",
-        "product_family_4"
+        "product_family_4",
+        "product_family_np3fUR"
       ],
       "settings": {
         "eyebrow": "Rutin rehberi",
