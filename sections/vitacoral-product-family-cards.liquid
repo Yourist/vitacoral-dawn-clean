@@ -9,7 +9,7 @@
       <p class="vitacoral-eyebrow">Hazır rutinler</p>
       <h2 class="vitacoral-heading-lg">Rutininizi seçin, ürünleri tek seferde sepete ekleyin</h2>
       <div class="vitacoral-body vitacoral-product-family__body rte">
-        <p>Size uygun ürün kombinasyonunu seçin; rutin içeriğini görün ve tüm ürünleri tek satın alma akışında birlikte sepete ekleyin.</p>
+        <p>Size uygun ürün kombinasyonunu seçin; rutindeki ürünleri görün ve tek satın alma akışında birlikte sepete ekleyin.</p>
       </div>
     </div>
 
@@ -101,17 +101,6 @@
             if card_cta_label == blank or card_cta_label == 'Rutini incele' or card_cta_label == 'Rehberi incele'
               assign card_cta_label = 'Rutini satın al'
             endif
-
-            assign routine_product_count = 0
-            if primary_product != blank
-              assign routine_product_count = routine_product_count | plus: 1
-            endif
-            if secondary_product != blank
-              assign routine_product_count = routine_product_count | plus: 1
-            endif
-            if third_product != blank
-              assign routine_product_count = routine_product_count | plus: 1
-            endif
           -%}
 
           <li class="vitacoral-product-family__item vitacoral-product-family__item--{{ block.settings.accent_style }}" {{ block.shopify_attributes }}>
@@ -140,14 +129,7 @@
                   <p class="vitacoral-body vitacoral-product-family__description">{{ card_description | escape }}</p>
                 {%- endif -%}
 
-                {%- if routine_product_count > 0 -%}
-                  <div class="vitacoral-product-family__includes">
-                    <span class="vitacoral-product-family__includes-label">Rutin içeriği</span>
-                    <p class="vitacoral-body-muted vitacoral-product-family__includes-text">
-                      {{ routine_product_count }} ürün · Her birinden 1 adet
-                    </p>
-                  </div>
-
+                {%- if primary_product != blank or secondary_product != blank or third_product != blank -%}
                   <ul class="vitacoral-product-family__product-chips list-unstyled" aria-label="Rutindeki ürünler">
                     {%- if primary_product != blank -%}
                       <li class="vitacoral-chip vitacoral-chip--outline vitacoral-product-family__product-chip">{{ primary_product.title | escape }}</li>
@@ -192,7 +174,7 @@
   "settings": [
     {"type":"text","id":"eyebrow","label":"Eyebrow text","default":"Hazır rutinler"},
     {"type":"inline_richtext","id":"heading","label":"Heading","default":"Rutininizi seçin, ürünleri tek seferde sepete ekleyin"},
-    {"type":"richtext","id":"body","label":"Body text","default":"<p>Size uygun ürün kombinasyonunu seçin; rutin içeriğini görün ve tüm ürünleri tek satın alma akışında birlikte sepete ekleyin.</p>"},
+    {"type":"richtext","id":"body","label":"Body text","default":"<p>Size uygun ürün kombinasyonunu seçin; rutindeki ürünleri görün ve tek satın alma akışında birlikte sepete ekleyin.</p>"},
     {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri ayrıca incele"},
     {"type":"url","id":"bottom_cta_link","label":"Bottom CTA link"}
   ],
@@ -208,7 +190,7 @@
         {"type":"text","id":"badge_text","label":"Badge text","default":"Hazır rutin"},
         {"type":"text","id":"title","label":"Title","default":"Vitacoral rutini"},
         {"type":"textarea","id":"short_description","label":"Short description","default":"Rutindeki ürünleri birlikte alın ve tek butonla sepete ekleyin."},
-        {"type":"text","id":"included_products_text","label":"Legacy included products text","info":"Bu alan artık kullanılmıyor; içerik seçili ürünlerden otomatik oluşturulur."},
+        {"type":"text","id":"included_products_text","label":"Legacy included products text","info":"Bu alan artık kullanılmıyor; ürün isimleri seçili ürünlerden otomatik oluşturulur."},
         {"type":"text","id":"cta_label","label":"CTA label","default":"Rutini satın al"},
         {"type":"url","id":"cta_link","label":"CTA link"},
         {"type":"textarea","id":"optional_note","label":"Optional note"},
