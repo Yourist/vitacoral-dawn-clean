@@ -111,53 +111,17 @@
 
 .vc-routine-cart-panel__actions {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem;
   align-items: stretch;
 }
 
 .vc-routine-cart-panel__actions .vc-routine-button {
-  min-height: 5.2rem;
-  padding: 0 1.8rem;
-  border: 0.1rem solid rgba(34, 89, 82, 0.14);
-  border-radius: 999px;
-  font-size: 1.16rem;
-  box-shadow: none;
-}
-
-.vc-routine-cart-panel__actions .vc-routine-button--hero {
   width: 100%;
-  background: var(--vitacoral-color-primary, #225952);
-  border-color: var(--vitacoral-color-primary, #225952);
-  color: #fff !important;
-}
-
-.vc-routine-cart-panel__actions .vc-routine-button--hero:hover {
-  background: var(--vitacoral-color-primary-deep, #163d38);
-  border-color: var(--vitacoral-color-primary-deep, #163d38);
-  box-shadow: 0 1.1rem 2.6rem rgba(21, 44, 41, 0.13);
-}
-
-.vc-routine-cart-panel__actions .vc-routine-button:not(.vc-routine-button--hero) {
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--vitacoral-color-primary, #225952) !important;
-}
-
-.vc-routine-cart-panel__actions .vc-routine-button:not(.vc-routine-button--hero):hover {
-  background: #fff;
-  border-color: rgba(34, 89, 82, 0.24);
-  color: var(--vitacoral-color-primary-deep, #163d38) !important;
-  box-shadow: 0 0.8rem 2rem rgba(21, 44, 41, 0.07);
 }
 
 .vc-routine-cart-panel__actions [data-vc-routine-cart-link]:not([hidden]) {
   grid-column: 1 / -1;
-  justify-self: start;
-  width: auto;
-  min-width: 14rem;
-  background: rgba(225, 117, 61, 0.12);
-  border-color: rgba(225, 117, 61, 0.2);
-  color: #a9542e !important;
 }
 
 .vc-routine-cart-panel__status {
@@ -216,7 +180,6 @@
   }
 
   .vc-routine-cart-panel__item {
-    grid-template-columns: minmax(0, 1fr) auto;
     min-height: 5.4rem;
     padding: 1rem 1.1rem;
     border-radius: 1.6rem;
@@ -237,14 +200,7 @@
     gap: 0.8rem;
   }
 
-  .vc-routine-cart-panel__actions .vc-routine-button {
-    width: 100%;
-    min-height: 5rem;
-    font-size: 1.08rem;
-  }
-
   .vc-routine-cart-panel__actions [data-vc-routine-cart-link]:not([hidden]) {
     grid-column: auto;
-    width: 100%;
   }
 }
