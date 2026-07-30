@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "routine_light_women": {
@@ -7,77 +16,85 @@
           "type": "routine_product",
           "settings": {
             "product": "vitacoral-glucomannan-60-sase",
-            "kicker": "01 / paket içeriği",
+            "kicker": "01 / lif odağı",
             "title": "Glucomannan",
-            "text": "Kadın hafif rutin paketindeki lif odaklı üründür. Detay bilgisini ayrıca inceleyebilirsiniz.",
-            "cta_label": "Ürün detayını gör"
+            "text": "Lif odağını rutininize eklemeyi düşünüyorsanız inceleyin.",
+            "cta_label": "Ürünü incele"
           }
         },
         "light_women_multivitamin": {
           "type": "routine_product",
           "settings": {
             "product": "multivitamin-for-women",
-            "kicker": "02 / paket içeriği",
+            "kicker": "02 / günlük destek",
             "title": "Multivitamin For Women",
-            "text": "Kadın hafif rutin paketindeki günlük destek ürünüdür. Detay bilgisini ayrıca inceleyebilirsiniz.",
-            "cta_label": "Ürün detayını gör"
+            "text": "Kadın günlük rutini için içerik bilgisini kontrol edin.",
+            "cta_label": "Ürünü incele"
           }
         }
       },
-      "block_order": ["light_women_glucomannan", "light_women_multivitamin"],
+      "block_order": [
+        "light_women_glucomannan",
+        "light_women_multivitamin"
+      ],
       "settings": {
-        "eyebrow": "Kadın hafif rutin paketi",
-        "heading": "Kadın hafif rutinini tek akışta sepete ekleyin",
-        "body": "<p>Glucomannan ve Multivitamin For Women ürünlerini birlikte almak isteyenler için hazırlanan hafif rutin akışı. Ürünler aşağıda ayrı ayrı görünür; satın alma için tek ana butonu kullanabilirsiniz.</p>",
+        "eyebrow": "Kadın hafif rutini",
+        "heading": "Hafif rutininizi sadeleştirin",
+        "body": "<p>Glucomannan ve Women Multivitamin seçeneklerini aynı akışta inceleyin.</p>",
+        "hero_image": "shopify://shop_images/ChatGPTImage30Tem202614_54_34.png",
+        "hero_image_alt": "",
         "orbit_1": "Glucomannan",
-        "orbit_2": "Women",
-        "orbit_3": "Tek sepet",
-        "hero_note": "Rutindeki ürünler tek butonla birlikte sepete eklenir.",
-        "products_heading": "Paketin içindeki ürünler",
-        "products_body": "<p>Bu kartlar satın alma seçeneği değil, rutinin içindeki ürünleri gösterir. Ürün detaylarını ayrıca inceleyebilirsiniz.</p>",
-        "benefits_eyebrow": "Paket mantığı",
+        "orbit_2": "Women Multivitamin",
+        "orbit_3": "Hafif rutin",
+        "hero_note": "Karar vermeden önce ürün detaylarını kontrol edin.",
+        "products_heading": "Rutindeki ürünler",
+        "products_body": "<p>Lif odağı ve multivitamin seçeneğini birlikte görün.</p>",
+        "benefits_eyebrow": "Karar alanları",
         "benefits_heading": "Bu rutin neyi kolaylaştırır?",
-        "benefits_body": "Kadın hafif rutin paketi, iki ürünü tek sayfada gösterir ve satın alma aksiyonunu tek sepete ekleme butonunda toplar.",
-        "benefit_1_title": "Tek satın alma aksiyonu",
-        "benefit_1_text": "Ürünleri tek tek aramak yerine rutindeki ürünleri birlikte sepete ekleyebilirsiniz.",
-        "benefit_2_title": "Ürünler görünür kalır",
-        "benefit_2_text": "Glucomannan ve Multivitamin For Women içerikleri ayrı kartlarda görünür; detay sayfalarına ayrıca geçebilirsiniz.",
-        "benefit_3_title": "Daha sade karar",
-        "benefit_3_text": "Rutinin ne içerdiğini görür, satın alma kararını tek ana butonla tamamlarsınız.",
+        "benefits_body": "Kadın hafif rutini, lif odağı ve multivitamin seçimini tek akışta değerlendirmenize yardımcı olur.",
+        "benefit_1_title": "Lif odağı",
+        "benefit_1_text": "Glucomannan ürününün içerik, kullanım ve uyarı bilgilerini kontrol edin.",
+        "benefit_2_title": "Günlük destek seçimi",
+        "benefit_2_text": "Multivitamin For Women içeriğini ve kullanım önerisini ürün detayında inceleyin.",
+        "benefit_3_title": "Daha net karşılaştırma",
+        "benefit_3_text": "İki ürünü aynı rutin içinde görerek kararınızı sadeleştirin.",
         "insight_heading": "Bu rutin kime uygun?",
-        "insight_body": "<p>Lif odağı ve kadın multivitamin ürününü birlikte değerlendirmek, ama satın alma adımında tek akış kullanmak isteyenler için.</p>",
-        "insight_1_title": "Ne alıyorum?",
-        "insight_1_text": "Bu rutin Glucomannan ve Multivitamin For Women ürünlerinden oluşur.",
-        "insight_2_title": "Nasıl satın alınır?",
-        "insight_2_text": "Sayfadaki ‘Rutini sepete ekle’ butonu ürünleri birlikte sepete ekler.",
-        "insight_3_title": "Kartlar ne işe yarar?",
-        "insight_3_text": "Kartlar paketin içeriğini ve ürün detaylarına geçişi gösterir.",
-        "usage_eyebrow": "Satın alma akışı",
+        "insight_body": "<p>Lif odağı ve kadın multivitamin seçeneğini birlikte incelemek isteyenler için.</p>",
+        "insight_1_title": "Nereden başlarsınız?",
+        "insight_1_text": "Önce Glucomannan ürününün kullanım önerisi ve uyarılarını inceleyin.",
+        "insight_2_title": "Birlikte nasıl düşünülür?",
+        "insight_2_text": "Her ürünü kendi etiket bilgisiyle ayrı ayrı değerlendirin.",
+        "insight_3_title": "Neyi kolaylaştırır?",
+        "insight_3_text": "Ürünleri tek tek aramadan aynı akışta görmenizi sağlar.",
+        "usage_eyebrow": "Örnek akış",
         "usage_heading": "Nasıl ilerlenir?",
-        "usage_body": "Bu alan kullanım talimatı değildir. Satın alma akışını sadeleştirmek için hazırlanmıştır.",
-        "usage_1_time": "1. adım",
-        "usage_1_title": "Paket içeriğini kontrol edin",
-        "usage_1_text": "Sayfadaki ürün kartlarından rutinde hangi ürünlerin olduğunu görün.",
-        "usage_2_time": "2. adım",
-        "usage_2_title": "Tek butonu kullanın",
-        "usage_2_text": "Rutini sepete ekle butonu ile ürünleri birlikte sepete ekleyin.",
-        "usage_3_time": "3. adım",
-        "usage_3_title": "Sepette kontrol edin",
-        "usage_3_text": "Sepette ürünleri, adetleri ve fiyatları kontrol ederek alışverişe devam edin.",
-        "usage_note": "Takviye edici gıdalar ilaç değildir. Lif odaklı ürünlerde kullanım önerisi, su tüketimi ve uyarılar özellikle önemlidir.",
-        "steps_heading": "Rutin satın alma akışı",
-        "step_1_title": "İçeriği gör",
-        "step_1_text": "Rutindeki ürünleri ayrı kartlarda inceleyin.",
-        "step_2_title": "Tek butonla ekle",
-        "step_2_text": "Rutini sepete ekle butonu ile ürünleri birlikte sepete taşıyın.",
-        "step_3_title": "Sepeti tamamla",
-        "step_3_text": "Sepette ürünleri kontrol edip alışverişinizi tamamlayın.",
-        "final_heading": "Kadın hafif rutin paketini tamamlayın",
-        "final_body": "Rutindeki ürünleri birlikte sepete eklemek için tek ana butonu kullanın.",
-        "final_cta_label": "Rutini sepete ekle",
-        "final_cta_link": "#routine-cart"
+        "usage_body": "Bu alan kullanım talimatı değildir. Ürün etiketindeki önerileri temel alın.",
+        "usage_1_time": "Başlangıç",
+        "usage_1_title": "Glucomannan bilgilerini kontrol edin",
+        "usage_1_text": "Kullanım önerisi, su tüketimi ve uyarıları ürün detayında inceleyin.",
+        "usage_2_time": "Günlük destek",
+        "usage_2_title": "Multivitamini değerlendirin",
+        "usage_2_text": "Women Multivitamin ürününü kendi rutininize göre ayrıca inceleyin.",
+        "usage_3_time": "Her zaman",
+        "usage_3_title": "Etiketi kontrol edin",
+        "usage_3_text": "İçerik, kullanım önerisi ve uyarıları okuyarak karar verin.",
+        "usage_note": "Takviye edici gıdalar ilaç değildir. Lif odaklı ürünlerde kullanım önerisi ve uyarılar özellikle önemlidir.",
+        "steps_heading": "Rutini nasıl takip edebilirsiniz?",
+        "steps_body": "",
+        "step_1_title": "Zamana bağlayın",
+        "step_1_text": "Rutininizi günlük planınızda hatırlayacağınız bir ana ekleyin.",
+        "step_2_title": "Etiketi takip edin",
+        "step_2_text": "Özellikle lif odaklı ürünlerde kullanım önerilerini dikkatle kontrol edin.",
+        "step_3_title": "Detaydan emin olun",
+        "step_3_text": "Etiket ve uyarı bilgilerini düzenli kontrol edin.",
+        "final_heading": "Hafif rutininizi netleştirin",
+        "final_body": "Tüm ürünleri inceleyerek size en yakın seçimi yapabilirsiniz.",
+        "final_cta_label": "Tüm ürünleri gör",
+        "final_cta_link": "/collections/all"
       }
     }
   },
-  "order": ["routine_light_women"]
+  "order": [
+    "routine_light_women"
+  ]
 }
