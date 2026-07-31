@@ -227,8 +227,8 @@
       "settings": {
         "eyebrow": "Etkileşimli rehber",
         "heading": "Ürün seçmeden önce kendinizi tanıyın",
-        "body": "<p>Yaklaşık günlük ihtiyaçlarınızı ve Vitacoral ürün seçeneklerini bilgilendirme amaçlı araçlarla daha net değerlendirin.</p>",
-        "cta_label": "Araçları aç",
+        "body": "<p>Günlük ihtiyaçlarınızı daha iyi değerlendirin, ürünler hakkında bilgi edinin ve seçenekleri kolayca karşılaştırın.</p>",
+        "cta_label": "İncelemeye Başla",
         "cta_link": "",
         "panel_label": "Etkileşimli araçlar",
         "note": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin."
@@ -305,7 +305,7 @@
       "settings": {
         "eyebrow": "Ürün aileleri",
         "heading": "Günlük rutininiz için ürünleri içerikleriyle birlikte inceleyin",
-        "body": "<p>Her ürün ailesinde içerik, kullanım önerisi ve uyarı bilgilerini kontrol ederek kararınızı daha bilinçli verebilirsiniz.</p>",
+        "body": "<p>Her ürün ailesinde içerik, kullanım önerileri ve uyarı bilgilerini inceleyerek size uygun seçenekleri daha kolay değerlendirebilirsiniz.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
@@ -316,7 +316,7 @@
       "settings": {
         "eyebrow": "ÖDÜLLÜ ANKET",
         "heading": "Birkaç kısa soruyla başlangıç noktanızı bulun",
-        "body": "<p>Kısa sorularla günlük alışkanlıklarınıza ve ürün ailelerine daha yakından bakın; karar vermeden önce seçenekleri sadeleştirin.</p>",
+        "body": "<p>Kısa sorularla günlük alışkanlıklarınızı değerlendirin ve size uygun ürün seçeneklerini daha kolay keşfedin.</p>",
         "cta_label": "Ankete Katıl",
         "cta_link": "/#quiz-0AH2J3O",
         "secondary_note": "Kısa sürer; ürün seçimini daha anlaşılır hale getirmek için hazırlanmıştır.",
