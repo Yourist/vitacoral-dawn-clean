@@ -23,6 +23,13 @@
       item.style.removeProperty('max-width');
       item.style.removeProperty('visibility');
       item.style.removeProperty('opacity');
+      item.style.removeProperty('transform');
+
+      item.querySelectorAll('.product-media-container, .product__modal-opener, .product__media, img').forEach((element) => {
+        element.style.removeProperty('visibility');
+        element.style.removeProperty('opacity');
+        element.style.removeProperty('transform');
+      });
     });
 
     if (thumbnails) thumbnails.style.removeProperty('display');
@@ -35,6 +42,30 @@
 
     if (targetId && items.some((item) => item.dataset.mediaId === targetId)) return targetId;
     return items[0]?.dataset.mediaId || '';
+  };
+
+  const revealActiveMedia = (item) => {
+    item.classList.remove('scroll-trigger--offscreen');
+    item.style.setProperty('display', 'block', 'important');
+    item.style.setProperty('width', '100%', 'important');
+    item.style.setProperty('max-width', '100%', 'important');
+    item.style.setProperty('visibility', 'visible', 'important');
+    item.style.setProperty('opacity', '1', 'important');
+    item.style.setProperty('transform', 'none', 'important');
+
+    item.querySelectorAll('.product-media-container, .product__modal-opener, .product__media, img').forEach((element) => {
+      element.style.setProperty('visibility', 'visible', 'important');
+      element.style.setProperty('opacity', '1', 'important');
+      element.style.setProperty('transform', 'none', 'important');
+    });
+  };
+
+  const hideInactiveMedia = (item) => {
+    item.style.setProperty('display', 'none', 'important');
+    item.style.setProperty('width', '100%', 'important');
+    item.style.setProperty('max-width', '100%', 'important');
+    item.style.setProperty('visibility', 'hidden', 'important');
+    item.style.setProperty('opacity', '0', 'important');
   };
 
   const applyGalleryState = (gallery) => {
@@ -63,12 +94,8 @@
     viewer.style.setProperty('min-height', '42rem', 'important');
 
     items.forEach((item) => {
-      const isActive = item === activeItem;
-      item.style.setProperty('display', isActive ? 'block' : 'none', 'important');
-      item.style.setProperty('width', '100%', 'important');
-      item.style.setProperty('max-width', '100%', 'important');
-      item.style.setProperty('visibility', isActive ? 'visible' : 'hidden', 'important');
-      item.style.setProperty('opacity', isActive ? '1' : '0', 'important');
+      if (item === activeItem) revealActiveMedia(item);
+      else hideInactiveMedia(item);
     });
 
     activeItem.classList.add('is-active');
@@ -85,6 +112,7 @@
     window.requestAnimationFrame(() => applyGalleryState(gallery));
     window.setTimeout(() => applyGalleryState(gallery), 100);
     window.setTimeout(() => applyGalleryState(gallery), 350);
+    window.setTimeout(() => applyGalleryState(gallery), 900);
   };
 
   const initGallery = (gallery) => {
