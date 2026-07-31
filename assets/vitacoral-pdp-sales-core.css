@@ -18,28 +18,7 @@ product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials,product-in
   product-info[data-vc-has-sticky-atc="true"] .product__media-wrapper{align-self:start}
   product-info[data-vc-has-sticky-atc="true"] media-gallery{display:block}
 
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media-list{
-    display:block!important;
-    position:relative;
-    width:100%;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-  }
-
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media-item{
-    display:none!important;
-    width:100%!important;
-    max-width:100%!important;
-    margin:0!important;
-  }
-
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media-item.is-active{
-    display:block!important;
-  }
-
   product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media-item>*{
-    min-height:0;
     overflow:hidden;
     border:.1rem solid rgba(34,89,82,.08);
     border-radius:2rem;
@@ -47,37 +26,19 @@ product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials,product-in
   }
 
   product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media img{
-    width:100%;
-    height:min(62rem,68vh);
     object-fit:contain;
     padding:1.4rem;
   }
 
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media video,
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media iframe,
-  product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .product__media model-viewer{
-    width:100%;
-    height:min(62rem,68vh);
-    object-fit:contain;
-    background:#f7f8f7;
-  }
-
   product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .thumbnail-slider{
-    display:flex!important;
-    align-items:center;
-    gap:.7rem;
     margin-top:1rem;
   }
 
   product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .thumbnail-list{
-    display:flex;
     gap:.7rem;
-    width:100%;
-    padding:.15rem;
   }
 
   product-info[data-vc-has-sticky-atc="true"] .product--thumbnail_slider .thumbnail-list__item{
-    flex:0 0 8.2rem;
     width:8.2rem!important;
     max-width:8.2rem!important;
   }
