@@ -258,10 +258,16 @@
             {%- endif -%}
           </div>
 
-          <div class="vitacoral-editorial-card__content vitacoral-hero__media-copy">
-            <span class="vitacoral-chip vitacoral-chip--outline">Rutin odakli kesif</span>
-            <p class="vitacoral-body-muted">Urun ailelerini, icerikleri ve gunluk rutinleri daha sade bir akista kesfedin.</p>
-          </div>
+          {%- if section.settings.media_badge != blank or section.settings.media_text != blank -%}
+            <div class="vitacoral-editorial-card__content vitacoral-hero__media-copy">
+              {%- if section.settings.media_badge != blank -%}
+                <span class="vitacoral-chip vitacoral-chip--outline">{{ section.settings.media_badge | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.media_text != blank -%}
+                <p class="vitacoral-body-muted">{{ section.settings.media_text | escape }}</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         </div>
       </div>
     </div>
@@ -370,6 +376,18 @@
       "type": "url",
       "id": "secondary_cta_link",
       "label": "Secondary CTA link"
+    },
+    {
+      "type": "text",
+      "id": "media_badge",
+      "label": "Image card label",
+      "default": "Ürünleri keşfet"
+    },
+    {
+      "type": "textarea",
+      "id": "media_text",
+      "label": "Image card text",
+      "default": "Ürünleri, içeriklerini ve hazır rutinleri tek yerde inceleyin."
     },
     {
       "type": "image_picker",
