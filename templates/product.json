@@ -166,7 +166,7 @@
           "settings": {
             "badge": "01",
             "title": "İçerik bilgisi",
-            "body": "<p>Ürünü başlığıyla değil; içerik yapısı, ürün formu ve kullanım bilgisiyle birlikte değerlendirin.</p>",
+            "body": "<p>Ürünün içeriğini, formunu ve kullanım bilgilerini birlikte değerlendirin.</p>",
             "link_label": "",
             "link_url": ""
           }
@@ -176,7 +176,7 @@
           "settings": {
             "badge": "02",
             "title": "Kullanım kolaylığı",
-            "body": "<p>Saşe, kapsül veya tablet formunu günlük kullanım alışkanlığınıza göre daha rahat karşılaştırın.</p>",
+            "body": "<p>Saşe formunun kullanım kolaylığını deneyimleyin.</p>",
             "link_label": "",
             "link_url": ""
           }
@@ -186,7 +186,7 @@
           "settings": {
             "badge": "03",
             "title": "Belge şeffaflığı",
-            "body": "<p>Bakanlık onayı, kalite belgeleri ve hammadde sertifikaları gibi güven unsurlarını görünür tutarız.</p>",
+            "body": "<p>Belgeleri inceleyerek ürün hakkında daha fazla bilgi edinin.</p>",
             "link_label": "",
             "link_url": ""
           }
