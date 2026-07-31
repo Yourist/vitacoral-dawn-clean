@@ -1,1 +1,250 @@
-{"sections":{"main":{"type":"main-product","blocks":{"pdp_style_loader":{"type":"custom_liquid","settings":{"custom_liquid":"{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-info-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-sales-core.css' | asset_url | stylesheet_tag }}\n<script src=\"{{ 'vitacoral-pdp-gallery-controller.js' | asset_url }}\" defer=\"defer\"></script>"}},"vendor":{"type":"text","settings":{"text":"{{ product.vendor }}","text_style":"uppercase"}},"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"campaign_surface":{"type":"custom_liquid","settings":{"custom_liquid":"{% render 'vitacoral-campaign-surface', product: product, context: 'pdp' %}"}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"vitacoral_highlights":{"type":"vitacoral_highlights","settings":{"eyebrow":"Kısa ürün özeti","body":"<p>Ürün formu, içerik odağı ve kullanım bilgisini kısa bir akışta inceleyin.</p>","chip_1":"İçerik","chip_2":"Kullanım","chip_3":"Belgeler","chip_4":"Güvenli ödeme","reassurance_text":"Kargo ve ödeme bilgileri alışveriş adımlarında görüntülenir."}},"collagen_description_preview":{"type":"custom_liquid","settings":{"custom_liquid":"{% render 'vitacoral-collagen-description-preview' %}"}},"vitacoral_essentials":{"type":"vitacoral_essentials","settings":{"heading":"Ürün bilgileri","approval_no_label":"Onay No","expiry_label":"T.E.T.T.","usage_label":"Kullanım önerisi","storage_label":"Saklama koşulları","design_mode_empty_note":"Ürün bazlı bilgiler product metafield alanlarından gelir."}},"vitacoral_details":{"type":"vitacoral_details","settings":{"heading":"Detaylı bilgiler","usage_label":"Kullanım önerisi","storage_label":"Saklama koşulları","ingredients_label":"İçerik bilgisi","faq_label":"Sık sorulanlar","design_mode_empty_note":"Ürün detayları product metafield alanlarından gelir."}},"description":{"type":"description","settings":{}},"share":{"type":"share","settings":{"share_label":"Bu ürünü paylaş"}}},"block_order":["pdp_style_loader","vendor","title","price","campaign_surface","variant_picker","quantity_selector","buy_buttons","vitacoral_highlights","collagen_description_preview","vitacoral_essentials","vitacoral_details","description","share"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"large","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"thumbnail_slider","mobile_thumbnails":"hide","media_position":"left","image_zoom":"none","hide_variants":true,"enable_video_looping":false,"padding_top":24,"padding_bottom":12}},"vitacoral_product_video":{"type":"vitacoral-product-video","settings":{}},"vitacoral_pdp_world":{"type":"vitacoral-pdp-world","settings":{}},"vitacoral_routine_suggestion":{"type":"vitacoral-routine-suggestion","settings":{}},"vitacoral_product_story":{"type":"vitacoral-product-story","blocks":{"story_card_1":{"type":"story_card","settings":{"badge":"01","title":"İçerik bilgisi","body":"<p>Ürünü başlığıyla değil; içerik yapısı, ürün formu ve kullanım bilgisiyle birlikte değerlendirin.</p>","link_label":"","link_url":""}},"story_card_2":{"type":"story_card","settings":{"badge":"02","title":"Kullanım kolaylığı","body":"<p>Saşe, kapsül veya tablet formunu günlük kullanım alışkanlığınıza göre daha rahat karşılaştırın.</p>","link_label":"","link_url":""}},"story_card_3":{"type":"story_card","settings":{"badge":"03","title":"Belge şeffaflığı","body":"<p>Bakanlık onayı, kalite belgeleri ve hammadde sertifikaları gibi güven unsurlarını görünür tutarız.</p>","link_label":"","link_url":""}},"story_card_4":{"type":"story_card","settings":{"badge":"04","title":"Doğru kanallar","body":"<p>Resmi web mağazası ve yetkili satış kanalları üzerinden ürün ve alışveriş sürecini daha net takip edebilirsiniz.</p>","link_label":"","link_url":""}}},"block_order":["story_card_1","story_card_2","story_card_3","story_card_4"],"settings":{"eyebrow":"Vitacoral yaklaşımı","heading":"Ürün bilgilerini daha rahat okuyun","body":"<p>İçerik, kullanım, belge ve alışveriş bilgilerini aynı akış içinde sade şekilde inceleyin.</p>","primary_cta_label":"Kalite belgeleri","primary_cta_link":"/pages/kalite-sertifikalari","secondary_cta_label":"Hammadde belgeleri","secondary_cta_link":"/pages/hammadde-sertifikalari","ministry_cta_label":"Bakanlık onayı","ministry_cta_link":""}},"related-products":{"type":"related-products","settings":{"heading":"Birlikte düşünebilirsiniz","heading_size":"h2","products_to_show":4,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"padding_top":36,"padding_bottom":28}}},"order":["main","vitacoral_product_video","vitacoral_pdp_world","vitacoral_routine_suggestion","vitacoral_product_story","related-products"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "pdp_style_loader": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-info-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-sales-core.css' | asset_url | stylesheet_tag }}\n<script src=\"{{ 'vitacoral-pdp-gallery-controller.js' | asset_url }}\" defer=\"defer\"></script>"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "campaign_surface": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'vitacoral-campaign-surface', product: product, context: 'pdp' %}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "vitacoral_highlights": {
+          "type": "vitacoral_highlights",
+          "settings": {
+            "eyebrow": "Kısa ürün özeti",
+            "body": "<p>Ürün formu, içerik odağı ve kullanım bilgisini kısa bir akışta inceleyin.</p>",
+            "chip_1": "İçerik",
+            "chip_2": "Kullanım",
+            "chip_3": "Belgeler",
+            "chip_4": "Güvenli ödeme",
+            "reassurance_text": "Kargo ve ödeme bilgileri alışveriş adımlarında görüntülenir."
+          }
+        },
+        "collagen_description_preview": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'vitacoral-collagen-description-preview' %}"
+          }
+        },
+        "vitacoral_essentials": {
+          "type": "vitacoral_essentials",
+          "settings": {
+            "heading": "Ürün bilgileri",
+            "approval_no_label": "Onay No",
+            "expiry_label": "T.E.T.T.",
+            "usage_label": "Kullanım önerisi",
+            "storage_label": "Saklama koşulları",
+            "design_mode_empty_note": "Ürün bazlı bilgiler product metafield alanlarından gelir."
+          }
+        },
+        "vitacoral_details": {
+          "type": "vitacoral_details",
+          "settings": {
+            "heading": "Detaylı bilgiler",
+            "usage_label": "Kullanım önerisi",
+            "storage_label": "Saklama koşulları",
+            "ingredients_label": "İçerik bilgisi",
+            "faq_label": "Sık sorulanlar",
+            "design_mode_empty_note": "Ürün detayları product metafield alanlarından gelir."
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Bu ürünü paylaş"
+          }
+        }
+      },
+      "block_order": [
+        "pdp_style_loader",
+        "vendor",
+        "title",
+        "price",
+        "campaign_surface",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "vitacoral_highlights",
+        "collagen_description_preview",
+        "vitacoral_essentials",
+        "vitacoral_details",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 24,
+        "padding_bottom": 12
+      }
+    },
+    "vitacoral_product_video": {
+      "type": "vitacoral-product-video",
+      "settings": {
+        "eyebrow": "Kutu açılışı",
+        "heading": "Kutu açılışı ve kullanım",
+        "body": "<p>Ürünün kutu içeriğini, saşe formunu ve kullanım akışını kısa videoda inceleyin.</p>"
+      }
+    },
+    "vitacoral_pdp_world": {
+      "type": "vitacoral-pdp-world",
+      "settings": {
+        "eyebrow": "Ürün dünyası"
+      }
+    },
+    "vitacoral_routine_suggestion": {
+      "type": "vitacoral-routine-suggestion",
+      "settings": {}
+    },
+    "vitacoral_product_story": {
+      "type": "vitacoral-product-story",
+      "blocks": {
+        "story_card_1": {
+          "type": "story_card",
+          "settings": {
+            "badge": "01",
+            "title": "İçerik bilgisi",
+            "body": "<p>Ürünü başlığıyla değil; içerik yapısı, ürün formu ve kullanım bilgisiyle birlikte değerlendirin.</p>",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "story_card_2": {
+          "type": "story_card",
+          "settings": {
+            "badge": "02",
+            "title": "Kullanım kolaylığı",
+            "body": "<p>Saşe, kapsül veya tablet formunu günlük kullanım alışkanlığınıza göre daha rahat karşılaştırın.</p>",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "story_card_3": {
+          "type": "story_card",
+          "settings": {
+            "badge": "03",
+            "title": "Belge şeffaflığı",
+            "body": "<p>Bakanlık onayı, kalite belgeleri ve hammadde sertifikaları gibi güven unsurlarını görünür tutarız.</p>",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "story_card_4": {
+          "type": "story_card",
+          "settings": {
+            "badge": "04",
+            "title": "Doğru kanallar",
+            "body": "<p>Resmi web mağazası ve yetkili satış kanalları üzerinden ürün ve alışveriş sürecini daha net takip edebilirsiniz.</p>",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "story_card_1",
+        "story_card_2",
+        "story_card_3",
+        "story_card_4"
+      ],
+      "settings": {
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Ürün bilgilerini daha rahat okuyun",
+        "body": "<p>İçerik, kullanım, belge ve alışveriş bilgilerini aynı akış içinde sade şekilde inceleyin.</p>",
+        "primary_cta_label": "Kalite belgeleri",
+        "primary_cta_link": "/pages/kalite-sertifikalari",
+        "secondary_cta_label": "Hammadde belgeleri",
+        "secondary_cta_link": "/pages/hammadde-sertifikalari",
+        "ministry_cta_label": "Bakanlık onayı",
+        "ministry_cta_link": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Birlikte düşünebilirsiniz",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "vitacoral_product_video",
+    "vitacoral_pdp_world",
+    "vitacoral_routine_suggestion",
+    "vitacoral_product_story",
+    "related-products"
+  ]
+}
