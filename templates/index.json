@@ -190,7 +190,7 @@
           "type": "tool_item",
           "settings": {
             "index": "01",
-            "title": "Kalori hesaplayıcı",
+            "title": "Günlük Kalori İhtiyacı Hesaplama Aracı",
             "text": "Yaş, boy, kilo ve aktivite düzeyine göre yaklaşık günlük enerji ihtiyacınızı görün."
           }
         },
@@ -198,7 +198,7 @@
           "type": "tool_item",
           "settings": {
             "index": "02",
-            "title": "Ürün seçim anketi",
+            "title": "Vücut Kitle İndeksi Hesaplama Aracı",
             "text": "Kısa sorularla size yakın başlangıç noktasını netleştirin."
           }
         },
@@ -206,7 +206,7 @@
           "type": "tool_item",
           "settings": {
             "index": "03",
-            "title": "Belge merkezi",
+            "title": "Yaklaşık Kilo Aralığı Hesaplama Aracı",
             "text": "Kalite belgeleri, hammadde sertifikaları ve ürün onaylarını inceleyin."
           }
         },
@@ -214,7 +214,7 @@
           "type": "tool_item",
           "settings": {
             "index": "04",
-            "title": "Ürün karşılaştırma",
+            "title": "Günlük Su İhtiyacı hesaplama Aracı",
             "text": "Collagen, multivitamin, Kids ve Glucomannan seçeneklerini birlikte değerlendirin."
           }
         }
