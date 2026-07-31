@@ -406,7 +406,7 @@
             "author_detail": "Günlük rutin",
             "rating": "none",
             "product_label": "Rutin uyumu",
-            "accent_style": "orange"
+            "accent_style": "green"
           }
         },
         "review_item_3": {
@@ -417,7 +417,7 @@
             "author_detail": "Ürün aileleri",
             "rating": "none",
             "product_label": "Karşılaştırma kolaylığı",
-            "accent_style": "soft"
+            "accent_style": "green"
           }
         }
       },
