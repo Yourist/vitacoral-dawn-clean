@@ -1,23 +1,40 @@
 (() => {
   const desktopQuery = window.matchMedia('(min-width: 990px)');
 
-  const clearInlineState = (gallery) => {
+  const getGalleryParts = (gallery) => {
     const viewer = gallery.querySelector('[id^="Slider-Gallery-"]');
     const items = viewer ? Array.from(viewer.querySelectorAll('[data-media-id]')) : [];
     const thumbnails = gallery.querySelector('[id^="GalleryThumbnails-"]');
+    return { viewer, items, thumbnails };
+  };
+
+  const clearInlineState = (gallery) => {
+    const { viewer, items, thumbnails } = getGalleryParts(gallery);
 
     if (viewer) {
       viewer.style.removeProperty('display');
       viewer.style.removeProperty('overflow');
+      viewer.style.removeProperty('min-height');
     }
 
     items.forEach((item) => {
       item.style.removeProperty('display');
       item.style.removeProperty('width');
       item.style.removeProperty('max-width');
+      item.style.removeProperty('visibility');
+      item.style.removeProperty('opacity');
     });
 
     if (thumbnails) thumbnails.style.removeProperty('display');
+  };
+
+  const resolveInitialMediaId = (gallery, items, thumbnails) => {
+    const currentButton = thumbnails?.querySelector('button[aria-current="true"]');
+    const currentThumbnail = currentButton?.closest('[data-target]');
+    const targetId = currentThumbnail?.dataset.target;
+
+    if (targetId && items.some((item) => item.dataset.mediaId === targetId)) return targetId;
+    return items[0]?.dataset.mediaId || '';
   };
 
   const applyGalleryState = (gallery) => {
@@ -28,13 +45,12 @@
       return;
     }
 
-    const viewer = gallery.querySelector('[id^="Slider-Gallery-"]');
-    const items = viewer ? Array.from(viewer.querySelectorAll('[data-media-id]')) : [];
-    const thumbnails = gallery.querySelector('[id^="GalleryThumbnails-"]');
+    const { viewer, items, thumbnails } = getGalleryParts(gallery);
     if (!viewer || !items.length) return;
 
-    const classActive = items.find((item) => item.classList.contains('is-active'));
-    if (classActive) gallery.dataset.vcActiveMediaId = classActive.dataset.mediaId;
+    if (!gallery.dataset.vcActiveMediaId) {
+      gallery.dataset.vcActiveMediaId = resolveInitialMediaId(gallery, items, thumbnails);
+    }
 
     let activeItem = items.find((item) => item.dataset.mediaId === gallery.dataset.vcActiveMediaId);
     if (!activeItem) {
@@ -44,48 +60,46 @@
 
     viewer.style.setProperty('display', 'block', 'important');
     viewer.style.setProperty('overflow', 'hidden', 'important');
+    viewer.style.setProperty('min-height', '42rem', 'important');
 
     items.forEach((item) => {
       const isActive = item === activeItem;
       item.style.setProperty('display', isActive ? 'block' : 'none', 'important');
       item.style.setProperty('width', '100%', 'important');
       item.style.setProperty('max-width', '100%', 'important');
+      item.style.setProperty('visibility', isActive ? 'visible' : 'hidden', 'important');
+      item.style.setProperty('opacity', isActive ? '1' : '0', 'important');
     });
 
-    if (thumbnails) thumbnails.style.setProperty('display', 'flex', 'important');
+    activeItem.classList.add('is-active');
+
+    if (thumbnails) {
+      thumbnails.style.setProperty('display', 'flex', 'important');
+      thumbnails.querySelectorAll('button').forEach((button) => button.removeAttribute('aria-current'));
+      const activeThumbnail = thumbnails.querySelector(`[data-target="${gallery.dataset.vcActiveMediaId}"] button`);
+      if (activeThumbnail) activeThumbnail.setAttribute('aria-current', 'true');
+    }
   };
 
   const scheduleApply = (gallery) => {
     window.requestAnimationFrame(() => applyGalleryState(gallery));
-    window.setTimeout(() => applyGalleryState(gallery), 80);
-    window.setTimeout(() => applyGalleryState(gallery), 240);
+    window.setTimeout(() => applyGalleryState(gallery), 100);
+    window.setTimeout(() => applyGalleryState(gallery), 350);
   };
 
   const initGallery = (gallery) => {
     if (!gallery || gallery.dataset.vcGalleryControllerReady === 'true') return;
 
-    const viewer = gallery.querySelector('[id^="Slider-Gallery-"]');
-    if (!viewer) return;
+    const { viewer, items, thumbnails } = getGalleryParts(gallery);
+    if (!viewer || !items.length) return;
 
-    const items = Array.from(viewer.querySelectorAll('[data-media-id]'));
-    const initialActive = items.find((item) => item.classList.contains('is-active')) || items[0];
-    if (initialActive) gallery.dataset.vcActiveMediaId = initialActive.dataset.mediaId;
+    gallery.dataset.vcActiveMediaId = resolveInitialMediaId(gallery, items, thumbnails);
 
     gallery.addEventListener('click', (event) => {
       const thumbnail = event.target.closest('[data-target]');
       if (!thumbnail) return;
       gallery.dataset.vcActiveMediaId = thumbnail.dataset.target;
       scheduleApply(gallery);
-    });
-
-    const observer = new MutationObserver(() => {
-      const activeItem = items.find((item) => item.classList.contains('is-active'));
-      if (activeItem) gallery.dataset.vcActiveMediaId = activeItem.dataset.mediaId;
-      scheduleApply(gallery);
-    });
-
-    items.forEach((item) => {
-      observer.observe(item, { attributes: true, attributeFilter: ['class'] });
     });
 
     gallery.dataset.vcGalleryControllerReady = 'true';
@@ -102,6 +116,7 @@
     initAll(document);
   }
 
+  window.addEventListener('load', () => initAll(document), { once: true });
   document.addEventListener('shopify:section:load', (event) => initAll(event.target));
 
   const handleViewportChange = () => {
