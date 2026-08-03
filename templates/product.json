@@ -72,7 +72,7 @@
         "collagen_description_preview": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'vitacoral-collagen-description-preview' %}"
+            "custom_liquid": "{% render 'vitacoral-product-description-editable' %}"
           }
         },
         "vitacoral_essentials": {
