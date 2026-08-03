@@ -38,7 +38,7 @@
           "type": "text",
           "settings": {
             "heading": "Yardım ve Erişim",
-            "subtext": "<p><a href=\"/pages/eczanelerde-vitacoral\">Eczanelerde Vitacoral</a><br><a href=\"/pages/iletisim\">İletişim</a><br><a href=\"/pages/sikca-sorulan-sorular\">Sıkça Sorulan Sorular</a><br><a href=\"/pages/hukumler-ve-kosullar\">Hükümler ve Koşullar</a></p>"
+            "subtext": "<p><a href=\"/pages/eczanelerde-vitacoral\">Eczanelerde Vitacoral</a><br/><a href=\"/pages/bize-ulas\" title=\"Vitacoral ile İletişime Geçin\">İletişim</a><br/><a href=\"/pages/sikca-sorulan-sorular\">Sıkça Sorulan Sorular</a><br/><a href=\"/pages/hukumler-ve-kosullar\">Hükümler ve Koşullar</a></p>"
           }
         }
       },
