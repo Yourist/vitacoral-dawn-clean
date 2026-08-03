@@ -69,21 +69,23 @@ product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials,product-in
     scroll-snap-stop:always;
   }
 
-  product-info[data-vc-has-sticky-atc="true"] .product__media-item>*{
+  product-info[data-vc-has-sticky-atc="true"] .product__media-item>.product-media-container{
     position:relative!important;
+    display:block!important;
     width:100%!important;
     height:auto!important;
     min-height:0!important;
     aspect-ratio:1 / 1!important;
+    margin:0!important;
     padding:0!important;
-    overflow:hidden;
-    border:.1rem solid rgba(34,89,82,.09);
-    border-radius:1.8rem;
-    background:linear-gradient(145deg,#fbfcfb 0%,#f1f6f4 100%);
+    padding-bottom:0!important;
+    overflow:hidden!important;
+    border:.1rem solid rgba(34,89,82,.09)!important;
+    border-radius:1.8rem!important;
+    background:linear-gradient(145deg,#fbfcfb 0%,#f1f6f4 100%)!important;
     box-shadow:0 1.2rem 3rem rgba(23,63,58,.07);
   }
 
-  product-info[data-vc-has-sticky-atc="true"] .product-media-container,
   product-info[data-vc-has-sticky-atc="true"] .product__modal-opener,
   product-info[data-vc-has-sticky-atc="true"] .product__media,
   product-info[data-vc-has-sticky-atc="true"] .media,
