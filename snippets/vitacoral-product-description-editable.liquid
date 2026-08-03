@@ -1,0 +1,75 @@
+{%- comment -%}
+  Metafield-editable product description experience.
+  Falls back to the existing product-specific preview when no custom title is set.
+
+  Expected product metafields (namespace: custom):
+  pdp_desc_eyebrow, pdp_desc_title, pdp_desc_lead,
+  pdp_desc_feature_1..4,
+  pdp_desc_accordion_1_title..4_title,
+  pdp_desc_accordion_1_body..4_body,
+  pdp_desc_note.
+{%- endcomment -%}
+
+{%- liquid
+  assign custom_title = product.metafields.custom.pdp_desc_title.value
+  assign has_custom_content = false
+  if custom_title != blank
+    assign has_custom_content = true
+  endif
+-%}
+
+{%- if has_custom_content -%}
+  {{ 'vitacoral-collagen-pdp-preview.css' | asset_url | stylesheet_tag }}
+
+  <style>
+    #ProductInfo-{{ section.id }} .product__description.quick-add-hidden { display: none !important; }
+  </style>
+
+  <div class="vc-desc vc-desc--{{ product.handle | handle }}" data-vc-product-description-preview>
+    {%- if product.metafields.custom.pdp_desc_eyebrow != blank -%}
+      <p class="vc-desc__eyebrow">{{ product.metafields.custom.pdp_desc_eyebrow.value | escape }}</p>
+    {%- endif -%}
+
+    <h3 class="vc-desc__title">{{ custom_title | escape }}</h3>
+
+    {%- if product.metafields.custom.pdp_desc_lead != blank -%}
+      <div class="vc-desc__lead rte">{{ product.metafields.custom.pdp_desc_lead | metafield_tag }}</div>
+    {%- endif -%}
+
+    {%- liquid
+      assign feature_1 = product.metafields.custom.pdp_desc_feature_1.value
+      assign feature_2 = product.metafields.custom.pdp_desc_feature_2.value
+      assign feature_3 = product.metafields.custom.pdp_desc_feature_3.value
+      assign feature_4 = product.metafields.custom.pdp_desc_feature_4.value
+    -%}
+    {%- if feature_1 != blank or feature_2 != blank or feature_3 != blank or feature_4 != blank -%}
+      <div class="vc-desc__features" role="list" aria-label="Öne çıkan özellikler">
+        {%- if feature_1 != blank -%}<span role="listitem">{{ feature_1 | escape }}</span>{%- endif -%}
+        {%- if feature_2 != blank -%}<span role="listitem">{{ feature_2 | escape }}</span>{%- endif -%}
+        {%- if feature_3 != blank -%}<span role="listitem">{{ feature_3 | escape }}</span>{%- endif -%}
+        {%- if feature_4 != blank -%}<span role="listitem">{{ feature_4 | escape }}</span>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- for index in (1..4) -%}
+      {%- liquid
+        assign title_key = 'pdp_desc_accordion_' | append: index | append: '_title'
+        assign body_key = 'pdp_desc_accordion_' | append: index | append: '_body'
+        assign item_title = product.metafields.custom[title_key].value
+        assign item_body = product.metafields.custom[body_key]
+      -%}
+      {%- if item_title != blank and item_body != blank -%}
+        <details class="vc-desc__item"{% if index == 1 %} open{% endif %}>
+          <summary>{{ item_title | escape }}</summary>
+          <div class="vc-desc__content rte">{{ item_body | metafield_tag }}</div>
+        </details>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if product.metafields.custom.pdp_desc_note != blank -%}
+      <div class="vc-desc__note rte">{{ product.metafields.custom.pdp_desc_note | metafield_tag }}</div>
+    {%- endif -%}
+  </div>
+{%- else -%}
+  {% render 'vitacoral-collagen-description-preview' %}
+{%- endif -%}
