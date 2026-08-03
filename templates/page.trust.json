@@ -14,23 +14,18 @@
       "settings": {
         "eyebrow": "Vitacoral hakkında",
         "title": "Günlük rutinlere eşlik eden sade ve güvenilir bir marka",
-        "body": "<p>Vitacoral, gıda takviyesi kategorisinde ürünlerini daha anlaşılır, erişilebilir ve güven veren bir deneyimle sunmayı hedefleyen bir markadır. Web sitesi, pazaryerleri ve eczane kanalı üzerinden müşterileriyle buluşur.</p>"
+        "body": "<p><br/>Vitacoral olarak, gıda takviyesi seçimlerini daha anlaşılır ve kolay bir deneyime dönüştürmeyi amaçlıyoruz. Ürünlerimizi web sitemiz, pazaryerleri ve eczaneler aracılığıyla kullanıcılarla buluşturuyoruz.<br/><br/></p>"
       }
     },
     "trust_grid": {
       "type": "vitacoral-trust-grid",
-      "settings": {
-        "eyebrow": "Vitacoral yaklaşımı",
-        "heading": "Güveni sade bir deneyimle kuruyoruz",
-        "body": "<p>Ürün keşfinden içerik anlatımına kadar amacımız; abartısız, anlaşılır ve kullanıcıyı yormayan bir marka deneyimi sunmak.</p>"
-      },
       "blocks": {
         "transparency": {
           "type": "trust_card",
           "settings": {
             "label": "Şeffaflık",
-            "title": "Anlaşılır bilgi akışı",
-            "text": "Ürün aileleri, belge sayfaları ve marka içerikleri daha net bir yapıda sunularak kullanıcıların ihtiyaç duyduğu bilgilere kolayca ulaşması hedeflenir.",
+            "title": "Anlaşılır bilgi",
+            "text": "Ürün ailelerini, belge sayfalarını ve marka içeriklerini daha düzenli ve anlaşılır bir yapıda sunuyor; ihtiyaç duyduğunuz bilgilere kolayca ulaşabilmenizi önemsiyoruz.",
             "accent_style": "green"
           }
         },
@@ -38,8 +33,8 @@
           "type": "trust_card",
           "settings": {
             "label": "Erişilebilirlik",
-            "title": "Farklı satış kanallarında bulunabilirlik",
-            "text": "Vitacoral ürünleri web sitesi, seçili pazaryerleri ve eczane kanalı gibi farklı temas noktaları üzerinden müşterilere ulaşır.",
+            "title": "Farklı kanallardan kolay erişim",
+            "text": "Vitacoral ürünleri web sitesi, seçili pazaryerleri ve eczane kanalı gibi farklı temas noktaları üzerinden müşterilerimizle buluşturuyoruz.",
             "accent_style": "orange"
           }
         },
@@ -47,8 +42,8 @@
           "type": "trust_card",
           "settings": {
             "label": "Sadelik",
-            "title": "Rutin odaklı keşif",
-            "text": "Site deneyimi, kullanıcıların ürün ailelerini ve içerikleri karmaşık olmayan bir akışla keşfetmesine yardımcı olacak şekilde tasarlanır.",
+            "title": "Günlük rutininize uygun keşif",
+            "text": "Ürün ailelerini ve içerikleri karmaşık olmayan, anlaşılır bir akış içinde keşfedebilmeniz için sade bir site deneyimi sunuyoruz.",
             "accent_style": "soft"
           }
         },
@@ -56,8 +51,8 @@
           "type": "trust_card",
           "settings": {
             "label": "Süreklilik",
-            "title": "Marka hafızasını koruyan yenilenme",
-            "text": "Vitacoral, mevcut marka kimliğini korurken dijital deneyimini daha modern, okunabilir ve güven veren bir yapıya taşır.",
+            "title": "Kimliğimizi koruyarak yenileniyoruz",
+            "text": "Mevcut marka kimliğimizi korurken dijital deneyimimizi daha modern, okunabilir ve kullanıcı dostu bir yapıya taşıyoruz.",
             "accent_style": "green"
           }
         }
@@ -67,13 +62,18 @@
         "accessibility",
         "simplicity",
         "continuity"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Vitacoral yaklaşımı",
+        "heading": "Güveni sade bir deneyimle kuruyoruz",
+        "body": "<p>Ürün keşfinden içerik anlatımına kadar amacımız; abartısız, anlaşılır ve kullanıcıyı yormayan bir marka deneyimi sunmak.</p>"
+      }
     },
     "content": {
       "type": "vitacoral-page-richtext",
       "settings": {
         "heading": "Vitacoral’ın yaklaşımı",
-        "body": "<p>Vitacoral için iyi bir marka deneyimi yalnızca ürün listelemekten ibaret değildir. Kullanıcının aradığı bilgiye kolay ulaşması, ürün ailelerini rahatça ayırt edebilmesi ve satın alma sürecinde kendini güvende hissetmesi önemlidir.</p><p>Bu nedenle Vitacoral; marka hikayesini, belge ve kaynak sayfalarını, ürün ailelerini ve iletişim noktalarını daha düzenli bir deneyim içinde sunmaya odaklanır.</p><p>Amacımız, kullanıcıların Vitacoral’ı keşfederken sade, anlaşılır ve güven veren bir yolculuk yaşamasıdır.</p>"
+        "body": "<p>Bizim için iyi bir marka deneyimi yalnızca ürünleri listelemekten ibaret değildir. Aradığınız bilgiye kolayca ulaşabilmeniz, ürün ailelerini rahatça ayırt edebilmeniz ve alışveriş sürecinde kendinizi güvende hissetmeniz önemlidir.</p><p>Bu nedenle marka hikâyemizi, belge ve kaynak sayfalarımızı, ürün ailelerimizi ve iletişim kanallarımızı daha düzenli ve anlaşılır bir yapı içinde sunuyoruz. Amacımız, Vitacoral’ı keşfederken sade, kolay ve güven veren bir deneyim yaşamanızdır.</p>"
       }
     }
   },
