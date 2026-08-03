@@ -337,8 +337,8 @@
         "trust_item_1": {
           "type": "trust_item",
           "settings": {
-            "title": "Kararı kolaylaştıran açıklık",
-            "text": "İçerik, kullanım önerisi ve uyarı bilgilerini sade bir akışta sunarak ürünleri daha rahat değerlendirmenize yardımcı oluruz.",
+            "title": "Açık bilgi, daha kolay seçim",
+            "text": "İçerik, kullanım ve uyarı bilgilerini anlaşılır bir bütün halinde sunarak ürünleri daha kolay değerlendirmenize yardımcı oluruz.",
             "short_label": "01",
             "accent_style": "orange"
           }
@@ -346,8 +346,8 @@
         "trust_item_2": {
           "type": "trust_item",
           "settings": {
-            "title": "Rutin odaklı seçim",
-            "text": "Ürün ailelerini yalnızca kategori olarak değil, günlük alışkanlıklarınızla birlikte düşünebileceğiniz bir rehber yapısıyla sunarız.",
+            "title": "Günlük rutininize uygun seçim",
+            "text": "Ürün ailelerini yalnızca kategorilere göre değil, günlük alışkanlıklarınızla birlikte değerlendirebileceğiniz anlaşılır bir yapı içinde sunarız.",
             "short_label": "02",
             "accent_style": "orange"
           }
@@ -355,8 +355,8 @@
         "trust_item_3": {
           "type": "trust_item",
           "settings": {
-            "title": "Doğru bilgiye yakın duruş",
-            "text": "Ürün detaylarında etiket bilgilerini, kullanım notlarını ve dikkat edilmesi gereken noktaları görünür kılmaya önem veririz.",
+            "title": "Bilgiye açık erişim",
+            "text": "Ürün detaylarında etiket bilgilerini, kullanım notlarını ve dikkat edilmesi gereken noktaları kolayca görebilmenize önem veririz.",
             "short_label": "03",
             "accent_style": "orange"
           }
