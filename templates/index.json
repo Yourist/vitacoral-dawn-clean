@@ -337,8 +337,8 @@
         "trust_item_1": {
           "type": "trust_item",
           "settings": {
-            "title": "Açık bilgi, daha kolay seçim",
-            "text": "İçerik, kullanım ve uyarı bilgilerini anlaşılır bir bütün halinde sunarak ürünleri daha kolay değerlendirmenize yardımcı oluruz.",
+            "title": "Kararı kolaylaştıran açıklık",
+            "text": "İçerik, kullanım önerisi ve uyarı bilgilerini sade bir akışta sunarak ürünleri daha rahat değerlendirmenize yardımcı oluruz.",
             "short_label": "01",
             "accent_style": "orange"
           }
@@ -346,8 +346,8 @@
         "trust_item_2": {
           "type": "trust_item",
           "settings": {
-            "title": "Günlük rutininize uygun seçim",
-            "text": "Ürün ailelerini yalnızca kategorilere göre değil, günlük alışkanlıklarınızla birlikte değerlendirebileceğiniz anlaşılır bir yapı içinde sunarız.",
+            "title": "Rutin odaklı seçim",
+            "text": "Ürün ailelerini yalnızca kategori olarak değil, günlük alışkanlıklarınızla birlikte düşünebileceğiniz bir rehber yapısıyla sunarız.",
             "short_label": "02",
             "accent_style": "orange"
           }
@@ -355,8 +355,8 @@
         "trust_item_3": {
           "type": "trust_item",
           "settings": {
-            "title": "Bilgiye açık erişim",
-            "text": "Ürün detaylarında etiket bilgilerini, kullanım notlarını ve dikkat edilmesi gereken noktaları kolayca görebilmenize önem veririz.",
+            "title": "Doğru bilgiye yakın duruş",
+            "text": "Ürün detaylarında etiket bilgilerini, kullanım notlarını ve dikkat edilmesi gereken noktaları görünür kılmaya önem veririz.",
             "short_label": "03",
             "accent_style": "orange"
           }
@@ -364,8 +364,8 @@
         "trust_item_4": {
           "type": "trust_item",
           "settings": {
-            "title": "Kolay ve güvenli alışveriş",
-            "text": "Ürünlere sade, anlaşılır ve güven veren bir alışveriş süreciyle ulaşabilmenizi önemseriz.",
+            "title": "Anlaşılır alışveriş deneyimi",
+            "text": "Ürüne doğru kanallardan, sade ve güven veren bir alışveriş akışıyla ulaşmanız bizim için önemlidir.",
             "short_label": "04",
             "accent_style": "orange"
           }
@@ -379,8 +379,8 @@
       ],
       "settings": {
         "eyebrow": "Vitacoral yaklaşımı",
-        "heading": "Takviye seçimini sadeleştiren, karar sürecinde yanınızda olan bir marka",
-        "body": "<p>Takviye seçmek bazen karmaşık gelebilir. Vitacoral olarak amacımız size daha fazla ürün göstermek değil; içerikleri, kullanım bilgilerini ve ürün ailelerini daha anlaşılır hale getirerek doğru ürünü seçmenizi kolaylaştırmak.<br/></p>",
+        "heading": "Takviye seçimini sadeleştiren, yanında duran bir marka",
+        "body": "<p>Takviye seçmek bazen karışık gelebilir. Vitacoral’de amacımız size daha çok ürün göstermek değil; içerikleri, kullanım bilgilerini ve ürün ailelerini daha anlaşılır hale getirerek kararınızı kolaylaştırmak.</p>",
         "cta_label": "Vitacoral’i tanıyın",
         "cta_link": "/pages/biz-kimiz"
       }
@@ -447,7 +447,7 @@
             "custom_description": "Kolajen ürünlerini günlük bakım yaklaşımı içinde konumlandırırken dikkat edilebilecek temel noktalar.",
             "cta_label": "Yazıyı oku",
             "cta_link": "",
-            "accent_style": "orange"
+            "accent_style": "green"
           }
         },
         "education_item_2": {
