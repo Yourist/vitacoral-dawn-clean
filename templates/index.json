@@ -364,8 +364,8 @@
         "trust_item_4": {
           "type": "trust_item",
           "settings": {
-            "title": "Anlaşılır alışveriş deneyimi",
-            "text": "Ürüne doğru kanallardan, sade ve güven veren bir alışveriş akışıyla ulaşmanız bizim için önemlidir.",
+            "title": "Kolay ve güvenli alışveriş",
+            "text": "Ürünlere sade, anlaşılır ve güven veren bir alışveriş süreciyle ulaşabilmenizi önemseriz.",
             "short_label": "04",
             "accent_style": "orange"
           }
