@@ -24,48 +24,55 @@
           display: grid;
           place-items: center;
           width: 100%;
-          min-height: min(62rem, 68vh);
+          height: clamp(46rem, 56vw, 59rem);
           overflow: hidden;
           border: .1rem solid rgba(34, 89, 82, .08);
           border-radius: 2rem;
           background: #f7f8f7;
         }
 
-        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage > * {
-          width: 100%;
-          max-width: 100%;
-          margin: 0;
-          border: 0;
-          border-radius: 0;
-          background: transparent;
-        }
-
-        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .product__media,
-        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .media,
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage > *,
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .product-media-container,
         product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage modal-opener,
         product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage deferred-media,
-        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage product-model {
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage product-model,
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .product__media,
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .media {
           display: block !important;
           width: 100% !important;
-          min-height: min(62rem, 68vh);
+          height: 100% !important;
+          min-height: 0 !important;
+          max-height: 100% !important;
+          margin: 0 !important;
+          padding-bottom: 0 !important;
+          border: 0 !important;
+          border-radius: 0 !important;
           opacity: 1 !important;
           visibility: visible !important;
           transform: none !important;
+          background: transparent !important;
         }
 
         product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage img,
         product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage video,
         product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage iframe,
-        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage model-viewer {
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage model-viewer,
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .deferred-media__poster {
           display: block !important;
           width: 100% !important;
-          height: min(62rem, 68vh) !important;
+          height: 100% !important;
+          max-height: 100% !important;
           object-fit: contain !important;
-          padding: 1.4rem;
+          padding: 1.2rem !important;
           opacity: 1 !important;
           visibility: visible !important;
           transform: none !important;
-          background: #f7f8f7;
+          background: #f7f8f7 !important;
+        }
+
+        product-info[data-vc-has-sticky-atc="true"] .vc-desktop-product-gallery__stage .deferred-media__poster img {
+          position: static !important;
+          object-fit: contain !important;
         }
 
         product-info[data-vc-has-sticky-atc="true"] media-gallery[data-vc-desktop-gallery-ready="true"] .thumbnail-slider {
@@ -87,18 +94,26 @@
     node.removeAttribute('id');
     node.removeAttribute('aria-describedby');
     node.removeAttribute('aria-controls');
+
     node.querySelectorAll('[id], [aria-describedby], [aria-controls]').forEach((element) => {
       element.removeAttribute('id');
       element.removeAttribute('aria-describedby');
       element.removeAttribute('aria-controls');
       element.classList.remove('scroll-trigger', 'animate--fade-in', 'scroll-trigger--offscreen');
     });
+
+    const deferred = node.querySelector('deferred-media, product-model');
+    if (deferred) {
+      node.querySelector('modal-opener')?.remove();
+    }
+
     node.querySelectorAll('img').forEach((image) => {
       image.loading = 'eager';
       image.style.opacity = '1';
       image.style.visibility = 'visible';
       image.style.transform = 'none';
     });
+
     return node;
   };
 
