@@ -535,5 +535,12 @@
       "expanded": "Hediye kartı alıcısı formu genişletildi",
       "collapsed": "Hediye kartı alıcısı formu daraltıldı"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "optional_address2_label": "İlçe / Mahalle / Apartman ve daire bilgisi"
+      }
+    }
   }
 }
