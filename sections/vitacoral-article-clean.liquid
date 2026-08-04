@@ -1,0 +1,60 @@
+{{ 'vitacoral-blog-system.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'vitacoral-blog-system.js' | asset_url }}" defer="defer"></script>
+
+<article class="vc-clean-article">
+  <div class="vc-clean-article__inner">
+    <header class="vc-clean-article__header">
+      <p class="vc-clean-article__eyebrow">Vitacoral rehberi</p>
+      <h1 class="vc-clean-article__title">{{ article.title | escape }}</h1>
+      <div class="vc-clean-article__meta">
+        <span>{{ article.published_at | time_tag: format: 'date' }}</span>
+        {%- if article.author != blank -%}<span>{{ article.author }}</span>{%- endif -%}
+      </div>
+    </header>
+  </div>
+
+  {%- if article.image -%}
+    <div class="vc-clean-article__hero">
+      {{ article.image | image_url: width: 1800 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '640,900,1200,1500,1800', sizes: '(min-width: 1040px) 1040px, 100vw', alt: article.image.alt | default: article.title }}
+    </div>
+  {%- endif -%}
+
+  <div class="vc-clean-article__content rte" data-vc-article-content>
+    {{ article.content }}
+  </div>
+
+  {%- assign related_count = 0 -%}
+  <section class="vc-article-related" aria-labelledby="VcRelatedHeading">
+    <h2 class="vc-article-related__heading" id="VcRelatedHeading">Bunlar da ilginizi çekebilir</h2>
+    <div class="vc-article-related__grid">
+      {%- for related_article in blog.articles -%}
+        {%- unless related_article.id == article.id -%}
+          {%- if related_count < 3 -%}
+            <article class="vc-article-related__card">
+              <div class="vc-blog-card__meta">{{ related_article.published_at | time_tag: format: 'date' }}</div>
+              <h3><a href="{{ related_article.url }}">{{ related_article.title | escape }}</a></h3>
+            </article>
+            {%- assign related_count = related_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <div class="vc-clean-article__back">
+    <a href="{{ blog.url }}">← Sağlıklı yaşam rehberine dön</a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+
+{% schema %}
+{
+  "name": "Vitacoral clean article",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
+{% endschema %}
