@@ -163,6 +163,26 @@
       "type": "vitacoral-routine-suggestion",
       "settings": {}
     },
+    "1785842534eb9f2a4d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_jQA3mF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_jQA3mF"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "vitacoral_product_story": {
       "type": "vitacoral-product-story",
       "blocks": {
@@ -242,26 +262,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "1785842534eb9f2a4d": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_jQA3mF": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "real_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_jQA3mF"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -269,8 +269,8 @@
     "vitacoral_product_video",
     "vitacoral_pdp_world",
     "vitacoral_routine_suggestion",
+    "1785842534eb9f2a4d",
     "vitacoral_product_story",
-    "related-products",
-    "1785842534eb9f2a4d"
+    "related-products"
   ]
 }
