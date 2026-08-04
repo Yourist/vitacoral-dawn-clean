@@ -1,4 +1,5 @@
 {{ 'vitacoral-product-story-polish.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-audit-fixes.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-pdp-info-accordions.js' | asset_url | script_tag }}
 
 <section class="vitacoral-product-story vitacoral-section" id="VitacoralProductStory-{{ section.id }}">
@@ -22,42 +23,13 @@
         {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank or section.settings.ministry_cta_label != blank -%}
           <div class="vitacoral-product-story__actions">
             {%- if section.settings.primary_cta_label != blank -%}
-              <a
-                {% if section.settings.primary_cta_link == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ section.settings.primary_cta_link }}"
-                {% endif %}
-                class="vitacoral-button"
-              >
-                {{ section.settings.primary_cta_label | escape }}
-              </a>
+              <a {% if section.settings.primary_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.primary_cta_link }}"{% endif %} class="vitacoral-button">{{ section.settings.primary_cta_label | escape }}</a>
             {%- endif -%}
-
             {%- if section.settings.secondary_cta_label != blank -%}
-              <a
-                {% if section.settings.secondary_cta_link == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ section.settings.secondary_cta_link }}"
-                {% endif %}
-                class="vitacoral-button vitacoral-button--secondary"
-              >
-                {{ section.settings.secondary_cta_label | escape }}
-              </a>
+              <a {% if section.settings.secondary_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.secondary_cta_link }}"{% endif %} class="vitacoral-button vitacoral-button--secondary">{{ section.settings.secondary_cta_label | escape }}</a>
             {%- endif -%}
-
             {%- if section.settings.ministry_cta_label != blank -%}
-              <a
-                {% if section.settings.ministry_cta_link == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ section.settings.ministry_cta_link }}"
-                {% endif %}
-                class="vitacoral-button vitacoral-button--secondary"
-              >
-                {{ section.settings.ministry_cta_label | escape }}
-              </a>
+              <a {% if section.settings.ministry_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.ministry_cta_link }}"{% endif %} class="vitacoral-button vitacoral-button--secondary">{{ section.settings.ministry_cta_label | escape }}</a>
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -68,34 +40,15 @@
           {%- for block in section.blocks -%}
             <details class="vitacoral-product-story__item" role="listitem" {{ block.shopify_attributes }}{% if forloop.first %} open{% endif %}>
               <summary class="vitacoral-product-story__summary">
-                {%- if block.settings.badge != blank -%}
-                  <span class="vitacoral-product-story__badge">{{ block.settings.badge | escape }}</span>
-                {%- endif -%}
-
-                {%- if block.settings.title != blank -%}
-                  <span class="vitacoral-product-story__title">{{ block.settings.title | escape }}</span>
-                {%- endif -%}
-
+                {%- if block.settings.badge != blank -%}<span class="vitacoral-product-story__badge">{{ block.settings.badge | escape }}</span>{%- endif -%}
+                {%- if block.settings.title != blank -%}<span class="vitacoral-product-story__title">{{ block.settings.title | escape }}</span>{%- endif -%}
                 <span class="vitacoral-product-story__icon" aria-hidden="true"></span>
               </summary>
-
               {%- if block.settings.body != blank or block.settings.link_label != blank -%}
                 <div class="vitacoral-body vitacoral-product-story__content rte">
-                  {%- if block.settings.body != blank -%}
-                    {{ block.settings.body }}
-                  {%- endif -%}
-
+                  {%- if block.settings.body != blank -%}{{ block.settings.body }}{%- endif -%}
                   {%- if block.settings.link_label != blank -%}
-                    <a
-                      {% if block.settings.link_url == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.link_url }}"
-                      {% endif %}
-                      class="vitacoral-product-story__link"
-                    >
-                      {{ block.settings.link_label | escape }}
-                    </a>
+                    <a {% if block.settings.link_url == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link_url }}"{% endif %} class="vitacoral-product-story__link">{{ block.settings.link_label | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}
@@ -112,134 +65,33 @@
   "name": "Vitacoral product story",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
+  "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "VITACORAL YAKLAŞIMI"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Ürün bilgilerini daha rahat okuyun"
-    },
-    {
-      "type": "richtext",
-      "id": "body",
-      "label": "Body",
-      "default": "<p>İçerik, kullanım, belge ve alışveriş bilgilerini aynı akış içinde sade şekilde inceleyin.</p>"
-    },
-    {
-      "type": "text",
-      "id": "primary_cta_label",
-      "label": "Primary CTA label",
-      "default": "Kalite belgeleri"
-    },
-    {
-      "type": "url",
-      "id": "primary_cta_link",
-      "label": "Primary CTA link"
-    },
-    {
-      "type": "text",
-      "id": "secondary_cta_label",
-      "label": "Secondary CTA label",
-      "default": "Hammadde belgeleri"
-    },
-    {
-      "type": "url",
-      "id": "secondary_cta_link",
-      "label": "Secondary CTA link"
-    },
-    {
-      "type": "text",
-      "id": "ministry_cta_label",
-      "label": "Ministry approval CTA label",
-      "default": "Bakanlık onayı"
-    },
-    {
-      "type": "url",
-      "id": "ministry_cta_link",
-      "label": "Ministry approval CTA link"
-    }
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"VITACORAL YAKLAŞIMI"},
+    {"type":"inline_richtext","id":"heading","label":"Heading","default":"Ürün bilgilerini daha rahat okuyun"},
+    {"type":"richtext","id":"body","label":"Body","default":"<p>İçerik, kullanım, belge ve alışveriş bilgilerini aynı akış içinde sade şekilde inceleyin.</p>"},
+    {"type":"text","id":"primary_cta_label","label":"Primary CTA label","default":"Kalite belgeleri"},
+    {"type":"url","id":"primary_cta_link","label":"Primary CTA link"},
+    {"type":"text","id":"secondary_cta_label","label":"Secondary CTA label","default":"Hammadde belgeleri"},
+    {"type":"url","id":"secondary_cta_link","label":"Secondary CTA link"},
+    {"type":"text","id":"ministry_cta_label","label":"Ministry approval CTA label","default":"Bakanlık onayı"},
+    {"type":"url","id":"ministry_cta_link","label":"Ministry approval CTA link"}
   ],
   "blocks": [
-    {
-      "type": "story_card",
-      "name": "Story card",
-      "settings": [
-        {
-          "type": "text",
-          "id": "badge",
-          "label": "Badge"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "richtext",
-          "id": "body",
-          "label": "Body"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "Link label"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "Link URL"
-        }
-      ]
-    }
+    {"type":"story_card","name":"Story card","settings":[
+      {"type":"text","id":"badge","label":"Badge"},
+      {"type":"text","id":"title","label":"Title"},
+      {"type":"richtext","id":"body","label":"Body"},
+      {"type":"text","id":"link_label","label":"Link label"},
+      {"type":"url","id":"link_url","label":"Link URL"}
+    ]}
   ],
   "max_blocks": 4,
-  "presets": [
-    {
-      "name": "Vitacoral product story",
-      "blocks": [
-        {
-          "type": "story_card",
-          "settings": {
-            "badge": "01",
-            "title": "İçerik bilgisi",
-            "body": "<p>Ürünü başlığıyla değil; içerik yapısı, ürün formu ve kullanım bilgisiyle birlikte değerlendirin.</p>"
-          }
-        },
-        {
-          "type": "story_card",
-          "settings": {
-            "badge": "02",
-            "title": "Kullanım kolaylığı",
-            "body": "<p>Saşe, kapsül veya tablet formunu günlük kullanım alışkanlığınıza göre daha rahat karşılaştırın.</p>"
-          }
-        },
-        {
-          "type": "story_card",
-          "settings": {
-            "badge": "03",
-            "title": "Belge şeffaflığı",
-            "body": "<p>Bakanlık onayı, kalite belgeleri ve hammadde sertifikaları gibi güven unsurlarını görünür tutarız.</p>"
-          }
-        },
-        {
-          "type": "story_card",
-          "settings": {
-            "badge": "04",
-            "title": "Doğru kanallar",
-            "body": "<p>Resmi web mağazası ve yetkili satış kanalları üzerinden ürün ve alışveriş sürecini daha net takip edebilirsiniz.</p>"
-          }
-        }
-      ]
-    }
-  ]
+  "presets": [{"name":"Vitacoral product story","blocks":[
+    {"type":"story_card","settings":{"badge":"01","title":"İçerik bilgisi","body":"<p>Ürünü başlığıyla değil; içerik yapısı, ürün formu ve kullanım bilgisiyle birlikte değerlendirin.</p>"}},
+    {"type":"story_card","settings":{"badge":"02","title":"Kullanım kolaylığı","body":"<p>Saşe, kapsül veya tablet formunu günlük kullanım alışkanlığınıza göre daha rahat karşılaştırın.</p>"}},
+    {"type":"story_card","settings":{"badge":"03","title":"Belge şeffaflığı","body":"<p>Bakanlık onayı, kalite belgeleri ve hammadde sertifikaları gibi güven unsurlarını görünür tutarız.</p>"}},
+    {"type":"story_card","settings":{"badge":"04","title":"Doğru kanallar","body":"<p>Resmi web mağazası ve yetkili satış kanalları üzerinden ürün ve alışveriş sürecini daha net takip edebilirsiniz.</p>"}}
+  ]}]
 }
 {% endschema %}
