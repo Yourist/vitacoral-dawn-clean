@@ -10,7 +10,13 @@
         <p class="vc-blog-index__lead">Günlük yaşam, beslenme, vitaminler ve iyi yaşam rutinleri hakkında sade ve güvenilir içerikler.</p>
 
         <form class="vc-blog-search" role="search">
-          <input class="vc-blog-search__input" type="search" placeholder="Bloglarda ara" aria-label="Bloglarda ara" data-vc-blog-search>
+          <input
+            class="vc-blog-search__input"
+            type="search"
+            placeholder="Bloglarda ara"
+            aria-label="Bloglarda ara"
+            data-vc-blog-search
+          >
           <button class="vc-blog-search__button" type="submit">Ara</button>
         </form>
       </header>
@@ -20,7 +26,7 @@
         <article class="vc-blog-featured" data-vc-blog-card data-search-text="{{ featured_article.title | append: ' ' | append: featured_article.excerpt_or_content | strip_html | escape }}">
           <a class="vc-blog-featured__media" href="{{ featured_article.url }}" aria-label="{{ featured_article.title | escape }}">
             {%- if featured_article.image -%}
-              {{ featured_article.image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '480,720,960,1200,1400', sizes: '(min-width: 990px) 55vw, 100vw', alt: featured_article.title }}
+              {{ featured_article.image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '480,720,960,1200,1400', sizes: '(min-width: 990px) 55vw, 100vw', alt: featured_article.image.alt | default: featured_article.title }}
             {%- endif -%}
           </a>
           <div class="vc-blog-featured__content">
@@ -37,7 +43,7 @@
           <article class="vc-blog-card" data-vc-blog-card data-search-text="{{ article.title | append: ' ' | append: article.excerpt_or_content | strip_html | escape }}">
             <a class="vc-blog-card__media" href="{{ article.url }}" aria-label="{{ article.title | escape }}">
               {%- if article.image -%}
-                {{ article.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', alt: article.title }}
+                {{ article.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', alt: article.image.alt | default: article.title }}
               {%- endif -%}
             </a>
             <div class="vc-blog-card__body">
@@ -51,11 +57,19 @@
       </div>
 
       <div class="vc-blog-empty" data-vc-blog-empty>Aramanızla eşleşen bir yazı bulunamadı.</div>
-      {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate %}{%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
     </div>
   </section>
 {%- endpaginate -%}
 
 {% schema %}
-{"name":"Vitacoral blog index","tag":"section","class":"section","settings":[]}
+{
+  "name": "Vitacoral blog index",
+  "tag": "section",
+  "class": "section",
+  "settings": []
+}
 {% endschema %}
