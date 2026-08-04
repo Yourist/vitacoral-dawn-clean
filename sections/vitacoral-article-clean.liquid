@@ -15,7 +15,7 @@
 
   {%- if article.image -%}
     <div class="vc-clean-article__hero">
-      {{ article.image | image_url: width: 1800 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '640,900,1200,1500,1800', sizes: '(min-width: 1040px) 1040px, 100vw', alt: article.image.alt | default: article.title }}
+      {{ article.image | image_url: width: 1800 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '640,900,1200,1500,1800', sizes: '(min-width: 1040px) 1040px, 100vw', alt: article.title }}
     </div>
   {%- endif -%}
 
@@ -51,10 +51,5 @@
 </script>
 
 {% schema %}
-{
-  "name": "Vitacoral clean article",
-  "tag": "section",
-  "class": "section",
-  "settings": []
-}
+{"name":"Vitacoral clean article","tag":"section","class":"section","settings":[]}
 {% endschema %}
