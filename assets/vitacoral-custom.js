@@ -1,7 +1,6 @@
 /* Vitacoral custom interactions. */
 (() => {
   const styleId = 'vc-motion-layer';
-  const carouselFixId = 'vc-judge-me-carousel-fix';
   const revealSelector = '.vitacoral-reveal, .vc-reveal';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const designMode = Boolean(window.Shopify && window.Shopify.designMode);
@@ -21,17 +20,6 @@
     style.id = styleId;
     style.textContent = css;
     document.head.appendChild(style);
-  };
-
-  const injectCarouselFix = () => {
-    if (document.getElementById(carouselFixId)) return;
-    const source = Array.from(document.scripts).find((script) => script.src.includes('vitacoral-custom.js'));
-    if (!source) return;
-    const link = document.createElement('link');
-    link.id = carouselFixId;
-    link.rel = 'stylesheet';
-    link.href = source.src.replace('vitacoral-custom.js', 'vitacoral-judge-me-carousel-fix.css');
-    document.head.appendChild(link);
   };
 
   const showElements = (elements) => elements.forEach((element) => {
@@ -82,7 +70,6 @@
   const init = (scope = document) => {
     const root = scope instanceof Element || scope instanceof Document ? scope : document;
     injectStyles();
-    injectCarouselFix();
     registerTargets(root);
     ensureFooterToolsLink(root);
     const revealElements = Array.from(root.querySelectorAll(revealSelector)).filter((element) => !element.closest('.shopify-section-header'));
