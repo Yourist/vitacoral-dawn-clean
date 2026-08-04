@@ -427,12 +427,64 @@
         "review_item_2",
         "review_item_3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "Seçim yaparken",
         "heading": "Kullanıcıların ürün seçerken önemsediği noktalar",
         "body": "<p>Takviye seçiminde çoğu kişi içerik açıklığına, kullanım bilgisinin anlaşılır olmasına ve ürün ailesinin günlük rutine uyumuna bakar.</p>",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
+      }
+    },
+    "17858450527b5b8ac3": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_cards_carousel_hqUAhH": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "product_reviews",
+            "products": [
+              "collagen-30-sase",
+              "multivitamin-for-men",
+              "multivitamin-for-women",
+              "multivitamin-for-kids"
+            ],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "star_rating": "5_star",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": false,
+            "arrows_position": "sides",
+            "max_width": 1300,
+            "corner_styling": "soft",
+            "header_text_color": "#225952",
+            "text_color": "#225952",
+            "card_color": "#F9F9F9",
+            "stars_color": "#EC6542",
+            "arrows_color": "#000000",
+            "transition_speed": 5,
+            "header_text": "Kullanıcıların ürün seçerken önemsediği noktalar",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_cards_carousel_hqUAhH"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "vitacoral_education_rail": {
@@ -564,6 +616,7 @@
     "vitacoral_quiz_teaser_Ggy8Pg",
     "vitacoral_trust_section",
     "vitacoral_social_proof",
+    "17858450527b5b8ac3",
     "vitacoral_education_rail",
     "vitacoral_faq",
     "1780568114de2ce7f7"
