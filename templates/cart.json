@@ -8,18 +8,6 @@
         "padding_bottom": 24
       }
     },
-    "routine_assist": {
-      "type": "vitacoral-cart-routine-assist",
-      "settings": {
-        "eyebrow": "Rutin desteği",
-        "heading": "Rutininizi tamamlayın",
-        "body": "Sepetinizdeki ürünü günlük rutininiz içinde birlikte düşünebileceğiniz seçeneklerle tamamlayabilirsiniz.",
-        "primary_label": "Rutinleri incele",
-        "primary_link": "/pages/kadin-gunluk-rutini",
-        "secondary_label": "Tüm ürünler",
-        "secondary_link": "/collections/all"
-      }
-    },
     "cart-footer": {
       "type": "main-cart-footer",
       "settings": {
@@ -30,24 +18,15 @@
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {
-          }
+          "settings": {}
         },
         "buttons": {
           "type": "buttons",
-          "settings": {
-          }
+          "settings": {}
         }
       },
-      "block_order": [
-        "subtotal",
-        "buttons"
-      ]
+      "block_order": ["subtotal", "buttons"]
     }
   },
-  "order": [
-    "cart-items",
-    "routine_assist",
-    "cart-footer"
-  ]
+  "order": ["cart-items", "cart-footer"]
 }
