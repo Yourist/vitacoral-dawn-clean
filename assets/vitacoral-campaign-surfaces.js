@@ -4,6 +4,13 @@
 
   const openModal = (modal) => {
     if (!modal) return;
+
+    // Product media/sticky containers may create a transformed containing block.
+    // Moving the dialog to <body> keeps position: fixed relative to the viewport.
+    if (modal.parentElement !== document.body) {
+      document.body.appendChild(modal);
+    }
+
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     document.documentElement.classList.add('vc-campaign-modal-is-open');
@@ -24,8 +31,8 @@
     button.setAttribute('aria-live', 'polite');
     button.textContent = '✓ Kopyalandı';
 
-    const surface = button.closest('[data-vc-campaign-surface]');
-    const feedback = surface && surface.querySelector('[data-vc-copy-feedback]');
+    const context = button.closest('[data-vc-campaign-modal]') || button.closest('[data-vc-campaign-surface]');
+    const feedback = context && context.querySelector('[data-vc-copy-feedback]');
     if (feedback) {
       feedback.hidden = false;
       feedback.textContent = 'Kod kopyalandı. Ödeme adımında kullanabilirsiniz.';
@@ -70,8 +77,8 @@
 
     const opener = event.target.closest('[data-vc-campaign-open]');
     if (opener) {
-      const surface = opener.closest('[data-vc-campaign-surface]');
-      const modal = surface && surface.querySelector('[data-vc-campaign-modal]');
+      const modalId = opener.getAttribute('aria-controls');
+      const modal = modalId ? document.getElementById(modalId) : null;
       openModal(modal);
       return;
     }
