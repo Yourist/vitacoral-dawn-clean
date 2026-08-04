@@ -1,383 +1,174 @@
-/* Vitacoral typography system — stable scoped model */
+/* Vitacoral typography system — explicit, stable and component-scoped */
 
 :root {
-  --vc-font-body: var(--font-body-family, "Manrope", "Avenir Next", Arial, sans-serif);
-  --vc-font-heading: var(--font-heading-family, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif);
+  --vc-font-body: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif);
+  --vc-font-heading: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif);
   --vc-text: #16312e;
   --vc-text-soft: rgba(22, 49, 46, .76);
-  --vc-text-muted: rgba(22, 49, 46, .58);
-  --vc-body-desktop: 1.6rem;
-  --vc-body-mobile: 1.6rem;
-  --vc-small: 1.3rem;
-  --vc-button: 1.5rem;
-  --vc-h1-mobile: clamp(2.8rem, 8vw, 3.7rem);
-  --vc-h2-mobile: clamp(2.3rem, 6.6vw, 3rem);
-  --vc-h3-mobile: 1.9rem;
+  --vc-text-muted: rgba(22, 49, 46, .60);
+  --vc-fs-caption: 1.25rem;
+  --vc-fs-small: 1.4rem;
+  --vc-fs-ui: 1.5rem;
+  --vc-fs-body: 1.6rem;
+  --vc-fs-lead: 1.75rem;
+  --vc-fs-card-title: 1.8rem;
+  --vc-fs-h3: clamp(2rem, 2.4vw, 2.5rem);
+  --vc-fs-h2: clamp(2.6rem, 4vw, 3.8rem);
+  --vc-fs-h1: clamp(3.2rem, 6vw, 5.2rem);
 }
 
-body,
-button,
-input,
-select,
-textarea {
-  font-family: var(--vc-font-body) !important;
-  font-kerning: normal;
-  font-synthesis: none;
-}
+html { text-size-adjust: 100%; }
+body, button, input, select, textarea { font-family: var(--vc-font-body) !important; font-kerning: normal; font-synthesis: none; }
+body { font-size: var(--vc-fs-body); line-height: 1.6; }
+h1,h2,h3,h4,h5,h6,.h0,.h1,.h2,.h3,.h4,.h5,.vitacoral-heading-xl,.vitacoral-heading-lg { font-family: var(--vc-font-heading) !important; color: var(--vc-text); }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h0,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  font-family: var(--vc-font-heading) !important;
-}
-
-body {
-  font-size: var(--vc-body-desktop);
-}
-
-button,
-.button,
-.shopify-payment-button__button,
-.product-form__submit,
-.quick-add__submit,
-.field__input,
-.select__select {
-  font-size: var(--vc-button) !important;
-  line-height: 1.2 !important;
-}
-
-.caption,
-.caption-with-letter-spacing,
-small {
-  font-size: var(--vc-small) !important;
-  line-height: 1.45 !important;
-}
-
-/* PDP — explicit text hierarchy */
-.product__title h1 {
-  font-family: var(--vc-font-heading) !important;
-}
-
-.product__description,
-.product__description p,
-.product__description li,
-.product__text,
-.product__text p,
-.product__accordion .accordion__content,
-.product__accordion .accordion__content p,
-.product__accordion .accordion__content li,
-.vitacoral-pdp-details__content,
-.vitacoral-pdp-details__content p,
-.vitacoral-pdp-details__content li,
-.vitacoral-product-story__body,
-.vitacoral-product-story__body p,
-.vitacoral-routine__body,
-.vitacoral-routine__body p,
-.vitacoral-summary-card__body,
-.vitacoral-summary-card__body p {
-  font-family: var(--vc-font-body) !important;
-  font-size: 1.6rem !important;
+#MainContent p,
+#MainContent li,
+#MainContent .rte,
+#MainContent .rte p,
+#MainContent .rte li,
+.vitacoral-body,
+.vitacoral-body-muted {
+  font-size: var(--vc-fs-body) !important;
   line-height: 1.62 !important;
 }
 
-.product__accordion summary,
-.product__accordion .accordion__title,
-.vitacoral-pdp-details__summary,
-.vitacoral-faq__summary,
-.vitacoral-faq__question {
+.vitacoral-heading-xl { font-size: var(--vc-fs-h1) !important; line-height: 1.04 !important; }
+.vitacoral-heading-lg { font-size: var(--vc-fs-h2) !important; line-height: 1.1 !important; }
+
+.caption,.caption-with-letter-spacing,small,.vitacoral-eyebrow { font-size: var(--vc-fs-caption) !important; line-height: 1.4 !important; }
+
+button,.button,.vitacoral-button,.shopify-payment-button__button,.product-form__submit,.quick-add__submit,.field__input,.select__select {
   font-family: var(--vc-font-body) !important;
-  font-size: 1.6rem !important;
+  font-size: var(--vc-fs-ui) !important;
   font-weight: 600 !important;
-  line-height: 1.35 !important;
-}
-
-/* Judge.me review widget — scoped, no broad app overrides */
-.jdgm-widget,
-.jdgm-widget button,
-.jdgm-widget input,
-.jdgm-widget select,
-.jdgm-widget textarea {
-  font-family: var(--vc-font-body) !important;
-}
-
-.jdgm-rev-widg__title {
-  font-family: var(--vc-font-heading) !important;
-  font-size: 2.8rem !important;
-  font-weight: 400 !important;
-  line-height: 1.12 !important;
-}
-
-.jdgm-rev-widg__summary-average,
-.jdgm-rev__title {
-  font-size: 1.7rem !important;
-  line-height: 1.35 !important;
-}
-
-.jdgm-rev__author,
-.jdgm-rev__timestamp,
-.jdgm-rev-widg__summary-text,
-.jdgm-prev-badge__text,
-.jdgm-rev__body,
-.jdgm-rev__body p {
-  font-size: 1.5rem !important;
-  line-height: 1.55 !important;
-}
-
-.jdgm-write-rev-link,
-.jdgm-btn {
-  font-size: 1.5rem !important;
   line-height: 1.2 !important;
 }
 
-/* Judge.me cards carousel — visual polish with stable dimensions */
+/* Homepage sections */
+.vitacoral-hero__body,
+.vitacoral-editorial-media__body,
+.vitacoral-product-family__body,
+.vitacoral-featured-products__body,
+.vitacoral-trust__body,
+.vitacoral-social-proof__body,
+.vitacoral-education__body,
+.vitacoral-faq__body,
+.vitacoral-quiz__body,
+.vitacoral-product-story__body {
+  font-size: var(--vc-fs-body) !important;
+  line-height: 1.62 !important;
+}
+
+.vitacoral-product-family__title,
+.vitacoral-featured-products__title,
+.vitacoral-trust__title,
+.vitacoral-social-proof__title,
+.vitacoral-education__title,
+.vitacoral-faq__title,
+.vitacoral-quiz__title,
+.vitacoral-product-story__title {
+  font-size: var(--vc-fs-card-title) !important;
+  line-height: 1.3 !important;
+}
+
+.vitacoral-product-family__card p,
+.vitacoral-featured-products__card p,
+.vitacoral-trust__card p,
+.vitacoral-social-proof__card p,
+.vitacoral-education__card p,
+.vitacoral-product-story__card p,
+.vitacoral-faq__item p {
+  font-size: var(--vc-fs-body) !important;
+  line-height: 1.58 !important;
+}
+
+/* PDP hierarchy */
+.product__title h1 { font-family: var(--vc-font-heading) !important; }
+.product__description,.product__description p,.product__description li,
+.product__text,.product__text p,
+.product__accordion .accordion__content,.product__accordion .accordion__content p,.product__accordion .accordion__content li,
+.vitacoral-pdp-details__content,.vitacoral-pdp-details__content p,.vitacoral-pdp-details__content li,
+.vitacoral-product-story__content,.vitacoral-product-story__content p,
+.vitacoral-routine__body,.vitacoral-routine__body p,
+.vitacoral-summary-card__body,.vitacoral-summary-card__body p {
+  font-size: var(--vc-fs-body) !important;
+  line-height: 1.62 !important;
+}
+
+.product__accordion summary,.product__accordion .accordion__title,
+.vitacoral-pdp-details__summary,.vitacoral-faq__summary,.vitacoral-faq__question,
+.vitacoral-product-story__summary,.vitacoral-product-story__title {
+  font-family: var(--vc-font-body) !important;
+  font-size: var(--vc-fs-ui) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+
+.vitacoral-chip,.badge,.product__inventory,.product__tax,.product__sku { font-size: var(--vc-fs-caption) !important; line-height: 1.35 !important; }
+
+/* Judge.me PDP review widget */
+.jdgm-widget,.jdgm-widget button,.jdgm-widget input,.jdgm-widget select,.jdgm-widget textarea { font-family: var(--vc-font-body) !important; }
+.jdgm-rev-widg {
+  color: var(--vc-text) !important;
+  border: .1rem solid rgba(34,89,82,.10) !important;
+  border-radius: 2.4rem !important;
+  background: linear-gradient(180deg,#fff,#f8fbfa) !important;
+  box-shadow: 0 1.4rem 3.8rem rgba(21,44,41,.07) !important;
+  padding: clamp(2rem,4vw,4rem) !important;
+}
+.jdgm-rev-widg__title { font-family: var(--vc-font-heading) !important; font-size: 2.6rem !important; font-weight: 400 !important; line-height: 1.12 !important; }
+.jdgm-rev-widg__summary-average { font-size: var(--vc-fs-lead) !important; line-height: 1.25 !important; }
+.jdgm-rev__title { font-size: var(--vc-fs-card-title) !important; line-height: 1.35 !important; }
+.jdgm-rev__author { font-size: var(--vc-fs-ui) !important; font-weight: 600 !important; }
+.jdgm-rev__timestamp,.jdgm-rev-widg__summary-text,.jdgm-prev-badge__text { font-size: var(--vc-fs-small) !important; line-height: 1.45 !important; }
+.jdgm-rev__body,.jdgm-rev__body p { font-size: var(--vc-fs-body) !important; line-height: 1.62 !important; color: var(--vc-text-soft) !important; }
+.jdgm-write-rev-link,.jdgm-btn { font-size: var(--vc-fs-ui) !important; border-radius: 1.2rem !important; }
+.jdgm-star { color: #ec6542 !important; }
+.jdgm-rev { border-color: rgba(34,89,82,.10) !important; }
+
+/* Judge.me homepage cards carousel */
 .shopify-app-block:has(.jdgm-carousel-wrapper) {
   position: relative;
   overflow: hidden;
-  margin-block: clamp(2.4rem, 5vw, 5rem);
-  padding: clamp(2.2rem, 5vw, 4.6rem) clamp(1.4rem, 4vw, 3rem);
-  border: .1rem solid rgba(34, 89, 82, .12);
+  margin-block: clamp(2.4rem,5vw,5rem);
+  padding: clamp(2.4rem,5vw,4.8rem) clamp(1.4rem,4vw,3rem);
+  border: .1rem solid rgba(34,89,82,.12);
   border-radius: 3.2rem;
-  background:
-    radial-gradient(circle at 8% 12%, rgba(236, 101, 66, .10), transparent 28rem),
-    radial-gradient(circle at 92% 8%, rgba(34, 89, 82, .10), transparent 30rem),
-    linear-gradient(145deg, #ffffff 0%, #f8fbfa 62%, #fff8f4 100%);
-  box-shadow: 0 2rem 5rem rgba(21, 44, 41, .09);
+  background: radial-gradient(circle at 8% 12%,rgba(236,101,66,.10),transparent 28rem),radial-gradient(circle at 92% 8%,rgba(34,89,82,.10),transparent 30rem),linear-gradient(145deg,#fff 0%,#f8fbfa 62%,#fff8f4 100%);
+  box-shadow: 0 2rem 5rem rgba(21,44,41,.09);
 }
+.jdgm-carousel-wrapper { width: 100% !important; color: var(--vc-text) !important; font-family: var(--vc-font-body) !important; text-align: center !important; }
+.jdgm-carousel-title { margin-inline:auto !important; max-width:22ch !important; font-family:var(--vc-font-heading) !important; font-size:3rem !important; font-weight:400 !important; line-height:1.1 !important; letter-spacing:-.02em !important; color:var(--vc-text) !important; text-align:center !important; text-wrap:balance; }
+.jdgm-carousel-item { border:.1rem solid rgba(34,89,82,.10) !important; border-radius:2rem !important; background:rgba(255,255,255,.92) !important; box-shadow:0 1.2rem 3rem rgba(21,44,41,.07) !important; text-align:center !important; }
+.jdgm-carousel-item__review-body { font-size:var(--vc-fs-body) !important; line-height:1.58 !important; color:var(--vc-text-soft) !important; text-align:center !important; }
+.jdgm-carousel-item__review-title,.jdgm-carousel-item__reviewer-name { font-size:var(--vc-fs-ui) !important; font-weight:600 !important; line-height:1.35 !important; color:var(--vc-text) !important; text-align:center !important; }
+.jdgm-carousel-item__product-title { display:-webkit-box !important; overflow:hidden !important; margin:.65rem auto 0 !important; max-width:24ch !important; font-size:var(--vc-fs-small) !important; font-weight:500 !important; line-height:1.35 !important; color:var(--vc-text-muted) !important; white-space:normal !important; text-align:center !important; -webkit-box-orient:vertical !important; -webkit-line-clamp:2 !important; }
+.jdgm-carousel-number-of-reviews { font-size:var(--vc-fs-small) !important; color:var(--vc-text-muted) !important; }
 
-.jdgm-carousel-wrapper {
-  width: 100% !important;
-  color: var(--vc-text) !important;
-  font-family: var(--vc-font-body) !important;
-  text-align: center !important;
-}
-
-.jdgm-carousel-title {
-  margin-inline: auto !important;
-  max-width: 22ch !important;
-  color: var(--vc-text) !important;
-  font-family: var(--vc-font-heading) !important;
-  font-size: 3.2rem !important;
-  font-weight: 400 !important;
-  line-height: 1.1 !important;
-  letter-spacing: -.02em !important;
-  text-align: center !important;
-  text-wrap: balance;
-}
-
-.jdgm-carousel-item {
-  border: .1rem solid rgba(34, 89, 82, .10) !important;
-  border-radius: 2rem !important;
-  background: rgba(255, 255, 255, .9) !important;
-  box-shadow: 0 1.2rem 3rem rgba(21, 44, 41, .07) !important;
-  text-align: center !important;
-}
-
-.jdgm-carousel-item__review-body {
-  color: var(--vc-text-soft) !important;
-  font-size: 1.6rem !important;
-  line-height: 1.58 !important;
-  text-align: center !important;
-}
-
-.jdgm-carousel-item__review-title,
-.jdgm-carousel-item__reviewer-name {
-  color: var(--vc-text) !important;
-  font-size: 1.5rem !important;
-  font-weight: 600 !important;
-  line-height: 1.35 !important;
-  text-align: center !important;
-}
-
-.jdgm-carousel-item__product-title {
-  display: -webkit-box !important;
-  overflow: hidden !important;
-  margin: .65rem auto 0 !important;
-  max-width: 24ch !important;
-  color: var(--vc-text-muted) !important;
-  font-size: 1.35rem !important;
-  font-weight: 500 !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  text-align: center !important;
-  -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 2 !important;
-}
-
-.jdgm-carousel-number-of-reviews {
-  color: var(--vc-text-muted) !important;
-  font-size: 1.4rem !important;
-}
-
-/* Campaign text */
-.vc-campaign-surface,
-.vc-campaign-modal,
-.vc-campaign-spotlight {
-  font-family: var(--vc-font-body) !important;
-}
-
-.vc-campaign-surface__text,
-.vc-campaign-modal__description,
-.vc-campaign-modal__terms,
-.vc-campaign-spotlight__body {
-  font-size: 1.6rem !important;
-  line-height: 1.58 !important;
-}
-
-.vc-campaign-surface__badge,
-.vc-campaign-surface__chevron,
-.vc-campaign-copy,
-.vc-campaign-spotlight__button {
-  font-size: 1.4rem !important;
-}
+/* Campaign */
+.vc-campaign-surface,.vc-campaign-modal,.vc-campaign-spotlight { font-family:var(--vc-font-body) !important; }
+.vc-campaign-surface__text,.vc-campaign-modal__description,.vc-campaign-modal__terms,.vc-campaign-spotlight__body { font-size:var(--vc-fs-body) !important; line-height:1.58 !important; }
+.vc-campaign-surface__badge,.vc-campaign-surface__chevron,.vc-campaign-copy,.vc-campaign-spotlight__button { font-size:var(--vc-fs-small) !important; }
 
 @media screen and (max-width: 749px) {
-  body {
-    font-size: var(--vc-body-mobile) !important;
-    line-height: 1.58 !important;
-  }
-
-  #MainContent p,
-  #MainContent li,
-  #MainContent .rte,
-  #MainContent .rte p,
-  #MainContent .rte li,
-  #MainContent .multicolumn-card__info p,
-  #MainContent .article-template__content {
-    font-size: 1.6rem !important;
-    line-height: 1.58 !important;
-  }
-
-  #MainContent h1,
-  #MainContent .h1 {
-    font-size: var(--vc-h1-mobile) !important;
-    line-height: 1.06 !important;
-  }
-
-  #MainContent h2,
-  #MainContent .h2 {
-    font-size: var(--vc-h2-mobile) !important;
-    line-height: 1.12 !important;
-  }
-
-  #MainContent h3,
-  #MainContent .h3 {
-    font-size: var(--vc-h3-mobile) !important;
-    line-height: 1.24 !important;
-  }
-
-  .product__description,
-  .product__description p,
-  .product__description li,
-  .product__text,
-  .product__text p,
-  .product__accordion .accordion__content,
-  .product__accordion .accordion__content p,
-  .product__accordion .accordion__content li,
-  .vitacoral-pdp-details__content,
-  .vitacoral-pdp-details__content p,
-  .vitacoral-pdp-details__content li {
-    font-size: 1.6rem !important;
-    line-height: 1.6 !important;
-  }
-
-  .product__accordion summary,
-  .product__accordion .accordion__title,
-  .vitacoral-pdp-details__summary,
-  .vitacoral-faq__summary,
-  .vitacoral-faq__question {
-    font-size: 1.6rem !important;
-    line-height: 1.35 !important;
-  }
-
-  .jdgm-rev-widg__title {
-    font-size: 2.3rem !important;
-    line-height: 1.15 !important;
-  }
-
-  .jdgm-rev-widg__summary-average,
-  .jdgm-rev__title {
-    font-size: 1.6rem !important;
-  }
-
-  .jdgm-rev__author,
-  .jdgm-rev__timestamp,
-  .jdgm-rev-widg__summary-text,
-  .jdgm-prev-badge__text,
-  .jdgm-rev__body,
-  .jdgm-rev__body p,
-  .jdgm-write-rev-link,
-  .jdgm-btn {
-    font-size: 1.45rem !important;
-  }
-
-  .shopify-app-block:has(.jdgm-carousel-wrapper) {
-    margin-block: 2rem;
-    padding: 2.2rem 1.2rem 2.6rem;
-    border-radius: 2.4rem;
-  }
-
-  .jdgm-carousel-title {
-    max-width: 18ch !important;
-    font-size: 2.5rem !important;
-    line-height: 1.12 !important;
-  }
-
-  .jdgm-carousel-item {
-    border-radius: 1.6rem !important;
-  }
-
-  .jdgm-carousel-item__review-body {
-    display: -webkit-box;
-    overflow: hidden;
-    font-size: 1.55rem !important;
-    line-height: 1.58 !important;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-  }
-
-  .jdgm-carousel-item__review-title,
-  .jdgm-carousel-item__reviewer-name {
-    font-size: 1.45rem !important;
-  }
-
-  .jdgm-carousel-item__product-title {
-    max-width: 22ch !important;
-    font-size: 1.35rem !important;
-  }
-
-  .vc-campaign-surface__text,
-  .vc-campaign-modal__description,
-  .vc-campaign-modal__terms,
-  .vc-campaign-spotlight__body {
-    font-size: 1.55rem !important;
-    line-height: 1.58 !important;
-  }
+  :root { --vc-fs-caption:1.2rem; --vc-fs-small:1.35rem; --vc-fs-ui:1.5rem; --vc-fs-body:1.6rem; --vc-fs-lead:1.7rem; --vc-fs-card-title:1.75rem; }
+  body { font-size:var(--vc-fs-body) !important; line-height:1.58 !important; }
+  #MainContent h1,#MainContent .h1,.vitacoral-heading-xl { font-size:clamp(2.9rem,8.5vw,3.8rem) !important; line-height:1.06 !important; }
+  #MainContent h2,#MainContent .h2,.vitacoral-heading-lg { font-size:clamp(2.35rem,7vw,3rem) !important; line-height:1.12 !important; }
+  #MainContent h3,#MainContent .h3 { font-size:2rem !important; line-height:1.24 !important; }
+  .jdgm-rev-widg { padding:2rem 1.4rem !important; border-radius:1.8rem !important; }
+  .jdgm-rev-widg__title { font-size:2.2rem !important; line-height:1.15 !important; }
+  .shopify-app-block:has(.jdgm-carousel-wrapper) { margin-block:2rem; padding:2.2rem 1.2rem 2.6rem; border-radius:2.4rem; }
+  .jdgm-carousel-title { max-width:18ch !important; font-size:2.4rem !important; line-height:1.12 !important; }
+  .jdgm-carousel-item { border-radius:1.6rem !important; }
+  .jdgm-carousel-item__review-body { display:-webkit-box; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:5; }
+  .vitacoral-button,.button,.product-form__submit,.quick-add__submit,.shopify-payment-button__button { min-height:4.6rem; padding-block:1.1rem; }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .jdgm-carousel-item {
-    transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s cubic-bezier(.22,1,.36,1), border-color .28s ease !important;
-  }
-
-  .jdgm-carousel-item:hover {
-    transform: translateY(-.4rem);
-    border-color: rgba(236, 101, 66, .22) !important;
-    box-shadow: 0 1.8rem 4.2rem rgba(21, 44, 41, .12) !important;
-  }
+@media (hover:hover) and (pointer:fine) {
+  .jdgm-carousel-item { transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease !important; }
+  .jdgm-carousel-item:hover { transform:translateY(-.4rem); border-color:rgba(236,101,66,.22) !important; box-shadow:0 1.8rem 4.2rem rgba(21,44,41,.12) !important; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .jdgm-carousel-item {
-    transition: none !important;
-    transform: none !important;
-  }
-}
+@media (prefers-reduced-motion:reduce) { .jdgm-carousel-item { transition:none !important; transform:none !important; } }
