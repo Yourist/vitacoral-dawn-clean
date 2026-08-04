@@ -1,0 +1,176 @@
+/* Final PDP hierarchy — exact component classes only */
+
+/* Product description block (vc-desc) */
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__eyebrow {
+  font-size: 1.35rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: .12em !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__title {
+  font-size: clamp(2.5rem, 3.5vw, 3.4rem) !important;
+  line-height: 1.12 !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__lead,
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__lead p {
+  font-size: 1.65rem !important;
+  line-height: 1.65 !important;
+  font-weight: 400 !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__features span {
+  min-height: 3.2rem !important;
+  padding: .65rem 1rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.2 !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__item summary {
+  min-height: 5rem !important;
+  padding: 1.15rem 1.25rem !important;
+  font-size: 1.65rem !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__content,
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__content p,
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__content li {
+  font-size: 1.6rem !important;
+  line-height: 1.68 !important;
+}
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__note,
+product-info[data-vc-has-sticky-atc="true"] .vc-desc__note p {
+  font-size: 1.4rem !important;
+  line-height: 1.5 !important;
+}
+
+/* PDP experience is vc-pdp-world, not vitacoral-experience */
+.vc-pdp-world {
+  padding: clamp(4.8rem, 7vw, 8rem) 0 !important;
+}
+.vc-pdp-world__shell {
+  gap: clamp(1.6rem, 3vw, 2.8rem) !important;
+}
+.vc-pdp-world__hero {
+  min-height: 30rem !important;
+  padding: clamp(2.2rem, 4vw, 3.4rem) !important;
+  border-radius: 2.4rem !important;
+}
+.vc-pdp-world__eyebrow {
+  margin-bottom: .8rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.35 !important;
+  letter-spacing: .12em !important;
+}
+.vc-pdp-world h2 {
+  font-size: clamp(3rem, 4.8vw, 5rem) !important;
+  line-height: 1.02 !important;
+}
+.vc-pdp-world__hero > p:not(.vc-pdp-world__eyebrow) {
+  margin-top: 1.2rem !important;
+  font-size: 1.65rem !important;
+  line-height: 1.65 !important;
+}
+.vc-pdp-world__pills {
+  gap: .65rem !important;
+  margin-top: 1.4rem !important;
+}
+.vc-pdp-world__pills span {
+  min-height: 3.2rem !important;
+  padding: .65rem 1rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.2 !important;
+}
+.vc-pdp-world__cards {
+  gap: 1.2rem !important;
+}
+.vc-pdp-world__cards article {
+  gap: .85rem !important;
+  padding: clamp(1.8rem, 3vw, 2.5rem) !important;
+  border-radius: 1.8rem !important;
+}
+.vc-pdp-world__cards article > span {
+  font-size: 1.35rem !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+}
+.vc-pdp-world__cards h3 {
+  font-size: 2rem !important;
+  line-height: 1.25 !important;
+}
+.vc-pdp-world__cards p,
+.vc-pdp-world__cards li,
+.vc-pdp-world__more {
+  font-size: 1.6rem !important;
+  line-height: 1.65 !important;
+}
+.vc-pdp-world__cards ul {
+  gap: .65rem !important;
+}
+
+/* Quantity selector: compact pill, aligned with Vitacoral UI */
+.product-form__quantity {
+  width: fit-content !important;
+  max-width: none !important;
+}
+.product-form__quantity .form__label,
+.product-form__quantity .quantity__label {
+  margin-bottom: .7rem !important;
+  font-size: 1.35rem !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+}
+.product-form__quantity .quantity {
+  width: 11.6rem !important;
+  min-height: 4.2rem !important;
+  border: .1rem solid rgba(34,89,82,.16) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  box-shadow: 0 .6rem 1.8rem rgba(21,44,41,.06) !important;
+}
+.product-form__quantity .quantity:after,
+.product-form__quantity .quantity:before {
+  display: none !important;
+}
+.product-form__quantity .quantity__button {
+  width: 3.6rem !important;
+  min-width: 3.6rem !important;
+  height: 4.2rem !important;
+  padding: 0 !important;
+  color: #225952 !important;
+}
+.product-form__quantity .quantity__input {
+  width: 4.4rem !important;
+  min-width: 4.4rem !important;
+  height: 4.2rem !important;
+  padding: 0 !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  color: #16312e !important;
+}
+.product-form__quantity .quantity__button .svg-wrapper {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__title { font-size: 2.45rem !important; }
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__lead,
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__lead p,
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__content,
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__content p,
+  product-info[data-vc-has-sticky-atc="true"] .vc-desc__content li { font-size: 1.6rem !important; }
+
+  .vc-pdp-world { padding: 4.8rem 0 !important; }
+  .vc-pdp-world__shell { grid-template-columns: 1fr !important; gap: 1.4rem !important; }
+  .vc-pdp-world__hero { min-height: 0 !important; padding: 2rem !important; }
+  .vc-pdp-world h2 { font-size: 3rem !important; }
+  .vc-pdp-world__hero > p:not(.vc-pdp-world__eyebrow),
+  .vc-pdp-world__cards p,
+  .vc-pdp-world__cards li,
+  .vc-pdp-world__more { font-size: 1.6rem !important; }
+  .vc-pdp-world__cards { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+  .vc-pdp-world__cards article { padding: 1.6rem !important; }
+
+  .product-form__quantity .quantity { width: 11.2rem !important; min-height: 4rem !important; }
+  .product-form__quantity .quantity__button { width: 3.4rem !important; min-width: 3.4rem !important; height: 4rem !important; }
+  .product-form__quantity .quantity__input { width: 4.4rem !important; min-width: 4.4rem !important; height: 4rem !important; }
+}
