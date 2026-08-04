@@ -46,7 +46,9 @@ textarea,
 .vitacoral-heading-xl,
 .vitacoral-heading-lg,
 .jdgm-carousel-title,
-.jdgm-rev-widg__title {
+.jdgm-rev-widg__title,
+.shopify-app-block [class*="carousel"] [class*="title"],
+.shopify-app-block [class*="header"] h2 {
   font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
 }
 
@@ -61,12 +63,16 @@ textarea,
 
 .jdgm-carousel-title,
 [class*="jdgm-carousel"] h2,
-[class*="jdgm-cards-carousel"] h2 {
+[class*="jdgm-cards-carousel"] h2,
+.shopify-app-block [class*="carousel"] [class*="title"] {
   margin-inline: auto !important;
-  max-width: 22ch;
+  max-width: 18ch !important;
   color: var(--vitacoral-color-text, #16312e) !important;
-  font-weight: 600 !important;
-  line-height: 1.14 !important;
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
+  font-size: clamp(2.8rem, 4vw, 4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.025em !important;
   text-wrap: balance;
 }
 
@@ -86,10 +92,14 @@ textarea,
   font-weight: 600 !important;
 }
 
+/* Product name under a review adds clutter and truncates badly; reviewer name is enough. */
 .jdgm-carousel-item__product-title,
-.jdgm-carousel-number-of-reviews,
-[class*="jdgm-carousel"] [class*="product"],
-[class*="jdgm-cards-carousel"] [class*="product"] {
+[class*="jdgm-carousel"] [class*="product-title"],
+[class*="jdgm-cards-carousel"] [class*="product-title"] {
+  display: none !important;
+}
+
+.jdgm-carousel-number-of-reviews {
   color: rgba(22, 49, 46, .62) !important;
 }
 
@@ -158,10 +168,14 @@ textarea,
 
   .jdgm-carousel-title,
   [class*="jdgm-carousel"] h2,
-  [class*="jdgm-cards-carousel"] h2 {
-    max-width: 18ch !important;
-    font-size: clamp(2.15rem, 7vw, 2.6rem) !important;
-    line-height: 1.16 !important;
+  [class*="jdgm-cards-carousel"] h2,
+  .shopify-app-block [class*="carousel"] [class*="title"] {
+    max-width: 13ch !important;
+    font-size: clamp(2.35rem, 8vw, 3rem) !important;
+    line-height: 1.08 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 
   .jdgm-carousel-item__review-body,
@@ -181,9 +195,8 @@ textarea,
   }
 
   .jdgm-carousel-item__reviewer-name,
-  .jdgm-carousel-item__product-title,
   .jdgm-carousel-number-of-reviews {
-    font-size: 1.35rem !important;
+    font-size: 1.4rem !important;
   }
 
   .vc-campaign-surface--home-link .vc-campaign-surface__trigger,
@@ -229,32 +242,48 @@ textarea,
     line-height: 1.62 !important;
   }
 
-  .product__description,
-  .product__description p,
-  .product__description li,
-  .product__text,
-  .product__text p,
-  .product__accordion .accordion__content,
-  .product__accordion .accordion__content p,
-  .product__accordion .accordion__content li,
-  .vitacoral-pdp-details__content,
-  .vitacoral-pdp-details__content p,
-  .vitacoral-pdp-details__content li,
-  .vitacoral-product-story__body,
-  .vitacoral-product-story__body p,
-  .vitacoral-routine__body,
-  .vitacoral-routine__body p,
-  .vitacoral-summary-card__body,
-  .vitacoral-summary-card__body p {
+  /* Main product panel and all custom PDP content: raise tiny labels and body copy together. */
+  product-info .product__info-container p,
+  product-info .product__info-container li,
+  product-info .product__info-container .product__text,
+  product-info .product__info-container .caption-with-letter-spacing,
+  product-info .product__info-container label,
+  product-info .product__info-container summary,
+  product-info .product__info-container summary span:not(.svg-wrapper),
+  product-info .product__info-container details .accordion__content,
+  product-info .product__info-container details .accordion__content p,
+  product-info .product__info-container details .accordion__content li,
+  product-info .product__info-container .vitacoral-pdp-details__content,
+  product-info .product__info-container .vitacoral-pdp-details__content p,
+  product-info .product__info-container .vitacoral-pdp-details__content li,
+  .vitacoral-product-story p,
+  .vitacoral-routine p,
+  .vitacoral-summary-card p,
+  .vitacoral-highlights p,
+  .vitacoral-essentials p,
+  .vitacoral-details p {
     font-size: 1.6rem !important;
-    line-height: 1.64 !important;
+    line-height: 1.62 !important;
   }
 
-  .product__accordion .accordion__title,
+  /* Accordion headings from metafield/custom-liquid blocks. */
+  product-info .product__info-container summary,
+  product-info .product__info-container summary span:not(.svg-wrapper),
+  product-info .product__info-container .accordion__title,
+  product-info .product__info-container [class*="summary"],
+  product-info .product__info-container [class*="accordion"] [class*="title"],
   .vitacoral-pdp-details__summary,
   .vitacoral-faq__summary,
   .vitacoral-faq__question {
-    font-size: 1.65rem !important;
-    line-height: 1.38 !important;
+    font-size: 1.7rem !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Small chips stay compact, but not microscopic. */
+  product-info .product__info-container .vitacoral-chip,
+  product-info .product__info-container [class*="chip"],
+  product-info .product__info-container [class*="badge"] {
+    font-size: 1.15rem !important;
   }
 }
