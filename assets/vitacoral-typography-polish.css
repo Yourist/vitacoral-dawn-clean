@@ -1,43 +1,13 @@
-/* Vitacoral global typography polish */
+/* Vitacoral global typography system */
 
-/* Keep Turkish glyph rendering consistent across theme and app text. */
 body,
 button,
 input,
 select,
 textarea,
 .shopify-app-block,
-.shopify-app-block h1,
-.shopify-app-block h2,
-.shopify-app-block h3,
-.shopify-app-block h4,
-.shopify-app-block h5,
-.shopify-app-block h6,
-.shopify-app-block p,
-.shopify-app-block a,
-.shopify-app-block button,
-.shopify-app-block label,
-.shopify-app-block small,
-.shopify-app-block strong,
-.shopify-app-block span:not(.jdgm-star):not([class*="icon"]),
 .jdgm-widget,
-.jdgm-widget h1,
-.jdgm-widget h2,
-.jdgm-widget h3,
-.jdgm-widget h4,
-.jdgm-widget p,
-.jdgm-widget a,
-.jdgm-widget button,
-.jdgm-widget label,
-.jdgm-widget span:not(.jdgm-star):not([class*="icon"]),
-.jdgm-carousel-wrapper,
-.jdgm-carousel-wrapper h1,
-.jdgm-carousel-wrapper h2,
-.jdgm-carousel-wrapper h3,
-.jdgm-carousel-wrapper p,
-.jdgm-carousel-wrapper a,
-.jdgm-carousel-wrapper button,
-.jdgm-carousel-wrapper span:not(.jdgm-star):not([class*="icon"]) {
+.jdgm-carousel-wrapper {
   font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
   font-kerning: normal;
   font-synthesis: none;
@@ -52,7 +22,7 @@ textarea,
   font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
 }
 
-/* Judge.me carousel visual alignment. */
+/* Judge.me cards carousel */
 .jdgm-carousel-wrapper,
 .jdgm-carousel,
 [class*="jdgm-carousel"],
@@ -86,7 +56,7 @@ textarea,
 [class*="jdgm-carousel"] [class*="review-body"],
 [class*="jdgm-cards-carousel"] [class*="review-body"] {
   color: rgba(22, 49, 46, .82) !important;
-  font-size: 1.5rem !important;
+  font-size: 1.6rem !important;
   line-height: 1.58 !important;
 }
 
@@ -98,7 +68,6 @@ textarea,
   font-weight: 600 !important;
 }
 
-/* Product name under a review adds clutter and truncates badly; reviewer name is enough. */
 .jdgm-carousel-item__product-title,
 [class*="jdgm-carousel"] [class*="product-title"],
 [class*="jdgm-cards-carousel"] [class*="product-title"] {
@@ -109,7 +78,7 @@ textarea,
   color: rgba(22, 49, 46, .62) !important;
 }
 
-/* Campaign surfaces use the same UI face everywhere. */
+/* Campaign typography */
 .vc-campaign-surface,
 .vc-campaign-surface button,
 .vc-campaign-surface a,
@@ -121,144 +90,94 @@ textarea,
   font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif) !important;
 }
 
-/* PDP reading content. */
-.product__description,
-.product__description p,
-.product__description li,
-.product__text,
-.product__text p,
-.product__accordion .accordion__content,
-.product__accordion .accordion__content p,
-.product__accordion .accordion__content li,
-.vitacoral-pdp-details__content,
-.vitacoral-pdp-details__content p,
-.vitacoral-pdp-details__content li,
-.vitacoral-product-story__body,
-.vitacoral-product-story__body p,
-.vitacoral-routine__body,
-.vitacoral-routine__body p,
-.vitacoral-summary-card__body,
-.vitacoral-summary-card__body p {
-  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
-  line-height: 1.62;
-}
-
+/* Mobile storefront scale */
 @media screen and (max-width: 749px) {
   body {
-    font-size: 1.6rem;
-    line-height: 1.6;
+    font-size: 1.7rem !important;
+    line-height: 1.62 !important;
   }
 
-  .rte,
-  .rte p,
-  .rte li,
-  .multicolumn-card__info p,
-  .card__information p,
-  .article-template__content,
-  .footer-block__details-content,
-  .footer-block__details-content a,
-  .menu-drawer__menu-item,
-  .field__input,
-  .select__select {
-    font-size: 1.5rem !important;
-    line-height: 1.6 !important;
+  #MainContent p,
+  #MainContent li,
+  #MainContent label,
+  #MainContent summary,
+  #MainContent .rte,
+  #MainContent .rte p,
+  #MainContent .rte li,
+  #MainContent .product__text,
+  #MainContent .product__description,
+  #MainContent .product__description p,
+  #MainContent .product__description li,
+  #MainContent .multicolumn-card__info p,
+  #MainContent .card__information p,
+  #MainContent .article-template__content,
+  #MainContent .footer-block__details-content,
+  #MainContent .footer-block__details-content a,
+  #MainContent .accordion__content,
+  #MainContent .accordion__content p,
+  #MainContent .accordion__content li,
+  #MainContent [class*="__body"],
+  #MainContent [class*="__body"] p,
+  #MainContent [class*="__description"],
+  #MainContent [class*="__description"] p,
+  #MainContent [class*="__content"] p,
+  #MainContent [class*="__content"] li {
+    font-size: 1.65rem !important;
+    line-height: 1.64 !important;
+  }
+
+  #MainContent small,
+  #MainContent .caption,
+  #MainContent .caption-with-letter-spacing,
+  #MainContent [class*="eyebrow"],
+  #MainContent [class*="meta"],
+  #MainContent [class*="helper"] {
+    font-size: 1.35rem !important;
+    line-height: 1.45 !important;
+  }
+
+  #MainContent h1,
+  #MainContent .h1 {
+    font-size: clamp(3rem, 9vw, 4rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  #MainContent h2,
+  #MainContent .h2,
+  #MainContent [class*="__title"] {
+    font-size: clamp(2.4rem, 7.2vw, 3.2rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  #MainContent h3,
+  #MainContent .h3,
+  #MainContent [class*="__subtitle"] {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
   }
 
   .button,
   button,
   .shopify-payment-button__button,
   .product-form__submit,
-  .quick-add__submit {
-    font-size: 1.5rem !important;
+  .quick-add__submit,
+  .field__input,
+  .select__select {
+    font-size: 1.55rem !important;
   }
 
-  .jdgm-carousel-title,
-  [class*="jdgm-carousel"] h2,
-  [class*="jdgm-cards-carousel"] h2,
-  .shopify-app-block [class*="carousel"] [class*="title"] {
-    display: -webkit-box !important;
-    overflow: hidden !important;
-    max-width: 19ch !important;
-    font-size: clamp(2.25rem, 7.3vw, 2.8rem) !important;
-    line-height: 1.1 !important;
-    white-space: normal !important;
-    text-overflow: clip !important;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+  .menu-drawer__menu-item,
+  .footer-block__details-content,
+  .footer-block__details-content a {
+    font-size: 1.55rem !important;
+    line-height: 1.55 !important;
   }
 
-  .jdgm-carousel-item__review-body,
-  [class*="jdgm-carousel"] [class*="review-body"],
-  [class*="jdgm-cards-carousel"] [class*="review-body"] {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    font-size: 1.5rem !important;
-    line-height: 1.58 !important;
-  }
-
-  .jdgm-carousel-item__review-title {
-    font-size: 1.6rem !important;
-    line-height: 1.35 !important;
-  }
-
-  .jdgm-carousel-item__reviewer-name,
-  .jdgm-carousel-number-of-reviews {
-    font-size: 1.4rem !important;
-  }
-
-  .vc-campaign-surface--home-link .vc-campaign-surface__trigger,
-  .vc-campaign-surface__trigger {
-    gap: .75rem !important;
-    padding: 1.15rem !important;
-  }
-
-  .vc-campaign-surface__badge {
-    font-size: 1.2rem !important;
-  }
-
-  .vc-campaign-surface__text,
-  .vc-campaign-surface--card .vc-campaign-surface__text {
-    font-size: 1.5rem !important;
-    line-height: 1.48 !important;
-  }
-
-  .vc-campaign-surface__chevron {
-    font-size: 1.4rem !important;
-  }
-
-  .vc-campaign-modal__description,
-  .vc-campaign-modal__terms,
-  .vc-campaign-copy-feedback {
-    font-size: 1.5rem !important;
-    line-height: 1.58 !important;
-  }
-
-  .vc-campaign-copy,
-  .vc-campaign-spotlight__button {
-    font-size: 1.5rem !important;
-  }
-
-  .vc-campaign-spotlight__title {
-    font-size: clamp(2.5rem, 8vw, 3.3rem) !important;
-    line-height: 1.08 !important;
-    text-wrap: balance;
-  }
-
-  .vc-campaign-spotlight__body {
-    font-size: 1.6rem !important;
-    line-height: 1.62 !important;
-  }
-
-  /* Main product panel and all custom PDP content: raise tiny labels and body copy together. */
+  /* Product page: all content and metafield accordions */
   product-info .product__info-container p,
   product-info .product__info-container li,
-  product-info .product__info-container .product__text,
-  product-info .product__info-container .caption-with-letter-spacing,
   product-info .product__info-container label,
-  product-info .product__info-container summary,
-  product-info .product__info-container summary span:not(.svg-wrapper),
+  product-info .product__info-container .product__text,
   product-info .product__info-container details .accordion__content,
   product-info .product__info-container details .accordion__content p,
   product-info .product__info-container details .accordion__content li,
@@ -271,11 +190,10 @@ textarea,
   .vitacoral-highlights p,
   .vitacoral-essentials p,
   .vitacoral-details p {
-    font-size: 1.6rem !important;
-    line-height: 1.62 !important;
+    font-size: 1.65rem !important;
+    line-height: 1.64 !important;
   }
 
-  /* Accordion headings from metafield/custom-liquid blocks. */
   product-info .product__info-container summary,
   product-info .product__info-container summary span:not(.svg-wrapper),
   product-info .product__info-container .accordion__title,
@@ -284,15 +202,71 @@ textarea,
   .vitacoral-pdp-details__summary,
   .vitacoral-faq__summary,
   .vitacoral-faq__question {
-    font-size: 1.7rem !important;
+    font-size: 1.75rem !important;
     line-height: 1.35 !important;
     font-weight: 600 !important;
   }
 
-  /* Small chips stay compact, but not microscopic. */
   product-info .product__info-container .vitacoral-chip,
   product-info .product__info-container [class*="chip"],
   product-info .product__info-container [class*="badge"] {
-    font-size: 1.15rem !important;
+    font-size: 1.25rem !important;
+  }
+
+  /* Campaign areas */
+  .vc-campaign-surface__badge {
+    font-size: 1.25rem !important;
+  }
+
+  .vc-campaign-surface__text,
+  .vc-campaign-surface--card .vc-campaign-surface__text {
+    font-size: 1.6rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .vc-campaign-surface__chevron,
+  .vc-campaign-copy,
+  .vc-campaign-spotlight__button {
+    font-size: 1.5rem !important;
+  }
+
+  .vc-campaign-modal__description,
+  .vc-campaign-modal__terms,
+  .vc-campaign-copy-feedback,
+  .vc-campaign-spotlight__body {
+    font-size: 1.65rem !important;
+    line-height: 1.62 !important;
+  }
+
+  /* Judge.me carousel */
+  .jdgm-carousel-title,
+  [class*="jdgm-carousel"] h2,
+  [class*="jdgm-cards-carousel"] h2,
+  .shopify-app-block [class*="carousel"] [class*="title"] {
+    max-width: 19ch !important;
+    font-size: clamp(2.45rem, 7.6vw, 3rem) !important;
+    line-height: 1.1 !important;
+    -webkit-line-clamp: 2;
+  }
+
+  .jdgm-carousel-item__review-body,
+  [class*="jdgm-carousel"] [class*="review-body"],
+  [class*="jdgm-cards-carousel"] [class*="review-body"] {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    font-size: 1.6rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .jdgm-carousel-item__review-title {
+    font-size: 1.7rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .jdgm-carousel-item__reviewer-name,
+  .jdgm-carousel-number-of-reviews {
+    font-size: 1.5rem !important;
   }
 }
