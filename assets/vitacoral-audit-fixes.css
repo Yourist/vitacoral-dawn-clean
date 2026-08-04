@@ -1,10 +1,10 @@
-/* Vitacoral audit fixes — scoped hierarchy and spacing */
+/* Vitacoral audit fixes — homepage/PDP alignment */
 
 :root {
   --vc-audit-eyebrow: 1.35rem;
   --vc-audit-small: 1.45rem;
   --vc-audit-body: 1.65rem;
-  --vc-audit-ui: 1.55rem;
+  --vc-audit-ui: 1.6rem;
   --vc-audit-card-title: 1.9rem;
 }
 
@@ -22,10 +22,8 @@
 .vitacoral-product-story__eyebrow,
 .vc-tools-teaser__eyebrow,
 .vc-page__eyebrow,
-.product__info-container [class*="eyebrow"],
-.vitacoral-pdp-details__eyebrow,
-.vitacoral-highlights__eyebrow,
-.vitacoral-experience__eyebrow {
+.vitacoral-pdp-highlights__eyebrow,
+.product__info-container .vitacoral-eyebrow {
   font-size: var(--vc-audit-eyebrow) !important;
   line-height: 1.35 !important;
   letter-spacing: .12em !important;
@@ -37,35 +35,26 @@
   font-size: var(--vc-audit-body) !important;
   line-height: 1.62 !important;
 }
-
-.vc-tools-teaser__mini-title {
-  font-size: 1.55rem !important;
-  line-height: 1.3 !important;
-}
-
+.vc-tools-teaser__mini-title { font-size: 1.55rem !important; line-height: 1.3 !important; }
 .vc-tools-teaser__mini-text,
-.vc-tools-teaser__note {
-  font-size: 1.4rem !important;
-  line-height: 1.5 !important;
-}
-
+.vc-tools-teaser__note { font-size: 1.4rem !important; line-height: 1.5 !important; }
 .vc-tools-teaser__icon,
 .vitacoral-product-story__badge,
 .vitacoral-product-family__index,
 .vitacoral-trust__index,
 .vitacoral-social-proof__index,
-.vitacoral-education__index,
-[class*="vitacoral-"][class*="__index"] {
+.vitacoral-education__index {
   font-size: 1.25rem !important;
   line-height: 1 !important;
   font-weight: 800 !important;
 }
 
-/* PDP product title — maximum two lines */
+/* PDP title */
 .product__title h1 {
   display: -webkit-box !important;
   overflow: hidden !important;
   max-width: 100% !important;
+  font-size: clamp(3rem, 4.6vw, 4.8rem) !important;
   line-height: 1.08 !important;
   white-space: normal !important;
   text-overflow: clip !important;
@@ -73,91 +62,138 @@
   -webkit-line-clamp: 2 !important;
 }
 
-/* PDP chips and labels */
-.vitacoral-chip,
-.vitacoral-highlights__chip,
-.vitacoral-highlights [class*="chip"],
-.product__info-container [class*="chip"],
-.product__info-container [class*="tag"],
-.product__info-container [class*="label"],
-.vitacoral-pdp-details [class*="label"] {
+/* PDP highlights */
+.vitacoral-pdp-highlights {
+  margin-block: 2.4rem !important;
+  padding: 2rem !important;
+}
+.vitacoral-pdp-highlights__body,
+.vitacoral-pdp-highlights__body p,
+.vitacoral-pdp-highlights__reassurance {
+  font-size: var(--vc-audit-body) !important;
+  line-height: 1.62 !important;
+}
+.vitacoral-pdp-highlights__chips { gap: .8rem !important; }
+.vitacoral-pdp-highlights__chip {
+  min-height: 3.4rem !important;
+  padding: .8rem 1.2rem !important;
+  font-size: 1.4rem !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+}
+
+/* PDP essentials + details */
+.vitacoral-pdp-essentials,
+.vitacoral-pdp-details {
+  margin-block: 2.8rem !important;
+}
+.vitacoral-pdp-essentials__heading,
+.vitacoral-pdp-details__heading {
+  margin-bottom: 1.4rem !important;
+  font-family: var(--vc-font-heading, var(--vitacoral-font-brand)) !important;
+  font-size: 2.25rem !important;
+  line-height: 1.18 !important;
+}
+.vitacoral-pdp-essentials__list { gap: 1rem !important; }
+.vitacoral-pdp-essentials__item {
+  padding: 1.4rem !important;
+}
+.vitacoral-pdp-essentials__label {
   font-size: 1.4rem !important;
   line-height: 1.35 !important;
 }
-
-/* PDP headings */
-.vitacoral-highlights__title,
-.vitacoral-routine__title,
-.vitacoral-product-story__heading,
-.vitacoral-experience__title,
-.vitacoral-pdp-details__title,
-.product__info-container h2,
-.product__info-container .h2 {
-  font-size: clamp(2.35rem, 4vw, 3.2rem) !important;
-  line-height: 1.15 !important;
+.vitacoral-pdp-essentials__value,
+.vitacoral-pdp-essentials__value p,
+.vitacoral-pdp-essentials__empty-note {
+  font-size: var(--vc-audit-body) !important;
+  line-height: 1.58 !important;
 }
-
-.vitacoral-routine__heading,
-.vitacoral-routine h3,
-.vitacoral-highlights h3,
-.vitacoral-experience h3,
-.vitacoral-pdp-details h3 {
-  font-size: 2rem !important;
-  line-height: 1.25 !important;
+.vitacoral-pdp-details__item {
+  margin-top: 1rem !important;
 }
-
-/* PDP description and experience copy */
-.product__description,
-.product__description p,
-.product__description li,
+.vitacoral-pdp-details__summary {
+  min-height: 5.2rem !important;
+  padding: 1.2rem 1.4rem !important;
+  font-size: 1.7rem !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+}
+.vitacoral-pdp-details__content {
+  padding: 0 1.4rem 1.5rem !important;
+}
 .vitacoral-pdp-details__content,
 .vitacoral-pdp-details__content p,
-.vitacoral-pdp-details__content li,
-.vitacoral-highlights__body,
-.vitacoral-highlights__body p,
-.vitacoral-experience__body,
-.vitacoral-experience__body p,
-.vitacoral-experience__content,
-.vitacoral-experience__content p,
-.vitacoral-routine__body,
-.vitacoral-routine__body p {
+.vitacoral-pdp-details__content li {
   font-size: var(--vc-audit-body) !important;
   line-height: 1.65 !important;
 }
 
+/* Native PDP blocks */
+.product__text,
+.product__text p,
+.product__description,
+.product__description p,
+.product__description li,
+.product__accordion .accordion__content,
+.product__accordion .accordion__content p,
+.product__accordion .accordion__content li {
+  font-size: var(--vc-audit-body) !important;
+  line-height: 1.65 !important;
+}
 .product__accordion summary,
-.product__accordion .accordion__title,
-.vitacoral-pdp-details__summary,
-.vitacoral-experience summary,
-.vitacoral-experience [class*="title"] {
+.product__accordion .accordion__title {
   font-size: 1.7rem !important;
   line-height: 1.4 !important;
   font-weight: 600 !important;
 }
 
-/* PDP section rhythm */
-.product__info-container > * + * {
-  margin-top: 1.5rem;
+/* Custom PDP sections loaded below main product */
+.vitacoral-routine__title,
+.vitacoral-product-story__intro .vitacoral-heading-lg,
+.vitacoral-experience__title,
+.vitacoral-experience__heading,
+.vitacoral-summary-card__title {
+  font-size: clamp(2.45rem, 4vw, 3.4rem) !important;
+  line-height: 1.15 !important;
+}
+.vitacoral-routine__body,
+.vitacoral-routine__body p,
+.vitacoral-product-story__body,
+.vitacoral-product-story__body p,
+.vitacoral-product-story__content,
+.vitacoral-product-story__content p,
+.vitacoral-experience__body,
+.vitacoral-experience__body p,
+.vitacoral-experience__content,
+.vitacoral-experience__content p,
+.vitacoral-summary-card__body,
+.vitacoral-summary-card__body p {
+  font-size: var(--vc-audit-body) !important;
+  line-height: 1.65 !important;
+}
+.vitacoral-product-story__title,
+.vitacoral-experience__card-title,
+.vitacoral-summary-card__label {
+  font-size: 1.7rem !important;
+  line-height: 1.35 !important;
 }
 
-.vitacoral-highlights,
-.vitacoral-routine,
-.vitacoral-pdp-details,
-.vitacoral-experience,
-.vitacoral-product-story,
-.product__description,
-.product__accordion {
-  margin-block: clamp(2.8rem, 5vw, 5.2rem) !important;
+/* PDP rhythm */
+.product__info-container > * + * { margin-top: 1.8rem !important; }
+.product__info-container .product-form,
+.product__info-container .buy-buttons,
+.product__info-container .product__description,
+.product__info-container .product__accordion,
+.product__info-container .vitacoral-pdp-highlights,
+.product__info-container .vitacoral-pdp-essentials,
+.product__info-container .vitacoral-pdp-details {
+  margin-block: 2rem !important;
+}
+.template-product .shopify-section + .shopify-section {
+  margin-top: clamp(3.6rem, 6vw, 7.2rem) !important;
 }
 
-.vitacoral-highlights [class*="card"],
-.vitacoral-routine [class*="card"],
-.vitacoral-experience [class*="card"],
-.vitacoral-pdp-details [class*="card"] {
-  padding: clamp(1.8rem, 3vw, 2.6rem) !important;
-}
-
-/* Document pages: keep title hierarchy, enlarge descriptions */
+/* Document pages */
 .vc-page--kalite-sertifikalari .vc-content-system .vc-document-card p,
 .vc-page--hammadde-sertifikalari .vc-content-system .vc-document-card p,
 .vc-page--urun-onaylari .vc-content-system .vc-document-card p,
@@ -169,35 +205,16 @@
   color: rgba(22, 49, 46, .72) !important;
 }
 
-.vc-page--kalite-sertifikalari .vc-content-system .vc-document-card h2,
-.vc-page--kalite-sertifikalari .vc-content-system .vc-document-card h3,
-.vc-page--hammadde-sertifikalari .vc-content-system .vc-document-card h2,
-.vc-page--hammadde-sertifikalari .vc-content-system .vc-document-card h3,
-.vc-page--urun-onaylari .vc-content-system .vc-document-card h2,
-.vc-page--urun-onaylari .vc-content-system .vc-document-card h3 {
-  font-size: 1.8rem !important;
-  line-height: 1.3 !important;
-}
-
 @media screen and (max-width: 749px) {
   :root {
     --vc-audit-eyebrow: 1.3rem;
     --vc-audit-body: 1.6rem;
   }
-
-  .vc-tools-teaser__mini-title { font-size: 1.5rem !important; }
-  .vc-tools-teaser__mini-text,
-  .vc-tools-teaser__note { font-size: 1.38rem !important; }
-
-  .product__title h1 { font-size: clamp(2.7rem, 8vw, 3.4rem) !important; }
-
-  .vitacoral-highlights,
-  .vitacoral-routine,
-  .vitacoral-pdp-details,
-  .vitacoral-experience,
-  .vitacoral-product-story,
-  .product__description,
-  .product__accordion {
-    margin-block: 3.2rem !important;
-  }
+  .product__title h1 { font-size: clamp(2.8rem, 8.4vw, 3.6rem) !important; }
+  .vitacoral-pdp-highlights { padding: 1.6rem !important; }
+  .vitacoral-pdp-highlights__chip { font-size: 1.35rem !important; }
+  .vitacoral-pdp-essentials__heading,
+  .vitacoral-pdp-details__heading { font-size: 2.1rem !important; }
+  .vitacoral-pdp-details__summary { font-size: 1.65rem !important; }
+  .product__info-container > * + * { margin-top: 1.6rem !important; }
 }
