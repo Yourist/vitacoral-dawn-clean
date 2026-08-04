@@ -65,15 +65,21 @@ textarea,
 [class*="jdgm-carousel"] h2,
 [class*="jdgm-cards-carousel"] h2,
 .shopify-app-block [class*="carousel"] [class*="title"] {
+  display: -webkit-box !important;
+  overflow: hidden !important;
   margin-inline: auto !important;
-  max-width: 18ch !important;
+  max-width: 24ch !important;
   color: var(--vitacoral-color-text, #16312e) !important;
   font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
   font-size: clamp(2.8rem, 4vw, 4rem) !important;
   font-weight: 400 !important;
   line-height: 1.08 !important;
   letter-spacing: -.025em !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
   text-wrap: balance;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .jdgm-carousel-item__review-body,
@@ -170,12 +176,15 @@ textarea,
   [class*="jdgm-carousel"] h2,
   [class*="jdgm-cards-carousel"] h2,
   .shopify-app-block [class*="carousel"] [class*="title"] {
-    max-width: 13ch !important;
-    font-size: clamp(2.35rem, 8vw, 3rem) !important;
-    line-height: 1.08 !important;
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    max-width: 19ch !important;
+    font-size: clamp(2.25rem, 7.3vw, 2.8rem) !important;
+    line-height: 1.1 !important;
     white-space: normal !important;
-    overflow: visible !important;
     text-overflow: clip !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .jdgm-carousel-item__review-body,
