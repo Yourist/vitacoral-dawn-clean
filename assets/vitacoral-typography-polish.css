@@ -1,0 +1,165 @@
+/* Vitacoral typography polish: app widgets + mobile PDP readability */
+
+/* Judge.me Cards Carousel: inherit Vitacoral typography without touching icon glyphs */
+.jdgm-carousel-wrapper,
+.jdgm-carousel,
+.jdgm-carousel-title,
+.jdgm-carousel-item,
+.jdgm-carousel-item__review-body,
+.jdgm-carousel-item__review-title,
+.jdgm-carousel-item__reviewer-name,
+.jdgm-carousel-item__product-title,
+.jdgm-carousel-number-of-reviews,
+.jdgm-carousel__item-container,
+.jdgm-all-reviews-rating-wrapper {
+  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+  letter-spacing: 0 !important;
+}
+
+.jdgm-carousel-title {
+  color: var(--vitacoral-color-text, #16312e) !important;
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
+  font-weight: 600 !important;
+  line-height: 1.12 !important;
+}
+
+.jdgm-carousel-item__review-body {
+  color: rgba(22, 49, 46, .8) !important;
+  font-size: 1.5rem !important;
+  line-height: 1.58 !important;
+}
+
+.jdgm-carousel-item__review-title,
+.jdgm-carousel-item__reviewer-name {
+  color: var(--vitacoral-color-text, #16312e) !important;
+  font-weight: 600 !important;
+}
+
+.jdgm-carousel-item__product-title,
+.jdgm-carousel-number-of-reviews {
+  color: rgba(22, 49, 46, .62) !important;
+}
+
+/* Campaign surfaces: keep the component visually compact but readable */
+.vc-campaign-surface__badge,
+.vc-campaign-surface__text,
+.vc-campaign-surface__chevron,
+.vc-campaign-modal__eyebrow,
+.vc-campaign-modal__description,
+.vc-campaign-modal__terms,
+.vc-campaign-copy,
+.vc-campaign-copy-feedback,
+.vc-campaign-spotlight__eyebrow,
+.vc-campaign-spotlight__body,
+.vc-campaign-spotlight__button {
+  font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif);
+}
+
+/* Product-page content should not fall below a comfortable reading size */
+.product__description,
+.product__description p,
+.product__description li,
+.product__text,
+.product__text p,
+.product__accordion .accordion__content,
+.product__accordion .accordion__content p,
+.product__accordion .accordion__content li,
+.vitacoral-pdp-details__content,
+.vitacoral-pdp-details__content p,
+.vitacoral-pdp-details__content li,
+.vitacoral-product-story__body,
+.vitacoral-product-story__body p,
+.vitacoral-routine__body,
+.vitacoral-routine__body p,
+.vitacoral-summary-card__body,
+.vitacoral-summary-card__body p {
+  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif);
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 749px) {
+  .jdgm-carousel-title {
+    font-size: 2.6rem !important;
+  }
+
+  .jdgm-carousel-item__review-body {
+    font-size: 1.5rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .jdgm-carousel-item__review-title {
+    font-size: 1.6rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .jdgm-carousel-item__reviewer-name,
+  .jdgm-carousel-item__product-title,
+  .jdgm-carousel-number-of-reviews {
+    font-size: 1.35rem !important;
+  }
+
+  .vc-campaign-surface__badge {
+    font-size: 1.15rem !important;
+  }
+
+  .vc-campaign-surface__text,
+  .vc-campaign-surface--card .vc-campaign-surface__text {
+    font-size: 1.4rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .vc-campaign-surface__chevron {
+    font-size: 1.3rem !important;
+  }
+
+  .vc-campaign-modal__eyebrow,
+  .vc-campaign-spotlight__eyebrow {
+    font-size: 1.2rem !important;
+  }
+
+  .vc-campaign-modal__description,
+  .vc-campaign-modal__terms,
+  .vc-campaign-copy-feedback {
+    font-size: 1.4rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .vc-campaign-copy,
+  .vc-campaign-spotlight__button {
+    font-size: 1.4rem !important;
+  }
+
+  .vc-campaign-spotlight__body {
+    font-size: 1.6rem !important;
+    line-height: 1.62 !important;
+  }
+
+  .product__description,
+  .product__description p,
+  .product__description li,
+  .product__text,
+  .product__text p,
+  .product__accordion .accordion__content,
+  .product__accordion .accordion__content p,
+  .product__accordion .accordion__content li,
+  .vitacoral-pdp-details__content,
+  .vitacoral-pdp-details__content p,
+  .vitacoral-pdp-details__content li,
+  .vitacoral-product-story__body,
+  .vitacoral-product-story__body p,
+  .vitacoral-routine__body,
+  .vitacoral-routine__body p,
+  .vitacoral-summary-card__body,
+  .vitacoral-summary-card__body p {
+    font-size: 1.5rem !important;
+    line-height: 1.62 !important;
+  }
+
+  .product__accordion .accordion__title,
+  .vitacoral-pdp-details__summary,
+  .vitacoral-faq__summary,
+  .vitacoral-faq__question {
+    font-size: 1.55rem !important;
+    line-height: 1.35 !important;
+  }
+}
