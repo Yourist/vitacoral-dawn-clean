@@ -1,8 +1,58 @@
-{% comment %}
- LayoutHub (https://layouthub.com)
- You SHOULD NOT modify source code in this page because
- It is automatically generated from LayoutHub
- {% endcomment %} 
- <!--LayoutHub-Embed--><!-- NO-FONT-FACE-->{{"lh-60744e15e7893a4fc71cf2d2.css" | asset_url | stylesheet_tag }}<script type="text/javascript">window.LHPAGE=window.LHPAGE||{};window.LHPAGE.id='60744e15e7893a4fc71cf2d2';window.LHPAGE.title='Vitacoral_Blog_Genel_%C5%9Eablon';window.LHPAGE.type='article'</script>
-{%- section 'layouthub-60744e15e7893a4fc71cf2d2'-%}
-<script src="{{"lh-60744e15e7893a4fc71cf2d2.js" | asset_url  }}"  defer="defer" class="layouthub-script"></script><!--/LayoutHub-Embed-->
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'vitacoral-inner-pages.css' | asset_url | stylesheet_tag }}
+
+<article class="article-template vc-article vc-page">
+  {%- if article.image -%}
+    <div class="article-template__hero-container vc-article__image-shell page-width">
+      <div class="article-template__hero-adapt vc-article__image media" style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;">
+        <img
+          srcset="
+            {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+            {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+            {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+            {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
+            {{ article.image | image_url }} {{ article.image.width }}w
+          "
+          sizes="(min-width: 1200px) 1100px, calc(100vw - 3rem)"
+          src="{{ article.image | image_url: width: 1100 }}"
+          loading="eager"
+          fetchpriority="high"
+          width="{{ article.image.width }}"
+          height="{{ article.image.height }}"
+          alt="{{ article.image.alt | default: article.title | escape }}"
+        >
+      </div>
+    </div>
+  {%- endif -%}
+
+  <header class="page-width page-width--narrow vc-article__hero vc-page__hero">
+    <p class="vc-article__eyebrow vc-page__eyebrow">Vitacoral rehberi</p>
+    <h1 class="article-template__title vc-article__title vc-page__title">{{ article.title | escape }}</h1>
+    <div class="vc-article__meta">
+      <span class="circle-divider caption-with-letter-spacing">{{ article.published_at | time_tag: format: 'date' }}</span>
+      {%- if article.author != blank -%}
+        <span class="caption-with-letter-spacing">{{ article.author }}</span>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="article-template__content vc-article__content vc-content-system page-width page-width--narrow rte">
+    {{ article.content }}
+  </div>
+
+  <div class="article-template__social-sharing vc-article__share page-width page-width--narrow">
+    {% assign share_url = request.origin | append: article.url %}
+    {% render 'share-button', share_link: share_url %}
+  </div>
+
+  <div class="article-template__back vc-article__back element-margin-top center">
+    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+      <span class="icon-wrap"><span class="svg-wrapper">{{- 'icon-arrow.svg' | inline_asset_content -}}</span></span>
+      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
+    </a>
+  </div>
+</article>
+
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
