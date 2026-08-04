@@ -1,85 +1,111 @@
-/* Vitacoral typography polish: app widgets + mobile PDP readability */
+/* Vitacoral global typography polish */
 
-/* Judge.me Cards Carousel: inherit Vitacoral typography without touching icon glyphs */
+/* Keep Turkish glyph rendering consistent across theme and app text. */
+body,
+button,
+input,
+select,
+textarea,
+.shopify-app-block,
+.shopify-app-block h1,
+.shopify-app-block h2,
+.shopify-app-block h3,
+.shopify-app-block h4,
+.shopify-app-block h5,
+.shopify-app-block h6,
+.shopify-app-block p,
+.shopify-app-block a,
+.shopify-app-block button,
+.shopify-app-block label,
+.shopify-app-block small,
+.shopify-app-block strong,
+.shopify-app-block span:not(.jdgm-star):not([class*="icon"]),
+.jdgm-widget,
+.jdgm-widget h1,
+.jdgm-widget h2,
+.jdgm-widget h3,
+.jdgm-widget h4,
+.jdgm-widget p,
+.jdgm-widget a,
+.jdgm-widget button,
+.jdgm-widget label,
+.jdgm-widget span:not(.jdgm-star):not([class*="icon"]),
+.jdgm-carousel-wrapper,
+.jdgm-carousel-wrapper h1,
+.jdgm-carousel-wrapper h2,
+.jdgm-carousel-wrapper h3,
+.jdgm-carousel-wrapper p,
+.jdgm-carousel-wrapper a,
+.jdgm-carousel-wrapper button,
+.jdgm-carousel-wrapper span:not(.jdgm-star):not([class*="icon"]) {
+  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+.vitacoral-heading-xl,
+.vitacoral-heading-lg,
+.jdgm-carousel-title,
+.jdgm-rev-widg__title {
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
+}
+
+/* Judge.me carousel visual alignment. */
 .jdgm-carousel-wrapper,
 .jdgm-carousel,
-.jdgm-carousel-title,
-.jdgm-carousel-item,
-.jdgm-carousel-item__review-body,
-.jdgm-carousel-item__review-title,
-.jdgm-carousel-item__reviewer-name,
-.jdgm-carousel-item__product-title,
-.jdgm-carousel-number-of-reviews,
-.jdgm-carousel__item-container,
-.jdgm-all-reviews-rating-wrapper {
-  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+[class*="jdgm-carousel"],
+[class*="jdgm-cards-carousel"] {
+  color: var(--vitacoral-color-text, #16312e) !important;
   letter-spacing: 0 !important;
 }
 
-.jdgm-carousel-title {
+.jdgm-carousel-title,
+[class*="jdgm-carousel"] h2,
+[class*="jdgm-cards-carousel"] h2 {
+  margin-inline: auto !important;
+  max-width: 22ch;
   color: var(--vitacoral-color-text, #16312e) !important;
-  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
   font-weight: 600 !important;
-  line-height: 1.12 !important;
+  line-height: 1.14 !important;
+  text-wrap: balance;
 }
 
-.jdgm-carousel-item__review-body {
-  color: rgba(22, 49, 46, .8) !important;
+.jdgm-carousel-item__review-body,
+[class*="jdgm-carousel"] [class*="review-body"],
+[class*="jdgm-cards-carousel"] [class*="review-body"] {
+  color: rgba(22, 49, 46, .82) !important;
   font-size: 1.5rem !important;
   line-height: 1.58 !important;
 }
 
 .jdgm-carousel-item__review-title,
-.jdgm-carousel-item__reviewer-name {
+.jdgm-carousel-item__reviewer-name,
+[class*="jdgm-carousel"] [class*="reviewer"],
+[class*="jdgm-cards-carousel"] [class*="reviewer"] {
   color: var(--vitacoral-color-text, #16312e) !important;
   font-weight: 600 !important;
 }
 
 .jdgm-carousel-item__product-title,
-.jdgm-carousel-number-of-reviews {
+.jdgm-carousel-number-of-reviews,
+[class*="jdgm-carousel"] [class*="product"],
+[class*="jdgm-cards-carousel"] [class*="product"] {
   color: rgba(22, 49, 46, .62) !important;
 }
 
-/* Campaign surfaces: keep the component visually compact but readable */
-.vc-campaign-surface__badge,
-.vc-campaign-surface__text,
-.vc-campaign-surface__chevron,
-.vc-campaign-modal__eyebrow,
-.vc-campaign-modal__description,
-.vc-campaign-modal__terms,
-.vc-campaign-copy,
-.vc-campaign-copy-feedback,
-.vc-campaign-spotlight__eyebrow,
-.vc-campaign-spotlight__body,
-.vc-campaign-spotlight__button {
-  font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif);
+/* Campaign surfaces use the same UI face everywhere. */
+.vc-campaign-surface,
+.vc-campaign-surface button,
+.vc-campaign-surface a,
+.vc-campaign-modal,
+.vc-campaign-modal button,
+.vc-campaign-spotlight,
+.vc-campaign-spotlight button,
+.vc-campaign-spotlight a {
+  font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif) !important;
 }
 
-.vc-campaign-spotlight__title {
-  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif);
-  color: var(--vitacoral-color-text, #16312e);
-}
-
-/* Homepage campaign card uses the compact campaign surface, not the spotlight body */
-.vc-campaign-surface--home-link .vc-campaign-surface__trigger {
-  align-items: center;
-  padding: 1.35rem 1.5rem;
-}
-
-.vc-campaign-surface--home-link .vc-campaign-surface__badge {
-  font-size: 1.2rem;
-}
-
-.vc-campaign-surface--home-link .vc-campaign-surface__text {
-  font-size: 1.55rem;
-  line-height: 1.45;
-}
-
-.vc-campaign-surface--home-link .vc-campaign-surface__chevron {
-  font-size: 1.35rem;
-}
-
-/* Product-page content should not fall below a comfortable reading size */
+/* PDP reading content. */
 .product__description,
 .product__description p,
 .product__description li,
@@ -97,18 +123,56 @@
 .vitacoral-routine__body p,
 .vitacoral-summary-card__body,
 .vitacoral-summary-card__body p {
-  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif);
-  line-height: 1.6;
+  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+  line-height: 1.62;
 }
 
 @media screen and (max-width: 749px) {
-  .jdgm-carousel-title {
-    font-size: 2.6rem !important;
+  body {
+    font-size: 1.6rem;
+    line-height: 1.6;
   }
 
-  .jdgm-carousel-item__review-body {
+  .rte,
+  .rte p,
+  .rte li,
+  .multicolumn-card__info p,
+  .card__information p,
+  .article-template__content,
+  .footer-block__details-content,
+  .footer-block__details-content a,
+  .menu-drawer__menu-item,
+  .field__input,
+  .select__select {
     font-size: 1.5rem !important;
     line-height: 1.6 !important;
+  }
+
+  .button,
+  button,
+  .shopify-payment-button__button,
+  .product-form__submit,
+  .quick-add__submit {
+    font-size: 1.5rem !important;
+  }
+
+  .jdgm-carousel-title,
+  [class*="jdgm-carousel"] h2,
+  [class*="jdgm-cards-carousel"] h2 {
+    max-width: 18ch !important;
+    font-size: clamp(2.15rem, 7vw, 2.6rem) !important;
+    line-height: 1.16 !important;
+  }
+
+  .jdgm-carousel-item__review-body,
+  [class*="jdgm-carousel"] [class*="review-body"],
+  [class*="jdgm-cards-carousel"] [class*="review-body"] {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    font-size: 1.5rem !important;
+    line-height: 1.58 !important;
   }
 
   .jdgm-carousel-item__review-title {
@@ -122,59 +186,42 @@
     font-size: 1.35rem !important;
   }
 
+  .vc-campaign-surface--home-link .vc-campaign-surface__trigger,
+  .vc-campaign-surface__trigger {
+    gap: .75rem !important;
+    padding: 1.15rem !important;
+  }
+
   .vc-campaign-surface__badge {
-    font-size: 1.15rem !important;
+    font-size: 1.2rem !important;
   }
 
   .vc-campaign-surface__text,
   .vc-campaign-surface--card .vc-campaign-surface__text {
-    font-size: 1.4rem !important;
-    line-height: 1.45 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.48 !important;
   }
 
   .vc-campaign-surface__chevron {
-    font-size: 1.3rem !important;
-  }
-
-  .vc-campaign-surface--home-link .vc-campaign-surface__trigger {
-    min-height: auto;
-    gap: .75rem;
-    padding: 1.2rem 1.25rem;
-  }
-
-  .vc-campaign-surface--home-link .vc-campaign-surface__badge {
-    font-size: 1.15rem !important;
-  }
-
-  .vc-campaign-surface--home-link .vc-campaign-surface__text {
-    font-size: 1.5rem !important;
-    line-height: 1.5 !important;
-  }
-
-  .vc-campaign-surface--home-link .vc-campaign-surface__chevron {
-    font-size: 1.35rem !important;
-  }
-
-  .vc-campaign-modal__eyebrow,
-  .vc-campaign-spotlight__eyebrow {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
   }
 
   .vc-campaign-modal__description,
   .vc-campaign-modal__terms,
   .vc-campaign-copy-feedback {
-    font-size: 1.4rem !important;
-    line-height: 1.55 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.58 !important;
   }
 
   .vc-campaign-copy,
   .vc-campaign-spotlight__button {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
   }
 
   .vc-campaign-spotlight__title {
-    font-size: clamp(2.6rem, 9vw, 3.8rem) !important;
+    font-size: clamp(2.5rem, 8vw, 3.3rem) !important;
     line-height: 1.08 !important;
+    text-wrap: balance;
   }
 
   .vc-campaign-spotlight__body {
@@ -199,15 +246,15 @@
   .vitacoral-routine__body p,
   .vitacoral-summary-card__body,
   .vitacoral-summary-card__body p {
-    font-size: 1.5rem !important;
-    line-height: 1.62 !important;
+    font-size: 1.6rem !important;
+    line-height: 1.64 !important;
   }
 
   .product__accordion .accordion__title,
   .vitacoral-pdp-details__summary,
   .vitacoral-faq__summary,
   .vitacoral-faq__question {
-    font-size: 1.55rem !important;
-    line-height: 1.35 !important;
+    font-size: 1.65rem !important;
+    line-height: 1.38 !important;
   }
 }
