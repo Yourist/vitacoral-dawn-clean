@@ -1,277 +1,145 @@
-/* Vitacoral global typography system */
+/* Vitacoral typography system — stable scoped model */
+
+:root {
+  --vc-font-body: var(--font-body-family, "Manrope", "Avenir Next", Arial, sans-serif);
+  --vc-font-heading: var(--font-heading-family, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif);
+  --vc-text: #16312e;
+  --vc-text-soft: rgba(22, 49, 46, .76);
+  --vc-text-muted: rgba(22, 49, 46, .58);
+  --vc-body-desktop: 1.6rem;
+  --vc-body-mobile: 1.6rem;
+  --vc-small: 1.3rem;
+  --vc-button: 1.5rem;
+  --vc-h1-mobile: clamp(2.8rem, 8vw, 3.7rem);
+  --vc-h2-mobile: clamp(2.3rem, 6.6vw, 3rem);
+  --vc-h3-mobile: 1.9rem;
+}
 
 body,
 button,
 input,
 select,
-textarea,
-.shopify-app-block,
-.jdgm-widget,
-.jdgm-carousel-wrapper {
-  font-family: var(--vitacoral-font-body, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+textarea {
+  font-family: var(--vc-font-body) !important;
   font-kerning: normal;
   font-synthesis: none;
 }
 
-.vitacoral-heading-xl,
-.vitacoral-heading-lg,
-.jdgm-carousel-title,
-.jdgm-rev-widg__title,
-.shopify-app-block [class*="carousel"] [class*="title"],
-.shopify-app-block [class*="header"] h2 {
-  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--vc-font-heading) !important;
 }
 
-/* Judge.me cards carousel */
-.jdgm-carousel-wrapper,
-.jdgm-carousel,
-[class*="jdgm-carousel"],
-[class*="jdgm-cards-carousel"] {
-  color: var(--vitacoral-color-text, #16312e) !important;
-  letter-spacing: 0 !important;
+body {
+  font-size: var(--vc-body-desktop);
 }
 
-.jdgm-carousel-title,
-[class*="jdgm-carousel"] h2,
-[class*="jdgm-cards-carousel"] h2,
-.shopify-app-block [class*="carousel"] [class*="title"] {
-  display: -webkit-box !important;
-  overflow: hidden !important;
-  margin-inline: auto !important;
-  max-width: 24ch !important;
-  color: var(--vitacoral-color-text, #16312e) !important;
-  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif) !important;
-  font-size: clamp(2.8rem, 4vw, 4rem) !important;
-  font-weight: 400 !important;
-  line-height: 1.08 !important;
-  letter-spacing: -.025em !important;
-  white-space: normal !important;
-  text-overflow: clip !important;
-  text-wrap: balance;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+button,
+.button,
+.shopify-payment-button__button,
+.product-form__submit,
+.quick-add__submit,
+.field__input,
+.select__select {
+  font-size: var(--vc-button) !important;
+  line-height: 1.2 !important;
 }
 
-.jdgm-carousel-item__review-body,
-[class*="jdgm-carousel"] [class*="review-body"],
-[class*="jdgm-cards-carousel"] [class*="review-body"] {
-  color: rgba(22, 49, 46, .82) !important;
+.caption,
+.caption-with-letter-spacing,
+small {
+  font-size: var(--vc-small) !important;
+  line-height: 1.45 !important;
+}
+
+/* PDP — explicit text hierarchy */
+.product__title h1 {
+  font-family: var(--vc-font-heading) !important;
+}
+
+.product__description,
+.product__description p,
+.product__description li,
+.product__text,
+.product__text p,
+.product__accordion .accordion__content,
+.product__accordion .accordion__content p,
+.product__accordion .accordion__content li,
+.vitacoral-pdp-details__content,
+.vitacoral-pdp-details__content p,
+.vitacoral-pdp-details__content li,
+.vitacoral-product-story__body,
+.vitacoral-product-story__body p,
+.vitacoral-routine__body,
+.vitacoral-routine__body p,
+.vitacoral-summary-card__body,
+.vitacoral-summary-card__body p {
+  font-family: var(--vc-font-body) !important;
   font-size: 1.6rem !important;
-  line-height: 1.58 !important;
+  line-height: 1.62 !important;
 }
 
-.jdgm-carousel-item__review-title,
-.jdgm-carousel-item__reviewer-name,
-[class*="jdgm-carousel"] [class*="reviewer"],
-[class*="jdgm-cards-carousel"] [class*="reviewer"] {
-  color: var(--vitacoral-color-text, #16312e) !important;
+.product__accordion summary,
+.product__accordion .accordion__title,
+.vitacoral-pdp-details__summary,
+.vitacoral-faq__summary,
+.vitacoral-faq__question {
+  font-family: var(--vc-font-body) !important;
+  font-size: 1.6rem !important;
   font-weight: 600 !important;
+  line-height: 1.35 !important;
 }
 
-.jdgm-carousel-item__product-title,
-[class*="jdgm-carousel"] [class*="product-title"],
-[class*="jdgm-cards-carousel"] [class*="product-title"] {
-  display: none !important;
+/* Judge.me review widget — scoped, no broad app overrides */
+.jdgm-widget,
+.jdgm-widget button,
+.jdgm-widget input,
+.jdgm-widget select,
+.jdgm-widget textarea {
+  font-family: var(--vc-font-body) !important;
 }
 
-.jdgm-carousel-number-of-reviews {
-  color: rgba(22, 49, 46, .62) !important;
+.jdgm-rev-widg__title {
+  font-family: var(--vc-font-heading) !important;
+  font-size: 2.8rem !important;
+  font-weight: 400 !important;
+  line-height: 1.12 !important;
 }
 
-/* Campaign typography */
-.vc-campaign-surface,
-.vc-campaign-surface button,
-.vc-campaign-surface a,
-.vc-campaign-modal,
-.vc-campaign-modal button,
-.vc-campaign-spotlight,
-.vc-campaign-spotlight button,
-.vc-campaign-spotlight a {
-  font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif) !important;
+.jdgm-rev-widg__summary-average,
+.jdgm-rev__title {
+  font-size: 1.7rem !important;
+  line-height: 1.35 !important;
 }
 
-/* Mobile storefront scale */
-@media screen and (max-width: 749px) {
-  body {
-    font-size: 1.7rem !important;
-    line-height: 1.62 !important;
-  }
-
-  #MainContent p,
-  #MainContent li,
-  #MainContent label,
-  #MainContent summary,
-  #MainContent .rte,
-  #MainContent .rte p,
-  #MainContent .rte li,
-  #MainContent .product__text,
-  #MainContent .product__description,
-  #MainContent .product__description p,
-  #MainContent .product__description li,
-  #MainContent .multicolumn-card__info p,
-  #MainContent .card__information p,
-  #MainContent .article-template__content,
-  #MainContent .footer-block__details-content,
-  #MainContent .footer-block__details-content a,
-  #MainContent .accordion__content,
-  #MainContent .accordion__content p,
-  #MainContent .accordion__content li,
-  #MainContent [class*="__body"],
-  #MainContent [class*="__body"] p,
-  #MainContent [class*="__description"],
-  #MainContent [class*="__description"] p,
-  #MainContent [class*="__content"] p,
-  #MainContent [class*="__content"] li {
-    font-size: 1.65rem !important;
-    line-height: 1.64 !important;
-  }
-
-  #MainContent small,
-  #MainContent .caption,
-  #MainContent .caption-with-letter-spacing,
-  #MainContent [class*="eyebrow"],
-  #MainContent [class*="meta"],
-  #MainContent [class*="helper"] {
-    font-size: 1.35rem !important;
-    line-height: 1.45 !important;
-  }
-
-  #MainContent h1,
-  #MainContent .h1 {
-    font-size: clamp(3rem, 9vw, 4rem) !important;
-    line-height: 1.05 !important;
-  }
-
-  #MainContent h2,
-  #MainContent .h2,
-  #MainContent [class*="__title"] {
-    font-size: clamp(2.4rem, 7.2vw, 3.2rem) !important;
-    line-height: 1.12 !important;
-  }
-
-  #MainContent h3,
-  #MainContent .h3,
-  #MainContent [class*="__subtitle"] {
-    font-size: 2rem !important;
-    line-height: 1.25 !important;
-  }
-
-  .button,
-  button,
-  .shopify-payment-button__button,
-  .product-form__submit,
-  .quick-add__submit,
-  .field__input,
-  .select__select {
-    font-size: 1.55rem !important;
-  }
-
-  .menu-drawer__menu-item,
-  .footer-block__details-content,
-  .footer-block__details-content a {
-    font-size: 1.55rem !important;
-    line-height: 1.55 !important;
-  }
-
-  product-info .product__info-container p,
-  product-info .product__info-container li,
-  product-info .product__info-container label,
-  product-info .product__info-container .product__text,
-  product-info .product__info-container details .accordion__content,
-  product-info .product__info-container details .accordion__content p,
-  product-info .product__info-container details .accordion__content li,
-  product-info .product__info-container .vitacoral-pdp-details__content,
-  product-info .product__info-container .vitacoral-pdp-details__content p,
-  product-info .product__info-container .vitacoral-pdp-details__content li,
-  .vitacoral-product-story p,
-  .vitacoral-routine p,
-  .vitacoral-summary-card p,
-  .vitacoral-highlights p,
-  .vitacoral-essentials p,
-  .vitacoral-details p {
-    font-size: 1.65rem !important;
-    line-height: 1.64 !important;
-  }
-
-  product-info .product__info-container summary,
-  product-info .product__info-container summary span:not(.svg-wrapper),
-  product-info .product__info-container .accordion__title,
-  product-info .product__info-container [class*="summary"],
-  product-info .product__info-container [class*="accordion"] [class*="title"],
-  .vitacoral-pdp-details__summary,
-  .vitacoral-faq__summary,
-  .vitacoral-faq__question {
-    font-size: 1.75rem !important;
-    line-height: 1.35 !important;
-    font-weight: 600 !important;
-  }
-
-  product-info .product__info-container .vitacoral-chip,
-  product-info .product__info-container [class*="chip"],
-  product-info .product__info-container [class*="badge"] {
-    font-size: 1.25rem !important;
-  }
-
-  .vc-campaign-surface__badge {
-    font-size: 1.25rem !important;
-  }
-
-  .vc-campaign-surface__text,
-  .vc-campaign-surface--card .vc-campaign-surface__text {
-    font-size: 1.6rem !important;
-    line-height: 1.5 !important;
-  }
-
-  .vc-campaign-surface__chevron,
-  .vc-campaign-copy,
-  .vc-campaign-spotlight__button {
-    font-size: 1.5rem !important;
-  }
-
-  .vc-campaign-modal__description,
-  .vc-campaign-modal__terms,
-  .vc-campaign-copy-feedback,
-  .vc-campaign-spotlight__body {
-    font-size: 1.65rem !important;
-    line-height: 1.62 !important;
-  }
-
-  .jdgm-carousel-title,
-  [class*="jdgm-carousel"] h2,
-  [class*="jdgm-cards-carousel"] h2,
-  .shopify-app-block [class*="carousel"] [class*="title"] {
-    max-width: 19ch !important;
-    font-size: clamp(2.45rem, 7.6vw, 3rem) !important;
-    line-height: 1.1 !important;
-    -webkit-line-clamp: 2;
-  }
-
-  .jdgm-carousel-item__review-body,
-  [class*="jdgm-carousel"] [class*="review-body"],
-  [class*="jdgm-cards-carousel"] [class*="review-body"] {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    font-size: 1.6rem !important;
-    line-height: 1.6 !important;
-  }
-
-  .jdgm-carousel-item__review-title {
-    font-size: 1.7rem !important;
-    line-height: 1.35 !important;
-  }
-
-  .jdgm-carousel-item__reviewer-name,
-  .jdgm-carousel-number-of-reviews {
-    font-size: 1.5rem !important;
-  }
+.jdgm-rev__author,
+.jdgm-rev__timestamp,
+.jdgm-rev-widg__summary-text,
+.jdgm-prev-badge__text,
+.jdgm-rev__body,
+.jdgm-rev__body p {
+  font-size: 1.5rem !important;
+  line-height: 1.55 !important;
 }
 
-/* Homepage-aligned Judge.me carousel polish */
-.shopify-app-block:has(.jdgm-carousel-wrapper),
-.shopify-app-block:has([class*="jdgm-cards-carousel"]),
-.shopify-app-block:has([class*="jdgm-carousel"]) {
+.jdgm-write-rev-link,
+.jdgm-btn {
+  font-size: 1.5rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Judge.me cards carousel — visual polish with stable dimensions */
+.shopify-app-block:has(.jdgm-carousel-wrapper) {
   position: relative;
   overflow: hidden;
   margin-block: clamp(2.4rem, 5vw, 5rem);
@@ -285,102 +153,230 @@ textarea,
   box-shadow: 0 2rem 5rem rgba(21, 44, 41, .09);
 }
 
-.shopify-app-block:has(.jdgm-carousel-wrapper)::before,
-.shopify-app-block:has([class*="jdgm-cards-carousel"])::before,
-.shopify-app-block:has([class*="jdgm-carousel"])::before {
-  content: "";
-  position: absolute;
-  inset: -35% auto auto -18%;
-  width: 38%;
-  height: 170%;
-  background: linear-gradient(100deg, transparent, rgba(255,255,255,.42), transparent);
-  transform: translateX(-120%) rotate(12deg);
-  pointer-events: none;
-  transition: transform .9s cubic-bezier(.22,1,.36,1);
+.jdgm-carousel-wrapper {
+  width: 100% !important;
+  color: var(--vc-text) !important;
+  font-family: var(--vc-font-body) !important;
+  text-align: center !important;
 }
 
-.shopify-app-block:has(.jdgm-carousel-wrapper) > *,
-.shopify-app-block:has([class*="jdgm-cards-carousel"]) > *,
-.shopify-app-block:has([class*="jdgm-carousel"]) > * {
-  position: relative;
-  z-index: 1;
+.jdgm-carousel-title {
+  margin-inline: auto !important;
+  max-width: 22ch !important;
+  color: var(--vc-text) !important;
+  font-family: var(--vc-font-heading) !important;
+  font-size: 3.2rem !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -.02em !important;
+  text-align: center !important;
+  text-wrap: balance;
 }
 
-.jdgm-carousel-wrapper [class*="card"],
-[class*="jdgm-cards-carousel"] [class*="card"],
-[class*="jdgm-carousel"] [class*="item"] {
+.jdgm-carousel-item {
   border: .1rem solid rgba(34, 89, 82, .10) !important;
   border-radius: 2rem !important;
-  background: rgba(255,255,255,.88) !important;
+  background: rgba(255, 255, 255, .9) !important;
   box-shadow: 0 1.2rem 3rem rgba(21, 44, 41, .07) !important;
-  transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s cubic-bezier(.22,1,.36,1), border-color .28s ease !important;
+  text-align: center !important;
 }
 
-.jdgm-carousel-item__product-title,
-[class*="jdgm-carousel"] [class*="product-title"],
-[class*="jdgm-cards-carousel"] [class*="product-title"] {
+.jdgm-carousel-item__review-body {
+  color: var(--vc-text-soft) !important;
+  font-size: 1.6rem !important;
+  line-height: 1.58 !important;
+  text-align: center !important;
+}
+
+.jdgm-carousel-item__review-title,
+.jdgm-carousel-item__reviewer-name {
+  color: var(--vc-text) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+}
+
+.jdgm-carousel-item__product-title {
   display: -webkit-box !important;
   overflow: hidden !important;
-  margin-top: .6rem !important;
-  max-width: 24ch;
-  color: rgba(22, 49, 46, .58) !important;
+  margin: .65rem auto 0 !important;
+  max-width: 24ch !important;
+  color: var(--vc-text-muted) !important;
   font-size: 1.35rem !important;
   font-weight: 500 !important;
   line-height: 1.35 !important;
   white-space: normal !important;
-  text-overflow: clip !important;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  text-align: center !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+}
+
+.jdgm-carousel-number-of-reviews {
+  color: var(--vc-text-muted) !important;
+  font-size: 1.4rem !important;
+}
+
+/* Campaign text */
+.vc-campaign-surface,
+.vc-campaign-modal,
+.vc-campaign-spotlight {
+  font-family: var(--vc-font-body) !important;
+}
+
+.vc-campaign-surface__text,
+.vc-campaign-modal__description,
+.vc-campaign-modal__terms,
+.vc-campaign-spotlight__body {
+  font-size: 1.6rem !important;
+  line-height: 1.58 !important;
+}
+
+.vc-campaign-surface__badge,
+.vc-campaign-surface__chevron,
+.vc-campaign-copy,
+.vc-campaign-spotlight__button {
+  font-size: 1.4rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  body {
+    font-size: var(--vc-body-mobile) !important;
+    line-height: 1.58 !important;
+  }
+
+  #MainContent p,
+  #MainContent li,
+  #MainContent .rte,
+  #MainContent .rte p,
+  #MainContent .rte li,
+  #MainContent .multicolumn-card__info p,
+  #MainContent .article-template__content {
+    font-size: 1.6rem !important;
+    line-height: 1.58 !important;
+  }
+
+  #MainContent h1,
+  #MainContent .h1 {
+    font-size: var(--vc-h1-mobile) !important;
+    line-height: 1.06 !important;
+  }
+
+  #MainContent h2,
+  #MainContent .h2 {
+    font-size: var(--vc-h2-mobile) !important;
+    line-height: 1.12 !important;
+  }
+
+  #MainContent h3,
+  #MainContent .h3 {
+    font-size: var(--vc-h3-mobile) !important;
+    line-height: 1.24 !important;
+  }
+
+  .product__description,
+  .product__description p,
+  .product__description li,
+  .product__text,
+  .product__text p,
+  .product__accordion .accordion__content,
+  .product__accordion .accordion__content p,
+  .product__accordion .accordion__content li,
+  .vitacoral-pdp-details__content,
+  .vitacoral-pdp-details__content p,
+  .vitacoral-pdp-details__content li {
+    font-size: 1.6rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .product__accordion summary,
+  .product__accordion .accordion__title,
+  .vitacoral-pdp-details__summary,
+  .vitacoral-faq__summary,
+  .vitacoral-faq__question {
+    font-size: 1.6rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .jdgm-rev-widg__title {
+    font-size: 2.3rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .jdgm-rev-widg__summary-average,
+  .jdgm-rev__title {
+    font-size: 1.6rem !important;
+  }
+
+  .jdgm-rev__author,
+  .jdgm-rev__timestamp,
+  .jdgm-rev-widg__summary-text,
+  .jdgm-prev-badge__text,
+  .jdgm-rev__body,
+  .jdgm-rev__body p,
+  .jdgm-write-rev-link,
+  .jdgm-btn {
+    font-size: 1.45rem !important;
+  }
+
+  .shopify-app-block:has(.jdgm-carousel-wrapper) {
+    margin-block: 2rem;
+    padding: 2.2rem 1.2rem 2.6rem;
+    border-radius: 2.4rem;
+  }
+
+  .jdgm-carousel-title {
+    max-width: 18ch !important;
+    font-size: 2.5rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .jdgm-carousel-item {
+    border-radius: 1.6rem !important;
+  }
+
+  .jdgm-carousel-item__review-body {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 1.55rem !important;
+    line-height: 1.58 !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+
+  .jdgm-carousel-item__review-title,
+  .jdgm-carousel-item__reviewer-name {
+    font-size: 1.45rem !important;
+  }
+
+  .jdgm-carousel-item__product-title {
+    max-width: 22ch !important;
+    font-size: 1.35rem !important;
+  }
+
+  .vc-campaign-surface__text,
+  .vc-campaign-modal__description,
+  .vc-campaign-modal__terms,
+  .vc-campaign-spotlight__body {
+    font-size: 1.55rem !important;
+    line-height: 1.58 !important;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .shopify-app-block:has(.jdgm-carousel-wrapper):hover::before,
-  .shopify-app-block:has([class*="jdgm-cards-carousel"]):hover::before,
-  .shopify-app-block:has([class*="jdgm-carousel"]):hover::before {
-    transform: translateX(360%) rotate(12deg);
+  .jdgm-carousel-item {
+    transition: transform .28s cubic-bezier(.22,1,.36,1), box-shadow .28s cubic-bezier(.22,1,.36,1), border-color .28s ease !important;
   }
 
-  .jdgm-carousel-wrapper [class*="card"]:hover,
-  [class*="jdgm-cards-carousel"] [class*="card"]:hover,
-  [class*="jdgm-carousel"] [class*="item"]:hover {
-    transform: translateY(-.45rem);
+  .jdgm-carousel-item:hover {
+    transform: translateY(-.4rem);
     border-color: rgba(236, 101, 66, .22) !important;
     box-shadow: 0 1.8rem 4.2rem rgba(21, 44, 41, .12) !important;
   }
 }
 
-@media screen and (max-width: 749px) {
-  .shopify-app-block:has(.jdgm-carousel-wrapper),
-  .shopify-app-block:has([class*="jdgm-cards-carousel"]),
-  .shopify-app-block:has([class*="jdgm-carousel"]) {
-    margin-block: 2rem;
-    padding: 2rem 1rem 2.4rem;
-    border-radius: 2.4rem;
-  }
-
-  .jdgm-carousel-wrapper [class*="card"],
-  [class*="jdgm-cards-carousel"] [class*="card"],
-  [class*="jdgm-carousel"] [class*="item"] {
-    border-radius: 1.6rem !important;
-  }
-
-  .jdgm-carousel-item__product-title,
-  [class*="jdgm-carousel"] [class*="product-title"],
-  [class*="jdgm-cards-carousel"] [class*="product-title"] {
-    max-width: 22ch;
-    font-size: 1.4rem !important;
-    line-height: 1.35 !important;
-    -webkit-line-clamp: 2;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .shopify-app-block:has(.jdgm-carousel-wrapper)::before,
-  .shopify-app-block:has([class*="jdgm-cards-carousel"])::before,
-  .shopify-app-block:has([class*="jdgm-carousel"])::before,
-  .jdgm-carousel-wrapper [class*="card"],
-  [class*="jdgm-cards-carousel"] [class*="card"],
-  [class*="jdgm-carousel"] [class*="item"] {
+  .jdgm-carousel-item {
     transition: none !important;
     transform: none !important;
   }
