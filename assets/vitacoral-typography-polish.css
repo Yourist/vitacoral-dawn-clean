@@ -55,6 +55,30 @@
   font-family: var(--vitacoral-font-ui, "Manrope", "Avenir Next", Arial, sans-serif);
 }
 
+.vc-campaign-spotlight__title {
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", "Manrope", "Avenir Next", Arial, sans-serif);
+  color: var(--vitacoral-color-text, #16312e);
+}
+
+/* Homepage campaign card uses the compact campaign surface, not the spotlight body */
+.vc-campaign-surface--home-link .vc-campaign-surface__trigger {
+  align-items: center;
+  padding: 1.35rem 1.5rem;
+}
+
+.vc-campaign-surface--home-link .vc-campaign-surface__badge {
+  font-size: 1.2rem;
+}
+
+.vc-campaign-surface--home-link .vc-campaign-surface__text {
+  font-size: 1.55rem;
+  line-height: 1.45;
+}
+
+.vc-campaign-surface--home-link .vc-campaign-surface__chevron {
+  font-size: 1.35rem;
+}
+
 /* Product-page content should not fall below a comfortable reading size */
 .product__description,
 .product__description p,
@@ -112,6 +136,25 @@
     font-size: 1.3rem !important;
   }
 
+  .vc-campaign-surface--home-link .vc-campaign-surface__trigger {
+    min-height: auto;
+    gap: .75rem;
+    padding: 1.2rem 1.25rem;
+  }
+
+  .vc-campaign-surface--home-link .vc-campaign-surface__badge {
+    font-size: 1.15rem !important;
+  }
+
+  .vc-campaign-surface--home-link .vc-campaign-surface__text {
+    font-size: 1.5rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .vc-campaign-surface--home-link .vc-campaign-surface__chevron {
+    font-size: 1.35rem !important;
+  }
+
   .vc-campaign-modal__eyebrow,
   .vc-campaign-spotlight__eyebrow {
     font-size: 1.2rem !important;
@@ -127,6 +170,11 @@
   .vc-campaign-copy,
   .vc-campaign-spotlight__button {
     font-size: 1.4rem !important;
+  }
+
+  .vc-campaign-spotlight__title {
+    font-size: clamp(2.6rem, 9vw, 3.8rem) !important;
+    line-height: 1.08 !important;
   }
 
   .vc-campaign-spotlight__body {
