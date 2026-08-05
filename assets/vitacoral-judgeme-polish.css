@@ -328,3 +328,43 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* Layout stabilization for the current Judge.me review widget. */
+.jdgm-widget {
+  overflow: visible;
+}
+
+.jdgm-widget table,
+.jdgm-widget .jdgm-histogram {
+  table-layout: auto;
+}
+
+.jdgm-widget .jdgm-rev,
+.jdgm-widget .jdgm-question,
+.jdgm-widget .jdgm-answer,
+.jdgm-widget .jdgm-rev__title,
+.jdgm-widget .jdgm-question__title,
+.jdgm-widget td,
+.jdgm-widget th {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@media screen and (max-width: 749px) {
+  .jdgm-widget .jdgm-row-stars,
+  .jdgm-widget .jdgm-row-actions,
+  .jdgm-widget .jdgm-rev-widg__summary,
+  .jdgm-widget .jdgm-rev-widg__header,
+  .jdgm-widget .jdgm-form__fieldset-actions {
+    display: initial;
+  }
+
+  .jdgm-widget .jdgm-write-rev-link,
+  .jdgm-widget .jdgm-ask-question-btn,
+  .jdgm-widget .jdgm-submit-rev,
+  .jdgm-widget .jdgm-submit-question,
+  .jdgm-widget .jdgm-btn,
+  .jdgm-widget button:not(.jdgm-paginate__page) {
+    width: auto;
+  }
+}
