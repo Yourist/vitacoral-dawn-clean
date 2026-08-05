@@ -1,0 +1,38 @@
+/* Vitacoral Judge.me homepage section shell — outer surface only */
+
+.shopify-section:has(.jdgm-carousel-wrapper),
+.shopify-section:has(.jdgm-cards-carousel) {
+  position: relative;
+  margin-block: clamp(4rem, 7vw, 7rem);
+  padding: 0 clamp(1.2rem, 3vw, 2.4rem);
+  overflow: visible;
+}
+
+.shopify-section:has(.jdgm-carousel-wrapper) > *,
+.shopify-section:has(.jdgm-cards-carousel) > * {
+  width: min(100%, var(--page-width, 120rem));
+  margin-inline: auto;
+  padding: clamp(3.2rem, 5vw, 5rem) clamp(1.4rem, 4vw, 3.2rem);
+  border: .1rem solid rgba(34, 89, 82, .10);
+  border-radius: 3rem;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(236, 101, 66, .10), transparent 22rem),
+    radial-gradient(circle at 92% 10%, rgba(34, 89, 82, .10), transparent 24rem),
+    linear-gradient(145deg, #ffffff 0%, #f8fbfa 64%, #fff8f4 100%);
+  box-shadow: 0 2rem 5rem rgba(21, 44, 41, .08);
+}
+
+@media screen and (max-width: 749px) {
+  .shopify-section:has(.jdgm-carousel-wrapper),
+  .shopify-section:has(.jdgm-cards-carousel) {
+    margin-block: 3.2rem;
+    padding-inline: 1rem;
+  }
+
+  .shopify-section:has(.jdgm-carousel-wrapper) > *,
+  .shopify-section:has(.jdgm-cards-carousel) > * {
+    padding: 2.4rem 1.2rem 2.8rem;
+    border-radius: 2.2rem;
+    box-shadow: 0 1.4rem 3.2rem rgba(21, 44, 41, .07);
+  }
+}
