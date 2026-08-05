@@ -64,9 +64,9 @@
             </li>
           {%- endfor -%}
         </ul>
-      {%- else -%}
+      {%- elsif section.settings.empty_state_text != blank -%}
         <div class="vitacoral-social-proof__empty vitacoral-card">
-          <p class="vitacoral-body-muted">Review cards can be added from the Theme Editor.</p>
+          <p class="vitacoral-body-muted">{{ section.settings.empty_state_text | escape }}</p>
         </div>
       {%- endif -%}
     </div>
@@ -125,6 +125,12 @@
       "type": "url",
       "id": "bottom_cta_link",
       "label": "Bottom CTA link"
+    },
+    {
+      "type": "text",
+      "id": "empty_state_text",
+      "label": "Boş durum metni",
+      "default": "Deneyim kartları Tema Düzenleyici üzerinden eklenebilir."
     }
   ],
   "blocks": [
