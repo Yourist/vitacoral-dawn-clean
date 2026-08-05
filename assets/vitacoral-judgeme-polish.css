@@ -1,9 +1,8 @@
 /* Vitacoral Judge.me stable legacy styling */
 
+/* Keep text in the brand font without overriding Judge.me's icon font. */
 .jdgm-widget,
-.jdgm-widget *,
-.jdgm-preview-badge,
-.jdgm-preview-badge * {
+.jdgm-preview-badge {
   font-family: "Manrope", "Avenir Next", Arial, sans-serif !important;
   letter-spacing: 0 !important;
 }
