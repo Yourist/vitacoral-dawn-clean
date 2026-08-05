@@ -15,7 +15,7 @@
         "pdp_style_loader": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-info-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-sales-core.css' | asset_url | stylesheet_tag }}\n<script src=\"{{ 'vitacoral-pdp-gallery-controller.js' | asset_url }}\" defer=\"defer\"></script>"
+            "custom_liquid": "{{ 'vitacoral-pdp-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-info-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-commerce-polish.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-sales-core.css' | asset_url | stylesheet_tag }}\n{{ 'vitacoral-pdp-final-hierarchy.css' | asset_url | stylesheet_tag }}\n<script>window.VC_PDP_TITLE_LINES={line1:{{ product.metafields.custom.pdp_title_line_1.value | json }},line2:{{ product.metafields.custom.pdp_title_line_2.value | json }}};</script>\n<script src=\"{{ 'vitacoral-pdp-title-lines.js' | asset_url }}\" defer=\"defer\"></script>\n<script src=\"{{ 'vitacoral-pdp-gallery-controller.js' | asset_url }}\" defer=\"defer\"></script>"
           }
         },
         "vendor": {
