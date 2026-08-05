@@ -159,8 +159,7 @@
 .jdgm-widget .jdgm-ask-question-btn,
 .jdgm-widget .jdgm-submit-rev,
 .jdgm-widget .jdgm-submit-question,
-.jdgm-widget .jdgm-btn,
-.jdgm-widget button:not(.jdgm-paginate__page) {
+.jdgm-widget .jdgm-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -185,8 +184,7 @@
 .jdgm-widget .jdgm-ask-question-btn:hover,
 .jdgm-widget .jdgm-submit-rev:hover,
 .jdgm-widget .jdgm-submit-question:hover,
-.jdgm-widget .jdgm-btn:hover,
-.jdgm-widget button:not(.jdgm-paginate__page):hover {
+.jdgm-widget .jdgm-btn:hover {
   border-color: #ec6542;
   background: #ec6542;
   color: #fff;
@@ -257,12 +255,12 @@
 .jdgm-widget .jdgm-histogram {
   width: 100%;
   max-width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .jdgm-widget td,
 .jdgm-widget th {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .jdgm-widget .jdgm-paginate {
@@ -295,24 +293,56 @@
     font-size: 2.7rem;
   }
 
-  .jdgm-widget .jdgm-row-stars,
-  .jdgm-widget .jdgm-row-actions,
-  .jdgm-widget .jdgm-rev-widg__summary,
-  .jdgm-widget .jdgm-rev-widg__header,
-  .jdgm-widget .jdgm-form__fieldset-actions {
+  .jdgm-widget .jdgm-rev-widg__header {
+    display: grid;
+    gap: 1.2rem;
+    align-items: start;
+  }
+
+  .jdgm-widget .jdgm-row-actions {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .8rem;
+    margin: 0;
   }
 
   .jdgm-widget .jdgm-write-rev-link,
   .jdgm-widget .jdgm-ask-question-btn,
   .jdgm-widget .jdgm-submit-rev,
   .jdgm-widget .jdgm-submit-question,
-  .jdgm-widget .jdgm-btn,
-  .jdgm-widget button:not(.jdgm-paginate__page) {
-    width: 100%;
+  .jdgm-widget .jdgm-btn {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .jdgm-widget button:not(.jdgm-btn):not(.jdgm-submit-rev):not(.jdgm-submit-question):not(.jdgm-paginate__page) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.2rem;
+    min-width: 4.2rem;
+    max-width: 4.2rem;
+    height: 4.2rem;
+    min-height: 4.2rem;
+    padding: 0;
+    border: .1rem solid rgba(34, 89, 82, .2);
+    border-radius: 1rem;
+    background: #fff;
+    color: #16312e;
+    box-shadow: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+    transform: none;
+  }
+
+  .jdgm-widget button:not(.jdgm-btn):not(.jdgm-submit-rev):not(.jdgm-submit-question):not(.jdgm-paginate__page):hover {
+    border-color: rgba(34, 89, 82, .35);
+    background: #f8fbfa;
+    color: #16312e;
+    transform: none;
   }
 
   .jdgm-widget .jdgm-rev,
@@ -320,51 +350,12 @@
   .jdgm-widget .jdgm-answer {
     padding: 1.6rem;
     border-radius: 1.5rem;
+    overflow-wrap: break-word;
   }
 
   .jdgm-widget .jdgm-rev__header,
   .jdgm-widget .jdgm-row-profile,
   .jdgm-widget .jdgm-row-rating {
-    overflow-wrap: anywhere;
-  }
-}
-
-/* Layout stabilization for the current Judge.me review widget. */
-.jdgm-widget {
-  overflow: visible;
-}
-
-.jdgm-widget table,
-.jdgm-widget .jdgm-histogram {
-  table-layout: auto;
-}
-
-.jdgm-widget .jdgm-rev,
-.jdgm-widget .jdgm-question,
-.jdgm-widget .jdgm-answer,
-.jdgm-widget .jdgm-rev__title,
-.jdgm-widget .jdgm-question__title,
-.jdgm-widget td,
-.jdgm-widget th {
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-@media screen and (max-width: 749px) {
-  .jdgm-widget .jdgm-row-stars,
-  .jdgm-widget .jdgm-row-actions,
-  .jdgm-widget .jdgm-rev-widg__summary,
-  .jdgm-widget .jdgm-rev-widg__header,
-  .jdgm-widget .jdgm-form__fieldset-actions {
-    display: initial;
-  }
-
-  .jdgm-widget .jdgm-write-rev-link,
-  .jdgm-widget .jdgm-ask-question-btn,
-  .jdgm-widget .jdgm-submit-rev,
-  .jdgm-widget .jdgm-submit-question,
-  .jdgm-widget .jdgm-btn,
-  .jdgm-widget button:not(.jdgm-paginate__page) {
-    width: auto;
+    overflow-wrap: break-word;
   }
 }
