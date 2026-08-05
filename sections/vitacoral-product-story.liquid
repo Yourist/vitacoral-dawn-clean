@@ -2,6 +2,22 @@
 {{ 'vitacoral-audit-fixes.css' | asset_url | stylesheet_tag }}
 {{ 'vitacoral-pdp-info-accordions.js' | asset_url | script_tag }}
 
+{%- liquid
+  assign has_primary_action = false
+  assign has_secondary_action = false
+  assign has_ministry_action = false
+
+  if section.settings.primary_cta_label != blank and section.settings.primary_cta_link != blank
+    assign has_primary_action = true
+  endif
+  if section.settings.secondary_cta_label != blank and section.settings.secondary_cta_link != blank
+    assign has_secondary_action = true
+  endif
+  if section.settings.ministry_cta_label != blank and section.settings.ministry_cta_link != blank
+    assign has_ministry_action = true
+  endif
+-%}
+
 <section class="vitacoral-product-story vitacoral-section" id="VitacoralProductStory-{{ section.id }}">
   <div class="vitacoral-container">
     <div class="vitacoral-product-story__shell">
@@ -20,16 +36,16 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank or section.settings.ministry_cta_label != blank -%}
+        {%- if has_primary_action or has_secondary_action or has_ministry_action -%}
           <div class="vitacoral-product-story__actions">
-            {%- if section.settings.primary_cta_label != blank -%}
-              <a {% if section.settings.primary_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.primary_cta_link }}"{% endif %} class="vitacoral-button">{{ section.settings.primary_cta_label | escape }}</a>
+            {%- if has_primary_action -%}
+              <a href="{{ section.settings.primary_cta_link }}" class="vitacoral-button">{{ section.settings.primary_cta_label | escape }}</a>
             {%- endif -%}
-            {%- if section.settings.secondary_cta_label != blank -%}
-              <a {% if section.settings.secondary_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.secondary_cta_link }}"{% endif %} class="vitacoral-button vitacoral-button--secondary">{{ section.settings.secondary_cta_label | escape }}</a>
+            {%- if has_secondary_action -%}
+              <a href="{{ section.settings.secondary_cta_link }}" class="vitacoral-button vitacoral-button--secondary">{{ section.settings.secondary_cta_label | escape }}</a>
             {%- endif -%}
-            {%- if section.settings.ministry_cta_label != blank -%}
-              <a {% if section.settings.ministry_cta_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.ministry_cta_link }}"{% endif %} class="vitacoral-button vitacoral-button--secondary">{{ section.settings.ministry_cta_label | escape }}</a>
+            {%- if has_ministry_action -%}
+              <a href="{{ section.settings.ministry_cta_link }}" class="vitacoral-button vitacoral-button--secondary">{{ section.settings.ministry_cta_label | escape }}</a>
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -47,8 +63,8 @@
               {%- if block.settings.body != blank or block.settings.link_label != blank -%}
                 <div class="vitacoral-body vitacoral-product-story__content rte">
                   {%- if block.settings.body != blank -%}{{ block.settings.body }}{%- endif -%}
-                  {%- if block.settings.link_label != blank -%}
-                    <a {% if block.settings.link_url == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link_url }}"{% endif %} class="vitacoral-product-story__link">{{ block.settings.link_label | escape }}</a>
+                  {%- if block.settings.link_label != blank and block.settings.link_url != blank -%}
+                    <a href="{{ block.settings.link_url }}" class="vitacoral-product-story__link">{{ block.settings.link_label | escape }}</a>
                   {%- endif -%}
                 </div>
               {%- endif -%}
