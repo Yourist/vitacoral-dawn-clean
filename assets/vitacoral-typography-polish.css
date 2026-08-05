@@ -183,7 +183,20 @@ button,.button,.vitacoral-button,.shopify-payment-button__button,.product-form__
   .jdgm-rev-widg { padding:2rem 1.4rem !important; border-radius:1.8rem !important; }
   .jdgm-rev-widg__title { font-size:2.2rem !important; }
   .shopify-app-block:has(.jdgm-carousel-wrapper) { margin-block:3.2rem; padding:2.6rem 1.2rem 3rem; border-radius:2.4rem; }
-  .jdgm-carousel-title { max-width:18ch !important; font-size:2.4rem !important; line-height:1.12 !important; }
+  .jdgm-carousel-title {
+    display:block !important;
+    width:100% !important;
+    max-width:18ch !important;
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+    white-space:normal !important;
+    text-overflow:clip !important;
+    -webkit-line-clamp:unset !important;
+    line-clamp:unset !important;
+    font-size:2.4rem !important;
+    line-height:1.12 !important;
+  }
   .jdgm-carousel-item { border-radius:1.6rem !important; }
   .jdgm-carousel-item__review-body { display:-webkit-box; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:5; }
 }
