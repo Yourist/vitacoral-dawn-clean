@@ -30,9 +30,48 @@
     });
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyTitleLines, { once: true });
-  } else {
+  const normalizeLabel = (value) => value.replace(/\s+/g, ' ').trim().toLocaleLowerCase('tr-TR');
+
+  const dedupeProductDetails = () => {
+    document.querySelectorAll('[data-vc-product-info-container]').forEach((productInfo) => {
+      const essentials = productInfo.querySelector('.vitacoral-pdp-essentials');
+      const details = productInfo.querySelector('.vitacoral-pdp-details');
+      if (!essentials || !details) return;
+
+      const visibleLabels = new Set(
+        Array.from(essentials.querySelectorAll('.vitacoral-pdp-essentials__label'))
+          .map((label) => normalizeLabel(label.textContent || ''))
+          .filter(Boolean)
+      );
+
+      details.querySelectorAll('.vitacoral-pdp-details__item').forEach((item) => {
+        const summary = item.querySelector('.vitacoral-pdp-details__summary');
+        const summaryLabel = normalizeLabel(summary?.textContent || '');
+
+        if (summaryLabel && visibleLabels.has(summaryLabel)) {
+          item.hidden = true;
+          item.setAttribute('aria-hidden', 'true');
+        }
+      });
+
+      const hasVisibleItems = Array.from(details.querySelectorAll('.vitacoral-pdp-details__item'))
+        .some((item) => !item.hidden);
+
+      if (!hasVisibleItems) {
+        details.hidden = true;
+        details.setAttribute('aria-hidden', 'true');
+      }
+    });
+  };
+
+  const init = () => {
     applyTitleLines();
+    dedupeProductDetails();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
   }
 })();
