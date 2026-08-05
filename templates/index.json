@@ -244,6 +244,9 @@
         "heading": "Öne çıkan Vitacoral fırsatını keşfedin",
         "body": "<p>Güncel kampanya bilgisini ürün sayfasında inceleyerek alışverişinizi tamamlayın.</p>",
         "featured_product": "",
+        "static_badge": "WELCOME10",
+        "static_text": "İlk siparişinizde %10 başlangıç avantajı",
+        "static_link_label": "Ürünleri gör",
         "primary_label": "Kampanyalı ürünleri gör",
         "primary_link": "",
         "secondary_label": "Tüm ürünler",
@@ -308,6 +311,9 @@
         "eyebrow": "Ürün aileleri",
         "heading": "Günlük rutininiz için ürünleri içerikleriyle birlikte inceleyin",
         "body": "<p>Her ürün ailesinde içerik, kullanım önerileri ve uyarı bilgilerini inceleyerek size uygun seçenekleri daha kolay değerlendirebilirsiniz.</p>",
+        "welcome_campaign_code": "WELCOME10",
+        "welcome_campaign_text": "İlk siparişinizde %10 başlangıç avantajı",
+        "welcome_campaign_label": "Kod",
         "bottom_cta_label": "Tüm ürünleri gör",
         "bottom_cta_link": "/collections/all"
       }
@@ -474,7 +480,7 @@
             "stars_color": "#ec6542",
             "arrows_color": "#000000",
             "transition_speed": 5,
-            "header_text": "Vitacoral Kullanıcıları Ne Diyor?",
+            "header_text": "Kullananlar Ne Diyor?",
             "show_average_rating": true,
             "rating_display": "default"
           }
