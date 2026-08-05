@@ -41,9 +41,15 @@
         {%- else -%}
           <a class="vc-campaign-surface vc-campaign-surface--home-static vc-campaign-surface--home-link" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">
             <span class="vc-campaign-surface__trigger">
-              <span class="vc-campaign-surface__badge">WELCOME10</span>
-              <span class="vc-campaign-surface__text">İlk siparişinizde %10 başlangıç avantajı</span>
-              <span class="vc-campaign-surface__chevron">Ürünleri gör</span>
+              {%- if section.settings.static_badge != blank -%}
+                <span class="vc-campaign-surface__badge">{{ section.settings.static_badge | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.static_text != blank -%}
+                <span class="vc-campaign-surface__text">{{ section.settings.static_text | escape }}</span>
+              {%- endif -%}
+              {%- if section.settings.static_link_label != blank -%}
+                <span class="vc-campaign-surface__chevron">{{ section.settings.static_link_label | escape }}</span>
+              {%- endif -%}
             </span>
           </a>
         {%- endif -%}
@@ -62,6 +68,9 @@
     {"type":"inline_richtext","id":"heading","label":"Heading","default":"Vitacoral’e başlarken daha avantajlı başlayın"},
     {"type":"richtext","id":"body","label":"Body","default":"<p>WELCOME10 koduyla ilk siparişinizde %10 indirim fırsatını kullanabilirsiniz. Ürünleri içerik ve kullanım bilgileriyle birlikte inceleyin.</p>"},
     {"type":"product","id":"featured_product","label":"Featured product"},
+    {"type":"text","id":"static_badge","label":"Statik kart kampanya kodu","default":"WELCOME10"},
+    {"type":"text","id":"static_text","label":"Statik kart kampanya metni","default":"İlk siparişinizde %10 başlangıç avantajı"},
+    {"type":"text","id":"static_link_label","label":"Statik kart bağlantı metni","default":"Ürünleri gör"},
     {"type":"text","id":"primary_label","label":"Primary CTA label","default":"Ürünleri incele"},
     {"type":"url","id":"primary_link","label":"Primary CTA link"},
     {"type":"text","id":"secondary_label","label":"Secondary CTA label","default":"Rutinini bul"},
