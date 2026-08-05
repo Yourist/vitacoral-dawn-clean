@@ -21,9 +21,9 @@
     <div class="vitacoral-featured-products__campaign vitacoral-reveal is-visible">
       <div class="vc-campaign-surface vc-campaign-surface--home-welcome">
         <button class="vc-campaign-surface__trigger" type="button" disabled>
-          <span class="vc-campaign-surface__badge">WELCOME10</span>
-          <span class="vc-campaign-surface__text">İlk siparişinizde %10 başlangıç avantajı</span>
-          <span class="vc-campaign-surface__chevron">Kod</span>
+          <span class="vc-campaign-surface__badge">{{ section.settings.welcome_campaign_code | escape }}</span>
+          <span class="vc-campaign-surface__text">{{ section.settings.welcome_campaign_text | escape }}</span>
+          <span class="vc-campaign-surface__chevron">{{ section.settings.welcome_campaign_label | escape }}</span>
         </button>
       </div>
     </div>
@@ -173,6 +173,9 @@
     {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Öne Çıkan Ürünler"},
     {"type":"inline_richtext","id":"heading","label":"Heading","default":"En çok incelenen Vitacoral ürünleri"},
     {"type":"richtext","id":"body","label":"Body","default":"<p>Vitacoral ürünlerini içerik, kullanım ve etiket bilgileriyle birlikte inceleyin.</p>"},
+    {"type":"text","id":"welcome_campaign_code","label":"Welcome campaign code","default":"WELCOME10"},
+    {"type":"text","id":"welcome_campaign_text","label":"Welcome campaign text","default":"İlk siparişinizde %10 başlangıç avantajı"},
+    {"type":"text","id":"welcome_campaign_label","label":"Welcome campaign label","default":"Kod"},
     {"type":"text","id":"bottom_cta_label","label":"Bottom CTA label","default":"Tüm ürünleri gör"},
     {"type":"url","id":"bottom_cta_link","label":"Bottom CTA link"}
   ],
