@@ -22,6 +22,27 @@
   box-shadow: 0 2rem 5rem rgba(21, 44, 41, .08);
 }
 
+/* Keep the product name below the reviewer visible across two lines. */
+.jdgm-carousel-wrapper .jdgm-carousel-item__product-title,
+.jdgm-cards-carousel .jm-review-item [class*='product-title'],
+.jdgm-cards-carousel .jm-review-item [class*='product_name'],
+.jdgm-cards-carousel .jm-review-item [class*='product-name'] {
+  display: -webkit-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  text-overflow: clip !important;
+  line-height: 1.35 !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important;
+  line-clamp: 2 !important;
+}
+
 @media screen and (max-width: 749px) {
   .shopify-section:has(.jdgm-carousel-wrapper),
   .shopify-section:has(.jdgm-cards-carousel) {
