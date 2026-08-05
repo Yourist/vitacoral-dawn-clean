@@ -6,33 +6,15 @@
     assign tools_cta_link = '/pages/saglik-hesaplama-araclari'
   endif
 
-  assign tools_eyebrow = 'Günlük hesaplama araçları'
-  assign tools_heading = 'Kendinize dair temel değerleri tek yerde görün'
-  assign tools_body = '<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>'
-  assign tools_cta_label = 'Araçları aç'
-  assign tools_panel_label = 'Sağlık hesaplama araçları'
-  assign tools_note = 'Sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir.'
-
-  if section.settings.use_editor_content
-    if section.settings.eyebrow != blank
-      assign tools_eyebrow = section.settings.eyebrow
-    endif
-    if section.settings.heading != blank
-      assign tools_heading = section.settings.heading
-    endif
-    if section.settings.body != blank
-      assign tools_body = section.settings.body
-    endif
-    if section.settings.cta_label != blank
-      assign tools_cta_label = section.settings.cta_label
-    endif
-    if section.settings.panel_label != blank
-      assign tools_panel_label = section.settings.panel_label
-    endif
-    if section.settings.note != blank
-      assign tools_note = section.settings.note
-    endif
+  assign tools_eyebrow = section.settings.eyebrow | default: 'Günlük hesaplama araçları'
+  assign tools_heading = section.settings.heading | default: 'Kendinize dair temel değerleri tek yerde görün'
+  assign tools_body = section.settings.body
+  if tools_body == blank
+    assign tools_body = '<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>'
   endif
+  assign tools_cta_label = section.settings.cta_label | default: 'Araçları aç'
+  assign tools_panel_label = section.settings.panel_label | default: 'Sağlık hesaplama araçları'
+  assign tools_note = section.settings.note | default: 'Sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir.'
 -%}
 
 <section class="vc-tools-teaser" id="VitacoralToolsTeaser-{{ section.id }}">
@@ -47,7 +29,7 @@
     </div>
 
     <div class="vc-tools-teaser__panel" aria-label="{{ tools_panel_label | escape }}">
-      {%- if section.settings.use_editor_content and section.blocks.size > 0 -%}
+      {%- if section.blocks.size > 0 -%}
         {%- for block in section.blocks -%}
           <div class="vc-tools-teaser__mini" {{ block.shopify_attributes }}>
             <span class="vc-tools-teaser__icon">{{ block.settings.index | default: forloop.index | prepend: '0' | slice: -2, 2 }}</span>
@@ -82,13 +64,6 @@
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "use_editor_content",
-      "label": "Theme Editor içeriğini kullan",
-      "default": false,
-      "info": "Kapalıyken mevcut canlı metinler korunur. Açıldığında aşağıdaki alanlar ve araç blokları kullanılır."
-    },
     {"type":"text","id":"eyebrow","label":"Üst başlık","default":"Günlük hesaplama araçları"},
     {"type":"text","id":"heading","label":"Başlık","default":"Kendinize dair temel değerleri tek yerde görün"},
     {"type":"richtext","id":"body","label":"Açıklama","default":"<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>"},
