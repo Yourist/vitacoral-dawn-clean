@@ -80,4 +80,34 @@ product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials__value p {
   .product-form__quantity .quantity { width:13.2rem!important;min-height:4.6rem!important; }
   .product-form__quantity .quantity__button { width:4.4rem!important;min-width:4.4rem!important;height:4.6rem!important; }
   .product-form__quantity .quantity__input { width:4.4rem!important;min-width:4.4rem!important;height:4.6rem!important; }
+
+  /* Mobile PDP section rhythm — Vitacoral-owned sections only. */
+  .shopify-section:has(.vc-pdp-world),
+  .shopify-section:has(.vc-routine-suggestion),
+  .shopify-section:has(.vitacoral-product-story),
+  .shopify-section:has(.related-products) {
+    margin-block: 2.4rem!important;
+    padding-inline: 1rem!important;
+  }
+
+  .shopify-section .vc-pdp-world,
+  .shopify-section .vc-routine-suggestion,
+  .shopify-section .vitacoral-product-story,
+  .shopify-section .related-products {
+    overflow: hidden;
+    border: .1rem solid rgba(34,89,82,.10);
+    border-radius: 2.2rem;
+    background: linear-gradient(145deg,#fff 0%,#f8fbfa 70%,#fff9f6 100%);
+    box-shadow: 0 1.4rem 3.2rem rgba(21,44,41,.07);
+  }
+
+  .shopify-section .vc-routine-suggestion,
+  .shopify-section .vitacoral-product-story,
+  .shopify-section .related-products {
+    padding-block: 2.8rem!important;
+  }
+
+  .shopify-section .vc-pdp-world {
+    padding: 2.8rem 0!important;
+  }
 }
