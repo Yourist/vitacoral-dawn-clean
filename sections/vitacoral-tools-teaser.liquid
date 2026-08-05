@@ -5,27 +5,72 @@
   if tools_cta_link == blank
     assign tools_cta_link = '/pages/saglik-hesaplama-araclari'
   endif
+
+  assign tools_eyebrow = 'Günlük hesaplama araçları'
+  assign tools_heading = 'Kendinize dair temel değerleri tek yerde görün'
+  assign tools_body = '<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>'
+  assign tools_cta_label = 'Araçları aç'
+  assign tools_panel_label = 'Sağlık hesaplama araçları'
+  assign tools_note = 'Sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir.'
+
+  if section.settings.use_editor_content
+    if section.settings.eyebrow != blank
+      assign tools_eyebrow = section.settings.eyebrow
+    endif
+    if section.settings.heading != blank
+      assign tools_heading = section.settings.heading
+    endif
+    if section.settings.body != blank
+      assign tools_body = section.settings.body
+    endif
+    if section.settings.cta_label != blank
+      assign tools_cta_label = section.settings.cta_label
+    endif
+    if section.settings.panel_label != blank
+      assign tools_panel_label = section.settings.panel_label
+    endif
+    if section.settings.note != blank
+      assign tools_note = section.settings.note
+    endif
+  endif
 -%}
 
 <section class="vc-tools-teaser" id="VitacoralToolsTeaser-{{ section.id }}">
   <div class="page-width vc-tools-teaser__inner">
     <div class="vc-tools-teaser__copy">
-      <p class="vc-tools-teaser__eyebrow">Günlük hesaplama araçları</p>
-      <h2 class="vc-tools-teaser__title">Kendinize dair temel değerleri tek yerde görün</h2>
-      <div class="vc-tools-teaser__body rte"><p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p></div>
-      <div class="vc-tools-teaser__actions"><a class="vc-tools-teaser__button" href="{{ tools_cta_link }}">Araçları aç</a></div>
+      <p class="vc-tools-teaser__eyebrow">{{ tools_eyebrow | escape }}</p>
+      <h2 class="vc-tools-teaser__title">{{ tools_heading | escape }}</h2>
+      <div class="vc-tools-teaser__body rte">{{ tools_body }}</div>
+      <div class="vc-tools-teaser__actions">
+        <a class="vc-tools-teaser__button" href="{{ tools_cta_link }}">{{ tools_cta_label | escape }}</a>
+      </div>
     </div>
 
-    <div class="vc-tools-teaser__panel" aria-label="Sağlık hesaplama araçları">
-      {%- assign tool_titles = 'Günlük kalori ihtiyacı|Vücut kitle indeksi|İdeal kilo aralığı|Günlük su ihtiyacı|Protein ihtiyacı|Rutinini bul' | split: '|' -%}
-      {%- assign tool_texts = 'Yaklaşık günlük enerji ihtiyacınızı görün.|Boy ve kilonuza göre VKİ değerinizi hesaplayın.|Boyunuza göre genel referans aralığını görün.|Kilo ve aktivite düzeyinize göre su ihtiyacınızı hesaplayın.|Kilo ve hareket düzeyinize göre protein miktarını görün.|Kısa seçimlerle size en yakın rutin sayfasına ulaşın.' | split: '|' -%}
-      {%- for tool_title in tool_titles -%}
-        <div class="vc-tools-teaser__mini">
-          <span class="vc-tools-teaser__icon">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-          <div><h3 class="vc-tools-teaser__mini-title">{{ tool_title }}</h3><p class="vc-tools-teaser__mini-text">{{ tool_texts[forloop.index0] }}</p></div>
-        </div>
-      {%- endfor -%}
-      <p class="vc-tools-teaser__note">Sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir.</p>
+    <div class="vc-tools-teaser__panel" aria-label="{{ tools_panel_label | escape }}">
+      {%- if section.settings.use_editor_content and section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="vc-tools-teaser__mini" {{ block.shopify_attributes }}>
+            <span class="vc-tools-teaser__icon">{{ block.settings.index | default: forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <div>
+              <h3 class="vc-tools-teaser__mini-title">{{ block.settings.title | escape }}</h3>
+              <p class="vc-tools-teaser__mini-text">{{ block.settings.text | escape }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        {%- assign tool_titles = 'Günlük kalori ihtiyacı|Vücut kitle indeksi|İdeal kilo aralığı|Günlük su ihtiyacı|Protein ihtiyacı|Rutinini bul' | split: '|' -%}
+        {%- assign tool_texts = 'Yaklaşık günlük enerji ihtiyacınızı görün.|Boy ve kilonuza göre VKİ değerinizi hesaplayın.|Boyunuza göre genel referans aralığını görün.|Kilo ve aktivite düzeyinize göre su ihtiyacınızı hesaplayın.|Kilo ve hareket düzeyinize göre protein miktarını görün.|Kısa seçimlerle size en yakın rutin sayfasına ulaşın.' | split: '|' -%}
+        {%- for tool_title in tool_titles -%}
+          <div class="vc-tools-teaser__mini">
+            <span class="vc-tools-teaser__icon">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <div>
+              <h3 class="vc-tools-teaser__mini-title">{{ tool_title }}</h3>
+              <p class="vc-tools-teaser__mini-text">{{ tool_texts[forloop.index0] }}</p>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+      <p class="vc-tools-teaser__note">{{ tools_note | escape }}</p>
     </div>
   </div>
 </section>
@@ -37,8 +82,42 @@
   "class": "section",
   "disabled_on": {"groups": ["header", "footer"]},
   "settings": [
-    {"type":"url","id":"cta_link","label":"Araçlar sayfası bağlantısı"}
+    {
+      "type": "checkbox",
+      "id": "use_editor_content",
+      "label": "Theme Editor içeriğini kullan",
+      "default": false,
+      "info": "Kapalıyken mevcut canlı metinler korunur. Açıldığında aşağıdaki alanlar ve araç blokları kullanılır."
+    },
+    {"type":"text","id":"eyebrow","label":"Üst başlık","default":"Günlük hesaplama araçları"},
+    {"type":"text","id":"heading","label":"Başlık","default":"Kendinize dair temel değerleri tek yerde görün"},
+    {"type":"richtext","id":"body","label":"Açıklama","default":"<p>Kalori, VKİ, kilo aralığı, su ve protein ihtiyacınızı yaklaşık olarak hesaplayın; ardından size uygun Vitacoral rutinini bulun.</p>"},
+    {"type":"text","id":"cta_label","label":"Buton metni","default":"Araçları aç"},
+    {"type":"url","id":"cta_link","label":"Araçlar sayfası bağlantısı"},
+    {"type":"text","id":"panel_label","label":"Panel erişilebilirlik etiketi","default":"Sağlık hesaplama araçları"},
+    {"type":"textarea","id":"note","label":"Alt bilgi","default":"Sonuçlar genel bilgilendirme amaçlı yaklaşık değerlerdir."}
   ],
-  "presets": [{"name":"Araçlar teaser"}]
+  "blocks": [
+    {
+      "type": "tool_item",
+      "name": "Araç",
+      "limit": 8,
+      "settings": [
+        {"type":"text","id":"index","label":"Sıra etiketi","default":"01"},
+        {"type":"text","id":"title","label":"Başlık","default":"Hesaplama aracı"},
+        {"type":"textarea","id":"text","label":"Açıklama","default":"Araç açıklaması"}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Araçlar teaser",
+      "blocks":[
+        {"type":"tool_item"},
+        {"type":"tool_item"},
+        {"type":"tool_item"}
+      ]
+    }
+  ]
 }
 {% endschema %}
