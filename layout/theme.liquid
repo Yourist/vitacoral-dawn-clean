@@ -147,7 +147,7 @@
         --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
         --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur }}px;
+        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
 
         --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
         --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
@@ -158,7 +158,7 @@
         --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
         --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur }}px;
+        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
 
         --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
 
@@ -356,7 +356,7 @@
         itemRemoved: `{{ 'sections.quick_order_list.items_removed.one' | t: quantity: '[quantity]' }}`,
         viewCart: `{{- 'sections.quick_order_list.view_cart' | t -}}`,
         each: `{{- 'sections.quick_order_list.each' | t: money: '[money]' }}`,
-        min_error: `{{- 'sections.quick_order_list.min_error_html' | t: min: '[min]' }}`,
+        min_error: `{{- 'sections.quick_order_list.min_error' | t: min: '[min]' }}`,
         max_error: `{{- 'sections.quick_order_list.max_error_html' | t: max: '[max]' }}`,
         step_error: `{{- 'sections.quick_order_list.step_error' | t: step: '[step]' }}`,
       };
