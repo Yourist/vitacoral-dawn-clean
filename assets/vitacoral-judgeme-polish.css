@@ -1,0 +1,330 @@
+/* Vitacoral Judge.me polish — isolated app styling and overflow protection */
+
+.jdgm-widget,
+.jdgm-widget * {
+  box-sizing: border-box;
+}
+
+.jdgm-widget {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: clip;
+  color: #16312e;
+  font-family: var(--font-body-family, Manrope, Arial, sans-serif);
+}
+
+.jdgm-widget img,
+.jdgm-widget video,
+.jdgm-widget iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.jdgm-widget input,
+.jdgm-widget textarea,
+.jdgm-widget select,
+.jdgm-widget button {
+  max-width: 100%;
+  font: inherit;
+}
+
+.jdgm-widget a {
+  color: #225952;
+  text-underline-offset: .2em;
+}
+
+.jdgm-widget a:hover {
+  color: #ec6542;
+}
+
+.jdgm-rev-widg,
+.jdgm-all-reviews-widget,
+.jdgm-medals-wrapper {
+  width: 100%;
+  max-width: var(--page-width, 120rem);
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 4rem);
+  border: .1rem solid rgba(34, 89, 82, .14);
+  border-radius: 2.4rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, .99), rgba(247, 251, 249, .98));
+  box-shadow: 0 1.6rem 4rem rgba(21, 44, 41, .07);
+}
+
+.jdgm-rev-widg__title,
+.jdgm-all-reviews-widget__title,
+.jdgm-widget .jdgm-form__title {
+  margin: 0;
+  color: #16312e;
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", var(--font-heading-family, Arial, sans-serif));
+  font-size: clamp(2.7rem, 4vw, 4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.jdgm-rev-widg__summary,
+.jdgm-rev-widg__body,
+.jdgm-rev-widg__reviews,
+.jdgm-widget .jdgm-form-wrapper,
+.jdgm-widget .jdgm-question-form-wrapper {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.jdgm-rev-widg__summary {
+  display: grid;
+  gap: 1.2rem;
+  align-content: start;
+}
+
+.jdgm-widget .jdgm-rev-widg__summary-text,
+.jdgm-widget .jdgm-rev-widg__summary-average,
+.jdgm-widget .jdgm-rev__body,
+.jdgm-widget .jdgm-rev__reply-content,
+.jdgm-widget .jdgm-question__body,
+.jdgm-widget .jdgm-answer__body,
+.jdgm-widget label,
+.jdgm-widget input,
+.jdgm-widget textarea,
+.jdgm-widget select {
+  font-family: var(--font-body-family, Manrope, Arial, sans-serif);
+  font-size: 1.5rem;
+  line-height: 1.65;
+}
+
+.jdgm-widget .jdgm-star,
+.jdgm-widget .jdgm-histogram__bar-content {
+  color: #ec6542;
+}
+
+.jdgm-widget .jdgm-histogram__bar {
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(34, 89, 82, .1);
+}
+
+.jdgm-widget .jdgm-row-stars,
+.jdgm-widget .jdgm-row-actions,
+.jdgm-widget .jdgm-row-profile,
+.jdgm-widget .jdgm-row-rating,
+.jdgm-widget .jdgm-rev__header,
+.jdgm-widget .jdgm-rev__content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.jdgm-widget .jdgm-rev,
+.jdgm-widget .jdgm-question,
+.jdgm-widget .jdgm-answer {
+  margin-top: 1.4rem;
+  padding: clamp(1.8rem, 3vw, 2.6rem);
+  border: .1rem solid rgba(34, 89, 82, .12);
+  border-radius: 1.8rem;
+  background: #fff;
+  box-shadow: 0 .8rem 2.4rem rgba(21, 44, 41, .045);
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.jdgm-widget .jdgm-rev__title,
+.jdgm-widget .jdgm-question__title {
+  color: #16312e;
+  font-family: var(--vitacoral-font-brand, "Gibbs Book", var(--font-heading-family, Arial, sans-serif));
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+  overflow-wrap: anywhere;
+}
+
+.jdgm-widget .jdgm-rev__author,
+.jdgm-widget .jdgm-rev__buyer-badge,
+.jdgm-widget .jdgm-rev__timestamp,
+.jdgm-widget .jdgm-rev__location,
+.jdgm-widget .jdgm-question__author,
+.jdgm-widget .jdgm-answer__author {
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.jdgm-widget .jdgm-rev__buyer-badge,
+.jdgm-widget .jdgm-rev__custom-form {
+  border-radius: 999px;
+}
+
+.jdgm-widget .jdgm-write-rev-link,
+.jdgm-widget .jdgm-ask-question-btn,
+.jdgm-widget .jdgm-submit-rev,
+.jdgm-widget .jdgm-submit-question,
+.jdgm-widget .jdgm-btn,
+.jdgm-widget button:not(.jdgm-paginate__page) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.6rem;
+  max-width: 100%;
+  padding: .9rem 1.7rem;
+  border: .1rem solid #225952;
+  border-radius: 999px;
+  background: #225952;
+  color: #fff;
+  font-family: var(--font-body-family, Manrope, Arial, sans-serif);
+  font-size: 1.4rem;
+  font-weight: 750;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.jdgm-widget .jdgm-write-rev-link:hover,
+.jdgm-widget .jdgm-ask-question-btn:hover,
+.jdgm-widget .jdgm-submit-rev:hover,
+.jdgm-widget .jdgm-submit-question:hover,
+.jdgm-widget .jdgm-btn:hover,
+.jdgm-widget button:not(.jdgm-paginate__page):hover {
+  border-color: #ec6542;
+  background: #ec6542;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.jdgm-widget input:not([type="radio"]):not([type="checkbox"]),
+.jdgm-widget textarea,
+.jdgm-widget select {
+  width: 100%;
+  min-height: 4.6rem;
+  padding: 1rem 1.2rem;
+  border: .1rem solid rgba(34, 89, 82, .2);
+  border-radius: 1.2rem;
+  background: #fff;
+  color: #16312e;
+  box-shadow: none;
+}
+
+.jdgm-widget textarea {
+  min-height: 12rem;
+  resize: vertical;
+}
+
+.jdgm-widget input:focus,
+.jdgm-widget textarea:focus,
+.jdgm-widget select:focus,
+.jdgm-widget button:focus-visible,
+.jdgm-widget a:focus-visible {
+  outline: .2rem solid rgba(236, 101, 66, .75);
+  outline-offset: .2rem;
+}
+
+.jdgm-widget .jdgm-form__fieldset,
+.jdgm-widget .jdgm-form__fieldset-actions,
+.jdgm-widget .jdgm-picture-fieldset,
+.jdgm-widget .jdgm-video-fieldset,
+.jdgm-widget .jdgm-media-fieldset,
+.jdgm-widget .jdgm-sort-dropdown-wrapper,
+.jdgm-widget .jdgm-row-actions {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.jdgm-widget .jdgm-sort-dropdown,
+.jdgm-widget .jdgm-sort-dropdown-arrow {
+  max-width: 100%;
+}
+
+.jdgm-widget .jdgm-rev__pics,
+.jdgm-widget .jdgm-rev__videos,
+.jdgm-widget .jdgm-pictures,
+.jdgm-widget .jdgm-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.jdgm-widget .jdgm-rev__pic-link,
+.jdgm-widget .jdgm-rev__video-link {
+  flex: 0 0 auto;
+  max-width: min(10rem, 28vw);
+}
+
+.jdgm-widget table,
+.jdgm-widget .jdgm-histogram {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.jdgm-widget td,
+.jdgm-widget th {
+  overflow-wrap: anywhere;
+}
+
+.jdgm-widget .jdgm-paginate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  max-width: 100%;
+}
+
+.jdgm-widget .jdgm-paginate__page {
+  min-width: 4rem;
+  min-height: 4rem;
+  border-radius: 999px;
+}
+
+@media screen and (max-width: 749px) {
+  .jdgm-rev-widg,
+  .jdgm-all-reviews-widget,
+  .jdgm-medals-wrapper {
+    width: calc(100% - 2rem);
+    margin-inline: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1.8rem;
+  }
+
+  .jdgm-rev-widg__title,
+  .jdgm-all-reviews-widget__title,
+  .jdgm-widget .jdgm-form__title {
+    font-size: 2.7rem;
+  }
+
+  .jdgm-widget .jdgm-row-stars,
+  .jdgm-widget .jdgm-row-actions,
+  .jdgm-widget .jdgm-rev-widg__summary,
+  .jdgm-widget .jdgm-rev-widg__header,
+  .jdgm-widget .jdgm-form__fieldset-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .jdgm-widget .jdgm-write-rev-link,
+  .jdgm-widget .jdgm-ask-question-btn,
+  .jdgm-widget .jdgm-submit-rev,
+  .jdgm-widget .jdgm-submit-question,
+  .jdgm-widget .jdgm-btn,
+  .jdgm-widget button:not(.jdgm-paginate__page) {
+    width: 100%;
+  }
+
+  .jdgm-widget .jdgm-rev,
+  .jdgm-widget .jdgm-question,
+  .jdgm-widget .jdgm-answer {
+    padding: 1.6rem;
+    border-radius: 1.5rem;
+  }
+
+  .jdgm-widget .jdgm-rev__header,
+  .jdgm-widget .jdgm-row-profile,
+  .jdgm-widget .jdgm-row-rating {
+    overflow-wrap: anywhere;
+  }
+}
