@@ -75,4 +75,7 @@ product-info[data-vc-has-sticky-atc="true"] .vitacoral-pdp-essentials__value p {
   .shopify-section .vc-pdp-world__cards p,
   .shopify-section .vc-pdp-world__cards li,
   .shopify-section .vc-pdp-world__more { font-size:1.68rem!important;line-height:1.68!important; }
+  .product-form__quantity .quantity { width:13.2rem!important;min-height:4.6rem!important; }
+  .product-form__quantity .quantity__button { width:4.4rem!important;min-width:4.4rem!important;height:4.6rem!important; }
+  .product-form__quantity .quantity__input { width:4.4rem!important;min-width:4.4rem!important;height:4.6rem!important; }
 }
