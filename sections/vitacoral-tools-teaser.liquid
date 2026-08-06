@@ -2,10 +2,6 @@
 
 {%- liquid
   assign tools_cta_link = section.settings.cta_link
-  if tools_cta_link == blank
-    assign tools_cta_link = '/pages/saglik-hesaplama-araclari'
-  endif
-
   assign tools_eyebrow = section.settings.eyebrow | default: 'Günlük hesaplama araçları'
   assign tools_heading = section.settings.heading | default: 'Kendinize dair temel değerleri tek yerde görün'
   assign tools_body = section.settings.body
@@ -23,9 +19,11 @@
       <p class="vc-tools-teaser__eyebrow">{{ tools_eyebrow | escape }}</p>
       <h2 class="vc-tools-teaser__title">{{ tools_heading | escape }}</h2>
       <div class="vc-tools-teaser__body rte">{{ tools_body }}</div>
-      <div class="vc-tools-teaser__actions">
-        <a class="vc-tools-teaser__button" href="{{ tools_cta_link }}">{{ tools_cta_label | escape }}</a>
-      </div>
+      {%- if tools_cta_link != blank and tools_cta_label != blank -%}
+        <div class="vc-tools-teaser__actions">
+          <a class="vc-tools-teaser__button" href="{{ tools_cta_link }}">{{ tools_cta_label | escape }}</a>
+        </div>
+      {%- endif -%}
     </div>
 
     <div class="vc-tools-teaser__panel" aria-label="{{ tools_panel_label | escape }}">
