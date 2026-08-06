@@ -1,16 +1,6 @@
 {%- liquid
   assign primary_cta_link = section.settings.primary_cta_link
   assign secondary_cta_link = section.settings.secondary_cta_link
-  assign primary_cta_label_handle = section.settings.primary_cta_label | handleize
-  assign secondary_cta_label_handle = section.settings.secondary_cta_label | handleize
-
-  if primary_cta_label_handle contains 'rutin' and primary_cta_link contains '/pages/'
-    assign primary_cta_link = '#urun-secim-rehberi'
-  endif
-
-  if secondary_cta_label_handle contains 'rutin' and secondary_cta_link contains '/pages/'
-    assign secondary_cta_link = '#urun-secim-rehberi'
-  endif
 -%}
 
 <section
@@ -34,30 +24,16 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank -%}
+        {%- if primary_cta_link != blank and section.settings.primary_cta_label != blank or secondary_cta_link != blank and section.settings.secondary_cta_label != blank -%}
           <div class="vitacoral-editorial-media__actions">
-            {%- if section.settings.primary_cta_label != blank -%}
-              <a
-                {% if primary_cta_link == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ primary_cta_link }}"
-                {% endif %}
-                class="vitacoral-button"
-              >
+            {%- if primary_cta_link != blank and section.settings.primary_cta_label != blank -%}
+              <a href="{{ primary_cta_link }}" class="vitacoral-button">
                 {{ section.settings.primary_cta_label | escape }}
               </a>
             {%- endif -%}
 
-            {%- if section.settings.secondary_cta_label != blank -%}
-              <a
-                {% if secondary_cta_link == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ secondary_cta_link }}"
-                {% endif %}
-                class="vitacoral-button vitacoral-button--secondary"
-              >
+            {%- if secondary_cta_link != blank and section.settings.secondary_cta_label != blank -%}
+              <a href="{{ secondary_cta_link }}" class="vitacoral-button vitacoral-button--secondary">
                 {{ section.settings.secondary_cta_label | escape }}
               </a>
             {%- endif -%}
@@ -169,18 +145,9 @@
       "label": "Layout style",
       "default": "split",
       "options": [
-        {
-          "value": "split",
-          "label": "split"
-        },
-        {
-          "value": "full_bleed_card",
-          "label": "full_bleed_card"
-        },
-        {
-          "value": "stacked_mobile",
-          "label": "stacked_mobile"
-        }
+        {"value": "split", "label": "split"},
+        {"value": "full_bleed_card", "label": "full_bleed_card"},
+        {"value": "stacked_mobile", "label": "stacked_mobile"}
       ]
     },
     {
@@ -245,9 +212,7 @@
     }
   ],
   "presets": [
-    {
-      "name": "Vitacoral editorial media"
-    }
+    {"name": "Vitacoral editorial media"}
   ]
 }
 {% endschema %}
