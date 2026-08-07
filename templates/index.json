@@ -230,8 +230,8 @@
         "eyebrow": "Etkileşimli rehber",
         "heading": "Ürün seçmeden önce kendinizi tanıyın",
         "body": "<p>Günlük ihtiyaçlarınızı daha iyi değerlendirin, ürünler hakkında bilgi edinin ve seçenekleri kolayca karşılaştırın.</p>",
-        "cta_label": "Hesaplamaya Başla",
-        "cta_link": "",
+        "cta_label": "Araçları Aç",
+        "cta_link": "shopify://pages/saglik-hesaplama-araclari",
         "panel_label": "Etkileşimli araçlar",
         "note": "Araçlar bilgilendirme amaçlıdır; ürün ve kullanım kararları için ürün detaylarını kontrol edin."
       }
