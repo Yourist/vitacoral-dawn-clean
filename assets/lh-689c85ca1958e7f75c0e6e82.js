@@ -1,1 +1,548 @@
-!function(t){(function(t,e){}).bind(t('section[data-section-id="fAOUyqsKdH"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/banner/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="0oxlrhzog6l"]').get(0))({url:"https://library.layouthub.com/HUB/files/TWF5LS0yMDIw/NTkwNDU2ODky/twenty-twenty-summer/pages/PJ16ivbLyUflSZXM/hero/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="p4nlf3gqfub"]').get(0))({url:"https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/7X2dkGaNmzMbZPsC/benefits/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="rayep29qqum"]').get(0))({url:"https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/7X2dkGaNmzMbZPsC/benefits/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="KtY3OkWZnL"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/more/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="rlew1zv1udl"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/more/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="bs9h3ldym1d"]').get(0))({url:"https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/AfvTqnmVgkMUi3hp/why/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){!function(t,e,i,s){"use strict";var n={css_class:"countdown",always_show_days:!1,with_labels:!0,with_seconds:!0,with_separators:!0,with_hh_leading_zero:!0,with_mm_leading_zero:!0,with_ss_leading_zero:!0,label_dd:"days",label_hh:"hours",label_mm:"minutes",label_ss:"seconds",separator:":",separator_days:","};function a(e,i){this.element=t(e),this.options=t.extend({},n,i),this._defaults=n,this._name="countDown",this.init()}t.extend(a.prototype,{init:function(){this.element.children().length||(this.element.attr("datetime")&&(this.endDate=this.parseEndDate(this.element.attr("datetime"))),void 0===this.endDate&&(this.endDate=this.parseEndDate(this.element.text())),void 0!==this.endDate&&(this.element.is("time")?this.timeElement=this.element:(this.timeElement=t("<time></time>"),this.element.html(this.timeElement)),this.markup(),this.setTimeoutDelay=this.sToMs(1),this.daysVisible=!0,this.timeElement.on("time.elapsed",this.options.onTimeElapsed),this.timeElement.on("time.tick",this.options.onTick),this.doCountDown()))},parseEndDate:function(t){var e;return(e=this.parseDuration(t))instanceof Date||(e=this.parseDateTime(t))instanceof Date||(e=this.parseHumanReadableDuration(t))instanceof Date?e:(e=Date.parse(t),isNaN(e)?void 0:new Date(e))},parseDuration:function(t){var e,i,s,n,a,o,r=t.match(/^P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)(?:\.(\d{1,3}))?S)?$/);if(r)return i=r[1]?this.dToMs(r[1]):0,s=r[2]?this.hToMs(r[2]):0,n=r[3]?this.mToMs(r[3]):0,a=r[4]?this.sToMs(r[4]):0,o=r[5]?parseInt(r[5],10):0,(e=new Date).setTime(e.getTime()+i+s+n+a+o),e},parseDateTime:function(t){var e=t.match(/^(\d{4,})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?:\:(\d{2}))?(?:\.(\d{1,3}))?([Z\+\-\:\d]+)?$/);if(e){var i,s,n,a,o,r,h,l,d=e[8]?e[8].match(/^([\+\-])?(\d{2}):?(\d{2})$/):void 0,u=0;return d&&(u=this.hToMs(d[2])+this.mToMs(d[3]),u="-"===d[1]?u:-u),s=e[1],n=e[2]-1,a=e[3],o=e[4]||0,r=e[5]||0,h=e[6]||0,l=e[7]||0,(i=new Date(Date.UTC(s,n,a,o,r,h,l))).setTime(i.getTime()+u),i}},parseHumanReadableDuration:function(t){var e,i,s,n,a,o,r=t.match(/^(?:(\d+).+\s)?(\d+)[h:]\s?(\d+)[m:]?\s?(\d+)?[s]?(?:\.(\d{1,3}))?$/);if(r)return e=new Date,i=r[1]?this.dToMs(r[1]):0,s=r[2]?this.hToMs(r[2]):0,n=r[3]?this.mToMs(r[3]):0,a=r[4]?this.sToMs(r[4]):0,o=r[5]?parseInt(r[5],10):0,e.setTime(e.getTime()+i+s+n+a+o),e},sToMs:function(t){return 1e3*parseInt(t,10)},mToMs:function(t){return 60*parseInt(t,10)*1e3},hToMs:function(t){return 60*parseInt(t,10)*60*1e3},dToMs:function(t){return 24*parseInt(t,10)*60*60*1e3},msToS:function(t){return parseInt(t/1e3%60,10)},msToM:function(t){return parseInt(t/1e3/60%60,10)},msToH:function(t){return parseInt(t/1e3/60/60%24,10)},msToD:function(t){return parseInt(t/1e3/60/60/24,10)},markup:function(){var t=['<span class="item item-dd">','<span class="dd"></span>','<span class="label label-dd">',this.options.label_dd,"</span>","</span>",'<span class="separator separator-dd">',this.options.separator_days,"</span>",'<span class="item item-hh">','<span class="hh-1"></span>','<span class="hh-2"></span>','<span class="label label-hh">',this.options.label_hh,"</span>","</span>",'<span class="separator">',this.options.separator,"</span>",'<span class="item item-mm">','<span class="mm-1"></span>','<span class="mm-2"></span>','<span class="label label-mm">',this.options.label_mm,"</span>","</span>",'<span class="separator">',this.options.separator,"</span>",'<span class="item item-ss">','<span class="ss-1"></span>','<span class="ss-2"></span>','<span class="label label-ss">',this.options.label_ss,"</span>","</span>"];this.timeElement.html(t.join("")),this.options.with_labels||this.timeElement.find(".label").remove(),this.options.with_separators||this.timeElement.find(".separator").remove(),this.options.with_seconds||(this.timeElement.find(".item-ss").remove(),this.timeElement.find(".separator").last().remove()),this.item_dd=this.timeElement.find(".item-dd"),this.separator_dd=this.timeElement.find(".separator-dd"),this.remaining_dd=this.timeElement.find(".dd"),this.remaining_hh1=this.timeElement.find(".hh-1"),this.remaining_hh2=this.timeElement.find(".hh-2"),this.remaining_mm1=this.timeElement.find(".mm-1"),this.remaining_mm2=this.timeElement.find(".mm-2"),this.remaining_ss1=this.timeElement.find(".ss-1"),this.remaining_ss2=this.timeElement.find(".ss-2"),this.timeElement.addClass(this.options.css_class)},doCountDown:function(){var t=this.endDate.getTime()-(new Date).getTime(),i=this.msToS(t),s=this.msToM(t),n=this.msToH(t),a=this.msToD(t);if(t<=0&&(i=s=n=a=0),this.displayRemainingTime({ss:i<10?(this.options.with_ss_leading_zero?"0":" ")+i.toString():i.toString(),mm:s<10?(this.options.with_mm_leading_zero?"0":" ")+s.toString():s.toString(),hh:n<10?(this.options.with_hh_leading_zero?"0":" ")+n.toString():n.toString(),dd:a.toString()}),this.options.with_seconds||0!==a||0!==s||0!==n||(i=0),0===a&&0===s&&0===n&&0===i)return this.timeElement.trigger("time.elapsed");var o=this;return e.setTimeout((function(){o.doCountDown()}),o.setTimeoutDelay),this.timeElement.trigger("time.tick",t)},displayRemainingTime:function(t){var e=[];e.push("P"),"0"!==t.dd&&e.push(t.dd,"D"),e.push("T",t.hh,"H",t.mm,"M"),this.options.with_seconds&&e.push(t.ss,"S"),this.timeElement.attr("datetime",e.join("")),this.daysVisible&&!this.options.always_show_days&&"0"===t.dd&&(this.item_dd.remove(),this.separator_dd.remove(),this.daysVisible=!1),this.remaining_dd.text(t.dd),this.remaining_hh1.text(t.hh[0].trim()),this.remaining_hh2.text(t.hh[1]),this.remaining_mm1.text(t.mm[0].trim()),this.remaining_mm2.text(t.mm[1]),this.remaining_ss1.text(t.ss[0].trim()),this.remaining_ss2.text(t.ss[1])}}),t.fn.countDown=function(e){var i,s=arguments;return void 0===e||"object"==typeof e?this.each((function(){t.data(this,"plugin_countDown")||t.data(this,"plugin_countDown",new a(this,e))})):"string"==typeof e&&"_"!==e[0]&&"init"!==e?(this.each((function(){var n=t.data(this,"plugin_countDown");n instanceof a&&"function"==typeof n[e]&&(i=n[e].apply(n,Array.prototype.slice.call(s,1))),"destroy"===e&&t.data(this,"plugin_countDown",null)})),void 0!==i?i:this):void 0}}(window.jQuery,window,document)}).bind(t('section[data-section-id="rlekivb3sog"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="imo75wjxx4"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="02sl9x7sdpyj"]').get(0))({url:"https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/AfvTqnmVgkMUi3hp/why/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="dwav74ajjer"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/aCW3VuoPcZITxB9h/wbt/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="d81iw4ogpgh"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/aCW3VuoPcZITxB9h/wbt/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="5uu7kvebobn"]').get(0))({url:"https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/4ybXuKmECkDsLxRa/incentives/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="3unnxnqj9gx"]').get(0))({url:"https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/4ybXuKmECkDsLxRa/incentives/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="hta2lqw9k9"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="piv8mtq6u3o"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){(function(t){t(this).find(".lh-accordion-item-style_1 .lh-header").on("click",(function(){var t=jQuery(this).closest(".lh-accordion-item-style_1");t.addClass("active"),t.siblings(".active").removeClass("active")}))}).bind(e('section[data-section-id="CHvg0I9UG6"] include[data-name="style_1"][data-id="1"]').get(0))(jQuery)}).bind(t('section[data-section-id="CHvg0I9UG6"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/faqs/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){(function(t){t(this).find(".lh-accordion-item-style_1 .lh-header").on("click",(function(){var t=jQuery(this).closest(".lh-accordion-item-style_1");t.addClass("active"),t.siblings(".active").removeClass("active")}))}).bind(e('section[data-section-id="f5ms85kseou"] include[data-name="style_1"][data-id="1"]').get(0))(jQuery)}).bind(t('section[data-section-id="f5ms85kseou"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/faqs/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="hqww3hc5tf8"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/FVbafkXwi0sGrADv/services/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="rgrtdrn45b"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/FVbafkXwi0sGrADv/services/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="7gw3ikjn1h3"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),function(t){(function(t,e){}).bind(t('section[data-section-id="o8i52tfhaqk"]').get(0))({url:"https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",settings:{}},jQuery)}(jQuery),console.log("This page layout has been built by https://www.layouthub.com");
+;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "fAOUyqsKdH"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="fAOUyqsKdH"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/banner/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "0oxlrhzog6l"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="0oxlrhzog6l"]').get(0))({						url: "https://library.layouthub.com/HUB/files/TWF5LS0yMDIw/NTkwNDU2ODky/twenty-twenty-summer/pages/PJ16ivbLyUflSZXM/hero/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "p4nlf3gqfub"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="p4nlf3gqfub"]').get(0))({						url: "https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/7X2dkGaNmzMbZPsC/benefits/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "rayep29qqum"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="rayep29qqum"]').get(0))({						url: "https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/7X2dkGaNmzMbZPsC/benefits/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "KtY3OkWZnL"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="KtY3OkWZnL"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/more/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "rlew1zv1udl"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="rlew1zv1udl"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/more/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "bs9h3ldym1d"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="bs9h3ldym1d"]').get(0))({						url: "https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/AfvTqnmVgkMUi3hp/why/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "rlekivb3sog"							}), success: c, error: e});						}, cb  = function(section, $) {/*
+ * jQuery Countdown - v1.2.8
+ * http://github.com/kemar/jquery.countdown
+ * Licensed MIT
+ */
+
+(function ($, window, document, undefined) {
+
+    "use strict";
+
+    /*
+     * .countDown()
+     *
+     * Description:
+     *      Unobtrusive and easily skinable countdown jQuery plugin.
+     *
+     * Usage:
+     *      $(element).countDown()
+     *
+     *      $(element) is a valid <time> or any other HTML tag containing a text representation of a date/time
+     *      or duration remaining before a deadline expires.
+     *      If $(element) is a <time> tag, the datetime attribute is checked first.
+     *          <time datetime="2013-12-13T17:43:00">Friday, December 13th, 2013 5:43pm</time>
+     *          <time>2012-12-08T14:30:00+0100</time>
+     *          <time>PT01H01M15S</time>
+     *          <h1>600 days, 3:59:12</h1>
+     *
+     *      The text representation of a date/time or duration can be:
+     *      - a valid duration string:
+     *          PT00M10S
+     *          PT01H01M15S
+     *          P2DT20H00M10S
+     *      - a valid global date and time string with its timezone offset:
+     *          2012-12-08T14:30:00.432+0100
+     *          2012-12-08T05:30:00-0800
+     *          2012-12-08T13:30Z
+     *      - a valid time string:
+     *          12:30
+     *          12:30:39
+     *          12:30:39.929
+     *      - a human readable duration string:
+     *          2h 0m
+     *          4h 18m 3s
+     *          24h00m59s
+     *          600 jours, 3:59:12
+     *          600 days, 3:59:12
+     *      - the output of a JavaScript Date.parse() parsable string:
+     *          Date.toDateString() => Sat Dec 20 2014
+     *          Date.toGMTString()  => Sat, 20 Dec 2014 09:24:00 GMT
+     *          Date.toUTCString()  => Sat, 20 Dec 2014 09:24:00 GMT
+     *
+     *      If $(element) is not a <time> tag, a new one is created and appended to $(element).
+     *
+     * Literature, resources and inspiration:
+     *      JavaScript Date reference:
+     *          https://developer.mozilla.org/docs/JavaScript/Reference/Global_Objects/Date
+     *      About the <time> element:
+     *          https://html.spec.whatwg.org/multipage/semantics.html#the-time-element
+     *          http://www.w3.org/TR/html5/text-level-semantics.html#the-time-element
+     *          http://wiki.whatwg.org/wiki/Time_element
+     *      <time> history:
+     *          http://www.brucelawson.co.uk/2012/best-of-time/
+     *          http://www.webmonkey.com/2011/11/w3c-adds-time-element-back-to-html5/
+     *      Formats:
+     *          http://en.wikipedia.org/wiki/ISO_8601
+     *      jQuery plugin syntax:
+     *          https://github.com/jquery-boilerplate/jquery-patterns
+     *          https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate
+     *          http://frederictonug.net/jquery-plugin-development-with-the-jquery-boilerplate
+     *
+     * Example of generated HTML markup:
+     *      <time class="countdown" datetime="P12DT05H16M22S">
+     *          <span class="item item-dd">
+     *              <span class="dd"></span>
+     *              <span class="label label-dd">days</span>
+     *          </span>
+     *          <span class="separator separator-dd">,</span>
+     *          <span class="item item-hh">
+     *              <span class="hh-1"></span>
+     *              <span class="hh-2"></span>
+     *              <span class="label label-hh">hours</span>
+     *          </span>
+     *          <span class="separator">:</span>
+     *          <span class="item item-mm">
+     *              <span class="mm-1"></span>
+     *              <span class="mm-2"></span>
+     *              <span class="label label-mm">minutes</span>
+     *          </span>
+     *          <span class="separator">:</span>
+     *          <span class="item item-ss">
+     *              <span class="ss-1"></span>
+     *              <span class="ss-2"></span>
+     *              <span class="label label-ss">seconds</span>
+     *          </span>
+     *      </time>
+     */
+
+    var pluginName = 'countDown';
+
+    var defaults = {
+        css_class: 'countdown',
+        always_show_days: false,
+        with_labels: true,
+        with_seconds: true,
+        with_separators: true,
+        with_hh_leading_zero: true,
+        with_mm_leading_zero: true,
+        with_ss_leading_zero: true,
+        label_dd: 'days',
+        label_hh: 'hours',
+        label_mm: 'minutes',
+        label_ss: 'seconds',
+        separator: ':',
+        separator_days: ','
+    };
+
+    function CountDown(element, options) {
+        this.element = $(element);
+        this.options = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
+
+    $.extend(CountDown.prototype, {
+
+        init: function () {
+            if (this.element.children().length) {
+                return;
+            }
+            if (this.element.attr('datetime')) {  // Try to parse the datetime attribute first.
+                this.endDate = this.parseEndDate(this.element.attr('datetime'));
+            }
+            if (this.endDate === undefined) {  // Fallback on the text content.
+                this.endDate = this.parseEndDate(this.element.text());
+            }
+            if (this.endDate === undefined) {  // Unable to parse a date.
+                return;
+            }
+            if (this.element.is('time')) {
+                this.timeElement = this.element;
+            } else {
+                this.timeElement = $('<time></time>');
+                this.element.html(this.timeElement);
+            }
+            this.markup();
+            this.setTimeoutDelay = this.sToMs(1);
+            this.daysVisible = true;
+            this.timeElement.on('time.elapsed', this.options.onTimeElapsed);
+            this.timeElement.on('time.tick', this.options.onTick);
+            this.doCountDown();
+        },
+
+        parseEndDate: function (str) {
+
+            var d;
+
+            d = this.parseDuration(str);
+            if (d instanceof Date) {
+                return d;
+            }
+
+            d = this.parseDateTime(str);
+            if (d instanceof Date) {
+                return d;
+            }
+
+            d = this.parseHumanReadableDuration(str);
+            if (d instanceof Date) {
+                return d;
+            }
+
+            // Try to parse a string representation of a date.
+            // https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+            d = Date.parse(str);
+            if (!isNaN(d)) {
+                return new Date(d);
+            }
+
+        },
+
+        // Convert a valid duration string representing a duration to a Date object.
+        //
+        // https://html.spec.whatwg.org/multipage/infrastructure.html#valid-duration-string
+        // http://en.wikipedia.org/wiki/ISO_8601#Durations
+        // i.e.: P2DT20H00M10S, PT01H01M15S, PT00M10S, P2D, P2DT20H00M10.55S
+        //
+        // RegExp:
+        // /^
+        //    P                     => duration designator (historically called "period")
+        //    (?:(\d+)D)?           => (days) followed by the letter "D" (optional)
+        //    T?                    => the letter "T" that precedes the time components of the representation (optional)
+        //    (?:(\d+)H)?           => (hours) followed by the letter "H" (optional)
+        //    (?:(\d+)M)?           => (minutes) followed by the letter "M" (optional)
+        //    (
+        //         ?:(\d+)          => (seconds) (optional)
+        //         (?:\.(\d{1,3}))? => (milliseconds) full stop character (.) and fractional part of second (optional)
+        //         S                => followed by the letter "S"
+        //    )?
+        // $/
+        parseDuration: function (str) {
+            var timeArray = str.match(/^P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)(?:\.(\d{1,3}))?S)?$/);
+            if (timeArray) {
+                var d, dd, hh, mm, ss, ms;
+                dd = timeArray[1] ? this.dToMs(timeArray[1]) : 0;
+                hh = timeArray[2] ? this.hToMs(timeArray[2]) : 0;
+                mm = timeArray[3] ? this.mToMs(timeArray[3]) : 0;
+                ss = timeArray[4] ? this.sToMs(timeArray[4]) : 0;
+                ms = timeArray[5] ? parseInt(timeArray[5], 10) : 0;
+                d = new Date();
+                d.setTime(d.getTime() + dd + hh + mm + ss + ms);
+                return d;
+            }
+        },
+
+        // Convert a valid global date and time string to a Date object.
+        // https://html.spec.whatwg.org/multipage/infrastructure.html#valid-global-date-and-time-string
+        //
+        // 2012-12-08T13:30:39+0100
+        //     => ["2012-12-08T13:30:39+0100", "2012", "12", "08", "13", "30", "39", undefined, "+0100"]
+        // 2012-12-08T06:54-0800
+        //     => ["2012-12-08T06:54-0800", "2012", "12", "08", "06", "54", undefined, undefined, "-0800"]
+        // 2012-12-08 13:30Z
+        //     => ["2012-12-08 13:30Z", "2012", "12", "08", "13", "30", undefined, undefined, "Z"]
+        // 2013-12-08 06:54:39.929-10:30
+        //     => ["2013-12-08 06:54:39.929-08:30", "2013", "12", "08", "06", "54", "39", "929", "-10:30"]
+        //
+        // RegExp:
+        // ^
+        //     (\d{4,})         => (year) (four or more ASCII digits)
+        //     -                => hyphen-minus
+        //     (\d{2})          => (month)
+        //     -                => hyphen-minus
+        //     (\d{2})          => (day)
+        //     [T\s]            => T or space
+        //     (\d{2})          => (hours)
+        //     :                => colon
+        //     (\d{2})          => (minutes)
+        //     (?:\:(\d{2}))?   => colon and (seconds) (optional)
+        //     (?:\.(\d{1,3}))? => full stop character (.) and fractional part of second (milliseconds) (optional)
+        //     ([Z\+\-\:\d]+)?  => time-zone (offset) string (optional)
+        // $
+        parseDateTime: function (str) {
+            var timeArray = str.match(
+                /^(\d{4,})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?:\:(\d{2}))?(?:\.(\d{1,3}))?([Z\+\-\:\d]+)?$/);
+            if (timeArray) {
+
+                // Convert UTC offset from string to milliseconds.
+                // +01:00 => ["+01:00", "+", "01", "00"] => -360000
+                // -08:00 => ["-08:00", "-", "08", "00"] => 28800000
+                // +05:30 => ["+05:30", "+", "05", "30"] => -19800000
+                var offset = timeArray[8] ? timeArray[8].match(/^([\+\-])?(\d{2}):?(\d{2})$/) : undefined;
+
+                // Time difference between UTC and the given time zone in milliseconds.
+                var utcOffset = 0;
+                if (offset) {
+                    utcOffset = this.hToMs(offset[2]) + this.mToMs(offset[3]);
+                    utcOffset = (offset[1] === '-') ? utcOffset : -utcOffset;
+                }
+
+                var d, yy, mo, dd, hh, mm, ss, ms;
+                yy = timeArray[1];
+                mo = timeArray[2] - 1;
+                dd = timeArray[3];
+                hh = timeArray[4] || 0;
+                mm = timeArray[5] || 0;
+                ss = timeArray[6] || 0;
+                ms = timeArray[7] || 0;
+                d = new Date(Date.UTC(yy, mo, dd, hh, mm, ss, ms));
+
+                d.setTime(d.getTime() + utcOffset);
+
+                return d;
+
+            }
+        },
+
+        // Convert a string representing a human readable duration to a Date object.
+        // Hours and minutes are mandatory.
+        //
+        // 600 days, 3:59:12 => ["600 days, 3:59:12", "600", "3", "59", "12", undefined]
+        //           3:59:12 => ["3:59:12", undefined, "3", "59", "12", undefined]
+        //             00:01 => ["00:01", undefined, "00", "01", undefined, undefined]
+        //          00:00:59 => ["00:00:59", undefined, "00", "00", "59", undefined]
+        //         240:00:59 => ["240:00:59", undefined, "240", "00", "59", undefined]
+        //         4h 18m 3s => ["4h 18m 3s", undefined, "4", "18", "3", undefined]
+        //     1d 0h 00m 59s => ["1d 0h 00m 59s", "1", "0", "00", "59", undefined]
+        //             2h 0m => ["2h 0m", undefined, "2", "0", undefined, undefined]
+        //         24h00m59s => ["24h00m59s", undefined, "24", "00", "59", undefined]
+        //      12:30:39.929 => ["12:30:39.929", undefined, "12", "30", "39", "929"]
+        //
+        // RegExp:
+        // /^
+        //     (?:(\d+).+\s)?   => (days) followed by any character 0 or more times and a space (optional)
+        //     (\d+)[h:]\s?     => (hours) followed by "h" or ":" and an optional space
+        //     (\d+)[m:]?\s?    => (minutes) followed by "m" or ":" and an optional space
+        //     (\d+)?[s]?       => (seconds) followed by an optional space (optional)
+        //     (?:\.(\d{1,3}))? => (milliseconds) full stop character (.) and fractional part of second (optional)
+        // $/
+        parseHumanReadableDuration: function (str) {
+            var timeArray = str.match(/^(?:(\d+).+\s)?(\d+)[h:]\s?(\d+)[m:]?\s?(\d+)?[s]?(?:\.(\d{1,3}))?$/);
+            if (timeArray) {
+                var d, dd, hh, mm, ss, ms;
+                d = new Date();
+                dd = timeArray[1] ? this.dToMs(timeArray[1]) : 0;
+                hh = timeArray[2] ? this.hToMs(timeArray[2]) : 0;
+                mm = timeArray[3] ? this.mToMs(timeArray[3]) : 0;
+                ss = timeArray[4] ? this.sToMs(timeArray[4]) : 0;
+                ms = timeArray[5] ? parseInt(timeArray[5], 10) : 0;
+                d.setTime(d.getTime() + dd + hh + mm + ss + ms);
+                return d;
+            }
+        },
+
+        // Convert seconds to milliseconds.
+        sToMs: function (s) {
+            return parseInt(s, 10) * 1000;
+        },
+
+        // Convert minutes to milliseconds.
+        mToMs: function (m) {
+            return parseInt(m, 10) * 60 * 1000;
+        },
+
+        // Convert hours to milliseconds.
+        hToMs: function (h) {
+            return parseInt(h, 10) * 60 * 60 * 1000;
+        },
+
+        // Convert days to milliseconds.
+        dToMs: function (d) {
+            return parseInt(d, 10) * 24 * 60 * 60 * 1000;
+        },
+
+        // Extract seconds (0-59) from the given timedelta expressed in milliseconds.
+        // A timedelta represents a duration, the difference between two dates or times.
+        msToS: function (ms) {
+            return parseInt((ms / 1000) % 60, 10);
+        },
+
+        // Extract minutes (0-59) from the given timedelta expressed in milliseconds.
+        msToM: function (ms) {
+            return parseInt((ms / 1000 / 60) % 60, 10);
+        },
+
+        // Extract hours (0-23) from the given timedelta expressed in milliseconds.
+        msToH: function (ms) {
+            return parseInt((ms / 1000 / 60 / 60) % 24, 10);
+        },
+
+        // Extract the number of days from the given timedelta expressed in milliseconds.
+        msToD: function (ms) {
+            return parseInt((ms / 1000 / 60 / 60 / 24), 10);
+        },
+
+        markup: function () {
+            // Prepare the HTML content of the <time> element.
+            var html = [
+                '<span class="item item-dd">',
+                    '<span class="dd"></span>',
+                    '<span class="label label-dd">', this.options.label_dd, '</span>',
+                '</span>',
+                '<span class="separator separator-dd">', this.options.separator_days, '</span>',
+                '<span class="item item-hh">',
+                    '<span class="hh-1"></span>',
+                    '<span class="hh-2"></span>',
+                    '<span class="label label-hh">', this.options.label_hh, '</span>',
+                '</span>',
+                '<span class="separator">', this.options.separator, '</span>',
+                '<span class="item item-mm">',
+                    '<span class="mm-1"></span>',
+                    '<span class="mm-2"></span>',
+                    '<span class="label label-mm">', this.options.label_mm, '</span>',
+                '</span>',
+                '<span class="separator">', this.options.separator, '</span>',
+                '<span class="item item-ss">',
+                    '<span class="ss-1"></span>',
+                    '<span class="ss-2"></span>',
+                    '<span class="label label-ss">', this.options.label_ss, '</span>',
+                '</span>'
+            ];
+            this.timeElement.html(html.join(''));
+            // Customize HTML according to options.
+            if (!this.options.with_labels) {
+                this.timeElement.find('.label').remove();
+            }
+            if (!this.options.with_separators) {
+                this.timeElement.find('.separator').remove();
+            }
+            if (!this.options.with_seconds) {
+                this.timeElement.find('.item-ss').remove();
+                this.timeElement.find('.separator').last().remove();
+            }
+            // Cache elements.
+            this.item_dd       = this.timeElement.find('.item-dd');
+            this.separator_dd  = this.timeElement.find('.separator-dd');
+            this.remaining_dd  = this.timeElement.find('.dd');
+            this.remaining_hh1 = this.timeElement.find('.hh-1');
+            this.remaining_hh2 = this.timeElement.find('.hh-2');
+            this.remaining_mm1 = this.timeElement.find('.mm-1');
+            this.remaining_mm2 = this.timeElement.find('.mm-2');
+            this.remaining_ss1 = this.timeElement.find('.ss-1');
+            this.remaining_ss2 = this.timeElement.find('.ss-2');
+            // Set the css class of the <time> element.
+            this.timeElement.addClass(this.options.css_class);
+        },
+
+        doCountDown: function () {
+            // Calculate the difference between the two dates in milliseconds.
+            var ms = this.endDate.getTime() - new Date().getTime();
+            // Extract seconds, minutes, hours and days from the timedelta expressed in milliseconds.
+            var ss = this.msToS(ms);
+            var mm = this.msToM(ms);
+            var hh = this.msToH(ms);
+            var dd = this.msToD(ms);
+            // Prevent display of negative values.
+            if (ms <= 0) {
+                ss = mm = hh = dd = 0;
+            }
+            // Update display.
+            // Use a space instead of 0 when no leading zero is required.
+            this.displayRemainingTime({
+                'ss': ss < 10 ? (this.options.with_ss_leading_zero ? '0' : ' ') + ss.toString() : ss.toString(),
+                'mm': mm < 10 ? (this.options.with_mm_leading_zero ? '0' : ' ') + mm.toString() : mm.toString(),
+                'hh': hh < 10 ? (this.options.with_hh_leading_zero ? '0' : ' ') + hh.toString() : hh.toString(),
+                'dd': dd.toString()
+            });
+            // If seconds are hidden, stop the counter as soon as there is no minute left.
+            if (!this.options.with_seconds && dd === 0 && mm === 0 && hh === 0) {
+                ss = 0;
+            }
+            if (dd === 0 && mm === 0 && hh === 0 && ss === 0) {
+                return this.timeElement.trigger('time.elapsed');
+            }
+            // Reload it.
+            var self = this;
+            window.setTimeout(function () { self.doCountDown(); }, self.setTimeoutDelay);
+            return this.timeElement.trigger('time.tick', ms);
+        },
+
+        /**
+         * Display the remaining time.
+         *
+         * @param {Object} remaining - an object literal containing a string representation
+         * of days, hours, minutes and seconds remaining.
+         * E.g. with leading zeros:
+         * { dd: "600", hh: "03", mm: "59", ss: "11" }
+         * Or without leading zeros:
+         * { dd: "600", hh: " 3", mm: " 9", ss: "11" }
+         */
+        displayRemainingTime: function (remaining) {
+            // Format the datetime attribute of the <time> element to an ISO 8601 duration.
+            // https://html.spec.whatwg.org/multipage/semantics.html#datetime-value
+            // I.e.: <time datetime="P2DT00H00M30S">2 00:00:00</time>
+            var attr = [];
+            attr.push('P');
+            if (remaining.dd !== '0') {
+                attr.push(remaining.dd, 'D');
+            }
+            attr.push('T', remaining.hh, 'H', remaining.mm, 'M');
+            if (this.options.with_seconds) {
+                attr.push(remaining.ss, 'S');
+            }
+            this.timeElement.attr('datetime', attr.join(''));
+            // Remove days if necessary.
+            if (this.daysVisible && !this.options.always_show_days && remaining.dd === '0') {
+                this.item_dd.remove();
+                this.separator_dd.remove();
+                this.daysVisible = false;
+            }
+            // Update countdown values.
+            // Use `trim` to convert spaces to empty string when there are no leading zeros.
+            this.remaining_dd.text(remaining.dd);
+            this.remaining_hh1.text(remaining.hh[0].trim());
+            this.remaining_hh2.text(remaining.hh[1]);
+            this.remaining_mm1.text(remaining.mm[0].trim());
+            this.remaining_mm2.text(remaining.mm[1]);
+            this.remaining_ss1.text(remaining.ss[0].trim());
+            this.remaining_ss2.text(remaining.ss[1]);
+        }
+
+    });
+
+    $.fn[pluginName] = function (options) {
+
+        var args = arguments;
+
+        // If the first parameter is an object (options) or was omitted, instantiate a new plugin instance.
+        if (options === undefined || typeof options === 'object') {
+            return this.each(function () {
+                if (!$.data(this, 'plugin_' + pluginName)) {
+                    $.data(this, 'plugin_' + pluginName, new CountDown(this, options));
+                }
+            });
+        }
+
+        // Allow any public function (i.e. a function whose name isn't 'init' or doesn't start with an underscore)
+        // to be called via the jQuery plugin, e.g. $(element).countDown('functionName', arg1, arg2).
+        else if (typeof options === 'string' && options[0] !== '_' && options !== 'init') {
+
+            // Cache the method call to make it possible to return a value.
+            var returns;
+
+            this.each(function () {
+                var instance = $.data(this, 'plugin_' + pluginName);
+
+                // Tests that there's already a plugin instance and checks that the requested public method exists.
+                if (instance instanceof CountDown && typeof instance[options] === 'function') {
+                    // Call the method of our plugin instance, and pass it the supplied arguments.
+                    returns = instance[options].apply(instance, Array.prototype.slice.call(args, 1));
+                }
+
+                // Allow instances to be destroyed via the 'destroy' method.
+                if (options === 'destroy') {
+                    $.data(this, 'plugin_' + pluginName, null);
+                }
+
+            });
+
+            // If the earlier cached method gives a value back return the value,
+            // otherwise return this to preserve chainability.
+            return returns !== undefined ? returns : this;
+
+        }
+
+    };
+
+})(window.jQuery, window, document);};					cb.bind($('section[data-section-id="rlekivb3sog"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "imo75wjxx4"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="imo75wjxx4"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "02sl9x7sdpyj"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="02sl9x7sdpyj"]').get(0))({						url: "https://library.layouthub.com/HUB/files/TWFyLS0yMDIx/NjE1Mjc3MDI3/release-3-2021/pages/AfvTqnmVgkMUi3hp/why/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "dwav74ajjer"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="dwav74ajjer"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/aCW3VuoPcZITxB9h/wbt/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "d81iw4ogpgh"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="d81iw4ogpgh"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/aCW3VuoPcZITxB9h/wbt/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "5uu7kvebobn"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="5uu7kvebobn"]').get(0))({						url: "https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/4ybXuKmECkDsLxRa/incentives/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "3unnxnqj9gx"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="3unnxnqj9gx"]').get(0))({						url: "https://library.layouthub.com/HUB/files/SmFuLS0yMDIx/NjEwNDM1MTg1/release-1-2021/pages/4ybXuKmECkDsLxRa/incentives/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "hta2lqw9k9"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="hta2lqw9k9"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "piv8mtq6u3o"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="piv8mtq6u3o"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "CHvg0I9UG6"							}), success: c, error: e});						}, cb  = function(section, $) {;var cb  = function($) {
+
+   $(this).find('.lh-accordion-item-style_1 .lh-header').on('click', function() {
+       var _this = jQuery(this).closest('.lh-accordion-item-style_1');
+         _this.addClass('active');
+         _this.siblings('.active').removeClass('active');
+
+   });
+
+
+ };						cb.bind($('section[data-section-id="CHvg0I9UG6"] include[data-name="style_1"][data-id="1"]').get(0))(jQuery);};					cb.bind($('section[data-section-id="CHvg0I9UG6"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/faqs/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "f5ms85kseou"							}), success: c, error: e});						}, cb  = function(section, $) {;var cb  = function($) {
+
+   $(this).find('.lh-accordion-item-style_1 .lh-header').on('click', function() {
+       var _this = jQuery(this).closest('.lh-accordion-item-style_1');
+         _this.addClass('active');
+         _this.siblings('.active').removeClass('active');
+
+   });
+
+
+ };						cb.bind($('section[data-section-id="f5ms85kseou"] include[data-name="style_1"][data-id="1"]').get(0))(jQuery);};					cb.bind($('section[data-section-id="f5ms85kseou"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/faqs/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "hqww3hc5tf8"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="hqww3hc5tf8"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/FVbafkXwi0sGrADv/services/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "rgrtdrn45b"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="rgrtdrn45b"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/FVbafkXwi0sGrADv/services/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "7gw3ikjn1h3"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="7gw3ikjn1h3"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;(function($){var ajax = (p, c, e) => { $.ajax({url: window.location.href, method: "POST",							data: $.extend(true, p !== undefined && typeof p == "object" ? p : {}, {								action: "layouthub_section_ajax", section_id: "o8i52tfhaqk"							}), success: c, error: e});						}, cb  = function(section, $) {};					cb.bind($('section[data-section-id="o8i52tfhaqk"]').get(0))({						url: "https://library.layouthub.com/HUB/files/U2VwLS0yMDIw/NTk5NDQ1MzA1/shopify-third-release/pages/fDRqnaNOgGdC41kh/gift/",						settings: {}					}, jQuery);})(jQuery);;console.log('This page layout has been built by https://www.layouthub.com');
