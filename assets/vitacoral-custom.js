@@ -12,7 +12,8 @@
   const hoverMotion = `@media (hover:hover) and (pointer:fine){.vitacoral-featured-products__card:hover,.vitacoral-product-family__card:hover{transform:translateY(-6px)}.vc-campaign-surface__trigger:hover{transform:translateY(-2px)}product-info[data-vc-has-sticky-atc="true"] .product__media-item:first-child:hover img{transform:scale(1.018)}product-info[data-vc-has-sticky-atc="true"] .product-form__submit:hover{transform:translateY(-2px);box-shadow:0 1.7rem 3.5rem rgba(21,44,41,.24)}}`;
   const mobileMotion = `@media screen and (max-width:749px){.vc-reveal,.vitacoral-reveal{transform:translate3d(0,12px,0);transition-duration:.56s}.vc-campaign-surface__trigger::after,.vc-campaign-spotlight__inner::after{display:none}product-info[data-vc-has-sticky-atc="true"]{background:radial-gradient(circle at 10% 0%,rgba(225,117,61,.13),transparent 18rem),linear-gradient(180deg,rgba(247,250,249,.98),#fff 70%)}product-info[data-vc-has-sticky-atc="true"] .page-width{padding-left:1.25rem;padding-right:1.25rem}product-info[data-vc-has-sticky-atc="true"] .product.grid{gap:.7rem}product-info[data-vc-has-sticky-atc="true"] .product__media-wrapper::before{inset:.5rem 1.2rem auto auto;width:6rem;height:6rem}product-info[data-vc-has-sticky-atc="true"] .product__media-wrapper::after{width:7rem;height:7rem}product-info[data-vc-has-sticky-atc="true"] .product__media-item>*{border-radius:1.7rem}product-info[data-vc-has-sticky-atc="true"] .product__media-list .product__media-item:first-child>*{box-shadow:0 1.1rem 2.6rem rgba(21,44,41,.085)}product-info[data-vc-has-sticky-atc="true"] .product__media img{max-height:25rem;padding:.8rem}product-info[data-vc-has-sticky-atc="true"] .product__info-container{gap:.7rem;padding:1rem 1.05rem 1.12rem;border-radius:1.85rem;box-shadow:0 1.4rem 3.4rem rgba(21,44,41,.1)}product-info[data-vc-has-sticky-atc="true"] .product__info-container::before{min-height:2.25rem;padding:.34rem .64rem;font-size:.82rem;letter-spacing:.07em}product-info[data-vc-has-sticky-atc="true"] .product__title h1{font-size:2.32rem;line-height:1.02}product-info[data-vc-has-sticky-atc="true"] [data-vc-price-source]{padding:.62rem .78rem;border-radius:1.1rem}product-info[data-vc-has-sticky-atc="true"] .price--large{font-size:1.82rem}product-info[data-vc-has-sticky-atc="true"] .product-form__submit{min-height:4.85rem}}`;
   const reducedMotion = `@media (prefers-reduced-motion:reduce){.vc-reveal,.vitacoral-reveal,.vitacoral-featured-products__card,.vitacoral-product-family__card,.vc-campaign-surface__trigger,.vc-campaign-spotlight__inner,product-info[data-vc-has-sticky-atc="true"] .product__media img,product-info[data-vc-has-sticky-atc="true"] .product-form__submit,.vc-collection .card,.vc-collection .quick-add__submit,.vc-collection .card__media .media img{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}.vc-campaign-surface__trigger::after,.vc-campaign-spotlight__inner::after{display:none!important}}`;
-  const css = baseMotion + pdpMotion + collectionMotion + hoverMotion + mobileMotion + reducedMotion;
+  const touchCalm = `@media (hover:none) and (pointer:coarse){.vc-reveal,.vitacoral-reveal,.vitacoral-featured-products__card,.vitacoral-product-family__card,.vitacoral-education__card,.vitacoral-editorial-media__frame,.vc-product-card .card,.vc-product-card .media img,.vc-collection .card{opacity:1!important;transform:none!important;transition:none!important;animation:none!important;will-change:auto!important}.vc-product-card:active .card,.vc-collection .card:active,.vitacoral-featured-products__item:active .vitacoral-featured-products__card,.vitacoral-product-family__item:active .vitacoral-product-family__card,.vitacoral-education__item:active .vitacoral-education__card,.vitacoral-editorial-media__frame:active{transform:none!important}}`;
+  const css = baseMotion + pdpMotion + collectionMotion + hoverMotion + mobileMotion + reducedMotion + touchCalm;
 
   const injectStyles = () => {
     if (document.getElementById(styleId)) return;
@@ -47,35 +48,14 @@
     groups.forEach((group) => group.forEach((element, index) => element.style.setProperty('--vc-reveal-delay', `${Math.min(index, 5) * 70}ms`)));
   };
 
-  const ensureFooterToolsLink = (scope = document) => {
-    const root = scope instanceof Element || scope instanceof Document ? scope : document;
-    const footer = root.querySelector('.footer') || document.querySelector('.footer');
-    if (!footer || footer.querySelector('.vc-footer-tools-link')) return;
-    const target = footer.querySelector('.footer__content-bottom-wrapper:last-of-type') || footer;
-    const wrapper = document.createElement('div');
-    const link = document.createElement('a');
-    const dot = document.createElement('span');
-    const text = document.createElement('span');
-    wrapper.className = 'vc-footer-tools-link';
-    link.className = 'vc-footer-tools-link__anchor';
-    link.href = '/pages/saglik-hesaplama-araclari';
-    dot.className = 'vc-footer-tools-link__dot';
-    dot.setAttribute('aria-hidden', 'true');
-    text.textContent = 'Sağlık araçları ve rutin rehberi';
-    link.append(dot, text);
-    wrapper.appendChild(link);
-    target.prepend(wrapper);
-  };
-
   const init = (scope = document) => {
     const root = scope instanceof Element || scope instanceof Document ? scope : document;
     injectStyles();
     registerTargets(root);
-    ensureFooterToolsLink(root);
     const revealElements = Array.from(root.querySelectorAll(revealSelector)).filter((element) => !element.closest('.shopify-section-header'));
     if (!revealElements.length) return;
     assignDelays(revealElements);
-    if (designMode || reduced.matches || !('IntersectionObserver' in window)) {
+    if (designMode || reduced.matches || window.matchMedia('(hover: none) and (pointer: coarse)').matches || !('IntersectionObserver' in window)) {
       showElements(revealElements);
       return;
     }
