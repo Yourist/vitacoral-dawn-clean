@@ -62,14 +62,15 @@
             <video
               class="vitacoral-editorial-media__video"
               playsinline
-              preload="metadata"
+              preload="{% if section.settings.autoplay %}auto{% else %}metadata{% endif %}"
+              controls
               {% if section.settings.autoplay %}
                 autoplay
               {% endif %}
               {% if section.settings.loop %}
                 loop
               {% endif %}
-              {% if section.settings.muted %}
+              {% if section.settings.muted or section.settings.autoplay %}
                 muted
               {% endif %}
               {% if section.settings.video_poster_image != blank %}
