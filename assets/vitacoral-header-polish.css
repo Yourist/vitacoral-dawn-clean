@@ -217,3 +217,26 @@
     font-size: 1.48rem;
   }
 }
+
+/* Mobile drawer: retain Dawn icon swap and avoid sticky hover/focus paint on touch. */
+@media (max-width: 989px) and (hover: none) {
+  .menu-drawer-container > .header__icon--menu,
+  .menu-drawer-container > .header__icon--menu:hover,
+  .menu-drawer-container > .header__icon--menu:focus {
+    color: var(--vitacoral-color-primary-deep, #163d38);
+    background: rgba(34, 89, 82, 0.07);
+    border-color: rgba(34, 89, 82, 0.1);
+    transform: none;
+  }
+  .menu-drawer-container[open] > .header__icon--menu,
+  .menu-drawer-container[open] > .header__icon--menu:hover {
+    background: #fff;
+    color: var(--vitacoral-color-primary-deep, #163d38);
+  }
+  .menu-drawer__menu-item:not(.menu-drawer__menu-item--active):hover {
+    background: transparent;
+  }
+  .menu-drawer__menu-item:focus-visible {
+    background: rgba(34, 89, 82, 0.075);
+  }
+}
